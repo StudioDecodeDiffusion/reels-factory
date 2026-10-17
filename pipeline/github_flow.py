@@ -135,6 +135,27 @@ def depot(drop_dir: str) -> None:
             mail.envoyer("Manager", f"{nom} · {fiche.get('titre', 'Avancement')}", md(fiche.get("corps_md", "")), R_MANAGER,
                          ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": fiche.get("agent")})
 
+        elif statut == "story":  # story immédiate (image fournie par la session)
+            png = d / "story.png"
+            try:
+                h = media_host.upload([png], fiche["id"])
+                from .instagram import IG
+                IG(profile).publish_story(h["urls"]["story.png"])
+                media_host.cleanup(h)
+                txt = "📣 La story est en ligne."
+            except Exception as e:
+                txt = f"⚠️ Story non publiée : {str(e)[:300]}"
+            mail.envoyer("Manager", f"{nom} · Story : {fiche.get('titre', '')}", md(txt), R_MANAGER,
+                         ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": 8})
+
+        elif statut == "pret":  # vidéo finale déjà montée (ex. retouche du son) : hébergement + publication directe
+            fiche["media"] = media_host.upload([d / "video.mp4"], fiche["id"])
+            fiche["statut"] = "approuvee"
+            save_attente(fiche)
+            if fiche.get("publier_maintenant"):
+                _publier(fiche, profile)
+            continue
+
         elif statut == "abandonnee":
             mail.envoyer(9, f"{nom} · Pas de vidéo cette nuit", md(f"Aucune vidéo n'a été produite pour **{nom}**.\n\n"
                                                                   f"**Raison :** {fiche.get('raison')}"),

@@ -266,6 +266,17 @@ def cmd_story(a) -> None:
     print(out)
 
 
+def cmd_story_now(a) -> None:
+    """Publie tout de suite une image en story : tool story_now --profile p --titre "…" image.png"""
+    load_profile(a.profile)
+    job = f"{a.profile}-story-{datetime.now(TZ):%Y%m%d-%H%M%S}"
+    fiche = {"id": job, "profil": a.profile, "statut": "story", "cree": state.now_iso(), "titre": a.titre}
+    _push_drop(job, {"fiche.json": json.dumps(fiche, ensure_ascii=False, indent=2), "story.png": Path(a.image)})
+    state.save("dernier_depot", {"id": job, "profil": a.profile, "date": state.now_iso()})
+    _commit_state("état : story")
+    print("Story envoyée.")
+
+
 def cmd_etape(a) -> None:
     """Point d'avancement → mail du « Manager » : tool etape --agent N --profile p --titre "…" "résumé (Markdown)"."""
     load_profile(a.profile)
@@ -308,6 +319,7 @@ def main() -> None:
     p = sub.add_parser("abandon"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p.add_argument("--raison", required=True)
     p = sub.add_parser("story"); p.add_argument("id"); p.add_argument("--profile", required=True); p.add_argument("--titre")
+    p = sub.add_parser("story_now"); p.add_argument("--profile", required=True); p.add_argument("--titre", required=True); p.add_argument("image")
     p = sub.add_parser("etape"); p.add_argument("--agent", required=True); p.add_argument("--profile", required=True)
     p.add_argument("--titre", required=True); p.add_argument("resume")
     p = sub.add_parser("notes"); p.add_argument("--agent", required=True); p.add_argument("--profile")

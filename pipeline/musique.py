@@ -165,11 +165,11 @@ def bande_son(scenes: list[dict], defaut: str, sortie: Path, graine: int = 0) ->
     return sortie
 
 
-def ajouter(video: Path, choix="curieux", graine: int = 0, volume: float = 0.4, scenes: list | None = None) -> None:
+def ajouter(video: Path, choix="curieux", graine: int = 0, volume: float = 0.8, scenes: list | None = None) -> None:
     """Ajoute la musique sous la voix (remplace le fichier). choix = "tension" ou {"ambiance", "tempo", "volume"}."""
     tempo = None
     if isinstance(choix, dict):
-        tempo, volume = choix.get("tempo"), min(0.7, max(0.1, float(choix.get("volume", volume))))
+        tempo, volume = choix.get("tempo"), min(1.2, max(0.3, float(choix.get("volume", volume))))
         choix = choix.get("ambiance", "curieux")
     ambiance = choix
     if ambiance in (None, "", "aucune"):
@@ -186,7 +186,7 @@ def ajouter(video: Path, choix="curieux", graine: int = 0, volume: float = 0.4, 
     tmp = video.with_name(video.stem + "_musique.mp4")
     if a_voix:
         filtre = (f"[1:a]volume={volume}[m];[0:a]asplit=2[v][sc];"
-                  "[m][sc]sidechaincompress=threshold=0.05:ratio=3:attack=20:release=300[md];"
+                  "[m][sc]sidechaincompress=threshold=0.1:ratio=2:attack=20:release=250[md];"
                   "[v][md]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.95[a]")
     else:
         filtre = f"[1:a]volume={volume * 2}[a]"
