@@ -25,7 +25,7 @@ jobs:
       - run: pip install -q -r requirements.txt
       - name: Vérifier la date et prévenir par mail
         env:
-          GMAIL_ADDRESS: ${{ vars.GMAIL_ADDRESS }}
+          GMAIL_ADDRESS: ${{ vars.GMAIL_ADDRESS || secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: |
           python - <<'PY'
