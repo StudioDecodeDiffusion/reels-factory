@@ -89,22 +89,38 @@ def cmd_caption(a) -> None:
 
 
 def _push_drop(job: str, files: dict[str, Path | str]) -> None:
-    """Pousse les fichiers sur la branche `depot-videos` (écrasée à chaque fois : pas d'accumulation)."""
+    """Ajoute les fichiers sur la branche `depot-videos` (les dépôts de plus de 3 jours sont retirés :
+    la branche reste légère, et un envoi ne peut pas en écraser un autre pas encore traité)."""
     origin = _git("remote", "get-url", "origin")
     tmp = Path(tempfile.mkdtemp())
+    r = subprocess.run(["git", "clone", "-q", "--depth", "1", "-b", "depot-videos", origin, str(tmp)],
+                       capture_output=True, text=True)
+    if r.returncode != 0:  # première fois : la branche n'existe pas encore
+        _git("init", "-q", "-b", "depot-videos", cwd=tmp)
+    limite = datetime.now(TZ).timestamp() - 3 * 86400
+    for old in (tmp / "drop").glob("*") if (tmp / "drop").exists() else []:
+        if old.is_dir() and old.stat().st_mtime and _age_depot(old) < limite:
+            shutil.rmtree(old)
     dest = tmp / "drop" / job
-    dest.mkdir(parents=True)
+    dest.mkdir(parents=True, exist_ok=True)
     for name, src in files.items():
         if isinstance(src, Path):
             shutil.copy(src, dest / name)
         else:
             (dest / name).write_text(src, encoding="utf-8")
-    _git("init", "-q", "-b", "depot-videos", cwd=tmp)
     _git("add", "-A", cwd=tmp)
     _git("-c", "user.name=reels-bot", "-c", "user.email=reels-bot@users.noreply.github.com",
-         "commit", "-q", "-m", f"dépôt {job}", cwd=tmp)
+         "commit", "-q", "--allow-empty", "-m", f"dépôt {job}", cwd=tmp)
     _git("push", "-q", "--force", origin, "HEAD:depot-videos", cwd=tmp)
     shutil.rmtree(tmp, ignore_errors=True)
+
+
+def _age_depot(d: Path) -> float:
+    """Date de création d'un dépôt (lue dans sa fiche)."""
+    try:
+        return datetime.fromisoformat(json.loads((d / "fiche.json").read_text(encoding="utf-8"))["cree"]).timestamp()
+    except Exception:
+        return 0.0
 
 
 def _commit_state(msg: str) -> None:

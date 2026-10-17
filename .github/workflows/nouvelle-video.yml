@@ -8,6 +8,11 @@ on:
     paths: [state/dernier_depot.json]
   workflow_dispatch:
 
+# Un seul traitement à la fois (le suivant attend son tour) : pas de fiche en double.
+concurrency:
+  group: depot-videos
+  cancel-in-progress: false
+
 permissions:
   contents: write
   issues: write
