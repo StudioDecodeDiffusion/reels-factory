@@ -7,7 +7,7 @@ Transformer le script en spécification JSON que le moteur vidéo (Remotion, 108
 Ne pas écrire de code React : seulement cette spécification.
 
 ## Types de scènes et champs EXACTS
-- `hook` : `{"type":"hook","duration":2.5,"title":"question/choc ≤ 9 mots","subtitle":"optionnel ≤ 8 mots"}`
+- `hook` : `{"type":"hook","duration":4,"sprite":"pompe","sprite_anim":"shake","title":"question/choc ≤ 9 mots","subtitle":"optionnel ≤ 8 mots"}`
 - `kinetic` : `{"type":"kinetic","duration":3,"lines":["2 à 4 lignes ≤ 28 caractères"],"highlight":"un mot présent dans les lignes"}`
 - `counter` : `{"type":"counter","duration":3,"from":0,"to":3683,"prefix":"","suffix":" km/h","decimals":0,"label":"≤ 9 mots"}`
 - `bars` : `{"type":"bars","duration":4,"title":"≤ 6 mots","items":[{"label":"2024","value":12.5}],"unit":" %"}` (2 à 6 items)
@@ -16,6 +16,18 @@ Ne pas écrire de code React : seulement cette spécification.
 - `compare` : `{"type":"compare","duration":3,"title":"optionnel","left":{"label":"Avant","value":"≤ 9 car.","caption":"opt."},"right":{...}}`
 - `particles` : `{"type":"particles","duration":5,"mode":"gravity|orbit|bounce|swarm|pendulum_wave","count":40,"caption":"≤ 14 mots"}`
 - `outro` : `{"type":"outro","duration":2.5,"text":"chute ≤ 8 mots","cta":"appel à l'action"}`
+
+## Habillage pixel art (champs optionnels, à utiliser sur presque toutes les scènes)
+- `"sprite"` : un élément pixel art animé qui illustre l'idée de la scène, parmi : pompe, goutte, piece,
+  billet, caddie, maison, usine, voiture, eclair, flamme, thermometre, fleche_haut, fleche_bas, loupe,
+  document, casque, danger, extincteur, horloge, globe, ampoule, check, croix, calendrier, graphique, feuille.
+- `"sprite_anim"` : bounce (rebondit), float (flotte), shake (tremble : alerte, hausse), spin (tourne),
+  grow (pulse), rain (pluie de ce sprite sur toute la scène, ex. pièces), orbit (tourne autour d'un point).
+- `"mascotte"` : expression de la mascotte Déco : neutre, content, choc, pense, clin, ou aucune.
+  Par défaut elle s'adapte au type de scène et « parle » pendant la voix off.
+- `"fond"` : couleur de fond imposée (sinon la palette défile automatiquement d'une scène à l'autre).
+Varier : jamais deux fois le même sprite d'affilée ; « choc » pour un chiffre surprenant, « pense » pour
+une question, « content » ou « clin » pour la chute.
 
 ## Règles
 - Uniquement les types de `video.scenes_autorisees` du profil.

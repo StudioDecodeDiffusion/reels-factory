@@ -7,9 +7,20 @@ export type Theme = {
   police_texte: string;
   bandeau?: string | null; // texte du bandeau signature (ex. date), optionnel
   grille?: boolean; // grille fine en fond
+  palette?: string[]; // couleurs vives des fonds de scène (style v2)
+  style?: 'pixel' | 'sobre'; // pixel = style coloré animé (défaut), sobre = ancien style
 };
 
-type Base = {duration: number; voix?: string; audio?: string | null}; // audio : fichier dans video/public/
+type Base = {
+  duration: number;
+  voix?: string; // texte de la voix off (sert aussi aux sous-titres)
+  voix_duree?: number; // durée réelle de la voix (s), ajoutée au rendu final
+  audio?: string | null; // fichier dans video/public/
+  sprite?: string; // élément pixel art (voir sprites.ts)
+  sprite_anim?: 'bounce' | 'float' | 'shake' | 'spin' | 'grow' | 'rain' | 'orbit';
+  mascotte?: 'neutre' | 'content' | 'choc' | 'pense' | 'clin' | 'aucune';
+  fond?: string; // couleur de fond de la scène (#RRGGBB) ; sinon palette du thème
+};
 
 export type Scene =
   | (Base & {type: 'hook'; title: string; subtitle?: string})

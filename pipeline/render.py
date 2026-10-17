@@ -10,8 +10,13 @@ from pathlib import Path
 from .config import VIDEO
 
 HEX = re.compile(r"^#[0-9A-Fa-f]{6}$")
-FONTS = {"Space Grotesk", "Inter", "JetBrains Mono"}
+FONTS = {"Space Grotesk", "Inter", "JetBrains Mono", "Rubik", "Silkscreen"}
 MODES = {"gravity", "orbit", "bounce", "swarm", "pendulum_wave"}
+ANIMS = {"bounce", "float", "shake", "spin", "grow", "rain", "orbit"}
+MASCOTTE = {"neutre", "content", "choc", "pense", "clin", "aucune"}
+SPRITES = {"pompe", "goutte", "piece", "billet", "caddie", "maison", "usine", "voiture", "eclair", "flamme",
+           "thermometre", "fleche_haut", "fleche_bas", "loupe", "document", "casque", "danger", "extincteur",
+           "horloge", "globe", "ampoule", "check", "croix", "calendrier", "graphique", "feuille"}
 
 REQUIRED = {
     "hook": ["title"], "kinetic": ["lines"], "counter": ["to", "label"],
@@ -31,6 +36,11 @@ def validate_spec(spec: dict, allowed: list[str], voix_obligatoire: bool = False
         if th.get(k) not in FONTS:
             th[k] = "Space Grotesk" if k == "police_titre" else "Inter"
     th.setdefault("bandeau", None)
+    th.setdefault("style", "pixel")
+    if "palette" in th:
+        th["palette"] = [c for c in th["palette"] if HEX.match(str(c))][:8]
+        if len(th["palette"]) < 3:
+            errs.append("theme.palette doit contenir au moins 3 couleurs #RRGGBB")
     th["grille"] = bool(th.get("grille", False))
 
     scenes = spec.get("scenes") or []
@@ -69,6 +79,14 @@ def validate_spec(spec: dict, allowed: list[str], voix_obligatoire: bool = False
                     it["value"] = float(it["value"])
                 except (KeyError, TypeError, ValueError):
                     errs.append(f"scène {i} : chaque item de bars doit avoir une value numérique")
+        if s.get("sprite") and s["sprite"] not in SPRITES:
+            errs.append(f"scène {i} : sprite « {s['sprite']} » inconnu (choisir parmi : {', '.join(sorted(SPRITES))})")
+        if s.get("sprite_anim") and s["sprite_anim"] not in ANIMS:
+            errs.append(f"scène {i} : sprite_anim doit être parmi {sorted(ANIMS)}")
+        if s.get("mascotte") and s["mascotte"] not in MASCOTTE:
+            errs.append(f"scène {i} : mascotte doit être parmi {sorted(MASCOTTE)}")
+        if s.get("fond") and not HEX.match(str(s["fond"])):
+            errs.append(f"scène {i} : fond doit être une couleur #RRGGBB")
         if t == "particles" and s.get("mode") not in MODES:
             errs.append(f"scène {i} : mode doit être parmi {sorted(MODES)}")
     total = sum(s.get("duration", 0) for s in scenes if isinstance(s.get("duration"), float))

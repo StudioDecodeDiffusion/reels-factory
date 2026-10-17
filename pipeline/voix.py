@@ -60,7 +60,7 @@ def mention(voix: str) -> str:
     for cle, txt in MENTIONS.items():
         if cle in voix:
             return txt
-    if voix.startswith("chatterbox") and "ref=pierre" in voix or "ref=jessica" in voix:
+    if voix.startswith("chatterbox") and ("ref=pierre" in voix or "ref=jessica" in voix):
         return MENTIONS["upmc"]
     return ""
 

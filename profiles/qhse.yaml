@@ -57,6 +57,8 @@ charte_initiale:
   texte: "#F2F5F0"
   accent: "#FFC531"                     # jaune sécurité
   accent2: "#2BD99F"                    # vert évacuation
-  police_titre: "Space Grotesk"
-  police_texte: "Inter"
+  style: "pixel"                       # pixel art coloré et animé, mascotte, sous-titres mot à mot
+  palette: ['#FFC531', '#2BD99F', '#0B1F1A', '#FF6B35', '#3D5AFE', '#8E5CFF']
+  police_titre: "Rubik"
+  police_texte: "Rubik"
   signature: "bandeau jaune en haut avec le format : VEILLE, COURS ou ACTU (+ n° d'épisode)"

@@ -42,6 +42,8 @@ charte_initiale:                        # point de départ, l'agent directeur ar
   texte: "#F4F1EA"
   accent: "#FF5A36"
   accent2: "#3FA7FF"
-  police_titre: "Space Grotesk"
-  police_texte: "Inter"
+  style: "pixel"                       # pixel art coloré et animé, mascotte, sous-titres mot à mot
+  palette: ['#FFD23F', '#3D5AFE', '#FF4F81', '#2EC4B6', '#1B1F3B', '#FF8A1F']
+  police_titre: "Rubik"
+  police_texte: "Rubik"
   signature: "bandeau rouge en haut avec la date du jour"
