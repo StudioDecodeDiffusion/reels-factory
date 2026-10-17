@@ -1,33 +1,37 @@
-# Profil : actualité expliquée en animation
+# Compte : actualité expliquée en animation
 id: actu
-nom_compte: "Actu expliquée"          # nom affiché dans les messages Telegram
-instagram_secret: IG_TOKEN_ACTU         # nom du secret GitHub qui contient le token Instagram de ce compte
+nom_compte: "Décodé · Actu"
+instagram: "@decode.actu"
+instagram_secret: IG_TOKEN_ACTU         # nom du secret GitHub contenant le token Instagram de ce compte
 langue: fr
 public: "18-35 ans francophones, curieux, peu de temps, veulent comprendre l'actu sans jargon"
 ton: "clair, neutre, factuel, jamais militant ; une pointe d'humour seulement sur les sujets légers"
-niche: "expliquer UNE info d'actualité du jour en 20-30 s avec chiffres et schémas animés"
+niche: "expliquer UNE info d'actualité du jour en 35-45 s avec chiffres et schémas animés"
 
 veille:
-  frequence: quotidienne
+  actualite: true
   pays: FR
-  thematiques: ["économie", "tech", "science", "international", "société", "climat"]
+  thematiques: ["économie", "tech", "science", "international", "société", "climat", "consommation"]
   exclusions:                          # sujets à ne jamais traiter
     - "faits divers violents, attentats, décès de personnes privées"
     - "rumeurs non confirmées"
     - "prises de position partisanes"
-  sources_preferees: ["lemonde.fr", "francetvinfo.fr", "afp.com", "reuters.com", "insee.fr", "lesechos.fr"]
+  sources_preferees: ["lemonde.fr", "francetvinfo.fr", "afp.com", "reuters.com", "insee.fr", "lesechos.fr", "service-public.fr"]
 
 video:
-  duree_cible_s: 25
+  duree_cible_s: 40
   scenes_autorisees: [hook, kinetic, counter, bars, timeline, dots, compare, outro]
-  cta: "Abonne-toi pour comprendre l'actu en 30 s"
+  cta: "Abonne-toi pour l'actu décodée chaque soir"
 
-publication:
-  par_jour: 1
-  heure_generation_utc: "05:10"        # génération le matin, tu valides, publication ensuite
+planning:
+  generation: "chaque nuit à 00:20"     # tâche planifiée Claude (heure de Paris)
+  publication_jours: [1, 2, 3, 4, 5, 6, 7]   # 1 = lundi … 7 = dimanche
+  publication_heure: 18                 # heure de Paris : la vidéo validée part entre 18h25 et 18h35
   hashtags_max: 5
 
-charte_initiale:                        # point de départ, l'agent DA peut l'affiner
+mention_ia: "Animation créée avec l'IA."
+
+charte_initiale:                        # point de départ, l'agent directeur artistique peut l'affiner
   nom: "Dépêche"
   fond: "#0E1116"
   texte: "#F4F1EA"

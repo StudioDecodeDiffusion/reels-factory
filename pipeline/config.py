@@ -16,9 +16,6 @@ TRENDS = ROOT / "trends"
 VIDEO = ROOT / "video"
 OUTPUT = ROOT / "output"
 
-# Modèles : léger pour la veille, plus fort pour l'écriture et le code.
-MODEL_FAST = os.getenv("MODEL_FAST", "claude-haiku-5-5")
-MODEL_SMART = os.getenv("MODEL_SMART", "claude-sonnet-5-5")
 
 TZ = ZoneInfo(os.getenv("TZ_LOCAL", "Europe/Paris"))
 

@@ -1,0 +1,40 @@
+name: Nouvelle vidéo → e-mail de validation
+
+# Déclenché quand la session Claude de nuit dépose une vidéo sur la branche « depot-videos ».
+on:
+  push:
+    branches: [depot-videos]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  fiche:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/checkout@v4
+        with:
+          ref: depot-videos
+          path: _depot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Héberger la vidéo et créer la fiche de validation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          MEDIA_REPO: ${{ vars.MEDIA_REPO }}
+        run: python -m pipeline.github_flow on-drop _depot/drop
+      - name: Sauvegarder la mémoire
+        run: |
+          git config user.name "reels-bot"
+          git config user.email "reels-bot@users.noreply.github.com"
+          git add state/
+          git diff --cached --quiet || (git commit -m "état : nouvelle fiche" && for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep $((i*4)); done)

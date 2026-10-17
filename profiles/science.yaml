@@ -1,4 +1,4 @@
-# Profil : simulation / science vulgarisée
+# Compte (à la demande) : simulation / science vulgarisée
 id: science
 nom_compte: "Science en mouvement"
 instagram_secret: IG_TOKEN_SCIENCE
@@ -21,10 +21,10 @@ video:
   scenes_autorisees: [hook, particles, kinetic, counter, compare, outro]
   cta: "Abonne-toi pour une dose de science par jour"
 
-publication:
-  par_jour: 1
-  jours: "1,3,5"                      # lundi, mercredi, vendredi
-  heure_generation_utc: "06:40"
+planning:
+  generation: "à la demande"          # pas de tâche planifiée pour l'instant
+  publication_jours: [1, 2, 3, 4, 5, 6, 7]
+  publication_heure: 18
   hashtags_max: 5
 
 charte_initiale:

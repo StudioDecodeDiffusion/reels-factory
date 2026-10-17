@@ -1,4 +1,4 @@
-# Profil : trucs fun (compte perso)
+# Compte (à la demande) : trucs fun (compte perso)
 id: fun
 nom_compte: "Fun perso"
 instagram_secret: IG_TOKEN_FUN
@@ -21,11 +21,11 @@ video:
   scenes_autorisees: [hook, particles, kinetic, counter, compare, outro]
   cta: "Envoie ça à quelqu'un qui doit voir ça"
 
-publication:
-  par_jour: 1
-  jours: "2,6"                        # mardi, samedi
-  heure_generation_utc: "08:20"
-  hashtags_max: 4
+planning:
+  generation: "à la demande"          # pas de tâche planifiée pour l'instant
+  publication_jours: [1, 2, 3, 4, 5, 6, 7]
+  publication_heure: 18
+  hashtags_max: 5
 
 charte_initiale:
   nom: "Bonbon"

@@ -1,0 +1,57 @@
+# Compte : veille réglementaire, cours et actu QHSE
+id: qhse
+nom_compte: "Décodé · QHSE"
+instagram: "@decode.qhse"
+instagram_secret: IG_TOKEN_QHSE
+langue: fr
+public: >-
+  responsables et animateurs QHSE, managers de PME, préventeurs, étudiants en licence/master QHSE,
+  candidats aux certifications ; ils veulent rester à jour et réviser vite, sur leur téléphone
+ton: "expert mais accessible, précis, pédagogique ; jamais alarmiste ; toujours la référence du texte"
+niche: >-
+  trois formats en rotation : (1) VEILLE réglementaire — un nouveau texte, ce qui change, pour qui, à partir de quand ;
+  (2) COURS — séries numérotées sur les normes et outils (ISO 45001, 14001, 9001, document unique, analyse des risques,
+  5 pourquoi, arbre des causes…) ; (3) ACTU QHSE — chiffres officiels, évolutions des normes, retours d'expérience
+  d'accidents sans sensationnalisme
+
+formats:                                # l'agent corrélation fait tourner ces formats
+  rotation: [veille, cours, actu]
+  series_en_cours:                      # l'agent avance d'un épisode à chaque vidéo "cours"
+    - nom: "ISO 45001 en 10 épisodes"
+      episode_suivant: 1
+
+veille:
+  actualite: true
+  pays: FR
+  thematiques: ["santé sécurité au travail", "environnement ICPE", "qualité ISO", "risques chimiques",
+                "prévention", "RSE / CSRD", "accidents du travail", "normes AFNOR / ISO"]
+  exclusions:
+    - "conseil juridique personnalisé ; toujours renvoyer vers le texte officiel"
+    - "images ou récits choquants d'accidents ; aucune victime nommée"
+    - "affirmations non sourcées"
+  sources_obligatoires:                 # seules sources acceptées pour un fait réglementaire
+    ["legifrance.gouv.fr", "inrs.fr", "travail-emploi.gouv.fr", "ecologie.gouv.fr", "afnor.org", "iso.org",
+     "ameli.fr", "carsat", "anses.fr", "eur-lex.europa.eu", "aida.ineris.fr", "service-public.fr"]
+
+video:
+  duree_cible_s: 50
+  scenes_autorisees: [hook, kinetic, counter, bars, timeline, dots, compare, outro]
+  cta: "Abonne-toi : ta veille QHSE décodée"
+
+planning:
+  generation: "un jour sur deux à 01:10"   # tâche planifiée Claude, jours impairs du mois
+  publication_jours: [1, 2, 3, 4, 5, 6, 7]
+  publication_heure: 12                 # pause déjeuner : le public pro regarde à midi
+  hashtags_max: 5
+
+mention_ia: "Animation créée avec l'IA. Sources officielles citées — vérifiez toujours le texte en vigueur."
+
+charte_initiale:
+  nom: "Signalétique"
+  fond: "#0B1F1A"
+  texte: "#F2F5F0"
+  accent: "#FFC531"                     # jaune sécurité
+  accent2: "#2BD99F"                    # vert évacuation
+  police_titre: "Space Grotesk"
+  police_texte: "Inter"
+  signature: "bandeau jaune en haut avec le format : VEILLE, COURS ou ACTU (+ n° d'épisode)"

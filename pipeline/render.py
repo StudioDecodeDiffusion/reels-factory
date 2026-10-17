@@ -34,8 +34,8 @@ def validate_spec(spec: dict, allowed: list[str]) -> list[str]:
     th["grille"] = bool(th.get("grille", False))
 
     scenes = spec.get("scenes") or []
-    if not 3 <= len(scenes) <= 12:
-        errs.append("il faut entre 3 et 12 scènes")
+    if not 3 <= len(scenes) <= 18:
+        errs.append("il faut entre 3 et 18 scènes")
     for i, s in enumerate(scenes):
         t = s.get("type")
         if t not in REQUIRED:
@@ -67,13 +67,19 @@ def validate_spec(spec: dict, allowed: list[str]) -> list[str]:
         if t == "particles" and s.get("mode") not in MODES:
             errs.append(f"scène {i} : mode doit être parmi {sorted(MODES)}")
     total = sum(s.get("duration", 0) for s in scenes if isinstance(s.get("duration"), float))
-    if total > 60:
-        errs.append(f"durée totale {total:.0f}s trop longue (max 60)")
+    if total > 90:
+        errs.append(f"durée totale {total:.0f}s trop longue (max 90)")
     return errs
 
 
 def _browser_args() -> list[str]:
+    """Navigateur pour le rendu. Dans les sessions Claude, le téléchargement habituel de Remotion est
+    bloqué : on utilise le Chromium livré par le paquet npm @sparticuz/chromium."""
     exe = os.getenv("REMOTION_BROWSER")
+    if not exe and (VIDEO / "node_modules" / "@sparticuz" / "chromium").exists():
+        r = subprocess.run(["node", "-e", "require('@sparticuz/chromium').default.executablePath()"
+                            ".then(p=>console.log(p))"], cwd=VIDEO, capture_output=True, text=True)
+        exe = r.stdout.strip().splitlines()[-1] if r.returncode == 0 and r.stdout.strip() else None
     return [f"--browser-executable={exe}", "--chrome-mode=headless-shell"] if exe else []
 
 
@@ -98,4 +104,18 @@ def frames_per_scene(spec: dict, mp4: Path) -> list[Path]:
                         "-frames:v", "1", "-vf", "scale=540:-1", str(png)], check=True)
         out.append(png)
         t += s["duration"]
+    return out
+
+
+def contact_sheet(images: list[Path], out: Path) -> Path:
+    """Planche d'aperçu : les images des scènes côte à côte (affichée dans l'e-mail de validation)."""
+    imgs = images[:8]
+    inputs = []
+    for i in imgs:
+        inputs += ["-i", str(i)]
+    filt = "".join(f"[{k}:v]scale=240:-1[s{k}];" for k in range(len(imgs)))
+    filt += "".join(f"[s{k}]" for k in range(len(imgs))) + f"hstack=inputs={len(imgs)}"
+    if len(imgs) == 1:
+        filt = "[0:v]scale=240:-1"
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *inputs, "-filter_complex", filt, str(out)], check=True)
     return out
