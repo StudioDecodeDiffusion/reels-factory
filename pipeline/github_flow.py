@@ -416,13 +416,29 @@ def _publier_story(fiche: dict, profile: dict) -> str:
 
 def publier_ce_qui_est_du() -> None:
     now = datetime.now(TZ)
-    for job in state.load("publier_maintenant", {}).get("jobs", []):
+    demande = state.load("publier_maintenant", {})
+    for job in demande.get("supprimer", []):  # ancien post à retirer (demande du propriétaire)
+        f = attente(job)
+        if f and f.get("media_id"):
+            from .instagram import IG
+            prof = load_profile(f["profil"])
+            try:
+                IG(prof).delete(f["media_id"])
+                f["statut"] = "supprimee"
+                txt = f"🗑️ L'ancien post est supprimé : {f.get('permalink', '')}"
+            except BaseException as e:
+                txt = (f"⚠️ Instagram ne m'autorise pas à supprimer l'ancien post ({str(e)[:200]}). "
+                       f"Supprime-le depuis l'app : ouvre-le puis ⋯ → Supprimer. Lien : {f.get('permalink', '')}")
+            save_attente(f)
+            mail.envoyer("Manager", f"{prof['nom_compte']} · Ancien post", md(txt), R_MANAGER,
+                         ref={"type": "manager", "job": job, "profil": f["profil"], "agent": 8})
+    for job in demande.get("jobs", []):
         f = attente(job)
         if f and f["statut"] in ("a_valider", "approuvee"):
             f["statut"] = "approuvee"
             save_attente(f)
             _publier(f, load_profile(f["profil"]))
-    state.save("publier_maintenant", {"jobs": []})
+    state.save("publier_maintenant", {"jobs": [], "supprimer": []})
     for fiche in all_attente():
         profile = load_profile(fiche["profil"])
         p = profile["planning"]

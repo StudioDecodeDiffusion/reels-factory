@@ -60,6 +60,12 @@ class IG:
         info = self._get(pub["id"], fields="id,permalink,timestamp")
         return info
 
+    def delete(self, media_id: str) -> bool:
+        r = requests.delete(f"{BASE}/{VER}/{media_id}", params={"access_token": self.token}, timeout=60)
+        if r.status_code >= 400:
+            raise RuntimeError(f"Instagram DELETE → {r.status_code} {r.text[:300]}")
+        return True
+
     def publish_story(self, image_url: str) -> dict:
         c = self._post(f"{self.uid}/media", media_type="STORIES", image_url=image_url)
         for _ in range(30):
