@@ -56,7 +56,7 @@ def cleanup(info: dict | None) -> None:
         print(f"  ! nettoyage impossible : {e}")
 
 
-def archiver(fichiers: dict[str, Path], mois: str) -> str:
+def archiver(fichiers: dict[str, Path], mois: str, remplacer: str | None = None) -> str:
     """Range des fichiers dans la release privée « archive-AAAA-MM » du dépôt reels-factory (accès : toi seul).
     fichiers = {nom_dans_l_archive: chemin}. Renvoie le lien de la page d'archive."""
     repo = os.getenv("GITHUB_REPOSITORY") or "StudioDecodeDiffusion/reels-factory"
@@ -71,6 +71,10 @@ def archiver(fichiers: dict[str, Path], mois: str) -> str:
     rel = r.json()
     up = rel["upload_url"].split("{")[0]
     deja = {a["name"]: a["id"] for a in rel.get("assets", [])}
+    if remplacer:  # anciens noms de la même vidéo
+        for nom, i in list(deja.items()):
+            if remplacer in nom and nom not in fichiers:
+                requests.delete(f"{GH}/repos/{repo}/releases/assets/{i}", headers=_h(), timeout=60)
     for nom, p in fichiers.items():
         if nom in deja:
             requests.delete(f"{GH}/repos/{repo}/releases/assets/{deja[nom]}", headers=_h(), timeout=60)

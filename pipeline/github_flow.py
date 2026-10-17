@@ -422,7 +422,11 @@ def _archiver(fiche: dict, dossier: Path | None = None) -> None:
     import tempfile
     try:
         tmp = Path(tempfile.mkdtemp())
-        base = f"{fiche['cree'][:10]}_{fiche['id']}"
+        import unicodedata
+        compte = (load_profile(fiche["profil"]).get("instagram") or fiche["profil"]).lstrip("@")
+        titre = unicodedata.normalize("NFKD", fiche.get("titre") or "video").encode("ascii", "ignore").decode()
+        titre = re.sub(r"[^A-Za-z0-9]+", "-", titre).strip("-").lower()[:60]
+        base = f"{fiche['cree'][:10]}_{compte}_{titre}"  # date _ compte _ titre
         fichiers = {}
         urls = (fiche.get("media") or {}).get("urls", {})
         for nom, cible in (("video.mp4", "video.mp4"), ("couverture.png", "miniature.png")):
@@ -439,7 +443,7 @@ def _archiver(fiche: dict, dossier: Path | None = None) -> None:
         src_txt.write_text(f"{fiche.get('titre', '')}\nPublié : {fiche.get('permalink', '')}\n\nSources :\n"
                            + "\n".join(fiche.get("sources", [])) + "\n", encoding="utf-8")
         fichiers[f"{base}_sources.txt"] = src_txt
-        lien = media_host.archiver(fichiers, fiche["cree"][:7])
+        lien = media_host.archiver(fichiers, fiche["cree"][:7], remplacer=fiche.get("remplace_noms"))
         fiche["archive"] = lien
         save_attente(fiche)
         _manager(fiche, "Archivée", f"Vidéo finale, miniature, story et sources rangées dans l'archive privée : [{lien}]({lien})")
