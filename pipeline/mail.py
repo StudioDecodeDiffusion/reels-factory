@@ -35,7 +35,8 @@ NOMS = {1: "Veille actualité", 2: "Veille tendances", 3: "Résultats du compte"
         10: "Veille comptes IA"}
 
 RAPPEL = ("💬 <b>Pour parler à un agent :</b> envoie-toi un mail avec l'objet "
-          "<b>« agent N° - ta note »</b> (ex. « agent 6 - plus de couleurs vives »). Il la lira avant son prochain travail.")
+          "<b>« agent N° - ta note »</b> (ex. « agent 6 - plus de couleurs vives » pour tous les comptes, "
+          "« agent 6.2 - … » pour le sous-agent du compte n° 2). Il la lira avant son prochain travail.")
 
 
 def adresse() -> str:
@@ -46,8 +47,21 @@ def date_courte() -> str:
     return datetime.now(TZ).strftime("%d/%m/%y")
 
 
-def objet(agent: int, titre: str) -> str:
-    return f"Agent {agent} - {date_courte()} - {titre}"
+def numero_agent(agent, profil: str | None = None) -> str:
+    """« 6 » pour l'agent principal, « 6.2 » pour son sous-agent du compte n° 2."""
+    if profil and str(agent).isdigit():
+        try:
+            from .config import load_profile
+            n = load_profile(profil).get("numero")
+            if n:
+                return f"{agent}.{n}"
+        except Exception:
+            pass
+    return str(agent)
+
+
+def objet(agent, titre: str, profil: str | None = None) -> str:
+    return f"Agent {numero_agent(agent, profil)} - {date_courte()} - {titre}"
 
 
 def normaliser(sujet: str) -> str:
@@ -61,11 +75,11 @@ def normaliser(sujet: str) -> str:
     return re.sub(r"\s+", " ", s).strip().lower()
 
 
-def _gabarit(agent: int, corps_html: str, reponse_html: str) -> str:
-    nom = NOMS.get(agent, "")
+def _gabarit(agent, corps_html: str, reponse_html: str, label: str | None = None) -> str:
+    nom = NOMS.get(int(str(agent).split(".")[0]), "")
     return f"""<div style="font-family:Arial,Helvetica,sans-serif;max-width:640px;margin:auto;color:#14131C">
 <div style="background:#14131C;color:#fff;padding:12px 18px;border-radius:12px 12px 0 0;font-weight:bold">
-🤖 Agent {agent} · {nom} <span style="float:right;color:#FFD23F">Studio Decode et diffusion</span></div>
+🤖 Agent {label or agent} · {nom} <span style="float:right;color:#FFD23F">Studio Decode et diffusion</span></div>
 <div style="border:3px solid #14131C;border-top:none;padding:18px;border-radius:0 0 12px 12px">
 {corps_html}
 <hr style="border:none;border-top:2px dashed #ccc;margin:22px 0">
@@ -78,17 +92,18 @@ def _gabarit(agent: int, corps_html: str, reponse_html: str) -> str:
 def envoyer(agent: int, titre: str, corps_html: str, reponse_html: str, ref: dict | None = None,
             images: dict[str, Path] | None = None, pieces: list[Path] | None = None) -> str:
     """Envoie un mail d'agent. images = {cid: chemin PNG} (à appeler dans le HTML par <img src="cid:…">)."""
-    sujet = objet(agent, titre)
+    profil = (ref or {}).get("profil")
+    sujet = objet(agent, titre, profil)
     msg = EmailMessage()
     msg["Subject"] = sujet
-    msg["From"] = f"Agent {agent} · Décodé <{adresse()}>"
+    msg["From"] = f"Agent {numero_agent(agent, profil)} · Décodé <{adresse()}>"
     msg["To"] = adresse()
     msg["X-Decode-Agent"] = str(agent)
     msg["X-Decode-Ref"] = json.dumps(ref or {}, ensure_ascii=False)
     texte = re.sub(r"<[^>]+>", "", corps_html.replace("<br>", "\n").replace("</p>", "\n"))
     msg.set_content(htmllib.unescape(texte) + "\n\n" + htmllib.unescape(re.sub(r"<[^>]+>", "", reponse_html)))
     cids = {k: make_msgid()[1:-1] for k in (images or {})}
-    html_final = _gabarit(agent, corps_html, reponse_html)
+    html_final = _gabarit(agent, corps_html, reponse_html, numero_agent(agent, profil))
     for k, cid in cids.items():
         html_final = html_final.replace(f"cid:{k}", f"cid:{cid}")
     msg.add_alternative(html_final, subtype="html")

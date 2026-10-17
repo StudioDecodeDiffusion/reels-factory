@@ -1,5 +1,6 @@
 # Compte (à la demande) : simulation / science vulgarisée
 id: science
+numero: 3                       # n° de compte : sous-agents « Agent N.3 »
 nom_compte: "Science en mouvement"
 instagram_secret: IG_TOKEN_SCIENCE
 langue: fr
@@ -36,3 +37,8 @@ charte_initiale:
   police_titre: "Space Grotesk"
   police_texte: "Inter"
   signature: "grille fine en fond, particules lumineuses"
+
+sous_agents:
+  4: Un phénomène, une question, une réponse visuelle ; rigueur scientifique.
+  6: Visuels hypnotiques, couleurs froides et néon.
+  9: Vérifier chaque affirmation scientifique (source académique).

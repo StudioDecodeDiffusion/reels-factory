@@ -3,6 +3,9 @@
 Lancée chaque jour par une tâche planifiée Claude. Personne ne regarde : ne pose pas de question.
 Comptes à traiter : indiqués dans le message de la tâche. Pour chaque compte :
 
+**Sous-agents :** pour chaque compte, joue le sous-agent N.k décrit dans `agents/SOUS_AGENTS.md` (ligne
+éditoriale et consigne `sous_agents` du profil). Notes : `tool notes --agent N --profile <compte>`.
+
 ## 0. Préparation
 ```bash
 cd <dossier du dépôt> && git pull -q

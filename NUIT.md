@@ -16,6 +16,9 @@ Le compte est indiqué dans le message de la tâche (`actu`, `qhse`, …).
  le matin  le propriétaire répond OK ─► 9 transmet à 8 ─► publication par GitHub à l'heure prévue
 ```
 
+**Sous-agents :** pour chaque compte, joue le sous-agent N.k décrit dans `agents/SOUS_AGENTS.md` (ligne
+éditoriale et consigne `sous_agents` du profil). Notes : `tool notes --agent N --profile <compte>`.
+
 ## 0. Préparation
 ```bash
 cd <dossier du dépôt> && git pull -q

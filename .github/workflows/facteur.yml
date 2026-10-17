@@ -32,7 +32,10 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           MEDIA_REPO: ${{ vars.MEDIA_REPO }}
           IG_TOKEN_ACTU: ${{ secrets.IG_TOKEN_ACTU }}
-          IG_TOKEN_QHSE: ${{ secrets.IG_TOKEN_QHSE }}
+          IG_TOKEN_ECO: ${{ secrets.IG_TOKEN_ECO }}
+          IG_TOKEN_QHSE_VEILLE: ${{ secrets.IG_TOKEN_QHSE_VEILLE }}
+          IG_TOKEN_QHSE_COURS: ${{ secrets.IG_TOKEN_QHSE_COURS }}
+          IG_TOKEN_QHSE_ACTU: ${{ secrets.IG_TOKEN_QHSE_ACTU }}
           IG_TOKEN_SCIENCE: ${{ secrets.IG_TOKEN_SCIENCE }}
           IG_TOKEN_FUN: ${{ secrets.IG_TOKEN_FUN }}
         run: python -m pipeline.github_flow facteur

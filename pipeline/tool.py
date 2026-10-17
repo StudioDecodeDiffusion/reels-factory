@@ -158,7 +158,7 @@ def cmd_notes(a) -> None:
     """Affiche les notes non traitées que le propriétaire a envoyées à un agent (mails « agent N - … »)."""
     fil = [m for m in state.load(f"messages/agent_{a.agent}", []) if not m.get("traite")]
     if a.profile:
-        fil = [m for m in fil if m.get("profil") in (None, "", a.profile)]
+        fil = [m for m in fil if m.get("profil") in (None, "", "tous", a.profile)]
     print(json.dumps(fil, ensure_ascii=False, indent=1) if fil else f"Aucune note en attente pour l'agent {a.agent}.")
 
 

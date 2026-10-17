@@ -1,24 +1,18 @@
-# Compte : veille réglementaire, cours et actu QHSE
-id: qhse
-nom_compte: "Décodé · QHSE"
-instagram: "@decode.qhse"
-instagram_secret: IG_TOKEN_QHSE
+# Compte 6 : Décodé · QHSE Cours
+id: qhse_cours
+numero: 6                       # n° de compte : sous-agents « Agent N.6 »
+nom_compte: "Décodé · QHSE Cours"
+instagram: ""                       # compte à créer
+instagram_secret: IG_TOKEN_QHSE_COURS
 langue: fr
 public: >-
   responsables et animateurs QHSE, managers de PME, préventeurs, étudiants en licence/master QHSE,
   candidats aux certifications ; ils veulent rester à jour et réviser vite, sur leur téléphone
 ton: "expert mais accessible, précis, pédagogique ; jamais alarmiste ; toujours la référence du texte"
-niche: >-
-  trois formats en rotation : (1) VEILLE réglementaire — un nouveau texte, ce qui change, pour qui, à partir de quand ;
-  (2) COURS — séries numérotées sur les normes et outils (ISO 45001, 14001, 9001, document unique, analyse des risques,
-  5 pourquoi, arbre des causes…) ; (3) ACTU QHSE — chiffres officiels, évolutions des normes, retours d'expérience
-  d'accidents sans sensationnalisme
-
-formats:                                # l'agent corrélation fait tourner ces formats
-  rotation: [veille, cours, actu]
-  series_en_cours:                      # l'agent avance d'un épisode à chaque vidéo "cours"
-    - nom: "ISO 45001 en 10 épisodes"
-      episode_suivant: 1
+niche: "COURS en séries numérotées : ISO 45001, 14001, 9001, document unique, analyse des risques, 5 pourquoi, arbre des causes…"
+series_en_cours:
+  - nom: "ISO 45001 en 10 épisodes"
+    episode_suivant: 1
 
 veille:
   actualite: true
@@ -36,7 +30,7 @@ veille:
 video:
   duree_cible_s: 60
   scenes_autorisees: [hook, kinetic, counter, bars, timeline, dots, compare, outro]
-  cta: "Abonne-toi : ta veille QHSE décodée"
+  cta: "Abonne-toi : un cours QHSE en 1 minute"
 
 voix:                                   # voix off IA gratuite, générée dans GitHub Actions
   active: true
@@ -70,3 +64,8 @@ charte_initiale:
   police_texte: "Rubik"
   signature: "bandeau jaune en haut avec le format : VEILLE, COURS ou ACTU (+ n° d'épisode)"
 musique: "curieux"            # ambiance par défaut si l'agent 6 n'en choisit pas
+
+sous_agents:
+  4: Avancer d'un épisode dans la série en cours (state/series_qhse_cours.json).
+  5: 'Pédagogie : une notion, un exemple, un piège à éviter.'
+  9: Notions conformes aux normes et à l'INRS.

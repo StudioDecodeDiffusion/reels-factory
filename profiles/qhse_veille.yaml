@@ -1,0 +1,67 @@
+# Compte 5 : Décodé · QHSE Veille
+id: qhse_veille
+numero: 5                       # n° de compte : sous-agents « Agent N.5 »
+nom_compte: "Décodé · QHSE Veille"
+instagram: ""                       # compte à créer
+instagram_secret: IG_TOKEN_QHSE_VEILLE
+langue: fr
+public: >-
+  responsables et animateurs QHSE, managers de PME, préventeurs, étudiants en licence/master QHSE,
+  candidats aux certifications ; ils veulent rester à jour et réviser vite, sur leur téléphone
+ton: "expert mais accessible, précis, pédagogique ; jamais alarmiste ; toujours la référence du texte"
+niche: "VEILLE réglementaire : un nouveau texte (décret, arrêté, norme), ce qui change, pour qui, à partir de quand"
+veille:
+  actualite: true
+  pays: FR
+  thematiques: ["santé sécurité au travail", "environnement ICPE", "qualité ISO", "risques chimiques",
+                "prévention", "RSE / CSRD", "accidents du travail", "normes AFNOR / ISO"]
+  exclusions:
+    - "conseil juridique personnalisé ; toujours renvoyer vers le texte officiel"
+    - "images ou récits choquants d'accidents ; aucune victime nommée"
+    - "affirmations non sourcées"
+  sources_obligatoires:                 # seules sources acceptées pour un fait réglementaire
+    ["legifrance.gouv.fr", "inrs.fr", "travail-emploi.gouv.fr", "ecologie.gouv.fr", "afnor.org", "iso.org",
+     "ameli.fr", "carsat", "anses.fr", "eur-lex.europa.eu", "aida.ineris.fr", "service-public.fr"]
+
+video:
+  duree_cible_s: 60
+  scenes_autorisees: [hook, kinetic, counter, bars, timeline, dots, compare, outro]
+  cta: "Abonne-toi : ta veille réglementaire QHSE décodée"
+
+voix:                                   # voix off IA gratuite, générée dans GitHub Actions
+  active: true
+  # Voix retenues (voir voix/echantillons) :
+  #   chatterbox standard (femme, naturelle) : "chatterbox:fr?exag=0.6&cfg=0.4"
+  #   Jessica (femme, claire et posée)       : "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0"
+  #   Pierre Chatterbox (homme, très expressif) : "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3"
+  narrateur: "chatterbox:fr?exag=0.6&cfg=0.4"            # Lou (à gauche)
+  mascotte: "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3"  # Déco (à droite) = Pierre Chatterbox…
+  mascotte_effet: "aigu"                                 # … avec l'effet aigu
+  vitesse: 1.0
+
+planning:
+  generation: "un jour sur deux à 01:10"   # tâche planifiée Claude, jours impairs du mois
+  publication_jours: [1, 2, 3, 4, 5, 6, 7]
+  publication_heure: 12                 # pause déjeuner : le public pro regarde à midi
+  hashtags_max: 5
+
+mention_ia: "Animation créée avec l'IA. Sources officielles citées — vérifiez toujours le texte en vigueur."
+
+charte_initiale:
+  nom: "Signalétique"
+  fond: "#0B1F1A"
+  texte: "#F2F5F0"
+  accent: "#FFC531"                     # jaune sécurité
+  accent2: "#2BD99F"                    # vert évacuation
+  style: "pixel"                       # pixel art coloré et animé, mascotte, sous-titres mot à mot
+  tenues: {narrateur: "qhse", mascotte: "qhse"}   # tenues de base (voir video/src/personnages.ts)
+  palette: ['#FFC531', '#2BD99F', '#0B1F1A', '#FF6B35', '#3D5AFE', '#8E5CFF']
+  police_titre: "Rubik"
+  police_texte: "Rubik"
+  signature: "bandeau jaune en haut avec le format : VEILLE, COURS ou ACTU (+ n° d'épisode)"
+musique: "curieux"            # ambiance par défaut si l'agent 6 n'en choisit pas
+
+sous_agents:
+  1: Uniquement textes officiels récents (Légifrance, JO, EUR-Lex, AFNOR/ISO).
+  4: 'Un texte = une vidéo : quoi, qui, quand, sanction.'
+  9: Chaque obligation citée avec sa référence exacte.

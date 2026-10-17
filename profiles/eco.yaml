@@ -1,0 +1,67 @@
+# Compte 2 : actualité française, ligne libérale / économie
+id: eco
+numero: 2                       # n° de compte : sous-agents « Agent N.1 »
+nom_compte: "Décodé · Éco"
+instagram: ""                       # compte à créer
+instagram_secret: IG_TOKEN_ECO
+langue: fr
+public: "25-45 ans, actifs, entrepreneurs, épargnants ; veulent comprendre l'économie et ce que ça change pour leur argent"
+ton: "clair, pragmatique, orienté chiffres, entreprise et liberté économique ; factuel et sourcé"
+ligne_editoriale: "plutôt à droite et centrée sur l'économie : fiscalité, dette, entreprises, travail, compétitivité, marchés ; point de vue des entrepreneurs et contribuables"
+niche: "expliquer UNE info économique du jour en 45-60 s avec chiffres et graphiques animés"
+veille:
+  actualite: true
+  pays: FR
+  thematiques: ["économie", "tech", "science", "international", "société", "climat", "consommation"]
+  exclusions:                          # sujets à ne jamais traiter
+    - "faits divers violents, attentats, décès de personnes privées"
+    - "rumeurs non confirmées"
+    - "désinformation : l'angle est assumé, mais les faits restent exacts et sourcés, jamais déformés"
+    - "attaques personnelles, appels à la violence"
+  sources_preferees: ["lemonde.fr", "francetvinfo.fr", "afp.com", "reuters.com", "insee.fr", "lesechos.fr", "service-public.fr"]
+
+video:
+  duree_cible_s: 50
+  scenes_autorisees: [hook, kinetic, counter, bars, timeline, dots, compare, outro]
+  cta: "Abonne-toi pour l'éco décodée"
+
+voix:                                   # voix off IA gratuite, générée dans GitHub Actions
+  active: true
+  # Voix retenues (voir voix/echantillons) :
+  #   chatterbox standard (femme, naturelle) : "chatterbox:fr?exag=0.6&cfg=0.4"
+  #   Jessica (femme, claire et posée)       : "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0"
+  #   Pierre Chatterbox (homme, très expressif) : "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3"
+  narrateur: "chatterbox:fr?exag=0.6&cfg=0.4"            # Lou (à gauche)
+  mascotte: "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3"  # Déco (à droite) = Pierre Chatterbox…
+  mascotte_effet: "aigu"                                 # … avec l'effet aigu
+  vitesse: 1.0
+
+planning:
+  generation: "chaque nuit à 00:20"     # tâche planifiée Claude (heure de Paris)
+  publication_jours: [1, 2, 3, 4, 5, 6, 7]   # 1 = lundi … 7 = dimanche
+  publication_heure: 18                 # heure de Paris : la vidéo validée part entre 18h25 et 18h35
+  hashtags_max: 5
+
+mention_ia: "Animation créée avec l'IA."
+
+charte_initiale:                        # point de départ, l'agent directeur artistique peut l'affiner
+  nom: "Dépêche"
+  fond: "#0E1116"
+  texte: "#F4F1EA"
+  accent: "#FF5A36"
+  accent2: "#3FA7FF"
+  style: "pixel"                       # pixel art coloré et animé, mascotte, sous-titres mot à mot
+  tenues: {narrateur: "economie", mascotte: "classique"}   # tenues de base (voir video/src/personnages.ts)
+  palette: ['#FFD23F', '#3D5AFE', '#FF4F81', '#2EC4B6', '#1B1F3B', '#FF8A1F']
+  police_titre: "Rubik"
+  police_texte: "Rubik"
+  signature: "bandeau rouge en haut avec la date du jour"
+musique: "curieux"            # ambiance par défaut si l'agent 6 n'en choisit pas
+
+sous_agents:
+  1: 'Actu économique : budget, impôts, dette, entreprises, emploi, marchés.'
+  2: Tendances des comptes finance / éco, formats chiffres.
+  4: Angle « combien ça coûte et qui paie » ; point de vue entreprises et contribuables.
+  5: Ton sobre et chiffré ; Lou pose la question du contribuable, Déco les chiffres.
+  6: Palette plus sobre (bleu, or), tenue economie ; graphiques en avant.
+  9: Vérifier qu'aucun chiffre n'est sorti de son contexte ; projection sur les 25-45 actifs.

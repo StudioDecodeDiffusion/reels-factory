@@ -1,12 +1,12 @@
 # Compte (à la demande) : trucs fun (compte perso)
 id: fun
-nom_compte: "Fun perso"
+numero: 4                       # n° de compte : sous-agents « Agent N.4 »
+nom_compte: "Décodé · Fun"
 instagram_secret: IG_TOKEN_FUN
 langue: fr
 public: "amis et curieux ; humour léger, absurde, satisfaisant"
 ton: "décalé, complice, autodérision ; jamais méchant envers une personne réelle"
-niche: "animations satisfaisantes, défis visuels, faits absurdes, mini-jeux 'tu as vu ?'"
-
+niche: "animation, trends et autres formats légers : défis visuels, faits absurdes, mini-jeux"
 veille:
   frequence: "2 fois par semaine"
   actualite: false                    # pipeline allégé : pas de veille d'actu, seulement les trends
@@ -36,3 +36,9 @@ charte_initiale:
   police_titre: "Space Grotesk"
   police_texte: "Inter"
   signature: "formes rondes qui rebondissent, couleurs franches"
+
+sous_agents:
+  2: Trends du moment (sons, défis, mèmes) à transposer en pixel art.
+  4: Animation, trends et formats variés ; viser le partage.
+  6: Couleurs saturées, animations rythmées, musique joyeuse.
+  9: Jamais méchant envers une personne réelle ; aucune marque ni personnage protégé.

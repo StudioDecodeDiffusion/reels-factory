@@ -1,11 +1,13 @@
-# Compte : actualité expliquée en animation
+# Compte 1 : actualité française, ligne sociale / revendications populaires
 id: actu
+numero: 1                       # n° de compte : sous-agents « Agent N.1 »
 nom_compte: "Décodé · Actu"
 instagram: "@decodeactu"
 instagram_secret: IG_TOKEN_ACTU         # nom du secret GitHub contenant le token Instagram de ce compte
 langue: fr
 public: "18-35 ans francophones, curieux, peu de temps, veulent comprendre l'actu sans jargon"
-ton: "clair, neutre, factuel, jamais militant ; une pointe d'humour seulement sur les sujets légers"
+ton: "clair, engagé côté social, du point de vue des gens concernés (salariés, jeunes, précaires) ; factuel et sourcé ; humour sur les sujets légers"
+ligne_editoriale: "plutôt à gauche : pouvoir d'achat, salaires, services publics, mobilisations et revendications populaires, inégalités ; on donne la parole aux concernés"
 niche: "expliquer UNE info d'actualité du jour en 45-60 s avec chiffres et schémas animés"
 
 veille:
@@ -15,7 +17,8 @@ veille:
   exclusions:                          # sujets à ne jamais traiter
     - "faits divers violents, attentats, décès de personnes privées"
     - "rumeurs non confirmées"
-    - "prises de position partisanes"
+    - "désinformation : l'angle est assumé, mais les faits restent exacts et sourcés, jamais déformés"
+    - "attaques personnelles, appels à la violence"
   sources_preferees: ["lemonde.fr", "francetvinfo.fr", "afp.com", "reuters.com", "insee.fr", "lesechos.fr", "service-public.fr"]
 
 video:
@@ -55,3 +58,11 @@ charte_initiale:                        # point de départ, l'agent directeur ar
   police_texte: "Rubik"
   signature: "bandeau rouge en haut avec la date du jour"
 musique: "curieux"            # ambiance par défaut si l'agent 6 n'en choisit pas
+
+sous_agents:
+  1: Actu du jour qui touche le quotidien et les revendications populaires (prix, salaires, mobilisations).
+  2: Tendances des comptes d'actu engagés côté social, mèmes de mobilisation.
+  4: Choisir l'angle « ce que ça change pour les gens » ; donner la parole aux concernés.
+  5: Ton direct et proche ; Lou porte la question des gens, Déco les faits.
+  6: Couleurs vives et chaudes ; tenues du quotidien ; musique selon l'ambiance et les trends.
+  9: Vérifier que l'angle militant ne déforme aucun fait ; projection sur les 18-35 sensibles au social.

@@ -223,7 +223,7 @@ def note(agent: int, objet: str, texte: str, profil: str | None = None) -> None:
     fil = state.load(f"messages/agent_{agent}", [])
     if not profil:
         t = f"{objet} {texte}".lower()
-        profil = "qhse" if "qhse" in t else "actu" if "actu" in t else "tous"
+        profil = "tous"
     fil.append({"id": f"{agent}-{len(fil) + 1}-{datetime.now(TZ):%m%d%H%M}", "date": state.now_iso(),
                 "objet": objet, "texte": texte, "profil": profil, "traite": False})
     state.save(f"messages/agent_{agent}", fil[-200:])
@@ -255,13 +255,16 @@ def facteur() -> None:
                 mail.envoyer(n, "Remarque bien reçue", md(f"Merci ! J'ai bien noté :\n\n> {texte[:600]}\n\n"
                                                           "Je l'appliquerai dès mon prochain travail."), R_NOTE.format(n=n))
             continue
-        mm = re.match(r"^\s*agent\s*(?:n\s*[°o]?\s*)?(\d+)\s*[-–—:]?\s*(.*)$", m["objet"], re.I)
+        mm = re.match(r"^\s*agent\s*(?:n\s*[°o]?\s*)?(\d+)(?:[.,](\d+))?\s*[-–—:]?\s*(.*)$", m["objet"], re.I)
         if mm and 1 <= int(mm.group(1)) <= 10:
-            n = int(mm.group(1))
-            note(n, mm.group(2).strip(), texte)
-            mail.envoyer(n, f"Note reçue : {mm.group(2).strip()[:60]}",
-                         md(f"Bien reçu ✅\n\n**Ta note :** {mm.group(2).strip()}\n\n{texte[:800]}\n\n"
-                            "Je l'appliquerai dès mon prochain travail et te dirai ce que j'en ai fait."), R_NOTE.format(n=n))
+            n, sous = int(mm.group(1)), mm.group(2)
+            profil = next((p for p in all_profiles() if str(load_profile(p).get("numero")) == sous), None) if sous else "tous"
+            sujet_note = mm.group(3).strip()
+            note(n, sujet_note, texte, profil or "tous")
+            mail.envoyer(n, f"Note reçue : {sujet_note[:60]}",
+                         md(f"Bien reçu ✅\n\n**Ta note :** {sujet_note}\n\n{texte[:800]}\n\n"
+                            "Je l'appliquerai dès mon prochain travail et te dirai ce que j'en ai fait."),
+                         R_NOTE.format(n=n), ref={"profil": profil} if profil not in (None, "tous") else None)
     publier_ce_qui_est_du()
 
 
