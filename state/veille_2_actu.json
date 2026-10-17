@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-17",
+  "formats": [
+    {"nom": "Chiffre géant en ouverture", "description": "Un seul chiffre plein écran dans les 2 premières secondes (« +156 € », « 3,1 % »), puis le pourquoi. Fonctionne pour un compte inconnu (agent 3) et rejoint la note trends du propriétaire.", "source": "state/rapport_3_actu.json + trends/actu.md"},
+    {"nom": "« Comment une vidéo TikTok est devenue une manif »", "description": "Récit en timeline : 7 sept. vidéo → 9 sept. comptes relais + affiches IA → 17 oct. rue. Méta-sujet réseaux sociaux, très partageable par les 18-35.", "source": "https://www.clairevue.info/post/gilets-jaunes-17-octobre-2026-tiktok-rumeur"},
+    {"nom": "Vrai / pas prouvé", "description": "Déco lance la rumeur, Lou trie entre établi, non prouvé et démenti (inspiré de l'article Claire Vue). Bon pour la confiance : 42 % des gens évitent parfois l'info, et les créateurs sont vus comme plus clairs.", "source": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary"},
+    {"nom": "Avant / après en transition", "description": "Adapter la trend « Upside Down Inside Out » (transition mains) : facture d'octobre → facture de novembre. Garder la même position de personnage dans les deux plans.", "source": "https://metricool.com/fr/trend-tiktok-du-moment/"},
+    {"nom": "Faux avertissement « contenu sensible » (Halloween)", "description": "Parodie de l'écran d'avertissement Instagram : « Attention, contenu effrayant… ta facture de gaz ». À utiliser avant le 31 octobre.", "source": "https://yoursocial.team/blog/trend-drops-october-part-one"},
+    {"nom": "Moins de 2 minutes, une seule idée", "description": "Les vidéos d'info sur TikTok font majoritairement moins de 2 minutes. Nos 45-60 s sont dans la cible, et les recommandations aux non-abonnés restent plafonnées à 3 minutes sur Instagram.", "source": "https://www.socialpilot.co/blog/instagram-reels-algorithm"}
+  ],
+  "accroches_types": [
+    "« Ta facture de gaz va prendre +156 € cet hiver. Voilà pourquoi. »",
+    "« Une vidéo TikTok de 2018… euh, de septembre, a mis des milliers de gens dans la rue. »",
+    "« Septembre a duré 45 jours ? Ton porte-monnaie confirme. » (reprend la blague qui circule)",
+    "« Vrai ou pas prouvé ? »",
+    "« Ce qui change pour toi au 1er novembre »",
+    "« Stop. Avant de scroller : 3,1 %. »"
+  ],
+  "sujets_qui_buzzent": [
+    {"sujet": "17 octobre / jeunes et gilets jaunes", "detail": "Mèmes ironiques rejouant 2018 (huile de tournesol dans le réservoir, kit de survie lunettes de ski), danses sur « Gilet jaune » de Kopp Johnson ; vidéo d'origine 1,5 à 2 M de vues.", "source": "https://www.streetpress.com/1791802513--reseaux-sociaux-jeunesse-gilet-jaune-17-octobre-prix-carburant-manifestation-lyceens-vie-chere/", "date": "2026-10-12"},
+    {"sujet": "La « fin de septembre difficile » / nouveau départ d'octobre", "detail": "Trend « It's the first of the month », son « Van Buren ».", "source": "https://metricool.com/fr/trend-tiktok-du-moment/", "date": "2026-10-06"},
+    {"sujet": "Sons Reels de la semaine", "detail": "Nicole Kidman (ADÉLA), Patient Zero (Taylor Swift), Upside Down (Diana Ross), Funkytown (Lipps Inc.).", "source": "https://creatordb.app/free-tools/trending-instagram-audio/", "date": "2026-10-14"},
+    {"sujet": "Méfiance anti-IA", "detail": "Trend « anti-AI design » (flyer manuscrit, fait main) ; Instagram impose un label « AI-generated profile » et limite la portée des profils IA non déclarés.", "source": "https://mediastreet.ie/instagram-is-cracking-down-on-ai-slop-in-the-only-way-that-matters/", "date": "2026-09-29"},
+    {"sujet": "Instagram, 1re plateforme d'info des 18-24 ans", "detail": "42 % des 18-24 ans s'y informent ; 52 % ont les réseaux, la vidéo ou les chatbots comme 1re source.", "source": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary", "date": "2026-06"}
+  ],
+  "communaute": "Compte neuf (agent 8) : 0 abonné, 0 publication, aucun commentaire, donc aucune demande ni critique à croiser. Deux versions de la vidéo gazole attendent la validation : n'en publier qu'une (1631, dialogue). Agent 3 : chiffre choc en moins de 2 s, 35-50 s, une seule idée, publication quotidienne à 18 h 30, test dialogue contre narration. Ajouter une question simple en fin de légende pour obtenir les premiers commentaires.",
+  "a_eviter": [
+    "Reprendre les codes militants du 17 octobre (gilet jaune, son de Kopp Johnson) au premier degré : ton neutre exigé, ne pas en faire un appel.",
+    "Présenter les vues TikTok ou le chiffre CGT comme le nombre de manifestants : vues ≠ participants, chiffre syndical ≠ chiffre officiel.",
+    "Reposter ou imiter de trop près des visuels ou sons d'autres créateurs (pénalité d'originalité, comptes « agrégateurs »).",
+    "Masquer l'usage de l'IA : garder la mention « Animation créée avec l'IA. » bien visible.",
+    "Publier deux vidéos quasi identiques (gazole 1518 et 1631)."
+  ]
+}
