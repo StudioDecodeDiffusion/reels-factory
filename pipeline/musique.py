@@ -38,8 +38,9 @@ def _env(n: int, attaque: float = 0.005, chute: float = 0.6) -> np.ndarray:
     return e
 
 
-def composer(duree: float, ambiance: str, sortie: Path, graine: int = 0) -> Path:
-    tempo, accords, tonique = AMBIANCES.get(ambiance, AMBIANCES["curieux"])
+def composer(duree: float, ambiance: str, sortie: Path, graine: int = 0, tempo: float | None = None) -> Path:
+    t0, accords, tonique = AMBIANCES.get(ambiance, AMBIANCES["curieux"])
+    tempo = min(150, max(70, float(tempo or t0)))
     rng = np.random.default_rng(graine)
     noire = 60 / tempo
     n_total = int((duree + 1) * SR)
@@ -82,13 +83,18 @@ def composer(duree: float, ambiance: str, sortie: Path, graine: int = 0) -> Path
     return sortie
 
 
-def ajouter(video: Path, ambiance: str = "curieux", graine: int = 0, volume: float = 0.2) -> None:
-    """Ajoute la musique sous la voix de la vidéo (remplace le fichier)."""
+def ajouter(video: Path, choix="curieux", graine: int = 0, volume: float = 0.2) -> None:
+    """Ajoute la musique sous la voix (remplace le fichier). choix = "tension" ou {"ambiance", "tempo", "volume"}."""
+    tempo = None
+    if isinstance(choix, dict):
+        tempo, volume = choix.get("tempo"), min(0.35, max(0.08, float(choix.get("volume", volume))))
+        choix = choix.get("ambiance", "curieux")
+    ambiance = choix
     if ambiance in (None, "", "aucune"):
         return
     duree = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
                                   str(video)], capture_output=True, text=True, check=True).stdout.strip())
-    wav = composer(duree, ambiance, video.with_name("musique.wav"), graine)
+    wav = composer(duree, ambiance, video.with_name("musique.wav"), graine, tempo)
     a_voix = "audio" in subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries",
                                         "stream=codec_type", "-of", "csv=p=0", str(video)],
                                        capture_output=True, text=True).stdout

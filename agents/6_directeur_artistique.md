@@ -51,7 +51,15 @@ gérée automatiquement) ; couleurs en `#RRGGBB`.
  "messages_traites": ["id"], "message_au_proprietaire": "..."}
 ```
 
-## Musique de fond (obligatoire pour chaque vidéo)
-Choisir l'ambiance dans `7_spec.json` → `"musique": "tension" | "curieux" | "joyeux"` (chiptune 8 bits composée
-par le code, sans droits, mixée sous les voix qui restent prioritaires). Sujet inquiétant ou faux avertissement →
-« tension » ; explication → « curieux » ; bonne nouvelle ou sujet léger → « joyeux ». Le dire dans le message au propriétaire.
+## Musique de fond (obligatoire pour chaque vidéo) — c'est TON choix
+Tu choisis la musique selon **l'ambiance de la vidéo** ET **les tendances** : lis dans le rapport de l'agent 2
+(`state/veille_2_<compte>.json`) les sons et styles qui marchent en ce moment (rythme, énergie, ambiance
+Halloween, etc.) et transpose-les dans notre chiptune 8 bits (on ne reprend jamais un son protégé).
+Dans `7_spec.json` :
+```json
+"musique": {"ambiance": "tension | curieux | joyeux", "tempo": 70-150, "volume": 0.08-0.35}
+```
+Repères : sujet inquiétant / faux avertissement → « tension » ; explication → « curieux » ; bonne nouvelle →
+« joyeux ». Tempo plus rapide pour un format nerveux, plus lent pour un sujet grave. Volume par défaut 0.2
+(la voix reste toujours prioritaire, la musique baisse automatiquement quand on parle).
+Explique ton choix (ambiance + tendance suivie) dans ton message au propriétaire.
