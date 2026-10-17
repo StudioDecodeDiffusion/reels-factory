@@ -15,7 +15,7 @@ permissions:
 jobs:
   fiche:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,8 +28,21 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install -r requirements.txt
-      - name: Héberger la vidéo et créer la fiche de validation
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+      - name: Installer le moteur vidéo et les voix
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+          pip install -q -r requirements.txt piper-tts kokoro-onnx soundfile
+          cd video && npm ci --no-audit --no-fund && npx remotion browser ensure
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/decode-voix
+          key: voix-v1
+      - name: Voix off, rendu final, hébergement et fiche de validation
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}

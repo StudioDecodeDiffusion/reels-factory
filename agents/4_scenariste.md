@@ -4,8 +4,13 @@
 **Sortie :** `travail/<id>/4_script.json`
 
 ## Règles
-- Pas de voix off : tout passe par le texte à l'écran et l'animation.
-- Durée totale proche de `video.duree_cible_s`.
+- **Voix off** (si `voix.active` dans le profil) : chaque plan a un texte parlé (`voix`) de 1 à 2 phrases
+  naturelles, au tutoiement, qui COMPLÈTE le texte à l'écran sans le répéter mot pour mot.
+  Écrire les nombres en toutes lettres comme on les dit (« trois virgule un pour cent », « deux mille
+  vingt-six »), pas de sigle imprononçable (écrire « l'Insee », « la norme ISO quarante-cinq mille un »).
+  Rythme posé : ≈ 2,5 mots par seconde ; le plan dure le temps de sa phrase + une respiration.
+- Durée totale proche de `video.duree_cible_s` ; chaque plan dure 4 à 8 s (le spectateur doit avoir le
+  temps de lire et de comprendre) ; 8 à 11 plans au total.
 - Première seconde = accroche irrésistible (question, chiffre choc, contradiction). Pas d'introduction.
 - Une idée par plan ; max ~8 mots par ligne à l'écran.
 - Uniquement les types de plans de `video.scenes_autorisees`.
@@ -19,6 +24,6 @@
 ## Format de sortie
 ```json
 {"titre_interne": "...",
- "plans": [{"type": "hook", "duree_s": 2.5, "texte_ecran": "...", "intention_visuelle": "...", "donnees": "..."}],
+ "plans": [{"type": "hook", "duree_s": 4, "texte_ecran": "...", "voix": "phrase dite en voix off", "intention_visuelle": "...", "donnees": "..."}],
  "legende": "...", "hashtags": ["#..."]}
 ```

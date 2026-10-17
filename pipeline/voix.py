@@ -78,6 +78,28 @@ def to_mp3(wav: Path) -> Path:
     return mp3
 
 
+def sonoriser(spec: dict, job: str, profile: dict, public_dir: Path) -> dict:
+    """Génère la voix off de chaque scène, cale la durée des scènes dessus et renvoie la spec sonorisée.
+    Les fichiers audio vont dans video/public/voix/<job>/ (lus par Remotion via staticFile)."""
+    reglages = profile.get("voix", {})
+    voix_id, vitesse = reglages.get("id", "kokoro:ff_siwis"), float(reglages.get("vitesse", 1.0))
+    dest = public_dir / "voix" / job
+    dest.mkdir(parents=True, exist_ok=True)
+    for i, sc in enumerate(spec["scenes"]):
+        texte = str(sc.get("voix") or "").strip()
+        if not texte:
+            continue
+        wav = dest / f"scene{i}.wav"
+        say(texte, voix_id, wav, vitesse)
+        mp3 = to_mp3(wav)
+        wav.unlink()
+        d = duree(mp3)
+        # la scène dure le temps de la phrase + une respiration (0,6 s), jamais moins que prévu à l'image
+        sc["duration"] = round(max(float(sc.get("duration", 3)), d + 0.6), 2)
+        sc["audio"] = f"voix/{job}/{mp3.name}"
+    return spec
+
+
 def echantillons(texte: Path, out: Path) -> None:
     out.mkdir(parents=True, exist_ok=True)
     text = texte.read_text(encoding="utf-8").strip()

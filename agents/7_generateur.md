@@ -19,9 +19,14 @@ Ne pas écrire de code React : seulement cette spécification.
 
 ## Règles
 - Uniquement les types de `video.scenes_autorisees` du profil.
-- Durées entre 1,8 et 6 s ; le hook dure 2 à 3 s.
+- **Chaque scène reçoit le champ `"voix"`** = le texte parlé du plan correspondant du script (recopié tel quel).
+- Durées entre 4 et 8 s (le hook : 3 à 4 s). `check` allonge automatiquement une scène dont la voix est
+  plus longue que prévu ; la durée exacte est recalée sur la vraie voix lors du rendu final sur GitHub.
 - `to`, `value`, `highlighted`, `total` sont des nombres JSON, pas des chaînes.
 - Format final : `{"theme": {…thème validé…}, "scenes": [ … ]}`
+
+Le rendu fait dans la session est **muet** (aperçu pour la vérification visuelle) ; GitHub ajoute la voix
+off et produit la version finale avant de t'envoyer l'e-mail.
 
 Ensuite :
 ```bash

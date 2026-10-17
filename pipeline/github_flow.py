@@ -104,6 +104,7 @@ def on_drop(drop_dir: str) -> None:
                 close(issue["number"])
             continue
 
+        _sonoriser(d, fiche, profile)
         media = media_host.upload([d / "video.mp4", d / "apercu.png"], fiche["id"])
         v, ap = media["urls"]["video.mp4"], media["urls"]["apercu.png"]
         verif = fiche.get("verification", {})
@@ -124,6 +125,7 @@ def on_drop(drop_dir: str) -> None:
 ### Vérification
 - **Vérificateur final :** {verif.get('decision', '?')} ({verif.get('score_global', '?')}/10) — {verif.get('resume_pour_le_proprietaire', '')}
 - **Validateur :** {notes_txt} ({fiche.get('tours_validation', 1)} tour(s))
+- **Durée :** {fiche.get('duree_s', '?')} s · **voix off :** {fiche.get('voix') or 'aucune'}
 
 ### Sources
 {sources}
@@ -142,6 +144,24 @@ Sans réponse sous 36 h, la vidéo est abandonnée automatiquement.
         fiche.pop("verification", None)
         save_attente(fiche)
         print(f"Fiche #{issue['number']} créée pour {fiche['id']}")
+
+
+def _sonoriser(d: Path, fiche: dict, profile: dict) -> None:
+    """Ajoute la voix off : synthèse, recalage des durées, rendu final (remplace la version muette)."""
+    spec_path = d / "7_spec.json"
+    if not profile.get("voix", {}).get("active") or not spec_path.exists():
+        return
+    from .config import VIDEO
+    from .render import contact_sheet, frames_per_scene, render
+    from .voix import sonoriser
+    spec = json.loads(spec_path.read_text(encoding="utf-8"))
+    if not any(sc.get("voix") for sc in spec["scenes"]):
+        return
+    spec = sonoriser(spec, fiche["id"], profile, VIDEO / "public")
+    render(spec, d / "video.mp4")
+    contact_sheet(frames_per_scene(spec, d / "video.mp4"), d / "apercu.png")
+    fiche["duree_s"] = round(sum(sc["duration"] for sc in spec["scenes"]), 1)
+    fiche["voix"] = profile["voix"].get("id")
 
 
 # ────────────────────────────────────────────── ta réponse

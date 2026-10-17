@@ -34,9 +34,14 @@ veille:
      "ameli.fr", "carsat", "anses.fr", "eur-lex.europa.eu", "aida.ineris.fr", "service-public.fr"]
 
 video:
-  duree_cible_s: 50
+  duree_cible_s: 60
   scenes_autorisees: [hook, kinetic, counter, bars, timeline, dots, compare, outro]
   cta: "Abonne-toi : ta veille QHSE décodée"
+
+voix:                                   # voix off IA gratuite, générée dans GitHub Actions
+  active: true
+  id: "kokoro:ff_siwis"                 # à choisir parmi les échantillons (voir voix/echantillons)
+  vitesse: 1.0
 
 planning:
   generation: "un jour sur deux à 01:10"   # tâche planifiée Claude, jours impairs du mois

@@ -14,6 +14,9 @@ correcteur. Contrôle :
 2. **Faits** : chaque chiffre et affirmation visible à l'écran ET dans la légende correspond à une
    source fiable. QHSE : référence exacte du texte, texte en vigueur, date d'application juste.
 3. **Langue** : orthographe, accords, typographie française (espaces avant « : ? ! % € »).
+   **Voix off** (champ `voix` de chaque scène de `7_spec.json`) : nombres écrits en toutes lettres et
+   identiques aux chiffres à l'écran, phrases naturelles à l'oral, aucun sigle imprononçable,
+   pas de répétition mot pour mot du texte affiché. Rythme : chaque scène dure au moins 4 s.
 4. **Légende** : accroche, source(s) citée(s), hashtags ≤ maximum, mention IA présente.
 5. **Conformité** au profil : exclusions, ton, aucune personne privée identifiable.
 

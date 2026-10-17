@@ -40,6 +40,8 @@ def main():
     d = work / "travail" / job
     spec = json.loads((ROOT / "video" / "sample-spec.json").read_text())
     spec["scenes"] = [s for s in spec["scenes"] if s["type"] != "particles"]  # non autorisé pour actu
+    for sc in spec["scenes"]:
+        sc["voix"] = "Ceci est une phrase de test pour la voix off de la scène."
     (d / "7_spec.json").write_text(json.dumps(spec))
     assert run("pipeline.tool", "check", str(d / "7_spec.json"), "--profile", "actu") == "OK"
     (d / "3_correlation.json").write_text(json.dumps({"choix": 0, "concepts": [{"titre": "Test lune",
@@ -70,7 +72,14 @@ def main():
         del sys.modules[m]
     os.environ.update(GITHUB_REPOSITORY="moi/reels-factory", REPO_OWNER="moi", GITHUB_TOKEN="x",
                       IG_TOKEN_ACTU="x")
-    from pipeline import github_flow as gf, media_host, instagram
+    from pipeline import github_flow as gf, media_host, instagram, voix
+
+    def fake_say(text, voix_id, wav, vitesse=1.0):  # « voix » = un bip de la durée de la phrase
+        d = len(text.split()) / 2.5
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "lavfi", "-i", f"sine=frequency=440:duration={d}",
+                        str(wav)], check=True)
+        return wav
+    voix.say = fake_say
 
     calls = []
     gf.gh = lambda method, path, **kw: calls.append((method, path, kw.get("json"))) or {"number": 7}
@@ -86,6 +95,10 @@ def main():
     gf.on_drop(str(drop / "drop"))
     body = calls[0][2]["body"]
     assert "@moi" in body and "https://h/video.mp4" in body and "REP 1 3" in body
+    assert "voix off :** kokoro:ff_siwis" in body, body
+    probe = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=codec_type",
+                            "-of", "csv=p=0", str(drop / "drop" / job / "video.mp4")], capture_output=True, text=True)
+    assert "audio" in probe.stdout, "la vidéo finale doit contenir la voix off"
 
     os.environ.update(ISSUE_NUMBER="7", COMMENT_AUTHOR="quelquun", COMMENT_BODY="OK")
     gf.on_comment()

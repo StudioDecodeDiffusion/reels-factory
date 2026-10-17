@@ -6,7 +6,7 @@ instagram_secret: IG_TOKEN_ACTU         # nom du secret GitHub contenant le toke
 langue: fr
 public: "18-35 ans francophones, curieux, peu de temps, veulent comprendre l'actu sans jargon"
 ton: "clair, neutre, factuel, jamais militant ; une pointe d'humour seulement sur les sujets légers"
-niche: "expliquer UNE info d'actualité du jour en 35-45 s avec chiffres et schémas animés"
+niche: "expliquer UNE info d'actualité du jour en 45-60 s avec chiffres et schémas animés"
 
 veille:
   actualite: true
@@ -19,9 +19,14 @@ veille:
   sources_preferees: ["lemonde.fr", "francetvinfo.fr", "afp.com", "reuters.com", "insee.fr", "lesechos.fr", "service-public.fr"]
 
 video:
-  duree_cible_s: 40
+  duree_cible_s: 50
   scenes_autorisees: [hook, kinetic, counter, bars, timeline, dots, compare, outro]
   cta: "Abonne-toi pour l'actu décodée chaque soir"
+
+voix:                                   # voix off IA gratuite, générée dans GitHub Actions
+  active: true
+  id: "kokoro:ff_siwis"                 # à choisir parmi les échantillons (voir voix/echantillons)
+  vitesse: 1.0
 
 planning:
   generation: "chaque nuit à 00:20"     # tâche planifiée Claude (heure de Paris)

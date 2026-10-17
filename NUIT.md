@@ -42,6 +42,9 @@ python3 -m pipeline.tool frames travail/$ID/7_spec.json travail/$ID/video.mp4
 python3 -m pipeline.tool caption $ID --profile <compte>
 ```
 
+Le rendu de la session est muet : la voix off IA est ajoutée par GitHub au moment de l'envoi (étape 10),
+avec la voix choisie dans le profil (`voix.id`).
+
 ## 8. Community manager
 Si `state/stats_<compte>.json` ou `state/commentaires_<compte>.json` existent, joue
 `agents/8_community_manager.md` (sinon écris `{"bilan": "pas encore de données", "recommandations": [], "reponses": []}`).

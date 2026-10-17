@@ -49,7 +49,9 @@ def cmd_new(a) -> None:
 
 def cmd_check(a) -> None:
     spec = json.loads(Path(a.spec).read_text(encoding="utf-8"))
-    errs = validate_spec(spec, load_profile(a.profile)["video"]["scenes_autorisees"])
+    prof = load_profile(a.profile)
+    errs = validate_spec(spec, prof["video"]["scenes_autorisees"],
+                         voix_obligatoire=bool(prof.get("voix", {}).get("active")))
     if errs:
         print("ERREURS :\n- " + "\n- ".join(errs))
         sys.exit(1)
@@ -141,6 +143,7 @@ def cmd_drop(a) -> None:
         "cree": state.now_iso(),
     }
     _push_drop(a.id, {"video.mp4": d / "video.mp4", "apercu.png": d / "apercu.png",
+                      "7_spec.json": d / "7_spec.json",
                       "fiche.json": json.dumps(fiche, ensure_ascii=False, indent=2)})
 
     state.add_history(a.profile, {"date": today_fr(), "titre": concept.get("titre"), "job": a.id,

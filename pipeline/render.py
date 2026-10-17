@@ -20,7 +20,7 @@ REQUIRED = {
 }
 
 
-def validate_spec(spec: dict, allowed: list[str]) -> list[str]:
+def validate_spec(spec: dict, allowed: list[str], voix_obligatoire: bool = False) -> list[str]:
     """Renvoie la liste des erreurs (vide = OK). Corrige au passage ce qui est corrigeable."""
     errs: list[str] = []
     th = spec.get("theme") or {}
@@ -41,6 +41,8 @@ def validate_spec(spec: dict, allowed: list[str]) -> list[str]:
         if t not in REQUIRED:
             errs.append(f"scène {i} : type inconnu « {t} »")
             continue
+        if voix_obligatoire and not str(s.get("voix", "")).strip():
+            errs.append(f"scène {i} ({t}) : champ « voix » (texte de la voix off) manquant")
         if t not in allowed:
             errs.append(f"scène {i} : type « {t} » non autorisé pour ce compte")
         for f in REQUIRED[t]:
@@ -51,7 +53,10 @@ def validate_spec(spec: dict, allowed: list[str]) -> list[str]:
         except (TypeError, ValueError):
             errs.append(f"scène {i} : duration doit être un nombre")
             continue
-        s["duration"] = min(max(s["duration"], 1.5), 7.0)
+        if s.get("voix"):
+            # ≈ 2,5 mots par seconde à l'oral + une respiration : la scène dure au moins le temps de la phrase
+            s["duration"] = max(s["duration"], len(str(s["voix"]).split()) / 2.5 + 0.7)
+        s["duration"] = round(min(max(s["duration"], 2.5), 12.0), 2)
         for f in ("to", "from", "total", "highlighted", "decimals", "count"):
             if f in s:
                 try:
@@ -76,6 +81,8 @@ def _browser_args() -> list[str]:
     """Navigateur pour le rendu. Dans les sessions Claude, le téléchargement habituel de Remotion est
     bloqué : on utilise le Chromium livré par le paquet npm @sparticuz/chromium."""
     exe = os.getenv("REMOTION_BROWSER")
+    if not exe and os.getenv("GITHUB_ACTIONS"):
+        return []  # sur GitHub, Remotion utilise son propre navigateur (npx remotion browser ensure)
     if not exe and (VIDEO / "node_modules" / "@sparticuz" / "chromium").exists():
         r = subprocess.run(["node", "-e", "require('@sparticuz/chromium').default.executablePath()"
                             ".then(p=>console.log(p))"], cwd=VIDEO, capture_output=True, text=True)

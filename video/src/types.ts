@@ -9,7 +9,7 @@ export type Theme = {
   grille?: boolean; // grille fine en fond
 };
 
-type Base = {duration: number};
+type Base = {duration: number; voix?: string; audio?: string | null}; // audio : fichier dans video/public/
 
 export type Scene =
   | (Base & {type: 'hook'; title: string; subtitle?: string})
