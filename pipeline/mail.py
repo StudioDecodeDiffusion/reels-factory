@@ -38,10 +38,7 @@ RAPPEL = ("💬 <b>Pour parler à un agent :</b> envoie-toi un mail avec l'objet
 
 
 def adresse() -> str:
-    a = os.getenv("GMAIL_ADDRESS", "")
-    if not a:
-        raise SystemExit("GMAIL_ADDRESS manquant (variable GitHub)")
-    return a
+    return os.getenv("GMAIL_ADDRESS") or "studiodecodediffusion@gmail.com"
 
 
 def date_courte() -> str:
