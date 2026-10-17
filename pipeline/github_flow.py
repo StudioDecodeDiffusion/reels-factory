@@ -362,6 +362,11 @@ def _publier(fiche: dict, profile: dict) -> None:
     save_attente(fiche)
     media_host.cleanup(fiche["media"])
     story = _publier_story(fiche, profile)
+    mail.envoyer("Manager", f"{nom} · Vidéo publiée : {fiche['titre']}",
+                 md(f"🎉 **La vidéo est en ligne** sur {profile.get('instagram') or nom} : "
+                    f"[{info.get('permalink', '')}]({info.get('permalink', '')})\n\n- {story}\n"
+                    "- **Suite :** l'agent 8 suit les vues et les commentaires (rapport demain à 16 h 30)."),
+                 R_MANAGER, ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": 8})
     mail.envoyer(8, f"{nom} · Publiée : {fiche['titre']}",
                  md(f"✅ La vidéo est en ligne : [{info.get('permalink', '')}]({info.get('permalink', '')})\n\n"
                     f"{story}\n\nJe surveille les commentaires et te fais le bilan dans mon rapport quotidien."),
