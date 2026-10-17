@@ -4,7 +4,7 @@ Ordre conseillé : Gmail → GitHub → Claude ↔ GitHub → Instagram → Meta
 Garde un bloc-notes à portée de main pour copier les tokens (et efface-le à la fin).
 
 ## 1. Gmail
-1. accounts.google.com/signup → Prénom « Décodé », Nom « Studio » → adresse `decode.studio`
+1. accounts.google.com/signup → Prénom « Décodé », Nom « Studio » → adresse `studiodecodediffusion` (fait ✅)
    (plans B : `studio.decode`, `decode.media.fr`).
 2. Sécurité → active la **validation en deux étapes**.
 3. (Conseillé) Gmail → filtre `from:notifications@github.com` → libellé « Validations » + « Marquer comme important ».
@@ -26,7 +26,7 @@ Garde un bloc-notes à portée de main pour copier les tokens (et efface-le à l
 ## 4. Instagram (un compte par jour, pour éviter l'anti-spam)
 Pour **Actu** puis, le lendemain, **QHSE** :
 1. App Instagram → ton profil → nom du compte en haut → **Ajouter un compte** → Créer un compte.
-2. E-mail : `decode.studio+actu@gmail.com` (puis `+qhse`) · identifiant `decode.actu` (puis `decode.qhse`).
+2. E-mail : `studiodecodediffusion+actu@gmail.com` (puis `studiodecodediffusion+qhse@gmail.com`) · identifiant `decode.actu` (puis `decode.qhse`).
 3. Nom : « Décodé · L'actu expliquée simplement » / « Décodé · QHSE, veille & cours ».
 4. Paramètres → Type de compte et outils → **Passer à un compte professionnel** → **Créateur**
    → catégorie « Média d'actualités » (actu) / « Éducation » (QHSE).
