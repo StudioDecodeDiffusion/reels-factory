@@ -23,15 +23,16 @@ Ne pas écrire de code React : seulement cette spécification.
   document, casque, danger, extincteur, horloge, globe, ampoule, check, croix, calendrier, graphique, feuille.
 - `"sprite_anim"` : bounce (rebondit), float (flotte), shake (tremble : alerte, hausse), spin (tourne),
   grow (pulse), rain (pluie de ce sprite sur toute la scène, ex. pièces), orbit (tourne autour d'un point).
-- `"mascotte"` : expression de la mascotte Déco : neutre, content, choc, pense, clin, ou aucune.
-  Par défaut elle s'adapte au type de scène et « parle » pendant la voix off.
+- `"tenue_narrateur"` / `"tenue_mascotte"` : changer la tenue d'un personnage pour cette scène (gag).
 - `"fond"` : couleur de fond imposée (sinon la palette défile automatiquement d'une scène à l'autre).
-Varier : jamais deux fois le même sprite d'affilée ; « choc » pour un chiffre surprenant, « pense » pour
-une question, « content » ou « clin » pour la chute.
+Varier : jamais deux fois le même sprite d'affilée. Le bas de l'écran est réservé aux deux personnages
+et à leurs bulles : le contenu (titres, chiffres, sprites) reste dans la moitié haute.
 
 ## Règles
 - Uniquement les types de `video.scenes_autorisees` du profil.
-- **Chaque scène reçoit le champ `"voix"`** = le texte parlé du plan correspondant du script (recopié tel quel).
+- **Chaque scène reçoit le champ `"dialogue"`** = les répliques du plan correspondant du script, recopiées
+  telles quelles : `[{"qui": "narrateur"|"mascotte", "texte": "...", "expression": "..."}]`.
+  Les personnages, les bulles et les bouches qui bougent sont gérés automatiquement.
 - Durées entre 4 et 8 s (le hook : 3 à 4 s). `check` allonge automatiquement une scène dont la voix est
   plus longue que prévu ; la durée exacte est recalée sur la vraie voix lors du rendu final sur GitHub.
 - `to`, `value`, `highlighted`, `total` sont des nombres JSON, pas des chaînes.

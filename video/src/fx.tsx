@@ -21,26 +21,33 @@ export const encrePour = (hex: string): string => {
 };
 
 // ───────────────────────── Sprite pixel art
+export type Calque = {sprite: Sprite; x: number; y: number};
+
 export const PixelSprite: React.FC<{
   sprite: Sprite;
   px: number;
   style?: React.CSSProperties;
-  overlay?: {sprite: Sprite; x: number; y: number};
-}> = ({sprite, px, style, overlay}) => {
-  const w = Math.max(...sprite.map((r) => r.length));
-  const h = sprite.length;
+  overlay?: Calque;
+  calques?: Calque[]; // accessoires, visages… dessinés par-dessus
+  couleurs?: Record<string, string>; // recoloration (tenues)
+  marge?: number; // pixels de marge autour (pour les accessoires qui dépassent)
+}> = ({sprite, px, style, overlay, calques = [], couleurs = {}, marge = 0}) => {
+  const w = Math.max(...sprite.map((r) => r.length)) + marge * 2;
+  const h = sprite.length + marge * 2;
+  const tous = overlay ? [overlay, ...calques] : calques;
   const rects = useMemo(() => {
     const out: React.ReactNode[] = [];
     const draw = (s: Sprite, ox: number, oy: number, key: string) =>
       s.forEach((row, y) =>
         [...row].forEach((ch, x) => {
-          if (ch !== '.' && PIX[ch]) out.push(<rect key={`${key}${x}-${y}`} x={x + ox} y={y + oy} width={1.02} height={1.02} fill={PIX[ch]} />);
+          const col = couleurs[ch] ?? PIX[ch];
+          if (ch !== '.' && col) out.push(<rect key={`${key}${x}-${y}`} x={x + ox + marge} y={y + oy + marge} width={1.02} height={1.02} fill={col} />);
         }),
       );
     draw(sprite, 0, 0, 's');
-    if (overlay) draw(overlay.sprite, overlay.x, overlay.y, 'o');
+    tous.forEach((c, i) => draw(c.sprite, c.x, c.y, `c${i}-`));
     return out;
-  }, [sprite, overlay]);
+  }, [sprite, JSON.stringify(tous), JSON.stringify(couleurs), marge]);
   return (
     <svg width={w * px} height={h * px} viewBox={`0 0 ${w} ${h}`} shapeRendering="crispEdges" style={style}>
       {rects}
@@ -89,9 +96,9 @@ export const AnimatedSprite: React.FC<{
           const sx = R() * (W - 160);
           const speed = 9 + R() * 8;
           const start = R() * 60;
-          const yy = ((f * speed + start * 40) % (H + 300)) - 200;
+          const yy = ((f * speed + start * 40) % 1200) - 200; // s'arrête au-dessus des personnages
           return (
-            <div key={i} style={{position: 'absolute', left: sx, top: step(yy), transform: `rotate(${Math.floor((f + i * 10) / 8) * 20}deg)`, opacity: Math.min(0.55, f / 8)}}>
+            <div key={i} style={{position: 'absolute', left: sx, top: step(yy), transform: `rotate(${Math.floor((f + i * 10) / 8) * 20}deg)`, opacity: Math.min(0.55, f / 8) * (yy > 850 ? Math.max(0, (1000 - yy) / 150) : 1)}}>
               <PixelSprite sprite={sprite} px={7 + (i % 3) * 2} />
             </div>
           );

@@ -74,7 +74,7 @@ export const Hook: React.FC<P<'hook'>> = ({scene, ctx}) => {
         ) : null}
       </div>
       {ws.length * 4 < 40 ? <Etincelles x={760} y={TOP + 140} couleur={ctx.c1} delay={ws.length * 4} /> : null}
-      <SpriteDeScene scene={scene} x={xBas(ctx, 100, 700)} y={TOP + 470} px={18} rotate={8} delay={ws.length * 4} />
+      <SpriteDeScene scene={scene} x={760} y={TOP + 330} px={15} rotate={8} delay={ws.length * 4} />
     </>
   );
 };

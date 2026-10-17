@@ -17,6 +17,13 @@ des autocollants penchés à bord noir épais, des éléments pixel art animés,
 (petit écran-robot reporter) et des sous-titres mot à mot. Rien de symétrique ni de « corporate » :
 ça doit avoir l'air fait par une personne, avec de l'énergie.
 
+**Tenues de l'épisode** (comme une série de personnages qui changent de costume à chaque épisode) :
+choisir dans `theme.tenues` une tenue pour Lou et une pour Déco selon le sujet, parmi : classique,
+economie (chemise + cravate), qhse (gilet jaune + casque de chantier), science (blouse + lunettes),
+detective (imper + chapeau), sport (casquette), hiver (bonnet + écharpe), fete (couronne + nœud),
+musique (casque audio), ecologie (feuille). Les deux peuvent porter des tenues différentes ; on peut
+aussi changer de tenue en cours de vidéo pour un gag (champs `tenue_narrateur` / `tenue_mascotte` d'une scène).
+
 Contraintes techniques : polices « Rubik » (titres et texte) et « Silkscreen » (étiquettes pixel,
 gérée automatiquement) ; couleurs en `#RRGGBB`.
 
@@ -24,7 +31,8 @@ gérée automatiquement) ; couleurs en `#RRGGBB`.
 ```json
 {"theme": {"fond": "#...", "texte": "#...", "accent": "#...", "accent2": "#...",
   "police_titre": "Rubik", "police_texte": "Rubik", "bandeau": null, "grille": false,
-  "style": "pixel", "palette": ["#FFD23F", "#3D5AFE", "#FF4F81", "#2EC4B6", "#1B1F3B", "#FF8A1F"]},
+  "style": "pixel", "palette": ["#FFD23F", "#3D5AFE", "#FF4F81", "#2EC4B6", "#1B1F3B", "#FF8A1F"],
+  "tenues": {"narrateur": "economie", "mascotte": "detective"}},
  "consignes_animation": "rythme, énergie, ce qui doit être en couleur d'accent",
  "evolution_charte": "aucune | description"}
 ```

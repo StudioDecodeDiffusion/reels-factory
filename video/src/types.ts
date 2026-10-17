@@ -9,6 +9,7 @@ export type Theme = {
   grille?: boolean; // grille fine en fond
   palette?: string[]; // couleurs vives des fonds de scène (style v2)
   style?: 'pixel' | 'sobre'; // pixel = style coloré animé (défaut), sobre = ancien style
+  tenues?: {narrateur?: string; mascotte?: string}; // tenues de l'épisode (voir personnages.ts)
 };
 
 type Base = {
@@ -20,6 +21,10 @@ type Base = {
   sprite_anim?: 'bounce' | 'float' | 'shake' | 'spin' | 'grow' | 'rain' | 'orbit';
   mascotte?: 'neutre' | 'content' | 'choc' | 'pense' | 'clin' | 'aucune';
   fond?: string; // couleur de fond de la scène (#RRGGBB) ; sinon palette du thème
+  // Format dialogue : Lou (narrateur, à gauche) pose les questions, Déco (mascotte, à droite) répond
+  dialogue?: {qui: 'narrateur' | 'mascotte'; texte: string; expression?: string; debut?: number; fin?: number}[];
+  tenue_narrateur?: string;
+  tenue_mascotte?: string;
 };
 
 export type Scene =

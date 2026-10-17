@@ -12,6 +12,8 @@ from .config import VIDEO
 HEX = re.compile(r"^#[0-9A-Fa-f]{6}$")
 FONTS = {"Space Grotesk", "Inter", "JetBrains Mono", "Rubik", "Silkscreen"}
 MODES = {"gravity", "orbit", "bounce", "swarm", "pendulum_wave"}
+EXPRESSIONS = {"neutre", "content", "rire", "choc", "pense", "clin", "triste", "colere"}
+TENUES = {"classique", "economie", "qhse", "science", "detective", "sport", "hiver", "fete", "musique", "ecologie"}
 ANIMS = {"bounce", "float", "shake", "spin", "grow", "rain", "orbit"}
 MASCOTTE = {"neutre", "content", "choc", "pense", "clin", "aucune"}
 SPRITES = {"pompe", "goutte", "piece", "billet", "caddie", "maison", "usine", "voiture", "eclair", "flamme",
@@ -51,8 +53,23 @@ def validate_spec(spec: dict, allowed: list[str], voix_obligatoire: bool = False
         if t not in REQUIRED:
             errs.append(f"scène {i} : type inconnu « {t} »")
             continue
-        if voix_obligatoire and not str(s.get("voix", "")).strip():
-            errs.append(f"scène {i} ({t}) : champ « voix » (texte de la voix off) manquant")
+        dia = s.get("dialogue")
+        if dia is not None:
+            if not isinstance(dia, list) or not dia:
+                errs.append(f"scène {i} : « dialogue » doit être une liste de répliques")
+                dia = []
+            for j, r in enumerate(dia):
+                if r.get("qui") not in ("narrateur", "mascotte"):
+                    errs.append(f"scène {i} réplique {j} : « qui » doit valoir narrateur ou mascotte")
+                if not str(r.get("texte", "")).strip():
+                    errs.append(f"scène {i} réplique {j} : texte vide")
+                if r.get("expression") and r["expression"] not in EXPRESSIONS:
+                    errs.append(f"scène {i} réplique {j} : expression parmi {sorted(EXPRESSIONS)}")
+        if voix_obligatoire and not dia and not str(s.get("voix", "")).strip():
+            errs.append(f"scène {i} ({t}) : il faut un « dialogue » (ou une « voix ») pour la voix off")
+        for cle in ("tenue_narrateur", "tenue_mascotte"):
+            if s.get(cle) and s[cle] not in TENUES:
+                errs.append(f"scène {i} : {cle} parmi {sorted(TENUES)}")
         if t not in allowed:
             errs.append(f"scène {i} : type « {t} » non autorisé pour ce compte")
         for f in REQUIRED[t]:
@@ -63,10 +80,11 @@ def validate_spec(spec: dict, allowed: list[str], voix_obligatoire: bool = False
         except (TypeError, ValueError):
             errs.append(f"scène {i} : duration doit être un nombre")
             continue
-        if s.get("voix"):
-            # ≈ 2,5 mots par seconde à l'oral + une respiration : la scène dure au moins le temps de la phrase
-            s["duration"] = max(s["duration"], len(str(s["voix"]).split()) / 2.5 + 0.7)
-        s["duration"] = round(min(max(s["duration"], 2.5), 12.0), 2)
+        paroles = [str(r.get("texte", "")) for r in (s.get("dialogue") or [])] or ([str(s["voix"])] if s.get("voix") else [])
+        if paroles:
+            # ≈ 2,5 mots par seconde à l'oral + 0,3 s entre répliques : la scène dure au moins le temps du dialogue
+            s["duration"] = max(s["duration"], sum(len(p.split()) / 2.5 + 0.3 for p in paroles) + 0.6)
+        s["duration"] = round(min(max(s["duration"], 2.5), 16.0), 2)
         for f in ("to", "from", "total", "highlighted", "decimals", "count"):
             if f in s:
                 try:
@@ -90,8 +108,12 @@ def validate_spec(spec: dict, allowed: list[str], voix_obligatoire: bool = False
         if t == "particles" and s.get("mode") not in MODES:
             errs.append(f"scène {i} : mode doit être parmi {sorted(MODES)}")
     total = sum(s.get("duration", 0) for s in scenes if isinstance(s.get("duration"), float))
-    if total > 90:
-        errs.append(f"durée totale {total:.0f}s trop longue (max 90)")
+    if total > 110:
+        errs.append(f"durée totale {total:.0f}s trop longue (max 110)")
+    tn = th.get("tenues") or {}
+    for k, v in tn.items():
+        if k not in ("narrateur", "mascotte") or v not in TENUES:
+            errs.append(f"theme.tenues : {k} → {v} invalide (tenues : {sorted(TENUES)})")
     return errs
 
 

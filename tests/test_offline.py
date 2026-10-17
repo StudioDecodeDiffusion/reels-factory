@@ -41,7 +41,8 @@ def main():
     spec = json.loads((ROOT / "video" / "sample-spec.json").read_text())
     spec["scenes"] = [s for s in spec["scenes"] if s["type"] != "particles"]  # non autorisé pour actu
     for sc in spec["scenes"]:
-        sc["voix"] = "Ceci est une phrase de test pour la voix off de la scène."
+        sc["dialogue"] = [{"qui": "narrateur", "texte": "Alors, c'est quoi ce chiffre ?", "expression": "pense"},
+                          {"qui": "mascotte", "texte": "Un chiffre incroyable, tu vas voir !", "expression": "choc"}]
     (d / "7_spec.json").write_text(json.dumps(spec))
     assert run("pipeline.tool", "check", str(d / "7_spec.json"), "--profile", "actu") == "OK"
     (d / "3_correlation.json").write_text(json.dumps({"choix": 0, "concepts": [{"titre": "Test lune",
@@ -95,7 +96,7 @@ def main():
     gf.on_drop(str(drop / "drop"))
     body = calls[0][2]["body"]
     assert "@moi" in body and "https://h/video.mp4" in body and "REP 1 3" in body
-    assert "voix off :** kokoro:ff_siwis" in body, body
+    assert "voix off :** piper:fr_FR-upmc" in body, body
     probe = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=codec_type",
                             "-of", "csv=p=0", str(drop / "drop" / job / "video.mp4")], capture_output=True, text=True)
     assert "audio" in probe.stdout, "la vidéo finale doit contenir la voix off"

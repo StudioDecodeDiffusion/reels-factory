@@ -173,25 +173,77 @@ def to_mp3(wav: Path) -> Path:
     return mp3
 
 
+def _effet(wav: Path, effet: str | None) -> None:
+    """« aigu » : voix un peu plus haute (même débit) pour distinguer Déco du narrateur."""
+    if not effet:
+        return
+    facteur = {"aigu": 1.12, "tres_aigu": 1.25, "grave": 0.9}.get(effet, 1.0)
+    if facteur == 1.0:
+        return
+    tmp = wav.with_name(wav.stem + "_fx.wav")
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-af",
+                    f"asetrate=44100*{facteur},aresample=44100,atempo={1 / facteur:.4f}", str(tmp)], check=True)
+    tmp.replace(wav)
+
+
+def _norm(wav: Path) -> None:
+    """Même format pour tous les morceaux (sinon la concaténation échoue) : 44,1 kHz mono 16 bits."""
+    tmp = wav.with_name(wav.stem + "_n.wav")
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-ar", "44100", "-ac", "1",
+                    "-c:a", "pcm_s16le", str(tmp)], check=True)
+    tmp.replace(wav)
+
+
+def _silence(path: Path, secondes: float) -> Path:
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono",
+                    "-t", f"{secondes:.2f}", "-c:a", "pcm_s16le", str(path)], check=True)
+    return path
+
+
+def _concat(morceaux: list[Path], sortie: Path) -> None:
+    liste = sortie.with_suffix(".txt")
+    liste.write_text("".join(f"file '{m.resolve()}'\n" for m in morceaux), encoding="utf-8")
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(liste),
+                    "-ar", "44100", "-ac", "1", str(sortie)], check=True)
+    liste.unlink()
+
+
 def sonoriser(spec: dict, job: str, profile: dict, public_dir: Path) -> dict:
-    """Génère la voix off de chaque scène, cale la durée des scènes dessus et renvoie la spec sonorisée.
+    """Génère la voix off de chaque scène (dialogue à deux voix ou voix unique), cale la durée des scènes
+    dessus et note l'horaire de chaque réplique (pour les bulles et les bouches).
     Les fichiers audio vont dans video/public/voix/<job>/ (lus par Remotion via staticFile)."""
-    reglages = profile.get("voix", {})
-    voix_id, vitesse = reglages.get("id", "piper:fr_FR-gilles-low"), float(reglages.get("vitesse", 1.0))
+    r = profile.get("voix", {})
+    v_narr = r.get("narrateur") or r.get("id", "piper:fr_FR-upmc-medium?spk=1")
+    v_masc = r.get("mascotte") or v_narr
+    effet_masc = r.get("mascotte_effet", "aigu")
+    vitesse = float(r.get("vitesse", 1.0))
     dest = public_dir / "voix" / job
     dest.mkdir(parents=True, exist_ok=True)
     for i, sc in enumerate(spec["scenes"]):
-        texte = str(sc.get("voix") or "").strip()
-        if not texte:
+        dialogue = sc.get("dialogue") or ([{"qui": "narrateur", "texte": sc["voix"]}] if sc.get("voix") else [])
+        if not dialogue:
             continue
-        wav = dest / f"scene{i}.wav"
-        say(texte, voix_id, wav, vitesse)
-        mp3 = to_mp3(wav)
-        wav.unlink()
-        d = duree(mp3)
-        sc["voix_duree"] = round(d, 2)  # sert à caler les sous-titres mot à mot
-        # la scène dure le temps de la phrase + une respiration (0,6 s), jamais moins que prévu à l'image
-        sc["duration"] = round(max(float(sc.get("duration", 3)), d + 0.6), 2)
+        morceaux, t = [_silence(dest / f"s{i}_debut.wav", 0.15)], 0.15
+        for j, rep in enumerate(dialogue):
+            wav = dest / f"s{i}_r{j}.wav"
+            masc = rep.get("qui") == "mascotte"
+            say(str(rep["texte"]), v_masc if masc else v_narr, wav, vitesse)
+            _norm(wav)
+            if masc:
+                _effet(wav, effet_masc)
+            d = duree(wav)
+            rep["debut"], rep["fin"] = round(t, 2), round(t + d, 2)
+            morceaux += [wav, _silence(dest / f"s{i}_pause{j}.wav", 0.3)]
+            t += d + 0.3
+        scene_wav = dest / f"scene{i}.wav"
+        _concat(morceaux, scene_wav)
+        for m in morceaux:
+            m.unlink(missing_ok=True)
+        mp3 = to_mp3(scene_wav)
+        scene_wav.unlink()
+        sc["dialogue"] = dialogue
+        sc["voix_duree"] = round(t, 2)
+        sc["duration"] = round(max(float(sc.get("duration", 3)), t + 0.5), 2)
         sc["audio"] = f"voix/{job}/{mp3.name}"
     return spec
 

@@ -155,13 +155,13 @@ def _sonoriser(d: Path, fiche: dict, profile: dict) -> None:
     from .render import contact_sheet, frames_per_scene, render
     from .voix import sonoriser
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
-    if not any(sc.get("voix") for sc in spec["scenes"]):
+    if not any(sc.get("voix") or sc.get("dialogue") for sc in spec["scenes"]):
         return
     spec = sonoriser(spec, fiche["id"], profile, VIDEO / "public")
     render(spec, d / "video.mp4")
     contact_sheet(frames_per_scene(spec, d / "video.mp4"), d / "apercu.png")
     fiche["duree_s"] = round(sum(sc["duration"] for sc in spec["scenes"]), 1)
-    fiche["voix"] = profile["voix"].get("id")
+    fiche["voix"] = profile["voix"].get("narrateur") or profile["voix"].get("id")
 
 
 # ────────────────────────────────────────────── ta réponse

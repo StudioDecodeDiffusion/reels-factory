@@ -4,8 +4,13 @@
 **Sortie :** `travail/<id>/4_script.json`
 
 ## Règles
-- **Voix off** (si `voix.active` dans le profil) : chaque plan a un texte parlé (`voix`) de 1 à 2 phrases
-  naturelles, au tutoiement, qui COMPLÈTE le texte à l'écran sans le répéter mot pour mot.
+- **Format dialogue** (si `voix.active`) : deux personnages commentent chaque plan.
+  **Lou** (le narrateur, à gauche) présente le sujet et POSE LES QUESTIONS ; **Déco** (la mascotte, à
+  droite) RÉPOND avec les faits, avec plus de peps et d'humour. 1 à 3 répliques par plan, chacune
+  ≤ 20 mots, naturelles, au tutoiement, comme deux potes qui discutent. Le dialogue COMPLÈTE le texte à
+  l'écran sans le répéter mot pour mot. Chaque réplique a une `expression` parmi : neutre, content, rire,
+  choc, pense, clin, triste, colere (varier : choc sur un chiffre surprenant, pense sur une question,
+  rire/clin sur une blague, colere/triste quand ça fait mal au portefeuille).
   Écrire les nombres en toutes lettres comme on les dit (« trois virgule un pour cent », « deux mille
   vingt-six »), pas de sigle imprononçable (écrire « l'Insee », « la norme ISO quarante-cinq mille un »).
   Rythme posé : ≈ 2,5 mots par seconde ; le plan dure le temps de sa phrase + une respiration.
@@ -24,6 +29,6 @@
 ## Format de sortie
 ```json
 {"titre_interne": "...",
- "plans": [{"type": "hook", "duree_s": 4, "texte_ecran": "...", "voix": "phrase dite en voix off", "intention_visuelle": "...", "donnees": "..."}],
+ "plans": [{"type": "hook", "duree_s": 5, "texte_ecran": "...", "dialogue": [{"qui": "narrateur", "texte": "...", "expression": "choc"}, {"qui": "mascotte", "texte": "...", "expression": "rire"}], "intention_visuelle": "...", "donnees": "..."}],
  "legende": "...", "hashtags": ["#..."]}
 ```

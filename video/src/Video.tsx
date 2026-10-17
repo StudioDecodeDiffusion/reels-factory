@@ -12,11 +12,9 @@ import {Scene, Theme, VideoSpec} from './types';
 import {Background, Bandeau, FadeOut, SAFE_TOP} from './ui';
 import {SceneView} from './scenes';
 import {SceneViewPixel} from './scenesPixel';
-import {encrePour, Expression, FondPixel, fontPixel, INK, Mascotte, palette, SousTitres, TransitionPixel} from './fx';
+import {encrePour, FondPixel, fontPixel, INK, palette, TransitionPixel} from './fx';
+import {Duo} from './dialogue';
 
-const dureeVoix = (s: Scene) => s.voix_duree ?? (s.voix ? s.voix.split(/\s+/).length / 2.5 : 0);
-
-const expressionPar: Record<string, Expression> = {hook: 'choc', counter: 'choc', compare: 'pense', outro: 'content', dots: 'pense'};
 
 // Choisit deux couleurs d'accent de la palette, différentes du fond
 const accents = (pal: string[], bg: string, i: number): [string, string] => {
@@ -38,30 +36,17 @@ const BandeauPixel: React.FC<{theme: Theme}> = ({theme}) => {
 
 const ScenePixel: React.FC<{s: Scene; i: number; theme: Theme; bg: string; prevBg: string | null; dur: number}> = ({s, i, theme, bg, prevBg, dur}) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
   const pal = palette(theme);
   const [c1, c2] = accents(pal, bg, i);
   const zoom = interpolate(frame, [0, dur], [1, 1.035]);
   const droite = i % 2 === 0;
-  const parole = Math.round(dureeVoix(s) * fps);
   return (
     <AbsoluteFill>
       <FondPixel couleur={bg} seed={i + 1} />
-      <AbsoluteFill style={{transform: `scale(${zoom})`}}>
+      <AbsoluteFill style={{transform: `scale(${0.9 * zoom})`, transformOrigin: '50% 12%'}}>
         <SceneViewPixel scene={s} ctx={{theme, bg, c1, c2, index: i, mascotteDroite: droite}} />
       </AbsoluteFill>
-      {s.mascotte !== 'aucune' ? (
-        <Mascotte
-          expression={(s.mascotte as Expression) ?? expressionPar[s.type] ?? 'neutre'}
-          parle={parole > 0}
-          dureeParole={parole}
-          x={droite ? 800 : 40}
-          y={1110}
-          px={11}
-          entree={4}
-        />
-      ) : null}
-      <SousTitres texte={s.voix} duree={dureeVoix(s)} fond={bg} />
+      <Duo scene={s} tenues={theme.tenues ?? {}} />
       {prevBg ? <TransitionPixel couleur={prevBg} seed={i} /> : null}
     </AbsoluteFill>
   );
