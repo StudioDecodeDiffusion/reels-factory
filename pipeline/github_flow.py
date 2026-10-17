@@ -143,7 +143,7 @@ def depot(drop_dir: str) -> None:
                 IG(profile).publish_story(h["urls"]["story.png"])
                 media_host.cleanup(h)
                 txt = "📣 La story est en ligne."
-            except Exception as e:
+            except BaseException as e:
                 txt = f"⚠️ Story non publiée : {str(e)[:300]}"
             mail.envoyer("Manager", f"{nom} · Story : {fiche.get('titre', '')}", md(txt), R_MANAGER,
                          ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": 8})
@@ -371,7 +371,7 @@ def _publier(fiche: dict, profile: dict) -> None:
     nom = profile["nom_compte"]
     try:
         info = IG(profile).publish_reel(fiche["media"]["urls"]["video.mp4"], fiche["legende"])
-    except Exception as e:
+    except BaseException as e:
         fiche["erreur"] = str(e)[:500]
         fiche["erreurs"] = fiche.get("erreurs", 0) + 1
         save_attente(fiche)
@@ -407,7 +407,7 @@ def _publier_story(fiche: dict, profile: dict) -> str:
         fiche["story"] = "publiee"
         save_attente(fiche)
         return "📣 La story « nouvelle vidéo » est publiée aussi."
-    except Exception as e:
+    except BaseException as e:
         return f"⚠️ Story non publiée : {str(e)[:300]}"
 
 
