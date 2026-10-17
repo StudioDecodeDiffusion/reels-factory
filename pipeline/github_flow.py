@@ -52,8 +52,8 @@ def all_attente() -> list[dict]:
     return [json.loads(p.read_text(encoding="utf-8")) for p in sorted(d.glob("*.json"))] if d.exists() else []
 
 
-def _slot(profile: dict) -> str:
-    h = profile["planning"].get("publication_heure", 18)
+def _slot(profile: dict, fiche: dict | None = None) -> str:
+    h = (fiche or {}).get("publication_heure", profile["planning"].get("publication_heure", 18))
     return f"aujourd'hui vers {h} h" if datetime.now(TZ).hour < h else f"demain vers {h} h"
 
 
@@ -204,7 +204,7 @@ def rendre_un(d: Path, fiche: dict) -> None:
     corps = (f'<p><img src="cid:apercu" style="width:100%;border-radius:8px;border:2px solid #14131C"></p>'
              f'<p style="text-align:center;font-size:18px"><a href="{v}"><b>▶️ Regarder la vidéo ({fiche.get("duree_s", "?")} s)</b></a></p>'
              + md(f"""## ✅ Vidéo prête : {fiche['titre']}
-Publication prévue **{_slot(profile)}** sur **{nom}** si tu valides.
+Publication prévue **{_slot(profile, fiche)}** sur **{nom}** si tu valides.
 ## 🧐 Mon évaluation
 - **Verdict :** {crit.get('decision', '?')} — **{crit.get('score_global', '?')}/10**
 - {crit.get('resume_pour_le_proprietaire', '')}
@@ -343,7 +343,7 @@ def _validation(job: str, texte: str) -> None:
         _publier(fiche, profile)
     else:
         mail.envoyer(9, f"{nom} · Validée, transmise à l'agent 8 : {fiche['titre']}",
-                     md(f"Merci ! Je transmets à l'**agent 8**, qui publiera **{_slot(profile)}**."),
+                     md(f"Merci ! Je transmets à l'**agent 8**, qui publiera **{_slot(profile, fiche)}**."),
                      R_NOTE.format(n=9))
 
 
@@ -453,7 +453,7 @@ def publier_ce_qui_est_du() -> None:
     for fiche in all_attente():
         profile = load_profile(fiche["profil"])
         p = profile["planning"]
-        if fiche["statut"] == "approuvee" and now.hour >= p.get("publication_heure", 18) \
+        if fiche["statut"] == "approuvee" and now.hour >= fiche.get("publication_heure", p.get("publication_heure", 18)) \
                 and now.isoweekday() in p.get("publication_jours", range(1, 8)) and fiche.get("erreurs", 0) < 3:
             _publier(fiche, profile)
         elif fiche["statut"] == "a_valider" and \

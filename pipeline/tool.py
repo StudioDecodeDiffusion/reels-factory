@@ -213,6 +213,7 @@ def cmd_drop(a) -> None:
     relecture = _read(d, "5_scenario.json", {}).get("relecture", {})
     fiche = {
         "id": a.id, "profil": a.profile, "statut": "a_valider", "titre": concept.get("titre"),
+        **({"publication_heure": a.heure} if getattr(a, "heure", None) is not None else {}),
         "format_qhse": concept.get("format_qhse"), "episode": concept.get("episode"),
         "legende": (d / "legende.txt").read_text(encoding="utf-8"),
         "sources": sorted({f.get("source_url") for f in concept.get("faits", []) if f.get("source_url")}
@@ -318,6 +319,7 @@ def main() -> None:
     p = sub.add_parser("frames"); p.add_argument("spec"); p.add_argument("video")
     p = sub.add_parser("caption"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p = sub.add_parser("drop"); p.add_argument("id"); p.add_argument("--profile", required=True)
+    p.add_argument("--heure", type=int, help="heure de publication de CETTE vidéo (sinon celle du profil)")
     p = sub.add_parser("info"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p = sub.add_parser("rapport"); p.add_argument("--agent", required=True); p.add_argument("--profile", required=True)
     p.add_argument("--titre", required=True); p.add_argument("fichier")
