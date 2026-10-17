@@ -422,13 +422,9 @@ def publier_ce_qui_est_du() -> None:
         if f and f.get("media_id"):
             from .instagram import IG
             prof = load_profile(f["profil"])
-            try:
-                IG(prof).delete(f["media_id"])
-                f["statut"] = "supprimee"
-                txt = f"🗑️ L'ancien post est supprimé : {f.get('permalink', '')}"
-            except BaseException as e:
-                txt = (f"⚠️ Instagram ne m'autorise pas à supprimer l'ancien post ({str(e)[:200]}). "
-                       f"Supprime-le depuis l'app : ouvre-le puis ⋯ → Supprimer. Lien : {f.get('permalink', '')}")
+            # Instagram ne permet pas aux outils externes de supprimer un post : on le signale simplement
+            txt = (f"Le nouveau post est publié. Instagram ne permet pas aux outils de supprimer un post : "
+                   f"retire l'ancien toi-même (ouvre-le puis ⋯ → Supprimer) : {f.get('permalink', '')}")
             save_attente(f)
             mail.envoyer("Manager", f"{prof['nom_compte']} · Ancien post", md(txt), R_MANAGER,
                          ref={"type": "manager", "job": job, "profil": f["profil"], "agent": 8})
