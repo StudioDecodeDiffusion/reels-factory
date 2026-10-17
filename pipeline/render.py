@@ -84,6 +84,7 @@ def _browser_args() -> list[str]:
 
 
 def render(spec: dict, out_mp4: Path) -> Path:
+    out_mp4 = Path(out_mp4).resolve()  # Remotion tourne dans video/ : chemins absolus obligatoires
     out_mp4.parent.mkdir(parents=True, exist_ok=True)
     props = out_mp4.with_suffix(".json")
     props.write_text(json.dumps(spec, ensure_ascii=False), encoding="utf-8")
@@ -96,6 +97,7 @@ def render(spec: dict, out_mp4: Path) -> Path:
 def frames_per_scene(spec: dict, mp4: Path) -> list[Path]:
     """Extrait une image au milieu de chaque scène, pour le contrôle visuel."""
     out = []
+    mp4 = Path(mp4).resolve()
     t = 0.0
     for i, s in enumerate(spec["scenes"]):
         mid = t + s["duration"] * 0.7

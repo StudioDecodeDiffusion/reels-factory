@@ -25,7 +25,12 @@ const body = (t: Theme, size: number): React.CSSProperties => ({
 
 // ---------- HOOK : grosse question / affirmation choc ----------
 export const Hook: React.FC<P<'hook'>> = ({scene, theme}) => {
-  const words = scene.title.split(' ');
+  // En français, « : ? ! % € » sont précédés d'une espace : on les garde collés au mot précédent.
+  const words = scene.title.split(' ').reduce<string[]>((acc, w) => {
+    if (acc.length && /^[%:?!€;»]+\.?$/.test(w)) acc[acc.length - 1] += '\u00a0' + w;
+    else acc.push(w);
+    return acc;
+  }, []);
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const sub = usePop(Math.min(words.length * 3 + 6, 30));
@@ -36,7 +41,7 @@ export const Hook: React.FC<P<'hook'>> = ({scene, theme}) => {
           const d = i * 3;
           const o = interpolate(frame - d, [0, 6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
           const y = interpolate(frame - d, [0, 8], [40, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-          const isQ = w.includes('?');
+          const isQ = w.includes('?') || /\d/.test(w);
           return (
             <span key={i} style={{opacity: o, transform: `translateY(${y}px)`, color: isQ ? theme.accent : theme.texte}}>
               {w}
