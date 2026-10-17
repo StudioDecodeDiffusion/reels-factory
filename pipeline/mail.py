@@ -88,7 +88,9 @@ def _gabarit(agent, corps_html: str, reponse_html: str, label: str | None = None
 {corps_html}
 <hr style="border:none;border-top:2px dashed #ccc;margin:22px 0">
 <div style="background:#FFF3B0;border:2px solid #14131C;border-radius:10px;padding:12px 14px">
-<b>↩️ Comment répondre à ce mail</b><br>{reponse_html}</div>
+<b>↩️ Comment répondre à ce mail</b><br>{reponse_html}<br><br>
+<span style="font-size:13px">⚠️ Réponds <b>depuis la boîte studiodecodediffusion@gmail.com</b> (connecté à ce compte Gmail) :
+une réponse envoyée depuis une autre adresse est bloquée par Gmail et n'arrive jamais aux agents.</span></div>
 <p style="font-size:13px;color:#444;margin-top:14px">{RAPPEL}</p>
 </div></div>"""
 
