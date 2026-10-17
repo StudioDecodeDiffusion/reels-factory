@@ -108,7 +108,7 @@ def main():
     body = calls[0][2]["body"]
     assert any("plus de jaune" in str(c[2]) for c in calls), "le message du DA doit être publié"
     assert "@moi" in body and "https://h/video.mp4" in body and "REP 1 3" in body
-    assert "voix off :** piper:fr_FR-upmc" in body, body
+    assert "voix off :** chatterbox:fr" in body, body
     probe = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=codec_type",
                             "-of", "csv=p=0", str(drop / "drop" / job / "video.mp4")], capture_output=True, text=True)
     assert "audio" in probe.stdout, "la vidéo finale doit contenir la voix off"
