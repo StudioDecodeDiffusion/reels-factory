@@ -241,11 +241,14 @@ def _sonoriser(d: Path, fiche: dict, profile: dict) -> None:
     if not any(sc.get("voix") or sc.get("dialogue") for sc in spec["scenes"]):
         return
     spec = sonoriser(spec, fiche["id"], profile, VIDEO / "public")
+    _manager(fiche, "Voix générées", f"Les {sum(len(sc.get('dialogue') or []) for sc in spec['scenes'])} répliques de Lou et Déco sont "
+             f"enregistrées ({round(sum(sc['duration'] for sc in spec['scenes']))} s). Montage final en cours (≈ 5 min).")
     render(spec, d / "video.mp4")
     from .musique import ajouter  # musique de fond sous les voix (choisie par l'agent 6)
     ajouter(d / "video.mp4", spec.get("musique") or profile.get("musique", "curieux"), sum(map(ord, fiche["id"])),
             scenes=spec["scenes"])
     contact_sheet(frames_per_scene(spec, d / "video.mp4"), d / "apercu.png")
+    _manager(fiche, "Vidéo finale montée", "Voix, musique et effets sont mixés. Hébergement de la vidéo puis mail de validation de l'agent 9.")
     fiche["duree_s"] = round(sum(sc["duration"] for sc in spec["scenes"]), 1)
     fiche["voix"] = profile["voix"].get("narrateur") or profile["voix"].get("id")
 
@@ -368,9 +371,21 @@ def _reponses_commentaires(ref: dict, texte: str) -> None:
 
 
 # ────────────────────────────────────────────── publication (agent 8)
+def _manager(fiche: dict, titre: str, texte: str) -> None:
+    """Point d'avancement court (jamais bloquant)."""
+    try:
+        nom = load_profile(fiche["profil"])["nom_compte"]
+        mail.envoyer("Manager", f"{nom} · {titre} : {fiche.get('titre', '')}", md(texte), R_MANAGER,
+                     ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"]})
+    except BaseException as e:
+        print(f"point d'avancement non envoyé : {e}")
+
+
 def _publier(fiche: dict, profile: dict) -> None:
     from .instagram import IG
     nom = profile["nom_compte"]
+    _manager(fiche, "Publication en cours", "J'envoie la vidéo et sa miniature à Instagram (traitement 1 à 5 min), "
+             "puis la story. Prochain mail : « Vidéo publiée » avec le lien.")
     try:
         info = IG(profile).publish_reel(fiche["media"]["urls"]["video.mp4"], fiche["legende"],
                                         cover_url=fiche["media"]["urls"].get("couverture.png"))
@@ -465,7 +480,18 @@ def stats() -> None:
             continue
         try:
             ig = IG(profile)
-            me = ig.username()
+            try:
+                me = ig.username()
+            except BaseException as e:
+                if "190" in str(e) or "access token" in str(e).lower():
+                    mail.envoyer("Manager", f"{profile['nom_compte']} · ⚠️ Token Instagram à refaire",
+                                 md("Instagram refuse le token (mot de passe changé ou session expirée) : **aucune publication "
+                                    "ne pourra partir**.\n\nÀ faire (2 min) : developers.facebook.com → ton app → Cas "
+                                    "d'utilisation → Personnaliser → Configuration de l'API avec la connexion Instagram → "
+                                    f"**Générer le token** (ligne du compte) → GitHub reels-factory → Settings → Secrets → "
+                                    f"**{profile['instagram_secret']}** → ✏️ → coller → Update secret."), R_MANAGER,
+                                 ref={"type": "manager", "profil": pid})
+                raise
             seen = set(state.load(f"commentaires_vus_{pid}", []))
             old = state.load(f"stats_{pid}", {})
             posts, new = [], []

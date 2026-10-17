@@ -20,7 +20,8 @@ Le compte est indiqué dans le message de la tâche (`actu`, `qhse`, …).
 éditoriale et consigne `sous_agents` du profil). Notes : `tool notes --agent N --profile <compte>`.
 
 
-**Points d'avancement (obligatoire) :** dès qu'un agent a fini son étape, envoie un résumé au propriétaire
+**Points d'avancement (obligatoire, réguliers et précis) :** dès qu'un agent a fini son étape — et pour l'agent 7
+à chaque palier : spec validée, rendu muet terminé, images contrôlées, miniature et story prêtes — envoie un résumé au propriétaire
 (mail « Manager - JJ/MM/AA - … ») : 3 à 6 lignes — ce que l'agent a fait, ses choix, ce qui suit.
 ```bash
 python3 -m pipeline.tool etape --agent N --profile <compte> --titre "Agent N terminé : <étape>" "- **Fait :** …\n- **Choix :** …\n- **Suite :** …"

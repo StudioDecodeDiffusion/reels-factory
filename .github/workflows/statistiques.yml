@@ -5,6 +5,7 @@ name: Statistiques et commentaires Instagram
 on:
   schedule:
     - cron: "5 14 * * *"
+    - cron: "5 7 * * *"     # 9 h : contrôle du token Instagram bien avant la publication
   workflow_dispatch:
 
 permissions:
