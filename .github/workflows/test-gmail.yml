@@ -1,0 +1,48 @@
+name: Test de la messagerie Gmail
+on:
+  workflow_dispatch:
+  push:
+    paths: [".github/workflows/test-gmail.yml"]
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -q pyyaml requests
+      - name: Envoyer un mail de bienvenue et lire la boîte
+        env:
+          GMAIL_ADDRESS: ${{ vars.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          python - <<'PY'
+          import json
+          from pipeline import mail, state
+          r = {"date": state.now_iso(), "adresse": bool(mail.os.getenv("GMAIL_ADDRESS")),
+               "mot_de_passe": bool(mail.os.getenv("GMAIL_APP_PASSWORD"))}
+          try:
+              corps = ("<p>Bonjour ! Je suis l'<b>agent 8</b>, le community manager de Décodé. "
+                       "Si tu lis ce mail, la messagerie des agents fonctionne ✅</p>"
+                       "<p>Chaque jour tu recevras :</p><ul>"
+                       "<li>vers <b>16 h 30</b> : mon rapport sur l'état des comptes (graphiques) ;</li>"
+                       "<li>vers <b>17 h</b> : le rapport de l'agent 3 (ce que disent les chiffres) ;</li>"
+                       "<li>vers <b>18 h</b> : les veilles des agents 1 (actualité) et 2 (tendances) ;</li>"
+                       "<li>la nuit : le concept de l'agent 4, puis le matin la vidéo à valider par l'agent 9.</li></ul>")
+              r["envoi"] = mail.envoyer(8, "Test : la messagerie des agents fonctionne", corps,
+                  "Pour tester, réponds à ce mail avec un petit mot : l'agent 8 te confirmera l'avoir reçu "
+                  "(dans les 30 minutes).", ref={"type": "test", "profil": "actu"})
+          except Exception as e:
+              r["erreur_envoi"] = str(e)[:300]
+          try:
+              r["lecture"] = len(mail.lire_nouveaux())
+          except Exception as e:
+              r["erreur_lecture"] = str(e)[:300]
+          print(json.dumps(r, ensure_ascii=False, indent=1))
+          state.save("test_gmail", r)
+          PY
+          git config user.name "reels-bot"; git config user.email "reels-bot@users.noreply.github.com"
+          git add state/ && (git diff --cached --quiet || (git commit -qm "état : test Gmail" && git pull -q --rebase && git push -q))
