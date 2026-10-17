@@ -1,0 +1,264 @@
+{
+  "theme": {
+    "fond": "#1B1F3B",
+    "texte": "#FFFFFF",
+    "accent": "#FF4F81",
+    "accent2": "#3D5AFE",
+    "police_titre": "Space Grotesk",
+    "police_texte": "Inter",
+    "bandeau": "17 octobre 2026",
+    "grille": false,
+    "style": "pixel",
+    "palette": [
+      "#FFD23F",
+      "#3D5AFE",
+      "#FF4F81",
+      "#2EC4B6",
+      "#1B1F3B",
+      "#FF8A1F"
+    ],
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "detective"
+    }
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "duration": 10.4,
+      "title": "Gazole : +44 % en un an.",
+      "subtitle": "Et l'inflation repart.",
+      "sprite": "pompe",
+      "sprite_anim": "shake",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Quarante-quatre pour cent ! C'est ce qu'a pris le gazole en un an.",
+          "expression": "choc"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Quoi ?! Mon plein va me coûter un rein ?",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "counter",
+      "duration": 9.2,
+      "from": 0.0,
+      "to": 3.1,
+      "decimals": 1,
+      "suffix": " %",
+      "label": "La hausse des prix sur un an, en septembre",
+      "sprite": "piece",
+      "sprite_anim": "rain",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Déco, combien ont grimpé les prix en septembre ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Trois virgule un pour cent sur un an. Ça pique !",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "duration": 6.7,
+      "title": "Ça accélère !",
+      "left": {
+        "label": "AOÛT",
+        "value": "2,4 %"
+      },
+      "right": {
+        "label": "SEPTEMBRE",
+        "value": "3,1 %"
+      },
+      "sprite": "fleche_haut",
+      "sprite_anim": "float",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et en août, c'était combien ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Deux virgule quatre. Donc oui… ça accélère.",
+          "expression": "triste"
+        }
+      ]
+    },
+    {
+      "type": "bars",
+      "duration": 9.1,
+      "title": "Qui fait grimper ?",
+      "items": [
+        {
+          "label": "ÉNERGIE",
+          "value": 21.3
+        },
+        {
+          "label": "TABAC",
+          "value": 3.3
+        },
+        {
+          "label": "SERVICES",
+          "value": 2.4
+        },
+        {
+          "label": "ALIMENTATION",
+          "value": 1.4
+        }
+      ],
+      "unit": " %",
+      "sprite": "eclair",
+      "sprite_anim": "shake",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Alors, qui fait grimper la note ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "L'énergie ! Plus vingt et un pour cent. Elle écrase tout.",
+          "expression": "choc"
+        }
+      ],
+      "tenue_mascotte": "classique"
+    },
+    {
+      "type": "bars",
+      "duration": 8.4,
+      "title": "L'énergie en détail",
+      "items": [
+        {
+          "label": "FIOUL",
+          "value": 64.6
+        },
+        {
+          "label": "GAZOLE",
+          "value": 44.1
+        },
+        {
+          "label": "ESSENCE",
+          "value": 25.7
+        },
+        {
+          "label": "GAZ",
+          "value": 19.0
+        },
+        {
+          "label": "ÉLECTRICITÉ",
+          "value": 1.4
+        }
+      ],
+      "unit": " %",
+      "sprite": "goutte",
+      "sprite_anim": "bounce",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et dans l'énergie, c'est quoi le pire ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Le fioul et le gazole. L'électricité, elle, bouge à peine.",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "dots",
+      "duration": 8.4,
+      "total": 100,
+      "highlighted": 8,
+      "label": "Sur 100 € dépensés, moins de 8 € partent dans l'énergie",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Mais l'énergie, ça pèse lourd dans nos dépenses ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Même pas ! Moins de huit euros sur cent.",
+          "expression": "clin"
+        }
+      ]
+    },
+    {
+      "type": "kinetic",
+      "duration": 8.4,
+      "lines": [
+        "Moins de 8 % du panier…",
+        "mais environ la moitié",
+        "de la hausse des prix !"
+      ],
+      "highlight": "moitié",
+      "sprite": "flamme",
+      "sprite_anim": "grow",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Attends… moins de huit pour cent ?",
+          "expression": "choc"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Oui ! Et pourtant, c'est environ la moitié de la hausse.",
+          "expression": "rire"
+        }
+      ]
+    },
+    {
+      "type": "kinetic",
+      "duration": 8.3,
+      "lines": [
+        "Hors prix volatils,",
+        "l'inflation est à 1,5 %"
+      ],
+      "highlight": "1,5 %",
+      "sprite": "thermometre",
+      "sprite_anim": "float",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et sans les prix qui font le yo-yo ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "L'inflation n'est qu'à un virgule cinq pour cent.",
+          "expression": "content"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "duration": 7.6,
+      "text": "Ton plein pèse sur l'inflation.",
+      "cta": "Abonne-toi pour l'actu décodée",
+      "sprite": "voiture",
+      "sprite_anim": "bounce",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Bref : ton plein pèse lourd sur l'inflation !",
+          "expression": "content"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Abonne-toi, on décode l'actu chaque soir !",
+          "expression": "clin"
+        }
+      ]
+    }
+  ]
+}
