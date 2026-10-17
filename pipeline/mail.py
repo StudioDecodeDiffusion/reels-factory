@@ -49,7 +49,9 @@ def date_courte() -> str:
 
 def numero_agent(agent, profil: str | None = None) -> str:
     """« 6 » pour l'agent principal, « 6.2 » pour son sous-agent du compte n° 2."""
-    if profil and str(agent).isdigit():
+    if not str(agent).isdigit():
+        return str(agent)  # « Manager »
+    if profil:
         try:
             from .config import load_profile
             n = load_profile(profil).get("numero")
@@ -61,7 +63,8 @@ def numero_agent(agent, profil: str | None = None) -> str:
 
 
 def objet(agent, titre: str, profil: str | None = None) -> str:
-    return f"Agent {numero_agent(agent, profil)} - {date_courte()} - {titre}"
+    n = numero_agent(agent, profil)
+    return f"{'Agent ' + n if n[0].isdigit() else n} - {date_courte()} - {titre}"
 
 
 def normaliser(sujet: str) -> str:
@@ -76,10 +79,11 @@ def normaliser(sujet: str) -> str:
 
 
 def _gabarit(agent, corps_html: str, reponse_html: str, label: str | None = None) -> str:
-    nom = NOMS.get(int(str(agent).split(".")[0]), "")
+    a = str(agent).split(".")[0]
+    nom = NOMS.get(int(a), "") if a.isdigit() else "Suivi du pipeline"
     return f"""<div style="font-family:Arial,Helvetica,sans-serif;max-width:640px;margin:auto;color:#14131C">
 <div style="background:#14131C;color:#fff;padding:12px 18px;border-radius:12px 12px 0 0;font-weight:bold">
-🤖 Agent {label or agent} · {nom} <span style="float:right;color:#FFD23F">Studio Decode et diffusion</span></div>
+🤖 {"Agent " if str(agent)[0].isdigit() else ""}{label or agent} · {nom} <span style="float:right;color:#FFD23F">Studio Decode et diffusion</span></div>
 <div style="border:3px solid #14131C;border-top:none;padding:18px;border-radius:0 0 12px 12px">
 {corps_html}
 <hr style="border:none;border-top:2px dashed #ccc;margin:22px 0">
@@ -96,7 +100,8 @@ def envoyer(agent: int, titre: str, corps_html: str, reponse_html: str, ref: dic
     sujet = objet(agent, titre, profil)
     msg = EmailMessage()
     msg["Subject"] = sujet
-    msg["From"] = f"Agent {numero_agent(agent, profil)} · Décodé <{adresse()}>"
+    lab = numero_agent(agent, profil)
+    msg["From"] = f"{'Agent ' + lab if lab[0].isdigit() else lab} · Décodé <{adresse()}>"
     msg["To"] = adresse()
     msg["X-Decode-Agent"] = str(agent)
     msg["X-Decode-Ref"] = json.dumps(ref or {}, ensure_ascii=False)

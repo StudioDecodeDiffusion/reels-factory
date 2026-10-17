@@ -7,6 +7,15 @@ de la tâche (`actu`, `qhse`…). Pour chaque compte, dans cet ordre :
 **Sous-agents :** pour chaque compte, joue le sous-agent N.k décrit dans `agents/SOUS_AGENTS.md` (ligne
 éditoriale et consigne `sous_agents` du profil). Notes : `tool notes --agent N --profile <compte>`.
 
+
+**Points d'avancement (obligatoire) :** dès qu'un agent a fini son étape, envoie un résumé au propriétaire
+(mail « Manager - JJ/MM/AA - … ») : 3 à 6 lignes — ce que l'agent a fait, ses choix, ce qui suit.
+```bash
+python3 -m pipeline.tool etape --agent N --profile <compte> --titre "Agent N terminé : <étape>" "- **Fait :** …\n- **Choix :** …\n- **Suite :** …"
+```
+Pour les agents qui envoient déjà un rapport complet (1, 2, 3, 8, 10), le point d'avancement reste court.
+Le workflow doit être fluide : enchaîne les agents sans temps mort.
+
 ## 0. Préparation
 ```bash
 cd <dossier du dépôt> && git pull -q

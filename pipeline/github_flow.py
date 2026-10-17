@@ -30,6 +30,8 @@ R_VALIDATION = ("Réponds à ce mail, <b>première ligne</b> :<br>"
                 "• n'importe quel autre texte → remarque transmise à l'agent 9 (la vidéo reste en attente)<br>"
                 "Sans réponse sous 36 h, la vidéo est abandonnée.")
 R_INFO = "Pas besoin de répondre. Un avis sur ce concept ? Réponds à ce mail : l'agent {n} lira ta remarque."
+R_MANAGER = ("Pas besoin de répondre : c'est un point d'avancement. Pour réagir, réponds à ce mail "
+             "(ta remarque ira à l'agent concerné) ou écris « agent N° - ta note ».")
 R_NOTE = "Réponds simplement à ce mail avec ta remarque : l'agent {n} la lira avant son prochain travail."
 R_RAPPORT8 = ("• <b>REP 1 3</b> (ou <b>REP TOUT</b>) → j'envoie les réponses proposées aux commentaires choisis<br>"
               "• n'importe quel autre texte → remarque pour l'agent 8")
@@ -129,6 +131,10 @@ def depot(drop_dir: str) -> None:
                          R_RAPPORT8 if n == 8 else R_NOTE.format(n=n), images=images,
                          ref={"type": f"rapport{n}", "job": fiche["id"], "profil": fiche["profil"]})
 
+        elif statut == "etape":  # point d'avancement du Manager après chaque agent
+            mail.envoyer("Manager", f"{nom} · {fiche.get('titre', 'Avancement')}", md(fiche.get("corps_md", "")), R_MANAGER,
+                         ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": fiche.get("agent")})
+
         elif statut == "abandonnee":
             mail.envoyer(9, f"{nom} · Pas de vidéo cette nuit", md(f"Aucune vidéo n'a été produite pour **{nom}**.\n\n"
                                                                   f"**Raison :** {fiche.get('raison')}"),
@@ -138,6 +144,10 @@ def depot(drop_dir: str) -> None:
             if os.getenv("RENDU_PUBLIC") == "1":
                 _envoyer_au_rendu(fiche["id"])
                 fiche["statut"] = "rendu_en_cours"
+                mail.envoyer("Manager", f"{nom} · Rendu final lancé : {fiche['titre']}",
+                             md("La session de nuit a terminé (agents 4, 5, 6, 7 et 9). **GitHub ajoute maintenant les voix et la "
+                                "musique** et monte la vidéo finale (≈ 20 min). L'agent 9 t'enverra ensuite la vidéo à valider."),
+                             R_MANAGER, ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"]})
             else:
                 rendre_un(d, fiche)
                 continue
@@ -242,7 +252,8 @@ def facteur() -> None:
         texte = m["texte"].strip()
         lien = carnet.get(cle)
         if lien:  # réponse à un mail d'agent
-            n, ref = int(lien["agent"]), lien.get("ref", {})
+            n, ref = lien["agent"], lien.get("ref", {})
+            n = int(n) if str(n).isdigit() else n
             if ref.get("type") == "validation":
                 _validation(ref["job"], texte)
             elif ref.get("type") == "test" and texte:
@@ -251,6 +262,7 @@ def facteur() -> None:
             elif ref.get("type") == "rapport8" and re.match(r"^\s*REP\b", texte, re.I):
                 _reponses_commentaires(ref, texte)
             elif texte:
+                n = int(ref.get("agent") or 9) if not str(n).isdigit() else n
                 note(n, m["objet"], texte, ref.get("profil"))
                 mail.envoyer(n, "Remarque bien reçue", md(f"Merci ! J'ai bien noté :\n\n> {texte[:600]}\n\n"
                                                           "Je l'appliquerai dès mon prochain travail."), R_NOTE.format(n=n))

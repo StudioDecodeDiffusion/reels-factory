@@ -1,6 +1,15 @@
 # Session hebdomadaire — agent 10 (dimanche 17 h 50)
 
 Lancée chaque semaine par une tâche planifiée Claude. Personne ne regarde : ne pose pas de question.
+
+
+**Points d'avancement (obligatoire) :** dès qu'un agent a fini son étape, envoie un résumé au propriétaire
+(mail « Manager - JJ/MM/AA - … ») : 3 à 6 lignes — ce que l'agent a fait, ses choix, ce qui suit.
+```bash
+python3 -m pipeline.tool etape --agent N --profile <compte> --titre "Agent N terminé : <étape>" "- **Fait :** …\n- **Choix :** …\n- **Suite :** …"
+```
+Pour les agents qui envoient déjà un rapport complet (1, 2, 3, 8, 10), le point d'avancement reste court.
+Le workflow doit être fluide : enchaîne les agents sans temps mort.
 ```bash
 cd <dossier du dépôt> && git pull -q
 python3 -m pip install -q --break-system-packages -r requirements.txt

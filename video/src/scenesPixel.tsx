@@ -83,17 +83,18 @@ export const Hook: React.FC<P<'hook'>> = ({scene, ctx}) => {
 export const Kinetic: React.FC<P<'kinetic'>> = ({scene, ctx}) => {
   const {fps} = useVideoConfig();
   const ink = encrePour(ctx.bg);
-  const per = Math.max(12, Math.floor((scene.duration * fps * 0.55) / Math.max(1, scene.lines.length)));
+  // lignes enchaînées vite (pas d'élément qui attend sur le bord de l'écran)
+  const per = Math.min(16, Math.max(8, Math.floor((scene.duration * fps * 0.25) / Math.max(1, scene.lines.length))));
   return (
     <>
       <div style={{position: 'absolute', left: 60, right: 60, top: TOP + 40, display: 'flex', flexDirection: 'column', gap: 34}}>
         {scene.lines.map((l, i) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
-          const p = usePop(i * per, 10);
+          const p = usePop(8 + i * per, 10);
           const droite = i % 2 === 1;
           const marque = l.toLowerCase().includes((scene.highlight ?? '§').toLowerCase());
           return (
-            <div key={i} style={{alignSelf: droite ? 'flex-end' : 'flex-start', transform: `translateX(${(1 - p) * (droite ? 500 : -500)}px) rotate(${droite ? 2 : -2}deg)`}}>
+            <div key={i} style={{alignSelf: droite ? 'flex-end' : 'flex-start', opacity: Math.min(1, p * 1.4), maxWidth: '100%', transform: `translateX(${(1 - p) * (droite ? 120 : -120)}px) rotate(${droite ? 2 : -2}deg)`}}>
               <span style={{...big(marque ? INK : ink, l.length > 22 ? 72 : 88), backgroundColor: marque ? ctx.c1 : 'transparent', padding: marque ? '4px 18px' : 0, boxShadow: marque ? `10px 10px 0 ${INK}` : 'none', border: marque ? `6px solid ${INK}` : 'none', borderRadius: 10, display: 'inline-block'}}>
                 <Highlight text={l} word={marque ? undefined : scene.highlight} color={ctx.c1} />
               </span>

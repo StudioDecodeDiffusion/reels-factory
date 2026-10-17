@@ -255,6 +255,18 @@ def cmd_rapport(a) -> None:
     print(f"Rapport de l'agent {a.agent} envoyé.")
 
 
+def cmd_etape(a) -> None:
+    """Point d'avancement → mail du « Manager » : tool etape --agent N --profile p --titre "…" "résumé (Markdown)"."""
+    load_profile(a.profile)
+    job = f"{a.profile}-etape{a.agent}-{datetime.now(TZ):%Y%m%d-%H%M%S}"
+    fiche = {"id": job, "profil": a.profile, "statut": "etape", "agent": a.agent, "cree": state.now_iso(),
+             "titre": a.titre, "corps_md": a.resume}
+    _push_drop(job, {"fiche.json": json.dumps(fiche, ensure_ascii=False, indent=2)})
+    state.save("dernier_depot", {"id": job, "profil": a.profile, "date": state.now_iso()})
+    _commit_state(f"état : étape agent {a.agent}")
+    print("Point d'avancement envoyé.")
+
+
 def cmd_abandon(a) -> None:
     fiche = {"id": a.id, "profil": a.profile, "statut": "abandonnee", "titre": "Pas de vidéo aujourd'hui",
              "raison": a.raison, "cree": state.now_iso()}
@@ -284,6 +296,8 @@ def main() -> None:
     p.add_argument("--titre", required=True); p.add_argument("fichier")
     p = sub.add_parser("abandon"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p.add_argument("--raison", required=True)
+    p = sub.add_parser("etape"); p.add_argument("--agent", required=True); p.add_argument("--profile", required=True)
+    p.add_argument("--titre", required=True); p.add_argument("resume")
     p = sub.add_parser("notes"); p.add_argument("--agent", required=True); p.add_argument("--profile")
     p = sub.add_parser("lu"); p.add_argument("--agent", required=True); p.add_argument("ids", nargs="+")
     a = ap.parse_args()

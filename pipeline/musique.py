@@ -102,7 +102,7 @@ def ajouter(video: Path, choix="curieux", graine: int = 0, volume: float = 0.2) 
     if a_voix:
         filtre = (f"[1:a]volume={volume}[m];[0:a]asplit=2[v][sc];"
                   "[m][sc]sidechaincompress=threshold=0.02:ratio=8:attack=15:release=350[md];"
-                  "[v][md]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[a]")
+                  "[v][md]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.95[a]")
     else:
         filtre = f"[1:a]volume={volume * 2}[a]"
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(video), "-i", str(wav), "-filter_complex", filtre,

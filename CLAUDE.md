@@ -8,6 +8,7 @@
   en un sous-agent par compte (« Agent N.k ») : lire `agents/SOUS_AGENTS.md` avant chaque session.
 - La mémoire du pipeline est dans `state/` ; les notes du propriétaire à chaque agent dans
   `state/messages/agent_N.json` (`python3 -m pipeline.tool notes --agent N`).
+- Après chaque agent : point d'avancement par mail « Manager » (`python3 -m pipeline.tool etape …`).
 - Le travail en cours va dans `travail/` (ignoré par git).
 - Mails (« Agent N - JJ/MM/AA - titre »), publication Instagram et statistiques : GitHub Actions
   (`.github/workflows/`), jamais depuis la session.

@@ -168,21 +168,27 @@ export const FondPixel: React.FC<{couleur: string; seed: number}> = ({couleur, s
 };
 
 // ───────────────────────── Transition : dissolution en gros pixels
-export const TransitionPixel: React.FC<{couleur: string; seed: number; duree?: number}> = ({couleur, seed, duree = 12}) => {
+export const TransitionPixel: React.FC<{couleur: string; seed: number; duree?: number}> = ({couleur, seed, duree = 10}) => {
+  // Balayage en diagonale de gros pixels : l'ancienne couleur s'efface case par case, sans trou ni flash
   const frame = useCurrentFrame();
   if (frame > duree) return null;
   const cols = 9;
   const rows = 16;
   const cw = W / cols;
   const ch = H / rows;
-  const R = rng(seed * 7 + 3);
-  const cells = Array.from({length: cols * rows}).map(() => R());
-  const p = frame / duree;
+  const sens = seed % 2 === 0;
+  const p = Easing.inOut(Easing.cubic)(Math.min(1, frame / duree));
   return (
     <AbsoluteFill>
-      {cells.map((t, i) =>
-        t > p ? <div key={i} style={{position: 'absolute', left: (i % cols) * cw, top: Math.floor(i / cols) * ch, width: cw + 1, height: ch + 1, backgroundColor: couleur}} /> : null,
-      )}
+      {Array.from({length: cols * rows}).map((_, i) => {
+        const c = i % cols;
+        const r = Math.floor(i / cols);
+        const d = ((sens ? c : cols - 1 - c) / cols + r / rows) / 2; // 0 → 1 en diagonale
+        const t = Math.max(0, Math.min(1, (p * 1.5 - d) / 0.5)); // chaque case rétrécit vers son centre
+        if (t >= 1) return null;
+        const k = 1 - t;
+        return <div key={i} style={{position: 'absolute', left: c * cw + (cw * t) / 2, top: r * ch + (ch * t) / 2, width: cw * k + 1, height: ch * k + 1, backgroundColor: couleur}} />;
+      })}
     </AbsoluteFill>
   );
 };
