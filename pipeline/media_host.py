@@ -54,3 +54,29 @@ def cleanup(info: dict | None) -> None:
         requests.delete(f"{GH}/repos/{info['repo']}/git/refs/tags/{info['tag']}", headers=_h(), timeout=60)
     except Exception as e:  # jamais bloquant
         print(f"  ! nettoyage impossible : {e}")
+
+
+def archiver(fichiers: dict[str, Path], mois: str) -> str:
+    """Range des fichiers dans la release privée « archive-AAAA-MM » du dépôt reels-factory (accès : toi seul).
+    fichiers = {nom_dans_l_archive: chemin}. Renvoie le lien de la page d'archive."""
+    repo = os.getenv("GITHUB_REPOSITORY") or "StudioDecodeDiffusion/reels-factory"
+    tag = f"archive-{mois}"
+    r = requests.get(f"{GH}/repos/{repo}/releases/tags/{tag}", headers=_h(), timeout=60)
+    if r.status_code == 404:
+        r = requests.post(f"{GH}/repos/{repo}/releases", headers=_h(), timeout=60,
+                          json={"tag_name": tag, "name": f"Archive {mois}",
+                                "body": "Vidéos publiées : vidéo finale, miniature, story et sources."})
+    if not r.ok:
+        raise RuntimeError(f"Archive GitHub {r.status_code} : {r.text[:300]}")
+    rel = r.json()
+    up = rel["upload_url"].split("{")[0]
+    deja = {a["name"]: a["id"] for a in rel.get("assets", [])}
+    for nom, p in fichiers.items():
+        if nom in deja:
+            requests.delete(f"{GH}/repos/{repo}/releases/assets/{deja[nom]}", headers=_h(), timeout=60)
+        ctype = {".mp4": "video/mp4", ".png": "image/png"}.get(Path(p).suffix, "text/plain; charset=utf-8")
+        with open(p, "rb") as fh:
+            a = requests.post(f"{up}?name={nom}", headers={**_h(), "Content-Type": ctype}, data=fh, timeout=600)
+        if not a.ok:
+            raise RuntimeError(f"Archive ({nom}) {a.status_code} : {a.text[:200]}")
+    return rel["html_url"]

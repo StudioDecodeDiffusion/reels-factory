@@ -148,6 +148,10 @@ def depot(drop_dir: str) -> None:
             mail.envoyer("Manager", f"{nom} · Story : {fiche.get('titre', '')}", md(txt), R_MANAGER,
                          ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": 8})
 
+        elif statut == "archive":  # archiver une vidéo déjà publiée
+            _archiver(fiche, d)
+            continue
+
         elif statut == "pret":  # vidéo finale déjà montée (ex. retouche du son) : hébergement + publication directe
             fiche["media"] = media_host.upload([d / "video.mp4"] + ([d / "couverture.png"] if (d / "couverture.png").exists() else []),
                                                fiche["id"])
@@ -399,6 +403,7 @@ def _publier(fiche: dict, profile: dict) -> None:
         return
     fiche.update(statut="publiee", media_id=info["id"], permalink=info.get("permalink"), publiee=state.now_iso())
     save_attente(fiche)
+    _archiver(fiche)
     media_host.cleanup(fiche["media"])
     story = _publier_story(fiche, profile)
     mail.envoyer("Manager", f"{nom} · Vidéo publiée : {fiche['titre']}",
@@ -410,6 +415,36 @@ def _publier(fiche: dict, profile: dict) -> None:
                  md(f"✅ La vidéo est en ligne : [{info.get('permalink', '')}]({info.get('permalink', '')})\n\n"
                     f"{story}\n\nJe surveille les commentaires et te fais le bilan dans mon rapport quotidien."),
                  R_NOTE.format(n=8), ref={"type": "publication", "job": fiche["id"], "profil": fiche["profil"]})
+
+
+def _archiver(fiche: dict, dossier: Path | None = None) -> None:
+    """Archive privée : vidéo finale, miniature, story et sources (rien d'autre)."""
+    import tempfile
+    try:
+        tmp = Path(tempfile.mkdtemp())
+        base = f"{fiche['cree'][:10]}_{fiche['id']}"
+        fichiers = {}
+        urls = (fiche.get("media") or {}).get("urls", {})
+        for nom, cible in (("video.mp4", "video.mp4"), ("couverture.png", "miniature.png")):
+            src = (dossier / nom) if dossier and (dossier / nom).exists() else None
+            if not src and urls.get(nom):
+                src = tmp / nom
+                src.write_bytes(requests.get(urls[nom], timeout=300).content)
+            if src:
+                fichiers[f"{base}_{cible}"] = src
+        story = (dossier / "story.png") if dossier and (dossier / "story.png").exists() else state.STATE / "stories" / f"{fiche['id']}.png"
+        if story.exists():
+            fichiers[f"{base}_story.png"] = story
+        src_txt = tmp / "sources.txt"
+        src_txt.write_text(f"{fiche.get('titre', '')}\nPublié : {fiche.get('permalink', '')}\n\nSources :\n"
+                           + "\n".join(fiche.get("sources", [])) + "\n", encoding="utf-8")
+        fichiers[f"{base}_sources.txt"] = src_txt
+        lien = media_host.archiver(fichiers, fiche["cree"][:7])
+        fiche["archive"] = lien
+        save_attente(fiche)
+        _manager(fiche, "Archivée", f"Vidéo finale, miniature, story et sources rangées dans l'archive privée : [{lien}]({lien})")
+    except BaseException as e:
+        _manager(fiche, "Archive non faite", f"L'archivage a échoué ({str(e)[:300]}). La publication, elle, est faite.")
 
 
 def _publier_story(fiche: dict, profile: dict) -> str:
