@@ -46,7 +46,7 @@ Pour **Actu** puis, le lendemain, **QHSE** :
 
 ## 6. Token GitHub et secrets
 1. GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** →
-   Generate → nom « reels », expiration 1 an → Repository access : `reels-factory` et `reels-media` →
+   Generate → nom « reels », expiration **90 days** (une date à plus d’un an bloque le bouton) → Repository access : `reels-factory` et `reels-media` →
    Permissions : **Contents : Read and write**, **Secrets : Read and write** → copie le token.
 2. Dépôt `reels-factory` → Settings → Actions → General → Workflow permissions →
    **Read and write permissions** → Save.
@@ -65,4 +65,4 @@ deux) et lance une première vidéo de test. Dans les réglages de chaque tâche
 - Une vidéo en plus : demande à Claude « fais une vidéo QHSE sur … » (même circuit de validation).
 - Tu vois une tendance : ajoute-la dans `trends/actu.md` ou `trends/qhse.md` (app GitHub mobile).
 - Rien à faire pour les tokens Instagram : ils sont renouvelés le 1er et le 15 du mois.
-  Le token GitHub `GH_PAT`, lui, est à recréer une fois par an.
+  Le token GitHub `GH_PAT` expire tous les 90 jours : un e-mail de rappel arrive une semaine avant.

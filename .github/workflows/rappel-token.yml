@@ -1,0 +1,41 @@
+name: Rappel renouvellement du token GitHub
+
+# Le token GH_PAT expire le date indiquée ci-dessous (90 jours).
+# Une semaine avant, une fiche est créée → tu reçois un e-mail.
+# Après l'avoir renouvelé, mets à jour la date EXPIRATION ci-dessous (ou demande à Claude).
+on:
+  schedule:
+    - cron: "0 8 * * 1"   # chaque lundi
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+env:
+  EXPIRATION: "2027-01-15"
+
+jobs:
+  rappel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vérifier la date
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          JOURS=$(( ( $(date -d "$EXPIRATION" +%s) - $(date +%s) ) / 86400 ))
+          echo "Le token GH_PAT expire dans $JOURS jours"
+          if [ "$JOURS" -le 7 ]; then
+            DEJA=$(gh issue list --repo "$GITHUB_REPOSITORY" --label token --state open --json number --jq length)
+            if [ "$DEJA" = "0" ]; then
+              {
+                echo "@${{ github.repository_owner }} le token \`GH_PAT\` expire dans $JOURS jours. Sans lui, les vidéos ne peuvent plus être publiées."
+                echo ""
+                echo "1. GitHub → Settings → Developer settings → Fine-grained tokens → **reels** → **Regenerate token** → 90 days."
+                echo "2. Dépôt reels-factory → Settings → Secrets and variables → Actions → \`GH_PAT\` → **Update** → colle le nouveau token."
+                echo "3. Demande à Claude de mettre à jour la date dans \`.github/workflows/rappel-token.yml\`, puis ferme cette fiche."
+              } > corps.md
+              gh label create token --repo "$GITHUB_REPOSITORY" --color FBCA04 2>/dev/null || true
+              gh issue create --repo "$GITHUB_REPOSITORY" --label token \
+                --title "🔑 Renouvelle le token GitHub (expire le $EXPIRATION)" --body-file corps.md
+            fi
+          fi
