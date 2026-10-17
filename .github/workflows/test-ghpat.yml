@@ -1,0 +1,35 @@
+name: Test du token GitHub (GH_PAT)
+on:
+  workflow_dispatch:
+  push:
+    paths: [".github/workflows/test-ghpat.yml"]
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Vérifier les accès (le token n'est jamais affiché)
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          tok, owner, r = os.environ.get("GH_PAT", ""), os.environ["OWNER"], {"token_present": bool(os.environ.get("GH_PAT"))}
+          for repo in ("reels-factory", "reels-media"):
+              try:
+                  req = urllib.request.Request(f"https://api.github.com/repos/{owner}/{repo}",
+                        headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"})
+                  d = json.load(urllib.request.urlopen(req, timeout=30))
+                  r[repo] = {"ok": True, "push": d.get("permissions", {}).get("push")}
+              except Exception as e:
+                  r[repo] = {"ok": False, "erreur": str(e)[:200]}
+          print(json.dumps(r, indent=1))
+          os.makedirs("state", exist_ok=True)
+          json.dump(r, open("state/test_ghpat.json", "w"), indent=1)
+          PY
+          git config user.name "reels-bot"; git config user.email "reels-bot@users.noreply.github.com"
+          git add state/ && (git diff --cached --quiet || (git commit -qm "état : test GH_PAT" && git pull -q --rebase && git push -q))
