@@ -152,6 +152,9 @@ def cmd_drop(a) -> None:
         state.save(f"series_{a.profile}", prog)
     if (d / "8_community.json").exists():
         state.save(f"commentaires_{a.profile}", [])  # commentaires traités : ils sont dans la fiche
+    # Ce fichier sur « main » déclenche le workflow « Nouvelle vidéo » (GitHub n'exécute pas de workflow
+    # pour une branche qui n'en contient pas, comme depot-videos).
+    state.save("dernier_depot", {"id": a.id, "profil": a.profile, "date": state.now_iso()})
     _commit_state(f"état : vidéo {a.id}")
     print(f"Envoyé à GitHub : {a.id}. L'e-mail de validation part dans 1-2 minutes.")
 
@@ -165,6 +168,7 @@ def cmd_abandon(a) -> None:
     if comm:
         state.save(f"commentaires_{a.profile}", [])
     _push_drop(a.id, {"fiche.json": json.dumps(fiche, ensure_ascii=False, indent=2)})
+    state.save("dernier_depot", {"id": a.id, "profil": a.profile, "date": state.now_iso()})
     _commit_state(f"état : {a.id} abandonnée")
     print("Propriétaire prévenu.")
 

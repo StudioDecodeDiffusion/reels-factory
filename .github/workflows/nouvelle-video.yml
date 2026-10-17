@@ -1,9 +1,12 @@
 name: Nouvelle vidéo → e-mail de validation
 
-# Déclenché quand la session Claude de nuit dépose une vidéo sur la branche « depot-videos ».
+# Déclenché quand la session Claude de nuit dépose une vidéo : elle pousse les fichiers sur la branche
+# « depot-videos » puis met à jour state/dernier_depot.json sur main, ce qui lance ce workflow.
 on:
   push:
-    branches: [depot-videos]
+    branches: [main]
+    paths: [state/dernier_depot.json]
+  workflow_dispatch:
 
 permissions:
   contents: write
