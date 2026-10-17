@@ -61,6 +61,7 @@ python3 -m pipeline.tool check  travail/$ID/7_spec.json --profile <compte>   # r
 python3 -m pipeline.tool render travail/$ID/7_spec.json travail/$ID/video.mp4
 python3 -m pipeline.tool frames travail/$ID/7_spec.json travail/$ID/video.mp4
 python3 -m pipeline.tool caption $ID --profile <compte>
+python3 -m pipeline.tool story $ID --profile <compte>      # story « nouvelle vidéo », publiée après le Reel
 ```
 
 ## 9. Critique → dépôt → mail de validation

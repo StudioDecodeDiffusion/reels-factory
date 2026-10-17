@@ -7,6 +7,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import os
+
 import requests
 
 from .config import env
@@ -19,7 +21,7 @@ def _h() -> dict:
 
 
 def upload(files: list[Path], job_id: str) -> dict:
-    repo = env("MEDIA_REPO")
+    repo = os.getenv("MEDIA_REPO") or "StudioDecodeDiffusion/reels-media"
     tag = f"reel-{job_id}"
     r = requests.post(f"{GH}/repos/{repo}/releases", headers=_h(), timeout=60,
                       json={"tag_name": tag, "name": tag, "body": "Fichiers temporaires, supprimés après publication."})

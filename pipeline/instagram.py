@@ -59,6 +59,18 @@ class IG:
         info = self._get(pub["id"], fields="id,permalink,timestamp")
         return info
 
+    def publish_story(self, image_url: str) -> dict:
+        c = self._post(f"{self.uid}/media", media_type="STORIES", image_url=image_url)
+        for _ in range(30):
+            st = self._get(c["id"], fields="status_code")
+            if st.get("status_code") == "FINISHED":
+                break
+            if st.get("status_code") in ("ERROR", "EXPIRED"):
+                raise RuntimeError(f"Story refusée par Instagram : {st}")
+            time.sleep(5)
+        pub = self._post(f"{self.uid}/media_publish", creation_id=c["id"])
+        return {"id": pub["id"]}
+
     def recent_media(self, limit: int = 15) -> list[dict]:
         return self._get(f"{self.uid}/media", fields="id,caption,media_product_type,timestamp,permalink",
                          limit=limit).get("data", [])

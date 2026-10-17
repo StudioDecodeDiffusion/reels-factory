@@ -255,6 +255,17 @@ def cmd_rapport(a) -> None:
     print(f"Rapport de l'agent {a.agent} envoyé.")
 
 
+def cmd_story(a) -> None:
+    """Story « nouvelle vidéo » : publiée automatiquement juste après le Reel."""
+    from .story import creer
+    prof = load_profile(a.profile)
+    d = WORK / a.id
+    titre = a.titre or _concept(d).get("titre") or "Nouvelle vidéo"
+    out = creer(d / "video_scene0.png", titre, prof.get("instagram") or prof["nom_compte"],
+                state.STATE / "stories" / f"{a.id}.png", (prof.get("charte_initiale") or {}).get("palette"))
+    print(out)
+
+
 def cmd_etape(a) -> None:
     """Point d'avancement → mail du « Manager » : tool etape --agent N --profile p --titre "…" "résumé (Markdown)"."""
     load_profile(a.profile)
@@ -296,6 +307,7 @@ def main() -> None:
     p.add_argument("--titre", required=True); p.add_argument("fichier")
     p = sub.add_parser("abandon"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p.add_argument("--raison", required=True)
+    p = sub.add_parser("story"); p.add_argument("id"); p.add_argument("--profile", required=True); p.add_argument("--titre")
     p = sub.add_parser("etape"); p.add_argument("--agent", required=True); p.add_argument("--profile", required=True)
     p.add_argument("--titre", required=True); p.add_argument("resume")
     p = sub.add_parser("notes"); p.add_argument("--agent", required=True); p.add_argument("--profile")

@@ -361,13 +361,39 @@ def _publier(fiche: dict, profile: dict) -> None:
     fiche.update(statut="publiee", media_id=info["id"], permalink=info.get("permalink"), publiee=state.now_iso())
     save_attente(fiche)
     media_host.cleanup(fiche["media"])
+    story = _publier_story(fiche, profile)
     mail.envoyer(8, f"{nom} · Publiée : {fiche['titre']}",
                  md(f"✅ La vidéo est en ligne : [{info.get('permalink', '')}]({info.get('permalink', '')})\n\n"
-                    "Je surveille les commentaires et te fais le bilan dans mon rapport quotidien."), R_NOTE.format(n=8))
+                    f"{story}\n\nJe surveille les commentaires et te fais le bilan dans mon rapport quotidien."),
+                 R_NOTE.format(n=8), ref={"type": "publication", "job": fiche["id"], "profil": fiche["profil"]})
+
+
+def _publier_story(fiche: dict, profile: dict) -> str:
+    """Story « nouvelle vidéo » (state/stories/<job>.png), publiée juste après le Reel."""
+    from .instagram import IG
+    png = state.STATE / "stories" / f"{fiche['id']}.png"
+    if not png.exists():
+        return "(pas de story prévue pour cette vidéo)"
+    try:
+        h = media_host.upload([png], f"{fiche['id']}-story")
+        IG(profile).publish_story(h["urls"][png.name])
+        media_host.cleanup(h)
+        fiche["story"] = "publiee"
+        save_attente(fiche)
+        return "📣 La story « nouvelle vidéo » est publiée aussi."
+    except Exception as e:
+        return f"⚠️ Story non publiée : {str(e)[:300]}"
 
 
 def publier_ce_qui_est_du() -> None:
     now = datetime.now(TZ)
+    for job in state.load("publier_maintenant", {}).get("jobs", []):
+        f = attente(job)
+        if f and f["statut"] in ("a_valider", "approuvee"):
+            f["statut"] = "approuvee"
+            save_attente(f)
+            _publier(f, load_profile(f["profil"]))
+    state.save("publier_maintenant", {"jobs": []})
     for fiche in all_attente():
         profile = load_profile(fiche["profil"])
         p = profile["planning"]
