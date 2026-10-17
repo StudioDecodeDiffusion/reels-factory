@@ -32,6 +32,7 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
           COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENT_ID: ${{ github.event.comment.id }}
           IG_TOKEN_ACTU: ${{ secrets.IG_TOKEN_ACTU }}
           IG_TOKEN_QHSE: ${{ secrets.IG_TOKEN_QHSE }}
           IG_TOKEN_SCIENCE: ${{ secrets.IG_TOKEN_SCIENCE }}

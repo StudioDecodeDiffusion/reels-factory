@@ -40,9 +40,13 @@ video:
 
 voix:                                   # voix off IA gratuite, générée dans GitHub Actions
   active: true
-  narrateur: "piper:fr_FR-upmc-medium?spk=1&vitesse=1.05&expr=0.85&rythme=1.0"   # Lou (à gauche) — à confirmer
-  mascotte: "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0"    # Déco (à droite) — à confirmer
-  mascotte_effet: "aigu"                # Déco un peu plus aiguë pour bien distinguer les deux voix
+  # Voix retenues (voir voix/echantillons) :
+  #   chatterbox standard (femme, naturelle) : "chatterbox:fr?exag=0.6&cfg=0.4"
+  #   Jessica (femme, claire et posée)       : "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0"
+  #   Pierre Chatterbox (homme, très expressif) : "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3"
+  narrateur: "chatterbox:fr?exag=0.6&cfg=0.4"            # Lou (à gauche)
+  mascotte: "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3"  # Déco (à droite) = Pierre Chatterbox…
+  mascotte_effet: "aigu"                                 # … avec l'effet aigu
   vitesse: 1.0
 
 planning:

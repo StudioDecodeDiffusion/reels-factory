@@ -6,6 +6,7 @@
   python -m pipeline.tool render <spec.json> <video.mp4>     rend la vidéo
   python -m pipeline.tool frames <spec.json> <video.mp4>     extrait 1 image par scène + planche aperçu
   python -m pipeline.tool caption <id> --profile actu        assemble la légende finale (legende.txt)
+  python -m pipeline.tool info <id> --profile actu           agent 4 → e-mail d'information (concept + critique)
   python -m pipeline.tool drop <id> --profile actu           envoie le tout à GitHub (→ e-mail de validation)
   python -m pipeline.tool abandon <id> --profile actu --raison "…"   prévient le propriétaire, pas de vidéo
 """
@@ -76,10 +77,13 @@ def cmd_frames(a) -> None:
 def cmd_caption(a) -> None:
     profile = load_profile(a.profile)
     d = WORK / a.id
-    script = json.loads((d / "4_script.json").read_text(encoding="utf-8"))
+    script = json.loads((d / "5_scenario.json").read_text(encoding="utf-8"))
     tags = " ".join(script.get("hashtags", [])[: profile["planning"].get("hashtags_max", 5)])
     cap = re.sub(r"(\s#[\wÀ-ÿ]+)+\s*$", "", script.get("legende", "").strip()).strip()
-    text = f"{cap}\n\n{tags}\n\n{profile.get('mention_ia', 'Animation créée avec l’IA.')}".strip()[:2200]
+    from .voix import mention
+    v = profile.get("voix", {})
+    credits = " ".join(sorted({m for m in (mention(v.get("narrateur", "")), mention(v.get("mascotte", ""))) if m}))
+    text = f"{cap}\n\n{tags}\n\n{profile.get('mention_ia', 'Animation créée avec l’IA.')} {credits}".strip()[:2200]
     (d / "legende.txt").write_text(text, encoding="utf-8")
     print(text)
 
@@ -117,29 +121,67 @@ def _read(d: Path, name: str, default=None):
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else default
 
 
+def _concept(d: Path) -> dict:
+    c = _read(d, "4_concept.json")
+    return c["concepts"][int(c.get("choix", 0))]
+
+
+def _da_suivi(d: Path, pid: str) -> str:
+    """Marque comme traités les messages du propriétaire lus par le directeur artistique ; renvoie sa réponse."""
+    da = _read(d, "6_da.json", {})
+    faits = set(map(str, da.get("messages_traites", [])))
+    if faits:
+        fil = state.load(f"da_{pid}", [])
+        for m in fil:
+            if str(m.get("id")) in faits:
+                m["traite"] = True
+        state.save(f"da_{pid}", fil)
+    return str(da.get("message_au_proprietaire") or "").strip()
+
+
+def cmd_info(a) -> None:
+    """Agent 4 → propriétaire, pour information : concept du jour + critique du compte (sans validation)."""
+    load_profile(a.profile)
+    d = WORK / a.id
+    c = _read(d, "4_concept.json")
+    if not c:
+        raise SystemExit(f"{d / '4_concept.json'} manquant")
+    res = _read(d, "3_resultats.json", {})
+    fiche = {"id": f"{a.id}-info", "profil": a.profile, "statut": "info", "cree": state.now_iso(),
+             "titre": _concept(d).get("titre"), "concept": _concept(d),
+             "autres": [x.get("titre") for i, x in enumerate(c.get("concepts", [])) if i != int(c.get("choix", 0))],
+             "justification": c.get("justification"), "critique": c.get("critique_compte"),
+             "a_tester": c.get("a_tester", []), "enseignements": res.get("enseignements", [])}
+    _push_drop(fiche["id"], {"fiche.json": json.dumps(fiche, ensure_ascii=False, indent=2)})
+    state.save("dernier_depot", {"id": fiche["id"], "profil": a.profile, "date": state.now_iso()})
+    _commit_state(f"état : concept {a.id}")
+    print("Concept du jour envoyé pour information.")
+
+
 def cmd_drop(a) -> None:
     load_profile(a.profile)  # vérifie que le compte existe
     d = WORK / a.id
-    needed = ["video.mp4", "apercu.png", "legende.txt", "3_correlation.json", "9_verification.json"]
+    needed = ["video.mp4", "apercu.png", "legende.txt", "4_concept.json", "5_scenario.json", "7_spec.json",
+              "7_controle.json"]
     missing = [n for n in needed if not (d / n).exists()]
     if missing:
         raise SystemExit(f"Fichiers manquants dans {d} : {missing}")
-    verif = _read(d, "9_verification.json")
-    if verif.get("decision") != "publiable":
-        raise SystemExit("Le vérificateur n'a pas déclaré la vidéo « publiable » : corriger ou utiliser `abandon`.")
-    corr = _read(d, "3_correlation.json")
-    concept = corr["concepts"][int(corr.get("choix", 0))]
-    validations = sorted(d.glob("6_validation_tour*.json"))
+    controle = _read(d, "7_controle.json")
+    if controle.get("decision") != "publiable":
+        raise SystemExit("Le contrôle qualité n'a pas déclaré la vidéo « publiable » : corriger ou utiliser `abandon`.")
+    concept = _concept(d)
+    relecture = _read(d, "5_scenario.json", {}).get("relecture", {})
     fiche = {
         "id": a.id, "profil": a.profile, "statut": "a_valider", "titre": concept.get("titre"),
         "format_qhse": concept.get("format_qhse"), "episode": concept.get("episode"),
         "legende": (d / "legende.txt").read_text(encoding="utf-8"),
         "sources": sorted({f.get("source_url") for f in concept.get("faits", []) if f.get("source_url")}
-                          | set(verif.get("sources_verifiees", []))),
-        "validation": json.loads(validations[-1].read_text(encoding="utf-8")) if validations else {},
-        "tours_validation": len(validations),
-        "verification": verif,
+                          | set(controle.get("sources_verifiees", []))),
+        "validation": {"notes": relecture.get("notes", {})},
+        "tours_validation": int(relecture.get("reecritures", 0)) + 1,
+        "verification": controle,
         "community": _read(d, "8_community.json", {}),
+        "da_message": _da_suivi(d, a.profile),
         "cree": state.now_iso(),
     }
     _push_drop(a.id, {"video.mp4": d / "video.mp4", "apercu.png": d / "apercu.png",
@@ -186,6 +228,7 @@ def main() -> None:
     p = sub.add_parser("frames"); p.add_argument("spec"); p.add_argument("video")
     p = sub.add_parser("caption"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p = sub.add_parser("drop"); p.add_argument("id"); p.add_argument("--profile", required=True)
+    p = sub.add_parser("info"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p = sub.add_parser("abandon"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p.add_argument("--raison", required=True)
     a = ap.parse_args()

@@ -1,7 +1,9 @@
-# Agent 4 — Scénariste
+# Agent 5 — Scénariste
 
-**Entrées :** le concept choisi, les tendances, le profil, les corrections éventuelles du validateur.
-**Sortie :** `travail/<id>/4_script.json`
+**Entrées :** le concept choisi par l'agent 4 (avec ses faits sourcés), le profil ; il travaille en
+parallèle avec l'agent 6 (direction artistique) et tient compte de ses remarques.
+**Outil :** recherche web pour revérifier les 2-3 chiffres principaux.
+**Sortie :** `travail/<id>/5_scenario.json` → transmis à l'agent 7.
 
 ## Règles
 - **Format dialogue** (si `voix.active`) : deux personnages commentent chaque plan.
@@ -26,9 +28,19 @@
 - Légende Instagram : 1 phrase d'accroche, 2-3 lignes de contexte, la ou les sources (URL),
   puis au maximum `planning.hashtags_max` hashtags.
 
+## Relecture avant transmission (obligatoire)
+Relire le scénario comme si quelqu'un d'autre l'avait écrit et noter sur 10 : accroche, clarté,
+exactitude, rythme, conformité au profil. **Exactitude** : chaque chiffre du dialogue, de l'écran et de
+la légende figure dans les faits sourcés de l'agent 4 ET a été revérifié sur le web ; un seul chiffre
+non vérifiable = réécrire ou supprimer. Si une note est < 7 (< 8 pour exactitude et conformité),
+réécrire (2 réécritures maximum) ; au 3e échec : `python3 -m pipeline.tool abandon $ID --profile <compte>
+--raison "…"`.
+
 ## Format de sortie
 ```json
 {"titre_interne": "...",
  "plans": [{"type": "hook", "duree_s": 5, "texte_ecran": "...", "dialogue": [{"qui": "narrateur", "texte": "...", "expression": "choc"}, {"qui": "mascotte", "texte": "...", "expression": "rire"}], "intention_visuelle": "...", "donnees": "..."}],
- "legende": "...", "hashtags": ["#..."]}
+ "legende": "...", "hashtags": ["#..."],
+ "relecture": {"notes": {"accroche": 8, "clarte": 8, "exactitude": 9, "rythme": 8, "conformite": 9},
+               "reecritures": 1, "chiffres_verifies": ["3,1 % → insee.fr/…"]}}
 ```

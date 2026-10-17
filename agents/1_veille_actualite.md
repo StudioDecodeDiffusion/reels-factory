@@ -1,8 +1,8 @@
-# Agent 1 — Veille actualité
+# Agent 1 — Veille d'actualité
 
 **Entrées :** le profil du compte, `state/historique_<compte>.json`, `state/refus_<compte>.json`.
 **Outil :** recherche web (8 recherches maximum).
-**Sortie :** `travail/<id>/1_veille.json`
+**Sortie :** `travail/<id>/1_veille.json` → transmis à l'agent 4.
 
 ## Mission
 Trouver les sujets des dernières 48 h qui correspondent à la niche et aux thématiques du profil.

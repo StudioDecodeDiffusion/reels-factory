@@ -79,6 +79,29 @@ def _publication_slot(profile: dict) -> str:
     return f"aujourd'hui vers {h} h" if datetime.now(TZ).hour < h else f"demain vers {h} h"
 
 
+# ────────────────────────────────────────────── discussion avec le directeur artistique (agent 6)
+def da_issue(pid: str) -> int:
+    """Fiche de discussion permanente avec le directeur artistique d'un compte (créée au besoin)."""
+    ex = gh("GET", f"/issues?labels=da:{pid}&state=open&per_page=1")
+    if ex:
+        return ex[0]["number"]
+    profile = load_profile(pid)
+    body = (f"@{OWNER} ici, tu parles directement au **directeur artistique** de **{profile['nom_compte']}** "
+            "(agent 6).\n\nÉcris-lui quand tu veux — en commentaire ou **en répondant à l'e-mail** : couleurs, "
+            "tenues de Lou et Déco, expressions, rythme, ce que tu as aimé ou pas dans une vidéo, une idée de gag…\n\n"
+            "Il lit tous tes messages avant chaque nouvelle vidéo, les applique, et te répond ici avec ce qu'il a "
+            "changé et une proposition pour la suite.")
+    issue = gh("POST", "/issues", json={"title": f"🎨 Discussion avec le directeur artistique — {profile['nom_compte']}",
+                                        "body": body, "labels": [f"da:{pid}", "discussion"]})
+    return issue["number"]
+
+
+def ensure_da() -> None:
+    for pid in all_profiles():
+        if "demande" not in str(load_profile(pid).get("planning", {}).get("generation", "")):
+            da_issue(pid)
+
+
 # ────────────────────────────────────────────── nouvelle vidéo déposée par la session de nuit
 def on_drop(drop_dir: str) -> None:
     for d in sorted(Path(drop_dir).iterdir()):
@@ -91,6 +114,40 @@ def on_drop(drop_dir: str) -> None:
             continue
         profile = load_profile(fiche["profil"])
         name = profile["nom_compte"]
+
+        if fiche["statut"] == "info":
+            c = fiche.get("concept", {})
+            faits = "\n".join(f"- {f.get('fait')} ([source]({f.get('source_url')}))" for f in c.get("faits", []))
+            body = f"""@{OWNER} pour info — voici ce que l'**agent 4** a retenu pour la vidéo de cette nuit sur **{name}**.
+
+### 💡 Concept du jour : {fiche.get('titre')}
+- **Sujet :** {c.get('sujet', '')}
+- **Format :** {c.get('format', '')}
+- **Mise en scène :** {c.get('mise_en_scene', c.get('idee_animation', ''))}
+- **Pourquoi :** {fiche.get('justification', '')}
+
+**Faits retenus :**
+{faits or '- (aucun)'}
+
+**Autres pistes écartées :** {', '.join(x for x in fiche.get('autres', []) if x) or '—'}
+
+### 🔎 Critique du compte et de son audience
+{fiche.get('critique') or '—'}
+
+**À tester :**
+""" + "\n".join(f"- {x}" for x in fiche.get("a_tester", [])) + """
+
+**Ce que disent les résultats du compte (agent 3) :**
+""" + ("\n".join(f"- {x}" for x in fiche.get("enseignements", [])) or "- pas encore de données") + """
+
+---
+Aucune action demandée : la vidéo arrive pour validation dans la foulée. Un avis sur la direction ? Écris au directeur artistique sur sa fiche de discussion."""
+            issue = gh("POST", "/issues", json={"title": f"[{name}] 💡 Concept du jour : {fiche.get('titre')}",
+                                                "body": body, "labels": [f"compte:{fiche['profil']}", "info"]})
+            fiche.update(issue=issue["number"], media=None)
+            save_attente(fiche)
+            close(issue["number"])
+            continue
 
         if fiche["statut"] == "abandonnee":
             issue = gh("POST", "/issues", json={
@@ -143,6 +200,9 @@ Sans réponse sous 36 h, la vidéo est abandonnée automatiquement.
         fiche.update(issue=issue["number"], media=media)
         fiche.pop("verification", None)
         save_attente(fiche)
+        if fiche.get("da_message"):
+            comment(da_issue(fiche["profil"]), f"🎨 **Le directeur artistique, pour la vidéo « {fiche['titre']} » "
+                                               f"(fiche #{issue['number']}) :**\n\n{fiche['da_message']}")
         print(f"Fiche #{issue['number']} créée pour {fiche['id']}")
 
 
@@ -175,6 +235,16 @@ def on_comment() -> None:
         print(f"Commentaire de {author} ignoré (seul {OWNER} peut valider)")
         return
     n = int(env("ISSUE_NUMBER"))
+    labels = [lab["name"] for lab in gh("GET", f"/issues/{n}").get("labels", [])]
+    da = next((lab.split(":", 1)[1] for lab in labels if lab.startswith("da:")), None)
+    if da:
+        texte = re.split(r"\n\s*(?:On .+wrote:|Le .+a écrit\s*:)", os.getenv("COMMENT_BODY", ""))[0].strip()
+        fil = state.load(f"da_{da}", [])
+        fil.append({"id": os.getenv("COMMENT_ID", str(len(fil) + 1)), "date": state.now_iso(), "texte": texte,
+                    "traite": False})
+        state.save(f"da_{da}", fil[-100:])
+        comment(n, "📝 Noté ! Le directeur artistique l'appliquera dès la prochaine vidéo et te répondra ici.")
+        return
     fiche = _job_from_issue(n)
     if not fiche:
         print("Pas de vidéo liée à cette fiche")
@@ -259,6 +329,10 @@ def _publish(fiche: dict, profile: dict) -> None:
 
 
 def publish() -> None:
+    try:
+        ensure_da()
+    except Exception as e:  # jamais bloquant pour la publication
+        print(f"fiche DA : {e}")
     now = datetime.now(TZ)
     for fiche in all_attente():
         profile = load_profile(fiche["profil"])
@@ -277,7 +351,7 @@ def publish() -> None:
     # ménage : on ne garde que 60 jours de fiches terminées
     limit = datetime.now(timezone.utc) - timedelta(days=60)
     for fiche in all_attente():
-        if fiche["statut"] in ("publiee", "refusee", "expiree", "abandonnee") and \
+        if fiche["statut"] in ("publiee", "refusee", "expiree", "abandonnee", "info") and \
                 datetime.fromisoformat(fiche["cree"]) < limit:
             (state.STATE / "attente" / f"{fiche['id']}.json").unlink(missing_ok=True)
 

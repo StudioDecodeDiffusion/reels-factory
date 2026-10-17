@@ -45,14 +45,20 @@ def main():
                           {"qui": "mascotte", "texte": "Un chiffre incroyable, tu vas voir !", "expression": "choc"}]
     (d / "7_spec.json").write_text(json.dumps(spec))
     assert run("pipeline.tool", "check", str(d / "7_spec.json"), "--profile", "actu") == "OK"
-    (d / "3_correlation.json").write_text(json.dumps({"choix": 0, "concepts": [{"titre": "Test lune",
-                                       "faits": [{"fait": "x", "source_url": "https://example.org"}]}]}))
-    (d / "4_script.json").write_text(json.dumps({"legende": "Accroche test #lune", "hashtags": ["#actu", "#science"]}))
-    (d / "6_validation_tour1.json").write_text(json.dumps({"notes": {"accroche": 8}, "verdict": "valide"}))
+    (d / "3_resultats.json").write_text(json.dumps({"enseignements": ["pas encore de données"]}))
+    (d / "4_concept.json").write_text(json.dumps({"choix": 0, "concepts": [{"titre": "Test lune", "sujet": "s",
+                                       "faits": [{"fait": "x", "source_url": "https://example.org"}]},
+                                       {"titre": "Autre piste"}], "critique_compte": "Critique test",
+                                       "a_tester": ["tester X"]}))
+    run("pipeline.tool", "info", job, "--profile", "actu")
+    sh("git", "clone", "-q", "-b", "depot-videos", str(remote), str(tmp / "info"), cwd=tmp)
+    (d / "5_scenario.json").write_text(json.dumps({"legende": "Accroche test #lune", "hashtags": ["#actu", "#science"],
+                                                   "relecture": {"notes": {"accroche": 8}, "reecritures": 1}}))
+    (d / "6_da.json").write_text(json.dumps({"messages_traites": ["c99"], "message_au_proprietaire": "J'ai mis plus de jaune."}))
     (d / "8_community.json").write_text(json.dumps({"bilan": "RAS", "recommandations": ["plus de chiffres"],
                                                    "reponses": [{"comment_id": "c1", "commentaire": "Top", "reponse": "Merci !"}]}))
-    (d / "9_verification.json").write_text(json.dumps({"decision": "publiable", "score_global": 9,
-                                                      "resume_pour_le_proprietaire": "RAS"}))
+    (d / "7_controle.json").write_text(json.dumps({"decision": "publiable", "score_global": 9,
+                                                  "resume_pour_le_proprietaire": "RAS"}))
     run("pipeline.tool", "render", str(d / "7_spec.json"), str(d / "video.mp4"))
     run("pipeline.tool", "frames", str(d / "7_spec.json"), str(d / "video.mp4"))
     cap = run("pipeline.tool", "caption", job, "--profile", "actu")
@@ -83,7 +89,7 @@ def main():
     voix.say = fake_say
 
     calls = []
-    gf.gh = lambda method, path, **kw: calls.append((method, path, kw.get("json"))) or {"number": 7}
+    gf.gh = lambda method, path, **kw: calls.append((method, path, kw.get("json"))) or {"number": 6}
     media_host.upload = lambda files, jid: {"urls": {f.name: f"https://h/{f.name}" for f in files}}
     media_host.cleanup = lambda info: calls.append(("cleanup",))
 
@@ -93,8 +99,14 @@ def main():
         def reply(self, cid, msg): calls.append(("reply", cid, msg))
     instagram.IG = FakeIG
 
+    gf.on_drop(str(tmp / "info" / "drop"))
+    assert "Concept du jour" in calls[0][2]["title"] and "Critique test" in calls[0][2]["body"]
+    calls.clear()
+    gf.gh = lambda method, path, **kw: calls.append((method, path, kw.get("json"))) or (
+        [] if path.startswith("/issues?labels=da") else {"number": 7, "labels": []})
     gf.on_drop(str(drop / "drop"))
     body = calls[0][2]["body"]
+    assert any("plus de jaune" in str(c[2]) for c in calls), "le message du DA doit être publié"
     assert "@moi" in body and "https://h/video.mp4" in body and "REP 1 3" in body
     assert "voix off :** piper:fr_FR-upmc" in body, body
     probe = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=codec_type",

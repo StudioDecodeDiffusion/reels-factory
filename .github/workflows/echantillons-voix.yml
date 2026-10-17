@@ -4,7 +4,7 @@ name: Échantillons de voix off
 on:
   push:
     branches: [main]
-    paths: [voix/texte_test.txt, voix/essais.json]
+    paths: [voix/texte_test.txt]
   workflow_dispatch:
 
 permissions:
