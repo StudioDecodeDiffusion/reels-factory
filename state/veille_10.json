@@ -1,0 +1,57 @@
+{
+  "semaine": "2026-S42",
+  "date": "2026-10-17",
+  "comptes": [
+    {
+      "nom": "AntifakenewsAI (Thomas Huchon)",
+      "lien": "https://www.brandwatch.com/fr/blog/partenariat-brandwatch-antifakenewsai/",
+      "plateforme": "Instagram + TikTok",
+      "abonnes": "non trouvé (estimation impossible : aucun chiffre indexé)",
+      "source_chiffre": "Stratégies 05/02/2024 (https://www.strategies.fr/actualites/medias/LQ2867371C/un-avatar-de-journaliste-pour-lutter-contre-les-fake-news.html) ; Brandwatch 15/05/2024",
+      "format": "avatar IA réaliste (HeyGen) d'un vrai journaliste, face caméra, habillage motion design ; 1 script = 3 vidéos",
+      "ton": "pédagogique, débunk de fausses infos",
+      "frequence": "réactif : vidéo prête < 2 h après l'info repérée (rythme réel non indexé)",
+      "points_forts": "caution d'un journaliste humain identifié, IA assumée dans le nom, vitesse",
+      "transparence_ia": "totale (« AI » dans le nom, avatar revendiqué)",
+      "statut": "nouveau"
+    },
+    {
+      "nom": "Fermes à faux JT IA francophones (ex. page Facebook « Islam », Burkina Faso)",
+      "lien": "https://www.euronews.com/my-europe/2025/12/19/video-of-coup-in-paris-how-an-ai-generated-video-caused-macron-a-major-headache",
+      "plateforme": "Facebook, TikTok",
+      "abonnes": "inconnu ; une vidéo > 12 millions de vues",
+      "source_chiffre": "Euronews 19/12/2025",
+      "format": "faux reportage Sora 2 avec présentateur IA, logos de vrais médias (RFI)",
+      "ton": "sensationnaliste, fausses infos (faux coup d'État à Paris)",
+      "frequence": "série de vidéos",
+      "points_forts": "viralité par le choc ; modèle à éviter absolument",
+      "transparence_ia": "nulle",
+      "statut": "nouveau"
+    },
+    {
+      "nom": "Fermes de contenu TikTok à voix IA (41 comptes, dont 14 en français pro-Kremlin)",
+      "lien": "https://www.newsguardtech.com/special-reports/tiktok-content-farms-use-ai-voiceovers-to-mass-produce-political-misinformation/",
+      "plateforme": "TikTok",
+      "abonnes": "inconnu ; 380 millions de vues cumulées, 9 784 vidéos en 458 jours",
+      "source_chiffre": "NewsGuard 11/07/2024 (données mars 2023-juin 2024, ancien)",
+      "format": "voix seule IA sur images d'archives, scripts identiques lus par plusieurs voix",
+      "ton": "propagande, désinformation",
+      "frequence": "≈ 21 vidéos/jour cumulées (9 784 / 458 j)",
+      "points_forts": "volume ; modèle à éviter",
+      "transparence_ia": "nulle",
+      "statut": "nouveau"
+    }
+  ],
+  "contexte": [
+    "Instagram, 01/09/2026 : étiquette « Profil généré par IA » (remplace « Créateur IA ») ; vise surtout les faux humains mais aussi les comptes publiant régulièrement du contenu IA ou mettant en scène un personnage créé par IA ; portée limitée si non étiquetés (RTBF https://www.rtbf.be/article/intelligence-artificielle-instagram-va-identifier-les-comptes-entierement-generes-par-ia-11778004 ; Journal du Geek https://www.journaldugeek.com/2026/09/01/instagram-veut-que-ses-faux-humains-en-ia-se-presentent-clairement/)",
+    "TikTok, 10/07/2026 : détection renforcée du spam IA « de faible qualité et très standardisé », en priorité sur politique/actualité, santé, finance (AFP via CB News https://www.cbnews.fr/mobile/tiktok-s-attaque-aux-comptes-proposant-uniquement-du-contenu-genere-ia)",
+    "Kapwing (mai 2026, publié 21/06/2026) : 59 % des 500 premières vidéos d'un compte TikTok neuf = AI slop, ~21 % sur YouTube Shorts ; 35 % en science/éducation (TNW https://thenextweb.com/news/tiktok-ai-slop-59-percent-new-users-kapwing-study)",
+    "Digital News Report 2026 (17/06/2026) : réseaux sociaux/vidéo 54 % vs sites 51 % comme 1re source en ligne ; Instagram 26 % pour l'info ; usage hebdo des chatbots pour l'info 10 % (16 % des moins de 35 ans), stable en France (The Media Leader https://fr.themedialeader.com/?p=216046)"
+  ],
+  "idees": [
+    "Signature transparente fixe : « Lou et Déco sont des personnages animés ; les faits sont vérifiés, sources en légende » dans la bio et en fin de vidéo, et activer de nous-mêmes l'étiquette IA d'Instagram (décision du propriétaire) pour éviter la limite de portée.",
+    "Format « Vrai ou faux JT ? » : Déco montre (décrit, sans la diffuser) une fausse vidéo IA virale, Lou explique comment la repérer et ce qui est établi ; sources à l'écran.",
+    "Source affichée à l'écran sur chaque chiffre (nom du média + date) : ce qui nous sépare visiblement du « slop » standardisé que TikTok et Instagram commencent à pénaliser."
+  ],
+  "position_decode": "Le créneau « actu française expliquée, faite par IA, transparente » est quasi vide dans ce qui est publiquement indexé : seul AntifakenewsAI (avatar réaliste d'un vrai journaliste, débunk) est un pair légitime ; le reste est de la désinformation (faux JT, voix IA en masse). Décodé se distingue par des personnages non réalistes en pixel art (Lou/Déco, pas de faux humain), un dialogue, des chiffres sourcés et une ligne assumée. Risque : être confondu avec le slop IA et subir les nouvelles règles de portée ; parade : transparence et sources visibles."
+}
