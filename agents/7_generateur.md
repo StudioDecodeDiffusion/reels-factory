@@ -51,3 +51,5 @@ python -m pipeline.tool caption <id> --profile <compte>
 
 ## Ensuite
 Transmettre à l'**agent 9 (critique)** : c'est lui qui évalue la vidéo et l'envoie au propriétaire.
+
+Vérifier que `7_spec.json` contient `"musique"` (choisie par l'agent 6) : la musique est ajoutée au rendu final par GitHub.

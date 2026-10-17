@@ -209,6 +209,8 @@ def _sonoriser(d: Path, fiche: dict, profile: dict) -> None:
         return
     spec = sonoriser(spec, fiche["id"], profile, VIDEO / "public")
     render(spec, d / "video.mp4")
+    from .musique import ajouter  # musique de fond sous les voix (choisie par l'agent 6)
+    ajouter(d / "video.mp4", spec.get("musique") or profile.get("musique", "curieux"), sum(map(ord, fiche["id"])))
     contact_sheet(frames_per_scene(spec, d / "video.mp4"), d / "apercu.png")
     fiche["duree_s"] = round(sum(sc["duration"] for sc in spec["scenes"]), 1)
     fiche["voix"] = profile["voix"].get("narrateur") or profile["voix"].get("id")

@@ -50,3 +50,8 @@ gérée automatiquement) ; couleurs en `#RRGGBB`.
  "evolution_charte": "aucune | description",
  "messages_traites": ["id"], "message_au_proprietaire": "..."}
 ```
+
+## Musique de fond (obligatoire pour chaque vidéo)
+Choisir l'ambiance dans `7_spec.json` → `"musique": "tension" | "curieux" | "joyeux"` (chiptune 8 bits composée
+par le code, sans droits, mixée sous les voix qui restent prioritaires). Sujet inquiétant ou faux avertissement →
+« tension » ; explication → « curieux » ; bonne nouvelle ou sujet léger → « joyeux ». Le dire dans le message au propriétaire.
