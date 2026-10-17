@@ -1,9 +1,11 @@
-"""Côté GitHub Actions (gratuit) : fiches de validation par e-mail, publication Instagram, statistiques.
+"""Côté GitHub Actions (gratuit) : courrier des agents par Gmail, rendu final, publication, statistiques.
 
-  python -m pipeline.github_flow on-drop <dossier drop/>   nouvelle vidéo → fiche (issue) → e-mail
-  python -m pipeline.github_flow on-comment                ta réponse (OK / NON / REP) → action
-  python -m pipeline.github_flow publish                   toutes les heures : publie ce qui est validé
-  python -m pipeline.github_flow stats                     chaque soir : stats + nouveaux commentaires
+  python -m pipeline.github_flow depot <dossier drop/>          nouveaux dépôts de la session Claude → mails
+                                                                (les vidéos partent au rendu dans le dépôt public)
+  python -m pipeline.github_flow rendre <dossier drop/> <job>   voix + rendu final + mail de validation (agent 9)
+  python -m pipeline.github_flow facteur                        lit tes mails (OK / NON / REP / notes « agent N - … »),
+                                                                publie ce qui est validé à l'heure prévue
+  python -m pipeline.github_flow stats                          stats + commentaires + abonnés (avant les rapports)
 """
 from __future__ import annotations
 
@@ -16,35 +18,24 @@ from pathlib import Path
 
 import requests
 
-from . import media_host, state
-from .config import TZ, all_profiles, env, load_profile
+from . import mail, media_host, state
+from .config import OUTPUT, TZ, all_profiles, env, load_profile
 
 API = "https://api.github.com"
-REPO = os.getenv("GITHUB_REPOSITORY", "")
-OWNER = os.getenv("REPO_OWNER") or REPO.split("/")[0]
+
+R_VALIDATION = ("Réponds à ce mail, <b>première ligne</b> :<br>"
+                "• <b>OK</b> → je transmets à l'agent 8, publication à l'heure prévue<br>"
+                "• <b>OK MAINTENANT</b> → publication immédiate<br>"
+                "• <b>NON</b> + ta raison → vidéo abandonnée, ta raison sert aux prochaines idées<br>"
+                "• n'importe quel autre texte → remarque transmise à l'agent 9 (la vidéo reste en attente)<br>"
+                "Sans réponse sous 36 h, la vidéo est abandonnée.")
+R_INFO = "Pas besoin de répondre. Un avis sur ce concept ? Réponds à ce mail : l'agent {n} lira ta remarque."
+R_NOTE = "Réponds simplement à ce mail avec ta remarque : l'agent {n} la lira avant son prochain travail."
+R_RAPPORT8 = ("• <b>REP 1 3</b> (ou <b>REP TOUT</b>) → j'envoie les réponses proposées aux commentaires choisis<br>"
+              "• n'importe quel autre texte → remarque pour l'agent 8")
 
 
-def gh(method: str, path: str, **kw):
-    r = requests.request(method, f"{API}/repos/{REPO}{path}", timeout=60,
-                         headers={"Authorization": f"Bearer {env('GITHUB_TOKEN')}",
-                                  "Accept": "application/vnd.github+json"}, **kw)
-    if r.status_code >= 400:
-        raise RuntimeError(f"GitHub {method} {path} → {r.status_code} {r.text[:300]}")
-    return r.json() if r.text else {}
-
-
-def comment(issue: int, body: str) -> None:
-    gh("POST", f"/issues/{issue}/comments", json={"body": body})
-
-
-def set_labels(issue: int, labels: list[str]) -> None:
-    gh("PUT", f"/issues/{issue}/labels", json={"labels": labels})
-
-
-def close(issue: int) -> None:
-    gh("PATCH", f"/issues/{issue}", json={"state": "closed"})
-
-
+# ────────────────────────────────────────────── mémoire des vidéos en cours
 def attente(job_id: str):
     return state.load(f"attente/{job_id}", None)
 
@@ -59,155 +50,154 @@ def all_attente() -> list[dict]:
     return [json.loads(p.read_text(encoding="utf-8")) for p in sorted(d.glob("*.json"))] if d.exists() else []
 
 
-def _replies_md(comm: dict) -> str:
-    rep = comm.get("reponses") or []
-    out = ""
-    if comm.get("bilan"):
-        out += f"\n### 📊 Bilan du compte\n{comm['bilan']}\n"
-        if comm.get("recommandations"):
-            out += "\n" + "\n".join(f"- {r}" for r in comm["recommandations"]) + "\n"
-    if rep:
-        out += "\n### 💬 Réponses proposées aux commentaires\n"
-        for i, r in enumerate(rep, 1):
-            out += f"{i}. « {str(r.get('commentaire', ''))[:140]} »\n   → {r.get('reponse')}\n"
-        out += "\nPour les envoyer : réponds `REP 1 3` (numéros choisis) ou `REP TOUT`.\n"
-    return out
-
-
-def _publication_slot(profile: dict) -> str:
+def _slot(profile: dict) -> str:
     h = profile["planning"].get("publication_heure", 18)
     return f"aujourd'hui vers {h} h" if datetime.now(TZ).hour < h else f"demain vers {h} h"
 
 
-# ────────────────────────────────────────────── discussion avec le directeur artistique (agent 6)
-def da_issue(pid: str) -> int:
-    """Fiche de discussion permanente avec le directeur artistique d'un compte (créée au besoin)."""
-    ex = gh("GET", f"/issues?labels=da:{pid}&state=open&per_page=1")
-    if ex:
-        return ex[0]["number"]
-    profile = load_profile(pid)
-    body = (f"@{OWNER} ici, tu parles directement au **directeur artistique** de **{profile['nom_compte']}** "
-            "(agent 6).\n\nÉcris-lui quand tu veux — en commentaire ou **en répondant à l'e-mail** : couleurs, "
-            "tenues de Lou et Déco, expressions, rythme, ce que tu as aimé ou pas dans une vidéo, une idée de gag…\n\n"
-            "Il lit tous tes messages avant chaque nouvelle vidéo, les applique, et te répond ici avec ce qu'il a "
-            "changé et une proposition pour la suite.")
-    issue = gh("POST", "/issues", json={"title": f"🎨 Discussion avec le directeur artistique — {profile['nom_compte']}",
-                                        "body": body, "labels": [f"da:{pid}", "discussion"]})
-    return issue["number"]
+def md(texte: str) -> str:
+    """Mini-markdown → HTML : ## titres, - puces, **gras**, [lien](url), lignes."""
+    out, liste = [], False
+    for ln in (texte or "").splitlines():
+        s = mail.fil(ln.strip())
+        s = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", s)
+        s = re.sub(r"\[(.+?)\]\((https?://[^)\s]+)\)", r'<a href="\2">\1</a>', s)
+        if s.startswith("- ") or s.startswith("• "):
+            if not liste:
+                out.append("<ul style='padding-left:20px'>")
+                liste = True
+            out.append(f"<li>{s[2:]}</li>")
+            continue
+        if liste:
+            out.append("</ul>")
+            liste = False
+        if s.startswith("### "):
+            out.append(f"<h4 style='margin:16px 0 6px'>{s[4:]}</h4>")
+        elif s.startswith("## "):
+            out.append(f"<h3 style='margin:18px 0 8px'>{s[3:]}</h3>")
+        elif s:
+            out.append(f"<p style='margin:6px 0'>{s}</p>")
+    if liste:
+        out.append("</ul>")
+    return "\n".join(out)
 
 
-def ensure_da() -> None:
-    for pid in all_profiles():
-        if "demande" not in str(load_profile(pid).get("planning", {}).get("generation", "")):
-            da_issue(pid)
-
-
-# ────────────────────────────────────────────── nouvelle vidéo déposée par la session de nuit
-def on_drop(drop_dir: str) -> None:
+# ────────────────────────────────────────────── dépôts de la session Claude
+def depot(drop_dir: str) -> None:
     for d in sorted(Path(drop_dir).iterdir()):
         f = d / "fiche.json"
         if not f.exists():
             continue
         fiche = json.loads(f.read_text(encoding="utf-8"))
         if attente(fiche["id"]):
-            print(f"{fiche['id']} déjà traité")
             continue
         profile = load_profile(fiche["profil"])
-        name = profile["nom_compte"]
+        nom = profile["nom_compte"]
+        statut = fiche["statut"]
 
-        if fiche["statut"] == "info":
+        if statut == "info":  # agent 4 → pour information
             c = fiche.get("concept", {})
-            faits = "\n".join(f"- {f.get('fait')} ([source]({f.get('source_url')}))" for f in c.get("faits", []))
-            body = f"""@{OWNER} pour info — voici ce que l'**agent 4** a retenu pour la vidéo de cette nuit sur **{name}**.
-
-### 💡 Concept du jour : {fiche.get('titre')}
+            faits = "\n".join(f"- {x.get('fait')} ([source]({x.get('source_url')}))" for x in c.get("faits", []))
+            corps = md(f"""Pour info, voici le concept retenu pour la vidéo de cette nuit sur **{nom}**.
+## 💡 {fiche.get('titre')}
 - **Sujet :** {c.get('sujet', '')}
 - **Format :** {c.get('format', '')}
-- **Mise en scène :** {c.get('mise_en_scene', c.get('idee_animation', ''))}
+- **Mise en scène :** {c.get('mise_en_scene', '')}
 - **Pourquoi :** {fiche.get('justification', '')}
-
-**Faits retenus :**
+### Faits retenus
 {faits or '- (aucun)'}
-
-**Autres pistes écartées :** {', '.join(x for x in fiche.get('autres', []) if x) or '—'}
-
-### 🔎 Critique du compte et de son audience
+**Pistes écartées :** {', '.join(x for x in fiche.get('autres', []) if x) or '—'}
+## 🔎 Critique du compte et de son audience
 {fiche.get('critique') or '—'}
+### À tester
+""" + "\n".join(f"- {x}" for x in fiche.get("a_tester", [])))
+            mail.envoyer(4, f"{nom} · Concept du jour : {fiche.get('titre')}", corps, R_INFO.format(n=4),
+                         ref={"type": "info", "job": fiche["id"], "profil": fiche["profil"]})
 
-**À tester :**
-""" + "\n".join(f"- {x}" for x in fiche.get("a_tester", [])) + """
+        elif statut == "rapport":  # rapports quotidiens des agents 1, 2, 3, 8
+            n = int(fiche["agent"])
+            images = graphiques(fiche["profil"]) if n == 8 else {}
+            corps = md(fiche.get("corps_md", ""))
+            if images:
+                corps = "".join(f'<p><img src="cid:{k}" style="width:100%;max-width:600px;border-radius:8px"></p>'
+                                for k in images) + corps
+            rep = (fiche.get("reponses") or [])
+            if n == 8 and rep:
+                corps += md("## 💬 Réponses proposées aux commentaires\n" + "\n".join(
+                    f"- **{i}.** « {str(r.get('commentaire', ''))[:140]} » → {r.get('reponse')}" for i, r in enumerate(rep, 1)))
+            mail.envoyer(n, f"{nom} · {fiche.get('titre', 'Rapport du jour')}", corps,
+                         R_RAPPORT8 if n == 8 else R_NOTE.format(n=n), images=images,
+                         ref={"type": f"rapport{n}", "job": fiche["id"], "profil": fiche["profil"]})
 
-**Ce que disent les résultats du compte (agent 3) :**
-""" + ("\n".join(f"- {x}" for x in fiche.get("enseignements", [])) or "- pas encore de données") + """
+        elif statut == "abandonnee":
+            mail.envoyer(9, f"{nom} · Pas de vidéo cette nuit", md(f"Aucune vidéo n'a été produite pour **{nom}**.\n\n"
+                                                                  f"**Raison :** {fiche.get('raison')}"),
+                         R_NOTE.format(n=9), ref={"type": "abandon", "job": fiche["id"], "profil": fiche["profil"]})
 
----
-Aucune action demandée : la vidéo arrive pour validation dans la foulée. Un avis sur la direction ? Écris au directeur artistique sur sa fiche de discussion."""
-            issue = gh("POST", "/issues", json={"title": f"[{name}] 💡 Concept du jour : {fiche.get('titre')}",
-                                                "body": body, "labels": [f"compte:{fiche['profil']}", "info"]})
-            fiche.update(issue=issue["number"], media=None)
-            save_attente(fiche)
-            close(issue["number"])
-            continue
-
-        if fiche["statut"] == "abandonnee":
-            issue = gh("POST", "/issues", json={
-                "title": f"[{name}] Pas de vidéo cette nuit",
-                "body": f"@{OWNER} aucune vidéo n'a été produite pour **{name}**.\n\n**Raison :** {fiche.get('raison')}\n"
-                        + _replies_md(fiche.get("community") or {}),
-                "labels": [f"compte:{fiche['profil']}", "abandonnee"]})
-            fiche.update(issue=issue["number"], media=None)
-            save_attente(fiche)
-            if not (fiche.get("community") or {}).get("reponses"):
-                close(issue["number"])
-            continue
-
-        _sonoriser(d, fiche, profile)
-        media = media_host.upload([d / "video.mp4", d / "apercu.png"], fiche["id"])
-        v, ap = media["urls"]["video.mp4"], media["urls"]["apercu.png"]
-        verif = fiche.get("verification", {})
-        notes = fiche.get("validation", {}).get("notes", {})
-        notes_txt = " · ".join(f"{k} {v_}/10" for k, v_ in notes.items())
-        sources = "\n".join(f"- {s}" for s in fiche.get("sources", [])) or "- (aucune)"
-        body = f"""@{OWNER} nouvelle vidéo à valider pour **{name}** — publication prévue **{_publication_slot(profile)}**.
-
-![aperçu]({ap})
-
-### ▶️ [Regarder la vidéo]({v})
-
-### Légende prévue
-```
-{fiche['legende']}
-```
-
-### Vérification
-- **Vérificateur final :** {verif.get('decision', '?')} ({verif.get('score_global', '?')}/10) — {verif.get('resume_pour_le_proprietaire', '')}
-- **Validateur :** {notes_txt} ({fiche.get('tours_validation', 1)} tour(s))
-- **Durée :** {fiche.get('duree_s', '?')} s · **voix off :** {fiche.get('voix') or 'aucune'}
-
-### Sources
-{sources}
-{_replies_md(fiche.get('community') or {})}
----
-**Réponds simplement à cet e-mail** (ou commente ici), première ligne :
-- `OK` → publication à l'heure prévue
-- `OK MAINTENANT` → publication immédiate
-- `NON` suivi de ta raison → vidéo abandonnée, la raison sert aux prochaines idées
-
-Sans réponse sous 36 h, la vidéo est abandonnée automatiquement.
-<!-- job:{fiche['id']} -->"""
-        issue = gh("POST", "/issues", json={"title": f"[{name}] {fiche['titre']}", "body": body,
-                                            "labels": [f"compte:{fiche['profil']}", "a-valider"]})
-        fiche.update(issue=issue["number"], media=media)
-        fiche.pop("verification", None)
+        elif statut == "a_valider":
+            if os.getenv("RENDU_PUBLIC") == "1":
+                _envoyer_au_rendu(fiche["id"])
+                fiche["statut"] = "rendu_en_cours"
+            else:
+                rendre_un(d, fiche)
+                continue
         save_attente(fiche)
-        if fiche.get("da_message"):
-            comment(da_issue(fiche["profil"]), f"🎨 **Le directeur artistique, pour la vidéo « {fiche['titre']} » "
-                                               f"(fiche #{issue['number']}) :**\n\n{fiche['da_message']}")
-        print(f"Fiche #{issue['number']} créée pour {fiche['id']}")
+
+
+def _envoyer_au_rendu(job: str) -> None:
+    """Le rendu (voix + vidéo, ~20 min) tourne dans le dépôt PUBLIC reels-media : minutes illimitées."""
+    r = requests.post(f"{API}/repos/{env('MEDIA_REPO')}/dispatches", timeout=60,
+                      headers={"Authorization": f"Bearer {env('GH_PAT')}", "Accept": "application/vnd.github+json"},
+                      json={"event_type": "rendu", "client_payload": {"job": job}})
+    r.raise_for_status()
+    print(f"{job} envoyé au rendu public")
+
+
+def rendre(drop_dir: str, job: str) -> None:
+    d = Path(drop_dir) / job
+    rendre_un(d, json.loads((d / "fiche.json").read_text(encoding="utf-8")))
+
+
+def rendre_un(d: Path, fiche: dict) -> None:
+    """Agent 7 (rendu final avec voix) puis agent 9 : mail de validation ; agent 6 : son message."""
+    profile = load_profile(fiche["profil"])
+    nom = profile["nom_compte"]
+    _sonoriser(d, fiche, profile)
+    media = media_host.upload([d / "video.mp4", d / "apercu.png"], fiche["id"])
+    v = media["urls"]["video.mp4"]
+    crit = fiche.get("critique", {}) or fiche.get("verification", {})
+    proj = crit.get("projection", {})
+    sources = "\n".join(f"- [{s}]({s})" for s in fiche.get("sources", [])) or "- (aucune)"
+    corps = (f'<p><img src="cid:apercu" style="width:100%;border-radius:8px;border:2px solid #14131C"></p>'
+             f'<p style="text-align:center;font-size:18px"><a href="{v}"><b>▶️ Regarder la vidéo ({fiche.get("duree_s", "?")} s)</b></a></p>'
+             + md(f"""## ✅ Vidéo prête : {fiche['titre']}
+Publication prévue **{_slot(profile)}** sur **{nom}** si tu valides.
+## 🧐 Mon évaluation
+- **Verdict :** {crit.get('decision', '?')} — **{crit.get('score_global', '?')}/10**
+- {crit.get('resume_pour_le_proprietaire', '')}
+- **Cohérence et qualité :** {crit.get('coherence', crit.get('controles', {}).get('images', '—'))}
+## 📈 Projection (avec l'agent 3)
+- **Potentiel :** {proj.get('potentiel', '—')}
+- **Vues attendues :** {proj.get('vues_estimees', '—')}
+- **Audience visée :** {proj.get('audience', '—')}
+- **Pourquoi :** {proj.get('raisonnement', '—')}
+## 📝 Légende prévue
+{fiche['legende']}
+## 🔗 Sources
+{sources}"""))
+    piece = [d / "video.mp4"] if (d / "video.mp4").stat().st_size < 18_000_000 else []
+    mail.envoyer(9, f"{nom} · Vidéo prête à valider : {fiche['titre']}", corps, R_VALIDATION,
+                 ref={"type": "validation", "job": fiche["id"], "profil": fiche["profil"]},
+                 images={"apercu": d / "apercu.png"}, pieces=piece)
+    if fiche.get("da_message"):
+        mail.envoyer(6, f"{nom} · Mes choix pour « {fiche['titre']} »", md(fiche["da_message"]), R_NOTE.format(n=6),
+                     ref={"type": "da", "job": fiche["id"], "profil": fiche["profil"]})
+    fiche.update(statut="a_valider", media=media, envoyee=state.now_iso())
+    save_attente(fiche)
 
 
 def _sonoriser(d: Path, fiche: dict, profile: dict) -> None:
-    """Ajoute la voix off : synthèse, recalage des durées, rendu final (remplace la version muette)."""
+    """Ajoute les voix : synthèse, recalage des durées, rendu final (remplace la version muette)."""
     spec_path = d / "7_spec.json"
     if not profile.get("voix", {}).get("active") or not spec_path.exists():
         return
@@ -224,139 +214,160 @@ def _sonoriser(d: Path, fiche: dict, profile: dict) -> None:
     fiche["voix"] = profile["voix"].get("narrateur") or profile["voix"].get("id")
 
 
-# ────────────────────────────────────────────── ta réponse
-def _job_from_issue(n: int):
-    return next((f for f in all_attente() if f.get("issue") == n), None)
+# ────────────────────────────────────────────── le facteur : tes mails
+def note(agent: int, objet: str, texte: str, profil: str | None = None) -> None:
+    """Range une note pour un agent ; il la lit avant son prochain travail."""
+    (state.STATE / "messages").mkdir(exist_ok=True)
+    fil = state.load(f"messages/agent_{agent}", [])
+    if not profil:
+        t = f"{objet} {texte}".lower()
+        profil = "qhse" if "qhse" in t else "actu" if "actu" in t else "tous"
+    fil.append({"id": f"{agent}-{len(fil) + 1}-{datetime.now(TZ):%m%d%H%M}", "date": state.now_iso(),
+                "objet": objet, "texte": texte, "profil": profil, "traite": False})
+    state.save(f"messages/agent_{agent}", fil[-200:])
 
 
-def on_comment() -> None:
-    author = os.getenv("COMMENT_AUTHOR", "")
-    if author.lower() != OWNER.lower():
-        print(f"Commentaire de {author} ignoré (seul {OWNER} peut valider)")
-        return
-    n = int(env("ISSUE_NUMBER"))
-    labels = [lab["name"] for lab in gh("GET", f"/issues/{n}").get("labels", [])]
-    da = next((lab.split(":", 1)[1] for lab in labels if lab.startswith("da:")), None)
-    if da:
-        texte = re.split(r"\n\s*(?:On .+wrote:|Le .+a écrit\s*:)", os.getenv("COMMENT_BODY", ""))[0].strip()
-        fil = state.load(f"da_{da}", [])
-        fil.append({"id": os.getenv("COMMENT_ID", str(len(fil) + 1)), "date": state.now_iso(), "texte": texte,
-                    "traite": False})
-        state.save(f"da_{da}", fil[-100:])
-        comment(n, "📝 Noté ! Le directeur artistique l'appliquera dès la prochaine vidéo et te répondra ici.")
-        return
-    fiche = _job_from_issue(n)
+def facteur() -> None:
+    lus = []
+    if os.getenv("GMAIL_APP_PASSWORD"):
+        try:
+            lus = mail.lire_nouveaux()
+        except Exception as e:
+            print(f"lecture Gmail impossible : {e}")
+    carnet = state.load("mails", {})
+    for m in lus:
+        cle = mail.normaliser(m["objet"])
+        texte = m["texte"].strip()
+        lien = carnet.get(cle)
+        if lien:  # réponse à un mail d'agent
+            n, ref = int(lien["agent"]), lien.get("ref", {})
+            if ref.get("type") == "validation":
+                _validation(ref["job"], texte)
+            elif ref.get("type") == "rapport8" and re.match(r"^\s*REP\b", texte, re.I):
+                _reponses_commentaires(ref, texte)
+            elif texte:
+                note(n, m["objet"], texte, ref.get("profil"))
+                mail.envoyer(n, "Remarque bien reçue", md(f"Merci ! J'ai bien noté :\n\n> {texte[:600]}\n\n"
+                                                          "Je l'appliquerai dès mon prochain travail."), R_NOTE.format(n=n))
+            continue
+        mm = re.match(r"^\s*agent\s*(?:n\s*[°o]?\s*)?(\d+)\s*[-–—:]?\s*(.*)$", m["objet"], re.I)
+        if mm and 1 <= int(mm.group(1)) <= 9:
+            n = int(mm.group(1))
+            note(n, mm.group(2).strip(), texte)
+            mail.envoyer(n, f"Note reçue : {mm.group(2).strip()[:60]}",
+                         md(f"Bien reçu ✅\n\n**Ta note :** {mm.group(2).strip()}\n\n{texte[:800]}\n\n"
+                            "Je l'appliquerai dès mon prochain travail et te dirai ce que j'en ai fait."), R_NOTE.format(n=n))
+    publier_ce_qui_est_du()
+
+
+def _validation(job: str, texte: str) -> None:
+    fiche = attente(job)
     if not fiche:
-        print("Pas de vidéo liée à cette fiche")
         return
-    body = os.getenv("COMMENT_BODY", "")
-    # Réponse par e-mail : on ne garde que ce qui précède la citation de l'e-mail d'origine
-    lines = [ln.strip() for ln in re.split(r"\n\s*(?:On .+wrote:|Le .+a écrit\s*:|>)", body)[0].splitlines() if ln.strip()]
-    if not lines:
-        return
-    first = lines[0]
-    m = re.match(r"^(OK|NON|REP)\b\s*(.*)$", first, re.I)
-    if not m:
-        comment(n, "Je n'ai pas compris. Première ligne attendue : `OK`, `OK MAINTENANT`, `NON raison` ou `REP 1 3`.")
-        return
-    cmd, rest = m.group(1).upper(), m.group(2).strip()
     profile = load_profile(fiche["profil"])
-
-    if cmd == "REP":
-        _send_replies(fiche, rest, n, profile)
-    elif fiche["statut"] not in ("a_valider", "approuvee"):
-        comment(n, f"Cette vidéo est déjà « {fiche['statut']} ».")
-    elif cmd == "NON":
-        raison = rest + (" " + " ".join(lines[1:]) if len(lines) > 1 else "")
-        fiche.update(statut="refusee", raison=raison.strip())
+    nom = profile["nom_compte"]
+    lignes = [ln.strip() for ln in texte.splitlines() if ln.strip()]
+    premiere = lignes[0] if lignes else ""
+    m = re.match(r"^(OK|NON)\b[\s:!.,-]*(.*)$", premiere, re.I)
+    if not m:
+        note(9, f"Remarque sur « {fiche['titre']} »", texte, fiche["profil"])
+        mail.envoyer(9, f"{nom} · Remarque notée sur « {fiche['titre']} »",
+                     md(f"J'ai noté ta remarque :\n\n> {texte[:600]}\n\nLa vidéo **reste en attente** de ton OK ou NON."),
+                     R_VALIDATION, ref={"type": "validation", "job": job, "profil": fiche["profil"]})
+        return
+    if fiche["statut"] not in ("a_valider", "approuvee"):
+        return
+    cmd, reste = m.group(1).upper(), m.group(2).strip()
+    if cmd == "NON":
+        raison = " ".join([reste] + lignes[1:]).strip()
+        fiche.update(statut="refusee", raison=raison)
         media_host.cleanup(fiche.get("media"))
         refus = state.load(f"refus_{fiche['profil']}", [])
-        refus.append({"titre": fiche["titre"], "raison": raison.strip(), "date": fiche["cree"][:10]})
+        refus.append({"titre": fiche["titre"], "raison": raison, "date": fiche["cree"][:10]})
         state.save(f"refus_{fiche['profil']}", refus[-50:])
-        set_labels(n, [f"compte:{fiche['profil']}", "refusee"])
-        comment(n, "🗑️ Vidéo abandonnée. Ta raison est notée : les agents en tiendront compte.")
-        close(n)
-    else:  # OK
-        fiche["statut"] = "approuvee"
-        set_labels(n, [f"compte:{fiche['profil']}", "approuvee"])
-        if "MAINTENANT" in rest.upper():
-            save_attente(fiche)
-            _publish(fiche, profile)
-            return
-        comment(n, f"👍 Validée. Publication {_publication_slot(profile)}.")
-    save_attente(fiche)
-
-
-def _send_replies(fiche: dict, rest: str, n: int, profile: dict) -> None:
-    from .instagram import IG
-    rep = (fiche.get("community") or {}).get("reponses") or []
-    if not rep:
-        comment(n, "Aucune réponse proposée sur cette fiche.")
+        save_attente(fiche)
+        mail.envoyer(9, f"{nom} · Vidéo abandonnée : {fiche['titre']}",
+                     md(f"C'est noté, la vidéo est abandonnée.\n\n**Ta raison :** {raison or '(non précisée)'}\n\n"
+                        "Les agents 3 et 4 en tiendront compte pour les prochaines idées."), R_NOTE.format(n=9))
         return
-    idx = range(1, len(rep) + 1) if rest.upper().startswith("TOUT") else [int(x) for x in re.findall(r"\d+", rest)]
+    fiche["statut"] = "approuvee"
+    save_attente(fiche)
+    if "MAINTENANT" in reste.upper():
+        _publier(fiche, profile)
+    else:
+        mail.envoyer(9, f"{nom} · Validée, transmise à l'agent 8 : {fiche['titre']}",
+                     md(f"Merci ! Je transmets à l'**agent 8**, qui publiera **{_slot(profile)}**."),
+                     R_NOTE.format(n=9))
+
+
+def _reponses_commentaires(ref: dict, texte: str) -> None:
+    from .instagram import IG
+    fiche = attente(ref["job"]) or {}
+    rep = fiche.get("reponses") or []
+    profile = load_profile(ref["profil"])
+    if not rep:
+        return
+    idx = range(1, len(rep) + 1) if re.search(r"TOUT", texte, re.I) else [int(x) for x in re.findall(r"\d+", texte.splitlines()[0])]
     ig, ok, ko = IG(profile), [], []
     for i in idx:
-        if not 1 <= i <= len(rep) or rep[i - 1].get("envoyee"):
-            continue
-        try:
-            ig.reply(rep[i - 1]["comment_id"], rep[i - 1]["reponse"])
-            rep[i - 1]["envoyee"] = True
-            ok.append(str(i))
-        except Exception as e:
-            ko.append(f"{i} ({str(e)[:120]})")
+        if 1 <= i <= len(rep) and not rep[i - 1].get("envoyee"):
+            try:
+                ig.reply(rep[i - 1]["comment_id"], rep[i - 1]["reponse"])
+                rep[i - 1]["envoyee"] = True
+                ok.append(str(i))
+            except Exception as e:
+                ko.append(f"{i} ({str(e)[:120]})")
     save_attente(fiche)
-    comment(n, f"💬 Réponses envoyées : {', '.join(ok) or 'aucune'}" + (f"\n❌ Échecs : {'; '.join(ko)}" if ko else ""))
+    mail.envoyer(8, f"{profile['nom_compte']} · Réponses aux commentaires envoyées",
+                 md(f"Réponses envoyées : **{', '.join(ok) or 'aucune'}**" + (f"\n\nÉchecs : {'; '.join(ko)}" if ko else "")),
+                 R_NOTE.format(n=8))
 
 
-# ────────────────────────────────────────────── publication
-def _publish(fiche: dict, profile: dict) -> None:
+# ────────────────────────────────────────────── publication (agent 8)
+def _publier(fiche: dict, profile: dict) -> None:
     from .instagram import IG
-    n = fiche["issue"]
+    nom = profile["nom_compte"]
     try:
         info = IG(profile).publish_reel(fiche["media"]["urls"]["video.mp4"], fiche["legende"])
     except Exception as e:
         fiche["erreur"] = str(e)[:500]
+        fiche["erreurs"] = fiche.get("erreurs", 0) + 1
         save_attente(fiche)
-        comment(n, f"❌ Échec de publication : {str(e)[:500]}\n\nRéponds `OK MAINTENANT` pour réessayer.")
+        mail.envoyer(8, f"{nom} · Échec de publication : {fiche['titre']}",
+                     md(f"La publication a échoué :\n\n{str(e)[:500]}\n\nJe réessaierai à la prochaine heure."),
+                     R_NOTE.format(n=8))
         return
     fiche.update(statut="publiee", media_id=info["id"], permalink=info.get("permalink"), publiee=state.now_iso())
     save_attente(fiche)
     media_host.cleanup(fiche["media"])
-    set_labels(n, [f"compte:{fiche['profil']}", "publiee"])
-    comment(n, f"✅ Publiée sur {profile['nom_compte']} : {info.get('permalink', '')}")
-    if not any(not r.get("envoyee") for r in (fiche.get("community") or {}).get("reponses") or []):
-        close(n)
+    mail.envoyer(8, f"{nom} · Publiée : {fiche['titre']}",
+                 md(f"✅ La vidéo est en ligne : [{info.get('permalink', '')}]({info.get('permalink', '')})\n\n"
+                    "Je surveille les commentaires et te fais le bilan dans mon rapport quotidien."), R_NOTE.format(n=8))
 
 
-def publish() -> None:
-    try:
-        ensure_da()
-    except Exception as e:  # jamais bloquant pour la publication
-        print(f"fiche DA : {e}")
+def publier_ce_qui_est_du() -> None:
     now = datetime.now(TZ)
     for fiche in all_attente():
         profile = load_profile(fiche["profil"])
         p = profile["planning"]
-        if (fiche["statut"] == "approuvee" and now.hour >= p.get("publication_heure", 18)
-                and now.isoweekday() in p.get("publication_jours", range(1, 8))):
-            _publish(fiche, profile)
+        if fiche["statut"] == "approuvee" and now.hour >= p.get("publication_heure", 18) \
+                and now.isoweekday() in p.get("publication_jours", range(1, 8)) and fiche.get("erreurs", 0) < 3:
+            _publier(fiche, profile)
         elif fiche["statut"] == "a_valider" and \
-                datetime.fromisoformat(fiche["cree"]) < datetime.now(timezone.utc) - timedelta(hours=36):
+                datetime.fromisoformat(fiche.get("envoyee", fiche["cree"])) < datetime.now(timezone.utc) - timedelta(hours=36):
             fiche["statut"] = "expiree"
             media_host.cleanup(fiche.get("media"))
             save_attente(fiche)
-            set_labels(fiche["issue"], [f"compte:{fiche['profil']}", "expiree"])
-            comment(fiche["issue"], "⌛ Pas de réponse sous 36 h : vidéo abandonnée.")
-            close(fiche["issue"])
-    # ménage : on ne garde que 60 jours de fiches terminées
-    limit = datetime.now(timezone.utc) - timedelta(days=60)
+            mail.envoyer(9, f"{profile['nom_compte']} · Vidéo expirée : {fiche['titre']}",
+                         md("Pas de réponse sous 36 h : la vidéo est abandonnée."), R_NOTE.format(n=9))
+    limite = datetime.now(timezone.utc) - timedelta(days=60)
     for fiche in all_attente():
-        if fiche["statut"] in ("publiee", "refusee", "expiree", "abandonnee", "info") and \
-                datetime.fromisoformat(fiche["cree"]) < limit:
+        if fiche["statut"] in ("publiee", "refusee", "expiree", "abandonnee", "info", "rapport") and \
+                datetime.fromisoformat(fiche["cree"]) < limite:
             (state.STATE / "attente" / f"{fiche['id']}.json").unlink(missing_ok=True)
 
 
-# ────────────────────────────────────────────── statistiques et commentaires
+# ────────────────────────────────────────────── statistiques, abonnés, graphiques
 def stats() -> None:
     from .instagram import IG
     for pid in all_profiles():
@@ -378,6 +389,15 @@ def stats() -> None:
                         new.append({"comment_id": c["id"], "auteur": c.get("username"), "texte": c.get("text"),
                                     "post": (m.get("caption") or "")[:60], "date": c.get("timestamp")})
                         seen.add(c["id"])
+            try:
+                prof = ig._get("me", fields="followers_count,media_count")
+                hist = state.load(f"abonnes_{pid}", [])
+                hist = [h for h in hist if h["date"] != datetime.now(TZ).strftime("%Y-%m-%d")]
+                hist.append({"date": datetime.now(TZ).strftime("%Y-%m-%d"), "abonnes": prof.get("followers_count", 0),
+                             "publications": prof.get("media_count", 0)})
+                state.save(f"abonnes_{pid}", hist[-365:])
+            except Exception as e:
+                print(f"{pid} : abonnés indisponibles ({e})")
             state.save(f"stats_{pid}", {"maj": state.now_iso(), "posts": posts,
                                         "recommandations": old.get("recommandations", [])})
             pending = state.load(f"commentaires_{pid}", [])
@@ -388,14 +408,59 @@ def stats() -> None:
             print(f"{pid} : erreur {e}")
 
 
+def graphiques(pid: str) -> dict[str, Path]:
+    """Graphiques du rapport de l'agent 8 (PNG intégrés au mail)."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    out = OUTPUT / "graphes"
+    out.mkdir(parents=True, exist_ok=True)
+    plt.rcParams.update({"font.size": 11, "axes.spines.top": False, "axes.spines.right": False})
+    images: dict[str, Path] = {}
+    posts = list(reversed(state.load(f"stats_{pid}", {}).get("posts", [])))[-10:]
+    if posts:
+        etiquettes = [p.get("date", "")[5:10].replace("-", "/") for p in posts]
+        fig, ax = plt.subplots(figsize=(7, 3.2), dpi=110)
+        ax.bar(etiquettes, [p.get("views") or p.get("reach") or 0 for p in posts], color="#3D5AFE")
+        ax.set_title("Vues par vidéo (10 dernières)", loc="left", fontweight="bold")
+        fig.tight_layout()
+        fig.savefig(out / f"vues_{pid}.png")
+        plt.close(fig)
+        images["vues"] = out / f"vues_{pid}.png"
+        fig, ax = plt.subplots(figsize=(7, 3.2), dpi=110)
+        taux = []
+        for p in posts:
+            base = max(1, p.get("reach") or p.get("views") or 1)
+            taux.append(100 * ((p.get("likes") or 0) + (p.get("comments") or 0) + (p.get("shares") or 0)
+                               + (p.get("saved") or 0)) / base)
+        ax.bar(etiquettes, taux, color="#FF4F81")
+        ax.set_title("Taux d'engagement (%)", loc="left", fontweight="bold")
+        fig.tight_layout()
+        fig.savefig(out / f"engagement_{pid}.png")
+        plt.close(fig)
+        images["engagement"] = out / f"engagement_{pid}.png"
+    hist = state.load(f"abonnes_{pid}", [])[-30:]
+    if len(hist) >= 2:
+        fig, ax = plt.subplots(figsize=(7, 3.2), dpi=110)
+        ax.plot([h["date"][5:].replace("-", "/") for h in hist], [h["abonnes"] for h in hist], color="#2EC4B6",
+                marker="o", linewidth=2.5)
+        ax.set_title("Abonnés (30 derniers jours)", loc="left", fontweight="bold")
+        ax.tick_params(axis="x", labelrotation=45)
+        fig.tight_layout()
+        fig.savefig(out / f"abonnes_{pid}.png")
+        plt.close(fig)
+        images["abonnes"] = out / f"abonnes_{pid}.png"
+    return images
+
+
 def main() -> None:
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
-    if cmd == "on-drop":
-        on_drop(sys.argv[2])
-    elif cmd == "on-comment":
-        on_comment()
-    elif cmd == "publish":
-        publish()
+    if cmd == "depot":
+        depot(sys.argv[2])
+    elif cmd == "rendre":
+        rendre(sys.argv[2], sys.argv[3])
+    elif cmd == "facteur":
+        facteur()
     elif cmd == "stats":
         stats()
     else:

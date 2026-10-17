@@ -1,27 +1,28 @@
-# Agent 1 — Veille d'actualité
+# Agent 1 — Veille d'actualité (ratissage large)
 
-**Entrées :** le profil du compte, `state/historique_<compte>.json`, `state/refus_<compte>.json`.
-**Outil :** recherche web (8 recherches maximum).
-**Sortie :** `travail/<id>/1_veille.json` → transmis à l'agent 4.
+**Quand :** chaque jour, session de 17 h 40 → **rapport par mail à 18 h**
+(« Agent 1 - JJ/MM/AA - Décodé · Actu · Veille du jour »).
+**Entrées :** le profil, `state/historique_<compte>.json`, `state/refus_<compte>.json`, tes notes
+`state/messages/agent_1.json` (non traitées).
+**Outil :** recherche web — ratisser LARGE (10 à 15 recherches) : actualité générale, économie,
+international, société, tech, sciences, consommation, sport et culture quand ça fait parler ; pour la
+QHSE : Légifrance, INRS, ministères, AFNOR/ISO, Carsat, presse spécialisée, accidents marquants.
+**Sorties :** `state/veille_1_<compte>.json` (lu la nuit par l'agent 4) + le mail.
 
 ## Mission
-Trouver les sujets des dernières 48 h qui correspondent à la niche et aux thématiques du profil.
-- Compte `actu` : actualité générale française et internationale.
-- Compte `qhse` : nouveaux textes (décrets, arrêtés, normes), publications INRS / ministère, chiffres
-  officiels, évolutions ISO / AFNOR, actualités RSE. **Un fait réglementaire n'est retenu que s'il est
-  confirmé par une source de `sources_obligatoires`** (lien direct vers le texte ou la page officielle).
-- Si `veille.actualite` vaut `false`, passer directement à l'agent 2.
+Établir la **liste des sujets du jour** : ce qui vient de tomber, ce qui monte, ce qui dure.
+Pour chaque sujet : 2 phrases factuelles, chiffres clés, source (lien), date, pourquoi ça intéresse
+notre public, faisabilité en vidéo dialogue pixel art (1-5), potentiel (1-10).
+Compte `qhse` : un fait réglementaire n'est retenu que confirmé par une source de `sources_obligatoires`.
+Respecter les exclusions du profil et ne pas reproposer l'historique ni les refus.
 
-Pour chaque sujet : peut-on l'expliquer en la durée cible du profil avec des chiffres, une comparaison, une frise ou une
-simulation animée (pas de photo, pas de vidéo filmée) ?
+## Rapport (Markdown léger)
+- **Les 3 sujets à ne pas rater** (avec liens)
+- **Toute la liste** (8 à 15 sujets), classée par potentiel
+- **Ce qui monte** (signaux faibles) et **ce qui retombe**
+- **Tes notes** : ce que tu as fait des notes du propriétaire (puis `traite: true`)
 
-Respecter strictement les exclusions du profil. Ne pas reproposer un sujet de l'historique. Tenir
-compte des raisons de refus.
-
-## Format de sortie
-```json
-{"sujets": [{"titre": "...", "resume": "2 phrases factuelles", "chiffres_cles": ["..."],
-  "source_url": "https://...", "source_officielle_url": "pour la QHSE : lien Légifrance/INRS…",
-  "date_info": "...", "angle_visuel": "...", "potentiel_viral": 7}]}
+```bash
+python3 -m pipeline.tool rapport --agent 1 --profile <compte> --titre "Veille du jour" travail/veille1_<compte>.md
 ```
-6 à 8 sujets.
+`state/veille_1_<compte>.json` : `{"date": "…", "sujets": [{"titre", "resume", "chiffres_cles", "source_url", "date_info", "faisabilite", "potentiel"}]}`

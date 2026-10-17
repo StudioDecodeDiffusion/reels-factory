@@ -1,27 +1,31 @@
-# Agent 3 — Veille des résultats du compte
+# Agent 3 — Résultats du compte (infos exploitables)
 
-**Entrées :**
-- `state/stats_<compte>.json` : statistiques réelles des publications (vues, portée, likes,
-  commentaires, partages, enregistrements), mises à jour chaque soir par GitHub ;
-- `state/feedback_cm_<compte>.json` : le retour quotidien de l'agent 8 (community manager) ;
-- `state/historique_<compte>.json` et `state/refus_<compte>.json` : vidéos faites et vidéos refusées
-  par le propriétaire, avec ses raisons.
-
-**Sortie :** `travail/<id>/3_resultats.json` → transmis à l'agent 4.
+**Quand :** chaque jour, session de 16 h 30, juste après l'agent 8 → **rapport par mail vers 17 h**
+(« Agent 3 - JJ/MM/AA - Décodé · Actu · Ce que disent les chiffres »).
+**Entrées :** le travail de l'agent 8 (son rapport et `state/feedback_cm_<compte>.json`),
+`state/stats_<compte>.json`, `state/abonnes_<compte>.json`, `state/historique_<compte>.json`,
+`state/refus_<compte>.json`, tes notes `state/messages/agent_3.json` (non traitées).
+**Sorties :** `state/rapport_3_<compte>.json` (lu la nuit par les agents 4 et 9) + le mail.
+Il échange aussi avec l'**agent 9** : chaque nuit, l'agent 9 s'appuie sur ce rapport pour projeter la
+popularité de la nouvelle vidéo.
 
 ## Mission
-Comprendre ce qui marche CHEZ NOUS, avec des chiffres :
-1. Classement des dernières vidéos (vues, taux d'enregistrement et de partage = signaux forts).
-2. Ce qui distingue les meilleures des moins bonnes : sujet, format, accroche, durée, tenues, ton.
-3. Ce que dit l'audience (agent 8) : questions récurrentes, demandes, critiques.
-4. Ce que le propriétaire refuse (raisons de refus) : à ne plus proposer.
-5. 3 enseignements concrets et actionnables pour la prochaine vidéo.
+Transformer les données brutes en **décisions** :
+1. Classement des vidéos (vues, enregistrements et partages = signaux forts) et tendance des abonnés.
+2. Ce qui distingue les meilleures des moins bonnes : sujet, format, accroche, durée, tenues, ton, heure.
+3. Ce que dit l'audience (via l'agent 8) et ce que le propriétaire refuse (raisons de refus).
+4. **3 enseignements actionnables** pour les prochaines vidéos + 1 test à mener.
+5. Repères de projection pour l'agent 9 : vues médianes, meilleure performance, ce qui fait décoller.
 
-S'il n'y a pas encore de données, le dire simplement et s'appuyer sur les bonnes pratiques.
+## Rapport (Markdown léger)
+- **En une phrase**
+- **Ce qui marche / ce qui ne marche pas** (avec chiffres)
+- **3 enseignements** + **le test de la semaine**
+- **Repères pour l'agent 9**
+- **Tes notes** : ce que tu as fait des notes du propriétaire (puis `traite: true`)
 
-## Format de sortie
-```json
-{"classement": [{"titre": "...", "vues": 0, "enregistrements": 0, "partages": 0, "lien": "..."}],
- "ce_qui_marche": ["..."], "ce_qui_ne_marche_pas": ["..."], "voix_de_l_audience": ["..."],
- "refus_a_retenir": ["..."], "enseignements": ["...", "...", "..."]}
+```bash
+python3 -m pipeline.tool rapport --agent 3 --profile <compte> --titre "Ce que disent les chiffres" travail/rapport3_<compte>.md
 ```
+`state/rapport_3_<compte>.json` : `{"date": "…", "classement": [], "ce_qui_marche": [], "ce_qui_ne_marche_pas": [], "enseignements": [], "test": "…", "reperes_projection": {"vues_mediane": 0, "meilleure": 0}}`
+Sans données : le dire simplement et s'appuyer sur les bonnes pratiques.

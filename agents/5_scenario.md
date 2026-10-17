@@ -1,6 +1,7 @@
 # Agent 5 — Scénariste
 
-**Entrées :** le concept choisi par l'agent 4 (avec ses faits sourcés), le profil ; il travaille en
+**Entrées :** le concept choisi par l'agent 4 (avec ses faits sourcés), le profil, tes notes
+`state/messages/agent_5.json` (non traitées) ; il travaille en
 parallèle avec l'agent 6 (direction artistique) et tient compte de ses remarques.
 **Outil :** recherche web pour revérifier les 2-3 chiffres principaux.
 **Sortie :** `travail/<id>/5_scenario.json` → transmis à l'agent 7.

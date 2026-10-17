@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  issues: write
+  contents: read
 
 env:
   EXPIRATION: "2027-01-15"
@@ -18,24 +18,28 @@ jobs:
   rappel:
     runs-on: ubuntu-latest
     steps:
-      - name: Vérifier la date
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - name: Vérifier la date et prévenir par mail
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GMAIL_ADDRESS: ${{ vars.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: |
-          JOURS=$(( ( $(date -d "$EXPIRATION" +%s) - $(date +%s) ) / 86400 ))
-          echo "Le token GH_PAT expire dans $JOURS jours"
-          if [ "$JOURS" -le 7 ]; then
-            DEJA=$(gh issue list --repo "$GITHUB_REPOSITORY" --label token --state open --json number --jq length)
-            if [ "$DEJA" = "0" ]; then
-              {
-                echo "@${{ github.repository_owner }} le token \`GH_PAT\` expire dans $JOURS jours. Sans lui, les vidéos ne peuvent plus être publiées."
-                echo ""
-                echo "1. GitHub → Settings → Developer settings → Fine-grained tokens → **reels** → **Regenerate token** → 90 days."
-                echo "2. Dépôt reels-factory → Settings → Secrets and variables → Actions → \`GH_PAT\` → **Update** → colle le nouveau token."
-                echo "3. Demande à Claude de mettre à jour la date dans \`.github/workflows/rappel-token.yml\`, puis ferme cette fiche."
-              } > corps.md
-              gh label create token --repo "$GITHUB_REPOSITORY" --color FBCA04 2>/dev/null || true
-              gh issue create --repo "$GITHUB_REPOSITORY" --label token \
-                --title "🔑 Renouvelle le token GitHub (expire le $EXPIRATION)" --body-file corps.md
-            fi
-          fi
+          python - <<'PY'
+          import os
+          from datetime import date
+          from pipeline import mail
+          exp = date.fromisoformat(os.environ["EXPIRATION"])
+          jours = (exp - date.today()).days
+          print(f"Le token GH_PAT expire dans {jours} jours")
+          if jours <= 7:
+              mail.envoyer(8, f"Renouvelle le token GitHub (expire le {exp:%d/%m/%y})",
+                  "<p>Le token <b>GH_PAT</b> expire dans <b>%d jours</b>. Sans lui, plus aucune vidéo ne peut être publiée.</p>"
+                  "<ol><li>GitHub → Settings → Developer settings → Fine-grained tokens → <b>reels</b> → <b>Regenerate token</b> → 90 days.</li>"
+                  "<li>Dépôts <b>reels-factory</b> ET <b>reels-media</b> → Settings → Secrets and variables → Actions → <code>GH_PAT</code> → <b>Update</b>.</li>"
+                  "<li>Demande à Claude de mettre à jour la date d'expiration.</li></ol>" % jours,
+                  "Pas besoin de répondre : ce rappel revient chaque lundi tant que la date n'est pas mise à jour.")
+          PY

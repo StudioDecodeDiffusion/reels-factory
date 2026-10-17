@@ -8,6 +8,7 @@
   python -m pipeline.tool caption <id> --profile actu        assemble la légende finale (legende.txt)
   python -m pipeline.tool info <id> --profile actu           agent 4 → e-mail d'information (concept + critique)
   python -m pipeline.tool drop <id> --profile actu           envoie le tout à GitHub (→ e-mail de validation)
+  python -m pipeline.tool rapport --agent 3 --profile actu --titre "…" rapport.md   rapport quotidien → mail
   python -m pipeline.tool abandon <id> --profile actu --raison "…"   prévient le propriétaire, pas de vidéo
 """
 from __future__ import annotations
@@ -142,16 +143,36 @@ def _concept(d: Path) -> dict:
     return c["concepts"][int(c.get("choix", 0))]
 
 
+def _marquer_lus(agent: int, ids) -> int:
+    fil = state.load(f"messages/agent_{agent}", [])
+    ids, n = set(map(str, ids)), 0
+    for m in fil:
+        if str(m.get("id")) in ids or "tout" in ids:
+            n += not m.get("traite")
+            m["traite"] = True
+    state.save(f"messages/agent_{agent}", fil)
+    return n
+
+
+def cmd_notes(a) -> None:
+    """Affiche les notes non traitées que le propriétaire a envoyées à un agent (mails « agent N - … »)."""
+    fil = [m for m in state.load(f"messages/agent_{a.agent}", []) if not m.get("traite")]
+    if a.profile:
+        fil = [m for m in fil if m.get("profil") in (None, "", a.profile)]
+    print(json.dumps(fil, ensure_ascii=False, indent=1) if fil else f"Aucune note en attente pour l'agent {a.agent}.")
+
+
+def cmd_lu(a) -> None:
+    """Marque des notes comme traitées : tool lu --agent N id1 id2 … (ou « tout »)."""
+    print(f"{_marquer_lus(int(a.agent), a.ids)} note(s) marquée(s) comme traitée(s).")
+
+
 def _da_suivi(d: Path, pid: str) -> str:
     """Marque comme traités les messages du propriétaire lus par le directeur artistique ; renvoie sa réponse."""
     da = _read(d, "6_da.json", {})
     faits = set(map(str, da.get("messages_traites", [])))
     if faits:
-        fil = state.load(f"da_{pid}", [])
-        for m in fil:
-            if str(m.get("id")) in faits:
-                m["traite"] = True
-        state.save(f"da_{pid}", fil)
+        _marquer_lus(6, faits)
     return str(da.get("message_au_proprietaire") or "").strip()
 
 
@@ -162,7 +183,7 @@ def cmd_info(a) -> None:
     c = _read(d, "4_concept.json")
     if not c:
         raise SystemExit(f"{d / '4_concept.json'} manquant")
-    res = _read(d, "3_resultats.json", {})
+    res = _read(d, "3_resultats.json", {}) or state.load(f"rapport_3_{a.profile}", {})
     fiche = {"id": f"{a.id}-info", "profil": a.profile, "statut": "info", "cree": state.now_iso(),
              "titre": _concept(d).get("titre"), "concept": _concept(d),
              "autres": [x.get("titre") for i, x in enumerate(c.get("concepts", [])) if i != int(c.get("choix", 0))],
@@ -178,13 +199,13 @@ def cmd_drop(a) -> None:
     load_profile(a.profile)  # vérifie que le compte existe
     d = WORK / a.id
     needed = ["video.mp4", "apercu.png", "legende.txt", "4_concept.json", "5_scenario.json", "7_spec.json",
-              "7_controle.json"]
+              "9_critique.json"]
     missing = [n for n in needed if not (d / n).exists()]
     if missing:
         raise SystemExit(f"Fichiers manquants dans {d} : {missing}")
-    controle = _read(d, "7_controle.json")
+    controle = _read(d, "9_critique.json")
     if controle.get("decision") != "publiable":
-        raise SystemExit("Le contrôle qualité n'a pas déclaré la vidéo « publiable » : corriger ou utiliser `abandon`.")
+        raise SystemExit("L'agent 9 n'a pas déclaré la vidéo « publiable » : corriger ou utiliser `abandon`.")
     concept = _concept(d)
     relecture = _read(d, "5_scenario.json", {}).get("relecture", {})
     fiche = {
@@ -195,7 +216,7 @@ def cmd_drop(a) -> None:
                           | set(controle.get("sources_verifiees", []))),
         "validation": {"notes": relecture.get("notes", {})},
         "tours_validation": int(relecture.get("reecritures", 0)) + 1,
-        "verification": controle,
+        "critique": controle,
         "community": _read(d, "8_community.json", {}),
         "da_message": _da_suivi(d, a.profile),
         "cree": state.now_iso(),
@@ -218,6 +239,20 @@ def cmd_drop(a) -> None:
     state.save("dernier_depot", {"id": a.id, "profil": a.profile, "date": state.now_iso()})
     _commit_state(f"état : vidéo {a.id}")
     print(f"Envoyé à GitHub : {a.id}. L'e-mail de validation part dans 1-2 minutes.")
+
+
+def cmd_rapport(a) -> None:
+    """Rapport quotidien d'un agent (1, 2, 3 ou 8) → mail « Agent N - date - titre »."""
+    load_profile(a.profile)
+    src = Path(a.fichier)
+    data = json.loads(src.read_text(encoding="utf-8")) if src.suffix == ".json" else {"corps_md": src.read_text(encoding="utf-8")}
+    job = f"{a.profile}-rapport{a.agent}-{datetime.now(TZ):%Y%m%d-%H%M}"
+    fiche = {"id": job, "profil": a.profile, "statut": "rapport", "agent": int(a.agent), "cree": state.now_iso(),
+             "titre": a.titre, "corps_md": data.get("corps_md", ""), "reponses": data.get("reponses", [])}
+    _push_drop(job, {"fiche.json": json.dumps(fiche, ensure_ascii=False, indent=2)})
+    state.save("dernier_depot", {"id": job, "profil": a.profile, "date": state.now_iso()})
+    _commit_state(f"état : rapport agent {a.agent}")
+    print(f"Rapport de l'agent {a.agent} envoyé.")
 
 
 def cmd_abandon(a) -> None:
@@ -245,8 +280,12 @@ def main() -> None:
     p = sub.add_parser("caption"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p = sub.add_parser("drop"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p = sub.add_parser("info"); p.add_argument("id"); p.add_argument("--profile", required=True)
+    p = sub.add_parser("rapport"); p.add_argument("--agent", required=True); p.add_argument("--profile", required=True)
+    p.add_argument("--titre", required=True); p.add_argument("fichier")
     p = sub.add_parser("abandon"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p.add_argument("--raison", required=True)
+    p = sub.add_parser("notes"); p.add_argument("--agent", required=True); p.add_argument("--profile")
+    p = sub.add_parser("lu"); p.add_argument("--agent", required=True); p.add_argument("ids", nargs="+")
     a = ap.parse_args()
     globals()[f"cmd_{a.cmd}"](a)
 

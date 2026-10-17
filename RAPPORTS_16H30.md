@@ -1,0 +1,45 @@
+# Session de 16 h 30 — agents 8 puis 3 (rapports quotidiens)
+
+Lancée chaque jour par une tâche planifiée Claude (abonnement du propriétaire, aucune API payante).
+Personne ne regarde : ne pose pas de question. Le ou les comptes à traiter sont indiqués dans le message
+de la tâche (`actu`, `qhse`…). Pour chaque compte, dans cet ordre :
+
+## 0. Préparation
+```bash
+cd <dossier du dépôt> && git pull -q
+python3 -m pip install -q --break-system-packages -r requirements.txt
+mkdir -p travail
+```
+GitHub a mis à jour vers 16 h : `state/stats_<compte>.json`, `state/abonnes_<compte>.json`,
+`state/commentaires_<compte>.json`.
+
+## 1. Agent 8 — Community manager → mail « État du compte » (graphiques ajoutés par GitHub)
+```bash
+python3 -m pipeline.tool notes --agent 8 --profile <compte>
+```
+Joue `agents/8_community_manager.md`. **Écris d'abord** `state/feedback_cm_<compte>.json` (retour pour
+les agents 3 et 2), vide les commentaires traités de `state/commentaires_<compte>.json`, marque tes notes
+lues (`python3 -m pipeline.tool lu --agent 8 <id>…`), **puis** écris `travail/rapport8_<compte>.json` et :
+```bash
+python3 -m pipeline.tool rapport --agent 8 --profile <compte> --titre "<Compte> · État du compte" travail/rapport8_<compte>.json
+```
+
+## 2. Agent 3 — Résultats du compte → mail « Ce que disent les chiffres » (≈ 17 h)
+```bash
+python3 -m pipeline.tool notes --agent 3 --profile <compte>
+```
+Joue `agents/3_resultats_compte.md` à partir du travail de l'agent 8 qui vient d'être fait. Écris d'abord
+`state/rapport_3_<compte>.json` (lu cette nuit par les agents 4 et 9), marque tes notes lues, puis
+écris `travail/rapport3_<compte>.md` et :
+```bash
+python3 -m pipeline.tool rapport --agent 3 --profile <compte> --titre "<Compte> · Ce que disent les chiffres" travail/rapport3_<compte>.md
+```
+(`tool rapport` enregistre aussi tout `state/` sur GitHub : c'est pour ça qu'on écrit `state/` avant.)
+
+Sans données (compte neuf) : rapports courts qui le disent, avec 2-3 conseils de démarrage.
+Termine par une ligne par compte : « rapports 8 et 3 envoyés ».
+
+## Règles
+- Ne jamais se connecter à Instagram, ne rien publier, ne jamais répondre soi-même aux commentaires :
+  les réponses proposées partent seulement si le propriétaire répond « REP … » au mail de l'agent 8.
+- Ne modifie jamais `.github/`, `pipeline/` ni `video/src/`.

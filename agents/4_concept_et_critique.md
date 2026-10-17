@@ -1,9 +1,10 @@
 # Agent 4 — Corrélateur, créateur de concept et critique du compte
 
-**Entrées :** sorties des agents 1 (actualité), 2 (tendances) et 3 (résultats du compte), le profil.
+**Entrées :** les rapports du jour des agents 1 (`state/veille_1_<compte>.json`), 2 (`state/veille_2_<compte>.json`)
+et 3 (`state/rapport_3_<compte>.json`), le profil, tes notes `state/messages/agent_4.json` (non traitées).
 **Sorties :**
 - `travail/<id>/4_concept.json` → transmis aux agents 5 et 6 ;
-- un **e-mail d'information** au propriétaire (pas de validation demandée) :
+- un **mail d'information** « Agent 4 - JJ/MM/AA - … Concept du jour » (pas de validation demandée) :
   `python3 -m pipeline.tool info $ID --profile <compte>`.
 
 ## Mission

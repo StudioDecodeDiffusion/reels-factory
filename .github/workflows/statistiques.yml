@@ -1,10 +1,10 @@
 name: Statistiques et commentaires Instagram
 
-# Chaque soir, avant la session Claude de nuit : récupère les stats et les nouveaux commentaires
-# pour que les agents « trends » et « community manager » en tiennent compte.
+# Chaque jour vers 16 h (Paris), avant les rapports des agents 8 (16 h 30) et 3 (17 h) :
+# statistiques des vidéos, abonnés, nouveaux commentaires.
 on:
   schedule:
-    - cron: "40 20 * * *"
+    - cron: "5 14 * * *"
   workflow_dispatch:
 
 permissions:

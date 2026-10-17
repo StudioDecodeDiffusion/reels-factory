@@ -1,41 +1,45 @@
-name: Publication à l'heure idéale
+name: Facteur (tes mails) + publication
 
-# Toutes les heures de 9 h à 22 h (heure de Paris) : publie les vidéos validées dont l'heure est venue,
-# et abandonne celles restées sans réponse 36 h.
+# Toutes les 30 min de 7 h à 23 h (Paris) : lit tes mails (OK / NON / REP / « agent N - note »),
+# publie à l'heure prévue ce qui est validé, abandonne ce qui attend depuis plus de 36 h.
 on:
   schedule:
-    - cron: "27 7-20 * * *"
+    - cron: "*/30 5-21 * * *"
   workflow_dispatch:
+
+concurrency:
+  group: courrier
+  cancel-in-progress: false
 
 permissions:
   contents: write
-  issues: write
 
 jobs:
-  publier:
+  facteur:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install -r requirements.txt
-      - name: Publier
+      - run: pip install -q -r requirements.txt
+      - name: Lire les mails et publier
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GMAIL_ADDRESS: ${{ vars.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           GH_PAT: ${{ secrets.GH_PAT }}
           MEDIA_REPO: ${{ vars.MEDIA_REPO }}
           IG_TOKEN_ACTU: ${{ secrets.IG_TOKEN_ACTU }}
           IG_TOKEN_QHSE: ${{ secrets.IG_TOKEN_QHSE }}
           IG_TOKEN_SCIENCE: ${{ secrets.IG_TOKEN_SCIENCE }}
           IG_TOKEN_FUN: ${{ secrets.IG_TOKEN_FUN }}
-        run: python -m pipeline.github_flow publish
+        run: python -m pipeline.github_flow facteur
       - name: Sauvegarder la mémoire
         if: always()
         run: |
           git config user.name "reels-bot"
           git config user.email "reels-bot@users.noreply.github.com"
           git add state/
-          git diff --cached --quiet || (git commit -m "état : publication" && for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep $((i*4)); done)
+          git diff --cached --quiet || (git commit -m "état : facteur" && for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep $((i*4)); done)

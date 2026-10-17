@@ -46,6 +46,8 @@ def main():
     (d / "7_spec.json").write_text(json.dumps(spec))
     assert run("pipeline.tool", "check", str(d / "7_spec.json"), "--profile", "actu") == "OK"
     (d / "3_resultats.json").write_text(json.dumps({"enseignements": ["pas encore de données"]}))
+    (work / "state" / "messages").mkdir(parents=True, exist_ok=True)
+    (work / "state" / "messages" / "agent_6.json").write_text(json.dumps([{"id": "c99", "texte": "plus de jaune", "traite": False}]))
     (d / "4_concept.json").write_text(json.dumps({"choix": 0, "concepts": [{"titre": "Test lune", "sujet": "s",
                                        "faits": [{"fait": "x", "source_url": "https://example.org"}]},
                                        {"titre": "Autre piste"}], "critique_compte": "Critique test",
@@ -55,10 +57,10 @@ def main():
     (d / "5_scenario.json").write_text(json.dumps({"legende": "Accroche test #lune", "hashtags": ["#actu", "#science"],
                                                    "relecture": {"notes": {"accroche": 8}, "reecritures": 1}}))
     (d / "6_da.json").write_text(json.dumps({"messages_traites": ["c99"], "message_au_proprietaire": "J'ai mis plus de jaune."}))
-    (d / "8_community.json").write_text(json.dumps({"bilan": "RAS", "recommandations": ["plus de chiffres"],
-                                                   "reponses": [{"comment_id": "c1", "commentaire": "Top", "reponse": "Merci !"}]}))
-    (d / "7_controle.json").write_text(json.dumps({"decision": "publiable", "score_global": 9,
-                                                  "resume_pour_le_proprietaire": "RAS"}))
+    (d / "9_critique.json").write_text(json.dumps({"decision": "publiable", "score_global": 9,
+        "coherence": "Dialogue clair", "projection": {"potentiel": "bon", "vues_estimees": "800-1500",
+        "audience": "18-35 curieux", "raisonnement": "sujet qui monte", "risque": "faible"},
+        "resume_pour_le_proprietaire": "RAS"}))
     run("pipeline.tool", "render", str(d / "7_spec.json"), str(d / "video.mp4"))
     run("pipeline.tool", "frames", str(d / "7_spec.json"), str(d / "video.mp4"))
     cap = run("pipeline.tool", "caption", job, "--profile", "actu")
@@ -72,24 +74,40 @@ def main():
                                      capture_output=True, text=True, check=True).stdout)
     assert hist[-1]["job"] == job
 
-    # ── côté GitHub Actions (API simulées)
+    # rapport de l'agent 8 (avec réponses proposées)
+    (work / "travail" / "r8.json").write_text(json.dumps({"corps_md": "## Bilan\n- RAS **ok**",
+        "reponses": [{"comment_id": "c1", "commentaire": "Top", "reponse": "Merci !"}]}))
+    run("pipeline.tool", "rapport", "--agent", "8", "--profile", "actu", "--titre", "Décodé Actu · État du compte",
+        str(work / "travail" / "r8.json"))
+    shutil.rmtree(drop)
+    sh("git", "clone", "-q", "-b", "depot-videos", str(remote), str(drop), cwd=tmp)
+
+    # ── côté GitHub Actions (mails en mode simulé, API simulées)
     os.chdir(work)
     sys.path.insert(0, str(work))
     for m in [m for m in sys.modules if m.startswith("pipeline")]:
         del sys.modules[m]
-    os.environ.update(GITHUB_REPOSITORY="moi/reels-factory", REPO_OWNER="moi", GITHUB_TOKEN="x",
-                      IG_TOKEN_ACTU="x")
-    from pipeline import github_flow as gf, media_host, instagram, voix
+    os.environ.update(GMAIL_ADDRESS="studio@example.org", MAIL_DRY_RUN="1", IG_TOKEN_ACTU="x")
+    os.environ.pop("RENDU_PUBLIC", None)
+    from pipeline import github_flow as gf, mail, media_host, instagram, voix, state
+    from email import message_from_bytes, policy
+    boite = work / "output" / "mails"
+
+    def mails():
+        out = []
+        for f in sorted(boite.glob("*.eml")):
+            m = message_from_bytes(f.read_bytes(), policy=policy.default)
+            h = m.get_body(("html",)).get_content()
+            out.append((str(m["Subject"]), h, m))
+        return out
 
     def fake_say(text, voix_id, wav, vitesse=1.0):  # « voix » = un bip de la durée de la phrase
-        d = len(text.split()) / 2.5
-        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "lavfi", "-i", f"sine=frequency=440:duration={d}",
+        dd = len(text.split()) / 2.5
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "lavfi", "-i", f"sine=frequency=440:duration={dd}",
                         str(wav)], check=True)
         return wav
     voix.say = fake_say
-
     calls = []
-    gf.gh = lambda method, path, **kw: calls.append((method, path, kw.get("json"))) or {"number": 6}
     media_host.upload = lambda files, jid: {"urls": {f.name: f"https://h/{f.name}" for f in files}}
     media_host.cleanup = lambda info: calls.append(("cleanup",))
 
@@ -99,35 +117,53 @@ def main():
         def reply(self, cid, msg): calls.append(("reply", cid, msg))
     instagram.IG = FakeIG
 
-    gf.on_drop(str(tmp / "info" / "drop"))
-    assert "Concept du jour" in calls[0][2]["title"] and "Critique test" in calls[0][2]["body"]
-    calls.clear()
-    gf.gh = lambda method, path, **kw: calls.append((method, path, kw.get("json"))) or (
-        [] if path.startswith("/issues?labels=da") else {"number": 7, "labels": []})
-    gf.on_drop(str(drop / "drop"))
-    body = calls[0][2]["body"]
-    assert any("plus de jaune" in str(c[2]) for c in calls), "le message du DA doit être publié"
-    assert "@moi" in body and "https://h/video.mp4" in body and "REP 1 3" in body
-    assert "voix off :** chatterbox:fr" in body, body
+    gf.depot(str(tmp / "info" / "drop"))
+    gf.depot(str(drop / "drop"))
+    box = mails()
+    sujets = [s for s, _, _ in box]
+    date = __import__("datetime").datetime.now(gf.TZ).strftime("%d/%m/%y")
+    import re as _re
+    assert all(_re.match(rf"^Agent \d - {_re.escape(date)} - ", s) for s in sujets), sujets
+    assert any(s.startswith("Agent 4 -") and "Concept du jour" in s for s in sujets), sujets
+    assert any(s.startswith("Agent 8 -") and "État du compte" in s for s in sujets), sujets
+    s9 = next((s, h, m) for s, h, m in box if s.startswith("Agent 9 -") and "Vidéo prête" in s)
+    assert "https://h/video.mp4" in s9[1] and "800-1500" in s9[1] and "Comment répondre" in s9[1]
+    assert "agent N° - ta note" in s9[1]
+    assert any(p.get_filename() == "video.mp4" for p in s9[2].iter_attachments()), "vidéo jointe"
+    assert any(s.startswith("Agent 6 -") and "plus de jaune" not in s for s in sujets), "mail de la DA"
+    assert all(m_["traite"] for m_ in state.load("messages/agent_6", [])), "note de la DA traitée"
     probe = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=codec_type",
                             "-of", "csv=p=0", str(drop / "drop" / job / "video.mp4")], capture_output=True, text=True)
     assert "audio" in probe.stdout, "la vidéo finale doit contenir la voix off"
+    assert gf.attente(job)["statut"] == "a_valider"
 
-    os.environ.update(ISSUE_NUMBER="7", COMMENT_AUTHOR="quelquun", COMMENT_BODY="OK")
-    gf.on_comment()
-    assert gf.attente(job)["statut"] == "a_valider", "un inconnu ne doit pas pouvoir valider"
-
-    os.environ.update(COMMENT_AUTHOR="moi", COMMENT_BODY="REP 1\n\nLe sam. 17 oct. a écrit :\n> blabla")
-    gf.on_comment()
+    # ── le facteur lit tes mails (boîte Gmail simulée)
+    r8 = next(s for s in sujets if s.startswith("Agent 8 -"))
+    entrants = [
+        {"objet": "agent 6 - plus de couleurs vives", "texte": "Surtout le fond.", "uid": b"1", "date": "", "id": "a"},
+        {"objet": "Re: " + r8, "texte": mail.sans_citation("REP 1\n\nLe sam. 17 oct. a écrit :\n> blabla"),
+         "uid": b"2", "date": "", "id": "b"},
+        {"objet": "RE: " + s9[0], "texte": "Mets plus de rythme", "uid": b"3", "date": "", "id": "c"},
+    ]
+    os.environ["GMAIL_APP_PASSWORD"] = "x"
+    mail.lire_nouveaux = lambda: entrants
+    gf.facteur()
     assert ("reply", "c1", "Merci !") in calls
+    n6 = state.load("messages/agent_6", [])
+    assert n6[-1]["texte"] == "Surtout le fond." and not n6[-1]["traite"]
+    assert state.load("messages/agent_9", [])[-1]["texte"] == "Mets plus de rythme"
+    assert gf.attente(job)["statut"] == "a_valider", "une remarque ne valide pas"
+    out = run("pipeline.tool", "notes", "--agent", "6", "--profile", "actu")
+    assert "Surtout le fond" in out, out
 
-    os.environ["COMMENT_BODY"] = "OK maintenant"
-    gf.on_comment()
+    entrants[:] = [{"objet": "Re: " + s9[0], "texte": "OK maintenant", "uid": b"4", "date": "", "id": "d"}]
+    gf.facteur()
     f = gf.attente(job)
     assert f["statut"] == "publiee" and f["permalink"].endswith("m1"), f
+    assert any(s.startswith("Agent 8 -") and "Publiée" in s for s, _, _ in mails())
 
     shutil.rmtree(tmp, ignore_errors=True)
-    print("TEST OK — nuit → dépôt → e-mail → réponse → publication :", job)
+    print("TEST OK — nuit → dépôt → mails des agents → réponses → publication :", job)
 
 
 if __name__ == "__main__":

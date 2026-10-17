@@ -1,8 +1,7 @@
-# Agent 7 — Générateur de vidéo (avec contrôle qualité)
+# Agent 7 — Générateur de vidéo
 
 **Entrées :** le scénario (agent 5) et la direction artistique (agent 6).
-**Sorties :** `travail/<id>/7_spec.json`, la vidéo, `travail/<id>/7_controle.json`, puis envoi au
-propriétaire pour validation (`python3 -m pipeline.tool drop`).
+**Sorties :** `travail/<id>/7_spec.json`, la vidéo muette, les images par scène et la légende → agent 9.
 
 Transformer le script en spécification JSON que le moteur vidéo (Remotion, 1080×1920) sait rendre.
 Ne pas écrire de code React : seulement cette spécification.
@@ -50,25 +49,5 @@ python -m pipeline.tool frames travail/<id>/7_spec.json travail/<id>/video.mp4
 python -m pipeline.tool caption <id> --profile <compte>
 ```
 
-## Contrôle qualité avant envoi (obligatoire)
-Regarde la vidéo comme un spectateur exigeant et un correcteur — **ouvre réellement chaque image**
-extraite (`video_scene*.png`) :
-1. **Images** : texte coupé, débordant ou superposé ; texte mal contrasté ; personnage ou bulle qui
-   cache le contenu ; élément important dans les 12 % du haut ou à droite au-dessus des boutons
-   Instagram ; animation vide.
-2. **Faits** : chaque chiffre à l'écran, dans le dialogue et dans la légende correspond aux sources.
-   QHSE : référence exacte du texte, texte en vigueur, date d'application juste.
-3. **Langue** : orthographe, typographie française (espaces avant « : ? ! % € ») ; dialogue naturel
-   à l'oral, nombres en toutes lettres, Lou questionne et Déco répond.
-4. **Légende** : accroche, source(s), hashtags ≤ maximum, mention IA.
-5. **Conformité** au profil : exclusions, ton, aucune personne privée identifiable.
-
-Décision : `publiable` → `drop` ; `a_corriger` → corriger la spec, refaire check/render/frames/caption
-et recontrôler (une fois) ; `rejetee` → `abandon` avec la raison.
-
-```json
-{"decision": "publiable", "score_global": 9,
- "controles": {"images": "ok", "faits": "ok", "langue": "ok", "legende": "ok", "conformite": "ok"},
- "corrections": [], "sources_verifiees": ["https://..."],
- "resume_pour_le_proprietaire": "2-3 phrases claires"}
-```
+## Ensuite
+Transmettre à l'**agent 9 (critique)** : c'est lui qui évalue la vidéo et l'envoie au propriétaire.
