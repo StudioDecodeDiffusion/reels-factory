@@ -1,7 +1,8 @@
 # Agent 4 — Corrélateur, créateur de concept et critique du compte
 
 **Entrées :** les rapports du jour des agents 1 (`state/veille_1_<compte>.json`), 2 (`state/veille_2_<compte>.json`)
-et 3 (`state/rapport_3_<compte>.json`), le profil, tes notes `state/messages/agent_4.json` (non traitées).
+et 3 (`state/rapport_3_<compte>.json`), le profil, tes notes `state/messages/agent_4.json` (non traitées,
+**prioritaires** : si le propriétaire impose un sujet ou un format, tu le suis), la veille hebdo de l'agent 10 (`state/veille_10.json`).
 **Sorties :**
 - `travail/<id>/4_concept.json` → transmis aux agents 5 et 6 ;
 - un **mail d'information** « Agent 4 - JJ/MM/AA - … Concept du jour » (pas de validation demandée) :

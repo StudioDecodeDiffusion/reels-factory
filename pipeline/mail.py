@@ -31,7 +31,8 @@ LABEL_TRAITE = "Decode-traite"   # tes mails déjà lus par le facteur
 LABEL_AGENTS = "Decode-agents"   # mails envoyés par les agents
 
 NOMS = {1: "Veille actualité", 2: "Veille tendances", 3: "Résultats du compte", 4: "Concept & critique",
-        5: "Scénario", 6: "Directeur artistique", 7: "Générateur vidéo", 8: "Community manager", 9: "Critique"}
+        5: "Scénario", 6: "Directeur artistique", 7: "Générateur vidéo", 8: "Community manager", 9: "Critique",
+        10: "Veille comptes IA"}
 
 RAPPEL = ("💬 <b>Pour parler à un agent :</b> envoie-toi un mail avec l'objet "
           "<b>« agent N° - ta note »</b> (ex. « agent 6 - plus de couleurs vives »). Il la lira avant son prochain travail.")

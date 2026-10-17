@@ -212,7 +212,7 @@ def sonoriser(spec: dict, job: str, profile: dict, public_dir: Path) -> dict:
     """Génère la voix off de chaque scène (dialogue à deux voix ou voix unique), cale la durée des scènes
     dessus et note l'horaire de chaque réplique (pour les bulles et les bouches).
     Les fichiers audio vont dans video/public/voix/<job>/ (lus par Remotion via staticFile)."""
-    r = profile.get("voix", {})
+    r = {**profile.get("voix", {}), **(spec.get("voix_override") or {})}  # la vidéo peut changer les voix
     v_narr = r.get("narrateur") or r.get("id", "piper:fr_FR-upmc-medium?spk=1")
     v_masc = r.get("mascotte") or v_narr
     effet_masc = r.get("mascotte_effet", "aigu")
@@ -227,9 +227,9 @@ def sonoriser(spec: dict, job: str, profile: dict, public_dir: Path) -> dict:
         for j, rep in enumerate(dialogue):
             wav = dest / f"s{i}_r{j}.wav"
             masc = rep.get("qui") == "mascotte"
-            say(str(rep["texte"]), v_masc if masc else v_narr, wav, vitesse)
+            say(str(rep["texte"]), rep.get("voix") or (v_masc if masc else v_narr), wav, vitesse)  # « voix » : ton d'une réplique
             _norm(wav)
-            if masc:
+            if masc and not rep.get("voix"):
                 _effet(wav, effet_masc)
             d = duree(wav)
             rep["debut"], rep["fin"] = round(t, 2), round(t + d, 2)

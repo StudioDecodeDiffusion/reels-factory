@@ -114,7 +114,7 @@ def depot(drop_dir: str) -> None:
             mail.envoyer(4, f"{nom} · Concept du jour : {fiche.get('titre')}", corps, R_INFO.format(n=4),
                          ref={"type": "info", "job": fiche["id"], "profil": fiche["profil"]})
 
-        elif statut == "rapport":  # rapports quotidiens des agents 1, 2, 3, 8
+        elif statut == "rapport":  # rapports des agents 1, 2, 3, 8 (quotidiens) et 10 (hebdo)
             n = int(fiche["agent"])
             images = graphiques(fiche["profil"]) if n == 8 else {}
             corps = md(fiche.get("corps_md", ""))
@@ -243,6 +243,9 @@ def facteur() -> None:
             n, ref = int(lien["agent"]), lien.get("ref", {})
             if ref.get("type") == "validation":
                 _validation(ref["job"], texte)
+            elif ref.get("type") == "test" and texte:
+                mail.envoyer(8, "Bien reçu !", md(f"Ta réponse est arrivée ✅ La messagerie marche dans les deux sens.\n\n> {texte[:400]}"),
+                             R_NOTE.format(n=8))
             elif ref.get("type") == "rapport8" and re.match(r"^\s*REP\b", texte, re.I):
                 _reponses_commentaires(ref, texte)
             elif texte:
@@ -251,7 +254,7 @@ def facteur() -> None:
                                                           "Je l'appliquerai dès mon prochain travail."), R_NOTE.format(n=n))
             continue
         mm = re.match(r"^\s*agent\s*(?:n\s*[°o]?\s*)?(\d+)\s*[-–—:]?\s*(.*)$", m["objet"], re.I)
-        if mm and 1 <= int(mm.group(1)) <= 9:
+        if mm and 1 <= int(mm.group(1)) <= 10:
             n = int(mm.group(1))
             note(n, mm.group(2).strip(), texte)
             mail.envoyer(n, f"Note reçue : {mm.group(2).strip()[:60]}",

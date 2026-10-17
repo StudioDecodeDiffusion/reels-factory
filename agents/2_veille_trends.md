@@ -4,7 +4,7 @@
 (« Agent 2 - JJ/MM/AA - Décodé · Actu · Tendances du jour »).
 **Entrées :** le profil, `trends/<compte>.md` (notes du propriétaire), le retour de l'agent 8 sur la
 communauté (`state/feedback_cm_<compte>.json`, `state/commentaires_<compte>.json`), tes notes
-`state/messages/agent_2.json` (non traitées).
+`state/messages/agent_2.json` (non traitées), la veille hebdo de l'agent 10 (`state/veille_10.json`).
 **Outil :** recherche web — ratisser LARGE (10 à 15 recherches) : formats de Reels/TikTok qui percent,
 sons et accroches du moment, sujets qui buzzent sur les réseaux, ce que font les comptes
 d'actualité expliquée, tendances LinkedIn pour la QHSE. Ne jamais se connecter à Instagram.
