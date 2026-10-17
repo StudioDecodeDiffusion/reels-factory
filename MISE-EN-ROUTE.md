@@ -10,7 +10,7 @@ Garde un bloc-notes à portée de main pour copier les tokens (et efface-le à l
 3. (Conseillé) Gmail → filtre `from:notifications@github.com` → libellé « Validations » + « Marquer comme important ».
 
 ## 2. GitHub
-1. github.com/signup avec le Gmail → pseudo `decode-studio` → offre gratuite.
+1. github.com/signup avec le Gmail → pseudo `StudioDecodeDiffusion` (fait ✅) → offre gratuite.
 2. Active la double authentification (Settings → Password and authentication).
 3. **New repository** → `reels-factory` → **Private** → ne rien cocher → Create.
 4. **New repository** → `reels-media` → **Public** → cocher « Add a README » → Create.
@@ -18,7 +18,7 @@ Garde un bloc-notes à portée de main pour copier les tokens (et efface-le à l
    et pour « Watching ».
 
 ## 3. Relier Claude à GitHub
-1. Dans Claude : Paramètres → Connecteurs → **GitHub** → Connecter → connecte-toi avec `decode-studio`.
+1. Dans Claude : Paramètres → Connecteurs → **GitHub** → Connecter → connecte-toi avec `StudioDecodeDiffusion`.
 2. Autorise l'accès aux dépôts `reels-factory` et `reels-media`.
 3. Reviens dans la conversation et écris « GitHub est relié » : Claude envoie lui-même les fichiers du
    projet dans `reels-factory` (pas d'envoi manuel, les dossiers cachés comme `.github` seraient perdus).
@@ -52,7 +52,7 @@ Pour **Actu** puis, le lendemain, **QHSE** :
    **Read and write permissions** → Save.
 3. Dépôt `reels-factory` → Settings → Secrets and variables → Actions :
    - Secrets : `GH_PAT` (token étape 6.1), `IG_TOKEN_ACTU`, `IG_TOKEN_QHSE`
-   - Variables : `MEDIA_REPO` = `decode-studio/reels-media`
+   - Variables : `MEDIA_REPO` = `StudioDecodeDiffusion/reels-media`
 4. Efface les tokens de ton bloc-notes.
 
 ## 7. Lancement
