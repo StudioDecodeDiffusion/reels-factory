@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "fond": "#05070F",
+    "texte": "#E8ECFF",
+    "accent": "#7CF5D4",
+    "accent2": "#B28CFF",
+    "police_titre": "Space Grotesk",
+    "police_texte": "Inter",
+    "bandeau": null,
+    "grille": true
+  },
+  "scenes": [
+    {"type": "hook", "duration": 2.6, "title": "Pourquoi la Lune ne nous tombe pas dessus ?", "subtitle": "Spoiler : elle tombe."},
+    {"type": "particles", "duration": 5, "mode": "orbit", "count": 36, "caption": "Elle tombe en permanence… mais va assez vite pour rater la Terre."},
+    {"type": "counter", "duration": 3.2, "to": 3683, "suffix": " km/h", "label": "La vitesse de la Lune sur son orbite"},
+    {"type": "compare", "duration": 3.4, "title": "Plus loin = plus lent", "left": {"label": "Mercure", "value": "47 km/s"}, "right": {"label": "Neptune", "value": "5 km/s"}},
+    {"type": "kinetic", "duration": 3.2, "lines": ["Une orbite,", "c'est une chute", "qui ne finit jamais."], "highlight": "chute"},
+    {"type": "outro", "duration": 2.6, "text": "Newton l'a compris en 1687.", "cta": "Abonne-toi pour une dose de science"}
+  ]
+}

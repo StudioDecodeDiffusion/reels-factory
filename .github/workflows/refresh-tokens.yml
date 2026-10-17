@@ -1,0 +1,31 @@
+name: 4. Renouveler les tokens Instagram
+
+# Les tokens Instagram longue durée expirent après 60 jours : on les prolonge chaque mois.
+on:
+  schedule:
+    - cron: "0 3 1,15 * *"   # le 1er et le 15 de chaque mois
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prolonger et enregistrer les nouveaux tokens
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          IG_TOKEN_ACTU: ${{ secrets.IG_TOKEN_ACTU }}
+          IG_TOKEN_SCIENCE: ${{ secrets.IG_TOKEN_SCIENCE }}
+          IG_TOKEN_FUN: ${{ secrets.IG_TOKEN_FUN }}
+        run: |
+          for NAME in IG_TOKEN_ACTU IG_TOKEN_SCIENCE IG_TOKEN_FUN; do
+            TOKEN="${!NAME}"
+            if [ -z "$TOKEN" ]; then echo "$NAME : vide, ignoré"; continue; fi
+            NEW=$(curl -sf "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$TOKEN" | jq -r .access_token)
+            if [ -n "$NEW" ] && [ "$NEW" != "null" ]; then
+              echo "::add-mask::$NEW"
+              gh secret set "$NAME" --body "$NEW" --repo "$GITHUB_REPOSITORY"
+              echo "$NAME : renouvelé"
+            else
+              echo "::error::$NAME : renouvellement impossible (token expiré ? à régénérer à la main)"
+            fi
+          done

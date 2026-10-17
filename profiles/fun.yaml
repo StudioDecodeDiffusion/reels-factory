@@ -1,0 +1,38 @@
+# Profil : trucs fun (compte perso)
+id: fun
+nom_compte: "Fun perso"
+instagram_secret: IG_TOKEN_FUN
+langue: fr
+public: "amis et curieux ; humour léger, absurde, satisfaisant"
+ton: "décalé, complice, autodérision ; jamais méchant envers une personne réelle"
+niche: "animations satisfaisantes, défis visuels, faits absurdes, mini-jeux 'tu as vu ?'"
+
+veille:
+  frequence: "2 fois par semaine"
+  actualite: false                    # pipeline allégé : pas de veille d'actu, seulement les trends
+  pays: FR
+  thematiques: ["satisfaisant", "illusions d'optique", "faits absurdes", "défis", "nostalgie"]
+  exclusions:
+    - "moqueries de personnes réelles"
+    - "contenu choquant"
+
+video:
+  duree_cible_s: 15
+  scenes_autorisees: [hook, particles, kinetic, counter, compare, outro]
+  cta: "Envoie ça à quelqu'un qui doit voir ça"
+
+publication:
+  par_jour: 1
+  jours: "2,6"                        # mardi, samedi
+  heure_generation_utc: "08:20"
+  hashtags_max: 4
+
+charte_initiale:
+  nom: "Bonbon"
+  fond: "#FFF4E6"
+  texte: "#1B1B1F"
+  accent: "#FF4FA3"
+  accent2: "#2EC4B6"
+  police_titre: "Space Grotesk"
+  police_texte: "Inter"
+  signature: "formes rondes qui rebondissent, couleurs franches"

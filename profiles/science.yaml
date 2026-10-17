@@ -1,0 +1,38 @@
+# Profil : simulation / science vulgarisée
+id: science
+nom_compte: "Science en mouvement"
+instagram_secret: IG_TOKEN_SCIENCE
+langue: fr
+public: "15-40 ans, curieux de science, aiment les visuels hypnotiques et les 'wow' faciles à partager"
+ton: "émerveillé mais rigoureux ; une question en accroche, une réponse visuelle, un fait surprenant à la fin"
+niche: "un phénomène physique / maths / astronomie montré par une simulation animée, expliqué en une phrase"
+
+veille:
+  frequence: "3 fois par semaine"
+  pays: FR
+  thematiques: ["astronomie", "physique", "mathématiques", "biologie", "découvertes récentes", "records"]
+  exclusions:
+    - "pseudo-sciences, astrologie"
+    - "conseils médicaux"
+  sources_preferees: ["nasa.gov", "esa.int", "cnrs.fr", "nature.com", "sciencesetavenir.fr", "futura-sciences.com"]
+
+video:
+  duree_cible_s: 20
+  scenes_autorisees: [hook, particles, kinetic, counter, compare, outro]
+  cta: "Abonne-toi pour une dose de science par jour"
+
+publication:
+  par_jour: 1
+  jours: "1,3,5"                      # lundi, mercredi, vendredi
+  heure_generation_utc: "06:40"
+  hashtags_max: 5
+
+charte_initiale:
+  nom: "Laboratoire de nuit"
+  fond: "#05070F"
+  texte: "#E8ECFF"
+  accent: "#7CF5D4"
+  accent2: "#B28CFF"
+  police_titre: "Space Grotesk"
+  police_texte: "Inter"
+  signature: "grille fine en fond, particules lumineuses"

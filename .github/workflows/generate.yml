@@ -1,0 +1,81 @@
+name: 1. Générer une vidéo
+
+on:
+  schedule:
+    # Heures en UTC (Paris = UTC+2 en été, UTC+1 en hiver). À garder en phase avec profiles/*.yaml
+    - cron: "10 5 * * *"        # actu    : tous les jours
+    - cron: "40 6 * * 1,3,5"    # science : lundi, mercredi, vendredi
+    - cron: "20 8 * * 2,6"      # fun     : mardi, samedi
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: "Compte : actu, science ou fun"
+        required: true
+        default: science
+
+concurrency:
+  group: state
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Choisir le compte
+        id: p
+        run: |
+          case "${{ github.event.schedule }}" in
+            "10 5 * * *")      P=actu ;;
+            "40 6 * * 1,3,5")  P=science ;;
+            "20 8 * * 2,6")    P=fun ;;
+            *)                 P="${{ inputs.profile }}" ;;
+          esac
+          echo "profile=$P" >> "$GITHUB_OUTPUT"
+          echo "Compte : $P"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Installer
+        run: |
+          pip install -r requirements.txt
+          cd video && npm ci && npx remotion browser ensure
+
+      - name: Lancer les agents et le rendu
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          MEDIA_REPO: ${{ vars.MEDIA_REPO }}
+        run: python -m pipeline.run generate --profile ${{ steps.p.outputs.profile }}
+
+      - name: Sauvegarder la mémoire (state/)
+        if: always()
+        run: |
+          git config user.name "reels-bot"
+          git config user.email "reels-bot@users.noreply.github.com"
+          git add state/
+          git diff --cached --quiet || (git commit -m "état : génération ${{ steps.p.outputs.profile }}" && git pull --rebase && git push)
+
+      - name: Garder la vidéo et les traces des agents (7 jours)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ steps.p.outputs.profile }}-${{ github.run_id }}
+          path: output/
+          retention-days: 7

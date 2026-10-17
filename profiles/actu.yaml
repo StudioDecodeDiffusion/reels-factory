@@ -1,0 +1,38 @@
+# Profil : actualité expliquée en animation
+id: actu
+nom_compte: "Actu expliquée"          # nom affiché dans les messages Telegram
+instagram_secret: IG_TOKEN_ACTU         # nom du secret GitHub qui contient le token Instagram de ce compte
+langue: fr
+public: "18-35 ans francophones, curieux, peu de temps, veulent comprendre l'actu sans jargon"
+ton: "clair, neutre, factuel, jamais militant ; une pointe d'humour seulement sur les sujets légers"
+niche: "expliquer UNE info d'actualité du jour en 20-30 s avec chiffres et schémas animés"
+
+veille:
+  frequence: quotidienne
+  pays: FR
+  thematiques: ["économie", "tech", "science", "international", "société", "climat"]
+  exclusions:                          # sujets à ne jamais traiter
+    - "faits divers violents, attentats, décès de personnes privées"
+    - "rumeurs non confirmées"
+    - "prises de position partisanes"
+  sources_preferees: ["lemonde.fr", "francetvinfo.fr", "afp.com", "reuters.com", "insee.fr", "lesechos.fr"]
+
+video:
+  duree_cible_s: 25
+  scenes_autorisees: [hook, kinetic, counter, bars, timeline, dots, compare, outro]
+  cta: "Abonne-toi pour comprendre l'actu en 30 s"
+
+publication:
+  par_jour: 1
+  heure_generation_utc: "05:10"        # génération le matin, tu valides, publication ensuite
+  hashtags_max: 5
+
+charte_initiale:                        # point de départ, l'agent DA peut l'affiner
+  nom: "Dépêche"
+  fond: "#0E1116"
+  texte: "#F4F1EA"
+  accent: "#FF5A36"
+  accent2: "#3FA7FF"
+  police_titre: "Space Grotesk"
+  police_texte: "Inter"
+  signature: "bandeau rouge en haut avec la date du jour"
