@@ -53,5 +53,22 @@
     "Format « Vrai ou faux JT ? » : Déco montre (décrit, sans la diffuser) une fausse vidéo IA virale, Lou explique comment la repérer et ce qui est établi ; sources à l'écran.",
     "Source affichée à l'écran sur chaque chiffre (nom du média + date) : ce qui nous sépare visiblement du « slop » standardisé que TikTok et Instagram commencent à pénaliser."
   ],
-  "position_decode": "Le créneau « actu française expliquée, faite par IA, transparente » est quasi vide dans ce qui est publiquement indexé : seul AntifakenewsAI (avatar réaliste d'un vrai journaliste, débunk) est un pair légitime ; le reste est de la désinformation (faux JT, voix IA en masse). Décodé se distingue par des personnages non réalistes en pixel art (Lou/Déco, pas de faux humain), un dialogue, des chiffres sourcés et une ligne assumée. Risque : être confondu avec le slop IA et subir les nouvelles règles de portée ; parade : transparence et sources visibles."
+  "position_decode": "Le créneau « actu française expliquée, faite par IA, transparente » est quasi vide dans ce qui est publiquement indexé : seul AntifakenewsAI (avatar réaliste d'un vrai journaliste, débunk) est un pair légitime ; le reste est de la désinformation (faux JT, voix IA en masse). Décodé se distingue par des personnages non réalistes en pixel art (Lou/Déco, pas de faux humain), un dialogue, des chiffres sourcés et une ligne assumée. Risque : être confondu avec le slop IA et subir les nouvelles règles de portée ; parade : transparence et sources visibles.",
+  "a_reprendre_style": [
+    "Personnages persistants : Lou et Déco restent à l'écran d'une scène à l'autre (pas de nouvelle entrée par le bas à chaque scène) ; seule l'expression change. Aujourd'hui le Duo est remonté dans chaque Sequence (dialogue.tsx, entree=2/6) → saut visible à chaque coupe.",
+    "Transition par recouvrement de 6 à 10 images : la scène sortante continue (glisse/zoom de sortie) pendant que la suivante entre, au lieu d'une coupe sèche suivie de la dissolution pixel de l'ancienne couleur seule (TransitionPixel 12 images).",
+    "Coupes sur le sens et le son : changer de scène sur une fin de phrase ou un temps fort de la musique (guide Reels Instagram : transition calée sur le son ; Le Cut 08/09/2026).",
+    "Apparitions : un seul élément principal à la fois, en 8-12 images, ressort amorti (damping ~15-20, stiffness ~200) plutôt que très rebondi (damping 8-10 actuel) ; éléments secondaires décalés de 4-6 images.",
+    "Chiffres : compteur qui monte en 15-20 images avec easing out, puis une seule « secousse »/étincelles à l'arrivée ; source + date en petit sous le chiffre.",
+    "Sous-titres : 2-3 mots par groupe (pas 4), synchronisés sur les vrais horodatages de la voix plutôt que sur la longueur des mots ; ~80 % en blanc, couleur d'accent réservée aux mots-clés ; zone y 220-1470 px.",
+    "Mouvement continu discret : léger zoom/panoramique sur chaque plan (déjà 3,5 %) et micro-respiration des personnages, pour qu'aucune image ne soit figée entre deux apparitions.",
+    "Musique : baisser (ducking) sous la voix et remonter sur les respirations/transitions ; un effet sonore court (whoosh/blip 8 bits) sur chaque transition et chaque chiffre."
+  ],
+  "a_reprendre_sources": [
+    "https://www.lecut.fr/blog/comment-faire-un-reel-instagram",
+    "https://comdigitale.blog/instagram-publie-un-guide-pour-reussir-ses-reels",
+    "https://kreateflo.com/blog/can-word-by-word-caption-animation-keep-viewers-hooked",
+    "https://docs.creem.io/.cursor/skills/remotion-best-practices/rules/timing.md",
+    "https://www.strategies.fr/actualites/medias/LQ2867371C/un-avatar-de-journaliste-pour-lutter-contre-les-fake-news.html"
+  ]
 }
