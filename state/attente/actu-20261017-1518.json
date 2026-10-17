@@ -1,0 +1,43 @@
+{
+  "id": "actu-20261017-1518",
+  "profil": "actu",
+  "statut": "a_valider",
+  "titre": "Inflation : le gazole a pris 44 % en un an",
+  "format_qhse": null,
+  "episode": null,
+  "legende": "Le gazole a pris 44 % en un an ⛽\n\nEn septembre, les prix ont augmenté de 3,1 % sur un an (contre 2,4 % en août). L'énergie pèse moins de 8 % de nos dépenses… mais explique à elle seule près de la moitié de la hausse. Hors prix volatils, l'inflation n'est qu'à 1,5 %.\n\nSource : Insee, indice des prix à la consommation, résultats définitifs de septembre 2026 (15/10/2026) — insee.fr/fr/statistiques/9080209\n\n#inflation #pouvoirdachat #carburant #economie #actu\n\nAnimation créée avec l'IA.",
+  "sources": [
+    "https://www.insee.fr/fr/statistiques/9080209"
+  ],
+  "validation": {
+    "notes": {
+      "accroche": 9,
+      "clarte": 8,
+      "exactitude": 9,
+      "rythme": 8,
+      "charte": 9,
+      "conformite": 9
+    },
+    "verdict": "valide",
+    "corrections_script": [],
+    "corrections_charte": [],
+    "commentaire": "Corrections appliquées. Tous les chiffres correspondent à la publication Insee du 15/10/2026 ; la part « environ la moitié » est un calcul explicite (7,64 % × 21,3 % ≈ 1,6 pt sur 3,1). Durée ≈ 36 s, proche de la cible."
+  },
+  "tours_validation": 2,
+  "community": {
+    "bilan": "pas encore de données (compte pas encore publié)",
+    "recommandations": [],
+    "reponses": []
+  },
+  "cree": "2026-10-17T13:26:34+00:00",
+  "issue": 1,
+  "media": {
+    "repo": "StudioDecodeDiffusion/reels-media",
+    "release_id": 415818342,
+    "tag": "reel-actu-20261017-1518",
+    "urls": {
+      "video.mp4": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261017-1518/video.mp4",
+      "apercu.png": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261017-1518/apercu.png"
+    }
+  }
+}
