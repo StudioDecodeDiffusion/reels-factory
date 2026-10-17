@@ -51,12 +51,12 @@ export const Avatar: React.FC<AvatarProps> = ({fond, motif = INK, perso, tenueDe
         backgroundPosition: '0 0, 36px 36px',
       }}
     />
-    <div style={{display: 'flex', alignItems: 'flex-end', gap: 10, marginTop: etiquette ? -40 : 0}}>
+    <div style={{display: 'flex', alignItems: 'flex-end', gap: 10, marginTop: etiquette ? (etiquette.includes('\n') ? -150 : -40) : 0}}>
       {perso !== 'deco' ? <Perso qui="lou" tenue={tenueLou} expr={exprLou} px={perso === 'duo' ? 17 : 24} /> : null}
       {perso !== 'lou' ? <Perso qui="deco" tenue={tenueDeco} expr={exprDeco} px={perso === 'duo' ? 17 : 27} /> : null}
     </div>
     {etiquette ? (
-      <div style={{position: 'absolute', bottom: 150, backgroundColor: couleurEtiquette, border: `10px solid ${INK}`, boxShadow: `14px 14px 0 ${INK}`, padding: '8px 40px', transform: 'rotate(-4deg)', fontFamily: etiquette.length > 8 ? fontTitre : fontPixel, fontWeight: 900, fontSize: etiquette.length > 8 ? 78 : 96, color: INK}}>
+      <div style={{position: 'absolute', bottom: etiquette.includes('\n') ? 130 : 150, backgroundColor: couleurEtiquette, border: `10px solid ${INK}`, boxShadow: `14px 14px 0 ${INK}`, padding: '8px 40px', transform: 'rotate(-4deg)', fontFamily: etiquette.length > 8 ? fontTitre : fontPixel, fontWeight: 900, fontSize: etiquette.length > 8 ? 70 : 96, color: INK, textAlign: 'center', lineHeight: 1.05, whiteSpace: 'pre-line'}}>
         {etiquette}
       </div>
     ) : null}
