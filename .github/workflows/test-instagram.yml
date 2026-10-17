@@ -1,0 +1,45 @@
+name: Test de connexion Instagram (sans publier)
+
+on:
+  workflow_dispatch:
+  push:
+    paths: [".github/workflows/test-instagram.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -q pyyaml requests
+      - name: Lire le profil (aucune publication)
+        env:
+          IG_TOKEN_ACTU: ${{ secrets.IG_TOKEN_ACTU }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pipeline import state
+          from pipeline.config import load_profile
+          from pipeline.instagram import IG
+          r = {"date": state.now_iso(), "token_present": bool(os.getenv("IG_TOKEN_ACTU"))}
+          try:
+              ig = IG(load_profile("actu"))
+              me = ig._get("me", fields="user_id,username,account_type,followers_count,media_count")
+              r.update(ok=True, compte=me)
+              try:
+                  r["publications_lues"] = len(ig.recent_media(5))
+              except Exception as e:
+                  r["publications_erreur"] = str(e)[:300]
+          except Exception as e:
+              r.update(ok=False, erreur=str(e)[:500])
+          print(json.dumps(r, ensure_ascii=False, indent=1))
+          state.save("test_instagram_actu", r)
+          PY
+      - run: |
+          git config user.name "reels-bot"; git config user.email "reels-bot@users.noreply.github.com"
+          git add state/ && (git diff --cached --quiet || (git commit -qm "état : test Instagram" && git pull -q --rebase && git push -q))
