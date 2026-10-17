@@ -149,7 +149,8 @@ def depot(drop_dir: str) -> None:
                          ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": 8})
 
         elif statut == "pret":  # vidéo finale déjà montée (ex. retouche du son) : hébergement + publication directe
-            fiche["media"] = media_host.upload([d / "video.mp4"], fiche["id"])
+            fiche["media"] = media_host.upload([d / "video.mp4"] + ([d / "couverture.png"] if (d / "couverture.png").exists() else []),
+                                               fiche["id"])
             fiche["statut"] = "approuvee"
             save_attente(fiche)
             if fiche.get("publier_maintenant"):
