@@ -4,7 +4,7 @@ name: Échantillons de voix off
 on:
   push:
     branches: [main]
-    paths: [voix/texte_test.txt]
+    paths: [voix/texte_test.txt, voix/essais.json]
   workflow_dispatch:
 
 permissions:
@@ -13,7 +13,7 @@ permissions:
 jobs:
   voix:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,11 +23,15 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
           pip install -q piper-tts kokoro-onnx soundfile
+          pip install -q torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+          pip install -q chatterbox-tts
       - name: Générer les échantillons
-        run: python -m pipeline.voix echantillons voix/texte_test.txt voix/echantillons
+        run: |
+          rm -rf voix/echantillons
+          python -m pipeline.voix echantillons voix/texte_test.txt voix/essais.json voix/echantillons
       - name: Enregistrer
         run: |
           git config user.name "reels-bot"
           git config user.email "reels-bot@users.noreply.github.com"
-          git add voix/echantillons
+          git add -A voix/echantillons
           git diff --cached --quiet || (git commit -m "voix : échantillons" && for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done)
