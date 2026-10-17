@@ -51,15 +51,15 @@ gérée automatiquement) ; couleurs en `#RRGGBB`.
  "messages_traites": ["id"], "message_au_proprietaire": "..."}
 ```
 
-## Musique de fond (obligatoire pour chaque vidéo) — c'est TON choix
-Tu choisis la musique selon **l'ambiance de la vidéo** ET **les tendances** : lis dans le rapport de l'agent 2
-(`state/veille_2_<compte>.json`) les sons et styles qui marchent en ce moment (rythme, énergie, ambiance
-Halloween, etc.) et transpose-les dans notre chiptune 8 bits (on ne reprend jamais un son protégé).
-Dans `7_spec.json` :
-```json
-"musique": {"ambiance": "tension | curieux | joyeux", "tempo": 70-150, "volume": 0.08-0.35}
-```
-Repères : sujet inquiétant / faux avertissement → « tension » ; explication → « curieux » ; bonne nouvelle →
-« joyeux ». Tempo plus rapide pour un format nerveux, plus lent pour un sujet grave. Volume par défaut 0.2
-(la voix reste toujours prioritaire, la musique baisse automatiquement quand on parle).
-Explique ton choix (ambiance + tendance suivie) dans ton message au propriétaire.
+## Musique de fond et effets sonores (obligatoire) — c'est TON choix
+Tu composes la bande-son **scène par scène**, selon l'ambiance de chaque moment et les tendances de l'agent 2
+(`state/veille_2_<compte>.json`), transposées en chiptune 8 bits (jamais de son protégé).
+- Global, dans `7_spec.json` : `"musique": {"ambiance": "curieux", "volume": 0.3-0.6}` (défaut 0.4 : la musique
+  doit bien s'entendre ; elle baisse un peu quand on parle).
+- Par scène : `"musique": "effroi" | "tension" | "curieux" | "joyeux"` (ou `{"ambiance", "tempo": 70-150}`) et
+  `"sfx": ["impact" | "whoosh" | "pop" | "ding"]`. Fondus enchaînés automatiques entre scènes ; par défaut
+  « impact » sur la 1re scène et « whoosh » à chaque transition.
+- Recette qui marche : ouverture **« effroi »** (bourdon, battements de cœur) + « impact » quand il y a une
+  accroche choc ou un faux avertissement, puis **musique thématique** (tension pour un conflit, curieux pour
+  une explication, joyeux pour la conclusion / l'appel à s'abonner) ; « ding » sur un chiffre clé, « pop » sur une révélation.
+Explique tes choix (ambiances, effets, tendance suivie) dans ton message au propriétaire.

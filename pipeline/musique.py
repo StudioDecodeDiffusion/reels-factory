@@ -83,25 +83,110 @@ def composer(duree: float, ambiance: str, sortie: Path, graine: int = 0, tempo: 
     return sortie
 
 
-def ajouter(video: Path, choix="curieux", graine: int = 0, volume: float = 0.2) -> None:
+def _effroi(n: int, graine: int) -> np.ndarray:
+    """Nappe inquiétante : bourdon grave, battements de cœur, aigu qui tremble."""
+    t = np.arange(n) / SR
+    drone = 0.5 * np.sin(2 * np.pi * 55 * t) + 0.35 * np.sin(2 * np.pi * 58.3 * t) + 0.2 * np.sin(2 * np.pi * 110.7 * t)
+    aigu = 0.12 * np.sin(2 * np.pi * 932 * t) * (0.5 + 0.5 * np.sin(2 * np.pi * 7 * t))
+    coeur = np.zeros(n)
+    for b in np.arange(0.2, n / SR, 0.9):  # « boum-boum »
+        for dt, amp in ((0, 0.9), (0.18, 0.6)):
+            i0, m = int((b + dt) * SR), int(0.16 * SR)
+            if i0 + m < n:
+                coeur[i0:i0 + m] += amp * np.sin(2 * np.pi * 48 * np.arange(m) / SR) * _env(m, chute=0.25)
+    return drone * np.linspace(0.6, 1, n) + aigu + coeur
+
+
+def _sfx(nom: str) -> np.ndarray:
+    """Effets sonores 8 bits : whoosh (transition), impact, pop, ding."""
+    if nom == "whoosh":
+        n = int(0.35 * SR)
+        bruit = np.random.default_rng(5).uniform(-1, 1, n)
+        k = np.linspace(2, 40, n).astype(int)  # filtre qui s'ouvre puis se referme
+        lisse = np.array([bruit[max(0, j - k[j]):j + 1].mean() for j in range(n)])
+        return 1.6 * lisse * np.sin(np.linspace(0, np.pi, n))
+    if nom == "impact":
+        n = int(0.6 * SR)
+        f = np.linspace(90, 35, n)
+        return 0.9 * np.sin(2 * np.pi * np.cumsum(f) / SR) * _env(n, chute=0.3)
+    if nom == "pop":
+        n = int(0.09 * SR)
+        f = np.linspace(500, 1400, n)
+        return 0.5 * np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * _env(n, chute=0.4)
+    n = int(0.5 * SR)  # ding
+    return 0.35 * (_onde(1568, n, "carre", 0.5) + 0.5 * _onde(2093, n, "carre", 0.5)) * _env(n, chute=0.3)
+
+
+def bande_son(scenes: list[dict], defaut: str, sortie: Path, graine: int = 0) -> Path:
+    """Musique qui change par scène (fondus enchaînés) + effets sonores aux transitions.
+    Chaque scène peut avoir "musique": "effroi|tension|curieux|joyeux" (ou {ambiance, tempo}) et "sfx": ["impact", …]."""
+    durees = [float(sc.get("duration", 3)) for sc in scenes]
+    total = int((sum(durees) + 0.5) * SR)
+    piste, sfx = np.zeros(total), np.zeros(total)
+    x = 0.4  # fondu enchaîné (s)
+    debut = 0.0
+    for k, (sc, d) in enumerate(zip(scenes, durees)):
+        choix = sc.get("musique") or defaut
+        amb, tempo = (choix.get("ambiance", defaut), choix.get("tempo")) if isinstance(choix, dict) else (choix, None)
+        n = int((d + x) * SR)
+        if amb == "effroi":
+            seg = _effroi(n, graine + k)
+            seg = seg / max(1e-6, np.abs(seg).max()) * 0.8
+        elif amb in ("", "aucune", "silence"):
+            seg = np.zeros(n)
+        else:
+            tmp = sortie.with_name(f"_seg{k}.wav")
+            composer(d + x, amb, tmp, graine + k, tempo)
+            with wave.open(str(tmp), "rb") as w:
+                seg = np.frombuffer(w.readframes(w.getnframes()), "<i2").astype(float) / 32767
+            tmp.unlink()
+        seg = seg[:n]
+        f = int(x * SR)
+        if k > 0:
+            seg[:f] *= np.linspace(0, 1, f)
+        seg[-f:] *= np.linspace(1, 0, f)
+        i0 = int(debut * SR)
+        piste[i0:i0 + len(seg)] += seg[: total - i0]
+        effets = list(sc.get("sfx") or []) or (["impact"] if k == 0 else ["whoosh"])
+        for e in effets:
+            s_ = _sfx(e)
+            j0 = i0 if e != "whoosh" else max(0, i0 - int(0.15 * SR))
+            sfx[j0:j0 + len(s_)] += s_[: total - j0]
+        debut += d
+    fin = int(1.2 * SR)
+    piste[-fin:] *= np.linspace(1, 0, fin)
+    mix = piste / max(1e-6, np.abs(piste).max()) * 0.7 + sfx * 0.5
+    mix = np.clip(mix, -1, 1)
+    with wave.open(str(sortie), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(SR)
+        w.writeframes((mix * 32767).astype("<i2").tobytes())
+    return sortie
+
+
+def ajouter(video: Path, choix="curieux", graine: int = 0, volume: float = 0.4, scenes: list | None = None) -> None:
     """Ajoute la musique sous la voix (remplace le fichier). choix = "tension" ou {"ambiance", "tempo", "volume"}."""
     tempo = None
     if isinstance(choix, dict):
-        tempo, volume = choix.get("tempo"), min(0.35, max(0.08, float(choix.get("volume", volume))))
+        tempo, volume = choix.get("tempo"), min(0.7, max(0.1, float(choix.get("volume", volume))))
         choix = choix.get("ambiance", "curieux")
     ambiance = choix
     if ambiance in (None, "", "aucune"):
         return
     duree = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
                                   str(video)], capture_output=True, text=True, check=True).stdout.strip())
-    wav = composer(duree, ambiance, video.with_name("musique.wav"), graine, tempo)
+    if scenes:
+        wav = bande_son(scenes, ambiance, video.with_name("musique.wav"), graine)
+    else:
+        wav = composer(duree, ambiance, video.with_name("musique.wav"), graine, tempo)
     a_voix = "audio" in subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries",
                                         "stream=codec_type", "-of", "csv=p=0", str(video)],
                                        capture_output=True, text=True).stdout
     tmp = video.with_name(video.stem + "_musique.mp4")
     if a_voix:
         filtre = (f"[1:a]volume={volume}[m];[0:a]asplit=2[v][sc];"
-                  "[m][sc]sidechaincompress=threshold=0.02:ratio=8:attack=15:release=350[md];"
+                  "[m][sc]sidechaincompress=threshold=0.05:ratio=3:attack=20:release=300[md];"
                   "[v][md]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.95[a]")
     else:
         filtre = f"[1:a]volume={volume * 2}[a]"
