@@ -194,7 +194,8 @@ def rendre_un(d: Path, fiche: dict) -> None:
     profile = load_profile(fiche["profil"])
     nom = profile["nom_compte"]
     _sonoriser(d, fiche, profile)
-    media = media_host.upload([d / "video.mp4", d / "apercu.png"], fiche["id"])
+    media = media_host.upload([d / "video.mp4", d / "apercu.png"] + ([d / "couverture.png"] if (d / "couverture.png").exists() else []),
+                              fiche["id"])
     v = media["urls"]["video.mp4"]
     crit = fiche.get("critique", {}) or fiche.get("verification", {})
     proj = crit.get("projection", {})
@@ -370,7 +371,8 @@ def _publier(fiche: dict, profile: dict) -> None:
     from .instagram import IG
     nom = profile["nom_compte"]
     try:
-        info = IG(profile).publish_reel(fiche["media"]["urls"]["video.mp4"], fiche["legende"])
+        info = IG(profile).publish_reel(fiche["media"]["urls"]["video.mp4"], fiche["legende"],
+                                        cover_url=fiche["media"]["urls"].get("couverture.png"))
     except BaseException as e:
         fiche["erreur"] = str(e)[:500]
         fiche["erreurs"] = fiche.get("erreurs", 0) + 1

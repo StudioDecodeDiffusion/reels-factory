@@ -42,9 +42,10 @@ class IG:
     def username(self) -> str:
         return self._get("me", fields="username")["username"]
 
-    def publish_reel(self, video_url: str, caption: str, share_to_feed: bool = True) -> dict:
+    def publish_reel(self, video_url: str, caption: str, share_to_feed: bool = True, cover_url: str | None = None) -> dict:
+        extra = {"cover_url": cover_url} if cover_url else {}
         c = self._post(f"{self.uid}/media", media_type="REELS", video_url=video_url, caption=caption,
-                       share_to_feed=str(share_to_feed).lower())
+                       share_to_feed=str(share_to_feed).lower(), **extra)
         cid = c["id"]
         for _ in range(60):  # jusqu'à ~10 min de traitement côté Instagram
             st = self._get(cid, fields="status_code,status")

@@ -84,6 +84,9 @@ def cmd_caption(a) -> None:
     from .voix import mention
     v = profile.get("voix", {})
     credits = " ".join(sorted({m for m in (mention(v.get("narrateur", "")), mention(v.get("mascotte", ""))) if m}))
+    lignes = cap.split("\n", 1)
+    ia = "🤖 Vidéo créée avec l'IA (animation et voix)."
+    cap = f"{lignes[0]}\n{ia}" + (f"\n\n{lignes[1].strip()}" if len(lignes) > 1 and lignes[1].strip() else "")
     text = f"{cap}\n\n{tags}\n\n{profile.get('mention_ia', 'Animation créée avec l’IA.')} {credits}".strip()[:2200]
     (d / "legende.txt").write_text(text, encoding="utf-8")
     print(text)
@@ -129,7 +132,7 @@ def _commit_state(msg: str) -> None:
     if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode == 0:
         return  # rien de nouveau
     _git("-c", "user.name=reels-bot", "-c", "user.email=reels-bot@users.noreply.github.com", "commit", "-q", "-m", msg)
-    _git("pull", "-q", "--rebase")
+    _git("pull", "-q", "--rebase", "origin", "main")
     _git("push", "-q")
 
 
@@ -221,7 +224,8 @@ def cmd_drop(a) -> None:
         "da_message": _da_suivi(d, a.profile),
         "cree": state.now_iso(),
     }
-    _push_drop(a.id, {"video.mp4": d / "video.mp4", "apercu.png": d / "apercu.png",
+    extra = {"couverture.png": d / "couverture.png"} if (d / "couverture.png").exists() else {}
+    _push_drop(a.id, {**extra, "video.mp4": d / "video.mp4", "apercu.png": d / "apercu.png",
                       "7_spec.json": d / "7_spec.json",
                       "fiche.json": json.dumps(fiche, ensure_ascii=False, indent=2)})
 
@@ -256,11 +260,12 @@ def cmd_rapport(a) -> None:
 
 
 def cmd_story(a) -> None:
-    """Story « nouvelle vidéo » : publiée automatiquement juste après le Reel."""
-    from .story import creer
+    """Miniature du Reel (couverture.png) + story « nouvelle vidéo » publiée juste après le Reel."""
+    from .story import couverture, creer
     prof = load_profile(a.profile)
     d = WORK / a.id
     titre = a.titre or _concept(d).get("titre") or "Nouvelle vidéo"
+    couverture(d / "video_scene0.png", titre, d / "couverture.png", (prof.get("charte_initiale") or {}).get("palette"))
     out = creer(d / "video_scene0.png", titre, prof.get("instagram") or prof["nom_compte"],
                 state.STATE / "stories" / f"{a.id}.png", (prof.get("charte_initiale") or {}).get("palette"))
     print(out)
