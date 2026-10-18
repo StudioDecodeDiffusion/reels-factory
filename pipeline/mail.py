@@ -225,8 +225,13 @@ def lire_nouveaux() -> list[dict]:
     # non lus, ni déjà traités, ni envoyés par un agent (Gmail X-GM-RAW = même syntaxe que la recherche Gmail)
     # à chaque passage : tout mail d'agent encore dans la boîte de réception (lu ou non) est rangé
     bilan = {"ranges": 0, "erreurs": [], "date": state.now_iso()}
-    requete = '"in:inbox from:me"' if state.load("rangement_dossiers", {}).get("rendus_v1") else '"from:me"'
-    _, tous = m.search(None, "X-GM-RAW", requete)
+    complet = not state.load("rangement_dossiers", {}).get("rendus_v2")
+    if complet:  # une fois : tous les mails (même déjà sortis de la boîte), via « Tous les messages »
+        _, boites = m.list()
+        tout = next((b.decode().split(' "/" ')[-1] for b in boites if b"\\All" in b), None)
+        if tout:
+            m.select(tout)
+    _, tous = m.search(None, "X-GM-RAW", '"from:me"' if complet else '"in:inbox from:me"')
     for i in tous[0].split()[-400:]:
         try:
             _, data = m.fetch(i, "(BODY.PEEK[HEADER.FIELDS (X-DECODE-AGENT SUBJECT)])")
@@ -236,7 +241,9 @@ def lire_nouveaux() -> list[dict]:
                 bilan["ranges"] += 1
         except Exception as e:
             bilan["erreurs"].append(str(e)[:120])
-    state.save("rangement_dossiers", {**bilan, "erreurs": bilan["erreurs"][:5], "rendus_v1": True})
+    state.save("rangement_dossiers", {**bilan, "erreurs": bilan["erreurs"][:5], "rendus_v2": True})
+    if complet:
+        m.select("INBOX")
     _, ids = m.search(None, "X-GM-RAW", f'"in:inbox is:unread -label:{LABEL_TRAITE} -label:{LABEL_AGENTS}"')
     for i in ids[0].split():
         _, data = m.fetch(i, "(BODY.PEEK[])")
