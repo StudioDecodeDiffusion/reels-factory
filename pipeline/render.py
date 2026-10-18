@@ -25,7 +25,7 @@ REQUIRED = {
     "bars": ["title", "items"], "timeline": ["events"], "dots": ["total", "highlighted", "label"],
     "compare": ["left", "right"], "particles": ["mode", "caption"], "outro": ["text", "cta"],
     "quiz": ["question", "options", "bonne"], "bigstat": ["value", "label"], "checklist": ["items"],
-    "photo": ["src", "credit"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
+    "photo": ["src", "credit"], "pendant": ["haut", "bas"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
 }
 
 
@@ -136,13 +136,41 @@ def _browser_args() -> list[str]:
     return [f"--browser-executable={exe}", "--chrome-mode=headless-shell"] if exe else []
 
 
+def _credit_commons(sc: dict) -> None:
+    """Image de Wikimedia Commons : auteur et licence lus automatiquement (attribution obligatoire)."""
+    import re as _re
+    import urllib.parse
+    import urllib.request
+    m = _re.search(r"Special:FilePath/([^?]+)", sc.get("src", ""))
+    if not m:
+        return
+    nom = urllib.parse.unquote(m.group(1))
+    url = ("https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&format=json&titles="
+           + urllib.parse.quote("File:" + nom))
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "DecodeStudio/1.0 (studiodecodediffusion@gmail.com)"})
+        data = json.loads(urllib.request.urlopen(req, timeout=30).read())
+        meta = next(iter(data["query"]["pages"].values()))["imageinfo"][0]["extmetadata"]
+        auteur = _re.sub(r"<[^>]+>", "", meta.get("Artist", {}).get("value", "")).strip()[:60]
+        lic = meta.get("LicenseShortName", {}).get("value", "")
+        sc["credit"] = f"{auteur} · {lic} · Wikimedia Commons".strip(" ·")
+    except Exception as e:
+        print(f"crédit Commons non lu ({e}) : crédit de la spec conservé")
+
+
 def _photos(spec: dict) -> None:
     """Scènes « photo » : télécharge l'image (licence libre : Wikimedia Commons, sites publics…) dans video/public/photos/."""
     import hashlib
     import urllib.request
     for sc in spec.get("scenes", []):
+        if sc.get("type") == "pendant" and str(sc.get("src", "")).startswith("http"):
+            tmp = {"type": "photo", "src": sc["src"], "credit": sc.get("credit", "")}
+            _photos({"scenes": [tmp]})
+            sc["src"], sc["credit"] = tmp["src"], tmp["credit"]
+            continue
         src = str(sc.get("src", ""))
         if sc.get("type") == "photo" and src.startswith("http"):
+            _credit_commons(sc)
             nom = hashlib.sha1(src.encode()).hexdigest()[:16] + (Path(src.split("?")[0]).suffix or ".jpg")
             dest = VIDEO / "public" / "photos" / nom
             dest.parent.mkdir(parents=True, exist_ok=True)

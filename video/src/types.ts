@@ -72,7 +72,8 @@ export type Scene =
   | (Base & {type: 'debat'; title?: string; pour: string[]; contre: string[]; label_pour?: string; label_contre?: string})
   | (Base & {type: 'reaction'; paliers: {valeur: string; label: string}[]})
   | (Base & {type: 'conte'; titre?: string; texte: string; chute?: string})
-  | (Base & {type: 'photo'; src: string; credit: string; titre?: string; legende?: string});
+  | (Base & {type: 'photo'; src: string; credit: string; titre?: string; legende?: string})
+  | (Base & {type: 'pendant'; src?: string; credit?: string; haut: string; bas: string; lignes?: string[]});
 
 export type VideoSpec = {
   fps?: number;

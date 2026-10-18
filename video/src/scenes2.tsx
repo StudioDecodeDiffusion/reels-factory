@@ -225,3 +225,31 @@ export const Photo: React.FC<{scene: Ex<'photo'>; c1: string}> = ({scene, c1}) =
     </>
   );
 };
+
+// ───────────────────────── PENDANT QUE… : écran coupé en deux, le contraste (photo en haut, faits en bas)
+export const Pendant: React.FC<{scene: Ex<'pendant'>; c1: string; c2: string}> = ({scene, c1, c2}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const z = interpolate(frame, [0, scene.duration * fps], [1.05, 1.18]);
+  const coupe = spring({frame, fps, config: {damping: 14}});
+  const lignes = scene.lignes ?? [];
+  const per = Math.max(10, Math.floor((scene.duration * fps * 0.5) / Math.max(1, lignes.length)));
+  return (
+    <>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 230, height: 520 * coupe, overflow: 'hidden', borderBottom: `12px solid ${INK}`, backgroundColor: '#2A1240'}}>
+        {scene.src ? <Img src={staticFile(scene.src)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${z})`, filter: 'saturate(1.2)'}} /> : null}
+        <div style={{position: 'absolute', left: 30, top: 24}}><Sticker couleur={c1} rotate={-3}><span style={{fontFamily: fontTitre, fontWeight: 900, fontSize: 50, color: INK}}>{scene.haut}</span></Sticker></div>
+        {scene.credit ? <div style={{position: 'absolute', right: 12, bottom: 8, fontFamily: fontPixel, fontSize: 18, color: '#eee', backgroundColor: 'rgba(0,0,0,0.5)', padding: '2px 6px'}}>© {scene.credit}</div> : null}
+      </div>
+      <div style={{position: 'absolute', left: 50, right: 50, top: 790, display: 'flex', flexDirection: 'column', gap: 18}}>
+        <div><Sticker couleur={c2} rotate={2}><span style={{fontFamily: fontTitre, fontWeight: 900, fontSize: 50, color: INK}}>{scene.bas}</span></Sticker></div>
+        {lignes.map((l, i) => {
+          const p = spring({frame: frame - 12 - i * per, fps, config: {damping: 10}});
+          return (
+            <div key={i} style={{opacity: Math.min(1, p * 1.5), transform: `translateX(${(1 - p) * 60}px)`, fontFamily: fontTitre, fontWeight: 900, fontSize: 58, color: '#fff', WebkitTextStroke: `4px ${INK}`, paintOrder: 'stroke fill'}}>{l}</div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
