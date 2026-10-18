@@ -205,6 +205,7 @@ def _ranger(m, i, msg) -> None:
             m.store(i, "-X-GM-LABELS", "\\Inbox")
     except Exception as e:
         print(f"rangement impossible : {e}")
+        raise
 
 
 def lire_nouveaux() -> list[dict]:
@@ -214,12 +215,19 @@ def lire_nouveaux() -> list[dict]:
     m.login(adresse(), os.environ["GMAIL_APP_PASSWORD"])
     m.select("INBOX")
     # non lus, ni déjà traités, ni envoyés par un agent (Gmail X-GM-RAW = même syntaxe que la recherche Gmail)
-    if not state.load("rangement_dossiers", {}).get("fait"):  # une fois : ranger les anciens mails d'agents
-        _, anciens = m.search(None, "X-GM-RAW", f'"label:{LABEL_AGENTS}"')
-        for i in anciens[0].split():
-            _, data = m.fetch(i, "(BODY.PEEK[HEADER])")
-            _ranger(m, i, email.message_from_bytes(data[0][1]))
-        state.save("rangement_dossiers", {"fait": True, "date": state.now_iso()})
+    # à chaque passage : tout mail d'agent encore dans la boîte de réception (lu ou non) est rangé
+    bilan = {"ranges": 0, "erreurs": [], "date": state.now_iso()}
+    _, tous = m.search(None, "X-GM-RAW", '"in:inbox from:me"')
+    for i in tous[0].split()[-400:]:
+        try:
+            _, data = m.fetch(i, "(BODY.PEEK[HEADER.FIELDS (X-DECODE-AGENT SUBJECT)])")
+            h = email.message_from_bytes(data[0][1])
+            if h.get("X-Decode-Agent"):
+                _ranger(m, i, h)
+                bilan["ranges"] += 1
+        except Exception as e:
+            bilan["erreurs"].append(str(e)[:120])
+    state.save("rangement_dossiers", {**bilan, "erreurs": bilan["erreurs"][:5]})
     _, ids = m.search(None, "X-GM-RAW", f'"in:inbox is:unread -label:{LABEL_TRAITE} -label:{LABEL_AGENTS}"')
     for i in ids[0].split():
         _, data = m.fetch(i, "(BODY.PEEK[])")
