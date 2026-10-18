@@ -57,3 +57,8 @@ vert_terminal · rouge_alerte · papier_journal (crème/noir/rouge) — donner `
 hook · kinetic · counter · bars · timeline · dots · compare · outro · **quiz** (question, options, bonne,
 revelation en s) · **bigstat** (value, label, source : chiffre géant avec glitch) · **checklist** (title, items
 [{texte, etat: vrai|faux|flou}] avec tampons VRAI/FAUX/FLOU)
+· **pancartes** (title, items [{pancarte, reponse}] : le fantôme brandit une idée reçue, la réponse chiffrée la tamponne)
+· **sms** (texte, signature, expediteur : SMS anonyme « -A » qui s'écrit) · **debat** (title, pour[], contre[],
+label_pour, label_contre : balance qui penche) · **reaction** (paliers [{valeur, label}] : trend « My reaction to… »,
+Déco réagit de plus en plus fort) · **conte** (titre, texte, chute : « il était une fois », parchemin, boîte à musique)
+Genres de musique en plus : **boite_a_musique** · **epique**

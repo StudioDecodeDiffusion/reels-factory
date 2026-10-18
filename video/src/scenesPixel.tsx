@@ -5,6 +5,7 @@ import {AnimatedSprite, encrePour, Etincelles, fontPixel, fontTitre, INK, PixelS
 import {SPRITES} from './sprites';
 import {Highlight, rng} from './ui';
 import {BigStat, Checklist, Quiz} from './layouts';
+import {Conte, Debat, Pancartes, Reaction, SmsAnonyme} from './scenes2';
 
 // Zone de contenu (au-dessus de la mascotte et des sous-titres)
 const TOP = 330;
@@ -331,9 +332,19 @@ export const SceneViewPixel: React.FC<{scene: Scene; ctx: Ctx}> = ({scene, ctx})
     case 'quiz':
       return <Quiz scene={scene} c1={ctx.c1} c2={ctx.c2} bg={ctx.bg} />;
     case 'bigstat':
-      return <BigStat scene={scene} c1={ctx.c1} bg={ctx.bg} />;
+      return <BigStat scene={scene} c1={ctx.c1} c2={ctx.c2} bg={ctx.bg} />;
     case 'checklist':
       return <Checklist scene={scene} c1={ctx.c1} c2={ctx.c2} bg={ctx.bg} />;
+    case 'pancartes':
+      return <Pancartes scene={scene} c1={ctx.c1} c2={ctx.c2} bg={ctx.bg} />;
+    case 'sms':
+      return <SmsAnonyme scene={scene} />;
+    case 'debat':
+      return <Debat scene={scene} c1={ctx.c1} c2={ctx.c2} bg={ctx.bg} />;
+    case 'reaction':
+      return <Reaction scene={scene} c1={ctx.c1} c2={ctx.c2} bg={ctx.bg} />;
+    case 'conte':
+      return <Conte scene={scene} />;
     default:
       return null;
   }

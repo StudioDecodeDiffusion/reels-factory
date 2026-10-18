@@ -61,7 +61,7 @@ const ScenePixel: React.FC<{s: Scene; i: number; theme: Theme; bg: string; prevB
       {mep === 'jt' ? (
         <HabillageJT scene={s} tenues={tenues} accent={theme.accent2 ?? c1} titre={theme.titre ?? theme.bandeau ?? ''}>{contenu}</HabillageJT>
       ) : mep === 'chat' ? (
-        <HabillageChat scene={s} accent={c1} fond={bg}>{contenu}</HabillageChat>
+        <HabillageChat scene={s} accent={theme.accent} fond={bg}>{contenu}</HabillageChat>
       ) : mep === 'plein_ecran' || mep === 'quiz' ? (
         <HabillagePleinEcran scene={s} tenues={tenues} accent={c1}>{contenu}</HabillagePleinEcran>
       ) : (

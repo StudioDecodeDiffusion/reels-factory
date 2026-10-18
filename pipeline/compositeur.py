@@ -28,6 +28,8 @@ GENRES = {
     "funk":      (112, "dorien", 52, [0, 3, 0, 4], 0.1, "carre", "funk"),
     "suspense":  (76, "phrygien", 50, [0, 1, 0, 6], 0.0, "sinus", "pulse"),
     "house":     (122, "majeur", 57, [5, 3, 0, 4], 0.0, "carre", "octaves"),
+    "boite_a_musique": (88, "mineur", 69, [0, 5, 3, 4], 0.0, "cloche", "ronde"),
+    "epique":    (96, "mineur", 50, [0, 5, 6, 4], 0.0, "cordes", "octaves"),
 }
 
 
@@ -55,6 +57,9 @@ def osc(forme: str, f, n: int, rng=None) -> np.ndarray:
         p3 = np.cumsum(f * 0.996) / SR % 1.0
         x = (2 * ph - 1 + 2 * p2 - 1 + 2 * p3 - 1) / 3
         return np.convolve(x, np.ones(12) / 12, mode="same")
+    if forme == "cloche":  # boîte à musique : sinus + partiel inharmonique qui s'éteint vite
+        t = np.arange(n) / SR
+        return np.sin(2 * np.pi * ph) * 0.8 + 0.35 * np.sin(2 * np.pi * np.cumsum(f * 2.76) / SR) * np.exp(-t * 9)
     return np.sin(2 * np.pi * ph)  # sinus
 
 
@@ -181,7 +186,7 @@ def composer(sections: list[dict], genre: str, sortie: Path, graine: int = 0, tr
             lm = fin_mesure - t
             n = int(lm * SR)
             # nappe / accords
-            forme_nappe = "cordes" if genre in ("orchestral", "synthwave") else ("triangle" if genre == "lofi" else "carre25")
+            forme_nappe = "cordes" if genre in ("orchestral", "synthwave", "epique") else ("triangle" if genre in ("lofi", "boite_a_musique") else "carre25")
             for i, note in enumerate(accord):
                 son = osc(forme_nappe, hz(note), n) * adsr(n, a=0.08 if genre != "funk" else 0.005, d=0.3, s=0.5, r=0.2)
                 if genre == "funk":  # accords piqués
@@ -216,7 +221,7 @@ def composer(sections: list[dict], genre: str, sortie: Path, graine: int = 0, tr
                         m = int(double * 1.5 * SR)
                         P["basse"].ajoute(st, osc("sinus", hz(racine - 24), m) * adsr(m, d=0.2, s=0.2), 0.45)
             # batterie
-            if e >= 2 or genre == "trap8bit":
+            if (e >= 2 or genre == "trap8bit") and genre != "boite_a_musique":
                 for k in range(16):
                     st = t + k * double + (swing * double if k % 2 else 0)
                     if st >= fin_mesure:
@@ -244,7 +249,7 @@ def composer(sections: list[dict], genre: str, sortie: Path, graine: int = 0, tr
                             P["bat"].ajoute(st, snare(rng), 0.18)
                         if k % 2 == 0:
                             P["bat"].ajoute(st, hat(rng), 0.06)
-                    elif genre == "orchestral":
+                    elif genre in ("orchestral", "epique"):
                         if k in (0, 8) and e >= 3:
                             m = int(0.6 * SR)
                             P["bat"].ajoute(st, osc("sinus", 70 * (1 + 0.3 * np.exp(-_t(m) * 10)), m) * np.exp(-_t(m) * 5), 0.5)
@@ -256,7 +261,7 @@ def composer(sections: list[dict], genre: str, sortie: Path, graine: int = 0, tr
                     for k in range(4):
                         P["bat"].ajoute(fin_mesure - (4 - k) * double, snare(rng), 0.15 + 0.05 * k)
             # mélodie (énergie 3 ; un peu en énergie 2 pour certains genres)
-            if e >= 3 or (e == 2 and genre in ("lofi", "orchestral", "synthwave") and variation == 1):
+            if e >= 3 or genre == "boite_a_musique" or (e == 2 and genre in ("lofi", "orchestral", "synthwave", "epique") and variation == 1):
                 motif = motif_b if refrain else motif_a
                 dec = [0, 2, -1][variation]
                 for k in range(8):

@@ -7,6 +7,12 @@ import {fontPixel, fontTitre, INK, Sticker, encrePour} from './fx';
 import {Scene} from './types';
 import {H, W} from './ui';
 
+const lum = (h: string) => {
+  const n = parseInt(h.replace('#', ''), 16);
+  return (0.299 * ((n >> 16) & 255) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255)) / 255;
+};
+const contraste = (a: string, b: string) => Math.abs(lum(a) - lum(b));
+
 export type MiseEnPage = 'duo' | 'jt' | 'chat' | 'quiz' | 'plein_ecran';
 type Tenues = {narrateur?: string; mascotte?: string};
 
@@ -190,7 +196,9 @@ export const Quiz: React.FC<{scene: Q; c1: string; c2: string; bg: string}> = ({
 };
 
 type B = Extract<Scene, {type: 'bigstat'}>;
-export const BigStat: React.FC<{scene: B; c1: string; bg: string}> = ({scene, c1, bg}) => {
+export const BigStat: React.FC<{scene: B; c1: string; bg: string; c2?: string}> = ({scene, c1: c1a, bg, c2}) => {
+  const meilleur = contraste(c1a, bg) >= contraste(c2 ?? c1a, bg) ? c1a : (c2 as string);
+  const c1 = contraste(meilleur, bg) < 0.35 ? (lum(bg) > 0.5 ? '#14131C' : '#FFD23F') : meilleur;
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const p = spring({frame, fps, config: {damping: 7, mass: 0.9}});

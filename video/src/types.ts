@@ -66,7 +66,12 @@ export type Scene =
   | (Base & {type: 'outro'; text: string; cta: string})
   | (Base & {type: 'quiz'; question: string; options: string[]; bonne: number; revelation?: number})
   | (Base & {type: 'bigstat'; value: string; label: string; source?: string})
-  | (Base & {type: 'checklist'; title?: string; items: {texte: string; etat?: 'vrai' | 'faux' | 'flou'}[]});
+  | (Base & {type: 'checklist'; title?: string; items: {texte: string; etat?: 'vrai' | 'faux' | 'flou'}[]})
+  | (Base & {type: 'pancartes'; title?: string; items: {pancarte: string; reponse: string}[]})
+  | (Base & {type: 'sms'; texte: string; signature?: string; expediteur?: string})
+  | (Base & {type: 'debat'; title?: string; pour: string[]; contre: string[]; label_pour?: string; label_contre?: string})
+  | (Base & {type: 'reaction'; paliers: {valeur: string; label: string}[]})
+  | (Base & {type: 'conte'; titre?: string; texte: string; chute?: string});
 
 export type VideoSpec = {
   fps?: number;

@@ -25,6 +25,7 @@ REQUIRED = {
     "bars": ["title", "items"], "timeline": ["events"], "dots": ["total", "highlighted", "label"],
     "compare": ["left", "right"], "particles": ["mode", "caption"], "outro": ["text", "cta"],
     "quiz": ["question", "options", "bonne"], "bigstat": ["value", "label"], "checklist": ["items"],
+    "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
 }
 
 
