@@ -135,6 +135,21 @@ def depot(drop_dir: str) -> None:
             mail.envoyer("Manager", f"📍 {fiche.get('titre', 'Avancement')} · {nom}", md(fiche.get("corps_md", "")), R_MANAGER,
                          ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": fiche.get("agent")})
 
+        elif statut == "envoi_videos":  # un mail par vidéo finie, vidéo en pièce jointe
+            import tempfile
+            for job in fiche.get("jobs", []):
+                f = attente(job) or {}
+                url = (f.get("media") or {}).get("urls", {}).get("video.mp4")
+                if not url:
+                    continue
+                tmp = Path(tempfile.mkdtemp()) / f"{job}.mp4"
+                tmp.write_bytes(requests.get(url, timeout=300).content)
+                quand = f.get("publication_le", "")
+                mail.envoyer("Manager", f"🎬 Vidéo finie · {nom} · {f.get('titre', '')}",
+                             md(f"La vidéo finale est en pièce jointe.\n\n- **Lien :** [{url}]({url})\n- **Publication prévue :** {quand or 'à valider'}"),
+                             R_MANAGER, ref={"type": "manager", "job": job, "profil": fiche["profil"]},
+                             pieces=[tmp] if tmp.stat().st_size < 24_000_000 else [])
+
         elif statut == "relance":  # relancer des rendus annulés
             for job in fiche.get("jobs", []):
                 _envoyer_au_rendu(job)
@@ -398,8 +413,12 @@ def _publier(fiche: dict, profile: dict) -> None:
     _manager(fiche, "⏳ Publication en cours", "J'envoie la vidéo et sa miniature à Instagram (traitement 1 à 5 min), "
              "puis la story. Prochain mail : « Vidéo publiée » avec le lien.")
     try:
-        info = IG(profile).publish_reel(fiche["media"]["urls"]["video.mp4"], fiche["legende"],
-                                        cover_url=fiche["media"]["urls"].get("couverture.png"))
+        cover = fiche["media"]["urls"].get("couverture.png")
+        neuve = state.STATE / "couvertures" / f"{fiche['id']}.png"
+        if neuve.exists():  # miniature refaite après le rendu
+            hc = media_host.upload([neuve], f"{fiche['id']}-couv")
+            cover = hc["urls"][neuve.name]
+        info = IG(profile).publish_reel(fiche["media"]["urls"]["video.mp4"], fiche["legende"], cover_url=cover)
     except BaseException as e:
         fiche["erreur"] = str(e)[:500]
         fiche["erreurs"] = fiche.get("erreurs", 0) + 1
@@ -476,6 +495,31 @@ def _publier_story(fiche: dict, profile: dict) -> str:
         return f"⚠️ Story non publiée : {str(e)[:300]}"
 
 
+def _stories_programmees(now) -> None:
+    """state/stories_programmees.json : [{"image": "stories_annonce/x.png", "quand": ISO, "profil", "titre"}]"""
+    from .instagram import IG
+    liste = state.load("stories_programmees", [])
+    reste = []
+    for st in liste:
+        if st.get("faite") or datetime.fromisoformat(st["quand"]) > now:
+            reste.append(st)
+            continue
+        prof = load_profile(st["profil"])
+        png = state.STATE / st["image"]
+        try:
+            h = media_host.upload([png], f"annonce-{png.stem}")
+            IG(prof).publish_story(h["urls"][png.name])
+            media_host.cleanup(h)
+            etat, txt = "✅ Story publiée", "📣 Story d'annonce en ligne."
+        except BaseException as e:
+            etat, txt = "❌ Échec story", f"Story d'annonce non publiée : {str(e)[:300]}"
+        st["faite"] = state.now_iso()
+        reste.append(st)
+        mail.envoyer("Manager", f"{etat} · {prof['nom_compte']} · {st.get('titre', '')}", md(txt), R_MANAGER,
+                     ref={"type": "manager", "profil": st["profil"]})
+    state.save("stories_programmees", reste[-60:])
+
+
 def publier_ce_qui_est_du() -> None:
     now = datetime.now(TZ)
     demande = state.load("publier_maintenant", {})
@@ -500,7 +544,9 @@ def publier_ce_qui_est_du() -> None:
     for fiche in all_attente():
         profile = load_profile(fiche["profil"])
         p = profile["planning"]
-        if fiche["statut"] == "approuvee" and now.hour >= fiche.get("publication_heure", p.get("publication_heure", 18)) \
+        quand = fiche.get("publication_le")  # date + heure précises (ISO), prioritaires sur l'heure
+        pret = (datetime.fromisoformat(quand) <= now) if quand else now.hour >= fiche.get("publication_heure", p.get("publication_heure", 18))
+        if fiche["statut"] == "approuvee" and pret \
                 and now.isoweekday() in p.get("publication_jours", range(1, 8)) and fiche.get("erreurs", 0) < 3:
             _publier(fiche, profile)
         elif fiche["statut"] == "a_valider" and \
@@ -510,6 +556,7 @@ def publier_ce_qui_est_du() -> None:
             save_attente(fiche)
             mail.envoyer(9, f"{profile['nom_compte']} · Vidéo expirée : {fiche['titre']}",
                          md("Pas de réponse sous 36 h : la vidéo est abandonnée."), R_NOTE.format(n=9))
+    _stories_programmees(now)
     limite = datetime.now(timezone.utc) - timedelta(days=60)
     for fiche in all_attente():
         if fiche["statut"] in ("publiee", "refusee", "expiree", "abandonnee", "info", "rapport") and \
