@@ -1,0 +1,187 @@
+{
+  "theme": {
+    "fond": "#FFE9C7",
+    "texte": "#FFFFFF",
+    "accent": "#FF6B35",
+    "accent2": "#2EC4B6",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "style": "pixel",
+    "palette": [
+      "#FFE9C7",
+      "#FF6B35",
+      "#2EC4B6",
+      "#F7C59F",
+      "#C6E2D9"
+    ],
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "fete"
+    },
+    "mise_en_page": "duo",
+    "transition": "bandes",
+    "camera": "pan",
+    "bandeau": "Après le 17 octobre",
+    "grille": false
+  },
+  "voix_override": {
+    "narrateur": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte_effet": ""
+  },
+  "musique": {
+    "genre": "funk",
+    "volume": 0.8
+  },
+  "variete": {
+    "accroche": "question_choc",
+    "trend": "Things you should definitely ghost (fantôme à pancartes)",
+    "fonctionnement": "mythe_realite",
+    "mise_en_page": "duo",
+    "musique": "funk",
+    "voix": "V3+V2",
+    "palette": "retro_tv"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "duration": 10.0,
+      "title": "On a parlé des casseurs.",
+      "subtitle": "Et des revendications ?",
+      "sprite": "loupe",
+      "sprite_anim": "bounce",
+      "energie": 2,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Depuis samedi, on ne parle que des casseurs. Et les revendications, alors ?",
+          "expression": "colere"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Bouh ! J'ai des idées reçues plein mon drap.",
+          "expression": "rire"
+        }
+      ]
+    },
+    {
+      "type": "pancartes",
+      "duration": 16.0,
+      "title": "IDÉES REÇUES",
+      "items": [
+        {
+          "pancarte": "C'était juste de la casse",
+          "reponse": "550 000 à 800 000 manifestants"
+        },
+        {
+          "pancarte": "Ils râlaient pour rien",
+          "reponse": "Carburant, salaires, services publics, lycées"
+        }
+      ],
+      "energie": 3,
+      "sfx": [
+        "whoosh",
+        "pop"
+      ],
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "C'était juste de la casse !",
+          "expression": "clin"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Non : entre cinq cent cinquante mille et huit cent mille personnes ont défilé.",
+          "expression": "colere"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Ils râlaient pour rien !",
+          "expression": "clin"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Pour le carburant, les salaires, les services publics et les lycées.",
+          "expression": "content"
+        }
+      ]
+    },
+    {
+      "type": "bigstat",
+      "duration": 10.4,
+      "value": "4 sur 5",
+      "label": "manifestants comptés hors de Paris (110 000 à Paris sur 550 000)",
+      "source": "Intérieur, préfecture",
+      "energie": 2,
+      "sfx": [
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Bon, mais c'était surtout Paris !",
+          "expression": "pense"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Raté : cent dix mille à Paris, sur cinq cent cinquante mille. Quatre sur cinq étaient ailleurs.",
+          "expression": "clin"
+        }
+      ]
+    },
+    {
+      "type": "pancartes",
+      "duration": 8.8,
+      "title": "DERNIÈRE IDÉE REÇUE",
+      "items": [
+        {
+          "pancarte": "Bon, c'est fini maintenant",
+          "reponse": "Grève interprofessionnelle le 5 novembre"
+        }
+      ],
+      "energie": 3,
+      "sfx": [
+        "whoosh",
+        "pop"
+      ],
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Bon, c'est fini maintenant !",
+          "expression": "rire"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Pas du tout : les syndicats appellent à la grève le jeudi cinq novembre.",
+          "expression": "content"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "duration": 6.0,
+      "text": "Les revendications, c'est ça l'info.",
+      "cta": "Abonne-toi pour la suite",
+      "energie": 3,
+      "sfx": [
+        "whoosh",
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Bon… je range mes pancartes.",
+          "expression": "triste"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Et toi, abonne-toi pour la suite !",
+          "expression": "rire"
+        }
+      ]
+    }
+  ]
+}
