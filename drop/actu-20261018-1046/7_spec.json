@@ -1,0 +1,222 @@
+{
+  "theme": {
+    "fond": "#1A0A0E",
+    "texte": "#FFFFFF",
+    "accent": "#FF3B3B",
+    "accent2": "#FFD23F",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "style": "pixel",
+    "palette": [
+      "#2A0D12",
+      "#FF3B3B",
+      "#FFD23F",
+      "#F4F1EA",
+      "#3D1018"
+    ],
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "detective"
+    },
+    "mise_en_page": "jt",
+    "transition": "glitch",
+    "camera": "secousse",
+    "titre": "BILAN DU 17 OCTOBRE : 550 000 À 800 000 MANIFESTANTS · 1 200 INTERPELLATIONS · GRÈVE LE 5 NOVEMBRE",
+    "bandeau": null,
+    "grille": false
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.75&cfg=0.4",
+    "mascotte": "chatterbox:fr?ref=pierre&exag=0.55&cfg=0.3",
+    "mascotte_effet": "grave"
+  },
+  "musique": {
+    "genre": "trap8bit",
+    "volume": 0.8
+  },
+  "variete": {
+    "accroche": "breaking",
+    "trend": "Chiffre géant en ouverture",
+    "fonctionnement": "chiffres_cles",
+    "mise_en_page": "jt",
+    "musique": "trap8bit",
+    "voix": "V1+V2grave",
+    "palette": "rouge_alerte"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "duration": 7.7,
+      "title": "FLASH SPÉCIAL",
+      "subtitle": "17 octobre : le bilan",
+      "sprite": "danger",
+      "sprite_anim": "shake",
+      "energie": 3,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Flash spécial. Hier, la France a défilé contre la vie chère. Voici le bilan, chiffres à l'appui.",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "bigstat",
+      "duration": 9.2,
+      "value": "550 000",
+      "label": "manifestants selon le ministère de l'Intérieur",
+      "source": "Laurent Nuñez",
+      "energie": 2,
+      "sfx": [
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Déco, en duplex : combien de monde dans la rue ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Cinq cent cinquante mille selon le ministère de l'Intérieur.",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "duration": 8.8,
+      "title": "Qui compte quoi ?",
+      "left": {
+        "label": "INTÉRIEUR",
+        "value": "550 000"
+      },
+      "right": {
+        "label": "ORGANISATEURS",
+        "value": "800 000"
+      },
+      "energie": 2,
+      "sfx": [
+        "whoosh",
+        "pop"
+      ],
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Et huit cent mille selon les organisateurs. Deux cent cinquante mille d'écart !",
+          "expression": "choc"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "La bataille des chiffres, comme toujours.",
+          "expression": "clin"
+        }
+      ]
+    },
+    {
+      "type": "kinetic",
+      "duration": 11.2,
+      "lines": [
+        "Smic en hausse",
+        "salaires indexés",
+        "moins cher à la pompe"
+      ],
+      "energie": 3,
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et ils réclamaient quoi ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "La CGT demande la hausse du Smic et des salaires indexés sur l'inflation. Au départ, c'était le prix du carburant.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "bigstat",
+      "duration": 12.8,
+      "value": "1 200",
+      "label": "interpellations, 150 policiers et gendarmes blessés",
+      "source": "Sébastien Lecornu (AFP)",
+      "energie": 2,
+      "sfx": [
+        "whoosh",
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il y a eu des violences ?",
+          "expression": "triste"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Mille deux cents interpellations et cent cinquante policiers et gendarmes blessés, selon le Premier ministre. La grande majorité a pourtant défilé calmement.",
+          "expression": "triste"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "duration": 9.2,
+      "title": "Et maintenant ?",
+      "events": [
+        {
+          "date": "Samedi",
+          "text": "Poursuites promises"
+        },
+        {
+          "date": "Loi",
+          "text": "« Casseurs-payeurs » maintenue"
+        },
+        {
+          "date": "5 nov.",
+          "text": "Grève intersyndicale"
+        }
+      ],
+      "energie": 3,
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et la suite ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Le gouvernement promet des sanctions. Et les syndicats appellent à la grève le jeudi cinq novembre.",
+          "expression": "content"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "duration": 5.7,
+      "text": "Rendez-vous le 5 novembre.",
+      "cta": "Abonne-toi pour suivre la suite",
+      "energie": 1,
+      "sfx": [
+        "whoosh",
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "On suit tout ça pour vous. C'était Décodé Info, à bientôt !",
+          "expression": "content"
+        }
+      ]
+    }
+  ]
+}
