@@ -45,3 +45,7 @@ réécrire (2 réécritures maximum) ; au 3e échec : `python3 -m pipeline.tool 
  "relecture": {"notes": {"accroche": 8, "clarte": 8, "exactitude": 9, "rythme": 8, "conformite": 9},
                "reecritures": 1, "chiffres_verifies": ["3,1 % → insee.fr/…"]}}
 ```
+
+**Variété obligatoire :** lire `agents/CATALOGUE_VARIETE.md` et `state/variete_<compte>.json` ; ne jamais reprendre
+l'accroche, le fonctionnement, la mise en page, les voix ou la musique de la vidéo précédente. Exploiter réellement
+une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 9 relit le script et la DA avant la génération.

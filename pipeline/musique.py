@@ -117,15 +117,42 @@ def _sfx(nom: str) -> np.ndarray:
     return 0.35 * (_onde(1568, n, "carre", 0.5) + 0.5 * _onde(2093, n, "carre", 0.5)) * _env(n, chute=0.3)
 
 
-def bande_son(scenes: list[dict], defaut: str, sortie: Path, graine: int = 0) -> Path:
+def bande_son(scenes: list[dict], defaut: str, sortie: Path, graine: int = 0, genre: str | None = None) -> Path:
     """Musique qui change par scène (fondus enchaînés) + effets sonores aux transitions.
     Chaque scène peut avoir "musique": "effroi|tension|curieux|joyeux" (ou {ambiance, tempo}) et "sfx": ["impact", …]."""
     durees = [float(sc.get("duration", 3)) for sc in scenes]
     total = int((sum(durees) + 0.5) * SR)
     piste, sfx = np.zeros(total), np.zeros(total)
+    if genre:
+        from .compositeur import GENRES, composer as composer_morceau
+        secs, t0 = [], 0.0
+        for k, (sc, d) in enumerate(zip(scenes, durees)):
+            m = sc.get("musique")
+            e = int(sc.get("energie") or (m.get("energie") if isinstance(m, dict) else 0) or
+                    {"effroi": 1, "silence": 1, "tension": 2, "curieux": 2, "joyeux": 3}.get(m if isinstance(m, str) else "", 2))
+            secs.append({"debut": t0, "fin": t0 + d, "energie": max(1, min(3, e))})
+            t0 += d
+        tmp = sortie.with_name("_morceau.wav")
+        composer_morceau(secs, genre if genre in GENRES else "synthwave", tmp, graine)
+        with wave.open(str(tmp), "rb") as w:
+            morceau = np.frombuffer(w.readframes(w.getnframes()), "<i2").astype(float) / 32767
+        tmp.unlink()
+        piste[:len(morceau)] += morceau[:total]
+        debut = 0.0
+        for k, (sc, d) in enumerate(zip(scenes, durees)):  # nappe effrayante en plus là où l'agent 6 l'a demandée
+            if sc.get("musique") == "effroi":
+                n = int(d * SR)
+                seg = _effroi(n, graine + k)
+                seg = seg / max(1e-6, np.abs(seg).max()) * 0.6
+                i0 = int(debut * SR)
+                piste[i0:i0 + n] = piste[i0:i0 + n] * 0.4 + seg[: total - i0]
+            debut += d
+        scenes_musique = []
+    else:
+        scenes_musique = list(zip(scenes, durees))
     x = 0.4  # fondu enchaîné (s)
     debut = 0.0
-    for k, (sc, d) in enumerate(zip(scenes, durees)):
+    for k, (sc, d) in enumerate(scenes_musique):
         choix = sc.get("musique") or defaut
         amb, tempo = (choix.get("ambiance", defaut), choix.get("tempo")) if isinstance(choix, dict) else (choix, None)
         n = int((d + x) * SR)
@@ -147,6 +174,10 @@ def bande_son(scenes: list[dict], defaut: str, sortie: Path, graine: int = 0) ->
         seg[-f:] *= np.linspace(1, 0, f)
         i0 = int(debut * SR)
         piste[i0:i0 + len(seg)] += seg[: total - i0]
+        debut += d
+    debut = 0.0
+    for k, (sc, d) in enumerate(zip(scenes, durees)):
+        i0 = int(debut * SR)
         effets = list(sc.get("sfx") or []) or (["impact"] if k == 0 else ["whoosh"])
         for e in effets:
             s_ = _sfx(e)
@@ -167,8 +198,9 @@ def bande_son(scenes: list[dict], defaut: str, sortie: Path, graine: int = 0) ->
 
 def ajouter(video: Path, choix="curieux", graine: int = 0, volume: float = 0.8, scenes: list | None = None) -> None:
     """Ajoute la musique sous la voix (remplace le fichier). choix = "tension" ou {"ambiance", "tempo", "volume"}."""
-    tempo = None
+    tempo, genre = None, None
     if isinstance(choix, dict):
+        genre = choix.get("genre")
         tempo, volume = choix.get("tempo"), min(1.2, max(0.3, float(choix.get("volume", volume))))
         choix = choix.get("ambiance", "curieux")
     ambiance = choix
@@ -177,7 +209,7 @@ def ajouter(video: Path, choix="curieux", graine: int = 0, volume: float = 0.8, 
     duree = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
                                   str(video)], capture_output=True, text=True, check=True).stdout.strip())
     if scenes:
-        wav = bande_son(scenes, ambiance, video.with_name("musique.wav"), graine)
+        wav = bande_son(scenes, ambiance, video.with_name("musique.wav"), graine, genre)
     else:
         wav = composer(duree, ambiance, video.with_name("musique.wav"), graine, tempo)
     a_voix = "audio" in subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries",

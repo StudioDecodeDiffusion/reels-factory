@@ -30,3 +30,7 @@ et 3 (`state/rapport_3_<compte>.json`), le profil, tes notes `state/messages/age
  "choix": 0, "justification": "...",
  "critique_compte": "...", "a_tester": ["...", "..."]}
 ```
+
+**Variété obligatoire :** lire `agents/CATALOGUE_VARIETE.md` et `state/variete_<compte>.json` ; ne jamais reprendre
+l'accroche, le fonctionnement, la mise en page, les voix ou la musique de la vidéo précédente. Exploiter réellement
+une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 9 relit le script et la DA avant la génération.

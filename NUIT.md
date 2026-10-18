@@ -55,6 +55,11 @@ d'abord ses notes (`state/messages/agent_6.json`) et répond au propriétaire da
 `message_au_proprietaire` (envoyé par mail avec la vidéo). Le scénariste se relit et revérifie les
 chiffres sur le web (2 réécritures max, sinon `abandon`).
 
+## 9 (pré-critique). Avant toute génération
+Joue la section 0 de `agents/9_critique.md` : critique impitoyable du scénario et de la DA, exigence de
+diversité (`agents/CATALOGUE_VARIETE.md`, `state/variete_<compte>.json`) et d'animations travaillées.
+`a_revoir` → retour aux agents 5 et 6 (2 tours max). Sans `go`, `tool check` refuse la vidéo.
+
 ## 7. Génération
 Joue `agents/7_generateur.md` :
 ```bash

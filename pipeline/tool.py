@@ -54,6 +54,15 @@ def cmd_check(a) -> None:
     prof = load_profile(a.profile)
     errs = validate_spec(spec, prof["video"]["scenes_autorisees"],
                          voix_obligatoire=bool(prof.get("voix", {}).get("active")))
+    from .variete import controler
+    errs += controler(spec, a.profile)
+    pre = Path(a.spec).parent / "9_precritique.json"
+    if not pre.exists():
+        errs.append("9_precritique.json manquant : l'agent 9 doit critiquer le scénario et la DA AVANT la génération")
+    else:
+        d9 = json.loads(pre.read_text(encoding="utf-8"))
+        if str(d9.get("decision")).lower() != "go":
+            errs.append(f"l'agent 9 n'a pas donné son feu vert (décision : {d9.get('decision')}) : appliquer ses demandes")
     if errs:
         print("ERREURS :\n- " + "\n- ".join(errs))
         sys.exit(1)
@@ -225,6 +234,8 @@ def cmd_drop(a) -> None:
         "da_message": _da_suivi(d, a.profile),
         "cree": state.now_iso(),
     }
+    from .variete import enregistrer
+    enregistrer(json.loads((d / "7_spec.json").read_text(encoding="utf-8")), a.profile, fiche.get("titre") or "", a.id)
     extra = {"couverture.png": d / "couverture.png"} if (d / "couverture.png").exists() else {}
     _push_drop(a.id, {**extra, "video.mp4": d / "video.mp4", "apercu.png": d / "apercu.png",
                       "7_spec.json": d / "7_spec.json",

@@ -63,3 +63,7 @@ Tu composes la bande-son **scène par scène**, selon l'ambiance de chaque momen
   accroche choc ou un faux avertissement, puis **musique thématique** (tension pour un conflit, curieux pour
   une explication, joyeux pour la conclusion / l'appel à s'abonner) ; « ding » sur un chiffre clé, « pop » sur une révélation.
 Explique tes choix (ambiances, effets, tendance suivie) dans ton message au propriétaire.
+
+**Variété obligatoire :** lire `agents/CATALOGUE_VARIETE.md` et `state/variete_<compte>.json` ; ne jamais reprendre
+l'accroche, le fonctionnement, la mise en page, les voix ou la musique de la vidéo précédente. Exploiter réellement
+une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 9 relit le script et la DA avant la génération.
