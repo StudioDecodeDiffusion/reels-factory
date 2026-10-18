@@ -132,7 +132,7 @@ def depot(drop_dir: str) -> None:
                          ref={"type": f"rapport{n}", "job": fiche["id"], "profil": fiche["profil"]})
 
         elif statut == "etape":  # point d'avancement du Manager après chaque agent
-            mail.envoyer("Manager", f"{nom} · {fiche.get('titre', 'Avancement')}", md(fiche.get("corps_md", "")), R_MANAGER,
+            mail.envoyer("Manager", f"📍 {fiche.get('titre', 'Avancement')} · {nom}", md(fiche.get("corps_md", "")), R_MANAGER,
                          ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": fiche.get("agent")})
 
         elif statut == "story":  # story immédiate (image fournie par la session)
@@ -142,10 +142,10 @@ def depot(drop_dir: str) -> None:
                 from .instagram import IG
                 IG(profile).publish_story(h["urls"]["story.png"])
                 media_host.cleanup(h)
-                txt = "📣 La story est en ligne."
+                txt, etat = "📣 La story est en ligne.", "✅ Story publiée"
             except BaseException as e:
-                txt = f"⚠️ Story non publiée : {str(e)[:300]}"
-            mail.envoyer("Manager", f"{nom} · Story : {fiche.get('titre', '')}", md(txt), R_MANAGER,
+                txt, etat = f"⚠️ Story non publiée : {str(e)[:300]}", "❌ Échec story"
+            mail.envoyer("Manager", f"{etat} · {nom} · {fiche.get('titre', '')}", md(txt), R_MANAGER,
                          ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": 8})
 
         elif statut == "archive":  # archiver une vidéo déjà publiée
@@ -170,7 +170,7 @@ def depot(drop_dir: str) -> None:
             if os.getenv("RENDU_PUBLIC") == "1":
                 _envoyer_au_rendu(fiche["id"])
                 fiche["statut"] = "rendu_en_cours"
-                mail.envoyer("Manager", f"{nom} · Rendu final lancé : {fiche['titre']}",
+                mail.envoyer("Manager", f"⏳ Rendu lancé · {nom} · {fiche['titre']}",
                              md("La session de nuit a terminé (agents 4, 5, 6, 7 et 9). **GitHub ajoute maintenant les voix et la "
                                 "musique** et monte la vidéo finale (≈ 20 min). L'agent 9 t'enverra ensuite la vidéo à valider."),
                              R_MANAGER, ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"]})
@@ -245,14 +245,14 @@ def _sonoriser(d: Path, fiche: dict, profile: dict) -> None:
     if not any(sc.get("voix") or sc.get("dialogue") for sc in spec["scenes"]):
         return
     spec = sonoriser(spec, fiche["id"], profile, VIDEO / "public")
-    _manager(fiche, "Voix générées", f"Les {sum(len(sc.get('dialogue') or []) for sc in spec['scenes'])} répliques de Lou et Déco sont "
+    _manager(fiche, "🎙️ Voix générées", f"Les {sum(len(sc.get('dialogue') or []) for sc in spec['scenes'])} répliques de Lou et Déco sont "
              f"enregistrées ({round(sum(sc['duration'] for sc in spec['scenes']))} s). Montage final en cours (≈ 5 min).")
     render(spec, d / "video.mp4")
     from .musique import ajouter  # musique de fond sous les voix (choisie par l'agent 6)
     ajouter(d / "video.mp4", spec.get("musique") or profile.get("musique", "curieux"), sum(map(ord, fiche["id"])),
             scenes=spec["scenes"])
     contact_sheet(frames_per_scene(spec, d / "video.mp4"), d / "apercu.png")
-    _manager(fiche, "Vidéo finale montée", "Voix, musique et effets sont mixés. Hébergement de la vidéo puis mail de validation de l'agent 9.")
+    _manager(fiche, "🎬 Vidéo montée", "Voix, musique et effets sont mixés. Hébergement de la vidéo puis mail de validation de l'agent 9.")
     fiche["duree_s"] = round(sum(sc["duration"] for sc in spec["scenes"]), 1)
     fiche["voix"] = profile["voix"].get("narrateur") or profile["voix"].get("id")
 
@@ -379,7 +379,7 @@ def _manager(fiche: dict, titre: str, texte: str) -> None:
     """Point d'avancement court (jamais bloquant)."""
     try:
         nom = load_profile(fiche["profil"])["nom_compte"]
-        mail.envoyer("Manager", f"{nom} · {titre} : {fiche.get('titre', '')}", md(texte), R_MANAGER,
+        mail.envoyer("Manager", f"{titre} · {nom} · {fiche.get('titre', '')}", md(texte), R_MANAGER,
                      ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"]})
     except BaseException as e:
         print(f"point d'avancement non envoyé : {e}")
@@ -388,7 +388,7 @@ def _manager(fiche: dict, titre: str, texte: str) -> None:
 def _publier(fiche: dict, profile: dict) -> None:
     from .instagram import IG
     nom = profile["nom_compte"]
-    _manager(fiche, "Publication en cours", "J'envoie la vidéo et sa miniature à Instagram (traitement 1 à 5 min), "
+    _manager(fiche, "⏳ Publication en cours", "J'envoie la vidéo et sa miniature à Instagram (traitement 1 à 5 min), "
              "puis la story. Prochain mail : « Vidéo publiée » avec le lien.")
     try:
         info = IG(profile).publish_reel(fiche["media"]["urls"]["video.mp4"], fiche["legende"],
@@ -397,7 +397,7 @@ def _publier(fiche: dict, profile: dict) -> None:
         fiche["erreur"] = str(e)[:500]
         fiche["erreurs"] = fiche.get("erreurs", 0) + 1
         save_attente(fiche)
-        mail.envoyer(8, f"{nom} · Échec de publication : {fiche['titre']}",
+        mail.envoyer("Manager", f"❌ Échec publication · {nom} · {fiche['titre']}",
                      md(f"La publication a échoué :\n\n{str(e)[:500]}\n\nJe réessaierai à la prochaine heure."),
                      R_NOTE.format(n=8))
         return
@@ -406,7 +406,8 @@ def _publier(fiche: dict, profile: dict) -> None:
     _archiver(fiche)
     media_host.cleanup(fiche["media"])
     story = _publier_story(fiche, profile)
-    mail.envoyer("Manager", f"{nom} · Vidéo publiée : {fiche['titre']}",
+    etat_story = "+ story publiée" if "publiée aussi" in story else ("(échec story)" if "non publiée" in story else "")
+    mail.envoyer("Manager", f"✅ Vidéo publiée {etat_story} · {nom} · {fiche['titre']}",
                  md(f"🎉 **La vidéo est en ligne** sur {profile.get('instagram') or nom} : "
                     f"[{info.get('permalink', '')}]({info.get('permalink', '')})\n\n- {story}\n"
                     "- **Suite :** l'agent 8 suit les vues et les commentaires (rapport demain à 16 h 30)."),
@@ -446,9 +447,9 @@ def _archiver(fiche: dict, dossier: Path | None = None) -> None:
         lien = media_host.archiver(fichiers, fiche["cree"][:7], remplacer=fiche.get("remplace_noms"))
         fiche["archive"] = lien
         save_attente(fiche)
-        _manager(fiche, "Archivée", f"Vidéo finale, miniature, story et sources rangées dans l'archive privée : [{lien}]({lien})")
+        _manager(fiche, "🗄️ Archivée", f"Vidéo finale, miniature, story et sources rangées dans l'archive privée : [{lien}]({lien})")
     except BaseException as e:
-        _manager(fiche, "Archive non faite", f"L'archivage a échoué ({str(e)[:300]}). La publication, elle, est faite.")
+        _manager(fiche, "❌ Échec archive", f"L'archivage a échoué ({str(e)[:300]}). La publication, elle, est faite.")
 
 
 def _publier_story(fiche: dict, profile: dict) -> str:
@@ -480,7 +481,7 @@ def publier_ce_qui_est_du() -> None:
             txt = (f"Le nouveau post est publié. Instagram ne permet pas aux outils de supprimer un post : "
                    f"retire l'ancien toi-même (ouvre-le puis ⋯ → Supprimer) : {f.get('permalink', '')}")
             save_attente(f)
-            mail.envoyer("Manager", f"{prof['nom_compte']} · Ancien post", md(txt), R_MANAGER,
+            mail.envoyer("Manager", f"🗑️ Ancien post à supprimer · {prof['nom_compte']}", md(txt), R_MANAGER,
                          ref={"type": "manager", "job": job, "profil": f["profil"], "agent": 8})
     for job in demande.get("jobs", []):
         f = attente(job)
@@ -523,7 +524,7 @@ def stats() -> None:
                 me = ig.username()
             except BaseException as e:
                 if "190" in str(e) or "access token" in str(e).lower():
-                    mail.envoyer("Manager", f"{profile['nom_compte']} · ⚠️ Token Instagram à refaire",
+                    mail.envoyer("Manager", f"❌ Token Instagram à refaire · {profile['nom_compte']}",
                                  md("Instagram refuse le token (mot de passe changé ou session expirée) : **aucune publication "
                                     "ne pourra partir**.\n\nÀ faire (2 min) : developers.facebook.com → ton app → Cas "
                                     "d'utilisation → Personnaliser → Configuration de l'API avec la connexion Instagram → "
