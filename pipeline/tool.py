@@ -242,7 +242,7 @@ def _prochain_creneau(pid: str, horizon_h: float | None = None) -> str | None:
 
 def cmd_creneau(a) -> None:
     """Créneau que la session doit remplir (dans les 8 h), ou AUCUN → la session s'arrête sans produire."""
-    c = _prochain_creneau(a.profile, horizon_h=8)
+    c = _prochain_creneau(a.profile, horizon_h=getattr(a, "horizon", None) or 8)
     if not c:
         print("AUCUN")
         return
@@ -251,6 +251,33 @@ def cmd_creneau(a) -> None:
     jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
     resume = t.weekday() == 6 and t.hour == 14
     print(f"{c} ({jours[t.weekday()]} {t:%H h %M})" + (" — RÉSUMÉ DE LA SEMAINE OBLIGATOIRE" if resume else ""))
+
+
+def cmd_avance(a) -> None:
+    """Session de 20 h : peut-on prendre de l'avance ? (règle du propriétaire, 18/10)
+    OUI si quota du jour < 25 % ET quota de la semaine < part de semaine écoulée (semaine = vendredi 23 h → vendredi 23 h).
+    STOP (+ mail d'alerte) si jour ou semaine > 75 %. Sinon NON. Sans relevé du jour (mail « quota - J S ») : NON."""
+    from datetime import timedelta
+    q = state.load("quota", {})
+    now = datetime.now(TZ)
+    debut = now.replace(hour=23, minute=0, second=0, microsecond=0) - timedelta(days=(now.weekday() - 4) % 7)
+    if debut > now:
+        debut -= timedelta(days=7)
+    attendu = round(100 * (now - debut).total_seconds() / (7 * 86400))
+    if not q or q.get("date") != now.strftime("%Y-%m-%d"):
+        print(f"NON — pas de relevé de quota aujourd'hui (attendu semaine : {attendu} %). Ne prendre aucune avance.")
+        return
+    j, w = q["jour"], q["semaine"]
+    if j > 75 or w > 75:
+        import argparse
+        cmd_etape(argparse.Namespace(agent="Manager", profile="actu", titre="⚠ Quota Claude élevé : avance suspendue",
+                  resume=f"Relevé du jour : **{j} %** (jour) · **{w} %** (semaine, attendu {attendu} %).\n\n"
+                         "Au-dessus de 75 % : je ne fais **que les tâches programmées**, aucune vidéo d'avance."))
+        print(f"STOP — quota élevé (jour {j} %, semaine {w} %) : uniquement les tâches programmées, alerte envoyée.")
+    elif j < 25 and w < attendu:
+        print(f"OUI — jour {j} % < 25 %, semaine {w} % < {attendu} % attendus : produire en avance jusqu'à 23 h.")
+    else:
+        print(f"NON — jour {j} %, semaine {w} % (attendu {attendu} %) : pas d'avance.")
 
 
 def cmd_drop(a) -> None:
@@ -385,7 +412,8 @@ def main() -> None:
     p.add_argument("--raison", required=True)
     p = sub.add_parser("story"); p.add_argument("id"); p.add_argument("--profile", required=True); p.add_argument("--titre")
     p = sub.add_parser("story_now"); p.add_argument("--profile", required=True); p.add_argument("--titre", required=True); p.add_argument("image")
-    p = sub.add_parser("creneau"); p.add_argument("--profile", required=True)
+    p = sub.add_parser("creneau"); p.add_argument("--profile", required=True); p.add_argument("--horizon", type=float)
+    p = sub.add_parser("avance")
     p = sub.add_parser("etape"); p.add_argument("--agent", required=True); p.add_argument("--profile", required=True)
     p.add_argument("--titre", required=True); p.add_argument("resume")
     p = sub.add_parser("notes"); p.add_argument("--agent", required=True); p.add_argument("--profile")

@@ -321,6 +321,16 @@ def facteur() -> None:
                 mail.envoyer(n, "Remarque bien reçue", md(f"Merci ! J'ai bien noté :\n\n> {texte[:600]}\n\n"
                                                           "Je l'appliquerai dès mon prochain travail."), R_NOTE.format(n=n))
             continue
+        mq = re.match(r"^\s*quota\s*[-–—:]?\s*(\d{1,3})\s*%?\s*[ /,;-]+\s*(\d{1,3})\s*%?", m["objet"], re.I)
+        if mq:
+            q = {"date": datetime.now(TZ).strftime("%Y-%m-%d"), "heure": datetime.now(TZ).strftime("%H:%M"),
+                 "jour": int(mq.group(1)), "semaine": int(mq.group(2))}
+            state.save("quota", q)
+            mail.envoyer("Manager", f"📍 Quota noté : jour {q['jour']} % · semaine {q['semaine']} %",
+                         md("Bien reçu. À 20 h, je prends de l'avance seulement si le jour est **sous 25 %** et la semaine "
+                            "sous la part de semaine écoulée (vendredi 23 h → vendredi 23 h). Au-dessus de 75 % : "
+                            "uniquement les tâches programmées."), R_MANAGER, ref={"type": "manager", "profil": "actu"})
+            continue
         mm = re.match(r"^\s*agent\s*(?:n\s*[°o]?\s*)?(\d+)(?:[.,](\d+))?\s*[-–—:]?\s*(.*)$", m["objet"], re.I)
         if mm and 1 <= int(mm.group(1)) <= 13:
             n, sous = int(mm.group(1)), mm.group(2)
@@ -620,12 +630,94 @@ def stats() -> None:
                 print(f"{pid} : abonnés indisponibles ({e})")
             state.save(f"stats_{pid}", {"maj": state.now_iso(), "posts": posts,
                                         "recommandations": old.get("recommandations", [])})
+            _suivi(ig, pid, posts)
             pending = state.load(f"commentaires_{pid}", [])
             state.save(f"commentaires_{pid}", (pending + new)[-60:])
             state.save(f"commentaires_vus_{pid}", sorted(seen)[-3000:])
             print(f"{pid} : {len(posts)} posts, {len(new)} nouveaux commentaires")
         except Exception as e:
             print(f"{pid} : erreur {e}")
+
+
+def _suivi(ig, pid: str, posts: list[dict]) -> None:
+    """Agent 3 : relevé quotidien fin (vidéos, stories, compte) → state/suivi_<pid>.json, puis CSV par mail
+    (le Google Sheets « Décodé · Suivi » les importe tout seul, voir docs/suivi_google_sheets.gs)."""
+    jour = datetime.now(TZ).strftime("%Y-%m-%d")
+    suivi = state.load(f"suivi_{pid}", {"jours": {}, "stories": {}})
+    # stories en ligne (leurs stats disparaissent après 24 h : on garde le dernier relevé)
+    try:
+        for st in ig._get("me/stories", fields="id,timestamp,media_type,permalink").get("data", []):
+            met = {}
+            for k in ("views", "reach", "replies", "shares", "follows", "profile_visits", "total_interactions", "navigation"):
+                try:
+                    d = ig._get(f"{st['id']}/insights", metric=k).get("data", [])
+                    if d:
+                        met[k] = d[0]["values"][0]["value"] if "values" in d[0] else d[0].get("total_value", {}).get("value")
+                except Exception:
+                    pass
+            suivi["stories"][st["id"]] = {"date": st.get("timestamp"), "lien": st.get("permalink"), **met}
+    except Exception as e:
+        print(f"{pid} : stories indisponibles ({e})")
+    compte = {}
+    for k in ("reach", "views", "profile_views", "accounts_engaged", "follows_and_unfollows", "total_interactions", "website_clicks"):
+        try:
+            d = ig._get("me/insights", metric=k, period="day", metric_type="total_value").get("data", [])
+            if d:
+                compte[k] = d[0].get("total_value", {}).get("value")
+        except Exception:
+            pass
+    ab = state.load(f"abonnes_{pid}", [])
+    compte["abonnes"] = ab[-1]["abonnes"] if ab else None
+    suivi["jours"][jour] = {"compte": compte, "videos": {p["id"]: {k: v for k, v in p.items() if k != "id"} for p in posts}}
+    state.save(f"suivi_{pid}", suivi)
+    if datetime.now(TZ).hour >= 12:  # un seul envoi par jour (relevé de 16 h)
+        _envoyer_suivi(pid, suivi)
+
+
+def _envoyer_suivi(pid: str, suivi: dict) -> None:
+    import csv, tempfile
+    tmp = Path(tempfile.mkdtemp())
+    jours = sorted(suivi["jours"])
+    with open(tmp / f"quotidien_{pid}.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["jour", "abonnés", "abonnés gagnés", "vues totales vidéos", "vues du jour (vidéos)", "portée compte",
+                    "vues profil", "comptes engagés", "interactions", "clics lien bio", "vues stories du jour"])
+        prec_ab, prec_v = None, None
+        for j in jours:
+            c = suivi["jours"][j]["compte"]
+            vt = sum((v.get("views") or 0) for v in suivi["jours"][j]["videos"].values())
+            sv = sum((s.get("views") or s.get("reach") or 0) for s in suivi["stories"].values() if (s.get("date") or "")[:10] == j)
+            w.writerow([j, c.get("abonnes"), (c["abonnes"] - prec_ab) if c.get("abonnes") is not None and prec_ab is not None else "",
+                        vt, (vt - prec_v) if prec_v is not None else "", c.get("reach"), c.get("profile_views"),
+                        c.get("accounts_engaged"), c.get("total_interactions"), c.get("website_clicks"), sv])
+            prec_ab, prec_v = c.get("abonnes"), vt
+    der = suivi["jours"][jours[-1]]["videos"] if jours else {}
+    with open(tmp / f"videos_{pid}.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["publiée le", "titre", "lien", "vues", "comptes touchés", "likes", "commentaires", "partages",
+                    "enregistrements", "interactions", "taux d'engagement %"])
+        for v in sorted(der.values(), key=lambda x: x.get("date") or ""):
+            inter = sum((v.get(k) or 0) for k in ("likes", "comments", "shares", "saved"))
+            w.writerow([(v.get("date") or "")[:16].replace("T", " "), v.get("legende", "")[:70].replace("\n", " "), v.get("lien"),
+                        v.get("views"), v.get("reach"), v.get("likes"), v.get("comments"), v.get("shares"), v.get("saved"),
+                        v.get("total_interactions"), round(100 * inter / max(1, v.get("reach") or v.get("views") or 1), 1)])
+    with open(tmp / f"historique_videos_{pid}.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["jour du relevé", "vidéo", "vues", "likes", "partages", "enregistrements"])
+        for j in jours:
+            for v in suivi["jours"][j]["videos"].values():
+                w.writerow([j, v.get("legende", "")[:40].replace("\n", " "), v.get("views"), v.get("likes"), v.get("shares"), v.get("saved")])
+    with open(tmp / f"stories_{pid}.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["publiée le", "vues", "comptes touchés", "réponses", "partages", "abonnements", "visites profil", "interactions"])
+        for s in sorted(suivi["stories"].values(), key=lambda x: x.get("date") or ""):
+            w.writerow([(s.get("date") or "")[:16].replace("T", " "), s.get("views"), s.get("reach"), s.get("replies"),
+                        s.get("shares"), s.get("follows"), s.get("profile_visits"), s.get("total_interactions")])
+    nom = load_profile(pid)["nom_compte"]
+    mail.envoyer(3, f"Données de suivi · {nom}",
+                 md("Relevé du jour en pièces jointes (CSV). Le Google Sheets **« Décodé · Suivi »** les importe "
+                    "automatiquement et met à jour les graphiques."), R_NOTE.format(n=3),
+                 ref={"type": "suivi", "profil": pid}, pieces=sorted(tmp.glob("*.csv")))
 
 
 def graphiques(pid: str) -> dict[str, Path]:
