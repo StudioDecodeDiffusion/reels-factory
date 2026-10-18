@@ -207,27 +207,50 @@ def cmd_info(a) -> None:
     print("Concept du jour envoyé pour information.")
 
 
-def _prochain_creneau(pid: str) -> str | None:
-    """Prochain créneau libre (profil `planning.creneaux`, ex. ["12:30", "18:30"]) au moins 1 h 30 après maintenant."""
+def _creneaux_du_jour(prof: dict, jour) -> list[str]:
+    c = prof["planning"].get("creneaux")
+    if isinstance(c, dict):  # par jour de la semaine : {"lun": [...], ...}
+        cle = ["lun", "mar", "mer", "jeu", "ven", "sam", "dim"][jour.weekday()]
+        return c.get(cle, [])
+    return c or []
+
+
+def _prochain_creneau(pid: str, horizon_h: float | None = None) -> str | None:
+    """Prochain créneau libre au moins 1 h 30 après maintenant (planning.creneaux du profil, par jour de la semaine).
+    horizon_h : ne cherche pas au-delà (pour savoir si une session doit produire)."""
     from datetime import timedelta
     prof = load_profile(pid)
-    cren = prof["planning"].get("creneaux")
-    if not cren:
-        return None
     pris = set()
     d = state.STATE / "attente"
     for f in (d.glob("*.json") if d.exists() else []):
         x = json.loads(f.read_text(encoding="utf-8"))
-        if x.get("profil") == pid and x.get("statut") in ("a_valider", "approuvee", "rendu_en_cours") and x.get("publication_le"):
+        if x.get("profil") == pid and x.get("statut") in ("a_valider", "approuvee", "rendu_en_cours", "publiee") and x.get("publication_le"):
             pris.add(x["publication_le"][:16])
-    t0 = datetime.now(TZ) + timedelta(minutes=90)
-    for jour in range(0, 7):
-        for c in cren:
+    maintenant = datetime.now(TZ)
+    t0 = maintenant + timedelta(minutes=90)
+    for jour in range(0, 8):
+        base = maintenant + timedelta(days=jour)
+        for c in sorted(_creneaux_du_jour(prof, base)):
             h, m = map(int, c.split(":"))
-            t = (t0 + timedelta(days=jour)).replace(hour=h, minute=m, second=0, microsecond=0)
+            t = base.replace(hour=h, minute=m, second=0, microsecond=0)
+            if horizon_h is not None and t > maintenant + timedelta(hours=horizon_h):
+                return None
             if t >= t0 and t.isoformat()[:16] not in pris:
                 return t.isoformat()
     return None
+
+
+def cmd_creneau(a) -> None:
+    """Créneau que la session doit remplir (dans les 8 h), ou AUCUN → la session s'arrête sans produire."""
+    c = _prochain_creneau(a.profile, horizon_h=8)
+    if not c:
+        print("AUCUN")
+        return
+    from datetime import datetime as _dt
+    t = _dt.fromisoformat(c)
+    jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+    resume = t.weekday() == 6 and t.hour == 14
+    print(f"{c} ({jours[t.weekday()]} {t:%H h %M})" + (" — RÉSUMÉ DE LA SEMAINE OBLIGATOIRE" if resume else ""))
 
 
 def cmd_drop(a) -> None:
@@ -362,6 +385,7 @@ def main() -> None:
     p.add_argument("--raison", required=True)
     p = sub.add_parser("story"); p.add_argument("id"); p.add_argument("--profile", required=True); p.add_argument("--titre")
     p = sub.add_parser("story_now"); p.add_argument("--profile", required=True); p.add_argument("--titre", required=True); p.add_argument("image")
+    p = sub.add_parser("creneau"); p.add_argument("--profile", required=True)
     p = sub.add_parser("etape"); p.add_argument("--agent", required=True); p.add_argument("--profile", required=True)
     p.add_argument("--titre", required=True); p.add_argument("resume")
     p = sub.add_parser("notes"); p.add_argument("--agent", required=True); p.add_argument("--profile")

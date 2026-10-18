@@ -29,6 +29,15 @@ python3 -m pipeline.tool etape --agent N --profile <compte> --titre "Agent N ter
 Pour les agents qui envoient déjà un rapport complet (1, 2, 3, 8, 10), le point d'avancement reste court.
 Le workflow doit être fluide : enchaîne les agents sans temps mort.
 
+## 00. Quel créneau ?
+```bash
+python3 -m pipeline.tool creneau --profile <compte>
+```
+- `AUCUN` → aucun créneau libre dans les 8 h : **arrête la session sans rien produire** (une ligne de résumé).
+- Sinon, la vidéo est pour ce créneau. Si la ligne dit **RÉSUMÉ DE LA SEMAINE OBLIGATOIRE** (dimanche 14 h) :
+  la vidéo résume les grandes infos de la semaine (lundi → dimanche), à partir de `state/historique_<compte>.json`
+  et des veilles de la semaine, avec une mécanique propre au résumé (top, récap rapide, « ce qu'il fallait retenir »).
+
 ## 0. Préparation
 ```bash
 cd <dossier du dépôt> && git pull -q
