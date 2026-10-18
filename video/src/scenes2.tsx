@@ -1,6 +1,6 @@
 // Scènes « trend » : pancartes du fantôme, SMS anonyme, débat pour/contre, réaction qui monte, conte.
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig, Easing} from 'remotion';
+import {Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig, Easing} from 'remotion';
 import {encrePour, fontPixel, fontTitre, INK, PixelSprite, Sticker} from './fx';
 import {Scene} from './types';
 import {VISAGES, MASCOTTE_CORPS} from './sprites';
@@ -195,6 +195,31 @@ export const Conte: React.FC<{scene: Ex<'conte'>}> = ({scene}) => {
           <Sticker couleur="#FF8A1F" rotate={0}>
             <span style={{fontFamily: fontTitre, fontWeight: 900, fontSize: 56, color: INK}}>{scene.chute}</span>
           </Sticker>
+        </div>
+      ) : null}
+    </>
+  );
+};
+
+// ───────────────────────── PHOTO : vraie image de l'événement (licence libre), effet Ken Burns, crédit obligatoire
+export const Photo: React.FC<{scene: Ex<'photo'>; c1: string}> = ({scene, c1}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const d = scene.duration * fps;
+  const z = interpolate(frame, [0, d], [1.08, 1.22]);
+  const x = interpolate(frame, [0, d], [-20, 20]);
+  const p = spring({frame: frame - 6, fps, config: {damping: 12}});
+  return (
+    <>
+      <div style={{position: 'absolute', left: 40, right: 40, top: 300, height: 980, overflow: 'hidden', border: `10px solid ${INK}`, boxShadow: `16px 16px 0 ${INK}`, backgroundColor: '#222'}}>
+        {scene.src ? <Img src={staticFile(scene.src)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${z}) translateX(${x}px)`}} /> : null}
+        <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 260, background: 'linear-gradient(transparent, rgba(0,0,0,0.75))'}} />
+        {scene.legende ? <div style={{position: 'absolute', left: 30, right: 30, bottom: 50, fontFamily: fontTitre, fontWeight: 800, fontSize: 46, color: '#fff', lineHeight: 1.1}}>{scene.legende}</div> : null}
+        <div style={{position: 'absolute', right: 14, bottom: 10, fontFamily: fontPixel, fontSize: 20, color: '#ddd'}}>© {scene.credit}</div>
+      </div>
+      {scene.titre ? (
+        <div style={{position: 'absolute', left: 60, top: 250, transform: `scale(${p}) rotate(-3deg)`, transformOrigin: 'left'}}>
+          <Sticker couleur={c1} rotate={0}><span style={{fontFamily: fontTitre, fontWeight: 900, fontSize: 52, color: INK}}>{scene.titre}</span></Sticker>
         </div>
       ) : null}
     </>

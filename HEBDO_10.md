@@ -1,4 +1,4 @@
-# Session hebdomadaire — agent 10 (dimanche 17 h 50)
+# Session quotidienne — agents 10 puis 11 (17 h 50 ; rapport complet de l'agent 10 le dimanche)
 
 Lancée chaque semaine par une tâche planifiée Claude. Personne ne regarde : ne pose pas de question.
 
@@ -23,3 +23,8 @@ python3 -m pipeline.tool rapport --agent 10 --profile actu --titre "Comptes IA d
 ```
 Règles : sources pour chaque chiffre, ne jamais se connecter à Instagram, ne modifie jamais `.github/`,
 `pipeline/` ni `video/src/`. Termine par une ligne de résumé.
+
+## Tous les jours
+Agent 10 : remplir `a_decortiquer` (2-3 vidéos) dans `state/veille_10.json` ; mail court en semaine, complet le dimanche.
+Puis joue `agents/11_retro_ingenierie.md` (notes : `tool notes --agent 11`) et envoie son rapport :
+`python3 -m pipeline.tool rapport --agent 11 --profile actu --titre "Rétro-ingénierie du jour" travail/retro11.md`

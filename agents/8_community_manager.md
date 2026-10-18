@@ -32,3 +32,9 @@ puis `python3 -m pipeline.tool rapport --agent 8 --profile <compte> --titre "Ét
 et écrire le retour pour l'agent 3 dans `state/feedback_cm_<compte>.json` :
 `{"date": "…", "bilan": "…", "audience": {"questions": [], "demandes": [], "critiques": []}, "recommandations": []}`.
 Vider `state/commentaires_<compte>.json` des commentaires traités.
+
+## Sondage en story (quand le compte a au moins 1 000 abonnés)
+Quand `state/abonnes_<compte>.json` dépasse 1 000 abonnés, proposer chaque semaine dans le rapport un **sondage de
+story** : 2 sujets candidats (préparés par l'agent 4). Instagram ne permet pas de créer le sondage par le code : le
+propriétaire le pose depuis l'app avec l'image préparée, puis écrit « agent 4 - sondage : sujet gagnant ». Le
+sujet gagnant passe en priorité absolue pour la vidéo suivante.

@@ -62,3 +62,5 @@ revelation en s) · **bigstat** (value, label, source : chiffre géant avec glit
 label_pour, label_contre : balance qui penche) · **reaction** (paliers [{valeur, label}] : trend « My reaction to… »,
 Déco réagit de plus en plus fort) · **conte** (titre, texte, chute : « il était une fois », parchemin, boîte à musique)
 Genres de musique en plus : **boite_a_musique** · **epique**
+· **photo** (src = URL d'une image sous licence libre, credit = auteur + licence, titre, legende : vraie photo avec
+effet Ken Burns — de temps en temps, pour sortir du pixel art)

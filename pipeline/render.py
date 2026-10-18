@@ -25,7 +25,7 @@ REQUIRED = {
     "bars": ["title", "items"], "timeline": ["events"], "dots": ["total", "highlighted", "label"],
     "compare": ["left", "right"], "particles": ["mode", "caption"], "outro": ["text", "cta"],
     "quiz": ["question", "options", "bonne"], "bigstat": ["value", "label"], "checklist": ["items"],
-    "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
+    "photo": ["src", "credit"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
 }
 
 
@@ -136,7 +136,30 @@ def _browser_args() -> list[str]:
     return [f"--browser-executable={exe}", "--chrome-mode=headless-shell"] if exe else []
 
 
+def _photos(spec: dict) -> None:
+    """Scènes « photo » : télécharge l'image (licence libre : Wikimedia Commons, sites publics…) dans video/public/photos/."""
+    import hashlib
+    import urllib.request
+    for sc in spec.get("scenes", []):
+        src = str(sc.get("src", ""))
+        if sc.get("type") == "photo" and src.startswith("http"):
+            nom = hashlib.sha1(src.encode()).hexdigest()[:16] + (Path(src.split("?")[0]).suffix or ".jpg")
+            dest = VIDEO / "public" / "photos" / nom
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            if not dest.exists():
+                try:
+                    req = urllib.request.Request(src, headers={"User-Agent": "DecodeStudio/1.0 (studiodecodediffusion@gmail.com)"})
+                    dest.write_bytes(urllib.request.urlopen(req, timeout=60).read())
+                except Exception as e:
+                    print(f"photo non téléchargée ({e}) : remplacée par un fond")
+                    sc["src"] = ""
+                    continue
+            sc["src"] = f"photos/{nom}"
+
+
 def render(spec: dict, out_mp4: Path) -> Path:
+    spec = json.loads(json.dumps(spec))
+    _photos(spec)
     out_mp4 = Path(out_mp4).resolve()  # Remotion tourne dans video/ : chemins absolus obligatoires
     out_mp4.parent.mkdir(parents=True, exist_ok=True)
     props = out_mp4.with_suffix(".json")

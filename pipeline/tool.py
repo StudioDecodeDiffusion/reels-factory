@@ -207,6 +207,29 @@ def cmd_info(a) -> None:
     print("Concept du jour envoyé pour information.")
 
 
+def _prochain_creneau(pid: str) -> str | None:
+    """Prochain créneau libre (profil `planning.creneaux`, ex. ["12:30", "18:30"]) au moins 1 h 30 après maintenant."""
+    from datetime import timedelta
+    prof = load_profile(pid)
+    cren = prof["planning"].get("creneaux")
+    if not cren:
+        return None
+    pris = set()
+    d = state.STATE / "attente"
+    for f in (d.glob("*.json") if d.exists() else []):
+        x = json.loads(f.read_text(encoding="utf-8"))
+        if x.get("profil") == pid and x.get("statut") in ("a_valider", "approuvee", "rendu_en_cours") and x.get("publication_le"):
+            pris.add(x["publication_le"][:16])
+    t0 = datetime.now(TZ) + timedelta(minutes=90)
+    for jour in range(0, 7):
+        for c in cren:
+            h, m = map(int, c.split(":"))
+            t = (t0 + timedelta(days=jour)).replace(hour=h, minute=m, second=0, microsecond=0)
+            if t >= t0 and t.isoformat()[:16] not in pris:
+                return t.isoformat()
+    return None
+
+
 def cmd_drop(a) -> None:
     load_profile(a.profile)  # vérifie que le compte existe
     d = WORK / a.id
@@ -222,7 +245,8 @@ def cmd_drop(a) -> None:
     relecture = _read(d, "5_scenario.json", {}).get("relecture", {})
     fiche = {
         "id": a.id, "profil": a.profile, "statut": "a_valider", "titre": concept.get("titre"),
-        **({"publication_heure": a.heure} if getattr(a, "heure", None) is not None else {}),
+        "son_tendance": _read(d, "7_spec.json", {}).get("son_tendance"),
+        **({"publication_heure": a.heure} if getattr(a, "heure", None) is not None else {"publication_le": _prochain_creneau(a.profile)}),
         "format_qhse": concept.get("format_qhse"), "episode": concept.get("episode"),
         "legende": (d / "legende.txt").read_text(encoding="utf-8"),
         "sources": sorted({f.get("source_url") for f in concept.get("faits", []) if f.get("source_url")}

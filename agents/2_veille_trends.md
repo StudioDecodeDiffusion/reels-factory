@@ -26,3 +26,8 @@ formats, accroches, durées, sujets, ton. Croiser avec l'**humeur de notre commu
 python3 -m pipeline.tool rapport --agent 2 --profile <compte> --titre "Tendances du jour" travail/veille2_<compte>.md
 ```
 `state/veille_2_<compte>.json` : `{"date": "…", "formats": [], "accroches_types": [], "sujets_qui_buzzent": [], "communaute": "…", "a_eviter": []}`
+
+## Sons tendance Instagram (pour l'agent 6)
+Lister chaque jour 3 à 5 **sons tendance** (nom exact, créateur, pourquoi ça monte, type de vidéo qui l'utilise).
+Ils ne peuvent pas être intégrés par le code (droits) : l'agent 6 les recommande pour certaines vidéos et le
+propriétaire les ajoute dans l'app ; sinon on transpose leur style dans notre musique composée.

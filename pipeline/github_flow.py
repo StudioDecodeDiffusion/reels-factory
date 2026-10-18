@@ -28,7 +28,8 @@ R_VALIDATION = ("Réponds à ce mail, <b>première ligne</b> :<br>"
                 "• <b>OK MAINTENANT</b> → publication immédiate<br>"
                 "• <b>NON</b> + ta raison → vidéo abandonnée, ta raison sert aux prochaines idées<br>"
                 "• n'importe quel autre texte → remarque transmise à l'agent 9 (la vidéo reste en attente)<br>"
-                "Sans réponse sous 36 h, la vidéo est abandonnée.")
+                "<b>Sans réponse, la vidéo est publiée automatiquement à son créneau</b> (avec miniature et story) ; "
+                "réponds NON avant pour l'arrêter.")
 R_INFO = "Pas besoin de répondre. Un avis sur ce concept ? Réponds à ce mail : l'agent {n} lira ta remarque."
 R_MANAGER = ("Pas besoin de répondre : c'est un point d'avancement. Pour réagir, réponds à ce mail "
              "(ta remarque ira à l'agent concerné) ou écris « agent N° - ta note ».")
@@ -321,7 +322,7 @@ def facteur() -> None:
                                                           "Je l'appliquerai dès mon prochain travail."), R_NOTE.format(n=n))
             continue
         mm = re.match(r"^\s*agent\s*(?:n\s*[°o]?\s*)?(\d+)(?:[.,](\d+))?\s*[-–—:]?\s*(.*)$", m["objet"], re.I)
-        if mm and 1 <= int(mm.group(1)) <= 10:
+        if mm and 1 <= int(mm.group(1)) <= 11:
             n, sous = int(mm.group(1)), mm.group(2)
             profil = next((p for p in all_profiles() if str(load_profile(p).get("numero")) == sous), None) if sous else "tous"
             sujet_note = mm.group(3).strip()
@@ -433,6 +434,10 @@ def _publier(fiche: dict, profile: dict) -> None:
     media_host.cleanup(fiche["media"])
     story = _publier_story(fiche, profile)
     etat_story = "+ story publiée" if "publiée aussi" in story else ("(échec story)" if "non publiée" in story else "")
+    if fiche.get("son_tendance"):
+        st = fiche["son_tendance"]
+        story += (f"\n\n🎵 **À faire dans l'app** : ajoute le son tendance « {st.get('nom', '')} » ({st.get('createur', '')}) "
+                  "au Reel (Modifier → Audio), volume bas. Pourquoi : " + str(st.get("pourquoi", "")))
     mail.envoyer("Manager", f"✅ Vidéo publiée {etat_story} · {nom} · {fiche['titre']}",
                  md(f"🎉 **La vidéo est en ligne** sur {profile.get('instagram') or nom} : "
                     f"[{info.get('permalink', '')}]({info.get('permalink', '')})\n\n- {story}\n"
@@ -551,7 +556,12 @@ def publier_ce_qui_est_du() -> None:
         if fiche["statut"] == "approuvee" and pret \
                 and now.isoweekday() in p.get("publication_jours", range(1, 8)) and fiche.get("erreurs", 0) < 3:
             _publier(fiche, profile)
-        elif fiche["statut"] == "a_valider" and \
+        elif fiche["statut"] == "a_valider" and quand and pret and p.get("auto_publication") and fiche.get("erreurs", 0) < 3:
+            # sans réponse du propriétaire : publiée automatiquement à son créneau (il peut dire NON avant)
+            fiche.update(statut="approuvee", valide_par="automatique (sans réponse)")
+            save_attente(fiche)
+            _publier(fiche, profile)
+        elif fiche["statut"] == "a_valider" and not (quand and p.get("auto_publication")) and \
                 datetime.fromisoformat(fiche.get("envoyee", fiche["cree"])) < datetime.now(timezone.utc) - timedelta(hours=36):
             fiche["statut"] = "expiree"
             media_host.cleanup(fiche.get("media"))

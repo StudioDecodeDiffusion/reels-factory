@@ -27,3 +27,8 @@ Les chiffres non vérifiables sont signalés « estimation ». Aucune copie de l
 python3 -m pipeline.tool rapport --agent 10 --profile actu --titre "Comptes IA d'actu : la semaine" travail/veille10.md
 ```
 `state/veille_10.json` : `{"semaine": "AAAA-Sxx", "comptes": [{"nom", "lien", "plateforme", "abonnes", "source_chiffre", "format", "ton", "frequence", "points_forts", "transparence_ia", "statut": "nouveau|suivi"}], "idees": [], "position_decode": "…"}`
+
+## Chaque jour : vidéos à décortiquer pour l'agent 11
+En plus du rapport hebdomadaire (dimanche), chaque jour : repérer 2 ou 3 vidéos récentes qui marchent bien chez les
+comptes d'actu IA suivis (dont laboscope, belltakesocial, phyzolof) et les écrire dans `state/veille_10.json` →
+`a_decortiquer: [{"lien", "compte", "pourquoi_ca_marche"}]`. L'agent 11 les démonte juste après.

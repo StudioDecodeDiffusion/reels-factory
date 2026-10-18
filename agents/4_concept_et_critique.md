@@ -34,3 +34,7 @@ et 3 (`state/rapport_3_<compte>.json`), le profil, tes notes `state/messages/age
 **Variété obligatoire :** lire `agents/CATALOGUE_VARIETE.md` et `state/variete_<compte>.json` ; ne jamais reprendre
 l'accroche, le fonctionnement, la mise en page, les voix ou la musique de la vidéo précédente. Exploiter réellement
 une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 9 relit le script et la DA avant la génération.
+
+## Sondages et sujets imposés
+Une note « agent 4 - sondage : … » du propriétaire = sujet gagnant d'un sondage : il passe avant tout le reste.
+Lire aussi `state/retro_11.json` (recettes de l'agent 11) et proposer au moins une fois sur trois une mécanique qui en vient.

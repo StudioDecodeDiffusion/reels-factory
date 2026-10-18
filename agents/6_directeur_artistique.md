@@ -67,3 +67,15 @@ Explique tes choix (ambiances, effets, tendance suivie) dans ton message au prop
 **Variété obligatoire :** lire `agents/CATALOGUE_VARIETE.md` et `state/variete_<compte>.json` ; ne jamais reprendre
 l'accroche, le fonctionnement, la mise en page, les voix ou la musique de la vidéo précédente. Exploiter réellement
 une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 9 relit le script et la DA avant la génération.
+
+## Sons tendance d'Instagram (certaines vidéos)
+Pour 1 vidéo sur 3 environ, choisir un **son tendance** de la liste de l'agent 2 et l'indiquer dans `7_spec.json` :
+`"son_tendance": {"nom": "…", "createur": "…", "pourquoi": "…"}`. Notre bande-son reste dans la vidéo (plus discrète :
+`musique.volume` 0.3) ; le mail de publication du Manager rappelle au propriétaire d'ajouter le son dans l'app
+(Instagram ne permet pas de le faire automatiquement, et on n'intègre jamais un son protégé dans le fichier).
+
+## Vraies images (de temps en temps)
+On peut sortir du pixel art avec la scène `photo` (vraie photo de l'événement, effet Ken Burns). **Licence obligatoire** :
+Wikimedia Commons (CC BY / CC BY-SA / domaine public), photos officielles libres (gouvernement, Assemblée, Sénat,
+Élysée, ministères quand la licence l'autorise), Flickr en CC. Jamais une photo d'agence (AFP, Reuters, AP, Getty…)
+ni une capture de vidéo de média. `credit` = auteur + licence ; l'agent 9 vérifie la licence.

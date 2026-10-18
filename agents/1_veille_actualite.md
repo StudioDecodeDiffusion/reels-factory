@@ -26,3 +26,10 @@ Respecter les exclusions du profil et ne pas reproposer l'historique ni les refu
 python3 -m pipeline.tool rapport --agent 1 --profile <compte> --titre "Veille du jour" travail/veille1_<compte>.md
 ```
 `state/veille_1_<compte>.json` : `{"date": "…", "sujets": [{"titre", "resume", "chiffres_cles", "source_url", "date_info", "faisabilite", "potentiel"}]}`
+
+## Sources prioritaires (demande du propriétaire)
+- **Fil de la presse française** à suivre activement : dépêches AFP reprises par les sites gratuits (franceinfo, Le Monde,
+  Le Figaro, Libération, 20 Minutes, Ouest-France, Europe 1, BFM), flux RSS des rubriques « politique », « économie », « société ».
+- **Sujets chauds des comptes d'actu Instagram** (Brut, HugoDécrypte, Konbini News, Le Monde, franceinfo, Mediapart…) :
+  passer par leurs sites et pages publiques indexées (on ne se connecte jamais à Instagram). Noter dans chaque sujet
+  `vu_chez` : les comptes qui en parlent (= signal de chaleur).
