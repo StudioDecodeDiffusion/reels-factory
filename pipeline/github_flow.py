@@ -277,7 +277,7 @@ def facteur() -> None:
             lus = mail.lire_nouveaux()
         except Exception as e:
             print(f"lecture Gmail impossible : {e}")
-    carnet = state.load("mails", {})
+    carnet = mail.carnet()
     for m in lus:
         cle = mail.normaliser(m["objet"])
         texte = m["texte"].strip()

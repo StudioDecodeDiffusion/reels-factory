@@ -123,9 +123,7 @@ def envoyer(agent: int, titre: str, corps_html: str, reponse_html: str, ref: dic
         msg.add_attachment(p.read_bytes(), maintype=typ[0], subtype=typ[1], filename=p.name)
 
     # mémorise l'objet pour reconnaître les réponses
-    carnet = state.load("mails", {})
-    carnet[normaliser(sujet)] = {"agent": agent, "ref": ref or {}, "date": state.now_iso()}
-    state.save("mails", dict(list(carnet.items())[-400:]))
+    retenir(sujet, agent, ref)
 
     if os.getenv("MAIL_DRY_RUN"):
         d = OUTPUT / "mails"
@@ -136,6 +134,30 @@ def envoyer(agent: int, titre: str, corps_html: str, reponse_html: str, ref: dic
         s.login(adresse(), os.environ["GMAIL_APP_PASSWORD"])
         s.send_message(msg)
     return sujet
+
+
+def retenir(sujet: str, agent, ref: dict | None) -> None:
+    """Un fichier par mail envoyé (state/mails/<empreinte>.json) : jamais de conflit entre deux GitHub Actions."""
+    import hashlib
+    cle = normaliser(sujet)
+    (state.STATE / "mails").mkdir(exist_ok=True)
+    state.save(f"mails/{hashlib.sha1(cle.encode()).hexdigest()[:16]}",
+               {"objet": cle, "agent": agent, "ref": ref or {}, "date": state.now_iso()})
+
+
+def carnet() -> dict:
+    """Objets des mails envoyés → {agent, ref} (ancien fichier unique + un fichier par mail)."""
+    import json as _j
+    c = dict(state.load("mails", {})) if (state.STATE / "mails.json").exists() else {}
+    d = state.STATE / "mails"
+    if d.is_dir():
+        for f in d.glob("*.json"):
+            try:
+                e = _j.loads(f.read_text(encoding="utf-8"))
+                c[e["objet"]] = e
+            except Exception:
+                pass
+    return c
 
 
 def _texte(msg) -> str:
