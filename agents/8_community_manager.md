@@ -38,3 +38,7 @@ Quand `state/abonnes_<compte>.json` dépasse 1 000 abonnés, proposer chaque sem
 story** : 2 sujets candidats (préparés par l'agent 4). Instagram ne permet pas de créer le sondage par le code : le
 propriétaire le pose depuis l'app avec l'image préparée, puis écrit « agent 4 - sondage : sujet gagnant ». Le
 sujet gagnant passe en priorité absolue pour la vidéo suivante.
+
+**Source complémentaire (donnée par le propriétaire) :** https://instrack.app/instagram/decodeactu — suivi public du
+compte (abonnés, croissance, engagement) à lire avec WebFetch pour compléter et recouper les statistiques de l'API Instagram
+(toujours citer la source et la date du chiffre).

@@ -29,3 +29,7 @@ python3 -m pipeline.tool rapport --agent 3 --profile <compte> --titre "Ce que di
 ```
 `state/rapport_3_<compte>.json` : `{"date": "…", "classement": [], "ce_qui_marche": [], "ce_qui_ne_marche_pas": [], "enseignements": [], "test": "…", "reperes_projection": {"vues_mediane": 0, "meilleure": 0}}`
 Sans données : le dire simplement et s'appuyer sur les bonnes pratiques.
+
+**Source complémentaire (donnée par le propriétaire) :** https://instrack.app/instagram/decodeactu — suivi public du
+compte (abonnés, croissance, engagement) à lire avec WebFetch pour compléter et recouper les statistiques de l'API Instagram
+(toujours citer la source et la date du chiffre).

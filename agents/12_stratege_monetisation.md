@@ -27,3 +27,7 @@ avec sa source et sa date ; préciser quand un chiffre est une estimation.
 ```bash
 python3 -m pipeline.tool rapport --agent 12 --profile actu --titre "Résumé de stratégie du jour" travail/strategie12.md   # le lundi : --titre "Stratégie de revenus (complète)"
 ```
+
+**Source complémentaire (donnée par le propriétaire) :** https://instrack.app/instagram/decodeactu — suivi public du
+compte (abonnés, croissance, engagement) à lire avec WebFetch pour compléter et recouper les statistiques de l'API Instagram
+(toujours citer la source et la date du chiffre).
