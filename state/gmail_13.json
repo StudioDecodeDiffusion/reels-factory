@@ -1,15 +1,7 @@
 {
-  "date": "2026-10-18T14:04:37+00:00",
-  "ranges": 5,
-  "archives": 0,
+  "date": "2026-10-18T14:07:43+00:00",
+  "ranges": 20,
+  "archives": 2,
   "corbeille": 0,
-  "erreurs": [
-    "(from:facebookmail.com OR from:mail.inst : 'ascii' codec can't encode character '\\xe9' in position 79: ordinal not in range",
-    "(from:facebookmail.com OR from:mail.inst : 'ascii' codec can't encode character '\\xe9' in position 77: ordinal not in range",
-    "from:google.com (alerte OR alert OR sécu : 'ascii' codec can't encode character '\\xe9' in position 38: ordinal not in range",
-    "from:google.com -alerte -alert -sécurité : 'ascii' codec can't encode character '\\xe9' in position 34: ordinal not in range",
-    "from:me (subject:\"Remarque bien reçue\" O : 'ascii' codec can't encode character '\\xe7' in position 36: ordinal not in range",
-    "from:me subject:Manager subject:\"📍\" olde : 'ascii' codec can't encode character '\\U0001f4cd' in position 35: ordinal not in",
-    "from:me subject:Manager (subject:\"Voix g : 'ascii' codec can't encode character '\\xe9' in position 42: ordinal not in range"
-  ]
+  "erreurs": []
 }
