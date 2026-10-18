@@ -25,7 +25,8 @@ REQUIRED = {
     "bars": ["title", "items"], "timeline": ["events"], "dots": ["total", "highlighted", "label"],
     "compare": ["left", "right"], "particles": ["mode", "caption"], "outro": ["text", "cta"],
     "quiz": ["question", "options", "bonne"], "bigstat": ["value", "label"], "checklist": ["items"],
-    "photo": ["src", "credit"], "pendant": ["haut", "bas"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
+    "photo": ["src", "credit"], "ed_titre": ["titre"], "ed_chiffre": ["valeur", "legende"], "ed_citation": ["texte", "auteur"],
+    "ed_photo": ["src", "credit"], "ed_liste": ["points"], "ed_versus": ["gauche", "droite"], "pendant": ["haut", "bas"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
 }
 
 
@@ -169,7 +170,7 @@ def _photos(spec: dict) -> None:
             sc["src"], sc["credit"] = tmp["src"], tmp["credit"]
             continue
         src = str(sc.get("src", ""))
-        if sc.get("type") == "photo" and src.startswith("http"):
+        if sc.get("type") in ("photo", "ed_photo") and src.startswith("http"):
             _credit_commons(sc)
             nom = hashlib.sha1(src.encode()).hexdigest()[:16] + (Path(src.split("?")[0]).suffix or ".jpg")
             dest = VIDEO / "public" / "photos" / nom

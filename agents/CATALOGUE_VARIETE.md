@@ -64,3 +64,12 @@ Déco réagit de plus en plus fort) · **conte** (titre, texte, chute : « il é
 Genres de musique en plus : **boite_a_musique** · **epique**
 · **photo** (src = URL d'une image sous licence libre, credit = auteur + licence, titre, legende : vraie photo avec
 effet Ken Burns — de temps en temps, pour sortir du pixel art)
+
+## Style « éditorial » (prioritaire désormais) — motion design soigné façon médias d'info
+`theme.style = "editorial"` : plus de personnages pixel, voix off seule, typographie serif (DM Serif Display) + grotesque
+(Archivo Black), grille fine, barre de progression, sous-titres karaoké en capitales, transitions nettes.
+Scènes : **ed_titre** (kicker, titre, mot_fort, sous_titre) · **ed_chiffre** (valeur, decimales, prefixe, suffixe, legende,
+source) · **ed_citation** (texte, auteur) · **ed_photo** (src Wikimedia/licence libre, credit, kicker, titre) · **ed_liste**
+(kicker, titre, points[]) · **ed_versus** (kicker, titre, gauche{label,valeur}, droite{label,valeur}).
+Couleurs : `theme.fond` (fond), `theme.texte` (encre), `theme.accent` (couleur d'alerte) — varier d'une vidéo à l'autre.
+Le pixel art reste possible en exception (1 vidéo sur 4 au plus).

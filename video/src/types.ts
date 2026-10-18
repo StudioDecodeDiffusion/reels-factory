@@ -8,7 +8,7 @@ export type Theme = {
   bandeau?: string | null; // texte du bandeau signature (ex. date), optionnel
   grille?: boolean; // grille fine en fond
   palette?: string[]; // couleurs vives des fonds de scène (style v2)
-  style?: 'pixel' | 'sobre'; // pixel = style coloré animé (défaut), sobre = ancien style
+  style?: 'pixel' | 'sobre' | 'editorial'; // pixel = coloré animé, editorial = motion design soigné façon médias
   tenues?: {narrateur?: string; mascotte?: string}; // tenues de l'épisode (voir personnages.ts)
   mise_en_page?: 'duo' | 'jt' | 'chat' | 'quiz' | 'plein_ecran'; // habillage de la vidéo
   transition?: 'pixels' | 'iris' | 'volet' | 'bandes' | 'glitch'; // transition entre scènes
@@ -73,6 +73,12 @@ export type Scene =
   | (Base & {type: 'reaction'; paliers: {valeur: string; label: string}[]})
   | (Base & {type: 'conte'; titre?: string; texte: string; chute?: string})
   | (Base & {type: 'photo'; src: string; credit: string; titre?: string; legende?: string})
+  | (Base & {type: 'ed_titre'; titre: string; kicker?: string; sous_titre?: string; mot_fort?: string})
+  | (Base & {type: 'ed_chiffre'; valeur: number; legende: string; kicker?: string; prefixe?: string; suffixe?: string; decimales?: number; source?: string})
+  | (Base & {type: 'ed_citation'; texte: string; auteur: string})
+  | (Base & {type: 'ed_photo'; src: string; credit: string; titre?: string; kicker?: string})
+  | (Base & {type: 'ed_liste'; points: string[]; titre?: string; kicker?: string})
+  | (Base & {type: 'ed_versus'; gauche: {label: string; valeur: string}; droite: {label: string; valeur: string}; titre?: string; kicker?: string})
   | (Base & {type: 'pendant'; src?: string; credit?: string; haut: string; bas: string; lignes?: string[]});
 
 export type VideoSpec = {

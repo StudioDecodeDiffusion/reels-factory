@@ -38,6 +38,10 @@ python3 -m pipeline.tool creneau --profile <compte>
   la vidéo résume les grandes infos de la semaine (lundi → dimanche), à partir de `state/historique_<compte>.json`
   et des veilles de la semaine, avec une mécanique propre au résumé (top, récap rapide, « ce qu'il fallait retenir »).
 
+## 000. File de sujets du propriétaire (prioritaire)
+Lire  : prendre le **premier sujet non fait** compatible avec le créneau (un sujet avec
+ n'est produit que pour ce créneau). Utiliser sa trend. Après le dépôt, passer  à true. File vide → choix libre.
+
 ## 0. Préparation
 ```bash
 cd <dossier du dépôt> && git pull -q
