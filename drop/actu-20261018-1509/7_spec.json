@@ -1,0 +1,208 @@
+{
+  "theme": {
+    "fond": "#2B0A3D",
+    "texte": "#FFFFFF",
+    "accent": "#F2C14E",
+    "accent2": "#E4572E",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "style": "pixel",
+    "palette": [
+      "#2B0A3D",
+      "#F2C14E",
+      "#E4572E",
+      "#4B1C6B",
+      "#F7E7B4"
+    ],
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "fete"
+    },
+    "mise_en_page": "duo",
+    "transition": "iris",
+    "camera": "pan",
+    "bandeau": "Pendant ce temps…",
+    "grille": false
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?ref=jessica&exag=0.75&cfg=0.35",
+    "mascotte": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte_effet": "grave"
+  },
+  "musique": {
+    "genre": "epique",
+    "volume": 0.8
+  },
+  "variete": {
+    "accroche": "citation_choc",
+    "trend": "Pendant que… (écran coupé, contraste)",
+    "fonctionnement": "contraste",
+    "mise_en_page": "duo",
+    "musique": "epique",
+    "voix": "V4+V2grave",
+    "palette": "royal"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "duration": 12.8,
+      "title": "« On aurait préféré le voir auprès des forces de l'ordre »",
+      "subtitle": "Eliot Deval, Europe 1",
+      "sprite": "loupe",
+      "sprite_anim": "shake",
+      "energie": 2,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "« On aurait préféré le voir auprès des forces de l'ordre. » C'est ce qu'a lâché Eliot Deval sur Europe 1.",
+          "expression": "choc"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Le voir où ? Et qui ça ?",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "duration": 10.0,
+      "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Emmanuel_Macron_(cropped).jpg?width=1080",
+      "credit": "Wikimedia Commons",
+      "titre": "Vendredi 16 octobre",
+      "legende": "Emmanuel et Brigitte Macron au concert de Céline Dion, à Paris",
+      "energie": 2,
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Emmanuel Macron. Vendredi soir, avec Brigitte, il était au concert de Céline Dion à Paris.",
+          "expression": "clin"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "La veille de la grande mobilisation ?",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "pendant",
+      "duration": 13.2,
+      "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Celine_Dion_Concert_Singing_Taking_Chances_2008.jpg?width=1080",
+      "credit": "Wikimedia Commons (photo d'illustration, 2008)",
+      "haut": "Vendredi soir : concert",
+      "bas": "Samedi, dans la rue :",
+      "lignes": [
+        "550 000 à 800 000 manifestants",
+        "1 200 interpellations",
+        "150 policiers et gendarmes blessés"
+      ],
+      "energie": 3,
+      "sfx": [
+        "whoosh",
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Oui. Le lendemain, entre cinq cent cinquante mille et huit cent mille personnes manifestaient contre la vie chère.",
+          "expression": "colere"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Avec mille deux cents interpellations et cent cinquante policiers et gendarmes blessés.",
+          "expression": "triste"
+        }
+      ]
+    },
+    {
+      "type": "bigstat",
+      "duration": 6.0,
+      "value": "2,37 €",
+      "label": "le litre de gazole, ce même week-end",
+      "source": "prix-du-carburant.com",
+      "energie": 2,
+      "sfx": [
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Et le gazole à deux euros trente-sept le litre.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "quiz",
+      "duration": 10.0,
+      "question": "Les places du concert, qui les a payées ?",
+      "options": [
+        "L'Élysée",
+        "Le couple Macron",
+        "Les articles ne le disent pas"
+      ],
+      "bonne": 2,
+      "revelation": 4,
+      "energie": 2,
+      "sfx": [
+        "pop"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et les places, qui les a payées ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Les articles qui révèlent sa présence ne le disent pas. La question reste posée.",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "kinetic",
+      "duration": 6.5,
+      "lines": [
+        "Le peuple dans la rue,",
+        "le roi au concert ?"
+      ],
+      "highlight": "roi",
+      "energie": 3,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le peuple dans la rue, le roi au concert ? À toi de juger.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "duration": 5.0,
+      "text": "Ton avis en commentaire.",
+      "cta": "Abonne-toi pour l'actu sans filtre",
+      "energie": 3,
+      "sfx": [
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Dis-nous ce que tu en penses en commentaire !",
+          "expression": "clin"
+        }
+      ]
+    }
+  ]
+}
