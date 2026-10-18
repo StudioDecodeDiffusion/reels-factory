@@ -125,6 +125,29 @@ def construire(pid: str, suivi: dict, nom_compte: str) -> Path:
         _courbe(ws, "Vues cumulées de chaque vidéo, jour après jour", list(range(2, len(ids) + 2)), len(jours) + 1,
                 f"A{len(jours) + 4}")
 
+    # 3 bis. Vues gagnées chaque jour par chaque vidéo (différence entre deux relevés, formules)
+    ws2 = _feuille(wb, "Vues du jour par vidéo", ["Jour"] + [(v.get("legende") or "")[:28].replace("\n", " ") for v in der]
+                   + ["Total du jour"], [12] + [16] * len(der) + [12])
+    src = "'Évolution par vidéo'"
+    for r, j in enumerate(jours, start=2):
+        ligne = [j]
+        for c in range(2, len(ids) + 2):
+            L = get_column_letter(c)
+            ligne.append(f"=IF({src}!{L}{r}=\"\",\"\",{src}!{L}{r})" if r == 2 else
+                         f"=IF({src}!{L}{r}=\"\",\"\",{src}!{L}{r}-N({src}!{L}{r - 1}))")
+        ligne.append(f"=SUM(B{r}:{get_column_letter(len(ids) + 1)}{r})")
+        ws2.append(ligne)
+    _finir(ws2, {k: "#,##0" for k in range(2, len(ids) + 3)})
+    if ids and jours:
+        ch = BarChart()
+        ch.type, ch.grouping, ch.overlap = "col", "stacked", 100
+        ch.title, ch.height, ch.width = "Vues gagnées chaque jour, vidéo par vidéo", 9, 22
+        ch.legend.position = "b"
+        ch.add_data(Reference(ws2, min_col=2, max_col=len(ids) + 1, min_row=1, max_row=len(jours) + 1), titles_from_data=True)
+        ch.set_categories(Reference(ws2, min_col=1, min_row=2, max_row=len(jours) + 1))
+        ch.x_axis.delete = ch.y_axis.delete = False
+        ws2.add_chart(ch, f"A{len(jours) + 4}")
+
     # 4. Stories
     ws = _feuille(wb, "Stories", ["Publiée le", "Vues", "Comptes touchés", "Réponses", "Partages", "Abonnements",
                                    "Visites du profil", "Interactions", "Lien"], [16, 8, 11, 9, 9, 11, 11, 11, 10])
@@ -144,11 +167,12 @@ def construire(pid: str, suivi: dict, nom_compte: str) -> Path:
                   "Mis à jour automatiquement par l'agent 3 à chaque relevé (9 h et 16 h, heure de Paris).",
                   "Source : API Instagram (insights). Les vues et partages sont cumulés depuis la publication.",
                   "« Abonnés gagnés » et « Vues du jour » = différence avec le relevé de la veille (formules).",
+                  "« Vues du jour par vidéo » = vues gagnées par chaque vidéo depuis le relevé de la veille.",
                   "Taux d'engagement = (likes + commentaires + partages + enregistrements) / comptes touchés.",
                   "Les statistiques d'une story ne sont lisibles que pendant ses 24 h : dernier relevé conservé."]:
         ws.append([ligne])
     ws["A1"].font = Font(name=POLICE, bold=True, size=14)
-    for r in range(2, 7):
+    for r in range(2, 8):
         ws.cell(row=r, column=1).font = Font(name=POLICE)
     ws.column_dimensions["A"].width = 100
 
