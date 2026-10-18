@@ -34,7 +34,7 @@ RENDUS = "Decode/Manager - rendus finaux"   # vidéos finales : à valider, mont
 NOMS = {1: "Veille actualité", 2: "Veille tendances", 3: "Résultats du compte", 4: "Concept & critique",
         5: "Scénario", 6: "Directeur artistique", 7: "Générateur vidéo", 8: "Community manager", 9: "Critique",
         10: "Veille comptes IA", 11: "Rétro-ingénierie",
-        12: "Stratège monétisation"}
+        12: "Stratège monétisation", 13: "Gestion Gmail"}
 
 RAPPEL = ("💬 <b>Pour parler à un agent :</b> envoie-toi un mail avec l'objet "
           "<b>« agent N° - ta note »</b> (ex. « agent 6 - plus de couleurs vives » pour tous les comptes, "
@@ -217,6 +217,51 @@ def _ranger(m, i, msg) -> None:
         raise
 
 
+# ───────────────────────── Agent 13 : gestionnaire de la boîte Gmail (règles appliquées à chaque passage du facteur)
+REGLES_13 = [
+    # (recherche Gmail, dossier, sortir de la boîte de réception ?, mettre à la corbeille ?)
+    ('from:notifications@github.com subject:"Run failed"', "Decode/GitHub", False, False),          # échecs : visibles
+    ('from:notifications@github.com -subject:"Run failed"', "Decode/GitHub", True, False),
+    ('from:notifications@github.com subject:"Run failed" older_than:3d', "Decode/GitHub", True, False),
+    ('(from:facebookmail.com OR from:mail.instagram.com OR from:meta.com) (code OR sécurité OR security OR connexion)', "Decode/Meta-Instagram", False, False),
+    ('(from:facebookmail.com OR from:mail.instagram.com OR from:meta.com) -code -sécurité -security -connexion', "Decode/Meta-Instagram", True, False),
+    ('from:google.com (alerte OR alert OR sécurité OR security)', "Decode/Google", False, False),
+    ('from:google.com -alerte -alert -sécurité -security', "Decode/Google", True, False),
+    ('from:me (subject:"Remarque bien reçue" OR subject:"Note reçue" OR subject:"Bien reçu") older_than:3d', None, True, True),
+    ('from:me subject:Manager subject:"📍" older_than:14d', None, True, True),           # vieux points d'étape
+    ('from:me subject:Manager (subject:"Voix générées" OR subject:"Vidéo montée" OR subject:"Rendu lancé" OR subject:"Publication en cours") older_than:7d', None, True, True),
+]
+
+
+def agent13(m) -> None:
+    """Range, archive et nettoie la boîte (corbeille = récupérable 30 jours). Bilan dans state/gmail_13.json."""
+    bilan = {"date": state.now_iso(), "ranges": 0, "archives": 0, "corbeille": 0, "erreurs": []}
+    try:
+        m.enable("UTF8=ACCEPT")  # recherches avec accents et émojis
+    except Exception:
+        pass
+    for requete, dossier, archiver, jeter in REGLES_13:
+      try:
+        _, ids = m.search(None, "X-GM-RAW", '"' + requete.replace('"', '\\"') + '"')
+        for i in ids[0].split()[-200:]:
+            if dossier:
+                try:
+                    m.create(f'"{dossier}"')
+                except Exception:
+                    pass
+                m.store(i, "+X-GM-LABELS", f'"{dossier}"')
+                bilan["ranges"] += 1
+            if jeter:
+                m.store(i, "+X-GM-LABELS", "\\Trash")
+                bilan["corbeille"] += 1
+            elif archiver:
+                m.store(i, "-X-GM-LABELS", "\\Inbox")
+                bilan["archives"] += 1
+      except Exception as e:
+        bilan["erreurs"].append(f"{requete[:40]} : {str(e)[:80]}")
+    state.save("gmail_13", bilan)
+
+
 def lire_nouveaux() -> list[dict]:
     """Mails non traités de la boîte du studio (hors mails envoyés par les agents)."""
     out = []
@@ -245,6 +290,10 @@ def lire_nouveaux() -> list[dict]:
     state.save("rangement_dossiers", {**bilan, "erreurs": bilan["erreurs"][:5], "rendus_v2": True})
     if complet:
         m.select("INBOX")
+    try:
+        agent13(m)
+    except Exception as e:
+        print(f"agent 13 : {e}")
     _, ids = m.search(None, "X-GM-RAW", f'"in:inbox is:unread -label:{LABEL_TRAITE} -label:{LABEL_AGENTS}"')
     for i in ids[0].split():
         _, data = m.fetch(i, "(BODY.PEEK[])")
