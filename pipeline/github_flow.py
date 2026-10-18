@@ -670,8 +670,8 @@ def _suivi(ig, pid: str, posts: list[dict]) -> None:
     compte["abonnes"] = ab[-1]["abonnes"] if ab else None
     suivi["jours"][jour] = {"compte": compte, "videos": {p["id"]: {k: v for k, v in p.items() if k != "id"} for p in posts}}
     state.save(f"suivi_{pid}", suivi)
-    if datetime.now(TZ).hour >= 12:  # un seul envoi par jour (relevé de 16 h)
-        _envoyer_suivi(pid, suivi)
+    from .suivi_excel import construire
+    construire(pid, suivi, load_profile(pid)["nom_compte"])
 
 
 def _envoyer_suivi(pid: str, suivi: dict) -> None:
