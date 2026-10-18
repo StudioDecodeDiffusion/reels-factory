@@ -223,7 +223,7 @@ def sonoriser(spec: dict, job: str, profile: dict, public_dir: Path) -> dict:
         dialogue = sc.get("dialogue") or ([{"qui": "narrateur", "texte": sc["voix"]}] if sc.get("voix") else [])
         if not dialogue:
             continue
-        morceaux, t = [_silence(dest / f"s{i}_debut.wav", 0.1)], 0.1
+        morceaux, t = [_silence(dest / f"s{i}_debut.wav", 0.04)], 0.04
         for j, rep in enumerate(dialogue):
             wav = dest / f"s{i}_r{j}.wav"
             masc = rep.get("qui") == "mascotte"
@@ -233,7 +233,7 @@ def sonoriser(spec: dict, job: str, profile: dict, public_dir: Path) -> dict:
                 _effet(wav, effet_masc)
             d = duree(wav)
             rep["debut"], rep["fin"] = round(t, 2), round(t + d, 2)
-            pause = 0.22 if j < len(dialogue) - 1 else 0.1  # enchaînement vif, pas de blanc
+            pause = 0.08 if j < len(dialogue) - 1 else 0.04  # répliques qui s'enchaînent vite
             morceaux += [wav, _silence(dest / f"s{i}_pause{j}.wav", pause)]
             t += d + pause
         scene_wav = dest / f"scene{i}.wav"
@@ -244,7 +244,7 @@ def sonoriser(spec: dict, job: str, profile: dict, public_dir: Path) -> dict:
         scene_wav.unlink()
         sc["dialogue"] = dialogue
         sc["voix_duree"] = round(t, 2)
-        sc["duration"] = round(t + 0.15, 2)  # la scène dure le temps de la voix, sans blanc
+        sc["duration"] = round(t + 0.06, 2)  # la scène dure le temps de la voix, sans blanc
         sc["audio"] = f"voix/{job}/{mp3.name}"
     return spec
 
