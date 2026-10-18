@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-18",
+  "compte": "actu",
+  "type": "stratégie complète",
+  "ou_on_en_est": {
+    "abonnes": 2,
+    "source_abonnes": "state/abonnes_actu.json (API Instagram, 18/10/2026)",
+    "meilleure_video_vues": 214,
+    "portee": 182,
+    "taux_interactions_portee_pct": 1.6,
+    "partages": 0, "enregistrements": 0, "commentaires": 0,
+    "source_video": "state/stats_actu.json, relevé du 18/10/2026 07:32 UTC (Reel du 17/10)"
+  },
+  "paliers": [
+    {"objectif": "1 000 abonnés", "debloque": "dossier média crédible pour petites marques/médias, Ko-fi/Tipeee, pages partenaires", "echeance_visee": "2026-12-31"},
+    {"objectif": "5 000 abonnés", "debloque": "premiers partenariats rémunérés nano (20-100 $ par Reel, IMH 07/10/2026)", "echeance_visee": "2027-03-31"},
+    {"objectif": "10 000 abonnés", "debloque": "Abonnements Instagram (seuil annoncé en France, BDM 26/07/2023), TikTok Creator Rewards (10k + 100k vues/30 j)", "echeance_visee": "2027-06-30"}
+  ],
+  "sources_de_revenus_prioritaires": [
+    "Contenu de marque / partenariats directs avec médias, ONG, associations, outils d'info (hors partis et hors pub politique)",
+    "Dons (Ko-fi 0 % sur les dons, Tipeee 8 %)",
+    "Abonnements Instagram à 10 000 abonnés",
+    "Reprise sur YouTube Shorts / TikTok pour l'audience plus que pour le revenu (RPM Shorts France ≈ 0,10 $/1000 vues, air.io 23/01/2026)"
+  ],
+  "consignes_agents": {
+    "4": "Viser 45-55 s, accroche < 2 s, finir sur UN chiffre + une question à commenter ; varier les visuels et le script (pas de gabarit répété à l'identique : risque « contenu non original/inauthentique »).",
+    "8": "Une vidéo par jour à 18 h 30, aucune republication ; répondre à chaque commentaire dans l'heure ; légende avec question + sources.",
+    "3": "Suivre chaque semaine : abonnés gagnés par vidéo, partages/1000 vues, enregistrements/1000 vues, durée moyenne de visionnage."
+  },
+  "actions_proprietaire": [
+    "Vérifier dans l'app : Tableau de bord professionnel > Monétisation, et noter les programmes affichés (avant le 25/10/2026)",
+    "Activer « Info IA » quand la voix off IA est réaliste ; ajouter « Voix et visuels générés par IA » dans la bio",
+    "Ouvrir une page Ko-fi et la mettre en lien en bio (avant le 01/11/2026)",
+    "Tester les Trial Reels (montrés aux non-abonnés) sur 2 vidéos/semaine"
+  ],
+  "risques": [
+    "Contenu politique moins recommandé par défaut aux non-abonnés sur Instagram (depuis 2024)",
+    "Publicité politique interdite dans l'UE sur Meta depuis le 06/10/2025 (TTPA) : pas de partenariat avec partis/campagnes",
+    "Contenu IA répétitif = risque de démonétisation (Facebook juil. 2025, YouTube 15/07/2025)",
+    "Loi influenceurs : mention « Publicité » ou équivalent et mention « image virtuelle » ou équivalent pour visuels IA dans un contenu sponsorisé"
+  ],
+  "questions_en_attente": {"3": true, "8": true}
+}
