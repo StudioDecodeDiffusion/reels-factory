@@ -34,4 +34,4 @@ jobs:
           git config user.name "reels-bot"
           git config user.email "reels-bot@users.noreply.github.com"
           git add -A voix/echantillons
-          git diff --cached --quiet || (git commit -m "voix : échantillons" && for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done)
+          git diff --cached --quiet || (git commit -m "voix : échantillons" && for i in 1 2 3; do git pull --rebase -X theirs -q && git push -q && break; sleep 5; done)

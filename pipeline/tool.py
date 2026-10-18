@@ -141,7 +141,7 @@ def _commit_state(msg: str) -> None:
     if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode == 0:
         return  # rien de nouveau
     _git("-c", "user.name=reels-bot", "-c", "user.email=reels-bot@users.noreply.github.com", "commit", "-q", "-m", msg)
-    _git("pull", "-q", "--rebase", "origin", "main")
+    _git("pull", "-q", "--rebase", "-X", "theirs", "origin", "main")
     _git("push", "-q")
 
 
