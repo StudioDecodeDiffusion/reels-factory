@@ -4,6 +4,7 @@ import {Scene, Theme} from './types';
 import {AnimatedSprite, encrePour, Etincelles, fontPixel, fontTitre, INK, PixelSprite, Sticker} from './fx';
 import {SPRITES} from './sprites';
 import {Highlight, rng} from './ui';
+import {BigStat, Checklist, Quiz} from './layouts';
 
 // Zone de contenu (au-dessus de la mascotte et des sous-titres)
 const TOP = 330;
@@ -327,6 +328,12 @@ export const SceneViewPixel: React.FC<{scene: Scene; ctx: Ctx}> = ({scene, ctx})
       return <Particles scene={scene} ctx={ctx} />;
     case 'outro':
       return <Outro scene={scene} ctx={ctx} />;
+    case 'quiz':
+      return <Quiz scene={scene} c1={ctx.c1} c2={ctx.c2} bg={ctx.bg} />;
+    case 'bigstat':
+      return <BigStat scene={scene} c1={ctx.c1} bg={ctx.bg} />;
+    case 'checklist':
+      return <Checklist scene={scene} c1={ctx.c1} c2={ctx.c2} bg={ctx.bg} />;
     default:
       return null;
   }

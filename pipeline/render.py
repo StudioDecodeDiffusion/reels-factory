@@ -24,6 +24,7 @@ REQUIRED = {
     "hook": ["title"], "kinetic": ["lines"], "counter": ["to", "label"],
     "bars": ["title", "items"], "timeline": ["events"], "dots": ["total", "highlighted", "label"],
     "compare": ["left", "right"], "particles": ["mode", "caption"], "outro": ["text", "cta"],
+    "quiz": ["question", "options", "bonne"], "bigstat": ["value", "label"], "checklist": ["items"],
 }
 
 
@@ -44,6 +45,10 @@ def validate_spec(spec: dict, allowed: list[str], voix_obligatoire: bool = False
         if len(th["palette"]) < 3:
             errs.append("theme.palette doit contenir au moins 3 couleurs #RRGGBB")
     th["grille"] = bool(th.get("grille", False))
+    for k, ok in (("mise_en_page", {"duo", "jt", "chat", "quiz", "plein_ecran"}), ("transition", {"pixels", "iris", "volet", "bandes", "glitch"}),
+                  ("camera", {"zoom", "pan", "secousse", "respire"})):
+        if th.get(k) is not None and th[k] not in ok:
+            errs.append(f"theme.{k} doit être parmi {sorted(ok)}")
 
     scenes = spec.get("scenes") or []
     if not 3 <= len(scenes) <= 18:

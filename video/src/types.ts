@@ -10,6 +10,10 @@ export type Theme = {
   palette?: string[]; // couleurs vives des fonds de scène (style v2)
   style?: 'pixel' | 'sobre'; // pixel = style coloré animé (défaut), sobre = ancien style
   tenues?: {narrateur?: string; mascotte?: string}; // tenues de l'épisode (voir personnages.ts)
+  mise_en_page?: 'duo' | 'jt' | 'chat' | 'quiz' | 'plein_ecran'; // habillage de la vidéo
+  transition?: 'pixels' | 'iris' | 'volet' | 'bandes' | 'glitch'; // transition entre scènes
+  camera?: 'zoom' | 'pan' | 'secousse' | 'respire'; // mouvement de caméra
+  titre?: string; // titre (bandeau défilant du JT)
 };
 
 type Base = {
@@ -59,7 +63,10 @@ export type Scene =
       count?: number;
       caption: string;
     })
-  | (Base & {type: 'outro'; text: string; cta: string});
+  | (Base & {type: 'outro'; text: string; cta: string})
+  | (Base & {type: 'quiz'; question: string; options: string[]; bonne: number; revelation?: number})
+  | (Base & {type: 'bigstat'; value: string; label: string; source?: string})
+  | (Base & {type: 'checklist'; title?: string; items: {texte: string; etat?: 'vrai' | 'faux' | 'flou'}[]});
 
 export type VideoSpec = {
   fps?: number;

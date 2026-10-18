@@ -14,6 +14,7 @@ import {SceneView} from './scenes';
 import {SceneViewPixel} from './scenesPixel';
 import {encrePour, FondPixel, fontPixel, INK, palette, TransitionPixel} from './fx';
 import {Duo} from './dialogue';
+import {HabillageChat, HabillageJT, HabillagePleinEcran, Transition} from './layouts';
 
 
 // Choisit deux couleurs d'accent de la palette, différentes du fond
@@ -38,16 +39,38 @@ const ScenePixel: React.FC<{s: Scene; i: number; theme: Theme; bg: string; prevB
   const frame = useCurrentFrame();
   const pal = palette(theme);
   const [c1, c2] = accents(pal, bg, i);
-  const zoom = interpolate(frame, [0, dur], [1, 1.035]);
   const droite = i % 2 === 0;
-  return (
+  const cam = theme.camera ?? 'zoom';
+  const zoom = interpolate(frame, [0, dur], cam === 'respire' ? [1.04, 1] : [1, 1.035]);
+  const pan = cam === 'pan' ? interpolate(frame, [0, dur], [i % 2 ? -30 : 30, i % 2 ? 30 : -30]) : 0;
+  const choc = cam === 'secousse' && frame < 10 ? Math.sin(frame * 2.5) * (10 - frame) * 2 : 0;
+  const mep = theme.mise_en_page ?? 'duo';
+  const plein = mep !== 'duo';
+  const contenu = (
     <AbsoluteFill>
       <FondPixel couleur={bg} seed={i + 1} />
-      <AbsoluteFill style={{transform: `scale(${0.9 * zoom})`, transformOrigin: '50% 12%'}}>
+      <AbsoluteFill style={{transform: `translate(${pan + choc}px, ${choc / 2}px) scale(${(plein ? 1 : 0.9) * zoom})`, transformOrigin: '50% 12%'}}>
         <SceneViewPixel scene={s} ctx={{theme, bg, c1, c2, index: i, mascotteDroite: droite}} />
       </AbsoluteFill>
-      <Duo scene={s} tenues={theme.tenues ?? {}} />
-      {prevBg ? <TransitionPixel couleur={prevBg} seed={i} /> : null}
+    </AbsoluteFill>
+  );
+  const tenues = theme.tenues ?? {};
+  const tr = theme.transition ?? 'pixels';
+  return (
+    <AbsoluteFill>
+      {mep === 'jt' ? (
+        <HabillageJT scene={s} tenues={tenues} accent={c1} titre={theme.titre ?? theme.bandeau ?? ''}>{contenu}</HabillageJT>
+      ) : mep === 'chat' ? (
+        <HabillageChat scene={s} accent={c1} fond={bg}>{contenu}</HabillageChat>
+      ) : mep === 'plein_ecran' || mep === 'quiz' ? (
+        <HabillagePleinEcran scene={s} tenues={tenues} accent={c1}>{contenu}</HabillagePleinEcran>
+      ) : (
+        <>
+          {contenu}
+          <Duo scene={s} tenues={tenues} />
+        </>
+      )}
+      {prevBg ? (tr === 'pixels' ? <TransitionPixel couleur={prevBg} seed={i} /> : <Transition type={tr} couleur={prevBg} seed={i} />) : null}
     </AbsoluteFill>
   );
 };
@@ -91,7 +114,7 @@ export const ReelVideo: React.FC<VideoSpec> = ({theme, scenes, music}) => {
         from += dur;
         return seq;
       })}
-      {pixel ? <BandeauPixel theme={theme} /> : <Bandeau theme={theme} />}
+      {pixel ? (['jt', 'chat'].includes(theme.mise_en_page ?? '') ? null : <BandeauPixel theme={theme} />) : <Bandeau theme={theme} />}
     </AbsoluteFill>
   );
 };

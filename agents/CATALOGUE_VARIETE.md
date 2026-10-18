@@ -46,3 +46,14 @@ Mettre le choix dans `"voix_override": {"narrateur": …, "mascotte": …, "masc
 ## Palettes (`palette`)
 pop (jaune/bleu/rose) · nuit_neon (fond nuit, cyan/magenta) · pastel · retro_tv (beige/orange/brun) ·
 vert_terminal · rouge_alerte · papier_journal (crème/noir/rouge) — donner `theme.palette` en conséquence.
+
+## Réglages visuels disponibles dans `theme` (à varier à chaque vidéo)
+- `mise_en_page` : duo · jt · chat · plein_ecran (quiz = plein_ecran avec des scènes quiz)
+- `transition` : pixels · iris · volet · bandes · glitch
+- `camera` : zoom · pan · secousse · respire
+- `titre` : texte du bandeau défilant (JT)
+
+## Scènes disponibles (mélanger, ne pas répéter le même enchaînement)
+hook · kinetic · counter · bars · timeline · dots · compare · outro · **quiz** (question, options, bonne,
+revelation en s) · **bigstat** (value, label, source : chiffre géant avec glitch) · **checklist** (title, items
+[{texte, etat: vrai|faux|flou}] avec tampons VRAI/FAUX/FLOU)
