@@ -1,6 +1,6 @@
 {
   "semaine": "2026-S42",
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "comptes": [
     {
       "nom": "AntifakenewsAI (Thomas Huchon)",
@@ -13,7 +13,7 @@
       "frequence": "réactif : vidéo prête < 2 h après l'info repérée (rythme réel non indexé)",
       "points_forts": "caution d'un journaliste humain identifié, IA assumée dans le nom, vitesse",
       "transparence_ia": "totale (« AI » dans le nom, avatar revendiqué)",
-      "statut": "nouveau"
+      "statut": "suivi"
     },
     {
       "nom": "Fermes à faux JT IA francophones (ex. page Facebook « Islam », Burkina Faso)",
@@ -26,7 +26,7 @@
       "frequence": "série de vidéos",
       "points_forts": "viralité par le choc ; modèle à éviter absolument",
       "transparence_ia": "nulle",
-      "statut": "nouveau"
+      "statut": "suivi"
     },
     {
       "nom": "Fermes de contenu TikTok à voix IA (41 comptes, dont 14 en français pro-Kremlin)",
@@ -39,6 +39,45 @@
       "frequence": "≈ 21 vidéos/jour cumulées (9 784 / 458 j)",
       "points_forts": "volume ; modèle à éviter",
       "transparence_ia": "nulle",
+      "statut": "suivi"
+    },
+    {
+      "nom": "laboscope (signalé par le propriétaire, « fait en IA »)",
+      "lien": "https://www.instagram.com/laboscope/",
+      "plateforme": "Instagram",
+      "abonnes": "non vérifiable (aucun chiffre indexé ; page Instagram non accessible sans connexion)",
+      "source_chiffre": "aucune — recherches web du 18/10/2026 sans résultat (homonymes : appli photo, labo d'art)",
+      "format": "inconnu",
+      "ton": "inconnu",
+      "frequence": "inconnue",
+      "points_forts": "à documenter",
+      "transparence_ia": "inconnue",
+      "statut": "nouveau"
+    },
+    {
+      "nom": "belltakesocial (signalé par le propriétaire)",
+      "lien": "https://www.instagram.com/belltakesocial/",
+      "plateforme": "Instagram",
+      "abonnes": "non vérifiable",
+      "source_chiffre": "aucune — seule trace indexée : belltake.com, réseau social en liste d'attente (« Every take, on a curve »), lien avec ce compte non confirmé",
+      "format": "inconnu (belltake.com annonce des « takes » texte, sondages et vidéos courtes)",
+      "ton": "inconnu",
+      "frequence": "inconnue",
+      "points_forts": "à documenter",
+      "transparence_ia": "inconnue",
+      "statut": "nouveau"
+    },
+    {
+      "nom": "phyzolof (signalé par le propriétaire)",
+      "lien": "https://www.instagram.com/phyzolof/",
+      "plateforme": "Instagram (+ chaîne YouTube @phyzolof, lien non confirmé)",
+      "abonnes": "non vérifiable",
+      "source_chiffre": "aucune — seule trace indexée : https://www.youtube.com/@phyzolof/shorts (mots-clés « League of Legend », peut-être un homonyme)",
+      "format": "inconnu",
+      "ton": "inconnu",
+      "frequence": "inconnue",
+      "points_forts": "à documenter",
+      "transparence_ia": "inconnue",
       "statut": "nouveau"
     }
   ],
@@ -46,14 +85,18 @@
     "Instagram, 01/09/2026 : étiquette « Profil généré par IA » (remplace « Créateur IA ») ; vise surtout les faux humains mais aussi les comptes publiant régulièrement du contenu IA ou mettant en scène un personnage créé par IA ; portée limitée si non étiquetés (RTBF https://www.rtbf.be/article/intelligence-artificielle-instagram-va-identifier-les-comptes-entierement-generes-par-ia-11778004 ; Journal du Geek https://www.journaldugeek.com/2026/09/01/instagram-veut-que-ses-faux-humains-en-ia-se-presentent-clairement/)",
     "TikTok, 10/07/2026 : détection renforcée du spam IA « de faible qualité et très standardisé », en priorité sur politique/actualité, santé, finance (AFP via CB News https://www.cbnews.fr/mobile/tiktok-s-attaque-aux-comptes-proposant-uniquement-du-contenu-genere-ia)",
     "Kapwing (mai 2026, publié 21/06/2026) : 59 % des 500 premières vidéos d'un compte TikTok neuf = AI slop, ~21 % sur YouTube Shorts ; 35 % en science/éducation (TNW https://thenextweb.com/news/tiktok-ai-slop-59-percent-new-users-kapwing-study)",
-    "Digital News Report 2026 (17/06/2026) : réseaux sociaux/vidéo 54 % vs sites 51 % comme 1re source en ligne ; Instagram 26 % pour l'info ; usage hebdo des chatbots pour l'info 10 % (16 % des moins de 35 ans), stable en France (The Media Leader https://fr.themedialeader.com/?p=216046)"
+    "Digital News Report 2026 (17/06/2026) : réseaux sociaux/vidéo 54 % vs sites 51 % comme 1re source en ligne ; Instagram 26 % pour l'info ; usage hebdo des chatbots pour l'info 10 % (16 % des moins de 35 ans), stable en France (The Media Leader https://fr.themedialeader.com/?p=216046)",
+    "Instagram, 31/08/2026 : label « AI-generated profile » obligatoire pour les profils mettant en scène un personnage synthétique récurrent PRÉSENTÉ COMME UNE PERSONNE ; non requis pour l'IA outil (retouche, sous-titres) ; profils détectés non déclarés : plus éligibles aux recommandations ; activation par un interrupteur dans « Modifier le profil » ; cas des personnages animés non tranché (Leptidigital 02/09/2026 https://www.leptidigital.fr/reseaux-sociaux/instagram-limite-portee-profils-ia-non-declares-91566/)",
+    "Désinformation IA visant la France : 56 millions de vues pour les opérations de John Mark Dougan (Storm-1516) ; 14 millions pour la vidéo du faux coup d'État (newsia.fr 07/06/2026 d'après franceinfo 06/06/2026 https://newsia.fr/news/desinformation-ia-faux-scandales-france-2026)",
+    "Médias français et IA, 2026 : Prisma Press ~40 % de production non rédigée par des humains selon Next ; Infopro Digital remplace 19 SR par 5 chefs d'édition IA (Politis 15/05/2026 https://www.politis.fr/articles/2026/05/plans-sociaux-comment-lia-commence-a-remplacer-les-journalistes/)",
+    "Formats Reels qui montent (Anijam, maj 10/10/2026, source commerciale, chiffres non vérifiés) : séries d'histoires IA à personnages récurrents numérotées > posts isolés ; « loading 0→100 % » calé sur le beat ; « POV : … en 2026 » ; bait-and-switch en deux temps (https://www.anijam.ai/blog/instagram-reels-trends/)"
   ],
   "idees": [
-    "Signature transparente fixe : « Lou et Déco sont des personnages animés ; les faits sont vérifiés, sources en légende » dans la bio et en fin de vidéo, et activer de nous-mêmes l'étiquette IA d'Instagram (décision du propriétaire) pour éviter la limite de portée.",
-    "Format « Vrai ou faux JT ? » : Déco montre (décrit, sans la diffuser) une fausse vidéo IA virale, Lou explique comment la repérer et ce qui est établi ; sources à l'écran.",
-    "Source affichée à l'écran sur chaque chiffre (nom du média + date) : ce qui nous sépare visiblement du « slop » standardisé que TikTok et Instagram commencent à pénaliser."
+    "Série numérotée « Décodé, épisode N » : Lou et Déco comme personnages récurrents d'un feuilleton de l'actu (même générique de 1 s, numéro d'épisode en bandeau) — les séries à personnages récurrents surperforment les posts isolés (Anijam 10/10/2026, estimation).",
+    "« Vrai ou faux JT ? » hebdomadaire : décrire (sans la diffuser) une fausse vidéo IA virale, montrer ses 3 indices de trucage, ce qui est établi, sources à l'écran — on retourne la mécanique « FLASH » des faux JT contre eux.",
+    "Barre « loading » de l'info : une jauge 0→100 % en haut de l'écran qui avance à chaque fait sourcé, coupes calées sur le beat ; la jauge donne une raison de rester jusqu'à 100 %."
   ],
-  "position_decode": "Le créneau « actu française expliquée, faite par IA, transparente » est quasi vide dans ce qui est publiquement indexé : seul AntifakenewsAI (avatar réaliste d'un vrai journaliste, débunk) est un pair légitime ; le reste est de la désinformation (faux JT, voix IA en masse). Décodé se distingue par des personnages non réalistes en pixel art (Lou/Déco, pas de faux humain), un dialogue, des chiffres sourcés et une ligne assumée. Risque : être confondu avec le slop IA et subir les nouvelles règles de portée ; parade : transparence et sources visibles.",
+  "position_decode": "Toujours quasi seuls sur l'actu française expliquée, faite par IA et transparente dans ce qui est publiquement indexé. Les trois comptes signalés par le propriétaire (laboscope, belltakesocial, phyzolof) sont invisibles sur le web public : impossible de les comparer sans liens directs. Le pair légitime reste AntifakenewsAI (avatar réaliste, débunk) ; le reste est de la désinformation qui fait des millions de vues avec un « FLASH » et une image-symbole. Notre différence : personnages animés non réalistes (pas un faux humain, donc a priori hors du label « AI-generated profile », à confirmer), dialogue, sources visibles.",
   "a_reprendre_style": [
     "Personnages persistants : Lou et Déco restent à l'écran d'une scène à l'autre (pas de nouvelle entrée par le bas à chaque scène) ; seule l'expression change. Aujourd'hui le Duo est remonté dans chaque Sequence (dialogue.tsx, entree=2/6) → saut visible à chaque coupe.",
     "Transition par recouvrement de 6 à 10 images : la scène sortante continue (glisse/zoom de sortie) pendant que la suivante entre, au lieu d'une coupe sèche suivie de la dissolution pixel de l'ancienne couleur seule (TransitionPixel 12 images).",
@@ -70,5 +113,30 @@
     "https://kreateflo.com/blog/can-word-by-word-caption-animation-keep-viewers-hooked",
     "https://docs.creem.io/.cursor/skills/remotion-best-practices/rules/timing.md",
     "https://www.strategies.fr/actualites/medias/LQ2867371C/un-avatar-de-journaliste-pour-lutter-contre-les-fake-news.html"
+  ],
+  "comptes_prioritaires": {
+    "comptes": [
+      "laboscope",
+      "belltakesocial",
+      "phyzolof"
+    ],
+    "etat": "18/10/2026 : aucun contenu indexé publiquement ; pages Instagram inaccessibles sans connexion (interdite). Besoin : liens directs de 2-3 Reels par compte envoyés par le propriétaire (note « agent 10 - … ») pour que l'agent 11 les démonte."
+  },
+  "a_decortiquer": [
+    {
+      "lien": "https://fr.news.yahoo.com/coup-d-%C3%A9tat-france-l-103638198.html",
+      "compte": "Page Facebook/TikTok d'un lycéen burkinabè (faux JT IA, contre-modèle)",
+      "pourquoi_ca_marche": "12-13 M de vues (+ ~10 M pour 3 copies) : fausse reporter face caméra, micro « Live 24 », annonce choc dans la 1re phrase, image-symbole (hélicoptère devant la tour Eiffel, gyrophare) ; mécanique « breaking » à retourner en format de vérification, jamais à copier (Yahoo/20 Minutes 17/12/2025 ; Malay Mail 20/12/2025)"
+    },
+    {
+      "lien": "https://www.cbnews.fr/node/82036",
+      "compte": "AntifakenewsAI (Thomas Huchon)",
+      "pourquoi_ca_marche": "pair légitime : 1 script → 3 vidéos via avatar HeyGen, gabarit motion design fixe, publication < 2 h après l'info ; marche par la caution du journaliste et la vitesse (CB News 05/02/2024). Pas de vidéo précise indexée : on démonte le format."
+    },
+    {
+      "lien": "https://www.anijam.ai/blog/instagram-reels-trends/",
+      "compte": "Formats Reels montants (séries IA à personnages récurrents, « loading 0→100 % »)",
+      "pourquoi_ca_marche": "comptes de niche qui livrent la promesse dès la 1re seconde, jauge de progression qui retient, épisodes numérotés qui fidélisent (Anijam maj 10/10/2026, chiffres non vérifiés). Remplace faute d'accès aux Reels de laboscope/belltakesocial/phyzolof."
+    }
   ]
 }
