@@ -546,7 +546,7 @@ def publier_ce_qui_est_du() -> None:
         p = profile["planning"]
         quand = fiche.get("publication_le")  # date + heure précises (ISO), prioritaires sur l'heure
         h_pub = fiche.get("publication_heure", p.get("publication_heure", 18))
-        m_pub = fiche.get("publication_minute", p.get("publication_minute", 0))
+        m_pub = fiche.get("publication_minute", 0) if "publication_heure" in fiche else p.get("publication_minute", 0)
         pret = (datetime.fromisoformat(quand) <= now) if quand else (now.hour, now.minute) >= (h_pub, m_pub)
         if fiche["statut"] == "approuvee" and pret \
                 and now.isoweekday() in p.get("publication_jours", range(1, 8)) and fiche.get("erreurs", 0) < 3:
