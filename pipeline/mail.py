@@ -200,7 +200,7 @@ def _ranger(m, i, msg) -> None:
     except Exception:
         pass
     labels = [LABEL_AGENTS, lab]
-    if any(k in sujet for k in ("Vidéo prête à valider", "Vidéo montée", "Vidéo publiée")):
+    if any(k in sujet for k in ("Vidéo prête à valider", "Vidéo montée", "Vidéo publiée", "Vidéo finie")):
         labels.append(RENDUS)  # copie dans « Manager - rendus finaux »
         try:
             m.create(f'"{RENDUS}"')
