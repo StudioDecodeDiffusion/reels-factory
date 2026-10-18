@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-18",
+  "note": "Les 3 comptes signalés (laboscope, belltakesocial, phyzolof) n'ont aucun Reel indexé publiquement : recettes tirées de vidéos/formats documentés par la presse. On reprend des mécaniques, aucun contenu.",
+  "recettes": [
+    {
+      "source": "https://fr.news.yahoo.com/coup-d-%C3%A9tat-france-l-103638198.html",
+      "compte": "Faux JT IA du « coup d'État à Paris » (contre-modèle, 12-13 M de vues)",
+      "accroche": "0-2 s : reporter face caméra, micro siglé « Live 24 », annonce choc dès la 1re phrase (« chute de Macron ») ; promesse = une info énorme que personne d'autre n'a.",
+      "structure": "plan unique de présentatrice entrecoupé de 2-3 plans d'illustration (militaire armé, gyrophare, hélicoptère devant la tour Eiffel) ; la révélation est donnée tout de suite, la suite n'est que confirmation visuelle. Durée et nombre exact de plans non documentés.",
+      "animation": "réalisme vidéo (IA), image-symbole immédiatement lisible (tour Eiffel = Paris), habillage TV minimal (logo de micro).",
+      "son": "voix de reporter en direct ; détails sonores non documentés (estimation : ambiance urgence).",
+      "fin": "pas de CTA connu ; la viralité vient du partage inquiet (un chef d'État étranger a écrit à Macron).",
+      "recette_decode": "Format « Vrai ou faux JT ? » : mise_en_page jt, bandeau « FLASH » sur 1 s, Lou présentatrice lit le faux titre (entre guillemets, tampon « CIRCULE EN LIGNE ») ; coupe sèche + glitch ; Déco arrive en duplex : « Stop. On vérifie. » ; scène checklist avec 3 indices (logo inventé, aucune source officielle, image-symbole trop parfaite) tamponnés FAUX ; bigstat « 13 M de vues, 7 € gagnés » (sources en petit) ; fin : « Avant de partager : qui le dit, où, quand ? ». Accroche breaking, fonctionnement vrai_faux.",
+      "scene_manquante": "« loupe » : un cadre d'image pixel art générique (jamais la vraie vidéo) sur lequel une loupe se déplace et pose 3 marqueurs numérotés qui s'ouvrent en bulles d'indice (8-12 images chacun, ressort amorti, sfx ding) ; paramètres : decor (ville|plateau|rue), indices[{x,y,texte}]."
+    },
+    {
+      "source": "https://www.cbnews.fr/node/82036",
+      "compte": "AntifakenewsAI (Thomas Huchon)",
+      "accroche": "visage identifié d'un journaliste (avatar) qui nomme d'emblée la fausse info ; la crédibilité du porteur sert d'accroche.",
+      "structure": "1 script validé → 3 vidéos générées (variantes) ; gabarit motion design fixe ; publication < 2 h après l'info (CB News 05/02/2024). Durée/plan non documentés.",
+      "animation": "avatar face caméra + habillage motion design prédéfini (titres, cartons) qui rend la série reconnaissable.",
+      "son": "voix clonée du journaliste ; musique non documentée.",
+      "fin": "non documentée.",
+      "recette_decode": "Reprendre deux mécaniques : (1) gabarit d'identité fixe de 1 s en ouverture (générique « Décodé » + date) pour être reconnu dès la 1re image, le reste varie selon le catalogue ; (2) 1 script → 2 variantes d'accroche testées (test A/B de l'agent 3 : même corps, accroche chiffre_geant vs question_choc). Lou/Déco restent des personnages animés, pas d'avatar d'humain réel.",
+      "scene_manquante": "« generique » : carton de 20-30 images (logo pixel Décodé, numéro d'épisode, date) avec un jingle 8 bits de 1 s, réutilisable en ouverture de toutes les vidéos d'une série."
+    },
+    {
+      "source": "https://www.anijam.ai/blog/instagram-reels-trends/",
+      "compte": "Formats Reels montants : séries IA à personnages récurrents + « loading 0→100 % »",
+      "accroche": "promesse livrée dans la 1re seconde ; titre « Épisode N » ou jauge à 0 % qui pose une attente.",
+      "structure": "coupes calées sur le beat ; chaque coupe fait avancer un pourcentage (0→100 %) ; épisodes numérotés qui donnent envie de voir le précédent/suivant (Anijam maj 10/10/2026, estimation).",
+      "animation": "barre de progression persistante, compteur qui saute de palier à chaque coupe, texte en surimpression porteur de la chute.",
+      "son": "son tendance accéléré, coupes sur les temps forts.",
+      "fin": "jauge à 100 % = fin ; « épisode N+1 demain » pour la série.",
+      "recette_decode": "« L'info en chargement » : jauge en haut (sous le bandeau date) qui passe 0 → 25 → 50 → 75 → 100 % à chaque fait sourcé ; chaque palier = une scène courte (counter, bars, compare) coupée sur le beat (musique trap8bit ou house, energie 2→3) ; à 100 % Déco : « Info chargée. » + CTA. Pour la série : titre « Décodé · ép. N » dans le bandeau et rappel de l'épisode précédent en 1 phrase.",
+      "scene_manquante": "« jauge » : overlay persistant sur toute la vidéo (pas une scène), barre pixel 0-100 % en haut (y≈240 px), paramètres paliers[{t_s, pct, label}], remplissage en 10-15 images easing out + blip 8 bits et légère secousse à chaque palier."
+    }
+  ]
+}
