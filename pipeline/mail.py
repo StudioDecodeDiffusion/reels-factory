@@ -184,6 +184,29 @@ def sans_citation(texte: str) -> str:
     return "\n".join(lignes).strip()
 
 
+def dossier(agent: str) -> str:
+    a = str(agent).split(".")[0]
+    return f"Decode/Agent {a}" if a.isdigit() else "Decode/Manager"
+
+
+def _ranger(m, i, msg) -> None:
+    """Étiquette « Decode/Agent N » et sort de la boîte de réception, sauf ce qui demande une action
+    (vidéo à valider, échecs, token) qui reste AUSSI dans la boîte de réception."""
+    sujet = str(make_header(decode_header(msg.get("Subject", ""))))
+    lab = dossier(msg.get("X-Decode-Agent", ""))
+    try:
+        m.create(f'"{lab}"')
+    except Exception:
+        pass
+    try:
+        m.store(i, "+X-GM-LABELS", f'("{LABEL_AGENTS}" "{lab}")')
+        important = any(k in sujet for k in ("à valider", "❌", "Échec", "Token", "⚠"))
+        if not important:
+            m.store(i, "-X-GM-LABELS", "\\Inbox")
+    except Exception as e:
+        print(f"rangement impossible : {e}")
+
+
 def lire_nouveaux() -> list[dict]:
     """Mails non traités de la boîte du studio (hors mails envoyés par les agents)."""
     out = []
@@ -191,16 +214,19 @@ def lire_nouveaux() -> list[dict]:
     m.login(adresse(), os.environ["GMAIL_APP_PASSWORD"])
     m.select("INBOX")
     # non lus, ni déjà traités, ni envoyés par un agent (Gmail X-GM-RAW = même syntaxe que la recherche Gmail)
+    if not state.load("rangement_dossiers", {}).get("fait"):  # une fois : ranger les anciens mails d'agents
+        _, anciens = m.search(None, "X-GM-RAW", f'"label:{LABEL_AGENTS}"')
+        for i in anciens[0].split():
+            _, data = m.fetch(i, "(BODY.PEEK[HEADER])")
+            _ranger(m, i, email.message_from_bytes(data[0][1]))
+        state.save("rangement_dossiers", {"fait": True, "date": state.now_iso()})
     _, ids = m.search(None, "X-GM-RAW", f'"in:inbox is:unread -label:{LABEL_TRAITE} -label:{LABEL_AGENTS}"')
     for i in ids[0].split():
         _, data = m.fetch(i, "(BODY.PEEK[])")
         msg = email.message_from_bytes(data[0][1])
         if msg.get("X-Decode-Agent"):
-            # mail d'un agent arrivé dans la boîte : on l'étiquette (il reste « non lu » pour toi)
-            try:
-                m.store(i, "+X-GM-LABELS", f'"{LABEL_AGENTS}"')
-            except Exception:
-                pass
+            # mail d'un agent : rangé dans le dossier de l'agent (Decode/Agent N, Decode/Manager), il reste « non lu »
+            _ranger(m, i, msg)
             continue
         sujet = str(make_header(decode_header(msg.get("Subject", ""))))
         out.append({"uid": i, "objet": sujet, "texte": sans_citation(_texte(msg)), "date": msg.get("Date", ""),
