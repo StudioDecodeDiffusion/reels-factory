@@ -211,7 +211,7 @@ export const Photo: React.FC<{scene: Ex<'photo'>; c1: string}> = ({scene, c1}) =
   const p = spring({frame: frame - 6, fps, config: {damping: 12}});
   return (
     <>
-      <div style={{position: 'absolute', left: 40, right: 40, top: 300, height: 980, overflow: 'hidden', border: `10px solid ${INK}`, boxShadow: `16px 16px 0 ${INK}`, backgroundColor: '#222'}}>
+      <div style={{position: 'absolute', left: 40, right: 40, top: 300, height: 780, overflow: 'hidden', border: `10px solid ${INK}`, boxShadow: `16px 16px 0 ${INK}`, backgroundColor: '#222'}}>
         {scene.src ? <Img src={staticFile(scene.src)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${z}) translateX(${x}px)`}} /> : null}
         <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 260, background: 'linear-gradient(transparent, rgba(0,0,0,0.75))'}} />
         {scene.legende ? <div style={{position: 'absolute', left: 30, right: 30, bottom: 50, fontFamily: fontTitre, fontWeight: 800, fontSize: 46, color: '#fff', lineHeight: 1.1}}>{scene.legende}</div> : null}
@@ -236,17 +236,17 @@ export const Pendant: React.FC<{scene: Ex<'pendant'>; c1: string; c2: string}> =
   const per = Math.max(10, Math.floor((scene.duration * fps * 0.5) / Math.max(1, lignes.length)));
   return (
     <>
-      <div style={{position: 'absolute', left: 0, right: 0, top: 230, height: 520 * coupe, overflow: 'hidden', borderBottom: `12px solid ${INK}`, backgroundColor: '#2A1240'}}>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 230, height: 430 * coupe, overflow: 'hidden', borderBottom: `12px solid ${INK}`, backgroundColor: '#2A1240'}}>
         {scene.src ? <Img src={staticFile(scene.src)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${z})`, filter: 'saturate(1.2)'}} /> : null}
         <div style={{position: 'absolute', left: 30, top: 24}}><Sticker couleur={c1} rotate={-3}><span style={{fontFamily: fontTitre, fontWeight: 900, fontSize: 50, color: INK}}>{scene.haut}</span></Sticker></div>
         {scene.credit ? <div style={{position: 'absolute', right: 12, bottom: 8, fontFamily: fontPixel, fontSize: 18, color: '#eee', backgroundColor: 'rgba(0,0,0,0.5)', padding: '2px 6px'}}>© {scene.credit}</div> : null}
       </div>
-      <div style={{position: 'absolute', left: 50, right: 50, top: 790, display: 'flex', flexDirection: 'column', gap: 18}}>
+      <div style={{position: 'absolute', left: 50, right: 50, top: 700, display: 'flex', flexDirection: 'column', gap: 10}}>
         <div><Sticker couleur={c2} rotate={2}><span style={{fontFamily: fontTitre, fontWeight: 900, fontSize: 50, color: INK}}>{scene.bas}</span></Sticker></div>
         {lignes.map((l, i) => {
           const p = spring({frame: frame - 12 - i * per, fps, config: {damping: 10}});
           return (
-            <div key={i} style={{opacity: Math.min(1, p * 1.5), transform: `translateX(${(1 - p) * 60}px)`, fontFamily: fontTitre, fontWeight: 900, fontSize: 58, color: '#fff', WebkitTextStroke: `4px ${INK}`, paintOrder: 'stroke fill'}}>{l}</div>
+            <div key={i} style={{opacity: Math.min(1, p * 1.5), transform: `translateX(${(1 - p) * 60}px)`, fontFamily: fontTitre, fontWeight: 900, fontSize: 46, color: '#fff', WebkitTextStroke: `4px ${INK}`, paintOrder: 'stroke fill'}}>{l}</div>
           );
         })}
       </div>
