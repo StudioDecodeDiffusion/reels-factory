@@ -1,0 +1,313 @@
+{
+  "theme": {
+    "fond": "#0E1116",
+    "texte": "#F4F1EA",
+    "accent": "#FF5A36",
+    "accent2": "#3FA7FF",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "18 octobre 2026",
+    "grille": false,
+    "style": "pixel",
+    "palette": [
+      "#FFD23F",
+      "#3D5AFE",
+      "#FF4F81",
+      "#2EC4B6",
+      "#1B1F3B",
+      "#FF8A1F"
+    ],
+    "tenues": {
+      "narrateur": "hiver",
+      "mascotte": "detective"
+    }
+  },
+  "musique": {
+    "ambiance": "tension",
+    "volume": 0.4
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "duration": 8.8,
+      "sprite": "danger",
+      "sprite_anim": "shake",
+      "title": "⚠ Attention : contenu effrayant",
+      "subtitle": "les chiffres du 17 octobre",
+      "fond": "#1B1F3B",
+      "musique": "effroi",
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Attention, contenu effrayant : une seule manif, et deux chiffres.",
+          "expression": "choc"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Et ils ne sont pas du tout d'accord !",
+          "expression": "clin"
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "duration": 12.8,
+      "title": "On était combien ?",
+      "left": {
+        "label": "Intérieur",
+        "value": "550K",
+        "caption": "dont 110 000 à Paris"
+      },
+      "right": {
+        "label": "Organisateurs",
+        "value": "800K",
+        "caption": "repris par la CGT"
+      },
+      "musique": {
+        "ambiance": "tension",
+        "tempo": 120
+      },
+      "sfx": [
+        "whoosh",
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Alors, on était combien dans la rue, samedi ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Cinq cent cinquante mille selon le ministère de l'Intérieur. Huit cent mille selon les organisateurs, chiffre repris par la CGT.",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "counter",
+      "duration": 10.0,
+      "from": 0.0,
+      "to": 250000.0,
+      "prefix": "",
+      "suffix": "",
+      "decimals": 0,
+      "label": "personnes d'écart entre les deux",
+      "musique": {
+        "ambiance": "tension",
+        "tempo": 120
+      },
+      "sfx": [
+        "whoosh",
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Deux cent cinquante mille d'écart ? Et à Paris ?",
+          "expression": "choc"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Cent dix mille, selon le ministre. Chaque camp compte avec sa méthode.",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "kinetic",
+      "duration": 10.8,
+      "lines": [
+        "Le prix du carburant",
+        "La vie chère",
+        "Smic et salaires"
+      ],
+      "highlight": "carburant",
+      "sprite": "pompe",
+      "sprite_anim": "shake",
+      "musique": "curieux",
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et ils réclamaient quoi, concrètement ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Au départ, le prix du carburant. Puis la vie chère. La CGT, elle, réclame un Smic plus haut.",
+          "expression": "colere"
+        }
+      ],
+      "fond": "#FF8A1F"
+    },
+    {
+      "type": "bars",
+      "duration": 10.4,
+      "title": "Interpellations",
+      "items": [
+        {
+          "label": "Vers 20 h",
+          "value": 400.0
+        },
+        {
+          "label": "Soirée",
+          "value": 1200.0
+        }
+      ],
+      "unit": "",
+      "sprite": "graphique",
+      "sprite_anim": "grow",
+      "musique": {
+        "ambiance": "tension",
+        "tempo": 90
+      },
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il y a eu beaucoup d'incidents ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Environ quatre cents vers vingt heures, selon Nuñez. Puis mille deux cents le soir, selon Lecornu.",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "counter",
+      "duration": 14.3,
+      "from": 0.0,
+      "to": 150.0,
+      "prefix": "",
+      "suffix": "",
+      "decimals": 0,
+      "label": "policiers et gendarmes blessés",
+      "sprite": "flamme",
+      "sprite_anim": "float",
+      "musique": {
+        "ambiance": "tension",
+        "tempo": 80
+      },
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Cent cinquante policiers et gendarmes blessés. Et l'hôtel de ville de Limoges a brûlé.",
+          "expression": "triste"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Mais la grande majorité défilait dans le calme, non ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Oui, le maire de Paris le souligne lui-même.",
+          "expression": "neutre"
+        }
+      ],
+      "fond": "#2EC4B6"
+    },
+    {
+      "type": "kinetic",
+      "duration": 9.6,
+      "lines": [
+        "Macron : « aucune",
+        "place pour la violence »",
+        "Lecornu : loi",
+        "« casseurs-payeurs »"
+      ],
+      "highlight": "violence",
+      "sprite": "document",
+      "sprite_anim": "bounce",
+      "musique": "curieux",
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et le gouvernement, il répond quoi ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Macron promet que les casseurs seront poursuivis et punis. Lecornu maintient sa loi casseurs-payeurs.",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "duration": 10.8,
+      "title": "Et maintenant ?",
+      "events": [
+        {
+          "date": "13 oct.",
+          "text": "Budget 2027 débattu"
+        },
+        {
+          "date": "17 oct.",
+          "text": "Mobilisation"
+        },
+        {
+          "date": "5 nov.",
+          "text": "Grève intersyndicale"
+        }
+      ],
+      "sprite": "calendrier",
+      "sprite_anim": "bounce",
+      "musique": "joyeux",
+      "sfx": [
+        "whoosh",
+        "pop"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et maintenant, c'est quoi la suite ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Rendez-vous le jeudi cinq novembre : grève de toute l'intersyndicale, pour les salaires et les services publics.",
+          "expression": "content"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "duration": 10.8,
+      "text": "Deux chiffres, une même colère",
+      "cta": "Abonne-toi pour l'actu décodée chaque soir",
+      "musique": "joyeux",
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Donc à retenir : cinq cent cinquante mille ou huit cent mille, la colère est bien là.",
+          "expression": "content"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Abonne-toi pour l'actu décodée chaque soir !",
+          "expression": "rire"
+        }
+      ]
+    }
+  ]
+}
