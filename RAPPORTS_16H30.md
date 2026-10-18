@@ -55,3 +55,6 @@ Termine par une ligne par compte : « rapports 8 et 3 envoyés ».
 - Ne jamais se connecter à Instagram, ne rien publier, ne jamais répondre soi-même aux commentaires :
   les réponses proposées partent seulement si le propriétaire répond « REP … » au mail de l'agent 8.
 - Ne modifie jamais `.github/`, `pipeline/` ni `video/src/`.
+
+## 3. Le lundi seulement — Agent 12 (stratégie de revenus)
+Suis `STRATEGIE_12.md` : l'agent 12 lit le travail des agents 8 et 3 et leur répond.

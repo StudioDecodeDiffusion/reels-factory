@@ -322,7 +322,7 @@ def facteur() -> None:
                                                           "Je l'appliquerai dès mon prochain travail."), R_NOTE.format(n=n))
             continue
         mm = re.match(r"^\s*agent\s*(?:n\s*[°o]?\s*)?(\d+)(?:[.,](\d+))?\s*[-–—:]?\s*(.*)$", m["objet"], re.I)
-        if mm and 1 <= int(mm.group(1)) <= 11:
+        if mm and 1 <= int(mm.group(1)) <= 12:
             n, sous = int(mm.group(1)), mm.group(2)
             profil = next((p for p in all_profiles() if str(load_profile(p).get("numero")) == sous), None) if sous else "tous"
             sujet_note = mm.group(3).strip()
