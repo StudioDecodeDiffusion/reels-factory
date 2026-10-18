@@ -28,7 +28,8 @@ from .config import OUTPUT, TZ
 SMTP = ("smtp.gmail.com", 465)
 IMAP = "imap.gmail.com"
 LABEL_TRAITE = "Decode-traite"   # tes mails déjà lus par le facteur
-LABEL_AGENTS = "Decode-agents"   # mails envoyés par les agents
+LABEL_AGENTS = "Decode-agents"
+RENDUS = "Decode/Manager - rendus finaux"   # vidéos finales : à valider, montées, publiées   # mails envoyés par les agents
 
 NOMS = {1: "Veille actualité", 2: "Veille tendances", 3: "Résultats du compte", 4: "Concept & critique",
         5: "Scénario", 6: "Directeur artistique", 7: "Générateur vidéo", 8: "Community manager", 9: "Critique",
@@ -198,8 +199,15 @@ def _ranger(m, i, msg) -> None:
         m.create(f'"{lab}"')
     except Exception:
         pass
+    labels = [LABEL_AGENTS, lab]
+    if any(k in sujet for k in ("Vidéo prête à valider", "Vidéo montée", "Vidéo publiée")):
+        labels.append(RENDUS)  # copie dans « Manager - rendus finaux »
+        try:
+            m.create(f'"{RENDUS}"')
+        except Exception:
+            pass
     try:
-        m.store(i, "+X-GM-LABELS", f'("{LABEL_AGENTS}" "{lab}")')
+        m.store(i, "+X-GM-LABELS", "(" + " ".join(f'"{x}"' for x in labels) + ")")
         important = any(k in sujet for k in ("à valider", "❌", "Échec", "Token", "⚠"))
         if not important:
             m.store(i, "-X-GM-LABELS", "\\Inbox")
@@ -217,7 +225,8 @@ def lire_nouveaux() -> list[dict]:
     # non lus, ni déjà traités, ni envoyés par un agent (Gmail X-GM-RAW = même syntaxe que la recherche Gmail)
     # à chaque passage : tout mail d'agent encore dans la boîte de réception (lu ou non) est rangé
     bilan = {"ranges": 0, "erreurs": [], "date": state.now_iso()}
-    _, tous = m.search(None, "X-GM-RAW", '"in:inbox from:me"')
+    requete = '"in:inbox from:me"' if state.load("rangement_dossiers", {}).get("rendus_v1") else '"from:me"'
+    _, tous = m.search(None, "X-GM-RAW", requete)
     for i in tous[0].split()[-400:]:
         try:
             _, data = m.fetch(i, "(BODY.PEEK[HEADER.FIELDS (X-DECODE-AGENT SUBJECT)])")
@@ -227,7 +236,7 @@ def lire_nouveaux() -> list[dict]:
                 bilan["ranges"] += 1
         except Exception as e:
             bilan["erreurs"].append(str(e)[:120])
-    state.save("rangement_dossiers", {**bilan, "erreurs": bilan["erreurs"][:5]})
+    state.save("rangement_dossiers", {**bilan, "erreurs": bilan["erreurs"][:5], "rendus_v1": True})
     _, ids = m.search(None, "X-GM-RAW", f'"in:inbox is:unread -label:{LABEL_TRAITE} -label:{LABEL_AGENTS}"')
     for i in ids[0].split():
         _, data = m.fetch(i, "(BODY.PEEK[])")
