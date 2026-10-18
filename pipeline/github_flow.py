@@ -135,6 +135,13 @@ def depot(drop_dir: str) -> None:
             mail.envoyer("Manager", f"📍 {fiche.get('titre', 'Avancement')} · {nom}", md(fiche.get("corps_md", "")), R_MANAGER,
                          ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": fiche.get("agent")})
 
+        elif statut == "relance":  # relancer des rendus annulés
+            for job in fiche.get("jobs", []):
+                _envoyer_au_rendu(job)
+            mail.envoyer("Manager", f"⏳ Rendus relancés · {nom} · {len(fiche.get('jobs', []))} vidéo(s)",
+                         md("Rendus relancés : " + ", ".join(fiche.get("jobs", []))), R_MANAGER,
+                         ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"]})
+
         elif statut == "story":  # story immédiate (image fournie par la session)
             png = d / "story.png"
             try:
