@@ -38,6 +38,17 @@ python3 -m pipeline.tool creneau --profile <compte>
   la vidéo résume les grandes infos de la semaine (lundi → dimanche), à partir de `state/historique_<compte>.json`
   et des veilles de la semaine, avec une mécanique propre au résumé (top, récap rapide, « ce qu'il fallait retenir »).
 
+## 00bis. Spécialisation des agents (modèles par rôle)
+Chaque agent travaille dans **son propre sous-agent** (outil Agent), avec uniquement son fichier `agents/N_*.md`, ses notes et
+les sorties de l'agent précédent ; le Manager (session principale) transmet les fichiers et contrôle chaque sortie.
+| Agent | Modèle | Pourquoi |
+|---|---|---|
+| 4 concept, 5 script, 9 critique (pré et finale) | opus | écriture, angle, esprit critique |
+| 6 direction artistique, 11 rétro-ingénierie | opus | goût visuel, analyse fine |
+| 1, 2, 10 veilles, 3 chiffres, 12 stratégie | sonnet | recherche et synthèse |
+| 7 génération (spec, rendu), 8 community, 13 | sonnet / haiku | exécution |
+Si le quota Claude est élevé (relevé > 75 %), tout passer en sonnet sauf 5 et 9.
+
 ## 000. File de sujets du propriétaire (prioritaire)
 Lire `state/file_sujets_actu.json` : prendre le **premier sujet non fait** compatible avec le créneau (un sujet avec
 `creneau` n'est produit que pour ce créneau). Utiliser sa trend. Après le dépôt, passer `fait` à true. File vide → choix libre.
