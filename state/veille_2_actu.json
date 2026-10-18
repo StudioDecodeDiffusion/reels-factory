@@ -1,34 +1,73 @@
 {
-  "date": "2026-10-17",
-  "formats": [
-    {"nom": "Chiffre géant en ouverture", "description": "Un seul chiffre plein écran dans les 2 premières secondes (« +156 € », « 3,1 % »), puis le pourquoi. Fonctionne pour un compte inconnu (agent 3) et rejoint la note trends du propriétaire.", "source": "state/rapport_3_actu.json + trends/actu.md"},
-    {"nom": "« Comment une vidéo TikTok est devenue une manif »", "description": "Récit en timeline : 7 sept. vidéo → 9 sept. comptes relais + affiches IA → 17 oct. rue. Méta-sujet réseaux sociaux, très partageable par les 18-35.", "source": "https://www.clairevue.info/post/gilets-jaunes-17-octobre-2026-tiktok-rumeur"},
-    {"nom": "Vrai / pas prouvé", "description": "Déco lance la rumeur, Lou trie entre établi, non prouvé et démenti (inspiré de l'article Claire Vue). Bon pour la confiance : 42 % des gens évitent parfois l'info, et les créateurs sont vus comme plus clairs.", "source": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary"},
-    {"nom": "Avant / après en transition", "description": "Adapter la trend « Upside Down Inside Out » (transition mains) : facture d'octobre → facture de novembre. Garder la même position de personnage dans les deux plans.", "source": "https://metricool.com/fr/trend-tiktok-du-moment/"},
-    {"nom": "Faux avertissement « contenu sensible » (Halloween)", "description": "Parodie de l'écran d'avertissement Instagram : « Attention, contenu effrayant… ta facture de gaz ». À utiliser avant le 31 octobre.", "source": "https://yoursocial.team/blog/trend-drops-october-part-one"},
-    {"nom": "Moins de 2 minutes, une seule idée", "description": "Les vidéos d'info sur TikTok font majoritairement moins de 2 minutes. Nos 45-60 s sont dans la cible, et les recommandations aux non-abonnés restent plafonnées à 3 minutes sur Instagram.", "source": "https://www.socialpilot.co/blog/instagram-reels-algorithm"}
-  ],
-  "accroches_types": [
-    "« Ta facture de gaz va prendre +156 € cet hiver. Voilà pourquoi. »",
-    "« Une vidéo TikTok de 2018… euh, de septembre, a mis des milliers de gens dans la rue. »",
-    "« Septembre a duré 45 jours ? Ton porte-monnaie confirme. » (reprend la blague qui circule)",
-    "« Vrai ou pas prouvé ? »",
-    "« Ce qui change pour toi au 1er novembre »",
-    "« Stop. Avant de scroller : 3,1 %. »"
-  ],
-  "sujets_qui_buzzent": [
-    {"sujet": "17 octobre / jeunes et gilets jaunes", "detail": "Mèmes ironiques rejouant 2018 (huile de tournesol dans le réservoir, kit de survie lunettes de ski), danses sur « Gilet jaune » de Kopp Johnson ; vidéo d'origine 1,5 à 2 M de vues.", "source": "https://www.streetpress.com/1791802513--reseaux-sociaux-jeunesse-gilet-jaune-17-octobre-prix-carburant-manifestation-lyceens-vie-chere/", "date": "2026-10-12"},
-    {"sujet": "La « fin de septembre difficile » / nouveau départ d'octobre", "detail": "Trend « It's the first of the month », son « Van Buren ».", "source": "https://metricool.com/fr/trend-tiktok-du-moment/", "date": "2026-10-06"},
-    {"sujet": "Sons Reels de la semaine", "detail": "Nicole Kidman (ADÉLA), Patient Zero (Taylor Swift), Upside Down (Diana Ross), Funkytown (Lipps Inc.).", "source": "https://creatordb.app/free-tools/trending-instagram-audio/", "date": "2026-10-14"},
-    {"sujet": "Méfiance anti-IA", "detail": "Trend « anti-AI design » (flyer manuscrit, fait main) ; Instagram impose un label « AI-generated profile » et limite la portée des profils IA non déclarés.", "source": "https://mediastreet.ie/instagram-is-cracking-down-on-ai-slop-in-the-only-way-that-matters/", "date": "2026-09-29"},
-    {"sujet": "Instagram, 1re plateforme d'info des 18-24 ans", "detail": "42 % des 18-24 ans s'y informent ; 52 % ont les réseaux, la vidéo ou les chatbots comme 1re source.", "source": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary", "date": "2026-06"}
-  ],
-  "communaute": "Compte neuf (agent 8) : 0 abonné, 0 publication, aucun commentaire, donc aucune demande ni critique à croiser. Deux versions de la vidéo gazole attendent la validation : n'en publier qu'une (1631, dialogue). Agent 3 : chiffre choc en moins de 2 s, 35-50 s, une seule idée, publication quotidienne à 18 h 30, test dialogue contre narration. Ajouter une question simple en fin de légende pour obtenir les premiers commentaires.",
-  "a_eviter": [
-    "Reprendre les codes militants du 17 octobre (gilet jaune, son de Kopp Johnson) au premier degré : ton neutre exigé, ne pas en faire un appel.",
-    "Présenter les vues TikTok ou le chiffre CGT comme le nombre de manifestants : vues ≠ participants, chiffre syndical ≠ chiffre officiel.",
-    "Reposter ou imiter de trop près des visuels ou sons d'autres créateurs (pénalité d'originalité, comptes « agrégateurs »).",
-    "Masquer l'usage de l'IA : garder la mention « Animation créée avec l'IA. » bien visible.",
-    "Publier deux vidéos quasi identiques (gazole 1518 et 1631)."
-  ]
+ "date": "2026-10-18",
+ "formats": [
+  {
+   "nom": "Faux avertissement « contenu effrayant » (Halloween) — PRIORITÉ propriétaire",
+   "description": "Écran sombre façon avertissement Instagram « contenu sensible », Lou hésite, Déco clique « voir quand même » → révélation : le chiffre qui fait peur (ex. « +1,4 % pour ta retraite… avec 3,1 % d'inflation »). Déjà testé sur la 1re vidéo (accroche « ⚠️ Contenu effrayant… ou pas ? »). À utiliser jusqu'au 31 octobre, intensité max la dernière semaine.",
+   "source": "https://yoursocial.team/blog/trend-drops-october-part-one ; note du propriétaire 2-1-10171837 ; state/stats_actu.json"
+  },
+  {
+   "nom": "« Things you should definitely ghost » (fantôme à pancartes)",
+   "description": "Déco en drap de fantôme pixel art brandit une pancarte par idée reçue (« les grévistes sont des privilégiés », « l'inflation c'est fini »…), Lou répond chiffre sourcé à chaque fois. 4 à 6 pancartes, avant le 31 octobre.",
+   "source": "https://newengen.com/insights/instagram-trends/ ; https://www.takema-studio.com/marques/trends-tiktok-octobre-2026"
+  },
+  {
+   "nom": "« My reaction to… » (réaction qui monte avec les chiffres)",
+   "description": "Déco réagit à peine à un petit chiffre puis de plus en plus fort : +1,4 % (pension) → +6,6 % (gaz) → +21,3 % (énergie) → +35,8 % (tomates). 3 à 5 paliers, parfait pour nos scènes counter/bigstat.",
+   "source": "https://newengen.com/insights/instagram-trends/"
+  },
+  {
+   "nom": "« Message from A » (SMS anonyme signé -A)",
+   "description": "Un SMS à l'écran : « Ta complémentaire prend +1,4 % au 1er novembre. L'inflation, 3,1 %. Bisous. -A ». Lou et Déco décodent. Hook de 2-3 s, très lisible sans le son.",
+   "source": "https://www.ramd.am/blog/trends-tiktok ; https://newengen.com/insights/instagram-trends/"
+  },
+  {
+   "nom": "Creepy fact storytime + son de boîte à musique",
+   "description": "Un fait « effrayant » plein écran sur ambiance lugubre, chute en twist. Son « white rabbit's bells » (Tomb Gazer) en hausse de 35 % en dix jours ; version maison : notre propre musique boîte à musique.",
+   "source": "https://www.socialpilot.co/blog/tiktok-trends"
+  },
+  {
+   "nom": "31 jours d'Halloween / série numérotée",
+   "description": "Numéroter nos vidéos jusqu'au 31 (« Décodé de l'horreur #3 : ta facture de gaz ») pour créer un rendez-vous quotidien.",
+   "source": "https://www.socialpilot.co/blog/tiktok-trends"
+  }
+ ],
+ "accroches_types": [
+  "« ⚠️ Attention : contenu effrayant. Âmes sensibles, ne regardez pas… votre pension de novembre. »",
+  "« Ta retraite complémentaire prend +1,4 %. Les prix, +3,1 %. Fais le calcul. »",
+  "« 550 000 dans la rue samedi. Et personne ne parle de ce qu'ils demandaient. »",
+  "« Message de A : le 5 novembre, toute la France est appelée à la grève. -A »",
+  "« Ma réaction à +1,4 %… à +6,6 %… à +35,8 % ? »",
+  "« Ce qui change pour toi au 1er novembre (et ça fait peur) »"
+ ],
+ "sujets_qui_buzzent": [
+  {
+   "sujet": "L'après-17 octobre",
+   "detail": "#17octobre en tête des tendances X plusieurs jours ; mises en scène humoristiques de « prise de l'Élysée » sur TikTok/Instagram ; débat violences vs revendications après 550 000-800 000 manifestants.",
+   "source": "https://fr.news.yahoo.com/sport/mobilisation-17-octobre-petit-d%C3%A9jeuner-145510686.html"
+  },
+  {
+   "sujet": "La colère lycéenne",
+   "detail": "HugoDécrypte consacre un « En tension » aux lycéens sur France 5 ce dimanche 20 h 45 : bâtiments dégradés, profs non remplacés ; « plus de huit jeunes sur dix redoutent une vie plus difficile ». Le sujet va circuler ce soir et demain.",
+   "source": "https://serie-news.com/tnt/france-5/58184-en-tension-sur-france-5-hugodecrypte-au-coeur-de-la-colere-des-lyceens-18-10-2026"
+  },
+  {
+   "sujet": "La contagion italienne",
+   "detail": "Sur TikTok, de jeunes Italiens reprennent « le 17 octobre, l'Italie sera comme la France » (France Info).",
+   "source": "https://www.franceinfo.fr/monde/italie/le-17-octobre-l-italie-sera-comme-la-france-sur-tiktok-de-jeunes-italiens-s-inspirent-des-mobilisations-francaises_8240449.html"
+  },
+  {
+   "sujet": "Halloween",
+   "detail": "Costume reveal sur « Ramalama (Bang Bang) » (456 000 vidéos), porch reveal, creepy facts : la saison est au sommet jusqu'au 31.",
+   "source": "https://www.socialpilot.co/blog/tiktok-trends"
+  }
+ ],
+ "communaute": "Compte neuf : 2 abonnés, 1 publication (17/10, vidéo « manif née d'un TikTok » avec accroche faux avertissement) : 214 vues, 182 comptes touchés, 3 j'aime, 0 commentaire, 0 partage, 0 enregistrement. Aucune demande ni critique à ce stade (agent 8, 17/10). Priorité : déclencher partages et enregistrements (le partage en DM pèse lourd pour toucher les non-abonnés) et une question simple en fin de légende.",
+ "a_eviter": [
+  "Faire des violences, blessés ou pillages du 17 octobre le sujet (exclusions du profil) ; ne pas reprendre les chiffres non harmonisés (1 200 vs 1 800 interpellations).",
+  "Mèmes « prise de l'Élysée » / perruques : moqueries personnelles et faux contenus → hors charte (attaques personnelles).",
+  "Affiches et photos générées par IA non sourcées qui ont lancé l'appel du 17/10 : ne jamais les reprendre comme preuve.",
+  "Sons sous licence sur un compte pro : privilégier notre musique maison.",
+  "Ressembler au « slop » IA standardisé : source et date visibles à l'écran pour chaque chiffre (agent 10)."
+ ]
 }
