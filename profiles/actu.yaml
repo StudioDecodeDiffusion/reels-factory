@@ -40,6 +40,7 @@ voix:                                   # voix off IA gratuite, générée dans 
 planning:
   generation: "chaque nuit à 00:20"     # tâche planifiée Claude (heure de Paris)
   publication_jours: [1, 2, 3, 4, 5, 6, 7]   # 1 = lundi … 7 = dimanche
+  publication_minute: 30                # test A/B de l'agent 3 : publication à 18 h 30
   publication_heure: 18                 # heure de Paris : la vidéo validée part entre 18h25 et 18h35
   hashtags_max: 5
 

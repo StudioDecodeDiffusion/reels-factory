@@ -22,5 +22,13 @@
     "texte": "Cette nuit il y a DEUX sessions. Session de 0 h 20 : UNIQUEMENT la vidéo « Retraites 2027 : une indexation à trois vitesses » (sujet 5 de l'agent 1 du 17/10), publication à 18 h (drop sans --heure). Session de 1 h 40 : la vidéo « Résumé des manifestations du 17 octobre » (chiffres de participation police/Intérieur ET syndicats, revendications, incidents ou effets concrets, et ce qui est annoncé pour la suite), publication à 12 h (drop avec --heure 12). Garder le faux avertissement en ouverture si pertinent, miniature + story pour chacune.",
     "profil": "actu",
     "traite": true
+  },
+  {
+    "id": "4-4-10181447",
+    "date": "2026-10-18T12:47:01+00:00",
+    "objet": "Test A/B validé",
+    "texte": "À partir du 20/10, sur les 6 vidéos suivantes : alterner le format gagnant du test de l'agent 3 (state/test_ab_actu.json, champ « gagnant ») et un autre format, durée ≈ 50 s, publication à 18 h 30. Le format gagnant ne revient jamais deux fois de suite (règle de variété).",
+    "profil": "actu",
+    "traite": false
   }
 ]
