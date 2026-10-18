@@ -242,7 +242,7 @@ export const Compare: React.FC<P<'compare'>> = ({scene, ctx}) => {
   const card = (side: typeof scene.left, col: string, rot: number, delay: number) => (
     <Sticker couleur={col} rotate={rot} delay={delay} style={{width: 400, textAlign: 'center'}}>
       <div style={{fontFamily: fontPixel, fontSize: 38}}>{side.label}</div>
-      <div style={{...big(encrePour(col), side.value.length > 7 ? 84 : 110), margin: '14px 0', whiteSpace: 'nowrap'}}>{side.value}</div>
+      <div style={{...big(encrePour(col), side.value.length > 7 ? 70 : side.value.length > 5 ? 86 : 110), margin: '14px 0', whiteSpace: 'nowrap'}}>{side.value}</div>
       {side.caption ? <div style={{fontFamily: fontTitre, fontWeight: 700, fontSize: 34}}>{side.caption}</div> : null}
     </Sticker>
   );

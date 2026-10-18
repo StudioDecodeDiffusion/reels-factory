@@ -58,7 +58,7 @@ export const HabillageJT: React.FC<{scene: Scene; tenues: Tenues; accent: string
       ))}
       {/* écran géant derrière la présentatrice */}
       <div style={{position: 'absolute', left: 60, top: 230, width: W - 120, height: 980, border: `10px solid ${INK}`, borderRadius: 18, overflow: 'hidden', boxShadow: `0 0 0 6px ${accent}, 16px 16px 0 ${INK}`}}>
-        <div style={{position: 'absolute', left: 4, top: -250, width: W, height: H, transform: 'scale(0.86)', transformOrigin: '0 0'}}>{children}</div>
+        <div style={{position: 'absolute', left: 22, top: -240, width: W, height: H, transform: 'scale(0.82)', transformOrigin: '0 0'}}>{children}</div>
       </div>
       <div style={{position: 'absolute', top: 160, right: 70, fontFamily: fontPixel, fontSize: 34, color: '#fff', backgroundColor: '#E5133A', padding: '6px 16px', opacity: live ? 1 : 0.5, border: `4px solid ${INK}`}}>● EN DIRECT</div>
       {/* bureau + présentatrice */}
@@ -95,7 +95,7 @@ export const HabillageChat: React.FC<{scene: Scene; accent: string; fond: string
   const {fps} = useVideoConfig();
   const frame = useCurrentFrame();
   const visibles = rs.filter((r) => t >= (r.debut ?? 0) - 0.6);
-  const derniers = visibles.slice(-3);
+  const derniers = visibles.slice(-2);
   return (
     <AbsoluteFill style={{backgroundColor: fond}}>
       <div style={{position: 'absolute', left: 0, top: -170, width: W, height: H, transform: 'scale(0.8)', transformOrigin: '50% 20%'}}>{children}</div>
@@ -116,7 +116,7 @@ export const HabillageChat: React.FC<{scene: Scene; accent: string; fond: string
             const n = tape ? 0 : Math.ceil(Math.min(1, (t - d) / Math.max(0.3, (r.fin ?? d + 2) - d)) * mots.length);
             return (
               <div key={`${i}-${d}`} style={{alignSelf: lou ? 'flex-end' : 'flex-start', maxWidth: '82%', transform: `scale(${p})`, transformOrigin: lou ? '100% 100%' : '0 100%'}}>
-                <div style={{backgroundColor: lou ? accent : '#fff', border: `5px solid ${INK}`, borderRadius: 26, borderBottomRightRadius: lou ? 4 : 26, borderBottomLeftRadius: lou ? 26 : 4, padding: '12px 20px', fontFamily: fontTitre, fontWeight: 700, fontSize: 38, color: INK, lineHeight: 1.2}}>
+                <div style={{backgroundColor: lou ? accent : '#fff', border: `5px solid ${INK}`, borderRadius: 26, borderBottomRightRadius: lou ? 4 : 26, borderBottomLeftRadius: lou ? 26 : 4, padding: '10px 18px', fontFamily: fontTitre, fontWeight: 700, fontSize: 34, color: INK, lineHeight: 1.2}}>
                   {tape ? <span style={{letterSpacing: 6}}>{'•••'.slice(0, 1 + (Math.floor(frame / 6) % 3))}</span> : (
                     <>
                       <span>{mots.slice(0, n).join(' ')}</span>
@@ -199,7 +199,7 @@ export const BigStat: React.FC<{scene: B; c1: string; bg: string}> = ({scene, c1
   return (
     <>
       <div style={{position: 'absolute', left: 0, right: 0, top: 420, textAlign: 'center', transform: `scale(${0.4 + 0.6 * p}) translateX(${glitch}px)`}}>
-        <span style={{fontFamily: fontTitre, fontWeight: 900, fontSize: scene.value.length > 6 ? 230 : 300, color: c1, WebkitTextStroke: `10px ${INK}`, paintOrder: 'stroke fill', textShadow: `16px 16px 0 ${INK}`, letterSpacing: -6}}>{scene.value}</span>
+        <span style={{fontFamily: fontTitre, fontWeight: 900, fontSize: scene.value.length > 8 ? 150 : scene.value.length > 6 ? 210 : 300, whiteSpace: 'nowrap', color: c1, WebkitTextStroke: `10px ${INK}`, paintOrder: 'stroke fill', textShadow: `16px 16px 0 ${INK}`, letterSpacing: -6}}>{scene.value}</span>
       </div>
       {frame < 14 ? <div style={{position: 'absolute', left: 0, right: 0, top: 470 + glitch * 4, height: 30, backgroundColor: '#FF4F81', opacity: 0.6}} /> : null}
       <div style={{position: 'absolute', left: 80, right: 80, top: 800, textAlign: 'center', opacity: interpolate(frame, [10, 20], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}}>

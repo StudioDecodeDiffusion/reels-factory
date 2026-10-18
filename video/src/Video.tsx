@@ -59,7 +59,7 @@ const ScenePixel: React.FC<{s: Scene; i: number; theme: Theme; bg: string; prevB
   return (
     <AbsoluteFill>
       {mep === 'jt' ? (
-        <HabillageJT scene={s} tenues={tenues} accent={c1} titre={theme.titre ?? theme.bandeau ?? ''}>{contenu}</HabillageJT>
+        <HabillageJT scene={s} tenues={tenues} accent={theme.accent2 ?? c1} titre={theme.titre ?? theme.bandeau ?? ''}>{contenu}</HabillageJT>
       ) : mep === 'chat' ? (
         <HabillageChat scene={s} accent={c1} fond={bg}>{contenu}</HabillageChat>
       ) : mep === 'plein_ecran' || mep === 'quiz' ? (
