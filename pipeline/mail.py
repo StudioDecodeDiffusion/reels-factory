@@ -242,7 +242,8 @@ def agent13(m) -> None:
         pass
     for requete, dossier, archiver, jeter in REGLES_13:
       try:
-        _, ids = m.search(None, "X-GM-RAW", '"' + requete.replace('"', '\\"') + '"')
+        m.literal = requete.encode("utf-8")  # envoi en littéral UTF-8 (accents, émojis)
+        _, ids = m.search("UTF-8", "X-GM-RAW")
         for i in ids[0].split()[-200:]:
             if dossier:
                 try:
