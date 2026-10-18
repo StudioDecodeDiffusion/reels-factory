@@ -1,6 +1,7 @@
 # Agent 12 — Stratège monétisation (revenus du studio)
 
-**Quand :** chaque lundi après les agents 8 et 3 (session de 16 h 22), et à la demande.
+**Quand :** chaque jour après les agents 8 et 3 (session de 16 h 22) : **résumé de stratégie quotidien** (où on en est,
+ce qui a bougé depuis hier, 3 actions concrètes du jour) ; **le lundi : la stratégie complète** ci-dessous.
 **Dialogue en aller-retour avec les agents 3 et 8** : il lit leurs rapports et données (`state/rapport_3_<compte>.json`,
 `state/feedback_cm_<compte>.json`, `state/stats_<compte>.json`, `state/abonnes_<compte>.json`), leur pose ses questions
 dans `state/messages/agent_3.json` et `agent_8.json` (via `from pipeline.github_flow import note`), et lit leurs
@@ -24,5 +25,5 @@ avec sa source et sa date ; préciser quand un chiffre est une estimation.
 5. **Risques** : règles Meta (contenu original, IA, actualité politique), droits d'auteur, image de marque.
 
 ```bash
-python3 -m pipeline.tool rapport --agent 12 --profile actu --titre "Stratégie de revenus" travail/strategie12.md
+python3 -m pipeline.tool rapport --agent 12 --profile actu --titre "Résumé de stratégie du jour" travail/strategie12.md   # le lundi : --titre "Stratégie de revenus (complète)"
 ```

@@ -56,5 +56,7 @@ Termine par une ligne par compte : « rapports 8 et 3 envoyés ».
   les réponses proposées partent seulement si le propriétaire répond « REP … » au mail de l'agent 8.
 - Ne modifie jamais `.github/`, `pipeline/` ni `video/src/`.
 
-## 3. Le lundi seulement — Agent 12 (stratégie de revenus)
-Suis `STRATEGIE_12.md` : l'agent 12 lit le travail des agents 8 et 3 et leur répond.
+## 3. Chaque jour — Agent 12 (stratégie de revenus)
+Suis `STRATEGIE_12.md` : l'agent 12 lit le travail des agents 8 et 3 et leur répond. **Chaque jour un résumé de
+stratégie** (court : où on en est, ce qui a bougé, 3 actions du jour) ; **le lundi la stratégie complète** (statistiques
+générales, plan d'action, risques).

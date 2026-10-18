@@ -1,6 +1,6 @@
 # Décodé Studio — pipeline de Reels
 
-- 16 h 30 : rapports des agents 8 puis 3 (+ agent 12, stratégie de revenus, le lundi) → suivre `RAPPORTS_16H30.md`.
+- 16 h 30 : rapports des agents 8 puis 3 (+ agent 12 : résumé de stratégie chaque jour, stratégie complète le lundi) → suivre `RAPPORTS_16H30.md`.
 - 17 h 40 : veilles des agents 1 et 2 (mails à 18 h) → suivre `VEILLE_17H40.md`.
 - 17 h 50 chaque jour : agents 10 (comptes d'actu IA) puis 11 (rétro-ingénierie) → `HEBDO_10.md`.
 - 13 h 05 : vidéo de l'après-midi (créneau 18 h 30) ; 0 h 20 : vidéo de la nuit (créneau 12 h 30) → `NUIT.md`.
