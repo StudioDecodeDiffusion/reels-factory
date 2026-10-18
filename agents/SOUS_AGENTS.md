@@ -12,9 +12,7 @@ les comptes. Pour chaque compte, il se divise en **sous-agent N.k** (k = `numero
 | 2 | `eco` | actu française, plutôt à droite, économie |
 | 3 | `science` | vulgarisation scientifique |
 | 4 | `fun` | animation, trends et autres |
-| 5 | `qhse_veille` | veille réglementaire QHSE |
-| 6 | `qhse_cours` | cours QHSE (séries) |
-| 7 | `qhse_actu` | actu QHSE |
+| 5 | `qhse` | QHSE : veille réglementaire, cours et actu en rotation |
 
 **Mails :** un sous-agent signe « Agent N.k - JJ/MM/AA - titre » (ex. « Agent 6.2 » = directeur artistique du
 compte Éco). **Notes du propriétaire :** « agent 6 - … » vaut pour tous les comptes ; « agent 6.2 - … » pour

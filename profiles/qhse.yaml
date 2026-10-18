@@ -1,18 +1,20 @@
-# Compte 6 : Décodé · QHSE Cours
-id: qhse_cours
-numero: 6                       # n° de compte : sous-agents « Agent N.6 »
-nom_compte: "Décodé · QHSE Cours"
+# Compte 5 : Décodé · QHSE (veille réglementaire, cours et actu QHSE, en rotation)
+id: qhse
+numero: 5                       # n° de compte : sous-agents « Agent N.5 »
+nom_compte: "Décodé · QHSE"
 instagram: ""                       # compte à créer
-instagram_secret: IG_TOKEN_QHSE_COURS
+instagram_secret: IG_TOKEN_QHSE
 langue: fr
 public: >-
   responsables et animateurs QHSE, managers de PME, préventeurs, étudiants en licence/master QHSE,
   candidats aux certifications ; ils veulent rester à jour et réviser vite, sur leur téléphone
 ton: "expert mais accessible, précis, pédagogique ; jamais alarmiste ; toujours la référence du texte"
-niche: "COURS en séries numérotées : ISO 45001, 14001, 9001, document unique, analyse des risques, 5 pourquoi, arbre des causes…"
-series_en_cours:
-  - nom: "ISO 45001 en 10 épisodes"
-    episode_suivant: 1
+niche: "trois formats en rotation : VEILLE réglementaire (un texte, ce qui change, pour qui, quand) ; COURS en séries numérotées (ISO 45001, 14001, 9001, document unique, analyse des risques…) ; ACTU QHSE (chiffres officiels, normes, retours d'expérience sans sensationnalisme)"
+formats:
+  rotation: [veille, cours, actu]
+  series_en_cours:
+    - nom: "ISO 45001 en 10 épisodes"
+      episode_suivant: 1
 
 veille:
   actualite: true
@@ -30,7 +32,7 @@ veille:
 video:
   duree_cible_s: 60
   scenes_autorisees: [hook, kinetic, counter, bars, timeline, dots, compare, outro, quiz, bigstat, checklist, pancartes, sms, debat, reaction, conte, photo, pendant]
-  cta: "Abonne-toi : un cours QHSE en 1 minute"
+  cta: "Abonne-toi : la QHSE décodée"
 
 voix:                                   # voix off IA gratuite, générée dans GitHub Actions
   active: true
@@ -66,6 +68,9 @@ charte_initiale:
 musique: "curieux"            # ambiance par défaut si l'agent 6 n'en choisit pas
 
 sous_agents:
-  4: Avancer d'un épisode dans la série en cours (state/series_qhse_cours.json).
-  5: 'Pédagogie : une notion, un exemple, un piège à éviter.'
-  9: Notions conformes aux normes et à l'INRS.
+  1: 'Veille : textes officiels récents (Légifrance, JO, EUR-Lex, AFNOR/ISO) ; actu : santé-sécurité, environnement,
+    qualité, RSE.'
+  4: Respecter la rotation veille → cours → actu ; pour un cours, avancer d'un épisode dans la série.
+  5: 'Pédagogie : une notion, un exemple, un piège à éviter ; référence exacte du texte.'
+  6: Sobre, jamais choquant ; aucune victime montrée.
+  9: Chaque obligation avec sa référence exacte ; aucune victime nommée ; chiffres officiels uniquement.

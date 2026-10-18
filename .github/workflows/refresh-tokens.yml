@@ -15,13 +15,11 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
           IG_TOKEN_ACTU: ${{ secrets.IG_TOKEN_ACTU }}
           IG_TOKEN_ECO: ${{ secrets.IG_TOKEN_ECO }}
-          IG_TOKEN_QHSE_VEILLE: ${{ secrets.IG_TOKEN_QHSE_VEILLE }}
-          IG_TOKEN_QHSE_COURS: ${{ secrets.IG_TOKEN_QHSE_COURS }}
-          IG_TOKEN_QHSE_ACTU: ${{ secrets.IG_TOKEN_QHSE_ACTU }}
+          IG_TOKEN_QHSE: ${{ secrets.IG_TOKEN_QHSE }}
           IG_TOKEN_SCIENCE: ${{ secrets.IG_TOKEN_SCIENCE }}
           IG_TOKEN_FUN: ${{ secrets.IG_TOKEN_FUN }}
         run: |
-          for NAME in IG_TOKEN_ACTU IG_TOKEN_ECO IG_TOKEN_SCIENCE IG_TOKEN_FUN IG_TOKEN_QHSE_VEILLE IG_TOKEN_QHSE_COURS IG_TOKEN_QHSE_ACTU; do
+          for NAME in IG_TOKEN_ACTU IG_TOKEN_ECO IG_TOKEN_SCIENCE IG_TOKEN_FUN IG_TOKEN_QHSE; do
             TOKEN="${!NAME}"
             if [ -z "$TOKEN" ]; then echo "$NAME : vide, ignoré"; continue; fi
             NEW=$(curl -sf "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$TOKEN" | jq -r .access_token)
