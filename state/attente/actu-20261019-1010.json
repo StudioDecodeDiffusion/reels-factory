@@ -1,7 +1,7 @@
 {
   "id": "actu-20261019-1010",
   "profil": "actu",
-  "statut": "rendu_en_cours",
+  "statut": "a_valider",
   "titre": "Deux poids, deux mesures : le discours de Macron",
   "son_tendance": null,
   "publication_le": "2026-10-19T10:50:00+02:00",
@@ -38,5 +38,17 @@
   },
   "community": {},
   "da_message": "",
-  "cree": "2026-10-19T08:12:07+00:00"
+  "cree": "2026-10-19T08:12:07+00:00",
+  "duree_s": 56.9,
+  "voix": "chatterbox:fr?exag=0.6&cfg=0.4",
+  "media": {
+    "repo": "StudioDecodeDiffusion/reels-media",
+    "release_id": 417092842,
+    "tag": "reel-actu-20261019-1010",
+    "urls": {
+      "video.mp4": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261019-1010/video.mp4",
+      "apercu.png": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261019-1010/apercu.png"
+    }
+  },
+  "envoyee": "2026-10-19T09:05:39+00:00"
 }
