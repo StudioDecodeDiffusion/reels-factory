@@ -280,6 +280,32 @@ def cmd_avance(a) -> None:
         print(f"NON — jour {j} %, semaine {w} % (attendu {attendu} %) : pas d'avance.")
 
 
+STYLES_ANNONCE = ["flash", "reaction", "pancarte"]  # styles génériques (notif/amende/parchemin sont propres à d'anciens sujets)
+
+
+def _annonce_4h(d, job: str, pid: str, fiche: dict, concept: dict) -> None:
+    """Règle du propriétaire (19/10) : story d'annonce 4 h avant la sortie, story « elle est sortie » à la publication."""
+    from datetime import timedelta
+    from .affiches import creer
+    quand_pub = fiche.get("publication_le")
+    if not quand_pub:
+        return
+    t = datetime.fromisoformat(quand_pub)
+    jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+    quand_txt = ("AUJOURD'HUI" if t.date() == datetime.now(TZ).date() else jours[t.weekday()].upper()) + f" {t:%H}H{t:%M}".replace("H00", "H")
+    liste = state.load("stories_programmees", [])
+    style = STYLES_ANNONCE[len(liste) % len(STYLES_ANNONCE)]
+    img = state.STATE / "stories_annonce" / f"{job}.png"
+    titre = concept.get("titre") or fiche.get("titre") or "Nouvelle vidéo"
+    creer(style, "story", titre, concept.get("accroche_story") or concept.get("accroche") or titre, quand_txt,
+          d / "video_scene0.png", img)
+    envoi = max(t - timedelta(hours=4), datetime.now(TZ) + timedelta(minutes=10))
+    liste = [x for x in liste if not (x.get("image", "").endswith(f"{job}.png") and not x.get("faite"))]
+    liste.append({"image": f"stories_annonce/{job}.png", "quand": envoi.isoformat(timespec="minutes"), "profil": pid,
+                  "titre": f"Annonce 4 h avant : {titre}"})
+    state.save("stories_programmees", liste)
+
+
 def cmd_drop(a) -> None:
     load_profile(a.profile)  # vérifie que le compte existe
     d = WORK / a.id
@@ -308,6 +334,7 @@ def cmd_drop(a) -> None:
         "da_message": _da_suivi(d, a.profile),
         "cree": state.now_iso(),
     }
+    _annonce_4h(d, a.id, a.profile, fiche, concept)
     from .variete import enregistrer
     enregistrer(json.loads((d / "7_spec.json").read_text(encoding="utf-8")), a.profile, fiche.get("titre") or "", a.id)
     extra = {"couverture.png": d / "couverture.png"} if (d / "couverture.png").exists() else {}

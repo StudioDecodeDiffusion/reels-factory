@@ -118,6 +118,22 @@ def creer(style: str, kind: str, titre: str, accroche: str, quand: str, image: P
         if kind == "story":
             d.text((W // 2, 1100), quand, font=_police("Black", 54), fill=(150, 60, 20), anchor="mm")
         _perso(image, 1350, im, cadre=False)
+    elif style == "flash":  # annonce façon alerte info : bandeau rouge, heure géante, titre
+        im.paste((12, 12, 16), [0, 0, W, H])
+        vign = Image.open(image).convert("RGB").resize((W, H)).resize((380, 676))
+        d.rectangle([W // 2 - 196, 1146, W // 2 + 196, 1146 + 688], fill=(229, 19, 58))
+        im.paste(vign, (W // 2 - 190, 1152))
+        d.rectangle([0, 210, W, 330], fill=(229, 19, 58))
+        d.text((W // 2, 270), "BIENTÔT SUR DÉCODÉ" if kind == "story" else "DÉCODÉ", font=_police("Black", 70), fill=(255, 255, 255), anchor="mm")
+        if kind == "story":
+            d.text((W // 2, 520), quand, font=_police("Black", 130), fill=(255, 214, 0), anchor="mm")
+        lig = _lignes(titre if kind == "couverture" else accroche, 20)[:4]
+        y = 720
+        for li in lig:
+            d.text((W // 2, y), li, font=_police("Black", 78), fill=(255, 255, 255), anchor="mm")
+            y += 100
+        if kind == "story":
+            d.text((W // 2, 1080), "Active les notifs", font=_police("ExtraBold", 52), fill=(255, 214, 0), anchor="mm")
     else:  # reaction / une / neon : bandeau simple coloré
         im.paste((22, 5, 31), [0, 0, W, H])
         lig = _lignes(titre if kind == "couverture" else accroche, 14)[:4]
@@ -131,7 +147,7 @@ def creer(style: str, kind: str, titre: str, accroche: str, quand: str, image: P
     if kind == "couverture":
         _sticker(im, d, (W - 440, 1850 - 120), "Créé avec l'IA", _police("ExtraBold", 44), (255, 79, 129), (255, 255, 255), -3)
     else:
-        d.text((W // 2, 1860), "@decodeactu", font=_police("Bold", 44), fill=(255, 255, 255) if style in ("notif", "parchemin", "reaction") else INK, anchor="mm")
+        d.text((W // 2, 1860), "@decodeactu", font=_police("Bold", 44), fill=(255, 255, 255) if style in ("notif", "parchemin", "reaction", "flash") else INK, anchor="mm")
     sortie.parent.mkdir(parents=True, exist_ok=True)
     im.save(sortie)
     return sortie

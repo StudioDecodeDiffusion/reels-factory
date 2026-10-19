@@ -101,6 +101,10 @@ def envoyer(agent: int, titre: str, corps_html: str, reponse_html: str, ref: dic
             images: dict[str, Path] | None = None, pieces: list[Path] | None = None) -> str:
     """Envoie un mail d'agent. images = {cid: chemin PNG} (à appeler dans le HTML par <img src="cid:…">)."""
     profil = (ref or {}).get("profil")
+    # Propriétaire (19/10) : plus de mails « Manager », sauf les alertes (échec, token, quota).
+    if str(agent) == "Manager" and not any(k in titre for k in ("❌", "⚠", "Échec", "Token")):
+        print(f"(mail Manager non envoyé : {titre})")
+        return ""
     sujet = objet(agent, titre, profil)
     msg = EmailMessage()
     msg["Subject"] = sujet
