@@ -1,0 +1,272 @@
+{
+  "theme": {
+    "fond": "#111114",
+    "texte": "#F5F2EA",
+    "accent": "#FFD23F",
+    "accent2": "#F5F2EA",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "19 octobre 2026",
+    "grille": false,
+    "style": "editorial",
+    "mise_en_page": "plein_ecran",
+    "transition": "bandes",
+    "palette": [
+      "#111114",
+      "#FFD23F",
+      "#F5F2EA",
+      "#FF5A36"
+    ],
+    "tenues": {
+      "narrateur": "classique",
+      "mascotte": "classique"
+    }
+  },
+  "musique": {
+    "genre": "synthwave",
+    "ambiance": "tension",
+    "volume": 0.3
+  },
+  "voix_override": {
+    "narrateur": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte_effet": "aucun"
+  },
+  "son_tendance": {
+    "nom": "Vibin",
+    "createur": "WXODA",
+    "pourquoi": "c'est le son qui porte la trend « & suddenly… / & finally… » (texte jaune, prise de conscience) que la vidéo reprend"
+  },
+  "variete": {
+    "accroche": "chiffre_geant",
+    "trend": "« & soudain… / & finalement… » (texte jaune, son « Vibin »)",
+    "fonctionnement": "recit_chrono",
+    "mise_en_page": "plein_ecran",
+    "musique": "synthwave",
+    "voix": "V3+V2sans_effet",
+    "palette": "nuit_jaune"
+  },
+  "scenes": [
+    {
+      "type": "ed_chiffre",
+      "kicker": "& soudain…",
+      "valeur": 718.5,
+      "legende": "stations sans gazole",
+      "source": "ministère de l'Économie, dim. 18/10, 6 h 13",
+      "duration": 6.8,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et soudain… sept cent dix-huit stations sans gazole.",
+          "expression": "choc"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "C'était dimanche matin. Et ça empire.",
+          "expression": "colere"
+        }
+      ],
+      "musique": "effroi",
+      "energie": 1,
+      "sfx": [
+        "impact"
+      ],
+      "_note": "718.5 : l'easing du compteur s'arrête à 99,9 % de la valeur ; 718,5 × 0,999 s'affiche « 718 »"
+    },
+    {
+      "type": "ed_versus",
+      "kicker": "En 24 heures",
+      "titre": "Les ruptures de gazole",
+      "gauche": {
+        "label": "Samedi",
+        "valeur": "555"
+      },
+      "droite": {
+        "label": "Dimanche",
+        "valeur": "718"
+      },
+      "duration": 7.2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ça empire vite ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Cinq cent cinquante-cinq la veille. Presque trente pour cent de plus.",
+          "expression": "choc"
+        }
+      ],
+      "musique": "tension",
+      "energie": 2,
+      "sfx": [
+        "whoosh",
+        "ding"
+      ]
+    },
+    {
+      "type": "ed_liste",
+      "kicker": "Les autres carburants",
+      "titre": "Dimanche, 6 h",
+      "points": [
+        "SP98 : 1 363 stations",
+        "E10 : 964 stations",
+        "Une station peut en cumuler plusieurs"
+      ],
+      "duration": 6.4,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et l'essence ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Pire : mille trois cent soixante-trois stations sans SP quatre-vingt-dix-huit.",
+          "expression": "colere"
+        }
+      ],
+      "musique": "tension",
+      "energie": 2,
+      "sfx": [
+        "whoosh",
+        "pop"
+      ]
+    },
+    {
+      "type": "ed_chiffre",
+      "kicker": "À la pompe",
+      "valeur": 2.37,
+      "decimales": 2,
+      "suffixe": " €",
+      "legende": "le litre de gazole, en moyenne",
+      "source": "Roole, 18/10",
+      "duration": 6.0,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et quand t'en trouves ?",
+          "expression": "triste"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Deux euros trente-sept le litre, en moyenne.",
+          "expression": "colere"
+        }
+      ],
+      "musique": "tension",
+      "energie": 2,
+      "sfx": [
+        "whoosh",
+        "ding"
+      ]
+    },
+    {
+      "type": "ed_chiffre",
+      "kicker": "Lundi matin",
+      "valeur": 74,
+      "suffixe": " %",
+      "legende": "des actifs vont bosser en voiture",
+      "source": "Insee (données 2017)",
+      "duration": 7.2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et lundi, faut bien aller bosser.",
+          "expression": "triste"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Soixante-quatorze pour cent des actifs y vont en voiture.",
+          "expression": "neutre"
+        }
+      ],
+      "musique": "curieux",
+      "energie": 2,
+      "sfx": [
+        "whoosh"
+      ]
+    },
+    {
+      "type": "ed_versus",
+      "kicker": "& finalement…",
+      "titre": "TotalEnergies, au printemps",
+      "gauche": {
+        "label": "T2 2025 · Md$",
+        "valeur": "2,7"
+      },
+      "droite": {
+        "label": "T2 2026 · Md$",
+        "valeur": "5,4"
+      },
+      "duration": 10.0,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et finalement, les pétroliers, ils vont comment ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "TotalEnergies a doublé son bénéfice au printemps : cinq virgule quatre milliards de dollars.",
+          "expression": "choc"
+        }
+      ],
+      "musique": "tension",
+      "energie": 3,
+      "sfx": [
+        "impact",
+        "ding"
+      ]
+    },
+    {
+      "type": "ed_citation",
+      "texte": "Porté par des hydrocarbures renchéris par le conflit au Moyen-Orient",
+      "auteur": "AFP, 23 juillet 2026, sur le bénéfice de TotalEnergies",
+      "duration": 9.6,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Grâce à quoi ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Au pétrole renchéri par la guerre. Plus jusqu'à un virgule cinq milliard de dollars de rachats d'actions.",
+          "expression": "neutre"
+        }
+      ],
+      "musique": "tension",
+      "energie": 3,
+      "sfx": [
+        "impact"
+      ]
+    },
+    {
+      "type": "ed_titre",
+      "kicker": "À toi",
+      "titre": "Ta station a tenu ce matin ?",
+      "mot_fort": "station",
+      "sous_titre": "Réponds en commentaire",
+      "duration": 9.2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et toi, ta station avait du gazole ce matin ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Dis-le en commentaire, et abonne-toi pour l'actu décodée chaque soir.",
+          "expression": "content"
+        }
+      ],
+      "musique": "curieux",
+      "energie": 1,
+      "sfx": [
+        "ding"
+      ]
+    }
+  ]
+}
