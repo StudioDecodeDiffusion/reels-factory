@@ -396,7 +396,10 @@ def cmd_story_now(a) -> None:
 
 
 def cmd_etape(a) -> None:
-    """Point d'avancement → mail du « Manager » : tool etape --agent N --profile p --titre "…" "résumé (Markdown)"."""
+    """Point d'avancement → mail du « Manager ». Désactivé (propriétaire, 19/10) sauf alertes ❌/⚠."""
+    if not any(k in (a.titre or "") for k in ("❌", "⚠")):
+        print("(points d'avancement désactivés : rien envoyé)")
+        return
     load_profile(a.profile)
     job = f"{a.profile}-etape{a.agent}-{datetime.now(TZ):%Y%m%d-%H%M%S}"
     fiche = {"id": job, "profil": a.profile, "statut": "etape", "agent": a.agent, "cree": state.now_iso(),

@@ -23,7 +23,7 @@ from .config import OUTPUT, TZ, all_profiles, env, load_profile
 
 API = "https://api.github.com"
 
-R_VALIDATION = ("Réponds à ce mail, <b>première ligne</b> :<br>"
+R_VALIDATION = ("<b>Aucune action nécessaire : la vidéo part toute seule.</b> Pour intervenir, réponds, <b>première ligne</b> :<br>"
                 "• <b>OK</b> → je transmets à l'agent 8, publication à l'heure prévue<br>"
                 "• <b>OK MAINTENANT</b> → publication immédiate<br>"
                 "• <b>NON</b> + ta raison → vidéo abandonnée, ta raison sert aux prochaines idées<br>"
@@ -231,7 +231,7 @@ def rendre_un(d: Path, fiche: dict) -> None:
     corps = (f'<p><img src="cid:apercu" style="width:100%;border-radius:8px;border:2px solid #14131C"></p>'
              f'<p style="text-align:center;font-size:18px"><a href="{v}"><b>▶️ Regarder la vidéo ({fiche.get("duree_s", "?")} s)</b></a></p>'
              + md(f"""## ✅ Vidéo prête : {fiche['titre']}
-Publication prévue **{_slot(profile, fiche)}** sur **{nom}** si tu valides.
+Publication **automatique {_slot(profile, fiche)}** sur **{nom}** (story d'annonce 4 h avant, story « elle est sortie » à la publication). Rien à faire.
 ## 🧐 Mon évaluation
 - **Verdict :** {crit.get('decision', '?')} — **{crit.get('score_global', '?')}/10**
 - {crit.get('resume_pour_le_proprietaire', '')}
@@ -246,7 +246,7 @@ Publication prévue **{_slot(profile, fiche)}** sur **{nom}** si tu valides.
 ## 🔗 Sources
 {sources}"""))
     piece = [d / "video.mp4"] if (d / "video.mp4").stat().st_size < 18_000_000 else []
-    mail.envoyer(9, f"{nom} · Vidéo prête à valider : {fiche['titre']}", corps, R_VALIDATION,
+    mail.envoyer(9, f"{nom} · Vidéo prête, sortie auto : {fiche['titre']}", corps, R_VALIDATION,
                  ref={"type": "validation", "job": fiche["id"], "profil": fiche["profil"]},
                  images={"apercu": d / "apercu.png"}, pieces=piece)
     if fiche.get("da_message"):
