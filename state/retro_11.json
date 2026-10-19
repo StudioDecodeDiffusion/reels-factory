@@ -1,7 +1,31 @@
 {
-  "date": "2026-10-18",
-  "note": "Les 3 comptes signalés (laboscope, belltakesocial, phyzolof) n'ont aucun Reel indexé publiquement : recettes tirées de vidéos/formats documentés par la presse. On reprend des mécaniques, aucun contenu.",
+  "date": "2026-10-19",
+  "note": "Les 3 posts envoyés par le propriétaire (laboscope, belltakesocial, phyzolof) n'ont pas pu être lus depuis la session et rien n'est indexé : aucun plan par plan inventé. La recette phyzolof est un gabarit du style-cible demandé (« façon Le Monde »), à recaler dès réception de captures. On reprend des mécaniques, aucun contenu.",
   "recettes": [
+    {
+      "source": "https://www.instagram.com/p/Dekne2posgN/",
+      "compte": "phyzolof (style-cible « Le Monde » demandé par le propriétaire)",
+      "accroche": "NON VÉRIFIÉ sur la vidéo (post illisible depuis la session). Mécanique cible du style éditorial : 0-1,5 s, un kicker en capitales (rubrique + date) puis un titre en 2 lignes max qui pose la question ; le mot-fort passe en couleur d'accent à la 1re seconde.",
+      "structure": "Gabarit proposé (pas mesuré sur la vidéo) : 6-9 plans de 2,5-4 s ; titre → contexte (ed_photo) → chiffre (ed_chiffre) → citation sourcée (ed_citation) → comparaison (ed_versus) → chute ; révélation vers 60 % de la durée.",
+      "animation": "Typo : titres serif à fort contraste (déjà DM Serif Display), texte courant en sans-serif humaniste. Le Monde a utilisé Le Monde Sans, une sans humaniste dessinée par J. F. Porchez en 1994 et abandonnée en 2005 (MyFonts). Équivalents Google Fonts proposés (choix Décodé, pas une identification) : Source Sans 3 ou Fira Sans. Lignes : filets fins 2 px sous le kicker ; textes qui montent de 24 px avec un fondu de 8-10 images ; coupes nettes, sans rebond.",
+      "son": "Voix off seule, débit posé (≈ 150 mots/min, estimation), nappe discrète ducking -12 dB, un « tic » sec à chaque apparition de chiffre.",
+      "fin": "Dernier plan : source principale + date en petit, question ouverte au public.",
+      "recette_decode": "Charte actu actuelle (fond #111114, encre #F5F2EA, accent #FFD23F variable selon le sujet). Ajouter un kicker « RUBRIQUE · JJ/MM » sur chaque ed_titre, un filet de 2 px couleur encre à 40 % d'opacité, et le texte de légende en Source Sans 3. Une seule couleur d'accent par vidéo.",
+      "scene_manquante": "« ed_une » : fausse « une » de journal Décodé (titre de Une, chapô, 2 colonnes de faux texte en gris), avec zoom lent de 105 % à 100 % puis surlignage du mot-fort en accent. Paramètres : kicker, titre, chapo, mot_fort. Hypothèse : police Source Sans 3 à ajouter au rendu (à valider côté code, je n'ai pas touché video/src)."
+    },
+    {
+      "source": "https://www.cbnews.fr/node/97563",
+      "compte": "Faux comptes d'actu TikTok monétisés (contre-modèle, AFP)",
+      "accroche": "Fausse mesure qui touche le portefeuille, énoncée tout de suite (« +220 € pour tous », « taxe sur les retraits »), emojis horrifiés, points d'exclamation.",
+      "structure": "Images d'illustration enchaînées sous une voix IA unique ; durée > 1 min pour être monétisée (seuil TikTok) ; le détail des plans n'est pas documenté.",
+      "animation": "Minimale : images fixes ou boucles, texte d'accroche en gros.",
+      "son": "Voix off IA, ton alarmé.",
+      "fin": "Pas de source ; dans la variante « fausses manifs » (Euronews 24/09/2026), fin systématique « dis-nous ta ville / ton avis » qui fait commenter.",
+      "recette_decode": "« Ça circule : vrai ou faux ? » en éditorial, 35-45 s : ed_titre avec le faux titre entre guillemets et kicker « ÇA CIRCULE » → tampon FAUX/FLOU (checklist) → ed_chiffre avec le vrai chiffre et sa source → ed_citation officielle → fin « Tu l'as vu passer où ? Dis-le en commentaire ». On reprend la fin qui fait commenter et l'accroche pouvoir d'achat, jamais la fausse info sans le démenti à l'écran.",
+      "scene_manquante": ""
+    }
+  ],
+  "recettes_precedentes": [
     {
       "source": "https://fr.news.yahoo.com/coup-d-%C3%A9tat-france-l-103638198.html",
       "compte": "Faux JT IA du « coup d'État à Paris » (contre-modèle, 12-13 M de vues)",
