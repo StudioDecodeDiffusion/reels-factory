@@ -3,7 +3,7 @@
 import React from 'react';
 import '@fontsource/dm-serif-display/400.css';
 import '@fontsource/archivo-black/400.css';
-import {AbsoluteFill, Easing, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig, OffthreadVideo} from 'remotion';
 import {repliques} from './dialogue';
 import {Scene, Theme} from './types';
 import {H, W} from './ui';
@@ -100,7 +100,9 @@ const Photo: React.FC<{s: Ex<'ed_photo'>; c: C}> = ({s, c}) => {
   return (
     <AbsoluteFill>
       <div style={{position: 'absolute', inset: 0, clipPath: `inset(0 ${100 - volet}% 0 0)`}}>
-        {s.src ? <Img src={staticFile(s.src)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${z})`}} /> : <div style={{width: '100%', height: '100%', backgroundColor: '#333'}} />}
+        {s.src && /\.(mp4|webm|mov)$/i.test(s.src) ? (
+          <OffthreadVideo src={staticFile(s.src)} muted startFrom={Math.round((s.debut_s ?? 0) * fps)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.02 + (z - 1.1) * 0.3})`}} />
+        ) : s.src ? <Img src={staticFile(s.src)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${z})`}} /> : <div style={{width: '100%', height: '100%', backgroundColor: '#333'}} />}
         <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.85) 100%)'}} />
       </div>
       <div style={{position: 'absolute', left: 80, right: 80, top: 300, display: 'flex', flexDirection: 'column', gap: 24}}>
