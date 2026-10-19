@@ -79,6 +79,7 @@ export type Scene =
   | (Base & {type: 'ed_citation'; texte: string; auteur: string})
   | (Base & {type: 'ed_photo'; src: string; credit: string; debut_s?: number; titre?: string; kicker?: string})
   | (Base & {type: 'ed_liste'; points: string[]; titre?: string; kicker?: string})
+  | (Base & {type: 'ed_allocution'; texte: string; auteur: string; quand?: string})
   | (Base & {type: 'ed_versus'; gauche: {label: string; valeur: string}; droite: {label: string; valeur: string}; titre?: string; kicker?: string})
   | (Base & {type: 'pendant'; src?: string; credit?: string; haut: string; bas: string; lignes?: string[]});
 

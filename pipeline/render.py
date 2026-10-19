@@ -26,7 +26,7 @@ REQUIRED = {
     "compare": ["left", "right"], "particles": ["mode", "caption"], "outro": ["text", "cta"],
     "quiz": ["question", "options", "bonne"], "bigstat": ["value", "label"], "checklist": ["items"],
     "photo": ["src", "credit"], "ed_titre": ["titre"], "ed_chiffre": ["valeur", "legende"], "ed_citation": ["texte", "auteur"],
-    "ed_photo": ["src", "credit"], "ed_liste": ["points"], "ed_versus": ["gauche", "droite"], "pendant": ["haut", "bas"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
+    "ed_photo": ["src", "credit"], "ed_liste": ["points"], "ed_versus": ["gauche", "droite"], "ed_allocution": ["texte", "auteur"], "pendant": ["haut", "bas"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
 }
 
 

@@ -156,6 +156,60 @@ const Versus: React.FC<{s: Ex<'ed_versus'>; c: C}> = ({s, c}) => {
   );
 };
 
+
+// Reconstitution dessinée d'une allocution télévisée (salon doré, drapeaux, pupitre, bandeau TV) :
+// le texte exact du discours défile en bandeau. Aucune image tierce.
+const Allocution: React.FC<{s: Ex<'ed_allocution'>; c: C}> = ({s, c}) => {
+  const f = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const zoom = interpolate(f, [0, s.duration * fps], [1, 1.12]);
+  const n = Math.floor(interpolate(f, [8, 8 + s.texte.length * 0.9], [0, s.texte.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const live = Math.floor(f / 15) % 2 === 0;
+  const drap = (x: number, couleurs: string[], eu = false) => (
+    <g transform={`translate(${x} 520)`}>
+      <rect x={0} y={0} width={10} height={760} fill="#C9A227" />
+      <path d={`M10 20 Q${110 + Math.sin(f / 9) * 12} ${60} 210 30 L210 330 Q${110 + Math.sin(f / 9 + 1) * 12} 360 10 330 Z`} fill={eu ? '#1F3FA0' : couleurs[1]} />
+      {eu ? null : <path d={`M10 20 Q45 30 75 26 L75 336 Q45 340 10 330 Z`} fill={couleurs[0]} />}
+      {eu ? null : <path d={`M145 26 Q180 26 210 30 L210 330 Q180 340 145 338 Z`} fill={couleurs[2]} />}
+      {eu ? Array.from({length: 12}).map((_, k) => <circle key={k} cx={110 + Math.cos((k / 12) * 6.283) * 60} cy={180 + Math.sin((k / 12) * 6.283) * 60} r={7} fill="#F2C200" />) : null}
+    </g>
+  );
+  return (
+    <AbsoluteFill style={{backgroundColor: '#1B1A2E'}}>
+      <AbsoluteFill style={{transform: `scale(${zoom})`, transformOrigin: '50% 45%'}}>
+        <svg viewBox="0 0 1080 1920" width={W} height={H}>
+          <defs>
+            <linearGradient id="mur" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#E9DDBE" /><stop offset="1" stopColor="#B9A57A" /></linearGradient>
+            <radialGradient id="lustre" cx="0.5" cy="0.2" r="0.7"><stop offset="0" stopColor="#FFF6D8" stopOpacity="0.55" /><stop offset="1" stopColor="#FFF6D8" stopOpacity="0" /></radialGradient>
+          </defs>
+          <rect x={0} y={0} width={1080} height={1920} fill="url(#mur)" />
+          {[90, 400, 710].map((x) => <rect key={x} x={x} y={260} width={280} height={900} rx={8} fill="none" stroke="#C9A227" strokeWidth={10} />)}
+          {[110, 420, 730].map((x) => <rect key={x} x={x} y={280} width={240} height={860} rx={4} fill="none" stroke="#D9BF6A" strokeWidth={3} />)}
+          <rect x={0} y={1160} width={1080} height={40} fill="#C9A227" />
+          {drap(80, ['#1F3FA0', '#FFFFFF', '#D7263D'])}
+          {drap(790, [], true)}
+          {/* silhouette de dos : l'orateur n'est pas représenté */}
+          <rect x={0} y={0} width={1080} height={1920} fill="url(#lustre)" />
+          <path d="M300 1250 L780 1250 L740 1560 L340 1560 Z" fill="#3A2A1A" stroke="#1E140C" strokeWidth={6} />
+          <rect x={290} y={1230} width={500} height={34} rx={6} fill="#5A4026" />
+          <circle cx={540} cy={1300} r={34} fill="#C9A227" />
+          <rect x={0} y={1560} width={1080} height={360} fill="#2A1E14" />
+        </svg>
+      </AbsoluteFill>
+      {/* habillage TV */}
+      <div style={{position: 'absolute', left: 60, top: 300, display: 'flex', gap: 14, alignItems: 'center'}}>
+        <span style={{fontFamily: GROT, fontSize: 30, color: '#fff', backgroundColor: c.accent, padding: '6px 14px'}}>{live ? '● ' : '  '}ALLOCUTION</span>
+        <span style={{fontFamily: SANS, fontWeight: 700, fontSize: 28, color: '#141414', backgroundColor: '#fff', padding: '6px 14px'}}>{s.quand}</span>
+      </div>
+      <div style={{position: 'absolute', left: 40, right: 40, top: 1000, backgroundColor: 'rgba(14,14,18,0.92)', borderLeft: `14px solid ${c.accent}`, padding: '26px 30px'}}>
+        <div style={{fontFamily: SERIF, fontSize: 62, color: '#fff', lineHeight: 1.08}}>« {s.texte.slice(0, n)}{n < s.texte.length ? '▌' : ' »'}</div>
+        <div style={{fontFamily: GROT, fontSize: 26, color: c.accent, marginTop: 14, letterSpacing: 2, textTransform: 'uppercase'}}>— {s.auteur}</div>
+      </div>
+      <div style={{position: 'absolute', right: 40, top: 235, fontFamily: SANS, fontSize: 20, color: '#333', backgroundColor: 'rgba(255,255,255,0.8)', padding: '4px 10px'}}>Reconstitution · texte exact du discours</div>
+    </AbsoluteFill>
+  );
+};
+
 export const SceneEditoriale: React.FC<{scene: Scene; theme: Theme}> = ({scene, theme}) => {
   const c = couleurs(theme);
   switch (scene.type) {
@@ -171,6 +225,8 @@ export const SceneEditoriale: React.FC<{scene: Scene; theme: Theme}> = ({scene, 
       return <Liste s={scene} c={c} />;
     case 'ed_versus':
       return <Versus s={scene} c={c} />;
+    case 'ed_allocution':
+      return <Allocution s={scene} c={c} />;
     default:
       return null;
   }
@@ -191,7 +247,7 @@ export const CadreEditorial: React.FC<{scene: Scene; theme: Theme; index: number
   const bloc = Math.max(0, Math.floor(courant / 6));
   const vis = mots.slice(bloc * 6, bloc * 6 + 6);
   const entree = interpolate(f, [0, 10], [0, 1], {extrapolateRight: 'clamp'});
-  const surPhoto = scene.type === 'ed_photo';
+  const surPhoto = scene.type === 'ed_photo' || scene.type === 'ed_allocution';
   return (
     <AbsoluteFill style={{backgroundColor: c.fond}}>
       {/* grain + lignes de grille fines */}
