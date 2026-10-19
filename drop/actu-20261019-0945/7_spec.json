@@ -1,0 +1,168 @@
+{
+  "theme": {
+    "fond": "#F3EEE3",
+    "texte": "#141414",
+    "accent": "#D7263D",
+    "accent2": "#141414",
+    "police_titre": "Inter",
+    "police_texte": "Inter",
+    "style": "editorial",
+    "bandeau": "Allocution du 18 octobre",
+    "transition": "bandes",
+    "grille": false
+  },
+  "variete": {
+    "accroche": "question_choc",
+    "trend": "Deux poids, deux mesures",
+    "fonctionnement": "contraste",
+    "mise_en_page": "editorial",
+    "musique": "suspense",
+    "voix": "V2+V4",
+    "palette": "papier_journal"
+  },
+  "musique": {
+    "genre": "suspense"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?ref=pierre&exag=0.75&cfg=0.3",
+    "mascotte": "chatterbox:fr?ref=jessica&exag=0.7&cfg=0.35",
+    "mascotte_effet": "aucun"
+  },
+  "scenes": [
+    {
+      "type": "ed_titre",
+      "duration": 10.4,
+      "kicker": "Dimanche soir, 20 h",
+      "titre": "Les vitrines ? Réglé en une soirée. Vous ? Ça attendra.",
+      "mot_fort": "Ça attendra.",
+      "energie": 2,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Dimanche soir, Emmanuel Macron parle aux Français.",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Et pour les commerces pillés, tout est réglé en une soirée. Pour vous ? Ça attendra.",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "ed_photo",
+      "duration": 8.1,
+      "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Emmanuel_Macron_(cropped).jpg?width=1080",
+      "credit": "Wikimedia Commons (photo d'illustration)",
+      "kicker": "Élysée, 18 octobre",
+      "titre": "« Ceux qui ont pillé doivent rembourser »",
+      "energie": 2,
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ceux qui ont détruit doivent payer, ceux qui ont pillé doivent rembourser. Face aux casseurs, nous serons intraitables.",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "ed_versus",
+      "duration": 14.8,
+      "kicker": "Deux poids, deux mesures",
+      "titre": "Ce qu'il a promis dimanche",
+      "gauche": {
+        "label": "Commerces pillés",
+        "valeur": "Cellule de crise lundi"
+      },
+      "droite": {
+        "label": "Gazole, pensions, fins de mois",
+        "valeur": "Aucune mesure"
+      },
+      "energie": 3,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Pour les commerçants : aide rapide, et une cellule de crise dès lundi matin, avec le Premier ministre.",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Pour le gazole et le coût de la vie ? Des inquiétudes légitimes. Et aucune mesure.",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "ed_liste",
+      "duration": 9.7,
+      "kicker": "Pendant ce temps",
+      "titre": "Ce qui attend toujours",
+      "points": [
+        "Gazole : 2,37 € le litre",
+        "718 stations à sec dimanche",
+        "Gel des pensions : vote le 27 octobre",
+        "Carburants : « légitime », zéro mesure"
+      ],
+      "energie": 2,
+      "sfx": [
+        "pop"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le gazole à deux euros trente-sept. Sept cent dix-huit stations à sec. Et le gel de vos pensions, voté le vingt-sept octobre.",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "ed_citation",
+      "duration": 6.1,
+      "texte": "Ceux qui ont détruit doivent payer.",
+      "auteur": "Emmanuel Macron, 18 octobre 2026",
+      "energie": 3,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Très bien. Et ceux qui veulent geler vos pensions, ils paient quand ?",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "ed_titre",
+      "duration": 10.4,
+      "kicker": "Décodé",
+      "titre": "Pour les vitrines, l'argent se trouve toujours. Pour vous, on cherche encore.",
+      "mot_fort": "encore.",
+      "energie": 3,
+      "sfx": [
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Pour les vitrines, l'argent se trouve toujours. Pour vous, on cherche encore.",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Envoie ça à quelqu'un qui a fait son plein ce matin.",
+          "expression": "neutre"
+        }
+      ]
+    }
+  ]
+}
