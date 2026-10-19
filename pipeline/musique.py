@@ -223,7 +223,7 @@ def ajouter(video: Path, choix="curieux", graine: int = 0, volume: float = 0.8, 
     else:
         filtre = f"[1:a]volume={volume * 2}[a]"
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(video), "-i", str(wav), "-filter_complex", filtre,
-                    "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(tmp)],
+                    "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", str(tmp)],
                    check=True)
     tmp.replace(video)
     wav.unlink(missing_ok=True)
