@@ -1,6 +1,6 @@
 {
-  "semaine": "2026-S42",
-  "date": "2026-10-18",
+  "semaine": "2026-S43",
+  "date": "2026-10-19",
   "comptes": [
     {
       "nom": "AntifakenewsAI (Thomas Huchon)",
@@ -46,7 +46,7 @@
       "lien": "https://www.instagram.com/laboscope/",
       "plateforme": "Instagram",
       "abonnes": "non vérifiable (aucun chiffre indexé ; page Instagram non accessible sans connexion)",
-      "source_chiffre": "aucune — recherches web du 18/10/2026 sans résultat (homonymes : appli photo, labo d'art)",
+      "source_chiffre": "aucune — recherches web du 18/10/2026 sans résultat (homonymes : appli photo, labo d'art) ; 19/10/2026 : liens directs du propriétaire reçus mais la page du post n'a pas pu être lue depuis la session (accès refusé), recherches web toujours sans résultat",
       "format": "inconnu",
       "ton": "inconnu",
       "frequence": "inconnue",
@@ -59,7 +59,7 @@
       "lien": "https://www.instagram.com/belltakesocial/",
       "plateforme": "Instagram",
       "abonnes": "non vérifiable",
-      "source_chiffre": "aucune — seule trace indexée : belltake.com, réseau social en liste d'attente (« Every take, on a curve »), lien avec ce compte non confirmé",
+      "source_chiffre": "aucune — seule trace indexée : belltake.com, réseau social en liste d'attente (« Every take, on a curve »), lien avec ce compte non confirmé ; 19/10/2026 : liens directs du propriétaire reçus mais la page du post n'a pas pu être lue depuis la session (accès refusé), recherches web toujours sans résultat",
       "format": "inconnu (belltake.com annonce des « takes » texte, sondages et vidéos courtes)",
       "ton": "inconnu",
       "frequence": "inconnue",
@@ -72,12 +72,38 @@
       "lien": "https://www.instagram.com/phyzolof/",
       "plateforme": "Instagram (+ chaîne YouTube @phyzolof, lien non confirmé)",
       "abonnes": "non vérifiable",
-      "source_chiffre": "aucune — seule trace indexée : https://www.youtube.com/@phyzolof/shorts (mots-clés « League of Legend », peut-être un homonyme)",
+      "source_chiffre": "aucune — seule trace indexée : https://www.youtube.com/@phyzolof/shorts (mots-clés « League of Legend », peut-être un homonyme) ; 19/10/2026 : liens directs du propriétaire reçus mais la page du post n'a pas pu être lue depuis la session (accès refusé), recherches web toujours sans résultat",
       "format": "inconnu",
       "ton": "inconnu",
       "frequence": "inconnue",
       "points_forts": "à documenter",
       "transparence_ia": "inconnue",
+      "statut": "nouveau"
+    },
+    {
+      "nom": "Faux comptes « actualités du jour » / « actu France » (TikTok, monétisés)",
+      "lien": "https://www.cbnews.fr/node/97563",
+      "plateforme": "TikTok",
+      "abonnes": "non nommés ; « millions de vues » cumulées",
+      "source_chiffre": "AFP via CB News 16/12/2025 ; reprise France TV Info 12/10/2026 (https://www.titrespresse.com/24806832603/tiktok-facebook-instagram)",
+      "format": "images d'illustration + voix off IA, vidéos > 1 min (seuil de monétisation TikTok)",
+      "ton": "émotionnel, points d'exclamation, emojis horrifiés ; fausses mesures (« +220 € pour tous », « taxe sur les retraits »)",
+      "frequence": "plusieurs comptes par créateur, ~6 h/jour de travail (témoignage)",
+      "points_forts": "sujets pouvoir d'achat, rémunération 1 500-4 500 €/mois brut déclarée ; contre-modèle",
+      "transparence_ia": "nulle",
+      "statut": "nouveau"
+    },
+    {
+      "nom": "Fausses manifestations IA (TikTok, Europe dont France)",
+      "lien": "https://fr.euronews.com/2026/09/24/de-fausses-manifestations-dextreme-droite-generees-par-ia-envahissent-tiktok",
+      "plateforme": "TikTok",
+      "abonnes": "non nommés ; certaines vidéos > 300 000 vues",
+      "source_chiffre": "Euronews / The Cube 24/09/2026",
+      "format": "foules générées par IA, fausse journaliste et habillage imitant de vraies chaînes",
+      "ton": "militant, polarisant",
+      "frequence": "série sur 4 mois",
+      "points_forts": "fin systématique « dis-nous ta ville / ton avis » → commentaires ; contre-modèle",
+      "transparence_ia": "étiquette IA posée par TikTok",
       "statut": "nouveau"
     }
   ],
@@ -120,23 +146,33 @@
       "belltakesocial",
       "phyzolof"
     ],
-    "etat": "18/10/2026 : aucun contenu indexé publiquement ; pages Instagram inaccessibles sans connexion (interdite). Besoin : liens directs de 2-3 Reels par compte envoyés par le propriétaire (note « agent 10 - … ») pour que l'agent 11 les démonte."
+    "etat": "19/10/2026 : 3 liens de posts reçus du propriétaire (laboscope Dej4JKbMiAm, belltakesocial DeX1cutBrSs, phyzolof Dekne2posgN) mais leur page n'a pas pu être ouverte depuis la session cloud (lecture refusée, connexion Instagram interdite) et rien n'est indexé. Pour un démontage plan par plan : coller dans la note la légende + 3-4 captures (début, milieu, fin) ou une description, ou autoriser la lecture d'instagram.com dans la session."
   },
   "a_decortiquer": [
     {
-      "lien": "https://fr.news.yahoo.com/coup-d-%C3%A9tat-france-l-103638198.html",
-      "compte": "Page Facebook/TikTok d'un lycéen burkinabè (faux JT IA, contre-modèle)",
-      "pourquoi_ca_marche": "12-13 M de vues (+ ~10 M pour 3 copies) : fausse reporter face caméra, micro « Live 24 », annonce choc dans la 1re phrase, image-symbole (hélicoptère devant la tour Eiffel, gyrophare) ; mécanique « breaking » à retourner en format de vérification, jamais à copier (Yahoo/20 Minutes 17/12/2025 ; Malay Mail 20/12/2025)"
+      "lien": "https://www.instagram.com/p/Dekne2posgN/",
+      "compte": "phyzolof",
+      "pourquoi_ca_marche": "choisi par le propriétaire comme référence du style éditorial « façon Le Monde » ; contenu non lisible depuis la session → démontage du style-cible à partir de la demande et des sources typographiques, pas de la vidéo"
     },
     {
-      "lien": "https://www.cbnews.fr/node/82036",
-      "compte": "AntifakenewsAI (Thomas Huchon)",
-      "pourquoi_ca_marche": "pair légitime : 1 script → 3 vidéos via avatar HeyGen, gabarit motion design fixe, publication < 2 h après l'info ; marche par la caution du journaliste et la vitesse (CB News 05/02/2024). Pas de vidéo précise indexée : on démonte le format."
+      "lien": "https://www.instagram.com/p/Dej4JKbMiAm/",
+      "compte": "laboscope",
+      "pourquoi_ca_marche": "choisi par le propriétaire (« fait en IA ») ; contenu non lisible depuis la session → en attente de captures"
     },
     {
-      "lien": "https://www.anijam.ai/blog/instagram-reels-trends/",
-      "compte": "Formats Reels montants (séries IA à personnages récurrents, « loading 0→100 % »)",
-      "pourquoi_ca_marche": "comptes de niche qui livrent la promesse dès la 1re seconde, jauge de progression qui retient, épisodes numérotés qui fidélisent (Anijam maj 10/10/2026, chiffres non vérifiés). Remplace faute d'accès aux Reels de laboscope/belltakesocial/phyzolof."
+      "lien": "https://www.cbnews.fr/node/97563",
+      "compte": "Faux comptes d'actu TikTok monétisés (contre-modèle)",
+      "pourquoi_ca_marche": "vues par l'émotion pouvoir d'achat + voix IA + > 1 min ; mécanique documentée par l'AFP à retourner en vérification (CB News 16/12/2025, France TV Info 12/10/2026)"
+    }
+  ],
+  "historique_a_decortiquer": [
+    {
+      "date": "2026-10-18",
+      "liens": [
+        "https://fr.news.yahoo.com/coup-d-%C3%A9tat-france-l-103638198.html",
+        "https://www.cbnews.fr/node/82036",
+        "https://www.anijam.ai/blog/instagram-reels-trends/"
+      ]
     }
   ]
 }
