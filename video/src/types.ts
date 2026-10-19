@@ -9,6 +9,7 @@ export type Theme = {
   grille?: boolean; // grille fine en fond
   palette?: string[]; // couleurs vives des fonds de scène (style v2)
   style?: 'pixel' | 'sobre' | 'editorial'; // pixel = coloré animé, editorial = motion design soigné façon médias
+  persos?: 'pixel' | 'cartoon'; // cartoon = personnages vectoriels détaillés (expressions, tenues, gestes)
   tenues?: {narrateur?: string; mascotte?: string}; // tenues de l'épisode (voir personnages.ts)
   mise_en_page?: 'duo' | 'jt' | 'chat' | 'quiz' | 'plein_ecran'; // habillage de la vidéo
   transition?: 'pixels' | 'iris' | 'volet' | 'bandes' | 'glitch'; // transition entre scènes

@@ -73,3 +73,12 @@ source) · **ed_citation** (texte, auteur) · **ed_photo** (src Wikimedia/licenc
 (kicker, titre, points[]) · **ed_versus** (kicker, titre, gauche{label,valeur}, droite{label,valeur}).
 Couleurs : `theme.fond` (fond), `theme.texte` (encre), `theme.accent` (couleur d'alerte) — varier d'une vidéo à l'autre.
 Le pixel art reste possible en exception (1 vidéo sur 4 au plus).
+
+## Personnages « cartoon » (remplacent peu à peu le pixel art)
+`theme.persos = "cartoon"` (avec `style: "pixel"`, mises en page duo, jt, plein_ecran) : personnages vectoriels ORIGINAUX
+(jamais de personnage existant), fond dégradé doux. Expressions par réplique : neutre, content, rire, choc, peur, colere,
+triste, pense, clin, sarcasme, degout (sourcils, yeux, bouche, larmes, sueur, rougeurs, gestes des bras assortis).
+Tenues (`theme.tenues` ou `tenue_narrateur` / `tenue_mascotte` par scène) : classique, economie, qhse, science, detective,
+sport, hiver, fete, musique, ecologie, gilet_jaune, ouvrier, infirmier, milliardaire, roi, manifestant, etudiant, robe.
+Changer d'expression à CHAQUE réplique et de tenue selon le rôle joué (ex. Déco en milliardaire, Lou en gilet jaune).
+Répartition visée : éditorial 1 vidéo sur 2, cartoon 1 sur 3, pixel au plus 1 sur 6.

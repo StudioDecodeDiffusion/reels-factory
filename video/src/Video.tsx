@@ -16,6 +16,7 @@ import {encrePour, FondPixel, fontPixel, INK, palette, TransitionPixel} from './
 import {Duo} from './dialogue';
 import {HabillageChat, HabillageJT, HabillagePleinEcran, Transition} from './layouts';
 import {CadreEditorial, SceneEditoriale} from './editorial';
+import {FondCartoon, StylePerso} from './cartoon';
 
 
 // Choisit deux couleurs d'accent de la palette, différentes du fond
@@ -49,7 +50,7 @@ const ScenePixel: React.FC<{s: Scene; i: number; theme: Theme; bg: string; prevB
   const plein = mep !== 'duo';
   const contenu = (
     <AbsoluteFill>
-      <FondPixel couleur={bg} seed={i + 1} />
+      {theme.persos === 'cartoon' ? <FondCartoon couleur={bg} seed={i + 1} /> : <FondPixel couleur={bg} seed={i + 1} />}
       <AbsoluteFill style={{transform: `translate(${pan + choc}px, ${choc / 2}px) scale(${(plein ? 1 : 0.9) * zoom})`, transformOrigin: '50% 12%'}}>
         <SceneViewPixel scene={s} ctx={{theme, bg, c1, c2, index: i, mascotteDroite: droite}} />
       </AbsoluteFill>
@@ -85,6 +86,7 @@ export const ReelVideo: React.FC<VideoSpec> = ({theme, scenes, music}) => {
   const bgs = scenes.map((s, i) => s.fond ?? pal[i % pal.length]);
   let from = 0;
   return (
+    <StylePerso.Provider value={theme.persos === 'cartoon' ? 'cartoon' : 'pixel'}>
     <AbsoluteFill style={{backgroundColor: INK}}>
       {music ? (
         <Audio
@@ -124,6 +126,7 @@ export const ReelVideo: React.FC<VideoSpec> = ({theme, scenes, music}) => {
       })}
       {theme.style === 'editorial' ? null : pixel ? (['jt', 'chat'].includes(theme.mise_en_page ?? '') ? null : <BandeauPixel theme={theme} />) : <Bandeau theme={theme} />}
     </AbsoluteFill>
+    </StylePerso.Provider>
   );
 };
 

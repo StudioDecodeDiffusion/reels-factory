@@ -5,6 +5,7 @@ import {MASCOTTE_CORPS, VISAGES} from './sprites';
 import {Calque, fontTitre, INK, PixelSprite} from './fx';
 import {Scene} from './types';
 import {SAFE_BOTTOM, H} from './ui';
+import {PersoCartoon, useStylePerso} from './cartoon';
 
 export type Qui = 'narrateur' | 'mascotte';
 export type Replique = {qui: Qui; texte: string; expression?: string; debut?: number; fin?: number};
@@ -38,6 +39,10 @@ export const Personnage: React.FC<{
 }> = ({qui, expression, parle, tenue = 'classique', x, entree = 0}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const style = useStylePerso();
+  if (style === 'cartoon') {
+    return <PersoCartoon qui={qui} expression={expression} parle={parle} tenue={tenue} x={x - 25} sol={SOL + 12} entree={entree} echelle={1.05} />;
+  }
   const f = frame - entree;
   const pop = spring({frame: f, fps, config: {damping: 10, mass: 0.7}});
   const t = TENUES[tenue] ?? TENUES.classique;
