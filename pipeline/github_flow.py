@@ -423,6 +423,12 @@ def _publier(fiche: dict, profile: dict) -> None:
     nom = profile["nom_compte"]
     _manager(fiche, "⏳ Publication en cours", "J'envoie la vidéo et sa miniature à Instagram (traitement 1 à 5 min), "
              "puis la story. Prochain mail : « Vidéo publiée » avec le lien.")
+    try:  # garde-fou : média déjà supprimé = vidéo déjà publiée par un passage concurrent
+        if requests.head(fiche["media"]["urls"]["video.mp4"], allow_redirects=True, timeout=30).status_code == 404:
+            print(f"{fiche['id']} : média absent (déjà publié ?) : rien à faire")
+            return
+    except Exception:
+        pass
     try:
         cover = fiche["media"]["urls"].get("couverture.png")
         neuve = state.STATE / "couvertures" / f"{fiche['id']}.png"
