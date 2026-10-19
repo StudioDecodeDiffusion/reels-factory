@@ -63,6 +63,14 @@ def cmd_check(a) -> None:
         d9 = json.loads(pre.read_text(encoding="utf-8"))
         if str(d9.get("decision")).lower() != "go":
             errs.append(f"l'agent 9 n'a pas donné son feu vert (décision : {d9.get('decision')}) : appliquer ses demandes")
+    if (Path(a.spec).parent / "4_concept.json").exists():
+        cc = _concept(Path(a.spec).parent)
+        tm = str(cc.get("titre_miniature", "")).strip()
+        if not tm:
+            errs.append("4_concept.json : titre_miniature manquant (titre CRITIQUE qui donne la teneur du post, 8 mots max) "
+                        "+ mots_choc (mots en rouge) + surtitre_miniature (qui · quand)")
+        elif len(tm.split()) > 9:
+            errs.append(f"titre_miniature trop long ({len(tm.split())} mots) : 8 mots max")
     if errs:
         print("ERREURS :\n- " + "\n- ".join(errs))
         sys.exit(1)
@@ -152,7 +160,11 @@ def _read(d: Path, name: str, default=None):
 
 def _concept(d: Path) -> dict:
     c = _read(d, "4_concept.json")
-    return c["concepts"][int(c.get("choix", 0))]
+    choisi = dict(c["concepts"][int(c.get("choix", 0))])
+    for k in ("titre_miniature", "mots_choc", "surtitre_miniature", "accroche_story"):  # champs ajoutés au niveau racine
+        if c.get(k) and not choisi.get(k):
+            choisi[k] = c[k]
+    return choisi
 
 
 def _marquer_lus(agent: int, ids) -> int:
@@ -379,8 +391,21 @@ def cmd_story(a) -> None:
     from .story import couverture, creer
     prof = load_profile(a.profile)
     d = WORK / a.id
-    titre = a.titre or _concept(d).get("titre") or "Nouvelle vidéo"
-    couverture(d / "video_scene0.png", titre, d / "couverture.png", (prof.get("charte_initiale") or {}).get("palette"))
+    concept = _concept(d)
+    titre = a.titre or concept.get("titre") or "Nouvelle vidéo"
+    # Miniature « choc » (propriétaire, 19/10) : titre critique qui donne la teneur du post, image la plus parlante
+    from .affiches import couverture_choc
+    spec = _read(d, "7_spec.json", {})
+    scenes = spec.get("scenes", [])
+    idx = next((i for i, sc in enumerate(scenes) if sc.get("type") in ("ed_photo", "ed_allocution", "photo", "pendant")), None)
+    if idx is None:
+        idx = next((i for i, sc in enumerate(scenes) if sc.get("dialogue") and not str(sc.get("type", "")).startswith("ed_")), 0)
+    img = d / f"video_scene{idx}.png"
+    if not img.exists():
+        img = d / "video_scene0.png"
+    accent = (spec.get("theme") or {}).get("accent", "#E3242B").lstrip("#")
+    couverture_choc(img, concept.get("titre_miniature") or titre, concept.get("mots_choc"), d / "couverture.png",
+                    tuple(int(accent[i:i + 2], 16) for i in (0, 2, 4)), concept.get("surtitre_miniature", ""))
     out = creer(d / "video_scene0.png", titre, prof.get("instagram") or prof["nom_compte"],
                 state.STATE / "stories" / f"{a.id}.png", (prof.get("charte_initiale") or {}).get("palette"))
     print(out)

@@ -50,6 +50,13 @@ Les autres créneaux = **vidéos d'info** (le fond de commerce) : actu du jour e
 savoir », toujours antipouvoir mais plus sobres et plus courtes (30-40 s). Jamais deux vidéos à moins de 4 h d'écart.
 Le visuel change à chaque vidéo : éditorial / cartoon / montage photo-vidéo de gens, jamais deux fois le même d'affilée.
 
+## 00quater. Miniature et titre d'ouverture : la teneur critique dès le premier regard
+Dans `4_concept.json` (concept choisi) : `titre_miniature` (8 mots max, **critique et explicite** : la thèse du post,
+ex. « Les vitrines d'abord. Toi, après. », « 5,4 milliards pour eux, 2,37 € pour toi »), `mots_choc` (1-3 mots en
+rouge), `surtitre_miniature` (qui · quand, ex. « Macron · 18 octobre »). La **1re scène** affiche la même thèse en
+titre et la voix l'attaque dès la 1re seconde. `tool story` fabrique la miniature « choc » à partir de ces champs ;
+`tool check` refuse une vidéo sans `titre_miniature`.
+
 ## 00bis. Spécialisation des agents (modèles par rôle)
 Chaque agent travaille dans **son propre sous-agent** (outil Agent), avec uniquement son fichier `agents/N_*.md`, ses notes et
 les sorties de l'agent précédent ; le Manager (session principale) transmet les fichiers et contrôle chaque sortie.

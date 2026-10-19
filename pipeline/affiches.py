@@ -151,3 +151,56 @@ def creer(style: str, kind: str, titre: str, accroche: str, quand: str, image: P
     sortie.parent.mkdir(parents=True, exist_ok=True)
     im.save(sortie)
     return sortie
+
+
+def couverture_choc(image: Path, titre: str, mots_choc: list[str] | None, sortie: Path, accent=(227, 36, 43),
+                    surtitre: str = "") -> Path:
+    """Miniature « choc » : image de la vidéo en plein cadre assombrie, titre critique énorme (zone visible dans la
+    grille du profil, centre 3:4), mots choc en rouge, mention « Créé avec l'IA »."""
+    import re as _re
+    fond = Image.open(image).convert("RGB").resize((W, H))
+    fond = fond.filter(ImageFilter.GaussianBlur(9))
+    noir = Image.new("RGB", (W, H), (8, 8, 12))
+    im = Image.blend(fond, noir, 0.62)
+    # dégradé sombre derrière le titre
+    grad = Image.new("L", (1, H))
+    for y in range(H):
+        grad.putpixel((0, y), int(230 * max(0, 1 - abs(y - 820) / 700)))
+    im.paste(noir, (0, 0), grad.resize((W, H)))
+    d = ImageDraw.Draw(im)
+    net = lambda m: _re.sub(r"[^\w]", "", m.lower())
+    choc = {net(m) for m in (mots_choc or []) for m in m.split()}
+    taille = 132 if len(titre) <= 28 else 112 if len(titre) <= 45 else 94
+    pol = _police("Black", taille)
+    lignes, cour = [], ""
+    for mot in titre.split():
+        essai = (cour + " " + mot).strip()
+        if d.textlength(essai.upper(), font=pol) > W - 140 and cour:
+            lignes.append(cour)
+            cour = mot
+        else:
+            cour = essai
+    lignes.append(cour)
+    lignes = lignes[:5]
+    h_ligne = int(taille * 1.08)
+    y = 820 - len(lignes) * h_ligne // 2
+    if surtitre:
+        pst = _police("Black", 46)
+        lw = d.textlength(surtitre.upper(), font=pst)
+        d.rectangle([(W - lw) / 2 - 20, y - 110, (W + lw) / 2 + 20, y - 40], fill=accent)
+        d.text((W // 2, y - 75), surtitre.upper(), font=pst, fill=(255, 255, 255), anchor="mm")
+    for li in lignes:
+        mots = li.split()
+        larg = d.textlength(li.upper(), font=pol)
+        x = (W - larg) / 2
+        for k, m in enumerate(mots):
+            t = m.upper() + (" " if k < len(mots) - 1 else "")
+            coul = accent if net(m) in choc else (255, 255, 255)
+            d.text((x + 5, y + 6), t, font=pol, fill=(0, 0, 0))
+            d.text((x, y), t, font=pol, fill=coul)
+            x += d.textlength(t, font=pol)
+        y += h_ligne
+    _sticker(im, d, (W - 420, 1560), "Créé avec l'IA", _police("ExtraBold", 40), (255, 255, 255), INK, -3)
+    sortie.parent.mkdir(parents=True, exist_ok=True)
+    im.save(sortie)
+    return sortie
