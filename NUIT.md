@@ -38,6 +38,18 @@ python3 -m pipeline.tool creneau --profile <compte>
   la vidéo résume les grandes infos de la semaine (lundi → dimanche), à partir de `state/historique_<compte>.json`
   et des veilles de la semaine, avec une mécanique propre au résumé (top, récap rapide, « ce qu'il fallait retenir »).
 
+## 00ter. Vidéo phare (créneau de 14 h) et vidéos d'info
+`tool creneau` l'indique. **14 h = la vidéo phare du jour**, celle qui doit faire décoller le compte :
+- le sujet le plus fort du jour (file de sujets ou veille 1), angle **contraste pouvoir / gens** : une figure de pouvoir
+  identifiable face aux gens concernés dès la 1re seconde (image + titre-contraste), faits sourcés, aucune accusation non prouvée ;
+- **beaucoup de visages et de gens** : personnages cartoon (theme.persos = cartoon) et/ou vraies photos et vidéos de gens
+  sous licence libre (voir CATALOGUE_VARIETE.md § Images de gens) ;
+- se termine par une **question fermée** à l'écran et en 1re ligne de légende (« À toi de juger : oui ou non ? ») ;
+- 45-55 s, effort maximal, agent 9 encore plus sévère (note ≥ 8 exigée).
+Les autres créneaux = **vidéos d'info** (le fond de commerce) : actu du jour expliquée, chiffres clés, « 3 choses à
+savoir », toujours antipouvoir mais plus sobres et plus courtes (30-40 s). Jamais deux vidéos à moins de 4 h d'écart.
+Le visuel change à chaque vidéo : éditorial / cartoon / montage photo-vidéo de gens, jamais deux fois le même d'affilée.
+
 ## 00bis. Spécialisation des agents (modèles par rôle)
 Chaque agent travaille dans **son propre sous-agent** (outil Agent), avec uniquement son fichier `agents/N_*.md`, ses notes et
 les sorties de l'agent précédent ; le Manager (session principale) transmet les fichiers et contrôle chaque sortie.

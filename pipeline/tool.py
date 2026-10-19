@@ -250,7 +250,9 @@ def cmd_creneau(a) -> None:
     t = _dt.fromisoformat(c)
     jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
     resume = t.weekday() == 6 and t.hour == 14
-    print(f"{c} ({jours[t.weekday()]} {t:%H h %M})" + (" — RÉSUMÉ DE LA SEMAINE OBLIGATOIRE" if resume else ""))
+    phare = 13 <= t.hour <= 15
+    print(f"{c} ({jours[t.weekday()]} {t:%H h %M})" + (" — RÉSUMÉ DE LA SEMAINE OBLIGATOIRE" if resume else "")
+          + (" — VIDÉO PHARE DU JOUR (voir NUIT.md § Vidéo phare)" if phare else " — vidéo d'info (fond de commerce)"))
 
 
 def cmd_avance(a) -> None:

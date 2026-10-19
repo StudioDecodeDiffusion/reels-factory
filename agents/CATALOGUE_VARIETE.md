@@ -82,3 +82,14 @@ Tenues (`theme.tenues` ou `tenue_narrateur` / `tenue_mascotte` par scène) : cla
 sport, hiver, fete, musique, ecologie, gilet_jaune, ouvrier, infirmier, milliardaire, roi, manifestant, etudiant, robe.
 Changer d'expression à CHAQUE réplique et de tenue selon le rôle joué (ex. Déco en milliardaire, Lou en gilet jaune).
 Répartition visée : éditorial 1 vidéo sur 2, cartoon 1 sur 3, pixel au plus 1 sur 6.
+
+## Images de gens (prioritaire : les visages font cliquer)
+- **Vraies photos et vidéos de gens sous licence libre**, URL directe du fichier dans une scène `ed_photo`
+  (`src` .jpg/.png ou .mp4 ; `debut_s` pour démarrer un extrait) : Pexels (images.pexels.com, videos.pexels.com),
+  Unsplash (images.unsplash.com), Pixabay — licences gratuites, usage commercial permis, crédit « Pexels / Nom » quand connu.
+  Chercher avec WebSearch « pexels manifestation france », « pexels station essence », « pexels retraités »,
+  « pexels caissière », etc. Préférer des gens reconnaissables comme « monsieur/madame tout-le-monde », pas des
+  personnes privées présentées comme impliquées dans le sujet.
+- **Figures de pouvoir** (président, ministres, PDG) : photos Wikimedia Commons sous licence libre ; discours officiels :
+  scène `ed_allocution` (reconstitution + texte exact).
+- **Interdit** : images de presse et d'agences (AFP, Reuters, BFM, franceinfo…), captures de JT, vidéos YouTube.
