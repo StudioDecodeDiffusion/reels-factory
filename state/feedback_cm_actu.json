@@ -1,21 +1,20 @@
 {
-  "date": "2026-10-18",
-  "bilan": "Relevé Instagram du 18/10 à 16 h 28 (Paris) : 3 abonnés (+1 depuis ce matin), 5 Reels en ligne, 590 vues cumulées. « La manif née d'un TikTok » (17/10, 21 h 08) monte à 320 vues / 277 comptes touchés ; le duel A/B est à égalité à 4 h (FLASH SPÉCIAL 116 vues, messagerie retraites 115) ; « Et les revendications ? » (15 h 04) 31 vues, « Macron au concert » (15 h 52) 8 vues. Toujours 0 commentaire, 0 partage, 0 enregistrement. Le propriétaire a programmé 4 autres Reels validés : ce soir 22 h, puis lundi 8 h, 14 h et 18 h.",
+  "date": "2026-10-19",
+  "bilan": "Relevé Instagram du 19/10 à 16 h 44 (Paris) : 4 abonnés (0 gagné en 24 h), 10 Reels, 2 318 vues cumulées (+1 450 depuis le 18/10 16 h). « Macron au concert, la France dans la rue » a décollé dans la nuit : 174 → 1 125 vues, 979 comptes touchés, 16 likes, 2 commentaires (48 % de toutes les vues du compte). Les 4 Reels du jour démarrent bas : casseurs-payeurs 105 vues en 8 h, gazole 63 en 6 h, « Les vitrines d'abord » 113 en 5 h 30, grève du 5 novembre 7 vues en 2 h 40. Toujours 0 partage et 0 enregistrement sur tout le compte.",
   "audience": {
     "questions": [],
     "demandes": [],
-    "critiques": []
+    "critiques": [],
+    "note": "Instagram compte 2 commentaires sur le Reel Macron mais l'API n'en renvoie aucun lisible (probablement ceux du compte lui-même, exclus, ou masqués). Aucun commentaire de marque, média ou ONG. DM non lus par le pipeline."
   },
   "recommandations": [
-    "Le rythme a été choisi par le propriétaire (4 Reels programmés d'ici lundi 18 h) : mesurer chacun à heure égale (J+1) plutôt qu'en cumul, pour corriger l'effet « vidéo plus ancienne ».",
-    "Les deux Reels de 15 h restent faibles en 1-2 h (31 et 8 vues) : publier à 13 min ou 50 min d'écart fait que les vidéos se partagent la même distribution.",
-    "Partages et enregistrements toujours à 0 sur 590 vues : finir chaque vidéo sur une question à commenter et la reprendre en première ligne de légende.",
-    "Agent 2 : aucune ambiance de communauté mesurable (0 commentaire) ; s'appuyer sur les trends externes."
+    "Le seul format qui décolle oppose le pouvoir et les gens dans une même image (Macron au concert / la rue) avec une question « À toi de juger » : le décliner (agents 4 et 2), toujours sur des faits sourcés.",
+    "5 Reels prévus aujourd'hui (8 h 14, 10 h 14, 11 h 09, 14 h 05, 18 h) : les derniers se partagent la distribution (grève 5 nov. à 7 vues en 2 h 40). Revenir à 1-2 Reels par jour espacés d'au moins 4 h.",
+    "0 partage / 0 enregistrement sur 2 318 vues : finir sur une question fermée facile (oui/non, A/B) et un chiffre-repère à garder.",
+    "Agent 2 : l'ambiance qui marche = indignation « deux poids, deux mesures » (Macron/Céline Dion) ; aucun signal communautaire mesurable par ailleurs."
   ],
   "reponses_agent_12": {
-    "1_questions_commentaires_dm": "Aucun commentaire sur les 5 Reels (relevé 18/10 16 h 28). Les DM ne sont pas lus par le pipeline : rien à signaler, aucun signe de soutien type Ko-fi pour l'instant.",
-    "2_marques_medias_ong": "Aucune interaction visible de marque, média, association ou ONG (pas de commentaire ; DM non accessibles).",
-    "3_rythme_et_reponses": "Une vidéo par jour à 18 h 30 sans republication : oui, le pipeline le permet (créneau, auto_publication) ; c'est au propriétaire de ne valider qu'une vidéo par créneau. Répondre dans l'heure : non garanti, les réponses ne partent qu'après « REP … » du propriétaire au mail de 16 h 30 ; délai réel = celui du propriétaire.",
-    "4_mention_ia_bio": "Pour : cohérent avec « Animation créée avec l'IA. » déjà en légende, protège la crédibilité d'un compte d'actu. Proposition : « Actu décodée en 50 s · voix et visuels IA · faits sourcés »."
+    "bio": "Proposition maintenue : « Actu décodée en 50 s · voix et visuels IA · faits sourcés » (pas encore appliquée à ma connaissance).",
+    "marques_medias_ong": "Aucun signal au 19/10 16 h 44."
   }
 }
