@@ -25,11 +25,13 @@ const useP = (delai = 0, damping = 18) => {
 const Revele: React.FC<{texte: string; taille: number; couleur: string; police?: string; delai?: number; accent?: string; mot?: string}> = ({texte, taille, couleur, police = SERIF, delai = 0, accent, mot}) => {
   const f = useCurrentFrame();
   const mots = texte.split(' ');
+  const net = (x: string) => x.toLowerCase().replace(/[^\p{L}\d]/gu, '');
+  const forts = new Set((mot ?? '').split(/\s+/).map(net).filter(Boolean));
   return (
     <div style={{display: 'flex', flexWrap: 'wrap', gap: `0 ${taille * 0.25}px`, lineHeight: 1.02}}>
       {mots.map((m, i) => {
         const p = interpolate(f - delai - i * 3, [0, 10], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-        const fort = mot && m.toLowerCase().replace(/[^\p{L}\d]/gu, '').includes(mot.toLowerCase());
+        const fort = forts.size > 0 && forts.has(net(m));
         return (
           <span key={i} style={{overflow: 'hidden', display: 'inline-block'}}>
             <span style={{display: 'inline-block', transform: `translateY(${(1 - p) * 110}%)`, fontFamily: police, fontSize: taille, color: fort && accent ? accent : couleur, fontStyle: fort ? 'italic' : 'normal'}}>{m}</span>
@@ -187,6 +189,7 @@ export const CadreEditorial: React.FC<{scene: Scene; theme: Theme; index: number
   const bloc = Math.max(0, Math.floor(courant / 6));
   const vis = mots.slice(bloc * 6, bloc * 6 + 6);
   const entree = interpolate(f, [0, 10], [0, 1], {extrapolateRight: 'clamp'});
+  const surPhoto = scene.type === 'ed_photo';
   return (
     <AbsoluteFill style={{backgroundColor: c.fond}}>
       {/* grain + lignes de grille fines */}
@@ -210,7 +213,7 @@ export const CadreEditorial: React.FC<{scene: Scene; theme: Theme; index: number
         {vis.map((m, i) => {
           const idx = bloc * 6 + i;
           return (
-            <span key={idx} style={{fontFamily: GROT, fontSize: 58, textTransform: 'uppercase', color: idx === courant ? c.fond : '#FFFFFF', backgroundColor: idx === courant ? c.accent : 'transparent', padding: '0 10px', WebkitTextStroke: idx === courant ? '0' : '2px rgba(0,0,0,0.6)', paintOrder: 'stroke fill', opacity: idx <= courant ? 1 : 0.5}}>
+            <span key={idx} style={{fontFamily: GROT, fontSize: 58, textTransform: 'uppercase', color: idx === courant ? '#FFFFFF' : surPhoto ? '#FFFFFF' : c.encre, backgroundColor: idx === courant ? c.accent : 'transparent', padding: '0 10px', WebkitTextStroke: idx === courant || !surPhoto ? '0' : '2px rgba(0,0,0,0.6)', paintOrder: 'stroke fill', opacity: idx <= courant ? 1 : 0.5}}>
               {m}
             </span>
           );

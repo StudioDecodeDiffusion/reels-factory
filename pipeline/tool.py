@@ -322,7 +322,7 @@ def cmd_drop(a) -> None:
     fiche = {
         "id": a.id, "profil": a.profile, "statut": "a_valider", "titre": concept.get("titre"),
         "son_tendance": _read(d, "7_spec.json", {}).get("son_tendance"),
-        **({"publication_heure": a.heure} if getattr(a, "heure", None) is not None else {"publication_le": _prochain_creneau(a.profile)}),
+        **({"publication_le": a.le} if getattr(a, "le", None) else {"publication_heure": a.heure} if getattr(a, "heure", None) is not None else {"publication_le": _prochain_creneau(a.profile)}),
         "format_qhse": concept.get("format_qhse"), "episode": concept.get("episode"),
         "legende": (d / "legende.txt").read_text(encoding="utf-8"),
         "sources": sorted({f.get("source_url") for f in concept.get("faits", []) if f.get("source_url")}
@@ -433,7 +433,7 @@ def main() -> None:
     p = sub.add_parser("render"); p.add_argument("spec"); p.add_argument("out")
     p = sub.add_parser("frames"); p.add_argument("spec"); p.add_argument("video")
     p = sub.add_parser("caption"); p.add_argument("id"); p.add_argument("--profile", required=True)
-    p = sub.add_parser("drop"); p.add_argument("id"); p.add_argument("--profile", required=True)
+    p = sub.add_parser("drop"); p.add_argument("id"); p.add_argument("--profile", required=True); p.add_argument("--le", help="publication à une date précise (ISO, ex. 2026-10-19T10:50:00+02:00)")
     p.add_argument("--heure", type=int, help="heure de publication de CETTE vidéo (sinon celle du profil)")
     p = sub.add_parser("info"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p = sub.add_parser("rapport"); p.add_argument("--agent", required=True); p.add_argument("--profile", required=True)
