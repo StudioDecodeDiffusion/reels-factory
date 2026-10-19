@@ -1,51 +1,60 @@
 {
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "compte": "actu",
-  "type": "stratégie complète",
+  "type": "stratégie complète (lundi)",
   "ou_on_en_est": {
-    "abonnes": 3,
-    "source_abonnes": "state/abonnes_actu.json (API Instagram, 18/10/2026)",
-    "meilleure_video_vues": 320,
-    "portee": 277,
-    "taux_interactions_portee_pct": 1.6,
+    "abonnes": 4,
+    "source_abonnes": "state/abonnes_actu.json (API Instagram, 19/10/2026 16 h 44)",
+    "reels": 10,
+    "vues_cumulees": 2318,
+    "meilleure_video_vues": 1125,
+    "meilleure_video": "Macron au concert, la France dans la rue",
+    "portee_compte_jour": 1728,
     "partages": 0,
     "enregistrements": 0,
-    "commentaires": 0,
-    "source_video": "state/stats_actu.json, relevé du 18/10/2026 14:28 UTC"
+    "commentaires": 2,
+    "abonnes_pour_1000_vues": 1.7,
+    "source_video": "state/stats_actu.json, relevé du 19/10/2026 14:44 UTC"
   },
   "paliers": [
     {
       "objectif": "1 000 abonnés",
-      "debloque": "dossier média crédible pour petites marques/médias, Ko-fi/Tipeee, pages partenaires",
-      "echeance_visee": "2026-12-31"
+      "debloque": "dossier média crédible (petits médias, ONG, associations), Ko-fi/Tipeee en bio",
+      "echeance_visee": "2026-12-31",
+      "statut": "à risque : à 1,7 abonné/1 000 vues il faudrait ≈ 590 000 vues"
     },
     {
       "objectif": "5 000 abonnés",
-      "debloque": "premiers partenariats rémunérés nano (20-100 $ par Reel, IMH 07/10/2026)",
+      "debloque": "premiers partenariats rémunérés nano (50-300 $ par Reel, Influee 26/03/2026)",
       "echeance_visee": "2027-03-31"
     },
     {
       "objectif": "10 000 abonnés",
-      "debloque": "Abonnements Instagram (seuil annoncé en France, BDM 26/07/2023), TikTok Creator Rewards (10k + 100k vues/30 j)",
+      "debloque": "Abonnements Instagram (10 000 followers, compte pro, 18 ans, sur invitation — Metricool, maj 18/02/2025) ; TikTok Creator Rewards (10 000 abonnés + 100 000 vues/30 j + vidéos d'au moins 1 min — Metricool 31/03/2026)",
       "echeance_visee": "2027-06-30"
     }
   ],
   "sources_de_revenus_prioritaires": [
-    "Contenu de marque / partenariats directs avec médias, ONG, associations, outils d'info (hors partis et hors pub politique)",
-    "Dons (Ko-fi 0 % sur les dons, Tipeee 8 %)",
+    "Contenu de marque / partenariats directs avec médias indépendants, ONG, associations, outils d'info (hors partis et pub politique)",
+    "Dons (Ko-fi, Tipeee) dès le lien en bio",
     "Abonnements Instagram à 10 000 abonnés",
-    "Reprise sur YouTube Shorts / TikTok pour l'audience plus que pour le revenu (RPM Shorts France ≈ 0,10 $/1000 vues, air.io 23/01/2026)"
+    "Reprise TikTok / YouTube Shorts pour l'audience ; TikTok paie seulement les vidéos d'1 min et plus"
+  ],
+  "non_accessibles": [
+    "Facebook Creator Fast Track : États-Unis et Canada seulement, 100 000 abonnés minimum (Les Gens d'Internet 20/03/2026)"
   ],
   "consignes_agents": {
-    "4": "Viser 45-55 s, accroche < 2 s, finir sur UN chiffre + une question à commenter ; varier les visuels et le script (pas de gabarit répété à l'identique : risque « contenu non original/inauthentique »).",
-    "8": "Une vidéo par jour à 18 h 30, aucune republication ; répondre à chaque commentaire dans l'heure ; légende avec question + sources.",
-    "3": "Suivre chaque semaine : abonnés gagnés par vidéo, partages/1000 vues, enregistrements/1000 vues, durée moyenne de visionnage."
+    "4": "Priorité au format « contraste pouvoir / gens » (Reel Macron : 1 125 vues, 9 fois la médiane) avec faits sourcés, sans accusation non prouvée ; finir sur « À toi de juger : oui ou non ? » ; 45-55 s pour Instagram, et prévoir une version de plus de 60 s pour une future reprise sur TikTok.",
+    "8": "Suivre chaque jour abonnés gagnés et visites du profil ; signaler le premier commentaire lisible ou contact de marque/média/ONG ; garder la proposition de bio.",
+    "3": "Indicateur n° 1 de la semaine : abonnés pour 1 000 vues (1,7 au 19/10) et partages pour 1 000 vues (0) ; verdict A/B le 20/10."
   },
   "actions_proprietaire": [
-    "Vérifier dans l'app : Tableau de bord professionnel > Monétisation, et noter les programmes affichés (avant le 25/10/2026)",
-    "Activer « Info IA » quand la voix off IA est réaliste ; ajouter « Voix et visuels générés par IA » dans la bio",
-    "Ouvrir une page Ko-fi et la mettre en lien en bio (avant le 01/11/2026)",
-    "Tester les Trial Reels (montrés aux non-abonnés) sur 2 vidéos/semaine"
+    "Avant le 22/10 : réduire à 1-2 Reels par jour, 4 h d'écart minimum (5 Reels le 19/10, le dernier à 7 vues en 2 h 40)",
+    "Avant le 22/10 : bio « Actu décodée en 50 s · voix et visuels IA · faits sourcés » + une phrase-promesse d'abonnement",
+    "Avant le 25/10 : Tableau de bord professionnel > Monétisation : noter les programmes affichés",
+    "Le 20/10 : relever dans l'app la durée moyenne de visionnage et la part de non-abonnés des Reels 1046, 1047 et 1509",
+    "Avant le 01/11 : ouvrir une page Ko-fi et la mettre en lien en bio",
+    "Tester les Trial Reels sur 2 vidéos par semaine"
   ],
   "risques": [
     "Contenu politique moins recommandé par défaut aux non-abonnés sur Instagram (depuis 2024)",
@@ -58,20 +67,21 @@
     "8": true
   },
   "resume_du_jour": {
-    "date": "2026-10-18",
+    "date": "2026-10-19",
     "type": "résumé quotidien",
-    "ou_on_en_est": "3 abonnés, 5 Reels, 590 vues cumulées, 0 partage / 0 enregistrement / 0 commentaire (API Instagram, 18/10 16 h 28 Paris)",
+    "ou_on_en_est": "4 abonnés, 10 Reels, 2 318 vues cumulées, 0 partage / 0 enregistrement, 2 commentaires (API Instagram, 19/10 16 h 44)",
     "ce_qui_a_bouge": [
-      "+1 abonné depuis 9 h 32",
-      "Reel TikTok du 17/10 : 214 → 320 vues",
-      "Test A/B à égalité à 4 h (116 contre 115)",
-      "4 Reels programmés par le propriétaire d'ici lundi 18 h"
+      "Reel Macron : 174 → 1 125 vues en 24 h (48 % des vues du compte)",
+      "+1 450 vues mais 0 abonné gagné",
+      "5 Reels le 19/10 : départs faibles (7 à 113 vues)",
+      "Test A/B toujours à égalité à J+1 (132 contre 120)",
+      "Relevé réparé (openpyxl) : classeur de suivi à jour"
     ],
-    "conversion": "≈ 5 abonnés pour 1 000 vues ; il en faudrait ≈ 200 000 vues pour 1 000 abonnés à ce taux",
+    "conversion": "1,7 abonné pour 1 000 vues ; ≈ 590 000 vues pour 1 000 abonnés à ce taux",
     "actions_du_jour": [
-      "Bio : « Actu décodée en 50 s · voix et visuels IA · faits sourcés » (avis favorable agent 8)",
-      "Ajouter une question finale en première ligne de légende aux Reels programmés avant leur sortie, si l'app le permet",
-      "Le 20/10 : relever dans l'app le temps de visionnage moyen et la part non-abonnés des Reels 1046 et 1047"
+      "Réduire à 1-2 Reels par jour",
+      "Décliner le format contraste pouvoir / gens + question finale",
+      "Bio avec mention IA et promesse d'abonnement"
     ]
   }
 }
