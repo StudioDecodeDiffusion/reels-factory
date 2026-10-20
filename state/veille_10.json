@@ -1,6 +1,6 @@
 {
   "semaine": "2026-S43",
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "comptes": [
     {
       "nom": "AntifakenewsAI (Thomas Huchon)",
@@ -108,6 +108,7 @@
     }
   ],
   "contexte": [
+    "17/10/2026, manifestations contre la vie chère : vague de faux visuels IA — vue aérienne de Paris en feu (> 640 000 vues, filigrane ChatGPT détecté par SynthID), personnage de dessin animé « arrêté » par les CRS (≥ 1 M, détournement d'une photo AFP du 31/05/2025), deepfake de Philippe Etchebest « protégeant son restaurant » (> 2 M sur X) (France 24 19/10/2026 via Yahoo https://fr.news.yahoo.com/panth%C3%A8re-rose-arr%C3%AAt%C3%A9e-paris-feu-165410326.html ; Les Surligneurs 20/10/2026 https://lessurligneurs.eu/manifestation-du-17-octobre-le-chef-philippe-etchebest-a-t-il-protege-lun-de-ses-restaurants-contre-les-pillages/)",
     "Instagram, 01/09/2026 : étiquette « Profil généré par IA » (remplace « Créateur IA ») ; vise surtout les faux humains mais aussi les comptes publiant régulièrement du contenu IA ou mettant en scène un personnage créé par IA ; portée limitée si non étiquetés (RTBF https://www.rtbf.be/article/intelligence-artificielle-instagram-va-identifier-les-comptes-entierement-generes-par-ia-11778004 ; Journal du Geek https://www.journaldugeek.com/2026/09/01/instagram-veut-que-ses-faux-humains-en-ia-se-presentent-clairement/)",
     "TikTok, 10/07/2026 : détection renforcée du spam IA « de faible qualité et très standardisé », en priorité sur politique/actualité, santé, finance (AFP via CB News https://www.cbnews.fr/mobile/tiktok-s-attaque-aux-comptes-proposant-uniquement-du-contenu-genere-ia)",
     "Kapwing (mai 2026, publié 21/06/2026) : 59 % des 500 premières vidéos d'un compte TikTok neuf = AI slop, ~21 % sur YouTube Shorts ; 35 % en science/éducation (TNW https://thenextweb.com/news/tiktok-ai-slop-59-percent-new-users-kapwing-study)",
@@ -146,23 +147,23 @@
       "belltakesocial",
       "phyzolof"
     ],
-    "etat": "19/10/2026 : 3 liens de posts reçus du propriétaire (laboscope Dej4JKbMiAm, belltakesocial DeX1cutBrSs, phyzolof Dekne2posgN) mais leur page n'a pas pu être ouverte depuis la session cloud (lecture refusée, connexion Instagram interdite) et rien n'est indexé. Pour un démontage plan par plan : coller dans la note la légende + 3-4 captures (début, milieu, fin) ou une description, ou autoriser la lecture d'instagram.com dans la session."
+    "etat": "20/10/2026 : toujours illisibles depuis la session (lecture d'instagram.com non autorisée, permission non accordée à temps) et rien d'indexé sur laboscope / belltakesocial / phyzolof (recherches web du jour sans résultat). Pour les démonter : coller légende + 3-4 captures dans la note de l'agent 10/11."
   },
   "a_decortiquer": [
     {
-      "lien": "https://www.instagram.com/p/Dekne2posgN/",
-      "compte": "phyzolof",
-      "pourquoi_ca_marche": "choisi par le propriétaire comme référence du style éditorial « façon Le Monde » ; contenu non lisible depuis la session → démontage du style-cible à partir de la demande et des sources typographiques, pas de la vidéo"
+      "lien": "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/",
+      "compte": "@emmakeitmann (Instagram, 525 000 abonnés au 20/10/2026 selon Le Parisien via Influenth)",
+      "pourquoi_ca_marche": "reel « fiction IA » sur le 17 octobre : > 136 000 J'aime au 20/10/2026 (Le Parisien via Influenth) ; bascule en 1 geste (elle se lève, musique très connue) qui transforme la rue en scène d'émeute générée ; contraste corps réel / décor IA ; collé à l'actu chaude. Mécanique à reprendre (la bascule), pas le flou fiction/réel."
     },
     {
-      "lien": "https://www.instagram.com/p/Dej4JKbMiAm/",
-      "compte": "laboscope",
-      "pourquoi_ca_marche": "choisi par le propriétaire (« fait en IA ») ; contenu non lisible depuis la session → en attente de captures"
+      "lien": "https://lessurligneurs.eu/manifestation-du-17-octobre-le-chef-philippe-etchebest-a-t-il-protege-lun-de-ses-restaurants-contre-les-pillages/",
+      "compte": "Deepfake « Etchebest protège son restaurant » (X ; original TikTok @djibril94260) — contre-modèle",
+      "pourquoi_ca_marche": "> 2 millions de vues (France 24 19/10/2026 ; Les Surligneurs 20/10/2026) : visage célèbre + cri en 1re seconde (« C'est mon restaurant ») + actu brûlante (≥ 3 000 commerces touchés selon le ministère, cité par Les Surligneurs). À retourner en vérification."
     },
     {
-      "lien": "https://www.cbnews.fr/node/97563",
-      "compte": "Faux comptes d'actu TikTok monétisés (contre-modèle)",
-      "pourquoi_ca_marche": "vues par l'émotion pouvoir d'achat + voix IA + > 1 min ; mécanique documentée par l'AFP à retourner en vérification (CB News 16/12/2025, France TV Info 12/10/2026)"
+      "lien": "https://gensdinternet.fr/2026/10/16/canva-sam-zirah-ils-detournent-les-codes-dhugo-decrypte-pour-annoncer-leur-fausse-candidature-a-lelection-presidentielle/amp/",
+      "compte": "Tendance « Dernière minute » (codes des carrousels HugoDécrypte repris par Cookinut, Canva France, Sam Zirah…)",
+      "pourquoi_ca_marche": "tendance Instagram de mi-octobre (Gens d'Internet 16/10/2026) : bandeau « Dernière minute » + titre court + l'essentiel en 2-3 phrases ; les codes d'un média d'actu jeune sont devenus un mème reconnu. Pas de chiffres de vues publiés ; format carrousel, pas vidéo."
     }
   ],
   "historique_a_decortiquer": [
@@ -172,6 +173,14 @@
         "https://fr.news.yahoo.com/coup-d-%C3%A9tat-france-l-103638198.html",
         "https://www.cbnews.fr/node/82036",
         "https://www.anijam.ai/blog/instagram-reels-trends/"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "liens": [
+        "https://www.instagram.com/p/Dekne2posgN/",
+        "https://www.instagram.com/p/Dej4JKbMiAm/",
+        "https://www.cbnews.fr/node/97563"
       ]
     }
   ]
