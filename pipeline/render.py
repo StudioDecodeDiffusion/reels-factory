@@ -12,8 +12,9 @@ from .config import VIDEO
 HEX = re.compile(r"^#[0-9A-Fa-f]{6}$")
 FONTS = {"Space Grotesk", "Inter", "JetBrains Mono", "Rubik", "Silkscreen"}
 MODES = {"gravity", "orbit", "bounce", "swarm", "pendulum_wave"}
-EXPRESSIONS = {"neutre", "content", "rire", "choc", "pense", "clin", "triste", "colere"}
-TENUES = {"classique", "economie", "qhse", "science", "detective", "sport", "hiver", "fete", "musique", "ecologie"}
+EXPRESSIONS = {"neutre", "content", "rire", "choc", "pense", "clin", "triste", "colere", "peur", "sarcasme", "degout"}  # les 3 dernières : persos cartoon (repli neutre en pixel)
+TENUES = {"classique", "economie", "qhse", "science", "detective", "sport", "hiver", "fete", "musique", "ecologie",
+          "gilet_jaune", "ouvrier", "infirmier", "milliardaire", "roi", "manifestant", "etudiant", "robe"}  # nouvelles : persos cartoon
 ANIMS = {"bounce", "float", "shake", "spin", "grow", "rain", "orbit"}
 MASCOTTE = {"neutre", "content", "choc", "pense", "clin", "aucune"}
 SPRITES = {"pompe", "goutte", "piece", "billet", "caddie", "maison", "usine", "voiture", "eclair", "flamme",

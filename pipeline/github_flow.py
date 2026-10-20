@@ -149,7 +149,7 @@ def depot(drop_dir: str) -> None:
                 mail.envoyer("Manager", f"🎬 Vidéo finie · {nom} · {f.get('titre', '')}",
                              md(f"La vidéo finale est en pièce jointe.\n\n- **Lien :** [{url}]({url})\n- **Publication prévue :** {quand or 'à valider'}"),
                              R_MANAGER, ref={"type": "manager", "job": job, "profil": fiche["profil"]},
-                             pieces=[tmp] if tmp.stat().st_size < 24_000_000 else [])
+                             pieces=[nom_fichier_video(f, tmp)] if tmp.stat().st_size < 24_000_000 else [])
 
         elif statut == "relance":  # relancer des rendus annulés
             for job in fiche.get("jobs", []):
@@ -245,7 +245,7 @@ Publication **automatique {_slot(profile, fiche)}** sur **{nom}** (story d'annon
 {fiche['legende']}
 ## 🔗 Sources
 {sources}"""))
-    piece = [d / "video.mp4"] if (d / "video.mp4").stat().st_size < 18_000_000 else []
+    piece = [nom_fichier_video(fiche, d / "video.mp4")] if (d / "video.mp4").stat().st_size < 18_000_000 else []
     mail.envoyer(9, f"{nom} · Vidéo prête, sortie auto : {fiche['titre']}", corps, R_VALIDATION,
                  ref={"type": "validation", "job": fiche["id"], "profil": fiche["profil"]},
                  images={"apercu": d / "apercu.png"}, pieces=piece)
@@ -643,6 +643,29 @@ def stats() -> None:
             print(f"{pid} : {len(posts)} posts, {len(new)} nouveaux commentaires")
         except Exception as e:
             print(f"{pid} : erreur {e}")
+
+
+def nom_fichier_video(fiche: dict, source: Path) -> Path:
+    """Copie la vidéo sous le nom demandé par le propriétaire : « Vidéo 0012 - 20-10-26 - Titre court.mp4 »
+    (numéro = ordre de création depuis le début du compte ; « / » interdit dans un nom de fichier → « - »)."""
+    import shutil
+    import tempfile
+    pid = fiche.get("profil", "actu")
+    nums = state.load(f"numeros_videos_{pid}", {})
+    if not nums:  # amorçage : ordre de l'historique
+        for h in state.history(pid):
+            if h.get("job") and h["job"] not in nums:
+                nums[h["job"]] = len(nums) + 1
+    if fiche["id"] not in nums:
+        nums[fiche["id"]] = max(nums.values(), default=0) + 1
+        state.save(f"numeros_videos_{pid}", nums)
+    d = datetime.fromisoformat(fiche.get("cree", state.now_iso())).astimezone(TZ)
+    titre = re.sub(r'[\\/:*?"<>|«»]', "", fiche.get("titre") or "Vidéo").strip()
+    if len(titre) > 45:
+        titre = titre[:45].rsplit(" ", 1)[0]
+    dest = Path(tempfile.mkdtemp()) / f"Vidéo {nums[fiche['id']]:04d} - {d:%d-%m-%y} - {titre}.mp4"
+    shutil.copy(source, dest)
+    return dest
 
 
 def _suivi(ig, pid: str, posts: list[dict]) -> None:
