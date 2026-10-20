@@ -1,0 +1,340 @@
+{
+  "theme": {
+    "fond": "#120A0A",
+    "texte": "#FFFFFF",
+    "accent": "#E3242B",
+    "accent2": "#FFD23F",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "Libertés en danger ?",
+    "grille": false,
+    "style": "pixel",
+    "persos": "cartoon",
+    "mise_en_page": "duo",
+    "transition": "volet",
+    "camera": "secousse",
+    "palette": [
+      "#E3242B",
+      "#120A0A",
+      "#FFD23F",
+      "#2B2B33",
+      "#F3EEE3"
+    ],
+    "tenues": {
+      "narrateur": "manifestant",
+      "mascotte": "economie"
+    }
+  },
+  "musique": {
+    "genre": "funk",
+    "ambiance": "curieux",
+    "volume": 0.3
+  },
+  "son_tendance": {
+    "nom": "Two Fishes (extrait de Love Island USA)",
+    "createur": "Corbin Mims (« CorbinGPT »)",
+    "pourquoi": "la vidéo reprend la trend : défendre avec aplomb une idée bancale, puis les faits"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.9&cfg=0.4",
+    "mascotte": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte_effet": "tres_aigu"
+  },
+  "variete": {
+    "accroche": "faux_avertissement",
+    "trend": "Two Fishes",
+    "fonctionnement": "vrai_faux",
+    "mise_en_page": "duo",
+    "musique": "funk",
+    "voix": "V1dramatique+V2tres_aigu",
+    "palette": "rouge_alerte"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "duration": 8.8,
+      "title": "Ils s'attaquent à nos libertés.",
+      "subtitle": "Couvre-feux · manifs « voire interdites »",
+      "sprite": "danger",
+      "sprite_anim": "shake",
+      "energie": 3,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Couvre-feux, manifs encadrées, voire interdites : ce gouvernement s'attaque à nos libertés.",
+          "expression": "colere"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Mais non, c'est pour ton bien. Promis.",
+          "expression": "sarcasme"
+        }
+      ],
+      "musique": {
+        "ambiance": "effroi",
+        "energie": 3
+      }
+    },
+    {
+      "type": "kinetic",
+      "duration": 10.8,
+      "lines": [
+        "Lundi soir :",
+        "couvre-feux",
+        "décidés par les préfets",
+        "les mineurs d'abord"
+      ],
+      "highlight": "couvre-feux",
+      "sprite": "horloge",
+      "sprite_anim": "shake",
+      "energie": 3,
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Depuis lundi soir, des couvre-feux, décidés par les préfets. Les mineurs, visés en premier.",
+          "expression": "colere"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Couvre-feu pour les jeunes. Et pour les prix ? Rien.",
+          "expression": "degout"
+        }
+      ]
+    },
+    {
+      "type": "counter",
+      "duration": 7.2,
+      "from": 0.0,
+      "to": 16.7,
+      "decimals": 1,
+      "suffix": " millions",
+      "label": "devant Macron",
+      "sprite": "horloge",
+      "sprite_anim": "bounce",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Seize virgule sept millions devant Macron.",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Donc forcément, du concret pour les fins de mois.",
+          "expression": "content"
+        }
+      ],
+      "musique": {
+        "ambiance": "curieux",
+        "energie": 2
+      },
+      "sfx": [
+        "ding"
+      ]
+    },
+    {
+      "type": "kinetic",
+      "duration": 7.2,
+      "lines": [
+        "Manifs « encadrées »",
+        "« voire interdites »",
+        "« Nous serons intraitables »"
+      ],
+      "highlight": "interdites",
+      "sprite": "document",
+      "sprite_anim": "float",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Sur les prochaines manifs : encadrées, voire interdites.",
+          "expression": "choc"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Moins de manifs, plus de liberté. Logique.",
+          "expression": "clin"
+        }
+      ],
+      "musique": {
+        "ambiance": "tension",
+        "energie": 2
+      },
+      "sfx": [
+        "whoosh"
+      ]
+    },
+    {
+      "type": "checklist",
+      "duration": 7.1,
+      "title": "On vérifie avec la loi",
+      "items": [
+        {
+          "texte": "Il faut une autorisation",
+          "etat": "faux"
+        },
+        {
+          "texte": "Déclarer 3 jours francs avant",
+          "etat": "vrai"
+        }
+      ],
+      "sprite": "loupe",
+      "sprite_anim": "orbit",
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Il faut une autorisation pour manifester.",
+          "expression": "pense"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Faux. Une déclaration, trois jours francs avant.",
+          "expression": "content"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Ah.",
+          "expression": "choc"
+        }
+      ],
+      "musique": {
+        "ambiance": "curieux",
+        "energie": 3
+      },
+      "sfx": [
+        "pop"
+      ]
+    },
+    {
+      "type": "kinetic",
+      "duration": 8.0,
+      "lines": [
+        "Manifester : la règle",
+        "Interdire : l'exception",
+        "si l'ordre public",
+        "est menacé"
+      ],
+      "highlight": "l'exception",
+      "sprite": "check",
+      "sprite_anim": "grow",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le droit dit : manifester, c'est la liberté d'expression.",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Interdire ? Seulement si l'ordre public est menacé.",
+          "expression": "clin"
+        }
+      ],
+      "musique": {
+        "ambiance": "tension",
+        "energie": 2
+      },
+      "sfx": [
+        "whoosh"
+      ]
+    },
+    {
+      "type": "bigstat",
+      "duration": 8.4,
+      "value": "2,37 €",
+      "label": "le litre de gazole, lui, reste là",
+      "source": "essencepascher.fr · 19/10",
+      "sprite": "pompe",
+      "sprite_anim": "shake",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et le gazole à deux euros trente-sept ?",
+          "expression": "colere"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "J'arrête le rôle : aucune mesure annoncée sur les prix.",
+          "expression": "triste"
+        }
+      ],
+      "musique": {
+        "ambiance": "tension",
+        "energie": 3
+      },
+      "sfx": [
+        "ding"
+      ]
+    },
+    {
+      "type": "timeline",
+      "duration": 8.4,
+      "title": "Les réponses ? Des mesurettes.",
+      "events": [
+        {
+          "date": "18 oct.",
+          "text": "Allocution"
+        },
+        {
+          "date": "« Prochains jours »",
+          "text": "RDV à Matignon"
+        },
+        {
+          "date": "Date ?",
+          "text": "Aucune"
+        }
+      ],
+      "sprite": "calendrier",
+      "sprite_anim": "bounce",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et les réponses concrètes ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Des lycéens reçus à Matignon. Bientôt. Sans date. Des mesurettes, et trop tard.",
+          "expression": "colere"
+        }
+      ],
+      "musique": {
+        "ambiance": "curieux",
+        "energie": 2
+      },
+      "sfx": [
+        "whoosh"
+      ]
+    },
+    {
+      "type": "outro",
+      "duration": 10.0,
+      "text": "Nos libertés rognées, nos fins de mois oubliées : tu acceptes ?",
+      "cta": "Abonne-toi",
+      "sprite": "fleche_haut",
+      "sprite_anim": "float",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Nos libertés rognées, nos fins de mois oubliées. Tu acceptes : oui ou non ?",
+          "expression": "colere"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Envoie ça à ton pote du 17.",
+          "expression": "clin"
+        }
+      ],
+      "musique": {
+        "ambiance": "joyeux",
+        "energie": 3
+      },
+      "sfx": [
+        "pop"
+      ]
+    }
+  ]
+}
