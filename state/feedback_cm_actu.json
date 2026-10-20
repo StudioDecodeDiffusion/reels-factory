@@ -1,20 +1,21 @@
 {
-  "date": "2026-10-19",
-  "bilan": "Relevé Instagram du 19/10 à 16 h 44 (Paris) : 4 abonnés (0 gagné en 24 h), 10 Reels, 2 318 vues cumulées (+1 450 depuis le 18/10 16 h). « Macron au concert, la France dans la rue » a décollé dans la nuit : 174 → 1 125 vues, 979 comptes touchés, 16 likes, 2 commentaires (48 % de toutes les vues du compte). Les 4 Reels du jour démarrent bas : casseurs-payeurs 105 vues en 8 h, gazole 63 en 6 h, « Les vitrines d'abord » 113 en 5 h 30, grève du 5 novembre 7 vues en 2 h 40. Toujours 0 partage et 0 enregistrement sur tout le compte.",
+  "date": "2026-10-20",
+  "bilan": "Relevé Instagram du 20/10 à 16 h 36 (Paris) : 4 abonnés (0 gagné depuis le 18/10), 12 Reels, 2 620 vues cumulées (+302 depuis le 19/10 16 h 44). Le Reel Macron plafonne (1 125 → 1 155, +30 en 24 h). Un seul Reel aujourd'hui (« Ils s'attaquent à nos libertés », 12 h 33, 77,5 s) : 63 vues, 52 comptes touchés, 2 likes et 2 enregistrements en 4 h — les 2 premiers enregistrements du compte. Compte du jour : 831 comptes touchés, 1 000 vues, 6 visites du profil, 8 comptes engagés. Rythme respecté : 2 Reels aujourd'hui (12 h 33, puis 18 h), plus de 4 h d'écart.",
   "audience": {
     "questions": [],
     "demandes": [],
     "critiques": [],
-    "note": "Instagram compte 2 commentaires sur le Reel Macron mais l'API n'en renvoie aucun lisible (probablement ceux du compte lui-même, exclus, ou masqués). Aucun commentaire de marque, média ou ONG. DM non lus par le pipeline."
+    "note": "Aucun commentaire lisible par l'API (les 2 commentaires du Reel Macron restent invisibles). Aucun contact de marque, média ou ONG. DM non lus par le pipeline. Changement de bio : non mesurable par le relevé (aucune donnée de bio dans state/), à confirmer par le propriétaire."
   },
   "recommandations": [
-    "Le seul format qui décolle oppose le pouvoir et les gens dans une même image (Macron au concert / la rue) avec une question « À toi de juger » : le décliner (agents 4 et 2), toujours sur des faits sourcés.",
-    "5 Reels prévus aujourd'hui (8 h 14, 10 h 14, 11 h 09, 14 h 05, 18 h) : les derniers se partagent la distribution (grève 5 nov. à 7 vues en 2 h 40). Revenir à 1-2 Reels par jour espacés d'au moins 4 h.",
-    "0 partage / 0 enregistrement sur 2 318 vues : finir sur une question fermée facile (oui/non, A/B) et un chiffre-repère à garder.",
-    "Agent 2 : l'ambiance qui marche = indignation « deux poids, deux mesures » (Macron/Céline Dion) ; aucun signal communautaire mesurable par ailleurs."
+    "Premier signal fort : 2 enregistrements sur le Reel « libertés » (couvre-feux + manifs encadrées, question « Tu acceptes : oui ou non ? »). Garder la question fermée finale et le cadrage « tes droits / ta vie » (agents 4 et 5).",
+    "Le Reel « libertés » dure 77,5 s pour une cible de 50 s : vérifier à J+1 s'il tient ; sinon revenir à 45-55 s.",
+    "Garder 1-2 Reels par jour (appliqué aujourd'hui) : on mesure enfin chaque Reel sans cannibalisation.",
+    "Agent 2 : ambiance du jour = défense des libertés publiques (couvre-feux, manifs encadrées) ; aucun autre signal communautaire mesurable."
   ],
   "reponses_agent_12": {
-    "bio": "Proposition maintenue : « Actu décodée en 50 s · voix et visuels IA · faits sourcés » (pas encore appliquée à ma connaissance).",
-    "marques_medias_ong": "Aucun signal au 19/10 16 h 44."
+    "reponses_abonnement": "Règle adoptée : chaque réponse proposée à un commentaire lisible finira par une invitation à s'abonner pour la suite. Aucun commentaire lisible aujourd'hui.",
+    "bio": "Non vérifiable par le relevé Instagram du pipeline (la bio n'est pas relevée) ; demande au propriétaire de confirmer la date du changement s'il a été fait.",
+    "marques_medias_ong": "Aucun signal au 20/10 16 h 36."
   }
 }
