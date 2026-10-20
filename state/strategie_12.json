@@ -1,27 +1,28 @@
 {
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "compte": "actu",
-  "type": "stratégie complète (lundi)",
+  "type": "résumé quotidien (stratégie complète du 19/10 toujours valable)",
   "ou_on_en_est": {
     "abonnes": 4,
-    "source_abonnes": "state/abonnes_actu.json (API Instagram, 19/10/2026 16 h 44)",
-    "reels": 10,
-    "vues_cumulees": 2318,
-    "meilleure_video_vues": 1125,
+    "source_abonnes": "state/abonnes_actu.json (API Instagram, 20/10/2026 16 h 36)",
+    "reels": 12,
+    "vues_cumulees": 2620,
+    "meilleure_video_vues": 1155,
     "meilleure_video": "Macron au concert, la France dans la rue",
-    "portee_compte_jour": 1728,
+    "portee_compte_jour": 831,
     "partages": 0,
-    "enregistrements": 0,
+    "enregistrements": 2,
     "commentaires": 2,
-    "abonnes_pour_1000_vues": 1.7,
-    "source_video": "state/stats_actu.json, relevé du 19/10/2026 14:44 UTC"
+    "abonnes_pour_1000_vues": 1.5,
+    "source_video": "state/stats_actu.json, relevé du 20/10/2026 14:36 UTC",
+    "abonnes_pour_1000_vues_depuis_18_10": 0
   },
   "paliers": [
     {
       "objectif": "1 000 abonnés",
       "debloque": "dossier média crédible (petits médias, ONG, associations), Ko-fi/Tipeee en bio",
       "echeance_visee": "2026-12-31",
-      "statut": "à risque : à 1,7 abonné/1 000 vues il faudrait ≈ 590 000 vues"
+      "statut": "à risque : 0 abonné gagné depuis le 18/10 ; à 1,5 abonné/1 000 vues il faudrait ≈ 670 000 vues"
     },
     {
       "objectif": "5 000 abonnés",
@@ -44,9 +45,9 @@
     "Facebook Creator Fast Track : États-Unis et Canada seulement, 100 000 abonnés minimum (Les Gens d'Internet 20/03/2026)"
   ],
   "consignes_agents": {
-    "4": "Priorité au format « contraste pouvoir / gens » (Reel Macron : 1 125 vues, 9 fois la médiane) avec faits sourcés, sans accusation non prouvée ; finir sur « À toi de juger : oui ou non ? » ; 45-55 s pour Instagram, et prévoir une version de plus de 60 s pour une future reprise sur TikTok.",
-    "8": "Suivre chaque jour abonnés gagnés et visites du profil ; signaler le premier commentaire lisible ou contact de marque/média/ONG ; garder la proposition de bio.",
-    "3": "Indicateur n° 1 de la semaine : abonnés pour 1 000 vues (1,7 au 19/10) et partages pour 1 000 vues (0) ; verdict A/B le 20/10."
+    "4": "Priorité au cadrage « ce qu'on te retire / tes droits / ta vie » + question fermée oui/non (seul Reel avec enregistrements : « libertés », 2). Contraste pouvoir / gens seulement avec une scène-symbole concrète dans la 1re seconde. 45-55 s. Annoncer une suite (« demain : … ») pour pousser au profil.",
+    "8": "Suivre abonnés gagnés, visites du profil et enregistrements ; chaque réponse proposée invite à s'abonner ; signaler le premier commentaire lisible ou contact de marque/média/ONG.",
+    "3": "Indicateurs : abonnés pour 1 000 vues (1,5 total, 0 depuis le 18/10) et enregistrements pour 1 000 vues (0,8) ; mener le test « fin à garder »."
   },
   "actions_proprietaire": [
     "Avant le 22/10 : réduire à 1-2 Reels par jour, 4 h d'écart minimum (5 Reels le 19/10, le dernier à 7 vues en 2 h 40)",
@@ -67,21 +68,20 @@
     "8": true
   },
   "resume_du_jour": {
-    "date": "2026-10-19",
+    "date": "2026-10-20",
     "type": "résumé quotidien",
-    "ou_on_en_est": "4 abonnés, 10 Reels, 2 318 vues cumulées, 0 partage / 0 enregistrement, 2 commentaires (API Instagram, 19/10 16 h 44)",
+    "ou_on_en_est": "4 abonnés (0 gagné depuis le 18/10), 12 Reels, 2 620 vues cumulées, 0 partage, 2 enregistrements, 6 visites du profil le 20/10 (API Instagram, 20/10 16 h 36)",
     "ce_qui_a_bouge": [
-      "Reel Macron : 174 → 1 125 vues en 24 h (48 % des vues du compte)",
-      "+1 450 vues mais 0 abonné gagné",
-      "5 Reels le 19/10 : départs faibles (7 à 113 vues)",
-      "Test A/B toujours à égalité à J+1 (132 contre 120)",
-      "Relevé réparé (openpyxl) : classeur de suivi à jour"
+      "2 premiers enregistrements du compte sur « Ils s'attaquent à nos libertés » (63 vues en 4 h)",
+      "Test A/B faux JT / messagerie : nul (+10,8 %, 0 partage), clos",
+      "Reel Macron plafonné (+30 vues en 24 h) et n'a pas amené de visites du profil",
+      "Rythme ramené à 2 Reels/jour, comme demandé le 19/10"
     ],
-    "conversion": "1,7 abonné pour 1 000 vues ; ≈ 590 000 vues pour 1 000 abonnés à ce taux",
+    "conversion": "1,5 abonné pour 1 000 vues au total, 0 depuis le 18/10 : le problème n° 1 est la conversion, pas la portée",
     "actions_du_jour": [
-      "Réduire à 1-2 Reels par jour",
-      "Décliner le format contraste pouvoir / gens + question finale",
-      "Bio avec mention IA et promesse d'abonnement"
+      "Bio + promesse d'abonnement (« l'actu décodée chaque soir à 18 h ») : dans l'app, aujourd'hui",
+      "Annoncer la suite en fin de Reel (« demain : … ») et caler un rendez-vous fixe à 18 h",
+      "Test « fin à garder » (récap 3 chiffres + Enregistre) sur les 4 prochains Reels"
     ]
   }
 }
