@@ -1,0 +1,267 @@
+{
+  "theme": {
+    "fond": "#11131A",
+    "texte": "#F2EEE4",
+    "accent": "#FFB000",
+    "accent2": "#7FB3FF",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "20 octobre 2026",
+    "grille": true,
+    "style": "editorial",
+    "palette": [
+      "#FFB000",
+      "#7FB3FF",
+      "#F2EEE4",
+      "#E4572E",
+      "#11131A",
+      "#3A3F4B"
+    ],
+    "transition": "volet",
+    "camera": "respire"
+  },
+  "musique": {
+    "genre": "trap8bit",
+    "volume": 0.4
+  },
+  "voix_override": {
+    "narrateur": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte_effet": "grave"
+  },
+  "variete": {
+    "accroche": "question_choc",
+    "trend": "Answer in One Word",
+    "fonctionnement": "un_mot",
+    "mise_en_page": "editorial",
+    "musique": "trap8bit",
+    "voix": "V3+V2grave",
+    "palette": "nuit_ambre"
+  },
+  "scenes": [
+    {
+      "type": "ed_titre",
+      "duration": 7.6,
+      "kicker": "COUVRE-FEUX · 20 OCT.",
+      "titre": "Qui est vraiment surveillé ?",
+      "mot_fort": "surveillé",
+      "sous_titre": "Réponds en un mot.",
+      "sfx": [
+        "impact"
+      ],
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Couvre-feu pour les ados, milliards pour les sociétés. Je demande, tu réponds en un mot.",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Vas-y.",
+          "expression": "clin"
+        }
+      ]
+    },
+    {
+      "type": "ed_citation",
+      "duration": 6.0,
+      "texte": "« Déclencher un certain nombre de couvre-feux pour ce soir, partiels »",
+      "auteur": "Sébastien Lecornu aux préfets, 19 octobre 2026",
+      "sfx": [
+        "whoosh"
+      ],
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Lundi, Lecornu réclame des couvre-feux. Il demande à qui ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Préfets.",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "ed_liste",
+      "duration": 10.3,
+      "kicker": "DANS LE NORD",
+      "titre": "Qui doit rentrer ?",
+      "points": [
+        "Les mineurs",
+        "Sans adulte avec eux",
+        "Dans plusieurs villes"
+      ],
+      "sfx": [
+        "ding"
+      ],
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Dans plusieurs villes du Nord, qui doit rentrer avant la nuit ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Mineurs.",
+          "expression": "triste"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Ceux qui sont dehors sans adulte. Les ados, donc.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "ed_titre",
+      "duration": 7.2,
+      "kicker": "PENDANT CE TEMPS",
+      "titre": "Et l'impôt des sociétés ?",
+      "mot_fort": "sociétés",
+      "sous_titre": "Réponse : MILLIARDS",
+      "sfx": [
+        "whoosh"
+      ],
+      "energie": 3,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Changement d'étage. Les sociétés qui ne paient pas tout leur impôt, ça coûte ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Milliards.",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "ed_chiffre",
+      "duration": 10.3,
+      "kicker": "IMPÔT SUR LES SOCIÉTÉS · 2019",
+      "valeur": 5.6,
+      "decimales": 1,
+      "suffixe": " Md€",
+      "legende": "de manque à gagner (fraude + erreurs)",
+      "source": "DGFiP Analyses n° 11, octobre 2026",
+      "sfx": [
+        "ding"
+      ],
+      "energie": 3,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Combien exactement ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Cinq virgule six.",
+          "expression": "choc"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Milliards d'euros en deux mille dix-neuf, fraudes et erreurs mêlées. C'est le fisc qui le dit.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "ed_versus",
+      "duration": 8.7,
+      "kicker": "EN 2019",
+      "titre": "Perdu contre récupéré",
+      "gauche": {
+        "label": "Manque à gagner",
+        "valeur": "5,6 Md€"
+      },
+      "droite": {
+        "label": "Redressé",
+        "valeur": "2,3 Md€"
+      },
+      "sfx": [
+        "pop"
+      ],
+      "energie": 3,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et le fisc en a récupéré combien ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Moins.",
+          "expression": "sarcasme"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Deux virgule trois milliards redressés. Même pas la moitié.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "ed_liste",
+      "duration": 7.5,
+      "kicker": "LE BILAN EN UN MOT",
+      "titre": "Qui est surveillé ?",
+      "points": [
+        "Ados dehors : COUVRE-FEU",
+        "Impôt des sociétés : 5,6 Md€",
+        "Ce chiffre : un PLANCHER"
+      ],
+      "sfx": [
+        "ding"
+      ],
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et ce chiffre, il compte tout ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Plancher.",
+          "expression": "neutre"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Les fraudes jamais repérées n'y sont pas.",
+          "expression": "triste"
+        }
+      ]
+    },
+    {
+      "type": "ed_titre",
+      "duration": 8.8,
+      "kicker": "À TOI",
+      "titre": "Et toi, en un mot ?",
+      "mot_fort": "un mot",
+      "sous_titre": "Abonne-toi pour l'actu décodée chaque soir",
+      "sfx": [
+        "pop"
+      ],
+      "energie": 1,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les ados à la maison, les milliards dans la nature. Et toi, en un mot ?",
+          "expression": "sarcasme"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Commente. Et abonne-toi.",
+          "expression": "clin"
+        }
+      ]
+    }
+  ]
+}
