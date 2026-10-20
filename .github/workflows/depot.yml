@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: courrier
+  group: depot-${{ github.run_id }}   # jamais annulé par un passage du facteur (même groupe = annulation des runs en attente)
   cancel-in-progress: false
 
 permissions:
