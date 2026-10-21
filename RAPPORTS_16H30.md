@@ -1,5 +1,7 @@
 # Session de 16 h 30 — agents 8 puis 3 (rapports quotidiens)
 
+> **Mode économie de quota** : si `state/quota.json` contient `economie_jusqu_a` dans le futur, rapports courts (agent 8 et 3 : 10 lignes max chacun ; agent 12 : 5 lignes).
+
 Lancée chaque jour par une tâche planifiée Claude (abonnement du propriétaire, aucune API payante).
 Personne ne regarde : ne pose pas de question. Le ou les comptes à traiter sont indiqués dans le message
 de la tâche (`actu`, `qhse`…). Pour chaque compte, dans cet ordre :
