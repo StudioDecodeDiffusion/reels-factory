@@ -70,7 +70,7 @@ Si le quota Claude est élevé (relevé > 75 %), tout passer en sonnet sauf 5 et
 
 ## 000. File de sujets du propriétaire (prioritaire)
 Lire `state/file_sujets_actu.json` : prendre le **premier sujet non fait** compatible avec le créneau (un sujet avec
-`creneau` n'est produit que pour ce créneau). Utiliser sa trend. Après le dépôt, passer `fait` à true. File vide → choix libre.
+`creneau` n'est produit que pour ce créneau, et se dépose avec `tool drop … --le <creneau>+02:00`). Utiliser sa trend. Après le dépôt, passer `fait` à true. File vide → choix libre.
 
 ## 0. Préparation
 ```bash

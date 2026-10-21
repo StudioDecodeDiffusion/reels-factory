@@ -239,7 +239,7 @@ def _prochain_creneau(pid: str, horizon_h: float | None = None) -> str | None:
         if x.get("profil") == pid and x.get("statut") in ("a_valider", "approuvee", "rendu_en_cours", "publiee") and x.get("publication_le"):
             pris.add(x["publication_le"][:16])
     maintenant = datetime.now(TZ)
-    t0 = maintenant + timedelta(minutes=90)
+    t0 = maintenant + timedelta(minutes=40)  # le rendu final GitHub prend ~20-25 min
     for jour in range(0, 8):
         base = maintenant + timedelta(days=jour)
         for c in sorted(_creneaux_du_jour(prof, base)):
