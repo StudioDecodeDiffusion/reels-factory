@@ -1,28 +1,29 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-10-21",
   "compte": "actu",
-  "type": "résumé quotidien (stratégie complète du 19/10 toujours valable)",
+  "type": "résumé quotidien, mode économie (stratégie complète du 19/10 toujours valable)",
   "ou_on_en_est": {
     "abonnes": 4,
-    "source_abonnes": "state/abonnes_actu.json (API Instagram, 20/10/2026 16 h 36)",
-    "reels": 12,
-    "vues_cumulees": 2620,
+    "source_abonnes": "state/abonnes_actu.json (API Instagram, 21/10/2026 16 h 36)",
+    "reels": 15,
+    "vues_cumulees": 2977,
     "meilleure_video_vues": 1155,
     "meilleure_video": "Macron au concert, la France dans la rue",
-    "portee_compte_jour": 831,
+    "portee_compte_jour": 363,
     "partages": 0,
     "enregistrements": 2,
     "commentaires": 2,
     "abonnes_pour_1000_vues": 1.5,
-    "source_video": "state/stats_actu.json, relevé du 20/10/2026 14:36 UTC",
-    "abonnes_pour_1000_vues_depuis_18_10": 0
+    "source_video": "state/stats_actu.json, relevé du 21/10/2026 14:36 UTC",
+    "abonnes_pour_1000_vues_depuis_18_10": 0,
+    "visites_profil_jour": 4
   },
   "paliers": [
     {
       "objectif": "1 000 abonnés",
       "debloque": "dossier média crédible (petits médias, ONG, associations), Ko-fi/Tipeee en bio",
       "echeance_visee": "2026-12-31",
-      "statut": "à risque : 0 abonné gagné depuis le 18/10 ; à 1,5 abonné/1 000 vues il faudrait ≈ 670 000 vues"
+      "statut": "à risque : 0 abonné gagné depuis le 18/10 (21/10), visites du profil 19→4 par jour"
     },
     {
       "objectif": "5 000 abonnés",
@@ -45,7 +46,7 @@
     "Facebook Creator Fast Track : États-Unis et Canada seulement, 100 000 abonnés minimum (Les Gens d'Internet 20/03/2026)"
   ],
   "consignes_agents": {
-    "4": "Priorité au cadrage « ce qu'on te retire / tes droits / ta vie » + question fermée oui/non (seul Reel avec enregistrements : « libertés », 2). Contraste pouvoir / gens seulement avec une scène-symbole concrète dans la 1re seconde. 45-55 s. Annoncer une suite (« demain : … ») pour pousser au profil.",
+    "4": "Abandonner les sujets éco « institution » (Bercy, prix : 69-80 vues, 0 enregistrement) au profit de « ce qu'on te retire » + question oui/non ; 45-55 s ; fin « à garder » (test agent 3) + suite annoncée « demain ».",
     "8": "Suivre abonnés gagnés, visites du profil et enregistrements ; chaque réponse proposée invite à s'abonner ; signaler le premier commentaire lisible ou contact de marque/média/ONG.",
     "3": "Indicateurs : abonnés pour 1 000 vues (1,5 total, 0 depuis le 18/10) et enregistrements pour 1 000 vues (0,8) ; mener le test « fin à garder »."
   },
@@ -83,5 +84,10 @@
       "Annoncer la suite en fin de Reel (« demain : … ») et caler un rendez-vous fixe à 18 h",
       "Test « fin à garder » (récap 3 chiffres + Enregistre) sur les 4 prochains Reels"
     ]
-  }
+  },
+  "actions_du_jour": [
+    "Agent 4 : prochain Reel cadré « tes droits / ton argent » + fin à garder",
+    "Agent 8 : relever chaque jour visites du profil et enregistrements",
+    "Propriétaire : confirmer la date du changement de bio (si fait) et vérifier le lien Ko-fi/Tipeee en bio"
+  ]
 }
