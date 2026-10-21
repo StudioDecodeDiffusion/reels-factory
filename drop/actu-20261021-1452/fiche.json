@@ -1,0 +1,66 @@
+{
+  "id": "actu-20261021-1452",
+  "profil": "actu",
+  "statut": "a_valider",
+  "titre": "Chargement de ta retraite… ERREUR : gelée pour 4 milliards",
+  "son_tendance": {
+    "nom": "Windows in Brazil (Sped Up)",
+    "createur": "non précisé par la source",
+    "pourquoi": "trend « chargement 0 → 100 % » : l'ouverture est un écran de chargement de ta retraite qui plante (à ajouter dans l'app, jamais dans le fichier)"
+  },
+  "publication_le": "2026-10-21T18:00:00+02:00",
+  "format_qhse": null,
+  "episode": null,
+  "legende": "Gel des pensions : oui ou non ? Réponds en commentaire 👇\n🤖 Vidéo créée avec l'IA (animation et voix).\n\nChargement de ta retraite 2027… ERREUR. L'article 35 du budget de la Sécu ne garantit la revalorisation complète que jusqu'à 1 260 €/mois (toutes pensions comprises). Au-dessus : une hausse fixée par décret, ou un gel. Économie visée : 4 milliards d'euros en 2027. Déjà rejeté 308 voix contre 99 en novembre 2025, supprimé en commission le 16 octobre… et de retour en séance. Vote solennel le 27 octobre.\n\nSources : nosparlementaires.fr/actualites/gel-pensions-2027-assemblee-deja-rejete-308-voix · nosparlementaires.fr/actualites/plfss-2027-calendrier-examen-date-par-date · causeur.fr (PLFSS 2027, 1 260 €)\n\n#retraite #PLFSS #pensions #budget2027 #actu\n\nAnimation créée avec l'IA. Voix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [
+    "https://nosparlementaires.fr/actualites/gel-pensions-2027-assemblee-deja-rejete-308-voix",
+    "https://nosparlementaires.fr/actualites/plfss-2027-calendrier-examen-date-par-date",
+    "https://www.causeur.fr/retraite-plfss-2027-revalorisations-1260-euros-vote-assemblee-335744",
+    "https://www.pexels.com/photo/an-elderly-man-using-a-calculator-6517342/"
+  ],
+  "validation": {
+    "notes": {
+      "accroche": 8,
+      "clarte": 9,
+      "exactitude": 9,
+      "rythme": 8,
+      "conformite": 9
+    }
+  },
+  "tours_validation": 2,
+  "critique": {
+    "decision": "publiable",
+    "score_global": 8,
+    "coherence": "Une seule idée, tenue du début à la fin : ta pension gelée au-dessus de 1 260 €, pour 4 milliards, alors que les députés l'avaient déjà rejetée ; Lou questionne, Déco répond, question fermée finale.",
+    "controles": {
+      "images": "ok après une correction de l'agent 7 : la mise en page JT puis plein écran coupait la tête des personnages cartoon → passage en duo (dernier duo il y a 2 vidéos, variété validée par check) ; palette sans couleur sombre (bandeaux illisibles) ; lignes de la scène « pendant » et tenue milliardaire retirées (chevauchaient le texte). Reste mineur : le personnage frôle l'étiquette du compteur et le CTA. La photo Pexels n'a pas pu être téléchargée dans la session (proxy) : elle le sera au rendu GitHub, sinon fond uni.",
+      "faits": "ok : 1 260 €/mois, article 35, 4 Md€, 308-99 le 12/11/2025, suppression en commission, retour en séance, vote le 27/10 — vérifiés sur NosParlementaires (2 articles) et Causeur. 1 500 € présenté comme « Exemple ». Allocations familiales et nombre d'amendements retirés (sources contradictoires).",
+      "langue": "ok",
+      "legende": "ok : question fermée en 1re ligne, sources, 5 hashtags, mention IA."
+    },
+    "projection": {
+      "potentiel": "moyen",
+      "vues_estimees": "100 à 300 à 48 h",
+      "audience": "18-35 qui pensent à leurs parents et grands-parents ; partage familial possible, commentaires oui/non.",
+      "raisonnement": "Agent 3 : compte de 4 abonnés, 2 620 vues sur 12 Reels ; la seule vidéo au-dessus de 1 000 vues est un contraste pouvoir/gens (Macron au concert) ; le test « Retraites 2027 : mamie » a fait 120 vues. / Moi : sujet retraites peu porteur jusqu'ici chez nous, mais accroche plus nette (chargement → ERREUR) et vidéo courte (~40 s) ; on reste dans la moyenne du compte.",
+      "risque": "Sujet technique (décret, seuil) qui peut perdre les 18-35 ; photo absente si GitHub ne la télécharge pas."
+    },
+    "corrections": [
+      "mise en page JT → duo (personnages coupés)",
+      "palette sans couleur sombre",
+      "scène pendant simplifiée",
+      "tenue milliardaire retirée",
+      "CTA raccourci"
+    ],
+    "sources_verifiees": [
+      "https://nosparlementaires.fr/actualites/gel-pensions-2027-assemblee-deja-rejete-308-voix",
+      "https://nosparlementaires.fr/actualites/plfss-2027-calendrier-examen-date-par-date",
+      "https://www.causeur.fr/retraite-plfss-2027-revalorisations-1260-euros-vote-assemblee-335744",
+      "https://www.pexels.com/photo/an-elderly-man-using-a-calculator-6517342/"
+    ],
+    "resume_pour_le_proprietaire": "Vidéo d'info de 18 h sur le gel des pensions (sujet de ta file), trend « chargement… ERREUR », cartoon en duo, ~40 s. Faits vérifiés sur deux sources ; allocations familiales retirées faute de source concordante. Bug moteur repéré : en mise en page JT et plein écran, les personnages cartoon ont la tête coupée."
+  },
+  "community": {},
+  "da_message": "Appliqué : style cartoon (persos cartoon) en mise en page JT, et une vraie photo sous licence libre (Pexels, RDNE Stock project : retraité qui fait ses comptes) dans la scène « pendant » ; jamais d'image de presse. Non appliqué : la foule/pancartes, hors sujet pour une vidéo sur le gel des pensions. Bande-son synthwave (palette vert terminal pour la trend « chargement 0→100 % ») ; son tendance conseillé à ajouter dans l'app : Windows in Brazil (Sped Up). Proposition : on fait du « chargement » le générique de la série budget de la Sécu jusqu'au vote du 27 ?",
+  "cree": "2026-10-21T14:08:03+00:00"
+}
