@@ -41,14 +41,14 @@ planning:
   generation: "chaque nuit à 00:20"     # tâche planifiée Claude (heure de Paris)
   publication_jours: [1, 2, 3, 4, 5, 6, 7]   # 1 = lundi … 7 = dimanche
   auto_publication: true               # sans réponse du propriétaire, publiée à son créneau
-  creneaux:                             # planning de diffusion du propriétaire (heure de Paris)
-    lun: ["10:00", "14:00", "18:00"]
-    mar: ["12:00", "18:00"]
-    mer: ["10:00", "14:00", "18:00"]
-    jeu: ["12:00", "18:00"]
-    ven: ["10:00", "14:00", "18:00"]
+  creneaux:                             # planning du propriétaire (21/10) : 2 Reels par jour, 14 h phare + 18 h info
+    lun: ["14:00", "18:00"]
+    mar: ["14:00", "18:00"]
+    mer: ["14:00", "18:00"]
+    jeu: ["14:00", "18:00"]
+    ven: ["14:00", "18:00"]
     sam: ["14:00", "18:00"]
-    dim: ["10:00", "14:00", "18:00", "22:00"]   # dimanche 14 h = toujours le résumé de la semaine
+    dim: ["14:00", "18:00"]   # dimanche 14 h = toujours le résumé de la semaine
   publication_minute: 30                # test A/B de l'agent 3 : publication à 18 h 30
   publication_heure: 18                 # heure de Paris : la vidéo validée part entre 18h25 et 18h35
   hashtags_max: 5
