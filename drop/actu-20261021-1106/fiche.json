@@ -1,0 +1,74 @@
+{
+  "id": "actu-20261021-1106",
+  "profil": "actu",
+  "statut": "a_valider",
+  "titre": "Gazole +44 % : les trois coupables démasqués",
+  "son_tendance": {
+    "nom": "Ramalama (Bang Bang)",
+    "createur": "Róisín Murphy",
+    "pourquoi": "révélation de costume : à poser sur les entrées « COUPABLE N° k » (à ajouter dans l'app, jamais dans le fichier)"
+  },
+  "publication_le": "2026-10-21T14:00:00+02:00",
+  "format_qhse": null,
+  "episode": null,
+  "legende": "À toi de juger : taxer les profits du pétrole pour baisser ton plein, oui ou non ?\n🤖 Vidéo créée avec l'IA (animation et voix).\n\nLe gazole a pris 44,1 % en un an (Insee, inflation de septembre 2026). Trois responsables, trois faits :\n1. TotalEnergies : 5,4 milliards de dollars de bénéfice net au 2e trimestre 2026, deux fois plus qu'un an plus tôt, et jusqu'à 1,5 milliard de dollars de rachats d'actions (AFP, 23/07).\n2. Donald Trump : guerre américano-israélienne contre l'Iran depuis le 28 février, blocus des ports iraniens ; fin avril, le Brent touchait 126 $, environ +60 % depuis le début de la campagne (Quartz, 30/04).\n3. Le pouvoir : pour Emmanuel Macron, baisser les taxes n'est « pas la décision la plus vertueuse », même s'il ajoutait qu'« il ne faut rien exclure » (24/09) ; pour Roland Lescure, « ce n'est pas pour demain » (25/09).\nDemain : où part l'argent des taxes sur ton plein.\nSources : connaissancedesenergies.org (AFP, 23/07 et 24/09) · fr.qz.com (30/04) · stephanelarue.com (Insee, 15/10) · carburant.virkespriser.org (25/09)\nPhotos : Pexels / Alpha Diane ; Wikimedia Commons.\n\n#gazole #carburant #pouvoirdachat #TotalEnergies #actu\n\nAnimation créée avec l'IA. Voix : Chatterbox ; voix d'après Jessica et Pierre (UPMC, CC BY-SA 4.0).",
+  "sources": [
+    "https://carburant.virkespriser.org/actualites/baisse-taxes-carburant-macron-lescure/",
+    "https://fr.qz.com/brent-brut-plus-haut-niveau-en-quatre-ans-blocus-iranien-trump-043026",
+    "https://france-jeunes.net/actualites/carburants-2-41-euros-pourquoi-gouvernement-refuse-nouveau-bouclier-tarifaire/",
+    "https://stephanelarue.com/?p=210021",
+    "https://www.connaissancedesenergies.org/afp/carburants-macron-nexclut-pas-une-baisse-des-taxes-si-les-prix-devaient-senvoler-260924",
+    "https://www.connaissancedesenergies.org/afp/totalenergies-double-son-benefice-net-au-2e-trimestre-a-54-milliards-de-dollars-260723"
+  ],
+  "validation": {
+    "notes": {
+      "accroche": 9,
+      "clarte": 8,
+      "exactitude": 9,
+      "rythme": 8,
+      "conformite": 9
+    }
+  },
+  "tours_validation": 3,
+  "critique": {
+    "decision": "publiable",
+    "score_global": 8,
+    "coherence": "Une seule idée, tenue du début à la fin : ton plein a pris 44 %, voici trois responsables, un fait daté chacun, puis la question fermée. Lou questionne, Déco répond ; chaque entrée « COUPABLE N° k » fait vraiment tomber un masque (trend Ramalama exploitée, pas seulement citée).",
+    "controles": {
+      "images": "9 scènes revues. Corrigé avant dépôt : l'allocution reconstituée de Trump affichait un pupitre aux drapeaux français et européen (contresens) → remplacée par un titre « COUPABLE N° 2 · Donald Trump » ; versus qui coupait « % » et « Md$ » → unités passées dans les étiquettes ; « ? » orphelin du titre final ; miniature (« +44 / % » coupé). Les 2 photos (Pexels, Wikimedia) ne sont pas téléchargeables depuis la session : fond sombre dans l'aperçu, elles seront chargées au rendu GitHub (même fichier Macron déjà utilisé le 18/10).",
+      "faits": "OK, revérifiés : +44,1 % (Insee via stephanelarue.com) ; 5,4 Md$ contre 2,7 et rachats jusqu'à 1,5 Md$ (AFP 23/07) ; guerre depuis le 28/02, 126 $, ≈ +60 %, blocus (Quartz 30/04) ; Macron « pas la décision la plus vertueuse » + « rien exclure » restitué (AFP 24/09) ; Lescure « pas pour demain » (25/09). Le mot « coupables » est un cadrage éditorial assumé, chaque fois adossé à un fait ; aucune insulte.",
+      "langue": "OK : nombres en toutes lettres, répliques ≤ 20 mots, typographie française.",
+      "legende": "OK après correction : 1re ligne = question oui/non, mention IA (doublon retiré), sources datées, crédits photos, 5 hashtags, crédit de voix corrigé (Chatterbox, d'après Jessica et Pierre)."
+    },
+    "projection": {
+      "potentiel": "moyen à fort",
+      "vues_estimees": "200 à 600 à 48 h",
+      "audience": "18-35 ans automobilistes et actifs qui roulent au gazole, sensibles au social ; ils commenteront oui/non et enregistreront pour les chiffres (5,4 Md$ vs +44 %).",
+      "raisonnement": "Agent 3 : médiane ~120 vues, 0 partage ; les seuls enregistrements viennent du cadrage « ta vie » + question fermée ; 300-1 000+ seulement avec une scène-symbole pouvoir/gens forte ; viser 45-55 s. Moi : le pouvoir d'achat est plus large que le « 17 octobre » qui sature, le contraste est posé dès la 1re seconde (photo de gens + « Eux : 5,4 milliards ») et la question finale est fermée. Durée estimée ~56 s, à la limite haute.",
+      "risque": "Durée finale un peu au-dessus de 55 s si la voix est lente ; photos dépendantes du téléchargement GitHub (sinon fond sombre) ; sujet gazole déjà traité le 19/10."
+    },
+    "corrections": [],
+    "sources_verifiees": [
+      "https://stephanelarue.com/?p=210021",
+      "https://www.connaissancedesenergies.org/afp/totalenergies-double-son-benefice-net-au-2e-trimestre-a-54-milliards-de-dollars-260723",
+      "https://fr.qz.com/brent-brut-plus-haut-niveau-en-quatre-ans-blocus-iranien-trump-043026",
+      "https://www.connaissancedesenergies.org/afp/carburants-macron-nexclut-pas-une-baisse-des-taxes-si-les-prix-devaient-senvoler-260924",
+      "https://carburant.virkespriser.org/actualites/baisse-taxes-carburant-macron-lescure/"
+    ],
+    "notes_traitees": [
+      "9-3-10191659"
+    ],
+    "resume_pour_le_proprietaire": "Phare de 14 h : « Ton plein +44 %. Eux : 5,4 milliards » — top 3 des responsables (TotalEnergies, Trump, le pouvoir), un fait sourcé et daté chacun, question fermée finale. Note 8/10 (consigne 9-3 respectée : contraste dès la 1re seconde, visages réels, question oui/non). Son à ajouter dans l'app : « Ramalama (Bang Bang) ».",
+    "corrections_appliquees": [
+      "Allocution Trump (drapeaux FR/UE) remplacée par un titre",
+      "Versus sans coupure d'unités",
+      "« ? » orphelin",
+      "Miniature",
+      "Légende : doublon IA, crédit de voix",
+      "Dialogue resserré (80 s → ~56 s estimées)"
+    ]
+  },
+  "community": {},
+  "da_message": "Phare de 14 h : éditorial « papier journal » (crème, noir, rouge alerte) pour trancher avec le duo cartoon orange de 10 h. Ta proposition d'hier est appliquée : vraies photos — un automobiliste à la pompe (Pexels) dès la 1re seconde face au titre-contraste, puis Macron (Wikimedia Commons). Trump est en allocution reconstituée avec sa phrase exacte, faute d'un portrait dont je puisse garantir la licence depuis la session (le portrait officiel 2025 n'est pas libre). Musique épique (cuivres 8 bits, énergie qui monte à chaque coupable), impact sur chaque entrée, ding sur les chiffres, pop sur la question finale. Son tendance à ajouter dans l'app : « Ramalama (Bang Bang) » (révélation de costume) sur les entrées. Question : on garde ce gabarit « COUPABLE N° k » pour une mini-série pouvoir d'achat (électricité, loyers) ?",
+  "cree": "2026-10-21T09:34:11+00:00"
+}
