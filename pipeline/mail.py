@@ -101,6 +101,11 @@ def envoyer(agent: int, titre: str, corps_html: str, reponse_html: str, ref: dic
             images: dict[str, Path] | None = None, pieces: list[Path] | None = None) -> str:
     """Envoie un mail d'agent. images = {cid: chemin PNG} (à appeler dans le HTML par <img src="cid:…">)."""
     profil = (ref or {}).get("profil")
+    from . import state as _st
+    _sil = _st.load("silence_mails", {})
+    if _sil.get("jusqu_a") and datetime.now(timezone.utc).isoformat() < datetime.fromisoformat(_sil["jusqu_a"]).astimezone(timezone.utc).isoformat():
+        print(f"(mails coupés par le propriétaire : {titre})")
+        return ""
     # Propriétaire (19/10) : plus de mails « Manager », sauf les alertes (échec, token, quota).
     if str(agent) == "Manager" and not any(k in titre for k in ("❌", "⚠", "Échec", "Token")):
         print(f"(mail Manager non envoyé : {titre})")

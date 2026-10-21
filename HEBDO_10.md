@@ -1,6 +1,6 @@
 # Session quotidienne — agents 10 puis 11 (17 h 50 ; rapport complet de l'agent 10 le dimanche)
 
-> **Mode économie de quota** : si `state/quota.json` contient `economie_jusqu_a` dans le futur, ne PAS faire les agents 10 et 11 : s'arrêter tout de suite (aucun mail).
+> **Mode économie de quota** : si `state/quota.json` contient `economie_jusqu_a` dans le futur, NE RIEN FAIRE et s'arrêter immédiatement (propriétaire, 21/10 : publication seule). Ancienne consigne : ne PAS faire les agents 10 et 11 : s'arrêter tout de suite (aucun mail).
 
 Lancée chaque semaine par une tâche planifiée Claude. Personne ne regarde : ne pose pas de question.
 

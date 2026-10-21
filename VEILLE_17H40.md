@@ -1,6 +1,6 @@
 # Session de 17 h 40 — agents 1 et 2 (veilles, rapports à 18 h)
 
-> **Mode économie de quota** : si `state/quota.json` contient `economie_jusqu_a` dans le futur, veilles courtes : 5 sujets max pour l'agent 1, 3 tendances max pour l'agent 2, pas de recherche approfondie.
+> **Mode économie de quota** : si `state/quota.json` contient `economie_jusqu_a` dans le futur, NE RIEN FAIRE et s'arrêter immédiatement (propriétaire, 21/10 : publication seule). Ancienne consigne : veilles courtes : 5 sujets max pour l'agent 1, 3 tendances max pour l'agent 2, pas de recherche approfondie.
 
 Lancée chaque jour par une tâche planifiée Claude. Personne ne regarde : ne pose pas de question.
 Comptes à traiter : indiqués dans le message de la tâche. Pour chaque compte :
