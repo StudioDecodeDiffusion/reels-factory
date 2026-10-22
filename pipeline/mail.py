@@ -16,7 +16,7 @@ import json
 import os
 import re
 import smtplib
-from datetime import datetime
+from datetime import datetime, timezone
 from email.header import decode_header, make_header
 from email.message import EmailMessage
 from email.utils import make_msgid
