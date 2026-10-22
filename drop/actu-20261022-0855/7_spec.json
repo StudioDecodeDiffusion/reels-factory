@@ -1,0 +1,296 @@
+{
+  "theme": {
+    "fond": "#0D0B1E",
+    "texte": "#F5F3FF",
+    "accent": "#FF2E88",
+    "accent2": "#22E4FF",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "22 octobre 2026",
+    "grille": false,
+    "style": "pixel",
+    "persos": "pixel",
+    "mise_en_page": "jt",
+    "titre": "LIBERTÉS · Gabriel Attal veut pouvoir bloquer des plateformes · Le Conseil d'État a jugé illégale la coupure de TikTok en 2024",
+    "transition": "bandes",
+    "camera": "zoom",
+    "palette": [
+      "#7B2CFF",
+      "#FF2E88",
+      "#1B6CFF",
+      "#00A88F",
+      "#14102E",
+      "#C2185B"
+    ],
+    "tenues": {
+      "narrateur": "etudiant",
+      "mascotte": "roi"
+    }
+  },
+  "musique": {
+    "genre": "orchestral",
+    "ambiance": "tension",
+    "volume": 0.3
+  },
+  "son_tendance": {
+    "nom": "Two Fishes",
+    "createur": "Corbin Mims",
+    "pourquoi": "audio « défendre une opinion absurde » de la semaine (agent 2) : à poser sur la plaidoirie de Déco, à ajouter dans l'app, jamais dans le fichier"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.9&cfg=0.4",
+    "mascotte": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte_effet": "grave"
+  },
+  "variete": {
+    "accroche": "citation_choc",
+    "trend": "Two Fishes : défendre une opinion absurde (plaidoirie démontée)",
+    "fonctionnement": "plaidoirie_absurde",
+    "mise_en_page": "jt",
+    "musique": "orchestral",
+    "voix": "V1dramatique+V2grave",
+    "palette": "nuit_neon"
+  },
+  "scenes": [
+    {
+      "type": "photo",
+      "duration": 6.0,
+      "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Gabriel_Attal,_February_2023.jpg?width=1080",
+      "credit": "Wikimedia Commons",
+      "legende": "« Bloquer temporairement… l'accès à certaines plateformes » — Gabriel Attal, 19/10",
+      "sfx": [
+        "impact"
+      ],
+      "musique": {
+        "ambiance": "effroi",
+        "energie": 2
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Attal veut pouvoir bloquer temporairement tes réseaux.",
+          "expression": "choc"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Génial. Je défends. Trois arguments.",
+          "expression": "sarcasme"
+        }
+      ]
+    },
+    {
+      "type": "pancartes",
+      "duration": 8.0,
+      "title": "ARGUMENT N° 1 DE DÉCO",
+      "items": [
+        {
+          "pancarte": "Ce sera temporaire, promis",
+          "reponse": "Mai 2024 : coupé sans durée fixée"
+        }
+      ],
+      "sfx": [
+        "whoosh"
+      ],
+      "musique": {
+        "ambiance": "tension",
+        "energie": 2
+      },
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Un : c'est temporaire, promis.",
+          "expression": "content"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "En deux mille vingt-quatre, il coupe TikTok en Nouvelle-Calédonie. Sans durée fixée.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "duration": 7.6,
+      "title": "Il l'a déjà fait",
+      "events": [
+        {
+          "date": "Mai 2024",
+          "text": "TikTok coupé ≈ 2 semaines"
+        },
+        {
+          "date": "1er avr. 2025",
+          "text": "Conseil d'État : illégal"
+        },
+        {
+          "date": "19 oct. 2026",
+          "text": "Attal veut recommencer"
+        }
+      ],
+      "sprite": "calendrier",
+      "sprite_anim": "bounce",
+      "sfx": [
+        "whoosh"
+      ],
+      "musique": {
+        "ambiance": "tension",
+        "energie": 2
+      },
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Deux : ça s'était super bien passé !",
+          "expression": "clin"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Jugé illégal, un premier avril. Pas une blague.",
+          "expression": "sarcasme"
+        }
+      ]
+    },
+    {
+      "type": "bigstat",
+      "duration": 4.0,
+      "value": "ILLÉGAL",
+      "label": "« atteinte disproportionnée » aux libertés",
+      "source": "Conseil d'État · 1er avril 2025",
+      "sprite": "croix",
+      "sprite_anim": "shake",
+      "sfx": [
+        "impact",
+        "ding"
+      ],
+      "musique": {
+        "ambiance": "tension",
+        "energie": 3
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Atteinte disproportionnée aux libertés, disent les juges.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "duration": 7.2,
+      "title": "ARGUMENT N° 3 : « C'est légal »",
+      "items": [
+        {
+          "texte": "Une loi française l'autorise",
+          "etat": "faux"
+        },
+        {
+          "texte": "Possible si circonstances exceptionnelles",
+          "etat": "flou"
+        },
+        {
+          "texte": "Le gouvernement a décidé une coupure",
+          "etat": "faux"
+        }
+      ],
+      "sfx": [
+        "pop"
+      ],
+      "musique": {
+        "ambiance": "curieux",
+        "energie": 2
+      },
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Trois : c'est légal.",
+          "expression": "content"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Aucune loi ne le prévoit. Et le gouvernement n'a rien décidé.",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "duration": 9.2,
+      "src": "https://images.pexels.com/photos/7489039/pexels-photo-7489039.jpeg?auto=compress&w=1080",
+      "credit": "Pexels / Gustavo Fring",
+      "legende": "Ton TikTok. Ton Snap. Ta parole. Couper au lieu d'écouter ?",
+      "tenue_mascotte": "classique",
+      "sfx": [
+        "whoosh"
+      ],
+      "musique": {
+        "ambiance": "tension",
+        "energie": 3
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Là où on s'informe et s'organise, il veut couper.",
+          "expression": "colere"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Couper au lieu d'écouter ? Moi, j'appelle ça une dérive autoritaire.",
+          "expression": "degout"
+        }
+      ]
+    },
+    {
+      "type": "kinetic",
+      "duration": 4.9,
+      "lines": [
+        "2024 : TikTok coupé",
+        "2025 : jugé illégal",
+        "2026 : il remet ça"
+      ],
+      "highlight": "illégal",
+      "sprite": "document",
+      "sprite_anim": "float",
+      "tenue_mascotte": "classique",
+      "sfx": [
+        "ding"
+      ],
+      "musique": {
+        "ambiance": "curieux",
+        "energie": 2
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "À garder : coupé, jugé illégal… et il remet ça.",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "duration": 8.4,
+      "text": "Couper tes réseaux : oui ou non ?",
+      "cta": "Abonne-toi : on suit l'affaire",
+      "sprite": "fleche_haut",
+      "sprite_anim": "float",
+      "tenue_mascotte": "classique",
+      "sfx": [
+        "pop"
+      ],
+      "musique": {
+        "ambiance": "joyeux",
+        "energie": 3
+      },
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Couper les réseaux en cas d'émeutes : oui ou non ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Réponds en commentaire. Abonne-toi pour la suite.",
+          "expression": "clin"
+        }
+      ]
+    }
+  ]
+}
