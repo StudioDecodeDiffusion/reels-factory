@@ -1,6 +1,6 @@
 # Session de nuit — agents 4, 5, 6, 7 et 9 (une vidéo à valider le matin)
 
-> **Mode économie de quota** : si `state/quota.json` contient `economie_jusqu_a` dans le futur, un seul tour de pré-critique et de critique, pas de sous-agents en parallèle, modèle sonnet pour tous les agents sauf 5.
+> **Mode économie de quota** : si `state/quota.json` contient `economie_jusqu_a` dans le futur, NE PRODUIRE AUCUNE VIDÉO et s'arrêter immédiatement (quota à 96 %, propriétaire 22/10). Ancienne consigne : un seul tour de pré-critique et de critique, pas de sous-agents en parallèle, modèle sonnet pour tous les agents sauf 5.
 
 Lancée par une tâche planifiée Claude (abonnement du propriétaire, aucune API payante), ou à la demande
 pour une vidéo ponctuelle. Personne ne regarde : ne pose pas de question, prends les décisions
