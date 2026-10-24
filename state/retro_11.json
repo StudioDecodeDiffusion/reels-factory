@@ -1,96 +1,16 @@
 {
-  "date": "2026-10-20",
-  "note": "Démontage à partir des descriptions publiées (Le Parisien via Influenth, France 24, Les Surligneurs, Gens d'Internet) : aucune vidéo vue directement, les plans non décrits sont signalés « non documenté ». On reprend des mécaniques, aucun contenu, aucun personnage existant ni visage réel.",
-  "recettes": [
-    {
-      "source": "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/",
-      "compte": "@emmakeitmann (reel fiction IA, 17 octobre)",
-      "accroche": "0-2 s : plan calme et banal (assise dans la rue, fait défiler son téléphone, lassitude) — l'accroche est l'attente d'une bascule, pas un texte.",
-      "structure": "Deux temps : plan banal → bascule sur un geste (elle se redresse, écouteurs) qui déclenche la musique et transforme le décor ; la révélation arrive tôt (estimation 2-3 s, non documenté), puis le contraste est tenu jusqu'au bout. Nombre de plans et durée non documentés.",
-      "animation": "Personnage réel inchangé au premier plan, arrière-plan entièrement remplacé par IA ; le changement de monde est l'effet principal.",
-      "son": "Silence/ambiance puis chanson ultra-connue en décalage avec les images (ton détaché) ; pas de voix off documentée.",
-      "fin": "Non documentée ; légende « fiction » + formule sur 2027, commentaires désactivés.",
-      "recette_decode": "« Le monde bascule » en cartoon (persos cartoon, mise en page plein_ecran), 25-35 s : Lou en tenue classique devant un décor quotidien (expression neutre, défile son téléphone) → sur un « whoosh » + changement d'énergie musicale 1→3, le décor bascule vers la version « ce que disent les rumeurs » (dessiné, clairement non réaliste) avec tampon « CE QUI CIRCULE » → Déco arrête tout (« Stop. ») et le décor revient au réel : bigstat avec le vrai chiffre sourcé (ex. commerces touchés selon le ministère) → checklist VRAI/FAUX/FLOU sur 3 images qui circulent → fin : « Et toi, tu l'as vue passer ? ». Musique originale (genre epique puis lofi), jamais un titre connu. La bascule sert la vérification, pas l'ambiguïté.",
-      "scene_manquante": "« bascule_decor » : même personnage au premier plan, deux arrière-plans (A réel, B rumeur) avec transition en balayage vertical 10-12 images déclenchée sur un temps fort ; paramètres : fond_a, fond_b, label_b (« CE QUI CIRCULE »), retour (bool, pour revenir à A). Non développée : je n'ai pas touché video/src."
-    },
-    {
-      "source": "https://lessurligneurs.eu/manifestation-du-17-octobre-le-chef-philippe-etchebest-a-t-il-protege-lun-de-ses-restaurants-contre-les-pillages/",
-      "compte": "Deepfake « Etchebest protège son restaurant » (contre-modèle, > 2 M de vues sur X)",
-      "accroche": "0-1 s : un cri en direct (« Mollo, mollo ! C'est mon restaurant ») d'un visage connu, filmé au téléphone ; la célébrité + l'urgence suffisent.",
-      "structure": "Plan-séquence vertical amateur (estimation), voix hors champ qui monte la tension (« Ils vont le brûler ») ; durée et fin non documentées. Le trucage = visage et tenue remplacés sur une vraie vidéo TikTok d'un restaurateur (@djibril94260).",
-      "animation": "Aucune : l'effet « filmé sur le vif » (cadre qui bouge, pas d'habillage) fait la crédibilité.",
-      "son": "Son direct, cris, foule ; pas de musique (estimation).",
-      "fin": "Pas de CTA ; la viralité vient du partage indigné et de la notoriété du chef. Note de la communauté posée sur X (France 24).",
-      "recette_decode": "Éditorial « Ça circule » 30-40 s : ed_titre kicker « ÇA CIRCULE · 17/10 », titre « Un chef star a défendu son resto ? », mot_fort « ? » → ed_liste « 3 indices » (vidéo d'origine retrouvée sur TikTok ; resto pas à son nom selon l'annuaire des entreprises ; lui-même « au bout du monde » le 19/10) → ed_chiffre « 3 000 commerces touchés » (ministère du Commerce, cité par Les Surligneurs) → fin : « Une vidéo trop parfaite ? Cherche l'originale. » On reprend l'accroche en question + le rythme du direct (cadre légèrement tremblé via camera=secousse sur le titre), jamais l'image truquée ni le visage réel (pas de capture : interdit par le catalogue).",
-      "scene_manquante": ""
-    },
-    {
-      "source": "https://gensdinternet.fr/2026/10/16/canva-sam-zirah-ils-detournent-les-codes-dhugo-decrypte-pour-annoncer-leur-fausse-candidature-a-lelection-presidentielle/amp/",
-      "compte": "Tendance « Dernière minute » (codes des carrousels HugoDécrypte, mi-octobre 2026)",
-      "accroche": "Bandeau « Dernière minute » + titre court lisible en 1 s.",
-      "structure": "Carrousel, pas vidéo : 1 info par slide, l'essentiel en quelques phrases ; la reconnaissance du code fait le mème.",
-      "animation": "Non applicable (images fixes) ; reprise fidèle d'une charte reconnaissable.",
-      "son": "Non applicable.",
-      "fin": "Non documentée.",
-      "recette_decode": "Garder la mécanique « code d'urgence reconnaissable + 1 idée par écran » mais avec NOTRE charte (pas d'imitation d'un média existant) : en éditorial, ouvrir sur un ed_titre kicker « DERNIÈRE MINUTE · JJ/MM » 1,5 s, puis 3 ed_liste/ed_chiffre de 3 s max avec une seule phrase chacun ; total 15-20 s pour l'info chaude du jour, publiable vite. Décliner aussi en carrousel (couvertures) si le pipeline le permet.",
-      "scene_manquante": "« ed_bandeau_urgent » : bandeau plein largeur en accent qui glisse depuis la gauche en 6 images avec point clignotant, posé au-dessus d'un ed_titre ; paramètres : texte, couleur. Non développée (video/src non modifié)."
-    }
-  ],
-  "recettes_precedentes": [
-    {
-      "source": "https://www.instagram.com/p/Dekne2posgN/",
-      "compte": "phyzolof (style-cible « Le Monde » demandé par le propriétaire)",
-      "accroche": "NON VÉRIFIÉ sur la vidéo (post illisible depuis la session). Mécanique cible du style éditorial : 0-1,5 s, un kicker en capitales (rubrique + date) puis un titre en 2 lignes max qui pose la question ; le mot-fort passe en couleur d'accent à la 1re seconde.",
-      "structure": "Gabarit proposé (pas mesuré sur la vidéo) : 6-9 plans de 2,5-4 s ; titre → contexte (ed_photo) → chiffre (ed_chiffre) → citation sourcée (ed_citation) → comparaison (ed_versus) → chute ; révélation vers 60 % de la durée.",
-      "animation": "Typo : titres serif à fort contraste (déjà DM Serif Display), texte courant en sans-serif humaniste. Le Monde a utilisé Le Monde Sans, une sans humaniste dessinée par J. F. Porchez en 1994 et abandonnée en 2005 (MyFonts). Équivalents Google Fonts proposés (choix Décodé, pas une identification) : Source Sans 3 ou Fira Sans. Lignes : filets fins 2 px sous le kicker ; textes qui montent de 24 px avec un fondu de 8-10 images ; coupes nettes, sans rebond.",
-      "son": "Voix off seule, débit posé (≈ 150 mots/min, estimation), nappe discrète ducking -12 dB, un « tic » sec à chaque apparition de chiffre.",
-      "fin": "Dernier plan : source principale + date en petit, question ouverte au public.",
-      "recette_decode": "Charte actu actuelle (fond #111114, encre #F5F2EA, accent #FFD23F variable selon le sujet). Ajouter un kicker « RUBRIQUE · JJ/MM » sur chaque ed_titre, un filet de 2 px couleur encre à 40 % d'opacité, et le texte de légende en Source Sans 3. Une seule couleur d'accent par vidéo.",
-      "scene_manquante": "« ed_une » : fausse « une » de journal Décodé (titre de Une, chapô, 2 colonnes de faux texte en gris), avec zoom lent de 105 % à 100 % puis surlignage du mot-fort en accent. Paramètres : kicker, titre, chapo, mot_fort. Hypothèse : police Source Sans 3 à ajouter au rendu (à valider côté code, je n'ai pas touché video/src)."
-    },
-    {
-      "source": "https://www.cbnews.fr/node/97563",
-      "compte": "Faux comptes d'actu TikTok monétisés (contre-modèle, AFP)",
-      "accroche": "Fausse mesure qui touche le portefeuille, énoncée tout de suite (« +220 € pour tous », « taxe sur les retraits »), emojis horrifiés, points d'exclamation.",
-      "structure": "Images d'illustration enchaînées sous une voix IA unique ; durée > 1 min pour être monétisée (seuil TikTok) ; le détail des plans n'est pas documenté.",
-      "animation": "Minimale : images fixes ou boucles, texte d'accroche en gros.",
-      "son": "Voix off IA, ton alarmé.",
-      "fin": "Pas de source ; dans la variante « fausses manifs » (Euronews 24/09/2026), fin systématique « dis-nous ta ville / ton avis » qui fait commenter.",
-      "recette_decode": "« Ça circule : vrai ou faux ? » en éditorial, 35-45 s : ed_titre avec le faux titre entre guillemets et kicker « ÇA CIRCULE » → tampon FAUX/FLOU (checklist) → ed_chiffre avec le vrai chiffre et sa source → ed_citation officielle → fin « Tu l'as vu passer où ? Dis-le en commentaire ». On reprend la fin qui fait commenter et l'accroche pouvoir d'achat, jamais la fausse info sans le démenti à l'écran.",
-      "scene_manquante": ""
-    },
-    {
-      "source": "https://fr.news.yahoo.com/coup-d-%C3%A9tat-france-l-103638198.html",
-      "compte": "Faux JT IA du « coup d'État à Paris » (contre-modèle, 12-13 M de vues)",
-      "accroche": "0-2 s : reporter face caméra, micro siglé « Live 24 », annonce choc dès la 1re phrase (« chute de Macron ») ; promesse = une info énorme que personne d'autre n'a.",
-      "structure": "plan unique de présentatrice entrecoupé de 2-3 plans d'illustration (militaire armé, gyrophare, hélicoptère devant la tour Eiffel) ; la révélation est donnée tout de suite, la suite n'est que confirmation visuelle. Durée et nombre exact de plans non documentés.",
-      "animation": "réalisme vidéo (IA), image-symbole immédiatement lisible (tour Eiffel = Paris), habillage TV minimal (logo de micro).",
-      "son": "voix de reporter en direct ; détails sonores non documentés (estimation : ambiance urgence).",
-      "fin": "pas de CTA connu ; la viralité vient du partage inquiet (un chef d'État étranger a écrit à Macron).",
-      "recette_decode": "Format « Vrai ou faux JT ? » : mise_en_page jt, bandeau « FLASH » sur 1 s, Lou présentatrice lit le faux titre (entre guillemets, tampon « CIRCULE EN LIGNE ») ; coupe sèche + glitch ; Déco arrive en duplex : « Stop. On vérifie. » ; scène checklist avec 3 indices (logo inventé, aucune source officielle, image-symbole trop parfaite) tamponnés FAUX ; bigstat « 13 M de vues, 7 € gagnés » (sources en petit) ; fin : « Avant de partager : qui le dit, où, quand ? ». Accroche breaking, fonctionnement vrai_faux.",
-      "scene_manquante": "« loupe » : un cadre d'image pixel art générique (jamais la vraie vidéo) sur lequel une loupe se déplace et pose 3 marqueurs numérotés qui s'ouvrent en bulles d'indice (8-12 images chacun, ressort amorti, sfx ding) ; paramètres : decor (ville|plateau|rue), indices[{x,y,texte}]."
-    },
-    {
-      "source": "https://www.cbnews.fr/node/82036",
-      "compte": "AntifakenewsAI (Thomas Huchon)",
-      "accroche": "visage identifié d'un journaliste (avatar) qui nomme d'emblée la fausse info ; la crédibilité du porteur sert d'accroche.",
-      "structure": "1 script validé → 3 vidéos générées (variantes) ; gabarit motion design fixe ; publication < 2 h après l'info (CB News 05/02/2024). Durée/plan non documentés.",
-      "animation": "avatar face caméra + habillage motion design prédéfini (titres, cartons) qui rend la série reconnaissable.",
-      "son": "voix clonée du journaliste ; musique non documentée.",
-      "fin": "non documentée.",
-      "recette_decode": "Reprendre deux mécaniques : (1) gabarit d'identité fixe de 1 s en ouverture (générique « Décodé » + date) pour être reconnu dès la 1re image, le reste varie selon le catalogue ; (2) 1 script → 2 variantes d'accroche testées (test A/B de l'agent 3 : même corps, accroche chiffre_geant vs question_choc). Lou/Déco restent des personnages animés, pas d'avatar d'humain réel.",
-      "scene_manquante": "« generique » : carton de 20-30 images (logo pixel Décodé, numéro d'épisode, date) avec un jingle 8 bits de 1 s, réutilisable en ouverture de toutes les vidéos d'une série."
-    },
-    {
-      "source": "https://www.anijam.ai/blog/instagram-reels-trends/",
-      "compte": "Formats Reels montants : séries IA à personnages récurrents + « loading 0→100 % »",
-      "accroche": "promesse livrée dans la 1re seconde ; titre « Épisode N » ou jauge à 0 % qui pose une attente.",
-      "structure": "coupes calées sur le beat ; chaque coupe fait avancer un pourcentage (0→100 %) ; épisodes numérotés qui donnent envie de voir le précédent/suivant (Anijam maj 10/10/2026, estimation).",
-      "animation": "barre de progression persistante, compteur qui saute de palier à chaque coupe, texte en surimpression porteur de la chute.",
-      "son": "son tendance accéléré, coupes sur les temps forts.",
-      "fin": "jauge à 100 % = fin ; « épisode N+1 demain » pour la série.",
-      "recette_decode": "« L'info en chargement » : jauge en haut (sous le bandeau date) qui passe 0 → 25 → 50 → 75 → 100 % à chaque fait sourcé ; chaque palier = une scène courte (counter, bars, compare) coupée sur le beat (musique trap8bit ou house, energie 2→3) ; à 100 % Déco : « Info chargée. » + CTA. Pour la série : titre « Décodé · ép. N » dans le bandeau et rappel de l'épisode précédent en 1 phrase.",
-      "scene_manquante": "« jauge » : overlay persistant sur toute la vidéo (pas une scène), barre pixel 0-100 % en haut (y≈240 px), paramètres paliers[{t_s, pct, label}], remplissage en 10-15 images easing out + blip 8 bits et légère secousse à chaque palier."
-    }
-  ]
+ "date": "2026-10-24",
+ "recettes": [
+  {
+   "source": "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/",
+   "compte": "@emmakeitmann (Instagram, 525 000 abonnés au 20/10/2026, source Influenth)",
+   "accroche": "Créatrice assise dans la rue devant une entrée d'immeuble, smartphone en main, qui fait défiler son fil l'air las ; légende « France, 2026. 2027 fait très peur… » (Influenth/Le Parisien 20/10/2026). Durée et texte à l'écran : non vérifié.",
+   "structure": "Deux temps selon l'article : (1) posture lasse face au fil, (2) elle se redresse, écouteurs dans les oreilles, et le décor bascule vers un arrière-plan généré aux codes de la violence urbaine. Nombre de plans, rythme, moment exact de la bascule : non vérifié.",
+   "animation": "Bascule décor réel/généré (« arrière-plan généré »). Mouvements de caméra, transitions, sous-titres : non vérifié.",
+   "son": "Chanson « Non, je ne regrette rien » d'Édith Piaf (nommée par l'article). Voix off : non vérifié. L'article parle d'un fonctionnement « comme un clip ».",
+   "fin": "Fin du reel : non vérifié. Légende : « Fiction cinématographique, scènes ajoutées avec l'IA », censée éviter la confusion ; commentaires désactivés ; plus de 136 000 J'aime à la vérification.",
+   "recette_decode": "Mécanique à retenir : contraste écran/rue + bascule visuelle nette au milieu du plan, sur une musique connue décalée, ancrée dans l'actu du moment (mobilisations du 17/10/2026). Chez nous : plan 1 pixel doc calme (Lou face à son téléphone, fil d'actu), bascule vers la scène du fait réel (décor du fait, sourcé) sur une coupe nette, voix rapide sans blanc, question fermée finale. Pas de flou fiction/réel : bandeau « scène illustrée » discret et aucun faux événement. Aucune copie de personnage, texte ou image.",
+   "scene_manquante": "Transition « fil qui s'ouvre sur le décor » : le contenu du téléphone de Lou s'agrandit plein cadre et devient le décor de la scène suivante (zoom 0,6 s + glitch léger), avec bandeau « illustration » fixe. À vérifier dans CATALOGUE_VARIETE.md si existante."
+  }
+ ]
 }
