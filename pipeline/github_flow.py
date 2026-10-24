@@ -340,6 +340,7 @@ def facteur() -> None:
                          md(f"Bien reçu ✅\n\n**Ta note :** {sujet_note}\n\n{texte[:800]}\n\n"
                             "Je l'appliquerai dès mon prochain travail et te dirai ce que j'en ai fait."),
                          R_NOTE.format(n=n), ref={"profil": profil} if profil not in (None, "tous") else None)
+    ecg()
     publier_ce_qui_est_du()
 
 
@@ -538,6 +539,48 @@ def _stories_programmees(now) -> None:
         mail.envoyer("Manager", f"{etat} · {prof['nom_compte']} · {st.get('titre', '')}", md(txt), R_MANAGER,
                      ref={"type": "manager", "profil": st["profil"]})
     state.save("stories_programmees", reste[-60:])
+
+
+def ecg() -> None:
+    """Électrocardiogramme du pipeline (à chaque passage du facteur) : répare tout seul les états bloqués.
+    1. Publication faite mais non enregistrée (passages concurrents) → retrouvée dans les derniers Reels et notée.
+    2. Rendu bloqué plus de 50 min → relancé. Tout est journalisé dans state/ecg.json."""
+    from .instagram import IG
+    now = datetime.now(timezone.utc)
+    journal = []
+    d = state.STATE / "attente"
+    fiches = [json.loads(f.read_text(encoding="utf-8")) for f in d.glob("*.json")] if d.exists() else []
+    a_verifier = [f for f in fiches if f.get("statut") in ("approuvee", "a_valider") and f.get("media")
+                  and f.get("publication_le") and datetime.fromisoformat(f["publication_le"]) < now - timedelta(minutes=10)]
+    if a_verifier:
+        try:
+            recents = IG(load_profile("actu")).recent_media(8)
+        except BaseException as e:
+            recents = []
+            journal.append(f"lecture Instagram impossible : {str(e)[:80]}")
+        for f in a_verifier:
+            debut = re.sub(r"\s+", " ", (f.get("legende") or ""))[:50]
+            m = next((r for r in recents if debut and re.sub(r"\s+", " ", r.get("caption") or "").startswith(debut)), None)
+            if m:
+                f.update(statut="publiee", permalink=m.get("permalink"), media_id=m.get("id"), publiee=m.get("timestamp"))
+                save_attente(f)
+                journal.append(f"{f['id']} : publication retrouvée et enregistrée ({m.get('permalink')})")
+    for f in fiches:
+        if f.get("statut") == "rendu_en_cours" and datetime.fromisoformat(f.get("envoyee", f["cree"])) < now - timedelta(minutes=50) \
+                and f.get("relances", 0) < 2:
+            f["relances"] = f.get("relances", 0) + 1
+            f["envoyee"] = now.isoformat(timespec="seconds")
+            save_attente(f)
+            try:
+                _envoyer_au_rendu(f["id"])
+                journal.append(f"{f['id']} : rendu bloqué, relancé")
+            except BaseException as e:
+                journal.append(f"{f['id']} : relance impossible ({str(e)[:80]})")
+    if journal:
+        hist = state.load("ecg", [])
+        hist += [{"date": now.isoformat(timespec="seconds"), "evenement": j} for j in journal]
+        state.save("ecg", hist[-200:])
+        print("\n".join(journal))
 
 
 def publier_ce_qui_est_du() -> None:
