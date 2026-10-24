@@ -1,6 +1,6 @@
 {
   "semaine": "2026-S43",
-  "date": "2026-10-20",
+  "date": "2026-10-24",
   "comptes": [
     {
       "nom": "AntifakenewsAI (Thomas Huchon)",
@@ -147,24 +147,16 @@
       "belltakesocial",
       "phyzolof"
     ],
-    "etat": "20/10/2026 : toujours illisibles depuis la session (lecture d'instagram.com non autorisée, permission non accordée à temps) et rien d'indexé sur laboscope / belltakesocial / phyzolof (recherches web du jour sans résultat). Pour les démonter : coller légende + 3-4 captures dans la note de l'agent 10/11."
+    "etat": "24/10/2026 : toujours introuvables sur le web public (recherches du 24/10 sans résultat pour laboscope, belltakesocial, phyzolof). Aucune vidéo de ces comptes n'a été ajoutée à a_decortiquer ; il faut des liens directs du propriétaire (ou captures + légende dans la note de l'agent 10/11)."
   },
   "a_decortiquer": [
-    {
-      "lien": "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/",
-      "compte": "@emmakeitmann (Instagram, 525 000 abonnés au 20/10/2026 selon Le Parisien via Influenth)",
-      "pourquoi_ca_marche": "reel « fiction IA » sur le 17 octobre : > 136 000 J'aime au 20/10/2026 (Le Parisien via Influenth) ; bascule en 1 geste (elle se lève, musique très connue) qui transforme la rue en scène d'émeute générée ; contraste corps réel / décor IA ; collé à l'actu chaude. Mécanique à reprendre (la bascule), pas le flou fiction/réel."
-    },
-    {
-      "lien": "https://lessurligneurs.eu/manifestation-du-17-octobre-le-chef-philippe-etchebest-a-t-il-protege-lun-de-ses-restaurants-contre-les-pillages/",
-      "compte": "Deepfake « Etchebest protège son restaurant » (X ; original TikTok @djibril94260) — contre-modèle",
-      "pourquoi_ca_marche": "> 2 millions de vues (France 24 19/10/2026 ; Les Surligneurs 20/10/2026) : visage célèbre + cri en 1re seconde (« C'est mon restaurant ») + actu brûlante (≥ 3 000 commerces touchés selon le ministère, cité par Les Surligneurs). À retourner en vérification."
-    },
-    {
-      "lien": "https://gensdinternet.fr/2026/10/16/canva-sam-zirah-ils-detournent-les-codes-dhugo-decrypte-pour-annoncer-leur-fausse-candidature-a-lelection-presidentielle/amp/",
-      "compte": "Tendance « Dernière minute » (codes des carrousels HugoDécrypte repris par Cookinut, Canva France, Sam Zirah…)",
-      "pourquoi_ca_marche": "tendance Instagram de mi-octobre (Gens d'Internet 16/10/2026) : bandeau « Dernière minute » + titre court + l'essentiel en 2-3 phrases ; les codes d'un média d'actu jeune sont devenus un mème reconnu. Pas de chiffres de vues publiés ; format carrousel, pas vidéo."
-    }
+    [
+      {
+        "lien": "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/",
+        "compte": "@emmakeitmann (Instagram, 525 000 abonnés au 20/10/2026 ; source : Influenth, repris du Parisien 20/10/2026)",
+        "pourquoi_ca_marche": "reel de fiction IA (décor de rue en guerre, créatrice en mise en scène) : plus de 136 000 J'aime à la vérification (date exacte non précisée, source Influenth 20/10/2026). Légende qui revendique la fiction (« scènes ajoutées avec l'IA ») mais confusion malgré tout : mécanique à retenir = la transparence ne suffit pas, le cadrage et l'actu chaude font le reste. Reprendre la bascule, pas le flou fiction/réel."
+      }
+    ]
   ],
   "historique_a_decortiquer": [
     {
@@ -182,6 +174,17 @@
         "https://www.instagram.com/p/Dej4JKbMiAm/",
         "https://www.cbnews.fr/node/97563"
       ]
+    },
+    {
+      "date": "2026-10-24",
+      "liens": [
+        "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/"
+      ],
+      "note": "1 seule vidéo vérifiée ; laboscope, belltakesocial, phyzolof introuvables sur le web public (recherches du 24/10)"
     }
+  ],
+  "contexte_24_10": [
+    "20/10/2026 : Instagram impose le label « Profil généré par IA » aux comptes qui mettent en scène un personnage entièrement IA ; les profils qui refusent de se signaler peuvent voir leur portée réduite (source : Les Actus du Net, 20/10/2026, https://www.lesactusdunet.com/2026/10/20/instagram-va-retrograder-les-faux-humains-qui-refusent-davouer-quils-sont-generes-par-ia/).",
+    "23/10/2026 : comptes Instagram « générés par IA » qui volent des sketchs de comédiens pour devenir viraux ; aucun nom ni chiffre donné ; enquête en cours (source : BFM TV, reprise sur titrespresse.com, https://www.titrespresse.com/26225142603/ia-instagram-tendance)."
   ]
 }
