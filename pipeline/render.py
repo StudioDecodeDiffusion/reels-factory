@@ -199,6 +199,8 @@ def _generer_pixel(prompt: str, graine: int) -> str:
     import urllib.parse
     import urllib.request
     from PIL import Image
+    if os.getenv("PIXELS_HORS_LIGNE"):  # session locale : le générateur n'est joignable que depuis GitHub
+        return ""
     nom = "px_" + hashlib.sha1(f"{prompt}|{graine}".encode()).hexdigest()[:16] + ".png"
     dest = VIDEO / "public" / "photos" / nom
     if dest.exists():
