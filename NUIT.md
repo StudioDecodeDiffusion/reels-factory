@@ -31,6 +31,13 @@ python3 -m pipeline.tool etape --agent N --profile <compte> --titre "Agent N ter
 Pour les agents qui envoient déjà un rapport complet (1, 2, 3, 8, 10), le point d'avancement reste court.
 Le workflow doit être fluide : enchaîne les agents sans temps mort.
 
+## 0000. MODE SOBRE PERMANENT (propriétaire, 24/10 : la production a consommé tout le quota de la semaine)
+Budget par vidéo : **une seule session, sans sous-agents**, ≈ 10 recherches web max, 1 seul rendu local de contrôle
+(`tool frames` sur la planche, pas de rendus multiples), pré-critique et critique de l'agent 9 en une passe chacune.
+Lire seulement : la note du sujet dans `state/file_sujets_actu.json`, les notes non lues des agents 4-6-9, le catalogue.
+Ne pas relire tout le dépôt, ne pas produire de fichiers intermédiaires longs. Pas de mail, pas de `tool etape`.
+La qualité vient des gabarits visuels (code) : la session remplit une spec courte, elle n'invente pas de code.
+
 ## 00. Quel créneau ?
 ```bash
 python3 -m pipeline.tool creneau --profile <compte>
@@ -60,7 +67,7 @@ titre et la voix l'attaque dès la 1re seconde. `tool story` fabrique la miniatu
 `tool check` refuse une vidéo sans `titre_miniature`.
 
 ## 00bis. Spécialisation des agents (modèles par rôle)
-Chaque agent travaille dans **son propre sous-agent** (outil Agent), avec uniquement son fichier `agents/N_*.md`, ses notes et
+(Désactivé par le mode sobre : tout se fait dans la session principale.) Chaque agent travaillait dans son propre sous-agent (outil Agent), avec uniquement son fichier `agents/N_*.md`, ses notes et
 les sorties de l'agent précédent ; le Manager (session principale) transmet les fichiers et contrôle chaque sortie.
 | Agent | Modèle | Pourquoi |
 |---|---|---|
