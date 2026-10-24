@@ -17,3 +17,12 @@
 - **Sobriété du code (principes de Ponytail, MIT)** : avant d'écrire du code, chercher à supprimer, réutiliser l'existant,
   la bibliothèque standard ou une fonction native ; pas d'abstraction nouvelle sans besoin immédiat ; le plus petit diff
   qui marche. Ne relire que les fichiers nécessaires (économie de jetons).
+
+## Fonctionnement en entreprise (guide « AI Company » + règles DanAI Lab, 24/10)
+- **La session principale = le Manager (CEO)** : elle ne produit rien elle-même, elle découpe la mission, appelle chaque
+  agent (sous-agent `.claude/agents/agent-N-*.md`, modèle fixé dans le fichier), transmet les fichiers et contrôle.
+- **Modèles** : haiku pour les agents 1, 2, 3, 4, 8, 10, 12 et pour tout transfert, mail, publication, tâche simple ;
+  sonnet pour les agents 5, 6, 9, 11 ; opus pour l'agent 7. Passer `model` à chaque appel Agent si besoin.
+- **Cerveau commun** : `agents/CERVEAU.md` (marque, ligne, formats, sources) — chaque agent le lit avant de produire.
+- Paralléliser seulement les tâches indépendantes (ex. agents 1 et 2) ; jamais deux agents sur les mêmes fichiers.
+- Les rapports d'agents résument (5 lignes) ; le Manager lit les vrais fichiers quand une décision en dépend.
