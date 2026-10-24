@@ -3,6 +3,9 @@ name: Test des objets pixel art générés
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -21,7 +24,8 @@ jobs:
           for i, p in enumerate(["a frozen pension envelope in a block of ice", "an old french couple counting coins", "a government bank vault full of gold"]):
               print(p, "->", _generer_pixel(p, 1000 + i))
           PY
-      - uses: actions/upload-artifact@v4
-        with:
-          name: pixels
-          path: video/public/photos/
+      - run: |
+          git config user.name "reels-bot"; git config user.email "reels-bot@users.noreply.github.com"
+          git checkout -b test-pixel
+          git add -f video/public/photos/
+          git commit -m "test pixel" && git push -f origin test-pixel
