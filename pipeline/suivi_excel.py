@@ -10,6 +10,7 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
 RACINE = Path(__file__).resolve().parent.parent / "suivi"
+ETAT = Path(__file__).resolve().parent.parent / "state"
 POLICE = "Arial"
 ENTETE = PatternFill("solid", fgColor="111111")
 TRAIT = Border(bottom=Side(style="thin", color="DDDDDD"))
@@ -62,6 +63,47 @@ def _courbe(ws, titre, cols, n, ancre, typ="ligne", y="", couleurs=()):
     ch.x_axis.delete = False
     ch.y_axis.delete = False
     ws.add_chart(ch, ancre)
+
+
+def _horaire(wb, pid: str) -> None:
+    import json
+    f = ETAT / f"horaire_{pid}.json"
+    if not f.exists():
+        return
+    hor = json.loads(f.read_text())
+    heures = sorted(hor["heures"])[-24 * 7:]  # 7 derniers jours dans le classeur (30 gardés dans state/)
+    ids = sorted(hor["titres"], key=lambda k: hor["titres"][k][0])[-10:]  # 10 dernières vidéos
+    noms = [f"{hor['titres'][k][0][5:10]} {hor['titres'][k][1][:22]}" for k in ids]
+    if not heures or not ids:
+        return
+    ws = _feuille(wb, "Heure par heure", ["Heure", "Abonnés"] + noms + ["Vues totales"], [16, 9] + [14] * len(ids) + [11])
+    for r, h in enumerate(heures, start=2):
+        ligne = hor["heures"][h]
+        ws.append([h, ligne.get("_abonnes")] + [ligne.get(k) for k in ids]
+                  + [f"=SUM(C{r}:{get_column_letter(len(ids) + 2)}{r})"])
+    n = len(heures) + 1
+    _finir(ws, {k: "#,##0" for k in range(2, len(ids) + 4)})
+    _courbe(ws, "Vues cumulées de chaque vidéo, heure par heure", list(range(3, len(ids) + 3)), n, f"A{n + 3}")
+    _courbe(ws, "Abonnés, heure par heure", [2], n, f"A{n + 20}", couleurs=["E5133A"])
+    _courbe(ws, "Vues totales du compte (vidéos), heure par heure", [len(ids) + 3], n, f"J{n + 20}", couleurs=["3D5AFE"])
+    ws2 = _feuille(wb, "Vues gagnées par heure", ["Heure"] + noms + ["Total de l'heure"], [16] + [14] * len(ids) + [12])
+    for r in range(2, n + 1):
+        ligne = [f"='Heure par heure'!A{r}"]
+        for c in range(3, len(ids) + 3):
+            L = get_column_letter(c)
+            src = f"'Heure par heure'!{L}"
+            ligne.append(f"=IF({src}{r}=\"\",\"\",{src}{r}-N({src}{r - 1}))" if r > 2 else "")
+        ligne.append(f"=SUM(B{r}:{get_column_letter(len(ids) + 1)}{r})")
+        ws2.append(ligne)
+    _finir(ws2, {k: "#,##0" for k in range(2, len(ids) + 3)})
+    ch = BarChart()
+    ch.type, ch.grouping, ch.overlap = "col", "stacked", 100
+    ch.title, ch.height, ch.width = "Vues gagnées chaque heure, vidéo par vidéo", 9, 26
+    ch.legend.position = "b"
+    ch.add_data(Reference(ws2, min_col=2, max_col=len(ids) + 1, min_row=1, max_row=n), titles_from_data=True)
+    ch.set_categories(Reference(ws2, min_col=1, min_row=2, max_row=n))
+    ch.x_axis.delete = ch.y_axis.delete = False
+    ws2.add_chart(ch, f"A{n + 3}")
 
 
 def construire(pid: str, suivi: dict, nom_compte: str) -> Path:
@@ -148,6 +190,9 @@ def construire(pid: str, suivi: dict, nom_compte: str) -> Path:
         ch.x_axis.delete = ch.y_axis.delete = False
         ws2.add_chart(ch, f"A{len(jours) + 4}")
 
+    # 3 ter. Heure par heure (relevé à chaque passage du facteur, 7 h-23 h) : vues cumulées, vues gagnées, abonnés
+    _horaire(wb, pid)
+
     # 4. Stories
     ws = _feuille(wb, "Stories", ["Publiée le", "Vues", "Comptes touchés", "Réponses", "Partages", "Abonnements",
                                    "Visites du profil", "Interactions", "Lien"], [16, 8, 11, 9, 9, 11, 11, 11, 10])
@@ -168,11 +213,12 @@ def construire(pid: str, suivi: dict, nom_compte: str) -> Path:
                   "Source : API Instagram (insights). Les vues et partages sont cumulés depuis la publication.",
                   "« Abonnés gagnés » et « Vues du jour » = différence avec le relevé de la veille (formules).",
                   "« Vues du jour par vidéo » = vues gagnées par chaque vidéo depuis le relevé de la veille.",
+                  "« Heure par heure » : relevé toutes les heures de 7 h à 23 h (Paris) ; le relevé de 7 h inclut la nuit.",
                   "Taux d'engagement = (likes + commentaires + partages + enregistrements) / comptes touchés.",
                   "Les statistiques d'une story ne sont lisibles que pendant ses 24 h : dernier relevé conservé."]:
         ws.append([ligne])
     ws["A1"].font = Font(name=POLICE, bold=True, size=14)
-    for r in range(2, 8):
+    for r in range(2, 9):
         ws.cell(row=r, column=1).font = Font(name=POLICE)
     ws.column_dimensions["A"].width = 100
 

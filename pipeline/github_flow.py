@@ -342,6 +342,7 @@ def facteur() -> None:
                          R_NOTE.format(n=n), ref={"profil": profil} if profil not in (None, "tous") else None)
     ecg()
     publier_ce_qui_est_du()
+    releve_horaire()
 
 
 def _validation(job: str, texte: str) -> None:
@@ -685,6 +686,36 @@ def stats() -> None:
             print(f"{pid} : {len(posts)} posts, {len(new)} nouveaux commentaires")
         except Exception as e:
             print(f"{pid} : erreur {e}")
+
+
+def releve_horaire() -> None:
+    """Agent 3 : vues de chaque vidéo + abonnés, une fois par heure, pendant le passage du facteur (aucune minute
+    GitHub ni aucun jeton en plus). → state/horaire_<pid>.json, puis classeur Excel régénéré."""
+    from .instagram import IG
+    from .suivi_excel import construire
+    h = datetime.now(TZ).strftime("%Y-%m-%d %H:00")
+    for pid in all_profiles():
+        profile = load_profile(pid)
+        if not os.getenv(profile["instagram_secret"]):
+            continue
+        hor = state.load(f"horaire_{pid}", {"titres": {}, "heures": {}})
+        if h in hor["heures"]:
+            continue
+        try:
+            ig = IG(profile)
+            ligne = {"_abonnes": ig._get("me", fields="followers_count").get("followers_count")}
+            for m in ig.recent_media(12):
+                hor["titres"][m["id"]] = [(m.get("timestamp") or "")[:16], (m.get("caption") or "").split("\n")[0][:40]]
+                d = ig._get(f"{m['id']}/insights", metric="views").get("data", [])
+                if d:
+                    ligne[m["id"]] = d[0]["values"][0]["value"] if "values" in d[0] else d[0].get("total_value", {}).get("value")
+            hor["heures"][h] = ligne
+            hor["heures"] = dict(sorted(hor["heures"].items())[-24 * 30:])
+            state.save(f"horaire_{pid}", hor)
+            construire(pid, state.load(f"suivi_{pid}", {"jours": {}, "stories": {}}), profile["nom_compte"])
+            print(f"{pid} : relevé horaire {h} ({len(ligne) - 1} vidéos)")
+        except Exception as e:
+            print(f"{pid} : relevé horaire impossible ({e})")
 
 
 def nom_fichier_video(fiche: dict, source: Path) -> Path:
