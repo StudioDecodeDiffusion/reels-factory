@@ -1,77 +1,81 @@
 {
-  "date": "2026-10-21",
-  "source": "API Instagram, relevé du 21/10/2026 16 h 36 (Paris) ; state/suivi_actu.json ; retour agent 8 du 21/10",
-  "abonnes": {
-    "actuel": 4,
-    "evolution": "0 depuis le 18/10",
-    "abonnes_pour_1000_vues_depuis_18_10": 0
+ "date": "2026-10-24",
+ "source": "API Instagram, relevé du 24/10/2026 07:35 UTC (state/stats_actu.json, state/suivi_actu.json) ; retour agent 8 du 24/10",
+ "abonnes": {
+  "actuel": 4,
+  "evolution": "0 depuis le 18/10",
+  "abonnes_pour_1000_vues_depuis_18_10": 0
+ },
+ "classement": [
+  {
+   "titre": "Macron au concert, la France dans la rue",
+   "date": "18/10",
+   "views": 1155,
+   "likes": 17,
+   "saved": 0
   },
-  "classement": [
-    {
-      "titre": "Macron au concert, la France dans la rue",
-      "views": 1155,
-      "saved": 0,
-      "likes": 17,
-      "duree_s": 54.9
-    },
-    {
-      "titre": "17 octobre : la manif née d'un TikTok",
-      "views": 348,
-      "saved": 0,
-      "duree_s": 71.0
-    },
-    {
-      "titre": "Après le 17 : et les revendications ?",
-      "views": 191,
-      "saved": 0,
-      "duree_s": 42.5
-    },
-    {
-      "titre": "Ils s'attaquent à nos libertés",
-      "views": 157,
-      "saved": 2,
-      "duree_s": 77.5,
-      "note": "+17 vues à J+1"
-    },
-    {
-      "titre": "Couvre-feu pour les ados, 5,6 milliards",
-      "views": 105,
-      "saved": 0,
-      "duree_s": 56.0
-    },
-    {
-      "titre": "Casse du 17 : Bercy reçoit les patrons (21/10 10 h 03)",
-      "views": 80,
-      "saved": 0,
-      "duree_s": 56.3
-    },
-    {
-      "titre": "Gazole +44 % (21/10 14 h 07, 2 h 30 de recul)",
-      "views": 69,
-      "saved": 0,
-      "duree_s": 57.1
-    }
-  ],
-  "ce_qui_marche": [
-    "Cadrage « tes droits / ta vie » + question fermée : seul Reel avec enregistrements (2 sur 157 vues = 12,7 pour 1 000)",
-    "Scène-symbole pouvoir/gens (Macron) : seul Reel au-dessus de 1 000 vues"
-  ],
-  "ce_qui_ne_marche_pas": [
-    "Sujets éco explicatifs (Bercy, gazole) : 69-80 vues, 0 enregistrement",
-    "Visites du profil en chute (19→17→6→4/jour), 0 abonné gagné depuis le 18/10",
-    "Durée longue sans gain : « libertés » 77,5 s n'accélère pas à J+1 (+17 vues)"
-  ],
-  "enseignements": [
-    "Ouvrir sur ce que le sujet retire à la personne (droit, argent) plutôt que sur l'institution (Bercy, prix)",
-    "Finir par une question oui/non + une suite annoncée « demain » pour pousser au profil",
-    "Rester à 45-55 s : le 77,5 s n'a pas mieux tenu que les 56 s"
-  ],
-  "test": "Fin à garder (lancé le 21/10) : sur les 4 prochains Reels, dernier écran = récap 3 points « à garder / à envoyer » ; mesure = enregistrements pour 1 000 vues vs. référence 0,67 (2 / 2 977). État 21/10 : lancé, 0 Reel testé.",
-  "reperes_projection": {
-    "vues_mediane": 113,
-    "meilleure": 1155,
-    "moyenne_10_derniers": 103,
-    "enregistrements_pour_1000_vues": 0.67,
-    "ce_qui_fait_decoller": "scène-symbole contraste pouvoir/gens dans la 1re seconde"
+  {
+   "titre": "Après le 17 : et les revendications ?",
+   "date": "18/10",
+   "views": 191,
+   "saved": 0
+  },
+  {
+   "titre": "Ils s'attaquent à nos libertés",
+   "date": "20/10",
+   "views": 158,
+   "saved": 2
+  },
+  {
+   "titre": "Taxer les profits du pétrole (gazole)",
+   "date": "21/10",
+   "views": 128,
+   "saved": 0,
+   "note": "69 vues à 2 h 30, 128 à J+3"
+  },
+  {
+   "titre": "Gel des pensions : oui ou non ?",
+   "date": "21/10",
+   "views": 113,
+   "saved": 0
+  },
+  {
+   "titre": "Syndicats à la table de Bercy ?",
+   "date": "21/10",
+   "views": 105,
+   "saved": 0,
+   "note": "80 vues à J0, 105 à J+3"
+  },
+  {
+   "titre": "Couper TikTok : Attal veut recommencer",
+   "date": "22/10",
+   "views": 74,
+   "saved": 0,
+   "note": "pire de la semaine ; suivi de 48 h sans publication"
   }
+ ],
+ "ce_qui_marche": [
+  "Scène-symbole pouvoir/gens (Macron) : seul Reel au-dessus de 1 000 vues (1 155)",
+  "Cadrage « tes droits / ta vie » : seul Reel avec enregistrements (2 sur 158 vues)",
+  "Les sujets éco « institution » rattrapent la médiane à J+3 (Bercy 80 → 105, gazole 69 → 128) : ils démarrent lentement mais ne sont pas morts"
+ ],
+ "ce_qui_ne_marche_pas": [
+  "Arrêt de publication 22/10 → 24/10 : portée du compte 343 → 71 → 26 comptes/jour, visites du profil 2 → 0 → 0",
+  "0 abonné gagné depuis le 18/10 malgré 2 770 vues sur les 15 derniers Reels",
+  "Test « fin à garder » : 3 Reels depuis le 21/10, 0 enregistrement sur 315 vues (référence 0,72/1 000) — application de la fin non vérifiée"
+ ],
+ "enseignements": [
+  "Publier sans trou : 48 h d'arrêt ont divisé la portée par 13 ; deux Reels par jour (14 h, 18 h 30) sont la condition de base",
+  "Ouvrir sur une scène-symbole pouvoir/gens dans la 1re seconde (le seul format au-dessus de 1 000 vues) plutôt que sur l'institution",
+  "Feuilletonner (série Commission du 17 octobre, ép. 1 aujourd'hui) avec suite annoncée : seul levier testable pour les visites du profil, à 0"
+ ],
+ "test": "Fin à garder (prolongé) : sur les 4 prochains Reels, dernier écran = récap 3 points « à garder / à envoyer » réellement présent (agent 9 le vérifie au rendu) ; mesure = enregistrements pour 1 000 vues vs. référence 0,72 (2 / 2 770). État 24/10 : 3 Reels publiés, 0 enregistrement, mais présence de la fin non confirmée → test relancé.",
+ "reperes_projection": {
+  "vues_mediane": 113,
+  "meilleure": 1155,
+  "moyenne_10_derniers": 107,
+  "enregistrements_pour_1000_vues": 0.72,
+  "ce_qui_fait_decoller": "scène-symbole contraste pouvoir/gens dans la 1re seconde",
+  "attention": "après 48 h sans publication, le 1er Reel de reprise peut rester sous la médiane (portée du compte 26/jour le 24/10)"
+ }
 }
