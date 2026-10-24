@@ -93,3 +93,17 @@ Répartition visée : éditorial 1 vidéo sur 2, cartoon 1 sur 3, pixel au plus 
 - **Figures de pouvoir** (président, ministres, PDG) : photos Wikimedia Commons sous licence libre ; discours officiels :
   scène `ed_allocution` (reconstitution + texte exact).
 - **Interdit** : images de presse et d'agences (AFP, Reuters, BFM, franceinfo…), captures de JT, vidéos YouTube.
+
+## Style « pixel doc » — STYLE PRINCIPAL depuis le 24/10 (copié d'archive66.tv, 80 k vues ; voir agents/RETRO_COMPTES_IA.md)
+`theme.style = "pixeldoc"` (fond chaud vignetté `theme.fond` ex. #2A170C, accent jaune `theme.accent` #FFD23F, `theme.bandeau`).
+Chaque scène a un `titre` (3-5 mots, police pixel) + `mot_fort` (en jaune), et un visuel qui bouge :
+- **pd_objet** : `prompt` en anglais décrivant UN objet/personnage (« a frozen pension envelope in a block of ice ») →
+  pixel art détaillé généré au rendu (FLUX gratuit), détouré, flottant ; `etiquette` facultative.
+- **pd_flux** : mécanisme « où va l'argent » : `de` {label, prompt} → `vers` {label, prompt}, pièces animées, `montant`.
+- **pd_chiffre** : compteur arcade `valeur` (+`prefixe`/`suffixe`/`decimales`), barre `jauge` (0-100), `legende`, `source`.
+- **pd_versus** : `gauche`/`droite` {label, valeur, prompt}.
+- **pd_jauge** : aiguille `valeur` 0-100 + `legende` (indice de colère, d'injustice…).
+- **pd_tampon** : `tampon` (« FAUX », « 308 CONTRE », « VÉRIDIQUE ») qui s'écrase sur l'objet (`prompt`).
+Prompts : objets concrets, pas de personne réelle identifiable (pas de visage de ministre) ; pour un dirigeant :
+« a politician in a suit seen from behind at a podium ». Ajouter en légende : « Images pixel générées par IA (FLUX via Pollinations) ».
+Rythme : un plan toutes les 2-4 s, 8-12 scènes, 30-50 s.
