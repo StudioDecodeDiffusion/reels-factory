@@ -1,65 +1,73 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-24",
   "compte": "actu",
   "agent": "2.1",
-  "mode": "économie de quota (3 tendances max)",
+  "mode": "ratissage web (10 requêtes, 3 pages sources ouvertes et vérifiées) ; faits retenus uniquement avec lien et date ; sons = TikTok/US, à vérifier dans l'app par le propriétaire",
   "formats": [
     {
-      "nom": "Défendre une opinion absurde (« Two Fishes », Corbin Mims)",
-      "description": "Déco défend avec aplomb « on a reçu les syndicats, donc on a écouté les jeunes », puis Lou démonte : 0 organisation lycéenne invitée. On transpose le rythme, sans l'audio.",
-      "source": "https://www.sozee.ai/resources/upcoming-tiktok-trends/ (18/10/2026)"
+      "nom": "Défendre une opinion absurde avec sérieux (format « Two Fishes »)",
+      "description": "Déco défend une position avec aplomb, Lou la démonte point par point avec les faits. Transposé sans l'audio : une seule phrase choc en ouverture, puis démontage en 3 plans.",
+      "source": "https://newengen.com/insights/october-tiktok-trends/ (page mise à jour le 14/10/2026)"
     },
     {
-      "nom": "« My Reaction To ___ » (réaction par paliers)",
-      "description": "Lou réagit de plus en plus fort à chaque palier : 1 260 €… 4 Md€… 49.3… ordonnance. Notre scène « reaction » est faite pour ce format, avec une question fermée à la fin.",
-      "source": "https://newengen.com/insights/instagram-trends/ (édition d'octobre 2026)"
+      "nom": "Révélation en deux temps (« Costume Walk »)",
+      "description": "Plan bas sur les jambes ou le titre, puis révélation finale. Pour nous : garder la question cachée en début de Reel et révéler le chiffre ou le responsable à la fin.",
+      "source": "https://newengen.com/insights/october-tiktok-trends/ (14/10/2026)"
     },
     {
-      "nom": "« Be OK » : danse joyeuse et texte qui dit la réalité",
-      "description": "Contraste entre une ambiance joyeuse et un texte dur à l'écran (« moi qui fais le plein à 2,36 €/L »). On garde le contraste sans le son sous licence.",
-      "source": "https://www.sozee.ai/resources/upcoming-tiktok-trends/ ; https://newengen.com/insights/instagram-trends/"
+      "nom": "Contraste joie / texte dur à l'écran (« Be OK »)",
+      "description": "Ambiance légère et texte dur affiché à l'écran. Transposé : fond joyeux ou neutre, phrase choc en blanc sur rouge, sans le son sous licence.",
+      "source": "https://newengen.com/insights/october-tiktok-trends/ (14/10/2026)"
+    },
+    {
+      "nom": "Réponse en un mot (question fermée)",
+      "description": "Une question à réponse courte (oui ou non) en ouverture ou en fin de Reel. Renforce notre question fermée de fin de vidéo : « Taxer les profits : oui ou non ? ».",
+      "source": "https://newengen.com/insights/october-tiktok-trends/ (14/10/2026)"
     }
   ],
   "accroches_types": [
-    "« Ils ont invité tout le monde… sauf ceux qui ont lancé le mouvement. »",
-    "« Ce n'est pas un gel. C'est pire : c'est discret. »",
-    "« Samedi, manifester pourrait être interdit dans ta ville. Voici pourquoi. »"
+    "« Ils ont invité tout le monde… sauf ceux qui ont lancé le mouvement. » (adapté à la commission du 17 octobre)",
+    "« Une commission sur le 17 octobre existe. Qui va vraiment la diriger ? » (fait : présidence Vincent Caure, LCP 20/10/2026)",
+    "« Samedi, les gilets jaunes reviennent dans la rue. Voici ce qu'ils demandent. » (à vérifier sur les revendications publiées avant diffusion)"
   ],
   "sujets_qui_buzzent": [
-    "Acte II des Gilets jaunes le samedi 24/10 (franceinfo, ICI, Lyon Mag, CNews)",
-    "Lecornu et les syndicats ; grève du 5/11 (LCP, AFP)",
-    "Halloween : costume reveal sur « Ramalama (Bang Bang) », 456 200 vidéos à mi-octobre"
+    "Acte II des gilets jaunes, samedi 24/10/2026 : 14 h place Bellecour à Lyon, 76 actions recensées en France selon le site du mouvement (LyonMag, 19/10/2026, modifié 21/10 : https://www.lyonmag.com/article/154471/gilets-jaunes-un-nouvel-appel-a-manifester-le-24-octobre-ils-reviendront-place-bellecour)",
+    "Commission d'enquête sur les violences du 17 octobre : principe approuvé par la conférence des présidents, présidée par Vincent Caure, périmètre encore à fixer (LCP, 20/10/2026 : https://lcp.fr/actualites/info-lcp-violences-du-17-octobre-l-assemblee-nationale-approuve-la-creation-de-la)",
+    "Lecornu reçoit les syndicats, sans les lycéens ; grève et manifestation annoncées le 5/11 (LCP, 21/10/2026, relevé dans state/veille_1_actu.json du 24/10)"
   ],
   "sons_tendance": [
     {
       "nom": "Ramalama (Bang Bang)",
       "createur": "Róisín Murphy",
-      "pourquoi": "environ 456 200 vidéos à mi-octobre, pic jusqu'au 31/10",
-      "type": "révélation de costume / marche d'Halloween ; pour nous : révéler un chiffre « costumé »"
+      "pourquoi": "tendance de révélation de costume sur TikTok (page du 14/10/2026)",
+      "type": "révélation finale : chiffre ou responsable révélé à la fin ; à recommander à l'agent 6 comme rythme, pas comme son"
     },
     {
       "nom": "Be OK",
       "createur": "Ingrid Michaelson",
-      "pourquoi": "format en pic (contraste joie / aveu)",
-      "type": "danse et texte à l'écran"
+      "pourquoi": "tendance danse + texte à l'écran sur TikTok (page du 14/10/2026)",
+      "type": "contraste joie / texte dur ; transposer le rythme sans le son"
     },
     {
-      "nom": "Two Fishes (audio)",
-      "createur": "Corbin Mims",
-      "pourquoi": "audio d'argumentation de la semaine (New Engen)",
-      "type": "défendre une opinion absurde"
+      "nom": "Two Fishes (audio de Corbin Mims)",
+      "createur": "Corbin Mims (CorbinGPT)",
+      "pourquoi": "format d'argumentation absurde sur TikTok (page du 14/10/2026) ; titre exact de l'extrait non précisé dans la source",
+      "type": "défendre une opinion puis la démonter ; transposer le rythme"
     },
     {
-      "nom": "Hello, October",
-      "createur": "Tung Tulip",
-      "pourquoi": "environ 143 700 vidéos, en hausse",
-      "type": "montage d'ambiance d'automne"
+      "nom": "Patient Zero",
+      "createur": "Taylor Swift",
+      "pourquoi": "présent dans le classement TikTok US semaine 40 (page du 14/10/2026) ; non vérifié sur Instagram",
+      "type": "montage cinématographique ; à éviter pour un compte business sans licence"
     }
   ],
-  "communaute": "Agent 8 (21/10, 16 h 36) : 4 abonnés, aucun commentaire lisible, 0 partage. Les 2 Reels éco du jour (Bercy, gazole) sont sous la médiane (113 vues). Seul le cadrage « tes droits / ta vie » avec une question fermée oui/non a produit des enregistrements (2, sur le Reel « libertés »). Les visites du profil baissent (19 → 4 par jour).",
+  "communaute": "Agent 8 (bilan du 24/10/2026, relevé API du 24/10 07 h 35 UTC) : 4 abonnés, 0 commentaire lisible, 0 partage, aucun contact de marque ou de média. Visites du profil 2 → 0 → 0 (22 au 24/10) ; portée 343 → 71 → 26. Le seul signal mesuré reste le cadrage « tes droits / ta vie » avec question fermée oui/non (rapport agent 3 du 24/10). Aucun signal communautaire exploitable aujourd'hui.",
   "a_eviter": [
-    "Écrire « gel » des pensions : MoneyVox (21/10) précise que c'est une revalorisation sous l'inflation, « pas un gel »",
-    "Un 3e Reel gazole sans fait nouveau (le sujet sature, et les vues sont sous la médiane)",
+    "Publier sans trou : la reprise doit tenir les 2 Reels par jour (14 h et 18 h 30), l'arrêt de 48 h a fait chuter la portée",
+    "Un 3e Reel gazole sans fait nouveau : la médiane est à 113 vues et les sujets éco de la semaine restent sous elle (rapport agent 3 du 24/10/2026)",
+    "Chiffres de foule, bilans ou nombres de manifestants du 24/10 sans source datée : attendre les sources officielles ou une dépêche",
+    "Écrire « gel » des pensions sans vérifier : le texte doit coller à la source citée",
+    "Nommer et accuser des personnes de la commission ; rester sur les faits et les positions publiques (exclusion du profil)",
     "Utiliser les sons sous licence sur un compte business : on transpose le rythme"
   ]
 }
