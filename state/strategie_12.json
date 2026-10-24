@@ -1,93 +1,106 @@
 {
-  "date": "2026-10-21",
-  "compte": "actu",
-  "type": "résumé quotidien, mode économie (stratégie complète du 19/10 toujours valable)",
-  "ou_on_en_est": {
-    "abonnes": 4,
-    "source_abonnes": "state/abonnes_actu.json (API Instagram, 21/10/2026 16 h 36)",
-    "reels": 15,
-    "vues_cumulees": 2977,
-    "meilleure_video_vues": 1155,
-    "meilleure_video": "Macron au concert, la France dans la rue",
-    "portee_compte_jour": 363,
-    "partages": 0,
-    "enregistrements": 2,
-    "commentaires": 2,
-    "abonnes_pour_1000_vues": 1.5,
-    "source_video": "state/stats_actu.json, relevé du 21/10/2026 14:36 UTC",
-    "abonnes_pour_1000_vues_depuis_18_10": 0,
-    "visites_profil_jour": 4
+ "date": "2026-10-24",
+ "compte": "actu",
+ "type": "résumé quotidien (stratégie complète lundi 26/10)",
+ "ou_on_en_est": {
+  "abonnes": 4,
+  "source_abonnes": "state/abonnes_actu.json (API Instagram, 24/10/2026)",
+  "reels_mesures": 15,
+  "vues_15_derniers": 2770,
+  "meilleure_video_vues": 1155,
+  "meilleure_video": "Macron au concert, la France dans la rue (18/10)",
+  "portee_compte_jour": {
+   "22/10": 343,
+   "23/10": 71,
+   "24/10": 26
   },
-  "paliers": [
-    {
-      "objectif": "1 000 abonnés",
-      "debloque": "dossier média crédible (petits médias, ONG, associations), Ko-fi/Tipeee en bio",
-      "echeance_visee": "2026-12-31",
-      "statut": "à risque : 0 abonné gagné depuis le 18/10 (21/10), visites du profil 19→4 par jour"
-    },
-    {
-      "objectif": "5 000 abonnés",
-      "debloque": "premiers partenariats rémunérés nano (50-300 $ par Reel, Influee 26/03/2026)",
-      "echeance_visee": "2027-03-31"
-    },
-    {
-      "objectif": "10 000 abonnés",
-      "debloque": "Abonnements Instagram (10 000 followers, compte pro, 18 ans, sur invitation — Metricool, maj 18/02/2025) ; TikTok Creator Rewards (10 000 abonnés + 100 000 vues/30 j + vidéos d'au moins 1 min — Metricool 31/03/2026)",
-      "echeance_visee": "2027-06-30"
-    }
-  ],
-  "sources_de_revenus_prioritaires": [
-    "Contenu de marque / partenariats directs avec médias indépendants, ONG, associations, outils d'info (hors partis et pub politique)",
-    "Dons (Ko-fi, Tipeee) dès le lien en bio",
-    "Abonnements Instagram à 10 000 abonnés",
-    "Reprise TikTok / YouTube Shorts pour l'audience ; TikTok paie seulement les vidéos d'1 min et plus"
-  ],
-  "non_accessibles": [
-    "Facebook Creator Fast Track : États-Unis et Canada seulement, 100 000 abonnés minimum (Les Gens d'Internet 20/03/2026)"
-  ],
-  "consignes_agents": {
-    "4": "Abandonner les sujets éco « institution » (Bercy, prix : 69-80 vues, 0 enregistrement) au profit de « ce qu'on te retire » + question oui/non ; 45-55 s ; fin « à garder » (test agent 3) + suite annoncée « demain ».",
-    "8": "Suivre abonnés gagnés, visites du profil et enregistrements ; chaque réponse proposée invite à s'abonner ; signaler le premier commentaire lisible ou contact de marque/média/ONG.",
-    "3": "Indicateurs : abonnés pour 1 000 vues (1,5 total, 0 depuis le 18/10) et enregistrements pour 1 000 vues (0,8) ; mener le test « fin à garder »."
+  "visites_profil_jour": {
+   "22/10": 2,
+   "23/10": 0,
+   "24/10": 0
   },
-  "actions_proprietaire": [
-    "Avant le 22/10 : réduire à 1-2 Reels par jour, 4 h d'écart minimum (5 Reels le 19/10, le dernier à 7 vues en 2 h 40)",
-    "Avant le 22/10 : bio « Actu décodée en 50 s · voix et visuels IA · faits sourcés » + une phrase-promesse d'abonnement",
-    "Avant le 25/10 : Tableau de bord professionnel > Monétisation : noter les programmes affichés",
-    "Le 20/10 : relever dans l'app la durée moyenne de visionnage et la part de non-abonnés des Reels 1046, 1047 et 1509",
-    "Avant le 01/11 : ouvrir une page Ko-fi et la mettre en lien en bio",
-    "Tester les Trial Reels sur 2 vidéos par semaine"
-  ],
-  "risques": [
-    "Contenu politique moins recommandé par défaut aux non-abonnés sur Instagram (depuis 2024)",
-    "Publicité politique interdite dans l'UE sur Meta depuis le 06/10/2025 (TTPA) : pas de partenariat avec partis/campagnes",
-    "Contenu IA répétitif = risque de démonétisation (Facebook juil. 2025, YouTube 15/07/2025)",
-    "Loi influenceurs : mention « Publicité » ou équivalent et mention « image virtuelle » ou équivalent pour visuels IA dans un contenu sponsorisé"
-  ],
-  "questions_en_attente": {
-    "3": true,
-    "8": true
+  "partages": 0,
+  "enregistrements": 2,
+  "enregistrements_pour_1000_vues": 0.72,
+  "abonnes_pour_1000_vues_depuis_18_10": 0,
+  "source_video": "state/stats_actu.json et state/suivi_actu.json, relevé du 24/10/2026 07:35 UTC",
+  "ecart_10000": "9 996 abonnés manquants pour les Abonnements Instagram"
+ },
+ "paliers": [
+  {
+   "objectif": "1 000 abonnés",
+   "debloque": "dossier média crédible (petits médias, ONG, associations), Ko-fi/Tipeee en bio",
+   "echeance_visee": "2026-12-31",
+   "statut": "à risque élevé : 0 abonné gagné depuis le 18/10 ; portée 26 comptes/jour le 24/10 après 48 h sans Reel (mode économie de quota du 21 au 23/10)"
   },
-  "resume_du_jour": {
-    "date": "2026-10-20",
-    "type": "résumé quotidien",
-    "ou_on_en_est": "4 abonnés (0 gagné depuis le 18/10), 12 Reels, 2 620 vues cumulées, 0 partage, 2 enregistrements, 6 visites du profil le 20/10 (API Instagram, 20/10 16 h 36)",
-    "ce_qui_a_bouge": [
-      "2 premiers enregistrements du compte sur « Ils s'attaquent à nos libertés » (63 vues en 4 h)",
-      "Test A/B faux JT / messagerie : nul (+10,8 %, 0 partage), clos",
-      "Reel Macron plafonné (+30 vues en 24 h) et n'a pas amené de visites du profil",
-      "Rythme ramené à 2 Reels/jour, comme demandé le 19/10"
-    ],
-    "conversion": "1,5 abonné pour 1 000 vues au total, 0 depuis le 18/10 : le problème n° 1 est la conversion, pas la portée",
-    "actions_du_jour": [
-      "Bio + promesse d'abonnement (« l'actu décodée chaque soir à 18 h ») : dans l'app, aujourd'hui",
-      "Annoncer la suite en fin de Reel (« demain : … ») et caler un rendez-vous fixe à 18 h",
-      "Test « fin à garder » (récap 3 chiffres + Enregistre) sur les 4 prochains Reels"
-    ]
+  {
+   "objectif": "5 000 abonnés",
+   "debloque": "premiers partenariats rémunérés nano (50-300 $ par Reel, Influee 26/03/2026)",
+   "echeance_visee": "2027-03-31"
   },
+  {
+   "objectif": "10 000 abonnés",
+   "debloque": "Abonnements Instagram (10 000 followers, compte pro, 18 ans, sur invitation — Metricool, maj 18/02/2025) ; TikTok Creator Rewards (10 000 abonnés + 100 000 vues/30 j + vidéos d'au moins 1 min — Metricool 31/03/2026)",
+   "echeance_visee": "2027-06-30"
+  }
+ ],
+ "sources_de_revenus_prioritaires": [
+  "Contenu de marque / partenariats directs avec médias indépendants, ONG, associations, outils d'info (hors partis et pub politique)",
+  "Dons (Ko-fi, Tipeee) dès le lien en bio",
+  "Abonnements Instagram à 10 000 abonnés",
+  "Reprise TikTok / YouTube Shorts pour l'audience ; TikTok paie seulement les vidéos d'1 min et plus"
+ ],
+ "non_accessibles": [
+  "Facebook Creator Fast Track : États-Unis et Canada seulement, 100 000 abonnés minimum (Les Gens d'Internet 20/03/2026)"
+ ],
+ "consignes_agents": {
+  "4": "Image-symbole pouvoir/gens en 1re seconde ; 45-55 s ; série feuilletonnée avec suite annoncée ; fin « à garder » ; garder 2 Reels/jour sans trou.",
+  "8": "Suivre abonnés gagnés, visites du profil et enregistrements ; chaque réponse proposée invite à s'abonner ; signaler le premier commentaire lisible ou contact de marque/média/ONG.",
+  "3": "Indicateurs : abonnés pour 1 000 vues (1,5 total, 0 depuis le 18/10) et enregistrements pour 1 000 vues (0,8) ; mener le test « fin à garder »."
+ },
+ "actions_proprietaire": [
+  "Avant le 22/10 : réduire à 1-2 Reels par jour, 4 h d'écart minimum (5 Reels le 19/10, le dernier à 7 vues en 2 h 40)",
+  "Avant le 22/10 : bio « Actu décodée en 50 s · voix et visuels IA · faits sourcés » + une phrase-promesse d'abonnement",
+  "Avant le 25/10 : Tableau de bord professionnel > Monétisation : noter les programmes affichés",
+  "Le 20/10 : relever dans l'app la durée moyenne de visionnage et la part de non-abonnés des Reels 1046, 1047 et 1509",
+  "Avant le 01/11 : ouvrir une page Ko-fi et la mettre en lien en bio",
+  "Tester les Trial Reels sur 2 vidéos par semaine"
+ ],
+ "risques": [
+  "Contenu politique moins recommandé par défaut aux non-abonnés sur Instagram (depuis 2024)",
+  "Publicité politique interdite dans l'UE sur Meta depuis le 06/10/2025 (TTPA) : pas de partenariat avec partis/campagnes",
+  "Contenu IA répétitif = risque de démonétisation (Facebook juil. 2025, YouTube 15/07/2025)",
+  "Loi influenceurs : mention « Publicité » ou équivalent et mention « image virtuelle » ou équivalent pour visuels IA dans un contenu sponsorisé"
+ ],
+ "questions_en_attente": {
+  "3": true,
+  "8": true
+ },
+ "resume_du_jour": {
+  "date": "2026-10-20",
+  "type": "résumé quotidien",
+  "ou_on_en_est": "4 abonnés (0 gagné depuis le 18/10), 12 Reels, 2 620 vues cumulées, 0 partage, 2 enregistrements, 6 visites du profil le 20/10 (API Instagram, 20/10 16 h 36)",
+  "ce_qui_a_bouge": [
+   "2 premiers enregistrements du compte sur « Ils s'attaquent à nos libertés » (63 vues en 4 h)",
+   "Test A/B faux JT / messagerie : nul (+10,8 %, 0 partage), clos",
+   "Reel Macron plafonné (+30 vues en 24 h) et n'a pas amené de visites du profil",
+   "Rythme ramené à 2 Reels/jour, comme demandé le 19/10"
+  ],
+  "conversion": "1,5 abonné pour 1 000 vues au total, 0 depuis le 18/10 : le problème n° 1 est la conversion, pas la portée",
   "actions_du_jour": [
-    "Agent 4 : prochain Reel cadré « tes droits / ton argent » + fin à garder",
-    "Agent 8 : relever chaque jour visites du profil et enregistrements",
-    "Propriétaire : confirmer la date du changement de bio (si fait) et vérifier le lien Ko-fi/Tipeee en bio"
+   "Bio + promesse d'abonnement (« l'actu décodée chaque soir à 18 h ») : dans l'app, aujourd'hui",
+   "Annoncer la suite en fin de Reel (« demain : … ») et caler un rendez-vous fixe à 18 h",
+   "Test « fin à garder » (récap 3 chiffres + Enregistre) sur les 4 prochains Reels"
   ]
+ },
+ "actions_du_jour": [
+  "Propriétaire : garder la publication automatique active même en économie de quota (préparer 2 Reels d'avance la veille si un arrêt est prévu)",
+  "Agents 4/5 : série Commission du 17 octobre avec fin « épisode suivant demain » + récap « à garder » (test agent 3)",
+  "Agent 8 : légendes au modèle « accroche-histoire + question + envoie-le à… », suivi quotidien visites du profil"
+ ],
+ "ce_qui_a_bouge": [
+  "Publication arrêtée du 22/10 14 h au 24/10 16 h : portée du compte ÷13 (343 → 26), visites du profil à 0",
+  "Reprise le 24/10 avec « Ils ont perdu le contrôle. Et personne ne part. » et lancement de la série « Commission du 17 octobre »",
+  "Sujets éco « institution » remontés à la médiane à J+3 (agent 3)"
+ ]
 }
