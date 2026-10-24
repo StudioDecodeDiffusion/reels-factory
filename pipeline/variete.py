@@ -17,7 +17,8 @@ def controler(spec: dict, compte: str) -> list[str]:
     if hist:
         prec = hist[-1]
         for c in JAMAIS_DEUX_FOIS:
-            if norm(prec.get(c)) == norm(v[c]):
+            if norm(prec.get(c)) == norm(v[c]) and not (c == "mise_en_page" and norm(v[c]) == "pixeldoc"):
+                # pixeldoc = habillage constant de la série (règle 8 de RETRO_COMPTES_IA.md), il peut se répéter
                 errs.append(f"variete.{c} = « {v[c]} » : identique à la vidéo précédente ({prec.get('titre', '')}). Change-le.")
     for h in hist:
         communs = [c for c in CHAMPS if norm(h.get(c)) == norm(v[c])]
