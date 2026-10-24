@@ -1,0 +1,57 @@
+{
+  "id": "actu-20261024-2000",
+  "profil": "actu",
+  "statut": "a_valider",
+  "titre": "Résumé de la semaine : ce qu'il fallait retenir",
+  "son_tendance": null,
+  "publication_le": "2026-10-24T20:00+02:00",
+  "format_qhse": null,
+  "episode": null,
+  "legende": "Cinq infos de la semaine, une même logique : ils encaissent la colère, tu paies la facture.\n\nCasseurs-payeurs, gel des pensions au-dessus de 1 260 €, gazole à +44,1 % en un an, 550 000 manifestants contre 200 000 attendus, et un ministre de l'Intérieur qui reconnaît avoir « perdu le contrôle dans certaines grandes villes ».\n\nOui ou non : tu as payé pour leur crise ? 👇\nEnvoie-la à quelqu'un qui a raté l'actu de la semaine 📤\n\nSources : LCP, Insee (octobre 2026).\n\n#resumedelasemaine #retraites #nunez #actufrance #decodeactu\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [
+    "https://lcp.fr/actualites/budget-de-la-secu-rejete-en-commission-par-les-deputes-le-texte-sera-examine-a-partir-de",
+    "https://lcp.fr/actualites/lycees-bloques-le-projet-de-loi-casseurs-payeurs-examine-fin-octobre-au-senat-442963",
+    "https://lcp.fr/actualites/mobilisations-du-17-octobre-le-ministre-de-l-interieur-reconnait-un-manque-d",
+    "https://www.insee.fr/fr/statistiques/9080209"
+  ],
+  "validation": {
+    "notes": {
+      "mode": "sobre",
+      "accroche": 8,
+      "clarte": 8,
+      "exactitude": 9,
+      "rythme": 8,
+      "conformite": 9
+    }
+  },
+  "tours_validation": 1,
+  "critique": {
+    "decision": "publiable",
+    "score_global": 8,
+    "coherence": "15 scènes, une seule idée (ils encaissent, tu paies), compte à rebours clair, question fermée en fin.",
+    "controles": {
+      "images": "ok : aperçu muet avec pictos de remplacement, titres lisibles, miniature forte ; 3 légendes trop longues chevauchaient « Source » (scènes 3, 8, 10) raccourcies dans 7_spec.json",
+      "faits": "ok : 10 000 €/Sénat 27/10, 1 260 €/≈4 Md€ selon le gouvernement, Insee +44,1/+25,7/+3,1, 550 000/800 000/200 000, citation Nuñez et démission refusée attribuées ; aucune autre citation",
+      "langue": "ok : nombres en toutes lettres dans les dialogues",
+      "legende": "ok : accroche, sources LCP/Insee, hashtags, crédit de voix ; aucune mention d'IA"
+    },
+    "projection": {
+      "potentiel": "moyen",
+      "vues_estimees": "300 à 900 à 48 h",
+      "audience": "Abonnés actu rattrapant la semaine ; partage via la question fermée",
+      "raisonnement": "Agent 3 : non consulté (temps) / Moi : format top 5 récap + titre-thèse porteur, créneau 20 h",
+      "risque": "Densité de chiffres (15 scènes) : décrochage vers la 40e seconde"
+    },
+    "corrections": [],
+    "sources_verifiees": [
+      "https://lcp.fr/actualites/lycees-bloques-le-projet-de-loi-casseurs-payeurs-examine-fin-octobre-au-senat-442963",
+      "https://lcp.fr/actualites/budget-de-la-secu-rejete-en-commission-par-les-deputes-le-texte-sera-examine-a-partir-de",
+      "https://www.insee.fr/fr/statistiques/9080209",
+      "https://lcp.fr/actualites/mobilisations-du-17-octobre-le-ministre-de-l-interieur-reconnait-un-manque-d"
+    ],
+    "resume_pour_le_proprietaire": "Résumé de la semaine en top 5 : faits sourcés LCP/Insee, seule citation celle de Nuñez. Trois légendes trop longues raccourcies ; prêt à déposer."
+  },
+  "community": {},
+  "da_message": "Résumé de semaine en pixel doc nuit bleue: 15 scènes pd_*, compteur 5→1, musique trap 8 bits dès la 1re image (différent de l'épique de 15 h 15 et du fond brun). Question: on garde ce compte à rebours chaque samedi ?",
+  "cree": "2026-10-24T16:16:30+00:00"
+}
