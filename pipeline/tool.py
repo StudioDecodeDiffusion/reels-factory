@@ -101,10 +101,9 @@ def cmd_caption(a) -> None:
     from .voix import mention
     v = profile.get("voix", {})
     credits = " ".join(sorted({m for m in (mention(v.get("narrateur", "")), mention(v.get("mascotte", ""))) if m}))
-    lignes = cap.split("\n", 1)
-    ia = "🤖 Vidéo créée avec l'IA (animation et voix)."
-    cap = f"{lignes[0]}\n{ia}" + (f"\n\n{lignes[1].strip()}" if len(lignes) > 1 and lignes[1].strip() else "")
-    text = f"{cap}\n\n{tags}\n\n{profile.get('mention_ia', 'Animation créée avec l’IA.')} {credits}".strip()[:2200]
+    # propriétaire (24/10) : aucune mention IA dans le contenu (Instagram étiquette déjà) ; seuls restent les crédits
+    # de licence obligatoires (voix CC BY-SA), en fin de légende.
+    text = f"{cap}\n\n{tags}\n\n{credits}".strip()[:2200]
     (d / "legende.txt").write_text(text, encoding="utf-8")
     print(text)
 

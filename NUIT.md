@@ -38,6 +38,20 @@ Lire seulement : la note du sujet dans `state/file_sujets_actu.json`, les notes 
 Ne pas relire tout le dépôt, ne pas produire de fichiers intermédiaires longs. Pas de mail, pas de `tool etape`.
 La qualité vient des gabarits visuels (code) : la session remplit une spec courte, elle n'invente pas de code.
 
+## 0001. Durée, authenticité, légende (propriétaire, 24/10 — calé sur les comptes de référence)
+- **Durée 55-75 s** (top Reels des comptes de référence : 50-95 s ; archive66 95 s), **12-18 scènes**, un plan toutes
+  les 3-4 s, voix rapide sans blanc. L'histoire doit tenir jusqu'au bout : une révélation toutes les ~10 s.
+- **Authenticité, zéro bug** : la voix est contrôlée automatiquement au rendu (débit, blancs, reprise ou voix de secours) ;
+  l'agent 9 regarde chaque image de la planche : aucun texte qui déborde, aucun objet coupé, aucune scène vide,
+  aucune répétition d'image d'une scène à l'autre, sous-titres lisibles. Un défaut = on corrige avant de déposer.
+- **Aucune mention d'IA** dans la vidéo, la miniature, la légende (Instagram s'en charge). Seuls les crédits de licence des
+  voix restent, automatiquement, en toute fin de légende.
+- **Légende façon comptes qui percent** : 1re ligne = l'accroche-histoire (1-2 phrases, le scandale + un chiffre) ;
+  2e paragraphe = le contexte en 2 phrases ; puis une **question** (« Tu en penses quoi ? 👇 ») et un **appel au partage
+  ciblé** (« Envoie-la à quelqu'un qui… 📤 ») ; sources sur UNE ligne courte (« Sources : X, Y »). Pas de pavé.
+- **Hashtags : 4-5, précis** : 1 large du sujet (#retraites), 2 entités nommées (#plfss2027 #assembleenationale),
+  1 d'actu (#actufrance), + #decodeactu. Jamais de hashtags génériques (#viral, #fyp, #actu seul).
+
 ## 00. Quel créneau ?
 ```bash
 python3 -m pipeline.tool creneau --profile <compte>

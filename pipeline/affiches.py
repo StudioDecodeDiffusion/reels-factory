@@ -1,7 +1,7 @@
 """Miniatures et stories d'annonce, avec un style DIFFÉRENT par vidéo (règle de variété du propriétaire).
 
 Styles : pancarte · amende · notif · parchemin · reaction · une (journal) · neon
-Chaque style produit une image 1080×1920 ; `kind="couverture"` (titre seul + « Créé avec l'IA ») ou
+Chaque style produit une image 1080×1920 ; `kind="couverture"` (titre seul) ou
 `kind="story"` (accroche d'annonce + horaire).
 """
 from __future__ import annotations
@@ -144,9 +144,7 @@ def creer(style: str, kind: str, titre: str, accroche: str, quand: str, image: P
         if kind == "story":
             _sticker(im, d, (-1, 160), quand, _police("Black", 60), (255, 255, 255), INK, -3)
         _perso(image, 1250, im)
-    if kind == "couverture":
-        _sticker(im, d, (W - 440, 1850 - 120), "Créé avec l'IA", _police("ExtraBold", 44), (255, 79, 129), (255, 255, 255), -3)
-    else:
+    if kind != "couverture":
         d.text((W // 2, 1860), "@decodeactu", font=_police("Bold", 44), fill=(255, 255, 255) if style in ("notif", "parchemin", "reaction", "flash") else INK, anchor="mm")
     sortie.parent.mkdir(parents=True, exist_ok=True)
     im.save(sortie)
@@ -156,7 +154,7 @@ def creer(style: str, kind: str, titre: str, accroche: str, quand: str, image: P
 def couverture_choc(image: Path, titre: str, mots_choc: list[str] | None, sortie: Path, accent=(227, 36, 43),
                     surtitre: str = "") -> Path:
     """Miniature « choc » : image de la vidéo en plein cadre assombrie, titre critique énorme (zone visible dans la
-    grille du profil, centre 3:4), mots choc en rouge, mention « Créé avec l'IA »."""
+    grille du profil, centre 3:4), mots choc en rouge."""
     import re as _re
     fond = Image.open(image).convert("RGB").resize((W, H))
     fond = fond.filter(ImageFilter.GaussianBlur(9))
@@ -200,7 +198,6 @@ def couverture_choc(image: Path, titre: str, mots_choc: list[str] | None, sortie
             d.text((x, y), t, font=pol, fill=coul)
             x += d.textlength(t, font=pol)
         y += h_ligne
-    _sticker(im, d, (W - 420, 1560), "Créé avec l'IA", _police("ExtraBold", 40), (255, 255, 255), INK, -3)
     sortie.parent.mkdir(parents=True, exist_ok=True)
     im.save(sortie)
     return sortie

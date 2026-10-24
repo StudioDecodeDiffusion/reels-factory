@@ -105,5 +105,5 @@ Chaque scène a un `titre` (3-5 mots, police pixel) + `mot_fort` (en jaune), et 
 - **pd_jauge** : aiguille `valeur` 0-100 + `legende` (indice de colère, d'injustice…).
 - **pd_tampon** : `tampon` (« FAUX », « 308 CONTRE », « VÉRIDIQUE ») qui s'écrase sur l'objet (`prompt`).
 Prompts : objets concrets, pas de personne réelle identifiable (pas de visage de ministre) ; pour un dirigeant :
-« a politician in a suit seen from behind at a podium ». Ajouter en légende : « Images pixel générées par IA (FLUX via Pollinations) ».
+« a politician in a suit seen from behind at a podium ».
 Rythme : un plan toutes les 2-4 s, 8-12 scènes, 30-50 s.

@@ -227,7 +227,8 @@ def sonoriser(spec: dict, job: str, profile: dict, public_dir: Path) -> dict:
         for j, rep in enumerate(dialogue):
             wav = dest / f"s{i}_r{j}.wav"
             masc = rep.get("qui") == "mascotte"
-            say(str(rep["texte"]), rep.get("voix") or (v_masc if masc else v_narr), wav, vitesse)  # « voix » : ton d'une réplique
+            voix_rep = rep.get("voix") or (v_masc if masc else v_narr)  # « voix » : ton d'une réplique
+            _voix_propre(str(rep["texte"]), voix_rep, wav, vitesse, masc)
             _norm(wav)
             if masc and not rep.get("voix"):
                 _effet(wav, effet_masc)
@@ -247,6 +248,50 @@ def sonoriser(spec: dict, job: str, profile: dict, public_dir: Path) -> dict:
         sc["duration"] = round(t + 0.06, 2)  # la scène dure le temps de la voix, sans blanc
         sc["audio"] = f"voix/{job}/{mp3.name}"
     return spec
+
+
+def _controle_voix(texte: str, wav: Path) -> str:
+    """Contrôle qualité d'une réplique (propriétaire, 24/10 : aucun bug de voix). Renvoie "" si OK, sinon le défaut."""
+    import re as _re
+    mots = max(1, len(_re.findall(r"[\wÀ-ÿ']+", texte)))
+    d = duree(wav)
+    debit = mots / max(0.1, d)
+    if debit < 1.7:
+        return f"trop lent / bafouillage ({debit:.1f} mots/s)"
+    if debit > 5.0:
+        return f"mots avalés ({debit:.1f} mots/s)"
+    out = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(wav), "-af", "silencedetect=noise=-38dB:d=0.65", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    if "silence_start" in out:
+        debuts = [float(x) for x in _re.findall(r"silence_start: ([\d.]+)", out)]
+        if any(0.3 < x < d - 0.4 for x in debuts):
+            return "blanc au milieu de la phrase"
+    return ""
+
+
+def _voix_propre(texte: str, voix: str, wav: Path, vitesse: float, masc: bool) -> None:
+    """Génère la réplique, la contrôle, recommence jusqu'à 3 fois, puis bascule sur une voix Piper stable."""
+    for essai in range(3):
+        say(texte, voix, wav, vitesse)
+        _rogner(wav)
+        defaut = _controle_voix(texte, wav)
+        if not defaut:
+            return
+        print(f"voix à refaire ({defaut}) : {texte[:50]}")
+    say(texte, "piper:fr_FR-upmc-medium?spk=" + ("1" if masc else "0") + "&vitesse=1.08", wav, vitesse)
+    _rogner(wav)
+
+
+def _rogner(wav: Path) -> None:
+    """Coupe les blancs de début et de fin (réplique qui démarre net)."""
+    tmp = wav.with_suffix(".rog.wav")
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-af",
+                    "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.02,areverse,"
+                    "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,areverse", str(tmp)], check=True)
+    if duree(tmp) > 0.2:
+        tmp.replace(wav)
+    else:
+        tmp.unlink(missing_ok=True)
 
 
 def echantillons(texte: Path, essais: Path, out: Path) -> None:

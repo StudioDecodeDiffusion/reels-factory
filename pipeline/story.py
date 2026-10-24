@@ -67,7 +67,7 @@ def creer(image_accroche: Path, titre: str, compte: str, sortie: Path, palette: 
 
 def couverture(image_accroche: Path, titre: str, sortie: Path, palette: list[str] | None = None) -> Path:
     """Miniature du Reel (1080×1920), lisible dans la grille du profil (centre 3:4) : fond propre, titre en
-    gros, Lou et Déco découpés de l'accroche, mention « Créé avec l'IA »."""
+    gros, Lou et Déco découpés de l'accroche."""
     pal = [_rgb(c) for c in (palette or ["#FFD23F", "#3D5AFE", "#FF4F81", "#2EC4B6"])]
     fond = pal[1]
     im = Image.new("RGB", (W, H), fond)
@@ -101,7 +101,6 @@ def couverture(image_accroche: Path, titre: str, sortie: Path, palette: list[str
     d.rectangle([104, y0 + 14, 1018, y0 + 311], fill=INK)
     d.rectangle([84, y0 - 6, 996, y0 + 291], fill=INK)
     im.paste(fr, (90, y0))
-    sticker((-1, y0 + 340), "Créé avec l'IA", _police("ExtraBold", 48), pal[2], (255, 255, 255), -3)
     sortie.parent.mkdir(parents=True, exist_ok=True)
     im.save(sortie)
     return sortie
