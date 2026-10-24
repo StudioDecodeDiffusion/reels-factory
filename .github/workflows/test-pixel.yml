@@ -1,0 +1,26 @@
+name: Test des objets pixel art générés
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q pillow
+      - run: |
+          python - <<'PY'
+          from pipeline.render import _generer_pixel
+          for i, p in enumerate(["a frozen pension envelope in a block of ice", "an old french couple counting coins", "a government bank vault full of gold"]):
+              print(p, "->", _generer_pixel(p, 1000 + i))
+          PY
+          ls -la video/public/photos || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pixels
+          path: video/public/photos/

@@ -17,6 +17,7 @@ import {Duo} from './dialogue';
 import {HabillageChat, HabillageJT, HabillagePleinEcran, Transition} from './layouts';
 import {CadreEditorial, SceneEditoriale} from './editorial';
 import {FondCartoon, StylePerso} from './cartoon';
+import {CadrePixelDoc, ScenePixelDoc} from './pixeldoc';
 
 
 // Choisit deux couleurs d'accent de la palette, différentes du fond
@@ -81,7 +82,7 @@ export const ReelVideo: React.FC<VideoSpec> = ({theme, scenes, music}) => {
   const {fps, durationInFrames} = useVideoConfig();
   const hasVoice = scenes.some((s) => s.audio);
   const musicLevel = hasVoice ? 0.12 : 0.6; // musique discrète sous la voix off
-  const pixel = theme.style !== 'sobre' && theme.style !== 'editorial';
+  const pixel = theme.style !== 'sobre' && theme.style !== 'editorial' && theme.style !== 'pixeldoc';
   const pal = palette(theme);
   const bgs = scenes.map((s, i) => s.fond ?? pal[i % pal.length]);
   let from = 0;
@@ -105,7 +106,14 @@ export const ReelVideo: React.FC<VideoSpec> = ({theme, scenes, music}) => {
         const seq = (
           <Sequence key={i} from={from} durationInFrames={dur}>
             {s.audio ? <Audio src={staticFile(s.audio)} /> : null}
-            {theme.style === 'editorial' ? (
+            {theme.style === 'pixeldoc' ? (
+              <AbsoluteFill>
+                <CadrePixelDoc scene={s} theme={theme} index={i} total={scenes.length}>
+                  <ScenePixelDoc scene={s} theme={theme} />
+                </CadrePixelDoc>
+                {i > 0 ? <TransitionPixel couleur="#0B0603" seed={i} duree={8} /> : null}
+              </AbsoluteFill>
+            ) : theme.style === 'editorial' ? (
               <AbsoluteFill>
                 <CadreEditorial scene={s} theme={theme} index={i} total={scenes.length}>
                   <SceneEditoriale scene={s} theme={theme} />
@@ -124,7 +132,7 @@ export const ReelVideo: React.FC<VideoSpec> = ({theme, scenes, music}) => {
         from += dur;
         return seq;
       })}
-      {theme.style === 'editorial' ? null : pixel ? (['jt', 'chat'].includes(theme.mise_en_page ?? '') ? null : <BandeauPixel theme={theme} />) : <Bandeau theme={theme} />}
+      {theme.style === 'editorial' || theme.style === 'pixeldoc' ? null : pixel ? (['jt', 'chat'].includes(theme.mise_en_page ?? '') ? null : <BandeauPixel theme={theme} />) : <Bandeau theme={theme} />}
     </AbsoluteFill>
     </StylePerso.Provider>
   );

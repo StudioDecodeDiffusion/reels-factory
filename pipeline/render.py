@@ -27,7 +27,7 @@ REQUIRED = {
     "compare": ["left", "right"], "particles": ["mode", "caption"], "outro": ["text", "cta"],
     "quiz": ["question", "options", "bonne"], "bigstat": ["value", "label"], "checklist": ["items"],
     "photo": ["src", "credit"], "ed_titre": ["titre"], "ed_chiffre": ["valeur", "legende"], "ed_citation": ["texte", "auteur"],
-    "ed_photo": ["src", "credit"], "ed_liste": ["points"], "ed_versus": ["gauche", "droite"], "ed_allocution": ["texte", "auteur"], "pendant": ["haut", "bas"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
+    "ed_photo": ["src", "credit"], "ed_liste": ["points"], "ed_versus": ["gauche", "droite"], "ed_allocution": ["texte", "auteur"], "pd_objet": [], "pd_flux": ["de", "vers"], "pd_chiffre": ["valeur", "legende"], "pd_versus": ["gauche", "droite"], "pd_jauge": ["valeur", "legende"], "pd_tampon": ["tampon"], "pendant": ["haut", "bas"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
 }
 
 
@@ -187,9 +187,56 @@ def _photos(spec: dict) -> None:
             sc["src"] = f"photos/{nom}"
 
 
+PIXEL_STYLE = ("detailed realistic pixel art, 64-bit retro game sprite, crisp pixels, rich shading, warm lighting, "
+               "single object centered, isolated on a plain pure black background, no text, no watermark")
+
+
+def _generer_pixel(prompt: str, graine: int) -> str:
+    """Objet pixel art généré (FLUX via Pollinations, gratuit et sans compte), puis pixelisé et détouré.
+    Retourne le chemin relatif dans video/public, ou "" si la génération échoue (repli graphique dans le rendu)."""
+    import hashlib
+    import io
+    import urllib.parse
+    import urllib.request
+    from PIL import Image
+    nom = "px_" + hashlib.sha1(f"{prompt}|{graine}".encode()).hexdigest()[:16] + ".png"
+    dest = VIDEO / "public" / "photos" / nom
+    if dest.exists():
+        return f"photos/{nom}"
+    url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(f"{prompt}, {PIXEL_STYLE}")
+           + f"?width=768&height=768&nologo=true&model=flux&seed={graine}")
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "DecodeStudio/1.0"})
+        im = Image.open(io.BytesIO(urllib.request.urlopen(req, timeout=120).read())).convert("RGBA")
+    except Exception as e:
+        print(f"image pixel non générée ({e}) : repli graphique")
+        return ""
+    petit = im.resize((128, 128), Image.LANCZOS)
+    q = petit.convert("RGB").quantize(colors=40, method=Image.Quantize.MEDIANCUT).convert("RGBA")
+    px = q.load()
+    for y in range(128):
+        for x in range(128):
+            r, g, b, a = px[x, y]
+            if r + g + b < 45:  # fond noir → transparent
+                px[x, y] = (0, 0, 0, 0)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    q.resize((768, 768), Image.NEAREST).save(dest)
+    return f"photos/{nom}"
+
+
+def _pixels(spec: dict) -> None:
+    for i, sc in enumerate(spec.get("scenes", [])):
+        if not str(sc.get("type", "")).startswith("pd_"):
+            continue
+        for cible in [sc] + [sc.get(k) for k in ("de", "vers", "gauche", "droite") if isinstance(sc.get(k), dict)]:
+            if cible.get("prompt") and not cible.get("src"):
+                cible["src"] = _generer_pixel(cible["prompt"], 1000 + i)
+
+
 def render(spec: dict, out_mp4: Path) -> Path:
     spec = json.loads(json.dumps(spec))
     _photos(spec)
+    _pixels(spec)
     out_mp4 = Path(out_mp4).resolve()  # Remotion tourne dans video/ : chemins absolus obligatoires
     out_mp4.parent.mkdir(parents=True, exist_ok=True)
     props = out_mp4.with_suffix(".json")

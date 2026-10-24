@@ -8,7 +8,7 @@ export type Theme = {
   bandeau?: string | null; // texte du bandeau signature (ex. date), optionnel
   grille?: boolean; // grille fine en fond
   palette?: string[]; // couleurs vives des fonds de scène (style v2)
-  style?: 'pixel' | 'sobre' | 'editorial'; // pixel = coloré animé, editorial = motion design soigné façon médias
+  style?: 'pixel' | 'sobre' | 'editorial' | 'pixeldoc'; // pixel = coloré animé, editorial = motion design soigné façon médias
   persos?: 'pixel' | 'cartoon'; // cartoon = personnages vectoriels détaillés (expressions, tenues, gestes)
   tenues?: {narrateur?: string; mascotte?: string}; // tenues de l'épisode (voir personnages.ts)
   mise_en_page?: 'duo' | 'jt' | 'chat' | 'quiz' | 'plein_ecran'; // habillage de la vidéo
@@ -79,6 +79,12 @@ export type Scene =
   | (Base & {type: 'ed_citation'; texte: string; auteur: string})
   | (Base & {type: 'ed_photo'; src: string; credit: string; debut_s?: number; titre?: string; kicker?: string})
   | (Base & {type: 'ed_liste'; points: string[]; titre?: string; kicker?: string})
+  | (Base & {type: 'pd_objet'; titre?: string; mot_fort?: string; src?: string; prompt?: string; etiquette?: string})
+  | (Base & {type: 'pd_flux'; titre?: string; mot_fort?: string; de: {label: string; src?: string; prompt?: string}; vers: {label: string; src?: string; prompt?: string}; montant?: string})
+  | (Base & {type: 'pd_chiffre'; titre?: string; mot_fort?: string; valeur: number; decimales?: number; prefixe?: string; suffixe?: string; legende: string; source?: string; jauge?: number})
+  | (Base & {type: 'pd_versus'; titre?: string; mot_fort?: string; gauche: {label: string; valeur: string; src?: string; prompt?: string}; droite: {label: string; valeur: string; src?: string; prompt?: string}})
+  | (Base & {type: 'pd_jauge'; titre?: string; mot_fort?: string; valeur: number; legende: string})
+  | (Base & {type: 'pd_tampon'; titre?: string; mot_fort?: string; tampon: string; src?: string; prompt?: string})
   | (Base & {type: 'ed_allocution'; texte: string; auteur: string; quand?: string})
   | (Base & {type: 'ed_versus'; gauche: {label: string; valeur: string}; droite: {label: string; valeur: string}; titre?: string; kicker?: string})
   | (Base & {type: 'pendant'; src?: string; credit?: string; haut: string; bas: string; lignes?: string[]});
