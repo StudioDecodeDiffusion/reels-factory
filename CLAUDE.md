@@ -14,3 +14,6 @@
 - Le travail en cours va dans `travail/` (ignoré par git).
 - Mails (« Agent N - JJ/MM/AA - titre »), publication Instagram et statistiques : GitHub Actions
   (`.github/workflows/`), jamais depuis la session.
+- **Sobriété du code (principes de Ponytail, MIT)** : avant d'écrire du code, chercher à supprimer, réutiliser l'existant,
+  la bibliothèque standard ou une fonction native ; pas d'abstraction nouvelle sans besoin immédiat ; le plus petit diff
+  qui marche. Ne relire que les fichiers nécessaires (économie de jetons).
