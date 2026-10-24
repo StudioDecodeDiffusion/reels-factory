@@ -205,20 +205,36 @@ def _generer_pixel(prompt: str, graine: int) -> str:
         return f"photos/{nom}"
     url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(f"{prompt}, {PIXEL_STYLE}")
            + f"?width=768&height=768&nologo=true&model=flux&seed={graine}")
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "DecodeStudio/1.0"})
-        im = Image.open(io.BytesIO(urllib.request.urlopen(req, timeout=120).read())).convert("RGBA")
-    except Exception as e:
-        print(f"image pixel non générée ({e}) : repli graphique")
+    import time
+    im = None
+    for essai in range(4):  # l'offre gratuite limite le débit : on patiente et on réessaie
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "DecodeStudio/1.0"})
+            im = Image.open(io.BytesIO(urllib.request.urlopen(req, timeout=150).read())).convert("RGBA")
+            break
+        except Exception as e:
+            print(f"génération pixel, essai {essai + 1} : {e}")
+            time.sleep(20 * (essai + 1))
+    if im is None:
         return ""
+    time.sleep(8)
     petit = im.resize((128, 128), Image.LANCZOS)
     q = petit.convert("RGB").quantize(colors=40, method=Image.Quantize.MEDIANCUT).convert("RGBA")
     px = q.load()
-    for y in range(128):
-        for x in range(128):
-            r, g, b, a = px[x, y]
-            if r + g + b < 45:  # fond noir → transparent
-                px[x, y] = (0, 0, 0, 0)
+    # détourage : remplissage depuis les bords sur les couleurs proches du fond
+    coins = [px[0, 0], px[127, 0], px[0, 127], px[127, 127]]
+    fond = tuple(sum(c[k] for c in coins) // 4 for k in range(3))
+    proche = lambda c: sum(abs(c[k] - fond[k]) for k in range(3)) < 70
+    pile = [(x, y) for x in range(128) for y in (0, 127)] + [(x, y) for y in range(128) for x in (0, 127)]
+    vu = set()
+    while pile:
+        x, y = pile.pop()
+        if (x, y) in vu or not (0 <= x < 128 and 0 <= y < 128):
+            continue
+        vu.add((x, y))
+        if proche(px[x, y]):
+            px[x, y] = (0, 0, 0, 0)
+            pile += [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]
     dest.parent.mkdir(parents=True, exist_ok=True)
     q.resize((768, 768), Image.NEAREST).save(dest)
     return f"photos/{nom}"
