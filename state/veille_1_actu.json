@@ -1,75 +1,58 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-24",
   "compte": "actu",
   "agent": "1.1",
-  "mode": "économie de quota (5 sujets max)",
+  "mode": "ratissage large, faits retenus uniquement s'ils sont confirmés par une page source datée (sujets peu nombreux : recherche web peu productive ce jour)",
   "sujets": [
     {
       "titre": "Lecornu reçoit les syndicats… sans les lycéens",
-      "resume": "Le 21/10 à Matignon, Sébastien Lecornu a reçu les 5 syndicats représentatifs (CFDT, CGT, FO, CFTC, CFE-CGC) avec Laurent Nuñez, sur le « droit de manifester » et le pouvoir d'achat ; les lycéens, au cœur du mouvement, n'étaient pas invités. Les syndicats appellent à une journée de grève le 5 novembre ; la CFDT refuse « une leçon de responsabilité ».",
-      "chiffres_cles": "5 syndicats reçus, 0 organisation lycéenne ; grève le 5/11 ; partis reçus jeudi 22/10",
+      "resume": "Le 21/10, Sébastien Lecornu a reçu les cinq syndicats représentatifs (CFDT, CGT, FO, CFTC, CFE-CGC) après le 17 octobre ; les représentants des lycéens et étudiants n'étaient pas invités. Une journée de grève et de manifestation est annoncée le 5 novembre, à l'appel des syndicats reçus, sauf la CFE-CGC à ce stade.",
+      "chiffres_cles": "5 syndicats reçus ; 0 organisation lycéenne ou étudiante ; grève le 5/11",
       "source_url": "https://lcp.fr/actualites/apres-le-17-octobre-et-avant-de-nouvelles-manifestations-sebastien-lecornu-recoit-les",
       "date_info": "2026-10-21",
-      "vu_chez": [
-        "LCP",
-        "Boursorama/AFP"
-      ],
+      "vu_chez": ["LCP"],
       "faisabilite": 5,
       "potentiel": 8
     },
     {
-      "titre": "Budget de la Sécu : 4 Md€ sur les pensions, 49.3 ou ordonnance en vue",
-      "resume": "L'Assemblée a rejeté la motion de rejet (259 contre, 128 pour) puis la 1re partie du PLFSS 2027 ; le texte prévoit une revalorisation des pensions inférieure à l'inflation pour deux tiers des retraités (jusqu'à 4 Md€ d'économies) et ~1 Md€ sur les arrêts maladie. Sans vote avant fin novembre, le gouvernement peut passer par ordonnance ; Lecornu pourrait aussi utiliser le 49.3.",
-      "chiffres_cles": "déficit visé 12,7 Md€ (21,8 en 2026) ; 4 Md€ pensions ; ~3 000 amendements ; débats jusqu'au 26/10 au soir",
-      "source_url": "https://www.moneyvox.fr/votre-argent/actualites/110919/budget-de-la-secu-le-gouvernement-sous-le-feu-des-critiques-des-ouverture-des-debats",
-      "date_info": "2026-10-21",
-      "vu_chez": [
-        "MoneyVox",
-        "Orange/AFP"
-      ],
-      "faisabilite": 5,
-      "potentiel": 8
-    },
-    {
-      "titre": "Acte II samedi 24/10 : vers des interdictions de manifester",
-      "resume": "Laurent Nuñez a demandé dès le 19/10 aux préfets des mesures « y compris des interdictions » ; à Dijon, l'interdiction des deux rassemblements de 14 h est jugée « de plus en plus probable ». Lecornu annonce un dispositif de sécurité « massif ».",
-      "chiffres_cles": "2 rassemblements à 14 h à Dijon ; 4 000-5 000 manifestants le 17/10 à Dijon (préfecture)",
-      "source_url": "https://dijon-actualites.fr/2026/10/21/manifestation-des-gilets-jaunes-vers-une-interdiction-du-rassemblement-prevu-samedi-24-octobre-a-dijon/",
-      "date_info": "2026-10-21",
-      "vu_chez": [
-        "franceinfo",
-        "ICI",
-        "CNews",
-        "Lyon Mag"
-      ],
+      "titre": "Pénurie de carburant : 595 stations à sec, gazole à 2,364 €/L",
+      "resume": "Le 18/10 au matin, 595 stations étaient complètement à sec et 1 570 stations sur 9 611 (16,3 %) signalaient une pénurie partielle ou totale. Le gazole est en moyenne à 2,364 €/L, soit 2 centimes de plus en une semaine.",
+      "chiffres_cles": "595 stations à sec (18/10) ; 1 570 sur 9 611 en pénurie (16,3 %) ; gazole 2,364 €/L",
+      "source_url": "https://www.economiematin.fr/penurie-carburant-impact-pouvoir-achat-menages",
+      "date_info": "2026-10-19",
+      "vu_chez": ["PrixCarbu (cité)", "Capital (cité)"],
       "faisabilite": 4,
       "potentiel": 7
     },
     {
-      "titre": "Pénurie : 595 stations à sec, gazole record à 2,364 €/L",
-      "resume": "Au 18/10, 595 stations n'avaient plus aucun carburant et 1 570 sur 9 611 (16,3 %) manquaient d'au moins un produit ; TotalEnergies représente 87 % des stations à sec, ruées à cause de ses prix plafonnés. Le Grand Est est le plus touché (23,6 % des stations).",
-      "chiffres_cles": "gazole 2,364 €/L en moyenne ; plus de 2,50 €/L dans le Bas-Rhin ; > 11 € d'écart sur un plein de 50 L",
-      "source_url": "https://www.planet.fr/penurie-de-carburant-faut-il-faire-le-plein-pres-de-600-stations-sont-deja-a-sec.2999923.817032.html",
-      "date_info": "2026-10-19",
-      "vu_chez": [
-        "Planet (données PrixCarbu / ministère)"
-      ],
-      "faisabilite": 4,
-      "potentiel": 6
+      "titre": "Budget de la Sécu : les pensions gelées au-dessus de 1 260 €",
+      "resume": "La commission des affaires sociales a rejeté le PLFSS 2027 ; l'examen dans l'hémicycle commence le mardi 20/10, dans la version initiale du gouvernement. Selon les prévisions du gouvernement, geler toutes les pensions au-dessus de 1 260 € rapporterait environ 4 Md€.",
+      "chiffres_cles": "environ 4 Md€ d'économies sur les pensions ; seuil 1 260 € ; examen dans l'hémicycle à partir du 20/10",
+      "source_url": "https://lcp.fr/actualites/budget-de-la-secu-rejete-en-commission-par-les-deputes-le-texte-sera-examine-a-partir-de",
+      "date_info": "2026-10-16",
+      "vu_chez": ["LCP"],
+      "faisabilite": 5,
+      "potentiel": 7
     },
     {
-      "titre": "Taxe sur les biscuits et céréales sucrés : tes courses vs les allègements patronaux",
-      "resume": "Les députés ont voté en commission (14/10) l'extension de la « taxe soda » aux produits préemballés les plus sucrés ; le sujet arrive en séance cette semaine. Dans le même texte, la réduction des allègements de cotisations patronales (3,7 Md€) est contestée jusque chez les macronistes et Horizons.",
-      "chiffres_cles": "3,7 Md€ d'allègements patronaux en jeu ; un tiers de l'effort par les recettes",
-      "source_url": "https://www.agra.fr/lives/plfss-2027-les-deputes-favorables-lextension-de-la-taxation-des-aliments-sucres",
-      "date_info": "2026-10-15",
-      "vu_chez": [
-        "Agra",
-        "CNews",
-        "MoneyVox"
-      ],
+      "titre": "Violences du 17 octobre : une commission d'enquête à l'Assemblée",
+      "resume": "La conférence des présidents de l'Assemblée a approuvé le principe d'une commission d'enquête sur les violences du 17 octobre, proposée par Yaël Braun-Pivet. Ses prérogatives seront confiées à la commission des lois, présidée par Vincent Caure ; l'intitulé exact et le périmètre restent à définir.",
+      "chiffres_cles": "commission des lois présidée par Vincent Caure ; trois rapporteurs attendus ; périmètre non encore fixé",
+      "source_url": "https://lcp.fr/actualites/info-lcp-violences-du-17-octobre-l-assemblee-nationale-approuve-la-creation-de-la",
+      "date_info": "2026-10-20",
+      "vu_chez": ["LCP"],
       "faisabilite": 4,
-      "potentiel": 5
+      "potentiel": 7
+    },
+    {
+      "titre": "Réseaux sociaux interdits aux moins de 15 ans : loi adoptée, reste le Conseil constitutionnel",
+      "resume": "Le Parlement a adopté le 21/07/2026 la proposition de loi portée par Laure Miller qui interdit les réseaux sociaux aux moins de 15 ans ; le texte est soumis au Conseil constitutionnel. Le gouvernement vise une application dès la rentrée de septembre, sous réserve de ce feu vert. Sujet de fond, pas du jour : à utiliser comme « ce qui dure ».",
+      "chiffres_cles": "Sénat 243 voix contre 2 ; Assemblée 279 voix contre 81 ; moins de 15 ans",
+      "source_url": "https://www.clubic.com/actualite-622246-reseaux-sociaux-interdits-aux-moins-de-15-ans-deputes-et-senateurs-adoptent-la-loi.html",
+      "date_info": "2026-07-21",
+      "vu_chez": ["Clubic"],
+      "faisabilite": 5,
+      "potentiel": 6
     }
   ]
 }
