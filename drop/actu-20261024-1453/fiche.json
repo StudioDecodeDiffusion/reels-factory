@@ -1,0 +1,54 @@
+{
+  "id": "actu-20261024-1453",
+  "profil": "actu",
+  "statut": "a_valider",
+  "titre": "Commission du 17 octobre, ép. 1 : « perte de contrôle », qui a menti ?",
+  "son_tendance": null,
+  "publication_le": "2026-10-24T18:00+02:00",
+  "format_qhse": null,
+  "episode": 1,
+  "legende": "Le renseignement attendait 110 000 manifestants au maximum. Ils étaient 550 000 — et le ministre a fini par avouer : « Nous avons perdu le contrôle. »\n\nL'Assemblée a lancé une commission d'enquête sur le 17 octobre. Épisode 1 : on confronte les versions officielles aux chiffres (200 000 « attendus », 60 000 forces contre 89 000 en 2018, 30 000 « pilleurs » à Marseille).\n\nNuñez doit-il partir ? Oui ou non 👇\nEnvoie-la à quelqu'un qui croit encore la version officielle 📤\n\nSources : LCP, Maire-info\n\n#maintiendelordre #laurentnunez #commissiondenquete #actufrance #decodeactu\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [
+    "https://lcp.fr/actualites/info-lcp-qui-sont-les-trois-rapporteurs-de-la-commission-d-enquete-sur-les-violences-du",
+    "https://lcp.fr/actualites/info-lcp-violences-du-17-octobre-l-assemblee-nationale-approuve-la-creation-de-la",
+    "https://lcp.fr/actualites/mobilisations-du-17-octobre-le-ministre-de-l-interieur-reconnait-un-manque-d",
+    "https://lcp.fr/actualites/violences-du-17-octobre-le-rn-annonce-son-boycott-de-la-commission-d-enquete-444138",
+    "https://www.maire-info.com//17-octobre-le-gouvernement-reconnaît-des-failles-dans-le-dispositif-de-maintien-de-l'ordre-article2-31198"
+  ],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "decision": "publiable",
+    "score_global": 8,
+    "coherence": "Une idée tenue de bout en bout : chaque déclaration officielle sur le 17 octobre confrontée à son chiffre, révélation toutes les 4-8 s, cliffhanger vers l'épisode 2.",
+    "controles": {
+      "images": "planche contrôlée (15 scènes) : titres corrigés (ép. 1, « Combien de pilleurs », tampon « DÉMENTI », légendes raccourcies) ; objets pixel non visibles en local (générateur d'images bloqué par le proxy de la session) : ils seront générés au rendu GitHub, prompts tous différents",
+      "faits": "ok — 550 000, 200 000, 60 000–110 000, 60 000 vs 89 000, 400 à Bordeaux, 30 000 vs 1 000-1 500, « du miracle », 2 400 interpellés, rapporteurs, boycott RN : tous sourcés ; « menti » uniquement en question, « dérive autoritaire » présenté comme avis",
+      "langue": "ok, nombres en toutes lettres dans la voix",
+      "legende": "ok : accroche + chiffre, contexte, question fermée, partage ciblé, sources sur une ligne, 5 hashtags, aucune mention IA"
+    },
+    "projection": {
+      "potentiel": "moyen",
+      "vues_estimees": "150 à 500 à 48 h",
+      "audience": "gens mobilisés le 17/10 et curieux de la commission ; partage pour « la version officielle démentie »",
+      "raisonnement": "Agent 3 : les vidéos sur le 17 octobre font 191 à 1 155 vues, le compte a 4 abonnés. Moi : sujet chaud et série épisodique (rendez-vous), mais concurrence de l'Acte II le même jour.",
+      "risque": "objets pixel non générés au rendu final (repli graphique identique d'une scène à l'autre)"
+    },
+    "corrections": [
+      "titres et légendes raccourcis après la planche"
+    ],
+    "sources_verifiees": [
+      "https://lcp.fr/actualites/mobilisations-du-17-octobre-le-ministre-de-l-interieur-reconnait-un-manque-d",
+      "https://www.maire-info.com//17-octobre-le-gouvernement-reconnaît-des-failles-dans-le-dispositif-de-maintien-de-l'ordre-article2-31198",
+      "https://lcp.fr/actualites/info-lcp-violences-du-17-octobre-l-assemblee-nationale-approuve-la-creation-de-la",
+      "https://lcp.fr/actualites/info-lcp-qui-sont-les-trois-rapporteurs-de-la-commission-d-enquete-sur-les-violences-du",
+      "https://lcp.fr/actualites/violences-du-17-octobre-le-rn-annonce-son-boycott-de-la-commission-d-enquete-444138"
+    ],
+    "resume_pour_le_proprietaire": "Ép. 1 de la série commission : les chiffres du 17 octobre démentent les versions officielles (prévisions, effectifs, pilleurs). Premier essai du style pixel doc ; vérifier que les objets pixel sont bien générés dans le rendu final. Notes 5, 6, 9 du 24/10 appliquées."
+  },
+  "community": {},
+  "da_message": "",
+  "cree": "2026-10-24T13:13:07+00:00"
+}

@@ -1,0 +1,337 @@
+{
+  "theme": {
+    "style": "pixeldoc",
+    "fond": "#2A170C",
+    "accent": "#FFD23F",
+    "texte": "#F5EBDD",
+    "bandeau": "COMMISSION DU 17/10 · ÉP. 1",
+    "palette": [
+      "#2A170C",
+      "#FFD23F",
+      "#E4572E",
+      "#F5EBDD"
+    ],
+    "mise_en_page": "plein_ecran",
+    "accent2": "#E4572E",
+    "police_titre": "Space Grotesk",
+    "police_texte": "Inter",
+    "grille": false
+  },
+  "musique": {
+    "genre": "trap8bit"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte": "chatterbox:fr?ref=jessica&exag=0.7&cfg=0.35",
+    "mascotte_effet": "aucun"
+  },
+  "variete": {
+    "accroche": "chiffre_geant",
+    "trend": "Série épisodique (commission d'enquête, ép. 1)",
+    "fonctionnement": "enquete",
+    "mise_en_page": "plein_ecran",
+    "musique": "trap8bit",
+    "voix": "V2+V4",
+    "palette": "retro_tv"
+  },
+  "scenes": [
+    {
+      "type": "pd_chiffre",
+      "duration": 9.7,
+      "titre": "Ils ont perdu le contrôle",
+      "mot_fort": "contrôle",
+      "valeur": 550000,
+      "jauge": 100,
+      "legende": "manifestants le 17 octobre",
+      "source": "Ministère de l'Intérieur",
+      "energie": 3,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Cinq cent cinquante mille dans la rue. Le ministre avoue : « Nous avons perdu le contrôle. » Qui a menti ?",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "duration": 5.7,
+      "titre": "Commission d'enquête, ép. 1",
+      "mot_fort": "ép. 1",
+      "prompt": "a thick investigation dossier folder with a red wax seal on a wooden desk",
+      "etiquette": "Assemblée nationale · 20 octobre",
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Épisode un de la commission d'enquête. On confronte leurs mots aux chiffres.",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "pd_chiffre",
+      "duration": 5.3,
+      "titre": "Ce que prévoyait le renseignement",
+      "mot_fort": "renseignement",
+      "valeur": 110000,
+      "jauge": 20,
+      "legende": "maximum prévu (60 000 à 110 000)",
+      "source": "Renseignement territorial, 16/10",
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La veille, le renseignement prévoit soixante à cent dix mille manifestants.",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "pd_chiffre",
+      "duration": 5.7,
+      "titre": "La version du ministre",
+      "mot_fort": "ministre",
+      "valeur": 200000,
+      "jauge": 36,
+      "legende": "« attendus », selon Laurent Nuñez",
+      "source": "France Inter, 19/10",
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Laurent Nuñez, lui, parle de deux cent mille attendus. Presque le double.",
+          "expression": "sarcasme"
+        }
+      ]
+    },
+    {
+      "type": "pd_versus",
+      "duration": 8.1,
+      "titre": "Prévus contre réels",
+      "mot_fort": "réels",
+      "gauche": {
+        "label": "Renseignement",
+        "valeur": "110 000",
+        "prompt": "a small group of tiny protesters holding signs, seen from above"
+      },
+      "droite": {
+        "label": "Dans la rue",
+        "valeur": "550 000",
+        "prompt": "a huge crowd of protesters with flags filling a wide boulevard"
+      },
+      "energie": 3,
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il y en aura au moins cinq fois plus. Le ministre dit « deux fois et demie ».",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "pd_versus",
+      "duration": 6.5,
+      "titre": "Moins de forces qu'en 2018",
+      "mot_fort": "2018",
+      "gauche": {
+        "label": "8 déc. 2018",
+        "valeur": "89 000",
+        "prompt": "a long row of riot police shields"
+      },
+      "droite": {
+        "label": "17 oct. 2026",
+        "valeur": "60 000",
+        "prompt": "a few riot police helmets on a bench"
+      },
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Pour encadrer ça : soixante mille forces de l'ordre. Contre quatre-vingt-neuf mille en 2018.",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "pd_chiffre",
+      "duration": 6.9,
+      "titre": "Bordeaux : submergés",
+      "mot_fort": "submergés",
+      "valeur": 400,
+      "suffixe": "",
+      "jauge": 10,
+      "legende": "agents · « submergés pendant plusieurs heures »",
+      "source": "Préfet de Gironde",
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "À Bordeaux, environ quatre cents agents. Le préfet : « submergés pendant plusieurs heures ».",
+          "expression": "triste"
+        }
+      ]
+    },
+    {
+      "type": "pd_tampon",
+      "duration": 6.5,
+      "titre": "Marseille : 30 000 pilleurs ?",
+      "mot_fort": "30 000",
+      "prompt": "a shattered shop window with scattered cardboard boxes on a night street",
+      "tampon": "« FARFELU »",
+      "energie": 3,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "À Marseille, le préfet annonce trente mille pilleurs. Le maire : « farfelu ».",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "pd_versus",
+      "duration": 6.5,
+      "titre": "Combien de pilleurs",
+      "mot_fort": "pilleurs",
+      "gauche": {
+        "label": "Préfet",
+        "valeur": "30 000",
+        "prompt": "a giant inflated balloon shaped like the number thirty"
+      },
+      "droite": {
+        "label": "Unsa-Police",
+        "valeur": "1 500 max",
+        "prompt": "a small police notebook with a pen"
+      },
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Un syndicat de police en compte mille à mille cinq cents. Vingt fois moins.",
+          "expression": "sarcasme"
+        }
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "duration": 6.1,
+      "titre": "Démission refusée",
+      "mot_fort": "refusée",
+      "prompt": "a resignation letter torn in half next to a fountain pen on a desk",
+      "etiquette": "« responsable de tout »",
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Nuñez se dit « responsable de tout » et propose sa démission. Refusée.",
+          "expression": "degout"
+        }
+      ]
+    },
+    {
+      "type": "pd_jauge",
+      "duration": 7.3,
+      "titre": "Zéro mort : un miracle",
+      "mot_fort": "miracle",
+      "valeur": 95,
+      "legende": "« du miracle » — Sébastien Lecornu",
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Zéro mort ? Pour le Premier ministre, c'est « du miracle ». Donc la chance ?",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "pd_flux",
+      "duration": 7.3,
+      "titre": "La facture descend",
+      "mot_fort": "descend",
+      "de": {
+        "label": "Fiasco au sommet",
+        "prompt": "a cracked marble government building with columns"
+      },
+      "vers": {
+        "label": "Dans la rue",
+        "prompt": "a pair of metal handcuffs"
+      },
+      "montant": "2 400 interpellés",
+      "energie": 3,
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et l'addition ? Deux mille quatre cents interpellés. Et une doctrine « face aux casseurs ».",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "duration": 4.9,
+      "titre": "Une commission sous tension",
+      "mot_fort": "tension",
+      "prompt": "an empty red parliament seat behind a velvet rope barrier",
+      "etiquette": "RN : « mascarade » → boycott",
+      "energie": 2,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Trois rapporteurs nommés. Le RN boycotte une « mascarade ».",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "pd_tampon",
+      "duration": 6.5,
+      "titre": "Notre avis",
+      "mot_fort": "avis",
+      "prompt": "a megaphone lying on wet cobblestones under a street lamp",
+      "tampon": "DÉMENTI",
+      "energie": 3,
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Notre avis : se tromper autant, puis serrer la vis, c'est une dérive autoritaire.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "duration": 7.3,
+      "titre": "Épisode 2 : les auditions",
+      "mot_fort": "Épisode 2",
+      "prompt": "a hearing table with a microphone and a blank name plate under a spotlight",
+      "etiquette": "Il doit partir : oui ou non ?",
+      "energie": 1,
+      "sfx": [
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Épisode deux : les auditions. Abonne-toi. Et toi : il doit partir, oui ou non ?",
+          "expression": "clin"
+        }
+      ]
+    }
+  ]
+}
