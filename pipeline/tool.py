@@ -307,7 +307,8 @@ def _annonce_4h(d, job: str, pid: str, fiche: dict, concept: dict) -> None:
     if not quand_pub:
         return
     t = datetime.fromisoformat(quand_pub)
-    jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+    t = t if t.tzinfo else t.replace(tzinfo=TZ)  # « --le 2026-10-24T20:00 » sans fuseau = heure de Paris
+    jours =["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
     quand_txt = ("AUJOURD'HUI" if t.date() == datetime.now(TZ).date() else jours[t.weekday()].upper()) + f" {t:%H}H{t:%M}".replace("H00", "H")
     liste = state.load("stories_programmees", [])
     style = STYLES_ANNONCE[len(liste) % len(STYLES_ANNONCE)]
