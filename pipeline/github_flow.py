@@ -128,9 +128,8 @@ def depot(drop_dir: str) -> None:
             if n == 8 and rep:
                 corps += md("## 💬 Réponses proposées aux commentaires\n" + "\n".join(
                     f"- **{i}.** « {str(r.get('commentaire', ''))[:140]} » → {r.get('reponse')}" for i, r in enumerate(rep, 1)))
-            mail.envoyer(n, f"{nom} · {fiche.get('titre', 'Rapport du jour')}", corps,
-                         R_RAPPORT8 if n == 8 else R_NOTE.format(n=n), images=images,
-                         ref={"type": f"rapport{n}", "job": fiche["id"], "profil": fiche["profil"]})
+            # propriétaire (24/10) : plus de mail par agent, le rapport part dans le journal quotidien (digest)
+            print(f"rapport de l'agent {n} gardé pour le journal du soir")
 
         elif statut == "etape":  # point d'avancement du Manager après chaque agent
             mail.envoyer("Manager", f"📍 {fiche.get('titre', 'Avancement')} · {nom}", md(fiche.get("corps_md", "")), R_MANAGER,
@@ -794,6 +793,44 @@ def graphiques(pid: str) -> dict[str, Path]:
     return images
 
 
+def digest() -> None:
+    """Journal quotidien (un seul mail par jour) : vidéos publiées + rapports des agents 1, 2, 3, 8, 12, 10, 11."""
+    now = datetime.now(TZ)
+    jour = now.strftime("%Y%m%d")
+    d = state.STATE / "attente"
+    fiches = [json.loads(f.read_text(encoding="utf-8")) for f in d.glob("*.json")]
+    pub = []
+    for f in fiches:
+        if f.get("statut") == "publiee" and f.get("publiee"):
+            t = datetime.fromisoformat(f["publiee"]).astimezone(TZ)
+            if t.date() == now.date():
+                pub.append((t, f))
+    lignes = ["## 🎬 Publié aujourd'hui"]
+    lignes += [f"- **{t:%H h %M}** · {f.get('titre')} · [voir le Reel]({f.get('permalink')})" for t, f in sorted(pub, key=lambda x: x[0])] or ["- Aucune vidéo publiée aujourd'hui."]
+    try:
+        file = state.load("file_sujets_actu", {}).get("sujets", [])
+        demain = (now + timedelta(days=1)).strftime("%Y-%m-%d")
+        prog = [s for s in file if not s.get("fait") and str(s.get("creneau", "")).startswith(demain)]
+        if prog:
+            lignes += ["", "## 📅 Demain"] + [f"- **{s['creneau'][11:16].replace(':', ' h ')}** · {s['titre']}" for s in prog]
+    except Exception:
+        pass
+    noms = {1: "Agent 1 · Actualité", 2: "Agent 2 · Tendances", 3: "Agent 3 · Chiffres", 8: "Agent 8 · Communauté",
+            12: "Agent 12 · Stratégie", 10: "Agent 10 · Veille des comptes IA", 11: "Agent 11 · Rétro-ingénierie"}
+    for n, titre in noms.items():
+        rap = [f for f in fiches if f.get("statut") == "rapport" and str(f.get("agent")) == str(n)
+               and f.get("id", "").split("-")[2:3] == [jour]]
+        rap.sort(key=lambda f: f.get("cree", ""))
+        lignes += ["", "---", f"# {titre}"]
+        lignes += [rap[-1].get("corps_md", "")] if rap else ["_Pas de rapport aujourd'hui._"]
+    images = graphiques("actu")
+    corps = md("\n".join(lignes))
+    if images:
+        corps = corps.replace("<h1>Agent 8", "".join(f'<p><img src="cid:{k}" style="width:100%;max-width:600px"></p>' for k in images) + "<h1>Agent 8", 1)
+    mail.envoyer("Manager", f"📰 Journal du {now:%d/%m}", corps, R_MANAGER, images=images,
+                 ref={"type": "digest", "profil": "actu"})
+
+
 def main() -> None:
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd == "depot":
@@ -802,6 +839,8 @@ def main() -> None:
         rendre(sys.argv[2], sys.argv[3])
     elif cmd == "facteur":
         facteur()
+    elif cmd == "digest":
+        digest()
     elif cmd == "stats":
         stats()
     else:

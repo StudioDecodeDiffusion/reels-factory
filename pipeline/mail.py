@@ -106,8 +106,12 @@ def envoyer(agent: int, titre: str, corps_html: str, reponse_html: str, ref: dic
     if _sil.get("jusqu_a") and datetime.now(timezone.utc).isoformat() < datetime.fromisoformat(_sil["jusqu_a"]).astimezone(timezone.utc).isoformat():
         print(f"(mails coupés par le propriétaire : {titre})")
         return ""
+    # Propriétaire (24/10) : un seul mail par jour (journal), plus les alertes ❌ critiques
+    if (ref or {}).get("type") != "digest" and "❌" not in titre:
+        print(f"(mail non envoyé, repris dans le journal du soir : {titre})")
+        return ""
     # Propriétaire (19/10) : plus de mails « Manager », sauf les alertes (échec, token, quota).
-    if str(agent) == "Manager" and not any(k in titre for k in ("❌", "⚠", "Échec", "Token")):
+    if str(agent) == "Manager" and (ref or {}).get("type") != "digest" and not any(k in titre for k in ("❌", "⚠", "Échec", "Token")):
         print(f"(mail Manager non envoyé : {titre})")
         return ""
     sujet = objet(agent, titre, profil)
