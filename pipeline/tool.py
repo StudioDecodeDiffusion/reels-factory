@@ -260,9 +260,12 @@ def cmd_creneau(a) -> None:
     from datetime import datetime as _dt
     t = _dt.fromisoformat(c)
     jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
-    resume = t.weekday() == 6 and t.hour == 14
+    impose = next((x["id"] for x in state.load(f"file_sujets_{a.profile}", {}).get("sujets", []) if not x.get("fait")
+                   and (x.get("creneau") or "")[:16] == c[:16]), None)  # sujet placé par le propriétaire
+    resume = t.weekday() == 6 and t.hour == 14 and not impose
     phare = 13 <= t.hour <= 15
     print(f"{c} ({jours[t.weekday()]} {t:%H h %M})" + (" — RÉSUMÉ DE LA SEMAINE OBLIGATOIRE" if resume else "")
+          + (f" — SUJET IMPOSÉ : {impose}" if impose else "")
           + (" — VIDÉO PHARE DU JOUR (voir NUIT.md § Vidéo phare)" if phare else " — vidéo d'info (fond de commerce)"))
 
 
