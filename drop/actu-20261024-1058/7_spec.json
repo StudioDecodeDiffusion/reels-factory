@@ -1,0 +1,293 @@
+{
+  "theme": {
+    "fond": "#0B1630",
+    "texte": "#F4F6FB",
+    "accent": "#E5233B",
+    "accent2": "#F2B705",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "24 octobre 2026",
+    "grille": false,
+    "style": "pixel",
+    "persos": "cartoon",
+    "mise_en_page": "duo",
+    "transition": "iris",
+    "camera": "secousse",
+    "palette": [
+      "#1E4FD8",
+      "#E5233B",
+      "#0B1630",
+      "#F2B705",
+      "#2BB6A8",
+      "#7A3CF0"
+    ],
+    "tenues": {
+      "narrateur": "detective",
+      "mascotte": "classique"
+    }
+  },
+  "musique": {
+    "genre": "suspense",
+    "ambiance": "effroi",
+    "volume": 0.4
+  },
+  "voix_override": {
+    "narrateur": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte_effet": "tres_aigu"
+  },
+  "variete": {
+    "accroche": "stop_scroll",
+    "trend": "« Vrai ou faux » / enquête (tampons VRAI-FAUX-FLOU)",
+    "fonctionnement": "vrai_faux",
+    "mise_en_page": "duo",
+    "musique": "suspense",
+    "voix": "V3+V2tres_aigu",
+    "palette": "gyrophare"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "duration": 4.9,
+      "title": "Accuser LFI sur ordre ?",
+      "subtitle": "Mediapart · l'État dément",
+      "sfx": [
+        "impact"
+      ],
+      "musique": {
+        "ambiance": "effroi",
+        "energie": 2
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Stop. On aurait demandé à la police d'accuser LFI ?",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "sms",
+      "duration": 6.8,
+      "texte": "On nous demande texto d'écrire que c'est LFI qui est derrière le mouvement",
+      "signature": "un commissaire du RT, cité par Mediapart (19/10)",
+      "expediteur": "Renseignement territorial",
+      "sfx": [
+        "pop"
+      ],
+      "musique": {
+        "ambiance": "tension",
+        "energie": 1
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Qui a écrit ça ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Un commissaire du renseignement. Selon lui, c'est objectivement faux.",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "duration": 7.2,
+      "title": "Vrai, faux ou flou ?",
+      "items": [
+        {
+          "texte": "Des policiers témoignent",
+          "etat": "vrai"
+        },
+        {
+          "texte": "La consigne est prouvée",
+          "etat": "flou"
+        },
+        {
+          "texte": "Ultragauche confirmée",
+          "etat": "faux"
+        }
+      ],
+      "sfx": [
+        "ding"
+      ],
+      "musique": {
+        "ambiance": "tension",
+        "energie": 2
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Alors, vrai, faux ou flou ?",
+          "expression": "clin"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Les témoignages : vrai. La consigne : pas prouvée.",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "quiz",
+      "duration": 6.0,
+      "question": "« Ce n'est absolument pas ce que je peux confirmer » : qui ?",
+      "options": [
+        "Le ministre",
+        "La procureure de Paris"
+      ],
+      "bonne": 1,
+      "revelation": 3.5,
+      "sfx": [
+        "ding"
+      ],
+      "musique": {
+        "ambiance": "curieux",
+        "energie": 2
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Qui a dit ça, sur l'ultragauche ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "La procureure de Paris. Aïe.",
+          "expression": "rire"
+        }
+      ]
+    },
+    {
+      "type": "debat",
+      "duration": 6.0,
+      "title": "Parole contre parole",
+      "label_pour": "Mediapart / LFI",
+      "pour": [
+        "Témoignages policiers",
+        "Écrits du 18 octobre"
+      ],
+      "label_contre": "Gouvernement",
+      "contre": [
+        "Nuñez : « C'est faux ! »",
+        "Lecornu : « impensable »"
+      ],
+      "tenue_mascotte": "economie",
+      "sfx": [
+        "whoosh"
+      ],
+      "musique": {
+        "ambiance": "tension",
+        "energie": 3
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et le gouvernement ?",
+          "expression": "colere"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Nuñez dit c'est faux. Lecornu, impensable.",
+          "expression": "sarcasme"
+        }
+      ]
+    },
+    {
+      "type": "kinetic",
+      "duration": 6.8,
+      "lines": [
+        "Si c'est confirmé :",
+        "le coupable désigné",
+        "avant l'enquête."
+      ],
+      "highlight": "avant",
+      "sprite": "danger",
+      "sprite_anim": "grow",
+      "sfx": [
+        "impact"
+      ],
+      "musique": {
+        "ambiance": "effroi",
+        "energie": 3
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et si c'est confirmé ?",
+          "expression": "colere"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Coupable désigné avant l'enquête. Pour nous, une dérive autoritaire.",
+          "expression": "degout"
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "duration": 5.2,
+      "title": "À garder",
+      "items": [
+        {
+          "texte": "Témoignages : publiés",
+          "etat": "vrai"
+        },
+        {
+          "texte": "Consigne : démentie",
+          "etat": "vrai"
+        },
+        {
+          "texte": "Commission : lancée",
+          "etat": "vrai"
+        }
+      ],
+      "sfx": [
+        "pop"
+      ],
+      "musique": {
+        "ambiance": "curieux",
+        "energie": 2
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "À garder, et à envoyer.",
+          "expression": "content"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Témoignages, démentis, commission d'enquête lancée.",
+          "expression": "neutre"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "duration": 6.4,
+      "text": "Enquête indépendante : oui ou non ?",
+      "cta": "Réponds, et abonne-toi",
+      "sfx": [
+        "ding"
+      ],
+      "musique": {
+        "ambiance": "curieux",
+        "energie": 1
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Enquête indépendante : oui ou non ? Réponds en commentaire.",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Et abonne-toi !",
+          "expression": "clin"
+        }
+      ]
+    }
+  ]
+}
