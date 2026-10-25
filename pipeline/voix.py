@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import json
 import re
+import os
 import subprocess
 import sys
 import urllib.request
@@ -266,6 +267,44 @@ def _controle_voix(texte: str, wav: Path) -> str:
         debuts = [float(x) for x in _re.findall(r"silence_start: ([\d.]+)", out)]
         if any(0.3 < x < d - 0.4 for x in debuts):
             return "blanc au milieu de la phrase"
+    return _controle_transcription(texte, wav)
+
+
+_whisper = None
+
+
+def _mots(t: str) -> list[str]:
+    import re as _re
+    import unicodedata
+    try:
+        from num2words import num2words
+        t = _re.sub(r"\d+(?:[ ,.]\d{3})*(?:,\d+)?", lambda m: num2words(float(m.group().replace(" ", "").replace(".", "")
+                                                                                     .replace(",", ".")), lang="fr"), t)
+    except Exception:
+        pass
+    t = unicodedata.normalize("NFKD", t.lower()).encode("ascii", "ignore").decode()
+    return _re.findall(r"[a-z]+", t.replace("-", " "))
+
+
+def _controle_transcription(texte: str, wav: Path) -> str:
+    """Propriétaire, 25/10 : plus d'erreurs de voix. Whisper (gratuit, sur le processeur de GitHub) réécoute la réplique
+    et la compare au texte prévu : mot sauté, inventé, bégaiement. Désactivable avec VOIX_SANS_WHISPER=1."""
+    global _whisper
+    if os.getenv("VOIX_SANS_WHISPER"):
+        return ""
+    try:
+        from difflib import SequenceMatcher
+        if _whisper is None:
+            from faster_whisper import WhisperModel
+            _whisper = WhisperModel("base", device="cpu", compute_type="int8")
+        segs, _ = _whisper.transcribe(str(wav), language="fr", beam_size=1, vad_filter=False)
+        entendu = _mots(" ".join(x.text for x in segs))
+        prevu = _mots(texte)
+        score = SequenceMatcher(None, prevu, entendu).ratio()
+        if score < 0.72:
+            return f"texte mal dit ({score:.0%} de concordance) : « {' '.join(entendu)[:80]} »"
+    except Exception as e:  # le contrôle ne doit jamais bloquer le rendu
+        print(f"(contrôle Whisper indisponible : {e})")
     return ""
 
 
@@ -278,8 +317,15 @@ def _voix_propre(texte: str, voix: str, wav: Path, vitesse: float, masc: bool) -
         if not defaut:
             return
         print(f"voix à refaire ({defaut}) : {texte[:50]}")
-    say(texte, "piper:fr_FR-upmc-medium?spk=" + ("1" if masc else "0") + "&vitesse=1.08", wav, vitesse)
-    _rogner(wav)
+    secours = ["piper:fr_FR-upmc-medium?spk=1&vitesse=1.08"] if masc else ["kokoro:ff_siwis?vitesse=1.05", "piper:fr_FR-upmc-medium?spk=0&vitesse=1.08"]
+    for v in secours:  # voix de secours : Kokoro (féminine, plus naturelle), sinon Piper
+        try:
+            say(texte, v, wav, vitesse)
+            _rogner(wav)
+            if not _controle_voix(texte, wav) or v == secours[-1]:
+                return
+        except Exception as e:
+            print(f"voix de secours {v} indisponible : {e}")
 
 
 def _rogner(wav: Path) -> None:
