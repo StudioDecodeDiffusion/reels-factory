@@ -44,7 +44,12 @@ def appel(prompt: str, recherche: bool = False) -> str:
     derniere = None
     for m in sorted(modeles()[:5], key=lambda n: '2.5-flash' not in n):  # 2.5 Flash d'abord : la plus large offre gratuite
         for essai in range(3):
-            r = requests.post(f"{API}/{m}:generateContent", params={"key": _cle()}, json=corps, timeout=180).json()
+            c = dict(corps, generationConfig=dict(corps["generationConfig"], thinkingConfig={"thinkingBudget": 0})) if "2.5-flash" in m else corps
+            try:  # sans « réflexion » sur 2.5 Flash : plus rapide, moins de quota
+                r = requests.post(f"{API}/{m}:generateContent", params={"key": _cle()}, json=c, timeout=120).json()
+            except requests.RequestException as e:  # délai dépassé : on passe au modèle suivant
+                derniere = {"code": 0, "message": str(e)[:200]}
+                break
             if "candidates" in r:
                 return "".join(p.get("text", "") for p in r["candidates"][0]["content"]["parts"])
             derniere = r.get("error", r)
