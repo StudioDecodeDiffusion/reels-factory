@@ -22,21 +22,36 @@ def _cle() -> str:
     return os.environ["GEMINI_API_KEY"].strip()
 
 
-def modele() -> str:
+def modeles() -> list[str]:
+    """Modèles « flash » gratuits, du plus récent au plus ancien (les « lite » en dernier recours)."""
     noms = [m["name"] for m in requests.get(f"{API}/models", params={"key": _cle()}, timeout=30).json().get("models", [])
             if "generateContent" in m.get("supportedGenerationMethods", [])]
-    flash = [n for n in noms if "flash" in n and "lite" not in n and "image" not in n and "tts" not in n and "exp" not in n]
-    return sorted(flash, key=lambda n: re.findall(r"[\d.]+", n) or ["0"])[-1] if flash else noms[0]
+    ok = [n for n in noms if "flash" in n and not any(x in n for x in ("image", "tts", "exp", "audio", "live"))]
+    v = lambda n: [float(x) for x in re.findall(r"\d+(?:\.\d+)?", n)[:1]] or [0]
+    return sorted([n for n in ok if "lite" not in n], key=v, reverse=True) + sorted([n for n in ok if "lite" in n], key=v, reverse=True)
+
+
+def modele() -> str:
+    return modeles()[0]
 
 
 def appel(prompt: str, recherche: bool = False) -> str:
+    """Essaie chaque modèle gratuit, avec 3 tentatives espacées si Google est saturé (erreur 503/429)."""
+    import time
     corps = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"temperature": 0.7}}
     if recherche:
         corps["tools"] = [{"google_search": {}}]
-    r = requests.post(f"{API}/{modele()}:generateContent", params={"key": _cle()}, json=corps, timeout=180).json()
-    if "candidates" not in r:
-        raise RuntimeError(f"Gemini : {r.get('error', r)}")
-    return "".join(p.get("text", "") for p in r["candidates"][0]["content"]["parts"])
+    derniere = None
+    for m in modeles()[:4]:
+        for essai in range(3):
+            r = requests.post(f"{API}/{m}:generateContent", params={"key": _cle()}, json=corps, timeout=180).json()
+            if "candidates" in r:
+                return "".join(p.get("text", "") for p in r["candidates"][0]["content"]["parts"])
+            derniere = r.get("error", r)
+            if (derniere or {}).get("code") not in (429, 500, 503):
+                break
+            time.sleep(10 * (essai + 1))
+    raise RuntimeError(f"Gemini : {derniere}")
 
 
 def _json(txt: str) -> dict:
