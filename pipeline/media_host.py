@@ -56,10 +56,10 @@ def cleanup(info: dict | None) -> None:
         print(f"  ! nettoyage impossible : {e}")
 
 
-def archiver(fichiers: dict[str, Path], mois: str, remplacer: str | None = None) -> str:
+def archiver(fichiers: dict[str, Path], mois: str, remplacer: str | None = None, repo: str | None = None) -> str:
     """Range des fichiers dans la release privée « archive-AAAA-MM » du dépôt reels-factory (accès : toi seul).
     fichiers = {nom_dans_l_archive: chemin}. Renvoie le lien de la page d'archive."""
-    repo = os.getenv("GITHUB_REPOSITORY") or "StudioDecodeDiffusion/reels-factory"
+    repo = repo or os.getenv("GITHUB_REPOSITORY") or "StudioDecodeDiffusion/reels-factory"
     tag = f"archive-{mois}"
     r = requests.get(f"{GH}/repos/{repo}/releases/tags/{tag}", headers=_h(), timeout=60)
     if r.status_code == 404:

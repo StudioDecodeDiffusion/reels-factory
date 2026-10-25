@@ -506,6 +506,11 @@ def _archiver(fiche: dict, dossier: Path | None = None) -> None:
                            + "\n".join(fiche.get("sources", [])) + "\n", encoding="utf-8")
         fichiers[f"{base}_sources.txt"] = src_txt
         lien = media_host.archiver(fichiers, fiche["cree"][:7], remplacer=fiche.get("remplace_noms"))
+        try:  # copie publique (vidéo + miniature) dans reels-media : galerie https://studiodecodediffusion.github.io/reels-media/videos/
+            media_host.archiver({k: v for k, v in fichiers.items() if k.endswith(("_video.mp4", "_miniature.png"))},
+                                fiche["cree"][:7], repo=os.getenv("MEDIA_REPO") or "StudioDecodeDiffusion/reels-media")
+        except Exception as e:
+            print(f"copie publique impossible : {e}")
         fiche["archive"] = lien
         save_attente(fiche)
         _manager(fiche, "🗄️ Archivée", f"Vidéo finale, miniature, story et sources rangées dans l'archive privée : [{lien}]({lien})")
@@ -766,6 +771,23 @@ def republier(job: str, profil: str, plateforme: str = "instagram") -> None:
     print(f"{job} republiée sur {profil} ({plateforme}) : {attente(nouveau['id']).get('permalink') or 'brouillon TikTok'}")
 
 
+def archive_publique() -> None:
+    """Copie une fois toute l'archive privée (vidéos + miniatures) dans les releases publiques de reels-media."""
+    import tempfile
+    src = os.getenv("GITHUB_REPOSITORY") or "StudioDecodeDiffusion/reels-factory"
+    h = {"Authorization": f"Bearer {os.getenv('GH_PAT') or os.environ['GITHUB_TOKEN']}"}
+    for rel in requests.get(f"https://api.github.com/repos/{src}/releases?per_page=50", headers=h, timeout=60).json():
+        if not rel["tag_name"].startswith("archive-"):
+            continue
+        tmp, fichiers = Path(tempfile.mkdtemp()), {}
+        for a in rel["assets"]:
+            if a["name"].endswith(("_video.mp4", "_miniature.png")):
+                (tmp / a["name"]).write_bytes(requests.get(a["url"], headers={**h, "Accept": "application/octet-stream"}, timeout=600).content)
+                fichiers[a["name"]] = tmp / a["name"]
+        media_host.archiver(fichiers, rel["tag_name"][8:], repo=os.getenv("MEDIA_REPO") or "StudioDecodeDiffusion/reels-media")
+        print(f"{rel['tag_name']} : {len(fichiers)} fichiers copiés")
+
+
 def tiktok_connexion() -> None:
     """Sans code : affiche le lien d'autorisation. Avec code : enregistre la connexion du compte."""
     from . import tiktok
@@ -1015,6 +1037,8 @@ def main() -> None:
         digest()
     elif cmd == "stats":
         stats()
+    elif cmd == "archive_publique":
+        archive_publique()
     elif cmd == "republier":
         republier(sys.argv[2], sys.argv[3], sys.argv[4] if len(sys.argv) > 4 else "instagram")
     elif cmd == "tiktok_connexion":
