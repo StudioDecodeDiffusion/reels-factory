@@ -31,3 +31,8 @@
 1 veille actu · 2 veille tendances Instagram · 3 chiffres · 4 concept · 5 scénario · 6 DA · **7 critique** · **8 générateur** ·
 **9 community manager** · **10 stratégie monétaire** · **11 veille comptes IA** · **12 rétro-ingénierie** · **13 veille TikTok**.
 L'ancien agent 13 (gestion Gmail) est supprimé.
+
+## Organisation en étages (propriétaire, 25/10)
+Voir `agents/ORGANIGRAMME.md` : 0 secrétaire (seul interlocuteur du propriétaire), 14 coordinateur, 15 manager (= la session qui orchestre),
+départements par étage, sous-agents (1.1-1.5, 2.1-2.5, 3.1-3.5, 6.1-6.4, 7.1-7.5, 12.1-12.3), salles de réunion.
+Studio en direct : `tool activite` → https://studiodecodediffusion.github.io/reels-media/studio/

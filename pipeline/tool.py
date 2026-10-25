@@ -177,6 +177,39 @@ def _marquer_lus(agent: int, ids) -> int:
     return n
 
 
+def cmd_activite(a) -> None:
+    """Studio en direct : met à jour l'état d'un agent dans reels-media/studio/activite.json (lu par la page
+    https://studiodecodediffusion.github.io/reels-media/studio/). Jamais de titre ni de donnée sensible : agent, étape, salle."""
+    d = WORK / ".reels-media"
+    g = lambda *c: subprocess.run(["git", "-C", str(d), *c], capture_output=True, text=True)
+    try:
+        if not (d / ".git").exists():
+            subprocess.run(["git", "clone", "-q", "--depth", "1", "https://github.com/StudioDecodeDiffusion/reels-media", str(d)],
+                           capture_output=True, text=True, timeout=120)
+        f = d / "studio" / "activite.json"
+        for _ in range(4):
+            g("pull", "-q", "--rebase", "-X", "theirs")
+            data = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {"agents": {}, "journal": []}
+            t = datetime.now(TZ).isoformat(timespec="seconds")
+            data["agents"][a.agent] = {"etat": a.etat, "salle": a.salle or "", "compte": a.profile or "", "depuis": t}
+            data["journal"] = (data.get("journal", []) + [{"t": t, "agent": a.agent, "etat": a.etat, "salle": a.salle or "",
+                                                            "compte": a.profile or ""}])[-60:]
+            data["maj"] = t
+            f.parent.mkdir(exist_ok=True)
+            f.write_text(json.dumps(data, ensure_ascii=False, indent=0), encoding="utf-8")
+            g("add", "studio/activite.json")
+            g("-c", "user.name=reels-bot", "-c", "user.email=reels-bot@users.noreply.github.com", "commit", "-q", "-m",
+              f"studio : agent {a.agent} · {a.etat[:40]}")
+            if g("push", "-q").returncode == 0:
+                print(f"studio : agent {a.agent} → {a.etat}")
+                return
+            g("reset", "-q", "--hard", "origin/main")
+    except Exception as e:
+        print(f"(studio non mis à jour : {e} — sans conséquence)")
+        return
+    print("(studio non mis à jour — sans conséquence)")
+
+
 def cmd_notes(a) -> None:
     """Affiche les notes non traitées que le propriétaire a envoyées à un agent (mails « agent N - … »)."""
     fil = [m for m in state.load(f"messages/agent_{a.agent}", []) if not m.get("traite")]
@@ -478,6 +511,8 @@ def main() -> None:
     p = sub.add_parser("avance")
     p = sub.add_parser("etape"); p.add_argument("--agent", required=True); p.add_argument("--profile", required=True)
     p.add_argument("--titre", required=True); p.add_argument("resume")
+    p = sub.add_parser("activite"); p.add_argument("--agent", required=True); p.add_argument("--etat", required=True)
+    p.add_argument("--salle", help="ex. reunion-1-veille, reunion-2-production"); p.add_argument("--profile")
     p = sub.add_parser("notes"); p.add_argument("--agent", required=True); p.add_argument("--profile")
     p = sub.add_parser("lu"); p.add_argument("--agent", required=True); p.add_argument("ids", nargs="+")
     a = ap.parse_args()

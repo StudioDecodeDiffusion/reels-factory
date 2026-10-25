@@ -941,6 +941,9 @@ def digest() -> None:
             lignes += ["", "## 📅 Demain"] + [f"- **{s['creneau'][11:16].replace(':', ' h ')}** · {s['titre']}" for s in prog]
     except Exception:
         pass
+    sec = [x for x in state.load("secretariat", []) if (x.get("date") or "")[:10] == now.strftime("%Y-%m-%d")]
+    if sec:  # réponses de l'agent 0 (secrétaire) aux messages du propriétaire
+        lignes += ["", "## 💬 Agent 0 · Secrétariat"] + [f"- **{x.get('question', '')}** → {x.get('reponse', '')}" for x in sec]
     noms = {1: "Agent 1 · Actualité", 2: "Agent 2 · Tendances", 3: "Agent 3 · Chiffres", 9: "Agent 9 · Communauté",
             10: "Agent 10 · Stratégie", 11: "Agent 11 · Veille des comptes IA", 12: "Agent 12 · Rétro-ingénierie",
             13: "Agent 13 · Veille TikTok"}
