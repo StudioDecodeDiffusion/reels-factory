@@ -424,6 +424,12 @@ def _publier(fiche: dict, profile: dict) -> None:
     nom = profile["nom_compte"]
     _manager(fiche, "⏳ Publication en cours", "J'envoie la vidéo et sa miniature à Instagram (traitement 1 à 5 min), "
              "puis la story. Prochain mail : « Vidéo publiée » avec le lien.")
+    if fiche.get("plateforme") == "tiktok":  # vidéo réservée à TikTok : brouillon seulement, pas d'Instagram
+        _tiktok(fiche)
+        fiche.update(statut="publiee", publiee=state.now_iso(), tiktok_fait=True)
+        save_attente(fiche)
+        media_host.cleanup(fiche["media"])
+        return
     try:  # garde-fou : média déjà supprimé = vidéo déjà publiée par un passage concurrent
         if requests.head(fiche["media"]["urls"]["video.mp4"], allow_redirects=True, timeout=30).status_code == 404:
             print(f"{fiche['id']} : média absent (déjà publié ?) : rien à faire")
@@ -448,8 +454,14 @@ def _publier(fiche: dict, profile: dict) -> None:
     fiche.update(statut="publiee", media_id=info["id"], permalink=info.get("permalink"), publiee=state.now_iso())
     save_attente(fiche)
     _archiver(fiche)
-    _tiktok(fiche)
-    media_host.cleanup(fiche["media"])
+    h_tt = (profile.get("tiktok") or {}).get("heure")
+    if h_tt:  # le compte publie sur TikTok à une autre heure (propriétaire 25/10) : envoi au passage du facteur
+        fiche["tiktok_le"] = datetime.now(TZ).strftime(f"%Y-%m-%dT{h_tt}%z")
+        fiche["tiktok_le"] = fiche["tiktok_le"][:-2] + ":" + fiche["tiktok_le"][-2:]
+        save_attente(fiche)
+    else:
+        _tiktok(fiche)
+        media_host.cleanup(fiche["media"])
     story = _publier_story(fiche, profile)
     etat_story = "+ story publiée" if "publiée aussi" in story else ("(échec story)" if "non publiée" in story else "")
     if fiche.get("son_tendance"):
@@ -628,6 +640,13 @@ def publier_ce_qui_est_du() -> None:
             save_attente(fiche)
             mail.envoyer(9, f"{profile['nom_compte']} · Vidéo expirée : {fiche['titre']}",
                          md("Pas de réponse sous 36 h : la vidéo est abandonnée."), R_NOTE.format(n=9))
+    for fiche in all_attente():  # brouillons TikTok programmés à l'heure TikTok du compte
+        if fiche.get("statut") == "publiee" and fiche.get("tiktok_le") and not fiche.get("tiktok_fait") \
+                and datetime.fromisoformat(fiche["tiktok_le"]) <= now:
+            fiche["tiktok_fait"] = True
+            save_attente(fiche)
+            _tiktok(fiche)
+            media_host.cleanup(fiche.get("media"))
     _stories_programmees(now)
     limite = datetime.now(timezone.utc) - timedelta(days=60)
     for fiche in all_attente():

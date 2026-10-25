@@ -278,7 +278,7 @@ export const CadrePixelDoc: React.FC<{scene: Scene; theme: Theme; index: number;
       <MouvementPixelDoc type={scene.type}>{children}</MouvementPixelDoc>
       {scene.type === 'pd_versus' ? <Flash a={12} /> : scene.type === 'pd_tampon' ? <Flash a={16} /> : null}
       <AbsoluteFill style={{backgroundImage: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.12) 0 2px, transparent 2px 5px)', mixBlendMode: 'multiply', pointerEvents: 'none'}} />
-      <div style={{position: 'absolute', left: 70, right: 70, top: 1390, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '4px 16px'}}>
+      <div style={{position: 'absolute', left: 70, right: (theme as {plateforme?: string}).plateforme === 'tiktok' ? 190 : 70, top: (theme as {plateforme?: string}).plateforme === 'tiktok' ? 1300 : 1390, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '4px 16px'}}>
         {vis.map((m, i) => {
           const idx = bloc * 5 + i;
           return (

@@ -341,6 +341,7 @@ def cmd_drop(a) -> None:
         "son_tendance": _read(d, "7_spec.json", {}).get("son_tendance"),
         **({"publication_le": a.le} if getattr(a, "le", None) else {"publication_heure": a.heure} if getattr(a, "heure", None) is not None else {"publication_le": _prochain_creneau(a.profile)}),
         "format_qhse": concept.get("format_qhse"), "episode": concept.get("episode"),
+        "plateforme": concept.get("plateforme"),  # "tiktok" = brouillon TikTok seulement
         "legende": (d / "legende.txt").read_text(encoding="utf-8"),
         "sources": sorted({f.get("source_url") for f in concept.get("faits", []) if f.get("source_url")}
                           | set(controle.get("sources_verifiees", []))),
