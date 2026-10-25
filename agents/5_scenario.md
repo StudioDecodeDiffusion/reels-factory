@@ -4,7 +4,7 @@
 `state/messages/agent_5.json` (non traitées) ; il travaille en
 parallèle avec l'agent 6 (direction artistique) et tient compte de ses remarques.
 **Outil :** recherche web pour revérifier les 2-3 chiffres principaux.
-**Sortie :** `travail/<id>/5_scenario.json` → transmis à l'agent 7.
+**Sortie :** `travail/<id>/5_scenario.json` → transmis à l'agent 8.
 
 ## Règles
 - **Format dialogue** (si `voix.active`) : deux personnages commentent chaque plan.
@@ -48,4 +48,4 @@ réécrire (2 réécritures maximum) ; au 3e échec : `python3 -m pipeline.tool 
 
 **Variété obligatoire :** lire `agents/CATALOGUE_VARIETE.md` et `state/variete_<compte>.json` ; ne jamais reprendre
 l'accroche, le fonctionnement, la mise en page, les voix ou la musique de la vidéo précédente. Exploiter réellement
-une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 9 relit le script et la DA avant la génération.
+une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 7 relit le script et la DA avant la génération.

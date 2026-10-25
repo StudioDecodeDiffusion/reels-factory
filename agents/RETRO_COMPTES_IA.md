@@ -32,7 +32,7 @@ Méthode : top Reel de chaque compte (onglet Reels trié par vues), 10 images r�
 **Légendes** : la moitié des comptes IA font « Commente MOT et je t'envoie… » (déclenche des commentaires = portée) ;
 phyzolof : légende très courte + 3 hashtags d'actu. **Durées** : 22-95 s, les plus vus entre 39 et 95 s.
 
-## Les 10 règles qui en sortent (appliquées par les agents 5, 6, 7, 9)
+## Les 10 règles qui en sortent (appliquées par les agents 5, 6, 8, 7)
 1. **Un visuel détaillé par idée**, centré, qui bouge (balancement, mécanisme animé) : jamais un écran vide de texte seul.
 2. **Mécanisme animé** au moins 1 fois par vidéo (flux d'argent, piston, jauge, engrenage) : c'est ce qui fait 16-80 k vues.
 3. **Titre de plan en haut** (pixel ou bold), **mot-clé en jaune** ; 3-5 mots max (OpenMontage : top 40 % de l'écran).

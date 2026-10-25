@@ -1,4 +1,4 @@
-# Session de nuit — agents 4, 5, 6, 7 et 9 (une vidéo à valider le matin)
+# Session de nuit — agents 4, 5, 6, 8 et 7 (une vidéo à valider le matin)
 
 > **Mode économie de quota** : si `state/quota.json` contient `economie_jusqu_a` dans le futur, NE PRODUIRE AUCUNE VIDÉO et s'arrêter immédiatement (quota à 96 %, propriétaire 22/10). Ancienne consigne : un seul tour de pré-critique et de critique, pas de sous-agents en parallèle, modèle sonnet pour tous les agents sauf 5.
 
@@ -22,7 +22,7 @@ Le compte est indiqué dans le message de la tâche (`actu`, `qhse`, …).
 éditoriale et consigne `sous_agents` du profil). Notes : `tool notes --agent N --profile <compte>`.
 
 
-**Points d'avancement (obligatoire, réguliers et précis) :** dès qu'un agent a fini son étape — et pour l'agent 7
+**Points d'avancement (obligatoire, réguliers et précis) :** dès qu'un agent a fini son étape — et pour l'agent 8
 à chaque palier : spec validée, rendu muet terminé, images contrôlées, miniature et story prêtes — envoie un résumé au propriétaire
 (mail « Manager - JJ/MM/AA - … ») : 3 à 6 lignes — ce que l'agent a fait, ses choix, ce qui suit.
 ```bash
@@ -33,8 +33,8 @@ Le workflow doit être fluide : enchaîne les agents sans temps mort.
 
 ## 0000. MODE SOBRE PERMANENT (propriétaire, 24/10 : la production a consommé tout le quota de la semaine)
 Budget par vidéo : **une seule session, sans sous-agents**, ≈ 10 recherches web max, 1 seul rendu local de contrôle
-(`tool frames` sur la planche, pas de rendus multiples), pré-critique et critique de l'agent 9 en une passe chacune.
-Lire seulement : la note du sujet dans `state/file_sujets_actu.json`, les notes non lues des agents 4-6-9, le catalogue.
+(`tool frames` sur la planche, pas de rendus multiples), pré-critique et critique de l'agent 7 en une passe chacune.
+Lire seulement : la note du sujet dans `state/file_sujets_actu.json`, les notes non lues des agents 4-6-7, le catalogue.
 Ne pas relire tout le dépôt, ne pas produire de fichiers intermédiaires longs. Pas de mail, pas de `tool etape`.
 La qualité vient des gabarits visuels (code) : la session remplit une spec courte, elle n'invente pas de code.
 
@@ -42,7 +42,7 @@ La qualité vient des gabarits visuels (code) : la session remplit une spec cour
 - **Durée 55-75 s** (top Reels des comptes de référence : 50-95 s ; archive66 95 s), **12-18 scènes**, un plan toutes
   les 3-4 s, voix rapide sans blanc. L'histoire doit tenir jusqu'au bout : une révélation toutes les ~10 s.
 - **Authenticité, zéro bug** : la voix est contrôlée automatiquement au rendu (débit, blancs, reprise ou voix de secours) ;
-  l'agent 9 regarde chaque image de la planche : aucun texte qui déborde, aucun objet coupé, aucune scène vide,
+  l'agent 7 regarde chaque image de la planche : aucun texte qui déborde, aucun objet coupé, aucune scène vide,
   aucune répétition d'image d'une scène à l'autre, sous-titres lisibles. Un défaut = on corrige avant de déposer.
 - **Aucune mention d'IA** dans la vidéo, la miniature, la légende (Instagram s'en charge). Seuls les crédits de licence des
   voix restent, automatiquement, en toute fin de légende.
@@ -68,7 +68,7 @@ python3 -m pipeline.tool creneau --profile <compte>
 - **beaucoup de visages et de gens** : personnages cartoon (theme.persos = cartoon) et/ou vraies photos et vidéos de gens
   sous licence libre (voir CATALOGUE_VARIETE.md § Images de gens) ;
 - se termine par une **question fermée** à l'écran et en 1re ligne de légende (« À toi de juger : oui ou non ? ») ;
-- 45-55 s, effort maximal, agent 9 encore plus sévère (note ≥ 8 exigée).
+- 45-55 s, effort maximal, agent 7 encore plus sévère (note ≥ 8 exigée).
 Les autres créneaux = **vidéos d'info** (le fond de commerce) : actu du jour expliquée, chiffres clés, « 3 choses à
 savoir », toujours antipouvoir mais plus sobres et plus courtes (30-40 s). Jamais deux vidéos à moins de 4 h d'écart.
 Le visuel change à chaque vidéo : éditorial / cartoon / montage photo-vidéo de gens, jamais deux fois le même d'affilée.
@@ -122,12 +122,12 @@ d'abord ses notes (`state/messages/agent_6.json`) et répond au propriétaire da
 chiffres sur le web (2 réécritures max, sinon `abandon`).
 
 ## 9 (pré-critique). Avant toute génération
-Joue la section 0 de `agents/9_critique.md` : critique impitoyable du scénario et de la DA, exigence de
+Joue la section 0 de `agents/7_critique.md` : critique impitoyable du scénario et de la DA, exigence de
 diversité (`agents/CATALOGUE_VARIETE.md`, `state/variete_<compte>.json`) et d'animations travaillées.
 `a_revoir` → retour aux agents 5 et 6 (2 tours max). Sans `go`, `tool check` refuse la vidéo.
 
 ## 7. Génération
-Joue `agents/7_generateur.md` :
+Joue `agents/8_generateur.md` :
 ```bash
 python3 -m pipeline.tool check  travail/$ID/7_spec.json --profile <compte>   # répéter jusqu'à OK
 python3 -m pipeline.tool render travail/$ID/7_spec.json travail/$ID/video.mp4
@@ -137,17 +137,17 @@ python3 -m pipeline.tool story $ID --profile <compte>      # miniature avec titr
 ```
 
 ## 9. Critique → dépôt → mail de validation
-Joue `agents/9_critique.md` : **regarde réellement chaque image** (`travail/$ID/video_scene*.png`),
+Joue `agents/7_critique.md` : **regarde réellement chaque image** (`travail/$ID/video_scene*.png`),
 vérifie la cohérence et les sources, projette la popularité avec `state/rapport_3_<compte>.json`.
-Si une correction est nécessaire : retour à l'agent 7 (une fois). Puis `travail/$ID/9_critique.json` et :
+Si une correction est nécessaire : retour à l'agent 8 (une fois). Puis `travail/$ID/9_critique.json` et :
 ```bash
 python3 -m pipeline.tool drop $ID --profile <compte>
 ```
-GitHub ajoute les voix de Lou et Déco, fait le rendu final et l'agent 9 envoie le mail de validation
+GitHub ajoute les voix de Lou et Déco, fait le rendu final et l'agent 7 envoie le mail de validation
 (l'agent 6 envoie son message à part s'il en a un).
 En cas d'échec : `python3 -m pipeline.tool abandon $ID --profile <compte> --raison "…"`.
 
-Termine par un résumé de 3 lignes : sujet, décision de l'agent 9, projection.
+Termine par un résumé de 3 lignes : sujet, décision de l'agent 7, projection.
 
 ## Règles permanentes
 - Aucun chiffre inventé ; en cas de doute, on retire le chiffre ou on abandonne.

@@ -1,7 +1,7 @@
-# Agent 10 — Veille hebdomadaire des comptes Instagram d'actualité faits par IA (France)
+# Agent 11 — Veille hebdomadaire des comptes Instagram d'actualité faits par IA (France)
 
-**Quand :** une fois par semaine (dimanche, session de 17 h 50) → **mail « Agent 10 - JJ/MM/AA - Comptes IA d'actu : la semaine »**.
-**Entrées :** `state/veille_10.json` (la semaine précédente), tes notes `state/messages/agent_10.json` (non traitées).
+**Quand :** une fois par semaine (dimanche, session de 17 h 50) → **mail « Agent 11 - JJ/MM/AA - Comptes IA d'actu : la semaine »**.
+**Entrées :** `state/veille_10.json` (la semaine précédente), tes notes `state/messages/agent_12.json` (non traitées).
 **Outil :** recherche web (15 à 20 recherches) : articles et classements sur les comptes Instagram/TikTok
 francophones d'actualité générés ou animés par IA (avatars IA, voix IA, vidéos IA), comptes cités dans la
 presse, études et chiffres sur l'info par IA, règles Meta sur l'étiquetage « Info IA ».
@@ -24,11 +24,11 @@ Les chiffres non vérifiables sont signalés « estimation ». Aucune copie de l
 - **Tes notes** : ce que tu as fait des notes du propriétaire (puis `traite: true`)
 
 ```bash
-python3 -m pipeline.tool rapport --agent 10 --profile actu --titre "Comptes IA d'actu : la semaine" travail/veille10.md
+python3 -m pipeline.tool rapport --agent 11 --profile actu --titre "Comptes IA d'actu : la semaine" travail/veille10.md
 ```
 `state/veille_10.json` : `{"semaine": "AAAA-Sxx", "comptes": [{"nom", "lien", "plateforme", "abonnes", "source_chiffre", "format", "ton", "frequence", "points_forts", "transparence_ia", "statut": "nouveau|suivi"}], "idees": [], "position_decode": "…"}`
 
-## Chaque jour : vidéos à décortiquer pour l'agent 11
+## Chaque jour : vidéos à décortiquer pour l'agent 12
 En plus du rapport hebdomadaire (dimanche), chaque jour : repérer 2 ou 3 vidéos récentes qui marchent bien chez les
 comptes d'actu IA suivis (dont laboscope, belltakesocial, phyzolof) et les écrire dans `state/veille_10.json` →
-`a_decortiquer: [{"lien", "compte", "pourquoi_ca_marche"}]`. L'agent 11 les démonte juste après.
+`a_decortiquer: [{"lien", "compte", "pourquoi_ca_marche"}]`. L'agent 12 les démonte juste après.

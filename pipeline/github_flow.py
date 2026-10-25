@@ -2,7 +2,7 @@
 
   python -m pipeline.github_flow depot <dossier drop/>          nouveaux dépôts de la session Claude → mails
                                                                 (les vidéos partent au rendu dans le dépôt public)
-  python -m pipeline.github_flow rendre <dossier drop/> <job>   voix + rendu final + mail de validation (agent 9)
+  python -m pipeline.github_flow rendre <dossier drop/> <job>   voix + rendu final + mail de validation (agent 7)
   python -m pipeline.github_flow facteur                        lit tes mails (OK / NON / REP / notes « agent N - … »),
                                                                 publie ce qui est validé à l'heure prévue
   python -m pipeline.github_flow stats                          stats + commentaires + abonnés (avant les rapports)
@@ -24,10 +24,10 @@ from .config import OUTPUT, TZ, all_profiles, env, load_profile
 API = "https://api.github.com"
 
 R_VALIDATION = ("<b>Aucune action nécessaire : la vidéo part toute seule.</b> Pour intervenir, réponds, <b>première ligne</b> :<br>"
-                "• <b>OK</b> → je transmets à l'agent 8, publication à l'heure prévue<br>"
+                "• <b>OK</b> → je transmets à l'agent 9, publication à l'heure prévue<br>"
                 "• <b>OK MAINTENANT</b> → publication immédiate<br>"
                 "• <b>NON</b> + ta raison → vidéo abandonnée, ta raison sert aux prochaines idées<br>"
-                "• n'importe quel autre texte → remarque transmise à l'agent 9 (la vidéo reste en attente)<br>"
+                "• n'importe quel autre texte → remarque transmise à l'agent 7 (la vidéo reste en attente)<br>"
                 "<b>Sans réponse, la vidéo est publiée automatiquement à son créneau</b> (avec miniature et story) ; "
                 "réponds NON avant pour l'arrêter.")
 R_INFO = "Pas besoin de répondre. Un avis sur ce concept ? Réponds à ce mail : l'agent {n} lira ta remarque."
@@ -35,7 +35,7 @@ R_MANAGER = ("Pas besoin de répondre : c'est un point d'avancement. Pour réagi
              "(ta remarque ira à l'agent concerné) ou écris « agent N° - ta note ».")
 R_NOTE = "Réponds simplement à ce mail avec ta remarque : l'agent {n} la lira avant son prochain travail."
 R_RAPPORT8 = ("• <b>REP 1 3</b> (ou <b>REP TOUT</b>) → j'envoie les réponses proposées aux commentaires choisis<br>"
-              "• n'importe quel autre texte → remarque pour l'agent 8")
+              "• n'importe quel autre texte → remarque pour l'agent 9")
 
 
 # ────────────────────────────────────────────── mémoire des vidéos en cours
@@ -117,7 +117,7 @@ def depot(drop_dir: str) -> None:
             mail.envoyer(4, f"{nom} · Concept du jour : {fiche.get('titre')}", corps, R_INFO.format(n=4),
                          ref={"type": "info", "job": fiche["id"], "profil": fiche["profil"]})
 
-        elif statut == "rapport":  # rapports des agents 1, 2, 3, 8 (quotidiens) et 10 (hebdo)
+        elif statut == "rapport":  # rapports des agents 1, 2, 3, 9 (quotidiens) et 10 (hebdo)
             n = int(fiche["agent"])
             images = graphiques(fiche["profil"]) if n == 8 else {}
             corps = md(fiche.get("corps_md", ""))
@@ -168,7 +168,7 @@ def depot(drop_dir: str) -> None:
             except BaseException as e:
                 txt, etat = f"⚠️ Story non publiée : {str(e)[:300]}", "❌ Échec story"
             mail.envoyer("Manager", f"{etat} · {nom} · {fiche.get('titre', '')}", md(txt), R_MANAGER,
-                         ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": 8})
+                         ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": 9})
 
         elif statut == "archive":  # archiver une vidéo déjà publiée
             _archiver(fiche, d)
@@ -184,17 +184,17 @@ def depot(drop_dir: str) -> None:
             continue
 
         elif statut == "abandonnee":
-            mail.envoyer(9, f"{nom} · Pas de vidéo cette nuit", md(f"Aucune vidéo n'a été produite pour **{nom}**.\n\n"
+            mail.envoyer(7, f"{nom} · Pas de vidéo cette nuit", md(f"Aucune vidéo n'a été produite pour **{nom}**.\n\n"
                                                                   f"**Raison :** {fiche.get('raison')}"),
-                         R_NOTE.format(n=9), ref={"type": "abandon", "job": fiche["id"], "profil": fiche["profil"]})
+                         R_NOTE.format(n=7), ref={"type": "abandon", "job": fiche["id"], "profil": fiche["profil"]})
 
         elif statut == "a_valider":
             if os.getenv("RENDU_PUBLIC") == "1":
                 _envoyer_au_rendu(fiche["id"])
                 fiche["statut"] = "rendu_en_cours"
                 mail.envoyer("Manager", f"⏳ Rendu lancé · {nom} · {fiche['titre']}",
-                             md("La session de nuit a terminé (agents 4, 5, 6, 7 et 9). **GitHub ajoute maintenant les voix et la "
-                                "musique** et monte la vidéo finale (≈ 20 min). L'agent 9 t'enverra ensuite la vidéo à valider."),
+                             md("La session de nuit a terminé (agents 4, 5, 6, 8 et 7). **GitHub ajoute maintenant les voix et la "
+                                "musique** et monte la vidéo finale (≈ 20 min). L'agent 7 t'enverra ensuite la vidéo à valider."),
                              R_MANAGER, ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"]})
             else:
                 rendre_un(d, fiche)
@@ -217,7 +217,7 @@ def rendre(drop_dir: str, job: str) -> None:
 
 
 def rendre_un(d: Path, fiche: dict) -> None:
-    """Agent 7 (rendu final avec voix) puis agent 9 : mail de validation ; agent 6 : son message."""
+    """Agent 8 (rendu final avec voix) puis agent 7 : mail de validation ; agent 6 : son message."""
     profile = load_profile(fiche["profil"])
     nom = profile["nom_compte"]
     _sonoriser(d, fiche, profile)
@@ -245,7 +245,7 @@ Publication **automatique {_slot(profile, fiche)}** sur **{nom}** (story d'annon
 ## 🔗 Sources
 {sources}"""))
     piece = [nom_fichier_video(fiche, d / "video.mp4")] if (d / "video.mp4").stat().st_size < 18_000_000 else []
-    mail.envoyer(9, f"{nom} · Vidéo prête, sortie auto : {fiche['titre']}", corps, R_VALIDATION,
+    mail.envoyer(7, f"{nom} · Vidéo prête, sortie auto : {fiche['titre']}", corps, R_VALIDATION,
                  ref={"type": "validation", "job": fiche["id"], "profil": fiche["profil"]},
                  images={"apercu": d / "apercu.png"}, pieces=piece)
     if fiche.get("da_message"):
@@ -274,7 +274,7 @@ def _sonoriser(d: Path, fiche: dict, profile: dict) -> None:
     ajouter(d / "video.mp4", spec.get("musique") or profile.get("musique", "curieux"), sum(map(ord, fiche["id"])),
             scenes=spec["scenes"])
     contact_sheet(frames_per_scene(spec, d / "video.mp4"), d / "apercu.png")
-    _manager(fiche, "🎬 Vidéo montée", "Voix, musique et effets sont mixés. Hébergement de la vidéo puis mail de validation de l'agent 9.")
+    _manager(fiche, "🎬 Vidéo montée", "Voix, musique et effets sont mixés. Hébergement de la vidéo puis mail de validation de l'agent 7.")
     fiche["duree_s"] = round(sum(sc["duration"] for sc in spec["scenes"]), 1)
     fiche["voix"] = profile["voix"].get("narrateur") or profile["voix"].get("id")
 
@@ -310,12 +310,12 @@ def facteur() -> None:
             if ref.get("type") == "validation":
                 _validation(ref["job"], texte)
             elif ref.get("type") == "test" and texte:
-                mail.envoyer(8, "Bien reçu !", md(f"Ta réponse est arrivée ✅ La messagerie marche dans les deux sens.\n\n> {texte[:400]}"),
-                             R_NOTE.format(n=8))
+                mail.envoyer(9, "Bien reçu !", md(f"Ta réponse est arrivée ✅ La messagerie marche dans les deux sens.\n\n> {texte[:400]}"),
+                             R_NOTE.format(n=9))
             elif ref.get("type") == "rapport8" and re.match(r"^\s*REP\b", texte, re.I):
                 _reponses_commentaires(ref, texte)
             elif texte:
-                n = int(ref.get("agent") or 9) if not str(n).isdigit() else n
+                n = int(ref.get("agent") or 7) if not str(n).isdigit() else n
                 note(n, m["objet"], texte, ref.get("profil"))
                 mail.envoyer(n, "Remarque bien reçue", md(f"Merci ! J'ai bien noté :\n\n> {texte[:600]}\n\n"
                                                           "Je l'appliquerai dès mon prochain travail."), R_NOTE.format(n=n))
@@ -356,7 +356,7 @@ def _validation(job: str, texte: str) -> None:
     m = re.match(r"^(OK|NON)\b[\s:!.,-]*(.*)$", premiere, re.I)
     if not m:
         note(9, f"Remarque sur « {fiche['titre']} »", texte, fiche["profil"])
-        mail.envoyer(9, f"{nom} · Remarque notée sur « {fiche['titre']} »",
+        mail.envoyer(7, f"{nom} · Remarque notée sur « {fiche['titre']} »",
                      md(f"J'ai noté ta remarque :\n\n> {texte[:600]}\n\nLa vidéo **reste en attente** de ton OK ou NON."),
                      R_VALIDATION, ref={"type": "validation", "job": job, "profil": fiche["profil"]})
         return
@@ -371,18 +371,18 @@ def _validation(job: str, texte: str) -> None:
         refus.append({"titre": fiche["titre"], "raison": raison, "date": fiche["cree"][:10]})
         state.save(f"refus_{fiche['profil']}", refus[-50:])
         save_attente(fiche)
-        mail.envoyer(9, f"{nom} · Vidéo abandonnée : {fiche['titre']}",
+        mail.envoyer(7, f"{nom} · Vidéo abandonnée : {fiche['titre']}",
                      md(f"C'est noté, la vidéo est abandonnée.\n\n**Ta raison :** {raison or '(non précisée)'}\n\n"
-                        "Les agents 3 et 4 en tiendront compte pour les prochaines idées."), R_NOTE.format(n=9))
+                        "Les agents 3 et 4 en tiendront compte pour les prochaines idées."), R_NOTE.format(n=7))
         return
     fiche["statut"] = "approuvee"
     save_attente(fiche)
     if "MAINTENANT" in reste.upper():
         _publier(fiche, profile)
     else:
-        mail.envoyer(9, f"{nom} · Validée, transmise à l'agent 8 : {fiche['titre']}",
-                     md(f"Merci ! Je transmets à l'**agent 8**, qui publiera **{_slot(profile, fiche)}**."),
-                     R_NOTE.format(n=9))
+        mail.envoyer(7, f"{nom} · Validée, transmise à l'agent 9 : {fiche['titre']}",
+                     md(f"Merci ! Je transmets à l'**agent 9**, qui publiera **{_slot(profile, fiche)}**."),
+                     R_NOTE.format(n=7))
 
 
 def _reponses_commentaires(ref: dict, texte: str) -> None:
@@ -403,12 +403,12 @@ def _reponses_commentaires(ref: dict, texte: str) -> None:
             except Exception as e:
                 ko.append(f"{i} ({str(e)[:120]})")
     save_attente(fiche)
-    mail.envoyer(8, f"{profile['nom_compte']} · Réponses aux commentaires envoyées",
+    mail.envoyer(9, f"{profile['nom_compte']} · Réponses aux commentaires envoyées",
                  md(f"Réponses envoyées : **{', '.join(ok) or 'aucune'}**" + (f"\n\nÉchecs : {'; '.join(ko)}" if ko else "")),
-                 R_NOTE.format(n=8))
+                 R_NOTE.format(n=9))
 
 
-# ────────────────────────────────────────────── publication (agent 8)
+# ────────────────────────────────────────────── publication (agent 9)
 def _manager(fiche: dict, titre: str, texte: str) -> None:
     """Point d'avancement court (jamais bloquant)."""
     try:
@@ -449,7 +449,7 @@ def _publier(fiche: dict, profile: dict) -> None:
         save_attente(fiche)
         mail.envoyer("Manager", f"❌ Échec publication · {nom} · {fiche['titre']}",
                      md(f"La publication a échoué :\n\n{str(e)[:500]}\n\nJe réessaierai à la prochaine heure."),
-                     R_NOTE.format(n=8))
+                     R_NOTE.format(n=9))
         return
     fiche.update(statut="publiee", media_id=info["id"], permalink=info.get("permalink"), publiee=state.now_iso())
     save_attente(fiche)
@@ -471,12 +471,12 @@ def _publier(fiche: dict, profile: dict) -> None:
     mail.envoyer("Manager", f"✅ Vidéo publiée {etat_story} · {nom} · {fiche['titre']}",
                  md(f"🎉 **La vidéo est en ligne** sur {profile.get('instagram') or nom} : "
                     f"[{info.get('permalink', '')}]({info.get('permalink', '')})\n\n- {story}\n"
-                    "- **Suite :** l'agent 8 suit les vues et les commentaires (rapport demain à 16 h 30)."),
-                 R_MANAGER, ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": 8})
-    mail.envoyer(8, f"{nom} · Publiée : {fiche['titre']}",
+                    "- **Suite :** l'agent 9 suit les vues et les commentaires (rapport demain à 16 h 30)."),
+                 R_MANAGER, ref={"type": "manager", "job": fiche["id"], "profil": fiche["profil"], "agent": 9})
+    mail.envoyer(9, f"{nom} · Publiée : {fiche['titre']}",
                  md(f"✅ La vidéo est en ligne : [{info.get('permalink', '')}]({info.get('permalink', '')})\n\n"
                     f"{story}\n\nJe surveille les commentaires et te fais le bilan dans mon rapport quotidien."),
-                 R_NOTE.format(n=8), ref={"type": "publication", "job": fiche["id"], "profil": fiche["profil"]})
+                 R_NOTE.format(n=9), ref={"type": "publication", "job": fiche["id"], "profil": fiche["profil"]})
 
 
 def _archiver(fiche: dict, dossier: Path | None = None) -> None:
@@ -610,7 +610,7 @@ def publier_ce_qui_est_du() -> None:
                    f"retire l'ancien toi-même (ouvre-le puis ⋯ → Supprimer) : {f.get('permalink', '')}")
             save_attente(f)
             mail.envoyer("Manager", f"🗑️ Ancien post à supprimer · {prof['nom_compte']}", md(txt), R_MANAGER,
-                         ref={"type": "manager", "job": job, "profil": f["profil"], "agent": 8})
+                         ref={"type": "manager", "job": job, "profil": f["profil"], "agent": 9})
     for job in demande.get("jobs", []):
         f = attente(job)
         if f and f["statut"] in ("a_valider", "approuvee"):
@@ -638,8 +638,8 @@ def publier_ce_qui_est_du() -> None:
             fiche["statut"] = "expiree"
             media_host.cleanup(fiche.get("media"))
             save_attente(fiche)
-            mail.envoyer(9, f"{profile['nom_compte']} · Vidéo expirée : {fiche['titre']}",
-                         md("Pas de réponse sous 36 h : la vidéo est abandonnée."), R_NOTE.format(n=9))
+            mail.envoyer(7, f"{profile['nom_compte']} · Vidéo expirée : {fiche['titre']}",
+                         md("Pas de réponse sous 36 h : la vidéo est abandonnée."), R_NOTE.format(n=7))
     for fiche in all_attente():  # brouillons TikTok programmés à l'heure TikTok du compte
         if fiche.get("statut") == "publiee" and fiche.get("tiktok_le") and not fiche.get("tiktok_fait") \
                 and datetime.fromisoformat(fiche["tiktok_le"]) <= now:
@@ -715,13 +715,13 @@ def _tiktok(fiche: dict) -> None:
     from . import tiktok
     try:
         tiktok.brouillon(fiche["profil"], fiche["media"]["urls"]["video.mp4"])
-        mail.envoyer(8, f"🎵 TikTok · brouillon prêt : {fiche['titre']}",
+        mail.envoyer(9, f"🎵 TikTok · brouillon prêt : {fiche['titre']}",
                      md("La vidéo est dans tes **notifications TikTok** (brouillon). Ouvre-la, ajoute un son tendance si tu "
                         f"veux, colle la légende ci-dessous puis **Publier**.\n\n```\n{fiche.get('legende', '')}\n```"),
-                     R_NOTE.format(n=8), ref={"type": "tiktok", "profil": fiche["profil"]})
+                     R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]})
     except Exception as e:
-        mail.envoyer(8, f"❌ TikTok · envoi impossible : {fiche['titre']}", md(f"Instagram est publié, TikTok non :\n\n{str(e)[:400]}"),
-                     R_NOTE.format(n=8), ref={"type": "tiktok", "profil": fiche["profil"]})
+        mail.envoyer(9, f"❌ TikTok · envoi impossible : {fiche['titre']}", md(f"Instagram est publié, TikTok non :\n\n{str(e)[:400]}"),
+                     R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]})
 
 
 def tiktok_connexion() -> None:
@@ -875,7 +875,7 @@ def _envoyer_suivi(pid: str, suivi: dict) -> None:
 
 
 def graphiques(pid: str) -> dict[str, Path]:
-    """Graphiques du rapport de l'agent 8 (PNG intégrés au mail)."""
+    """Graphiques du rapport de l'agent 9 (PNG intégrés au mail)."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -920,7 +920,7 @@ def graphiques(pid: str) -> dict[str, Path]:
 
 
 def digest() -> None:
-    """Journal quotidien (un seul mail par jour) : vidéos publiées + rapports des agents 1, 2, 3, 8, 12, 10, 11."""
+    """Journal quotidien (un seul mail par jour) : vidéos publiées + rapports des agents 1, 2, 3, 9, 10, 11, 12."""
     now = datetime.now(TZ)
     jour = now.strftime("%Y%m%d")
     d = state.STATE / "attente"
@@ -941,8 +941,9 @@ def digest() -> None:
             lignes += ["", "## 📅 Demain"] + [f"- **{s['creneau'][11:16].replace(':', ' h ')}** · {s['titre']}" for s in prog]
     except Exception:
         pass
-    noms = {1: "Agent 1 · Actualité", 2: "Agent 2 · Tendances", 3: "Agent 3 · Chiffres", 8: "Agent 8 · Communauté",
-            12: "Agent 12 · Stratégie", 10: "Agent 10 · Veille des comptes IA", 11: "Agent 11 · Rétro-ingénierie"}
+    noms = {1: "Agent 1 · Actualité", 2: "Agent 2 · Tendances", 3: "Agent 3 · Chiffres", 9: "Agent 9 · Communauté",
+            10: "Agent 10 · Stratégie", 11: "Agent 11 · Veille des comptes IA", 12: "Agent 12 · Rétro-ingénierie",
+            13: "Agent 13 · Veille TikTok"}
     for n, titre in noms.items():
         rap = [f for f in fiches if f.get("statut") == "rapport" and str(f.get("agent")) == str(n)
                and f.get("id", "").split("-")[2:3] == [jour]]
@@ -952,7 +953,7 @@ def digest() -> None:
     images = graphiques("actu")
     corps = md("\n".join(lignes))
     if images:
-        corps = corps.replace("<h1>Agent 8", "".join(f'<p><img src="cid:{k}" style="width:100%;max-width:600px"></p>' for k in images) + "<h1>Agent 8", 1)
+        corps = corps.replace("<h1>Agent 9", "".join(f'<p><img src="cid:{k}" style="width:100%;max-width:600px"></p>' for k in images) + "<h1>Agent 9", 1)
     mail.envoyer("Manager", f"📰 Journal du {now:%d/%m}", corps, R_MANAGER, images=images,
                  ref={"type": "digest", "profil": "actu"})
 

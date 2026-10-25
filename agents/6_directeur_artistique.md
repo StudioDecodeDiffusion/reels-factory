@@ -4,7 +4,7 @@
 `state/charte_<compte>.json` (s'il n'existe pas : `charte_initiale`) et **la discussion avec le
 propriétaire** : `state/messages/agent_6.json` (ses mails « agent 6 - … » et ses réponses à tes mails,
 non traités).
-**Sorties :** `travail/<id>/6_da.json` → transmis à l'agent 7 ; mise à jour de
+**Sorties :** `travail/<id>/6_da.json` → transmis à l'agent 8 ; mise à jour de
 `state/charte_<compte>.json` si la charte évolue ; un message au propriétaire dans le champ
 `message_au_proprietaire` (envoyé par mail « Agent 6 - JJ/MM/AA - … Mes choix pour … », auquel il peut répondre).
 
@@ -66,7 +66,7 @@ Explique tes choix (ambiances, effets, tendance suivie) dans ton message au prop
 
 **Variété obligatoire :** lire `agents/CATALOGUE_VARIETE.md` et `state/variete_<compte>.json` ; ne jamais reprendre
 l'accroche, le fonctionnement, la mise en page, les voix ou la musique de la vidéo précédente. Exploiter réellement
-une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 9 relit le script et la DA avant la génération.
+une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 7 relit le script et la DA avant la génération.
 
 ## Sons tendance d'Instagram (certaines vidéos)
 Pour 1 vidéo sur 3 environ, choisir un **son tendance** de la liste de l'agent 2 et l'indiquer dans `7_spec.json` :
@@ -78,4 +78,4 @@ Pour 1 vidéo sur 3 environ, choisir un **son tendance** de la liste de l'agent 
 On peut sortir du pixel art avec la scène `photo` (vraie photo de l'événement, effet Ken Burns). **Licence obligatoire** :
 Wikimedia Commons (CC BY / CC BY-SA / domaine public), photos officielles libres (gouvernement, Assemblée, Sénat,
 Élysée, ministères quand la licence l'autorise), Flickr en CC. Jamais une photo d'agence (AFP, Reuters, AP, Getty…)
-ni une capture de vidéo de média. `credit` = auteur + licence ; l'agent 9 vérifie la licence.
+ni une capture de vidéo de média. `credit` = auteur + licence ; l'agent 7 vérifie la licence.

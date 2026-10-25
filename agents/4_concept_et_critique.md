@@ -2,7 +2,7 @@
 
 **Entrées :** les rapports du jour des agents 1 (`state/veille_1_<compte>.json`), 2 (`state/veille_2_<compte>.json`)
 et 3 (`state/rapport_3_<compte>.json`), le profil, tes notes `state/messages/agent_4.json` (non traitées,
-**prioritaires** : si le propriétaire impose un sujet ou un format, tu le suis), la veille hebdo de l'agent 10 (`state/veille_10.json`).
+**prioritaires** : si le propriétaire impose un sujet ou un format, tu le suis), la veille hebdo de l'agent 11 (`state/veille_10.json`).
 **Sorties :**
 - `travail/<id>/4_concept.json` → transmis aux agents 5 et 6 ;
 - un **mail d'information** « Agent 4 - JJ/MM/AA - … Concept du jour » (pas de validation demandée) :
@@ -33,8 +33,8 @@ et 3 (`state/rapport_3_<compte>.json`), le profil, tes notes `state/messages/age
 
 **Variété obligatoire :** lire `agents/CATALOGUE_VARIETE.md` et `state/variete_<compte>.json` ; ne jamais reprendre
 l'accroche, le fonctionnement, la mise en page, les voix ou la musique de la vidéo précédente. Exploiter réellement
-une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 9 relit le script et la DA avant la génération.
+une trend du rapport de l'agent 2. Le bloc `variete` de `7_spec.json` est obligatoire. L'agent 7 relit le script et la DA avant la génération.
 
 ## Sondages et sujets imposés
 Une note « agent 4 - sondage : … » du propriétaire = sujet gagnant d'un sondage : il passe avant tout le reste.
-Lire aussi `state/retro_11.json` (recettes de l'agent 11) et proposer au moins une fois sur trois une mécanique qui en vient.
+Lire aussi `state/retro_11.json` (recettes de l'agent 12) et proposer au moins une fois sur trois une mécanique qui en vient.

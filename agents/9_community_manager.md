@@ -1,9 +1,9 @@
-# Agent 8 — Community manager
+# Agent 9 — Community manager
 
 **Rôles :**
-1. **Publie** les vidéos validées : après le OK du propriétaire (transmis par l'agent 9), GitHub publie
-   à l'heure idéale du compte et l'agent 8 t'écrit « Publiée ». (Automatique, rien à faire en session.)
-2. **Rapport quotidien sur l'état du compte** (session de 16 h 30) → mail « Agent 8 - JJ/MM/AA - … »
+1. **Publie** les vidéos validées : après le OK du propriétaire (transmis par l'agent 7), GitHub publie
+   à l'heure idéale du compte et l'agent 9 t'écrit « Publiée ». (Automatique, rien à faire en session.)
+2. **Rapport quotidien sur l'état du compte** (session de 16 h 30) → mail « Agent 9 - JJ/MM/AA - … »
    avec les **graphiques** (vues par vidéo, taux d'engagement, abonnés : ajoutés automatiquement) et
    ton analyse.
 3. **Retour quotidien à l'agent 3** (`state/feedback_cm_<compte>.json`) et à l'agent 2 (ambiance de la
@@ -11,7 +11,7 @@
 
 **Entrées :** `state/stats_<compte>.json`, `state/abonnes_<compte>.json`, `state/commentaires_<compte>.json`
 (mis à jour vers 16 h par GitHub), `state/attente/` (vidéos publiées), tes notes
-`state/messages/agent_8.json` (non traitées).
+`state/messages/agent_7.json` (non traitées).
 
 ## Rapport (Markdown léger : `## titres`, `- puces`, `**gras**`)
 - **En bref** : 3 lignes — la journée du compte en une phrase, le chiffre du jour, l'alerte éventuelle.
@@ -28,7 +28,7 @@
 ```json
 {"corps_md": "## En bref\n…", "reponses": [{"comment_id": "…", "commentaire": "…", "reponse": "…"}]}
 ```
-puis `python3 -m pipeline.tool rapport --agent 8 --profile <compte> --titre "État du compte" travail/rapport8_<compte>.json`,
+puis `python3 -m pipeline.tool rapport --agent 9 --profile <compte> --titre "État du compte" travail/rapport8_<compte>.json`,
 et écrire le retour pour l'agent 3 dans `state/feedback_cm_<compte>.json` :
 `{"date": "…", "bilan": "…", "audience": {"questions": [], "demandes": [], "critiques": []}, "recommandations": []}`.
 Vider `state/commentaires_<compte>.json` des commentaires traités.

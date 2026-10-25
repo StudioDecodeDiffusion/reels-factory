@@ -26,15 +26,15 @@ jobs:
           r = {"date": state.now_iso(), "adresse": bool(mail.os.getenv("GMAIL_ADDRESS")),
                "mot_de_passe": bool(mail.os.getenv("GMAIL_APP_PASSWORD"))}
           try:
-              corps = ("<p>Bonjour ! Je suis l'<b>agent 8</b>, le community manager de Décodé. "
+              corps = ("<p>Bonjour ! Je suis l'<b>agent 9</b>, le community manager de Décodé. "
                        "Si tu lis ce mail, la messagerie des agents fonctionne ✅</p>"
                        "<p>Chaque jour tu recevras :</p><ul>"
                        "<li>vers <b>16 h 30</b> : mon rapport sur l'état des comptes (graphiques) ;</li>"
                        "<li>vers <b>17 h</b> : le rapport de l'agent 3 (ce que disent les chiffres) ;</li>"
                        "<li>vers <b>18 h</b> : les veilles des agents 1 (actualité) et 2 (tendances) ;</li>"
-                       "<li>la nuit : le concept de l'agent 4, puis le matin la vidéo à valider par l'agent 9.</li></ul>")
+                       "<li>la nuit : le concept de l'agent 4, puis le matin la vidéo à valider par l'agent 7.</li></ul>")
               r["envoi"] = mail.envoyer(8, "Test : la messagerie des agents fonctionne", corps,
-                  "Pour tester, réponds à ce mail avec un petit mot : l'agent 8 te confirmera l'avoir reçu "
+                  "Pour tester, réponds à ce mail avec un petit mot : l'agent 9 te confirmera l'avoir reçu "
                   "(dans les 30 minutes).", ref={"type": "test", "profil": "actu"})
           except BaseException as e:
               r["erreur_envoi"] = str(e)[:300]

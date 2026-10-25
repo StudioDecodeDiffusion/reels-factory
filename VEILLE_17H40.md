@@ -34,7 +34,7 @@ Lis `profiles/<compte>.yaml`, `trends/<compte>.md`, et dans `state/` : `historiq
 python3 -m pipeline.tool rapport --agent 1 --profile <compte> --titre "<Compte> · Veille du jour" travail/veille1_<compte>.md
 ```
 
-## 2. Agent 2 — Veille tendances (avec le retour de l'agent 8)
+## 2. Agent 2 — Veille tendances (avec le retour de l'agent 9)
 `python3 -m pipeline.tool notes --agent 2 --profile <compte>`, puis joue `agents/2_veille_trends.md`.
 Écris `state/veille_2_<compte>.json`, marque tes notes lues, écris `travail/veille2_<compte>.md` puis :
 ```bash

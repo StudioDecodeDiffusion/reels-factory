@@ -23,7 +23,7 @@ Reels Instagram animés, créés chaque nuit par Claude et validés par toi d'un
                                           toi : tu réponds « OK » à l'e-mail │
                                                                             ▼
                                      « Ma réponse » → « Publication à l'heure idéale » → Instagram
-                                     « Statistiques » (chaque soir) → mémoire → agents 2 et 8
+                                     « Statistiques » (chaque soir) → mémoire → agents 2 et 9
 ```
 
 ### Tes réponses à l'e-mail (première ligne)

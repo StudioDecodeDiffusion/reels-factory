@@ -1,11 +1,11 @@
-# Agent 11 — Rétro-ingénierie des vidéos qui marchent (comptes d'actu IA)
+# Agent 12 — Rétro-ingénierie des vidéos qui marchent (comptes d'actu IA)
 
-**Quand :** chaque jour, juste après l'agent 10 (session de 17 h 50).
-**Entrées :** `state/veille_10.json` → champ `a_decortiquer` (vidéos repérées par l'agent 10 : lien, compte, pourquoi
-elle marche), tes notes `state/messages/agent_11.json`.
+**Quand :** chaque jour, juste après l'agent 11 (session de 17 h 50).
+**Entrées :** `state/veille_10.json` → champ `a_decortiquer` (vidéos repérées par l'agent 11 : lien, compte, pourquoi
+elle marche), tes notes `state/messages/agent_10.json`.
 **Outils :** recherche web et lecture de pages publiques (descriptions, articles, transcriptions, captures
 indexées). Ne jamais se connecter à Instagram, ne jamais télécharger ni réutiliser leurs vidéos.
-**Sorties :** `state/retro_11.json` (lu par les agents 4, 5 et 6) + un mail « Agent 11 - JJ/MM/AA - Rétro-ingénierie du jour ».
+**Sorties :** `state/retro_11.json` (lu par les agents 4, 5 et 6) + un mail « Agent 12 - JJ/MM/AA - Rétro-ingénierie du jour ».
 
 ## Mission
 Pour chaque vidéo repérée, la **démonter plan par plan** et en tirer une **recette réutilisable dans notre style** :
@@ -19,7 +19,7 @@ Pour chaque vidéo repérée, la **démonter plan par plan** et en tirer une **r
 Aucune copie de personnage, de texte ou d'image : on reprend des **mécaniques**, pas des contenus.
 
 ```bash
-python3 -m pipeline.tool rapport --agent 11 --profile actu --titre "Rétro-ingénierie du jour" travail/retro11.md
+python3 -m pipeline.tool rapport --agent 12 --profile actu --titre "Rétro-ingénierie du jour" travail/retro11.md
 ```
 `state/retro_11.json` : `{"date": "…", "recettes": [{"source": "lien", "compte": "…", "accroche": "…", "structure": "…",
 "animation": "…", "son": "…", "fin": "…", "recette_decode": "…", "scene_manquante": "…"}]}`

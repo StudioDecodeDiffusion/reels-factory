@@ -1,6 +1,6 @@
-# Session de 16 h 30 — agents 8 puis 3 (rapports quotidiens)
+# Session de 16 h 30 — agents 9 puis 3 (rapports quotidiens)
 
-> **Mode économie de quota** : si `state/quota.json` contient `economie_jusqu_a` dans le futur, NE RIEN FAIRE et s'arrêter immédiatement (propriétaire, 21/10 : publication seule). Ancienne consigne : rapports courts (agent 8 et 3 : 10 lignes max chacun ; agent 12 : 5 lignes).
+> **Mode économie de quota** : si `state/quota.json` contient `economie_jusqu_a` dans le futur, NE RIEN FAIRE et s'arrêter immédiatement (propriétaire, 21/10 : publication seule). Ancienne consigne : rapports courts (agent 9 et 3 : 10 lignes max chacun ; agent 10 : 5 lignes).
 
 Lancée chaque jour par une tâche planifiée Claude (abonnement du propriétaire, aucune API payante).
 Personne ne regarde : ne pose pas de question. Le ou les comptes à traiter sont indiqués dans le message
@@ -27,23 +27,23 @@ mkdir -p travail
 GitHub a mis à jour vers 16 h : `state/stats_<compte>.json`, `state/abonnes_<compte>.json`,
 `state/commentaires_<compte>.json`.
 
-## 1. Agent 8 — Community manager → mail « État du compte » (graphiques ajoutés par GitHub)
+## 1. Agent 9 — Community manager → mail « État du compte » (graphiques ajoutés par GitHub)
 ```bash
-python3 -m pipeline.tool notes --agent 8 --profile <compte>
+python3 -m pipeline.tool notes --agent 9 --profile <compte>
 ```
-Joue `agents/8_community_manager.md`. **Écris d'abord** `state/feedback_cm_<compte>.json` (retour pour
+Joue `agents/9_community_manager.md`. **Écris d'abord** `state/feedback_cm_<compte>.json` (retour pour
 les agents 3 et 2), vide les commentaires traités de `state/commentaires_<compte>.json`, marque tes notes
-lues (`python3 -m pipeline.tool lu --agent 8 <id>…`), **puis** écris `travail/rapport8_<compte>.json` et :
+lues (`python3 -m pipeline.tool lu --agent 9 <id>…`), **puis** écris `travail/rapport8_<compte>.json` et :
 ```bash
-python3 -m pipeline.tool rapport --agent 8 --profile <compte> --titre "<Compte> · État du compte" travail/rapport8_<compte>.json
+python3 -m pipeline.tool rapport --agent 9 --profile <compte> --titre "<Compte> · État du compte" travail/rapport8_<compte>.json
 ```
 
 ## 2. Agent 3 — Résultats du compte → mail « Ce que disent les chiffres » (≈ 17 h)
 ```bash
 python3 -m pipeline.tool notes --agent 3 --profile <compte>
 ```
-Joue `agents/3_resultats_compte.md` à partir du travail de l'agent 8 qui vient d'être fait. Écris d'abord
-`state/rapport_3_<compte>.json` (lu cette nuit par les agents 4 et 9), marque tes notes lues, puis
+Joue `agents/3_resultats_compte.md` à partir du travail de l'agent 9 qui vient d'être fait. Écris d'abord
+`state/rapport_3_<compte>.json` (lu cette nuit par les agents 4 et 7), marque tes notes lues, puis
 écris `travail/rapport3_<compte>.md` et :
 ```bash
 python3 -m pipeline.tool rapport --agent 3 --profile <compte> --titre "<Compte> · Ce que disent les chiffres" travail/rapport3_<compte>.md
@@ -55,10 +55,10 @@ Termine par une ligne par compte : « rapports 8 et 3 envoyés ».
 
 ## Règles
 - Ne jamais se connecter à Instagram, ne rien publier, ne jamais répondre soi-même aux commentaires :
-  les réponses proposées partent seulement si le propriétaire répond « REP … » au mail de l'agent 8.
+  les réponses proposées partent seulement si le propriétaire répond « REP … » au mail de l'agent 9.
 - Ne modifie jamais `.github/`, `pipeline/` ni `video/src/`.
 
-## 3. Chaque jour — Agent 12 (stratégie de revenus)
-Suis `STRATEGIE_12.md` : l'agent 12 lit le travail des agents 8 et 3 et leur répond. **Chaque jour un résumé de
+## 3. Chaque jour — Agent 10 (stratégie de revenus)
+Suis `STRATEGIE_12.md` : l'agent 10 lit le travail des agents 9 et 3 et leur répond. **Chaque jour un résumé de
 stratégie** (court : où on en est, ce qui a bougé, 3 actions du jour) ; **le lundi la stratégie complète** (statistiques
 générales, plan d'action, risques).

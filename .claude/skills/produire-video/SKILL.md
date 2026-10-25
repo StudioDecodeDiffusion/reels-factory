@@ -10,9 +10,9 @@ Le détail des règles est dans `NUIT.md` (modes sobre, durée, légende, miniat
 2. Créer `travail/<ID>/` (ID = <compte>-AAAAMMJJ-HHMM).
 3. **agent-4-concept** (haiku) → `4_concept.json` (sujet de la file, titre_miniature, mots_choc, surtitre).
 4. En parallèle : **agent-5-scenariste** (sonnet) → `5_scenario.json` ; **agent-6-directeur-artistique** (sonnet) → `6_da.json`.
-5. **agent-9-critique** (sonnet), pré-critique → `9_precritique.json` (« go » sinon retour 5/6, une fois).
-6. **agent-7-generateur** (opus) : spec, `tool check`, `PIXELS_HORS_LIGNE=1 tool render`, `tool frames`, `tool caption`, `tool story`.
-7. **agent-9-critique**, critique finale sur la planche → `9_critique.json` (« publiable »).
+5. **agent-7-critique** (sonnet), pré-critique → `9_precritique.json` (« go » sinon retour 5/6, une fois).
+6. **agent-8-generateur** (opus) : spec, `tool check`, `PIXELS_HORS_LIGNE=1 tool render`, `tool frames`, `tool caption`, `tool story`.
+7. **agent-7-critique**, critique finale sur la planche → `9_critique.json` (« publiable »).
 8. Manager : `python3 -m pipeline.tool drop <ID> --profile <compte> [--le <créneau du sujet>]`, puis marquer le sujet `fait`.
 Fin : 3 lignes (sujet, décision, créneau). Aucun mail.
 

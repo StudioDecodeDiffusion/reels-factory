@@ -1,7 +1,7 @@
-# Agent 7 — Générateur de vidéo
+# Agent 8 — Générateur de vidéo
 
 **Entrées :** le scénario (agent 5) et la direction artistique (agent 6).
-**Sorties :** `travail/<id>/7_spec.json`, la vidéo muette, les images par scène et la légende → agent 9.
+**Sorties :** `travail/<id>/7_spec.json`, la vidéo muette, les images par scène et la légende → agent 7.
 
 Transformer le script en spécification JSON que le moteur vidéo (Remotion, 1080×1920) sait rendre.
 Ne pas écrire de code React : seulement cette spécification.
@@ -50,6 +50,6 @@ python -m pipeline.tool caption <id> --profile <compte>
 ```
 
 ## Ensuite
-Transmettre à l'**agent 9 (critique)** : c'est lui qui évalue la vidéo et l'envoie au propriétaire.
+Transmettre à l'**agent 7 (critique)** : c'est lui qui évalue la vidéo et l'envoie au propriétaire.
 
 Vérifier que `7_spec.json` contient `"musique"` (choisie par l'agent 6) : la musique est ajoutée au rendu final par GitHub.
