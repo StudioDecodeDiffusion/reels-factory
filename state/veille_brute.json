@@ -1,0 +1,1810 @@
+{
+ "maj": "2026-10-25T13:57+00:00",
+ "nb_articles": 1280,
+ "erreurs": {
+  "Les Echos": "503 Server Error: Backend fetch failed for url: https://syndication.lesechos.fr/rss/rss_une.xml",
+  "Reddit": "403 Client Error: Blocked for url: https://www.reddit.com/r/france/hot.json?limit=60",
+  "TikTok tiktok_hashtags": "requests.api.get() got multiple values for keyword argument 'headers'",
+  "TikTok tiktok_sons": "requests.api.get() got multiple values for keyword argument 'headers'"
+ },
+ "top_par_compte": {
+  "actu": [
+   {
+    "sujet": "Dette publique : Moody's maintient la note de la France malgré les tensions budgétaires et sociales",
+    "score_base": 23.8700008392334,
+    "nb_articles": 72,
+    "sources": [
+     "20 Minutes",
+     "Actu.fr",
+     "Anadolu Ajansı",
+     "Atlantico",
+     "Atlasinfo",
+     "BFM",
+     "Bourse Inside",
+     "Capital.fr",
+     "DNA.fr",
+     "Empruntis",
+     "France 24",
+     "France 3 Régions"
+    ],
+    "vitesse_8h": 0.33,
+    "preuves_tendance": [
+     "wiki : Liste de sondages sur l'élection présidentielle française de 2027",
+     "wiki : France",
+     "wiki : France Info (offre globale)",
+     "wiki : Élection présidentielle française de 2027"
+    ],
+    "titres": [
+     "La « fatigue informationnelle » touche de plus en plus de Français",
+     "«Le Palais» : le Désérable nouveau est arrivé",
+     "EN DIRECT - Manifestations en France : les gilets jaunes appellent à des «casserolades» vendredi",
+     "« Lupin », « Dix pour cent », « HPI »… Ces séries françaises qui ont conquis le monde",
+     "Paris : nasse en cours vers la porte de Vincennes",
+     "Quand l'IA déchiffre Napoléon et les registres de Notre-Dame de Paris"
+    ],
+    "liens": [
+     "https://www.lemonde.fr/economie/article/2026/10/25/la-fatigue-informationnelle-touche-de-plus-en-plus-de-francais_6800054_3234.html",
+     "https://www.liberation.fr/culture/livres/le-palais-le-deserable-nouveau-est-arrive-20261025_EAYK5E3N3ZA5FHZUOWHOQCI7EI/",
+     "https://www.lefigaro.fr/actualite-france/manifestation-24-octobre-orleans-rassemblement-national-20261025",
+     "https://www.20minutes.fr/diaporama/diaporama-4256854-lupin-dix-cent-hpi-series-francaises-conquis-monde?at_medium=display&at_campaign=149",
+     "https://www.humanite.fr/-/-/paris-nasse-en-cours-vers-la-porte-de-vincennes",
+     "https://www.sciencesetavenir.fr/sciences/d-une-lettre-chiffree-napoleonienne-au-big-data-l-ia-bouscule-la-recherche-historique_195422?xtor=RSS-18"
+    ],
+    "adequation": {
+     "actu": 0.688,
+     "eco": 0.274,
+     "science": 0.058,
+     "qhse": 0.221,
+     "fun": 0.172
+    },
+    "score": 51.369998931884766
+   },
+   {
+    "sujet": "Manifestation du 24 octobre : 126 personnes en garde à vue à Paris",
+    "score_base": 20.93000030517578,
+    "nb_articles": 104,
+    "sources": [
+     "20 Minutes",
+     "Actu.fr",
+     "Assemblée nationale",
+     "BFM",
+     "CNews",
+     "France 24",
+     "France 3 Régions",
+     "Imaz Press",
+     "Info Tours",
+     "Jeune Afrique",
+     "L'Humanité",
+     "LCP-Assemblée nationale"
+    ],
+    "vitesse_8h": 0.58,
+    "preuves_tendance": [
+     "wiki : Manifestations du 17 octobre 2026"
+    ],
+    "titres": [
+     "Nice, Montpellier, Rouen... Plusieurs responsables politiques dénoncent des violences de l'ultradroite en marge de manifestations du 24 octobre",
+     "En Espagne, 128 personnes interpellées à Barcelone pour des dégradations et des pillages lors d'un rassemblement non déclaré",
+     "\"J'aurais beaucoup à craindre que ce genre de parti passe au pouvoir\" : à Orléans, une marche pour dire non au Rassemblement national",
+     "Une mobilisation importante mais en légère baisse, plusieurs blessés graves, près de 1 300 interpellations… Ce qu'il faut retenir de ce samedi de manifestation",
+     "Pour la mobilisation samedi à Paris, \"les enseignements du 17 octobre ont été tirés\", se félicite la porte-parole de la préfecture de police de Paris",
+     "Une journée de forte mobilisation sans incidents majeurs : « Le droit de manifester est aussi important que le droit de vote »"
+    ],
+    "liens": [
+     "https://www.franceinfo.fr/societe/manifestations/nice-montpellier-rouen-plusieurs-responsables-politiques-denoncent-des-violences-de-l-ultradroite-en-marge-de-manifestations-du-24-octobre_8252998.html#xtor=RSS-3-[lestitres]",
+     "https://www.franceinfo.fr/monde/espagne/en-espagne-128-personnes-interpellees-a-barcelone-pour-des-degradations-et-des-pillages-lors-d-un-rassemblement-non-declare_8253175.html#xtor=RSS-3-[lestitres]",
+     "https://www.franceinfo.fr/politique/front-national/j-aurais-beaucoup-a-craindre-que-ce-genre-de-parti-passe-au-pouvoir-a-orleans-une-marche-pour-dire-non-au-rassemblement-national_8252362.html#xtor=RSS-3-[lestitres]",
+     "https://www.franceinfo.fr/societe/manifestations/mobilisation-en-baisse-pres-de-1-000-interpellations-deux-blesses-graves-ce-qu-il-faut-retenir-de-cette-nouvelle-journee-de-manifestation-contre-la-vie-chere-partout-en-france_8252476.html#xtor=RSS-3-[lestitres]",
+     "https://www.franceinfo.fr/societe/manifestations/pour-la-mobilisation-samedi-a-paris-les-enseignements-du-17-octobre-ont-ete-tires-se-felicite-la-porte-parole-de-la-prefecture-de-police-de-paris_8252836.html#xtor=RSS-3-[lestitres]",
+     "https://www.lemonde.fr/politique/article/2026/10/25/une-journee-de-forte-mobilisation-sans-incidents-majeurs-le-droit-de-manifester-est-aussi-important-que-le-droit-de-vote_6799929_823448.html"
+    ],
+    "adequation": {
+     "actu": 0.58,
+     "eco": 0.062,
+     "science": -0.032,
+     "qhse": 0.118,
+     "fun": 0.199
+    },
+    "score": 36.0
+   },
+   {
+    "sujet": "Saint-Lary-Soulan. Le succès des randos gourmandes de La Mitoyenne",
+    "score_base": 33.720001220703125,
+    "nb_articles": 17,
+    "sources": [
+     "Chassons.com",
+     "Info-lux.com",
+     "L'Humanité",
+     "L'Usine Nouvelle",
+     "Le JSL",
+     "Libération",
+     "Mediapart",
+     "Midi Libre",
+     "Paris Normandie",
+     "Sud Ouest",
+     "bienpublic.com",
+     "dna.fr"
+    ],
+    "vitesse_8h": 0.53,
+    "preuves_tendance": [
+     "trends : dette",
+     "trends : monaco – lille",
+     "wiki : Fusillade de Trappes et La Verrière",
+     "wiki : Affaires Luc Tangorre",
+     "wiki : Vianney",
+     "wiki : Jean-Luc Mélenchon",
+     "wiki : Hervé Vilard",
+     "wiki : Outre-mer La Première"
+    ],
+    "titres": [
+     "«Signé Irène» de Vincent Almendros : Minuit à l’heure d’Irène",
+     "Foucault et la colonisation: du silence à l’omniprésence",
+     "« Les Garçons » de Mauro Bolognini : un parfum de dolce vita entre hommes à Rome",
+     "Pâte à papier : l’usine de Saint-Gaudens de Fibre Excellence dans l’incertitude totale",
+     "Saint-Lary-Soulan. Le succès des randos gourmandes de La Mitoyenne",
+     "Gourdan-Polignan. Lycée Paul-Mathou : le bonheur de partager au-delà des frontières"
+    ],
+    "liens": [
+     "https://www.liberation.fr/culture/livres/signe-irene-de-vincent-almendros-minuit-a-lheure-direne-20261025_KWDOXTPZSVDCJCOICTRLJCHK44/",
+     "https://www.mediapart.fr/journal/culture-et-idees/251026/foucault-et-la-colonisation-du-silence-l-omnipresence",
+     "https://www.humanite.fr/culture-et-savoir/cinema/les-garcons-de-mauro-bolognini-un-parfum-de-dolce-vita-entre-hommes-a-rome",
+     "https://www.usinenouvelle.com/emballage/pate-a-papier-lusine-de-saint-gaudens-de-fibre-excellence-dans-lincertitude-totale.YZUUDKE3A5AL7IKSQ5DKADPEPE.html",
+     "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQjBPOWljUHVKekt2dXQ3WnlOQzY1MVR5YW1KMmMxR1NFM3BSMm9zSGQydlVtRkt0TktwT0xkRWRmZ29mOTJXUEZhU2xFLWJ2S2hUZEdwc3Q5NTluam9hdjhYa1BvemNWV1dpdzJ5RDlkanN4S2dGVjU0azhpSVhUaEdoel9JTTFsWmpyUXl4VUxZenduY1NhN0xaS0k?oc=5",
+     "https://news.google.com/rss/articles/CBMisgFBVV95cUxONnVrRnQ4OVVGY21ScTZMYWlscTNObzZKczNWamQxNzhpN1hEbHN6QmZIMmhITWlXNHA0Z0QzWjBabXdZMjhKekJoMmJYNFNBRlhJZFo2aEtDTFhoNGN0TnM4eWRyekpmV1F5UVdyRGtQZTNTc3M1MjBhcXJyVzRRdG9Ua1Y4eThPVUdtVTdTWk5YNXJmaWZuQ3h2NVEzcFBzX0Rpakswb2E3QzAteHpHSG93?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.327,
+     "eco": 0.066,
+     "science": 0.133,
+     "qhse": 0.068,
+     "fun": 0.43
+    },
+    "score": 23.8700008392334
+   },
+   {
+    "sujet": "Europe : vie chère, salaires et logement alimentent une vague de colère sociale",
+    "score_base": 11.76,
+    "nb_articles": 8,
+    "sources": [
+     "24matins.fr",
+     "CNews",
+     "L'Usine Nouvelle",
+     "L'Économiste Maghrébin",
+     "Le Temps",
+     "Libération",
+     "TIME France",
+     "footmercato.net"
+    ],
+    "vitesse_8h": 0.75,
+    "preuves_tendance": [],
+    "titres": [
+     "Mouvements de colère en Europe : «La répression tend à provoquer une escalade»",
+     "Emballages : des acteurs allemands du réemploi demandent à être clairement dissociés de l’usage unique",
+     "Pouvoir d’achat, éducation, retraite… La grogne sociale s’empare de l’Europe",
+     "Entre crainte de déclassement et volontarisme économique, plongée dans les fractures de l’Allemagne de l’Est",
+     "Vie chère, logement, salaires : la colère sociale gagne du terrain en Europe",
+     "Europe : vie chère, salaires et logement alimentent une vague de colère sociale"
+    ],
+    "liens": [
+     "https://www.liberation.fr/international/europe/mouvements-de-colere-en-europe-la-repression-tend-a-provoquer-une-escalade-20261025_DIWOBOZNQJF4TFBILW4JQPZ27M/",
+     "https://www.usinenouvelle.com/emballage/emballages-des-acteurs-allemands-du-reemploi-demandent-a-etre-clairement-dissocies-de-lusage-unique.OCGRV2PSS5AMHEYQ6B4LGFKG6E.html",
+     "https://news.google.com/rss/articles/CBMitgFBVV95cUxOUEJGWmpHT2ZLSHduR0dhTTN3Q3h4TWFtWkUtbFQxX2tnUVFKVFdUbjEyblV0S3dOQjByR1F1N3h5dmtLUTF0bXRZSDFRSnBrNk4xclVNRkltbE1QUHNnbjFYT3U3dDFBTVh4WTZ1UWprYWYzUDFNTHF6ZHlvcTVRU08wbEkxTm9MRkFlaW94aThLclhqcnlsMXdyYmE5TEhkcFRMSGR3dnBYZWNfOF8zQWhhZV93UdIBuwFBVV95cUxOMFdEVlR6ZDgwMmZXMUdLcy1fWllwVjZxQ0g2cEhTTktqaUVVNW4wZUY3dlZ4NEpVeE0yN0s1UXJCZWU4TXotcHZSSEw3NU9RSjVxckl2WHhrYkJHLV9xY1VBRC1xY3ZnT2JjV3JNX2ZjclJEQUZzUWIwckhoT3c5M1B3aFlBaUo2OTN0NldHcjVJTGxVZndaMFhIRk1DU3MtY0RHOHNYM21EY01lcDdrUzdzTk4xRG1uU29F?oc=5",
+     "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOTmVaem1ZZkFSUVZOSmlKZTl4SEg2bGxUUDZ6TndFQThyNlozNHN1b3VsdGE0WnhtbjhxNWJwSzZzZU1OWWM5T25qX3FlbVEyeDltT0hqc0FTcy1aZENrVjJvU01qSzdCc3FxcGhmYm9PdmlnbzN4T3MzOUJyQjVsVzYtUWtRV2Z6Qlg1YzJITUV0N0VjN3QwMnJaSGsyLVVtTWpZR2pGVUtFYlNhYllVUVlBQVNTeHRiZEl1VlVYNTVKdXctWDg5TWEzSVpNRGVWTEhxMnRn?oc=5",
+     "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPNGJhcDhzUmFrcG8tYkVKdFFPLW53cVJ2OUpoX2tORVppNno5RGhTMnozbDBSc1BiSHh1bXJmQ28zeHZ3bUZfWTdoUm9wSTZ3M1NLY3hJUl9DYXlIN0NKSnVPa0llTDl6TzZiVWJHQlUtbHUzbWZobjdOTW9QejlTS0hNVVZWdjhRQ2I2eWt0VVhFX0g0LUJyc3VJbTlld3ZuYVVFb2lXeWI?oc=5",
+     "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPa0dIeUEyZ2x3NGVTYXNqZHhMZDhaUEthTHNMN3lJTlI4Rk1DYkZBQWF2djIzTmZxNV9veGs5X1J4RFJ0MzBQUU53eXdldXJ1YV96YmFYTGtfclV3eG83cWtPYW1rdzFVdXZsbng0WTBINk9LMlRjbm5HUklQQlV1Zkw1bEQ0QXZuU3ItejJTeUtsamVsRHVEaFV4MDJUWVVIM3BQNDJtbkpreUpUOGM2S0laMWZkY3ZHd3hyV0dkajIwMnc?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.58,
+     "eco": 0.252,
+     "science": 0.112,
+     "qhse": 0.237,
+     "fun": 0.159
+    },
+    "score": 20.23
+   },
+   {
+    "sujet": "Projet de budget de l'Etat 2027: Orientations des réformes économiques et fiscales programmées",
+    "score_base": 16.86,
+    "nb_articles": 51,
+    "sources": [
+     "Actu.fr",
+     "African Manager",
+     "Andlil",
+     "Bourse Inside",
+     "Boursorama",
+     "CESdeFrance",
+     "Capital.fr",
+     "Europe 1",
+     "Kohen Avocats",
+     "L'Economiste",
+     "L'Usine Nouvelle",
+     "L'essentiel"
+    ],
+    "vitesse_8h": 0.2,
+    "preuves_tendance": [],
+    "titres": [
+     "Gironde : relèvement des objectifs financiers 2026 d’Exosens",
+     "Gironde : renforcement des moyens financiers et des compétences de Coravia avec NextStage AM et Medissimo",
+     "Budget 2027 : «Le gouvernement va tenter un 49-3», pressent Eric Coquerel",
+     "Fin de vie : le Parlement adopte définitivement la proposition de loi",
+     "«C’est normal que les députés sèchent» : à l’Assemblée, comment le chaudron budgétaire s’est transformé en petite bouilloire",
+     "Budget de la « Sécu » : les députés sabordent le projet de loi à l’Assemblée nationale"
+    ],
+    "liens": [
+     "https://www.usinenouvelle.com/nouvelle-aquitaine/gironde/gironde-relevement-des-objectifs-financiers-2026-dexosens.HAQ6OXSUJJDRTOT2Q55UTVHC5A.html",
+     "https://www.usinenouvelle.com/nouvelle-aquitaine/gironde/gironde-renforcement-des-moyens-financiers-et-des-competences-de-coravia-avec-nextstage-am-et-medissimo.2BY3LX4ZARHHTN4Q3FSRZ4IDKY.html",
+     "https://news.google.com/rss/articles/CBMirAFBVV95cUxPOVN2cURrSDhLei1iWEpleTM0ekVOUDQzdDNGNE9uU0NWV3ctdkJFNlZTaURXM0Z6ZHdFUHdTejNmc2p0V204MGVNM1AxcmVYeEFsQzQ4VzVOb1lVcC13WXI4LWZNRG5QR1Z3dGVkRGdlS3Y0NENGX3J4enlDZVZRa01sRkpnYVZGSzloQ3FJLXhZMlZ2SDZFTGhub2daRDZvVGExOG40QW92WUF00gGyAUFVX3lxTE1KSFR5SnEwQ2dyaVF0LU9wckUzbVdiLUN4eHROMjhjZm9OOENoVnBxZG01NlVSa2VScmUtTS00ZU9BMTh0eFlXcExiWUhpZHNEcDVpM3RVOTlleHFfWjBMelNJRXRXQXgtc0xKdWFGNTk3aDBQVnFmdVp2OE9oc0RhNDA1NzJ5clFfZDQ0WllBREVMQ2V5YVdnMVA1UEF5bnJOUGpNOWdyaU9WcWd2SnpOWkE?oc=5",
+     "https://news.google.com/rss/articles/CBMipAFBVV95cUxPdTFNdFdWNVB6bVZvNDZhbm1lTjQwQ1hTdkZQaVNxdzNRdngyT1llMWhzMm5RbjE0RUdkc19sRkROd1VmcHZEUVRwZ0wyMEJKVF9WbjN3LWdtMFNLQlpTeTZjcm9KblJTWlpGbnF0TkZmLUdLUUVLajNfckJtZ1FfY2Zsc1BGSFlvOF9jOEJYSXRYaGpZUDctZUp1ZFhCQmRoeE84Qw?oc=5",
+     "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPOVlELUcwSzBBeFRBWm1YWUZuYm50RkoweWFlak5hbDh5X3dpWnA4U3ZqT1lqQU0wWU9HWlc1eTd2aTE4R3dmQ1FaZFlhcExhNU5zUTVlQ2lGeEFCaG9JSnpWNm9BUk5TZkg5UUM2S19FbTFScmkySGFiMGFSOGIyTFVWV2ZwMmlTYU5lRnhJbk5sMlc5NFFBWGhLZU83R284alJzbHB4amJYVGpNbFJXZkttcGg5ZjlIUXQ1cmdqTlFqazRxYjhFOUNQV3NQMjh4Yk5Fck9Edng4akpZM04zeG5mbV9GNkFUTmFJY3BlbmV6aTVM?oc=5",
+     "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOUEFScEwyb0YxR1ZIb1Q3LVdsVXJGc3A0TWpuX205S2dadEo1LUlmZ0E2SU9iTXBlaTFYSmVGRWM4cFBvbVlYZGl1Q0Qtd3ZKWk42VlpLakl2OFFCX2pRckt3Z3c5T0NRb283ZmxiRzAtRThrYndMX0VVLWNNRG9zSjlGdTF2aHdiQ0swX050X21oN0taSXZ5cE91Z0JUak1WUHhtb0xtMXY4amwzUDdWbXdxMDM5S2E1TVdIMzlZTnVuVEltT3pfX2VKSktsTGdhQ1RJTXBqRm81SndvSnVsNGtYQkpjYWc?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.429,
+     "eco": 0.647,
+     "science": 0.114,
+     "qhse": 0.305,
+     "fun": 0.127
+    },
+    "score": 18.82
+   },
+   {
+    "sujet": "Projet de budget 2027 : les grandes orientations économiques, sociales et fiscales de la Tunisie",
+    "score_base": 13.02,
+    "nb_articles": 14,
+    "sources": [
+     "African Manager",
+     "Atlasinfo",
+     "DW.com",
+     "La Presse de Tunisie",
+     "Le Figaro",
+     "Le Matin.ma",
+     "RFI",
+     "Radio RTCI",
+     "Radio des sans voix",
+     "Tchadinfos",
+     "Yabiladi.com",
+     "afriquesenlutte.org"
+    ],
+    "vitesse_8h": 0.5,
+    "preuves_tendance": [],
+    "titres": [
+     "Le parlement algérien vote l’envoi de troupes au Niger",
+     "Sénégal: les députés du Pastef rejettent la loi de finances rectificative du gouvernement",
+     "Les députés sénégalais revoient l’équilibre des pouvoirs",
+     "Inflation : le pouvoir algérien choisit la répression plutôt que les solutions",
+     "Mondial 2030 : Le Maroc accorde un régime fiscal spécial pour la FIFA",
+     "Le Maroc veut exonérer la FIFA d’impôts jusqu’en 2032 pour le Mondial"
+    ],
+    "liens": [
+     "https://www.lefigaro.fr/international/le-parlement-algerien-vote-l-envoi-de-troupes-au-niger-20261025",
+     "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOS0tFS2xjS2VQU0NwYmtoN0pRQTEyNDYtQWlQZldPOFdzbW5Tb0pWXzQwS1A0aGhYNFRJd3FKU2taS3FFbWFhR2tLYkNsTXZfajFfSFRrVDBjT1hZY19tckpxMXpZM2g5OFd6ZTNSc2FoWXEwclc4eDJRTGY1eHhIMkpXN3BjckE0X2tHYXFoUzEta2NTS1pDZldYLU4zc1RMSGlqV2lHNVNCRDJnNGxRWEVvSmFfalY0VjQwYy1fRUxxNXA2bU1vU3d2N29wTFMyRnE3bHhLa2VDcmJoaFY5OA?oc=5",
+     "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRDd4dkV5V2pCTVVRaVR3NmNhRUh4MVNhZUtKaGl4WXRHSmhmYmw2ZEFnTEtxbE1SWkRoUDUtVFFrWnRQRktXTDJCcWY4QzVrWGJYbHlnVkdNb19qZ282NjhENmN6UXR6QndETTVINjkyVy1XTng4TUUxQ0gydkpzN2k1ci1yN2otaXVaRHBxZUxramw5OWFiV0pmdEludjJKUk4xSElR?oc=5",
+     "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbDF5Zk5nUTJEOU43TlRieFAzcy1CUFJrLXFZNUNCTVg5XzFZOElZbFR2TE1ESkxGSndRdUgzQkE3R2hwcmg4MlVYVS1xWmNObnJJTldORVgzZ1JTTm5jajh5V20zMU1IQktJaUd0Z2NCSHV2b29hSGJzdVl2cFZ1UnNzeTFGaDNHUFRiMS1aNGthQW1XRTE5Z050X3FmMTlhRTIyR0luRTVsQVNUalRCZ0FsM0d1V0RMcTZOTENyNE03QzNYWWVnNWFUQQ?oc=5",
+     "https://news.google.com/rss/articles/CBMikAFBVV95cUxQZElwdUpoS2R1X3Y3YXlzcEl1MnNkNzRIX1R5ckhnd0dzUXRGZkhQUHNISXhDekZxNkMzeVdFRGN1Vjh3OEtKYXo1YkFDQndrNjI2SHVPdURMM2Y2V3VsNEtjeHFaNGYtZmJSeHVMaEgtWWdLakFwN3FScFVsbG1FSjhabktFMy1aQmhuaXUyNEQ?oc=5",
+     "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMzVZN2hla1ZhUmFnRm5MNHg0d0lSLXB5dUxENmxVY051V05aazRueWVkUlFDVEIwNUNnbHh2Q3NwZUo4Z2IxdHRuanJkbWY0b29PbVQyUkJxX1RuTms3OWFIZG1DNzJmaHN2REFMVEgzdVcwN2xXWlVwTFN3OXh4M1dGSE5Wb1NfQVN3Zm5Rb3hiRklSQUthVA?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.496,
+     "eco": 0.471,
+     "science": 0.079,
+     "qhse": 0.145,
+     "fun": 0.072
+    },
+    "score": 18.02
+   },
+   {
+    "sujet": "Congrès du RN  : le discours de Marine Le Pen , première grande étape de sa campagne présidentielle",
+    "score_base": 13.960000038146973,
+    "nb_articles": 10,
+    "sources": [
+     "20 Minutes",
+     "Actu.fr",
+     "BFM",
+     "LCP-Assemblée nationale",
+     "franceguyane.fr",
+     "franceinfo",
+     "laseyne.maville.com",
+     "linternaute.com"
+    ],
+    "vitesse_8h": 0.6,
+    "preuves_tendance": [
+     "wiki : Liste de sondages sur l'élection présidentielle française de 2027",
+     "wiki : Élection présidentielle française de 2027"
+    ],
+    "titres": [
+     "Comment Marine Le Pen, plus optimiste que jamais pour 2027, veut prendre de la hauteur et installer sa \"force tranquille\"",
+     "Congrès du RN à Orléans : suivez les discours de Jordan Bardella et Marine Le Pen lors du premier grand meeting de la campagne présidentielle",
+     "Présidentielle 2027 : Un duel Le Pen-Mélenchon encore annoncé par un sondage",
+     "Qui est Sébastien Chenu, qui va succéder à Marine Le Pen à la présidence du groupe RN à l'Assemblée? - LCP-Assemblée nationale",
+     "Candidate à la présidentielle, Marine Le Pen lâche un poste clé à l'Assemblée et se fait remplacer par un cadre",
+     "Jean-Philippe Tanguy au plus haut, Mathieu Valet consacré: la popularité des cadres du RN testée par une élection interne - LCP-Assemblée nationale"
+    ],
+    "liens": [
+     "https://www.franceinfo.fr/politique/marine-le-pen/comment-marine-le-pen-plus-optimiste-que-jamais-pour-2027-veut-prendre-de-la-hauteur-et-installer-sa-force-tranquille_8252809.html#xtor=RSS-3-[lestitres]",
+     "https://www.franceinfo.fr/elections/presidentielle/direct-congres-du-rn-a-orleans-marine-le-pen-lance-sa-campagne-presidentielle-avec-un-premier-meeting-son-discours-prevu-a-15h30_8252842.html#xtor=RSS-3-[lestitres]",
+     "https://www.20minutes.fr/politique/4257273-20261025-presidentielle-2027-duel-pen-melenchon-encore-annonce-sondage?at_medium=display&at_campaign=149",
+     "https://news.google.com/rss/articles/CBMitAFBVV95cUxObHFRamR2eGxldVV5RUU3bEVGdUhXVmRMSmw3cEFmSEVHdFRFeVN6M0pGTGxxZFNOS3pRUk45S0xZT1NUNzVQMmd1YnVsendNd0NBM3JIekRxQnpsbGs2eFBCYlo4Q1EtZWZUNnFhcjY2eTFmOTVHenl6WGJQdkF6NXZFWVlYNTJRT2FLRGxPWWUyQnlJcjliaEp0WEpXcG9zMGhLbmRtdzZWa1Vyc0huWVBCcGM?oc=5",
+     "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNWnFsd3hncmJNSjNoa1lCdlkyV3FIQU50UVlmMEJxSG1tV3h2RzdDYlZUTnpxOEJzYnJKSWR3MzFwNzNQUWFxaWIzR1ozcXV4MGtveVlaS2x4clF2RkxmdDVTMFBHVWVwTTVfRE8yMGE2ODdwOE1NeUt6NERQVUEzbnhWQXBOei1BN2EwaWVBRGFEUVBxcXJrZHhVb0hKRFp3SkFsa0t6VnNVVDRfa1dDNkxHLXdKSG03TUxkUzRnSmN0RkpwVDkwNUFkdFhiTzJ4dGpTVlN4VUdNRnBVeEplR1hNd3M?oc=5",
+     "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbXIwZGhHUDhVTkk5TTRGaHpSNldycXVPVWxGbXZWcngwVF94UmN5X1FJU3lYMC1WR0xEQjhpbTR5LURvb3ZTNUZLUzhIbW16QzlCVWdrbGxRLTBqN2Q5UkFvQTJXYndzd0NuZlFlN00xZlhIQ3VwX29IRm5yTUhCcWJyYVFLQjFwTWF3NHpvUm5BNUhvUUJYbk1NaElTazVXSlhLMEhkdlZZYm83LXQ3M0VYaw?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.454,
+     "eco": 0.121,
+     "science": 0.093,
+     "qhse": 0.112,
+     "fun": 0.1
+    },
+    "score": 16.979999542236328
+   },
+   {
+    "sujet": "Le Brésil aux urnes : Lula encore une fois ou retour des Bolsonaro ? ",
+    "score_base": 13.95,
+    "nb_articles": 16,
+    "sources": [
+     "20 Minutes",
+     "L'Humanité",
+     "Le Monde",
+     "Libération",
+     "Motorsport.com France",
+     "Ouest-France",
+     "RTBF",
+     "Sudinfo",
+     "footmercato.net",
+     "franceguyane.fr",
+     "franceinfo",
+     "l'Opinion"
+    ],
+    "vitesse_8h": 0.75,
+    "preuves_tendance": [],
+    "titres": [
+     "Qui est Flavio Bolsonaro, le candidat d'extrême droite qui peut remporter l'élection présidentielle au Brésil ?",
+     "En choisissant entre Lula et Flavio Bolsonaro à la présidentielle, le Brésil décide aussi du sort de la forêt amazonienne",
+     "\"Des raisons pour que Lula reste, il n'y en a pas\" : au Brésil, un scrutin présidentiel incertain dans un pays profondément divisé",
+     "Au Brésil, les soutiens de Lula et de Bolsonaro mobilisés jusqu’au bout : « Mon père ne votait plus. Je l’ai convaincu que cette élection était la plus importante de notre vie »",
+     "«Le pays est sur le point de tomber entre les griffes du fascisme» : au Brésil, une journée décisive pour un second tour ultra-serré",
+     "Présidentielle au Brésil : Pop-fascisme, stars et « armée de Lula », l’élection se joue aussi sur les réseaux sociaux"
+    ],
+    "liens": [
+     "https://www.franceinfo.fr/monde/bresil/qui-est-flavio-bolsonaro-le-candidat-d-extreme-droite-qui-peut-remporter-l-election-presidentielle-au-bresil_8223358.html#xtor=RSS-3-[lestitres]",
+     "https://www.franceinfo.fr/monde/bresil/en-choisissant-entre-lula-et-flavio-bolsonaro-a-la-presidentielle-le-bresil-decide-aussi-du-sort-de-la-foret-amazonienne_8247259.html#xtor=RSS-3-[lestitres]",
+     "https://www.franceinfo.fr/monde/bresil/reportage-des-raisons-pour-que-lula-reste-il-n-y-en-a-pas-au-bresil-un-scrutin-presidentiel-incertain-dans-un-pays-profondement-divise_8252848.html#xtor=RSS-3-[lestitres]",
+     "https://www.lemonde.fr/international/article/2026/10/25/au-bresil-les-soutiens-de-lula-et-bolsonaro-mobilises-jusqu-au-bout-mon-pere-ne-votait-plus-je-l-ai-convaincu-que-cette-election-etait-la-plus-importante-de-notre-vie_6800063_3210.html",
+     "https://www.liberation.fr/international/amerique/le-pays-est-sur-le-point-de-tomber-entre-les-griffes-du-fascisme-au-bresil-une-journee-decisive-pour-un-second-tour-au-coude-a-coude-20261025_AW4GFNRAUZGYNHSTTSOXEEWYQE/",
+     "https://www.20minutes.fr/monde/4256912-20261023-presidentielle-bresil-pop-fascisme-stars-armee-lula-election-joue-aussi-reseaux-sociaux?at_medium=display&at_campaign=149"
+    ],
+    "adequation": {
+     "actu": 0.449,
+     "eco": 0.181,
+     "science": 0.075,
+     "qhse": 0.101,
+     "fun": 0.211
+    },
+    "score": 16.68
+   }
+  ],
+  "eco": [
+   {
+    "sujet": "Projet de budget de l'Etat 2027: Orientations des réformes économiques et fiscales programmées",
+    "score_base": 16.86,
+    "nb_articles": 51,
+    "sources": [
+     "Actu.fr",
+     "African Manager",
+     "Andlil",
+     "Bourse Inside",
+     "Boursorama",
+     "CESdeFrance",
+     "Capital.fr",
+     "Europe 1",
+     "Kohen Avocats",
+     "L'Economiste",
+     "L'Usine Nouvelle",
+     "L'essentiel"
+    ],
+    "vitesse_8h": 0.2,
+    "preuves_tendance": [],
+    "titres": [
+     "Gironde : relèvement des objectifs financiers 2026 d’Exosens",
+     "Gironde : renforcement des moyens financiers et des compétences de Coravia avec NextStage AM et Medissimo",
+     "Budget 2027 : «Le gouvernement va tenter un 49-3», pressent Eric Coquerel",
+     "Fin de vie : le Parlement adopte définitivement la proposition de loi",
+     "«C’est normal que les députés sèchent» : à l’Assemblée, comment le chaudron budgétaire s’est transformé en petite bouilloire",
+     "Budget de la « Sécu » : les députés sabordent le projet de loi à l’Assemblée nationale"
+    ],
+    "liens": [
+     "https://www.usinenouvelle.com/nouvelle-aquitaine/gironde/gironde-relevement-des-objectifs-financiers-2026-dexosens.HAQ6OXSUJJDRTOT2Q55UTVHC5A.html",
+     "https://www.usinenouvelle.com/nouvelle-aquitaine/gironde/gironde-renforcement-des-moyens-financiers-et-des-competences-de-coravia-avec-nextstage-am-et-medissimo.2BY3LX4ZARHHTN4Q3FSRZ4IDKY.html",
+     "https://news.google.com/rss/articles/CBMirAFBVV95cUxPOVN2cURrSDhLei1iWEpleTM0ekVOUDQzdDNGNE9uU0NWV3ctdkJFNlZTaURXM0Z6ZHdFUHdTejNmc2p0V204MGVNM1AxcmVYeEFsQzQ4VzVOb1lVcC13WXI4LWZNRG5QR1Z3dGVkRGdlS3Y0NENGX3J4enlDZVZRa01sRkpnYVZGSzloQ3FJLXhZMlZ2SDZFTGhub2daRDZvVGExOG40QW92WUF00gGyAUFVX3lxTE1KSFR5SnEwQ2dyaVF0LU9wckUzbVdiLUN4eHROMjhjZm9OOENoVnBxZG01NlVSa2VScmUtTS00ZU9BMTh0eFlXcExiWUhpZHNEcDVpM3RVOTlleHFfWjBMelNJRXRXQXgtc0xKdWFGNTk3aDBQVnFmdVp2OE9oc0RhNDA1NzJ5clFfZDQ0WllBREVMQ2V5YVdnMVA1UEF5bnJOUGpNOWdyaU9WcWd2SnpOWkE?oc=5",
+     "https://news.google.com/rss/articles/CBMipAFBVV95cUxPdTFNdFdWNVB6bVZvNDZhbm1lTjQwQ1hTdkZQaVNxdzNRdngyT1llMWhzMm5RbjE0RUdkc19sRkROd1VmcHZEUVRwZ0wyMEJKVF9WbjN3LWdtMFNLQlpTeTZjcm9KblJTWlpGbnF0TkZmLUdLUUVLajNfckJtZ1FfY2Zsc1BGSFlvOF9jOEJYSXRYaGpZUDctZUp1ZFhCQmRoeE84Qw?oc=5",
+     "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPOVlELUcwSzBBeFRBWm1YWUZuYm50RkoweWFlak5hbDh5X3dpWnA4U3ZqT1lqQU0wWU9HWlc1eTd2aTE4R3dmQ1FaZFlhcExhNU5zUTVlQ2lGeEFCaG9JSnpWNm9BUk5TZkg5UUM2S19FbTFScmkySGFiMGFSOGIyTFVWV2ZwMmlTYU5lRnhJbk5sMlc5NFFBWGhLZU83R284alJzbHB4amJYVGpNbFJXZkttcGg5ZjlIUXQ1cmdqTlFqazRxYjhFOUNQV3NQMjh4Yk5Fck9Edng4akpZM04zeG5mbV9GNkFUTmFJY3BlbmV6aTVM?oc=5",
+     "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOUEFScEwyb0YxR1ZIb1Q3LVdsVXJGc3A0TWpuX205S2dadEo1LUlmZ0E2SU9iTXBlaTFYSmVGRWM4cFBvbVlYZGl1Q0Qtd3ZKWk42VlpLakl2OFFCX2pRckt3Z3c5T0NRb283ZmxiRzAtRThrYndMX0VVLWNNRG9zSjlGdTF2aHdiQ0swX050X21oN0taSXZ5cE91Z0JUak1WUHhtb0xtMXY4amwzUDdWbXdxMDM5S2E1TVdIMzlZTnVuVEltT3pfX2VKSktsTGdhQ1RJTXBqRm81SndvSnVsNGtYQkpjYWc?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.429,
+     "eco": 0.647,
+     "science": 0.114,
+     "qhse": 0.305,
+     "fun": 0.127
+    },
+    "score": 33.52
+   },
+   {
+    "sujet": "Dans quels secteurs les salaires ont-ils été le plus augmenté en 2026 ?",
+    "score_base": 11.3,
+    "nb_articles": 10,
+    "sources": [
+     "20 Minutes",
+     "24matins.fr",
+     "L'Echo",
+     "La Montagne",
+     "Le Revenu",
+     "Le Télégramme",
+     "Modes et travaux",
+     "Yahoo Actualités",
+     "www.horizons.dz"
+    ],
+    "vitesse_8h": 0.4,
+    "preuves_tendance": [],
+    "titres": [
+     "RN 2027 et PS 1981 : quelles similitudes économiques ?",
+     "« Une grande partie des ménages sera affectée » : en baisse en 2026, le pouvoir d’achat va-t-il augmenter en 2027 ?",
+     "A quoi sert encore le changement d'heure en 2026 alors que les économies réalisées \"sont anecdotiques\" d'après les experts",
+     "Opinion | Vieillissement et IA: la productivité plutôt que l'impôt",
+     "Impôt sur le revenu 2027 : voici les nouveaux seuils à ne pas dépasser selon votre situation familiale",
+     "Le Conseil des ministres adopte le PLF 2027: Intégration des augmentations des salaires"
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMipAFBVV95cUxNRWVybl9XS1o4cFZxR2RUVE1vYkQxSkZBWU5BVTRaanJwRnNyWEpCdTRWd1hkZkZGdklyelhXa2wxcXhTWmFpUVhKOUtwUE5oYW9PRk9tNEJyMTN1X0Fab21NN1RNSVFCWHJUREhQaWNXVEU1YkhiY185NTItM3BaZ3Q0dHFtNXdPcURPR1ZqXzNUbXJWTVg1R21Oc1VMWFlhWXBLaw?oc=5",
+     "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOc3YwWEgyUE9SUG9CVXdJaEM0MVU2X2l3OC1qU19NY0g3WHZjVXlFemptOGlIeWl1OHpibWVWeTZXVEplcUJuakEtMTNjajlfZE1GWmRfVHlfTmlHTjFBY05HcmtmNUVnUy1zeDNxSE44dTNhZDdYcHI1NENveGhyOFFONlRKN1dJU1E1MGZaWXlfUnhMSEs2ZHg4ejcxTHY2UGFSbUE4NkVROFZNbGxfYmpqT2FRZXdiX1BJRzFYUmFmTk1UeHNzb01MMmNqb0Q2NXdKZG9NaWRWWjF3ZVIzQ2Y3MU9KbDA?oc=5",
+     "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPbVl5M2c4VmRpbjZlc3loQ3lqV21KNGhKN0pxMWNFUlNjUC1WRWNKODFhYWFCSnBDSkdEU05qSGxoRXBnZnRkbWtCRmZtVG1xeUxqQ0F6Q0NRSnVrMnEwNFBrbk5hTXYwMXdYU0NfbzRkWEFtOS1fbVZtSlVsOGs1UGVTUTBhYTdIRVRBS2hsUXRMeldJYm5SV0JrNGk4cWRtZHRWcl9SM1dDZTcxVHY5MWlnQ2ZTWURFcmNPQmZRYko0X3hMSG5PcFcxcm53eGo1N1o4VS0wYTNDdWxsbUplRWpXQXAzOC1hZHJTSS1QOTRwU3lzUHRrd2pJSVNUaE9fSkFIR3RrZDY?oc=5",
+     "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSDFFTzBtSkU5MmJSNHN6ZUxfaVVLRXJzV0FmSXBKWFJXRzlrVktKYVFBeW55c3lzZDlBN2xSc0RVelo4SWt0TV9oS2ZrWmxObGtOWUhpQW1DLWZlQ2RmcTlHWGYyZlZSaXpNa01QcHRjald0MGpucTNqLTVHaWRTLXQ2WWJoYTZfcjVDSTF6LUd1TkpyUzNscVFRUEsxQjNOaWpCekY5UGR6MEZaLW1feEhUNmVldw?oc=5",
+     "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPSHZRaGpIVTRzWmJKVFluVm9MbjJoZFJkejByVXNtZjRqMGs4YmhNQlFTbENyN3kzRDk1cHVQSTJielNFSWtFc2pocm1VenZFUm4zbXRlUXJoc2pnTHpMSHBZaUVSMkdlZGpLenVYSzlZM2lGVUNub1h0cEdPdEdXQ3Y1clFrRmlDcnA5c3Q4NXh0bTRjTVJDSmZuMWowZmZ2TXY2eUlfbVBxMVRwZ2FLd0hjZ3BtZ3FjYUs4M25Jd1g5NjhNeWxmNzZvcWVmLUg4NXZUWFNhY3p0TktPN0diYTAxQUtYQnhuT053Q3dneUh3dw?oc=5",
+     "https://news.google.com/rss/articles/CBMiuwFBVV95cUxORmw5OVNGM256cnVfV3hlZTdsazg1Rm01RThuSHZxZ2poX3BFZG1WYXBUQ1NmVVdLcmFPSDdfa01iV1BqUjVEdUdKTExPRkxyak1qNVNhR0NKMjlfTVBVcHphLXlmQllFZk1yeEc4dWxJc0pVWmFFZkc4aHNuQ0c1YlNOWVk3QXBMWkJudHRaYmZWN0RCT2I3SjRTcWFtY2ppUkFvOWwzQk9JUHNtUEJwR2s3UUhSTEtVSHF3?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.32,
+     "eco": 0.609,
+     "science": 0.207,
+     "qhse": 0.343,
+     "fun": 0.117
+    },
+    "score": 20.75
+   },
+   {
+    "sujet": "Inflation et hausse de la précarité. Le Secours populaire tire la sonnette d'alarme",
+    "score_base": 11.25,
+    "nb_articles": 14,
+    "sources": [
+     "Actu.fr",
+     "France TV",
+     "JeChange",
+     "L'Expression",
+     "La Tribune",
+     "Le nouvel Économiste",
+     "RTL",
+     "TradingView",
+     "https://renseignementeconomique.fr/",
+     "lalozerenouvelle.com"
+    ],
+    "vitesse_8h": 0.14,
+    "preuves_tendance": [],
+    "titres": [
+     "Inflation à 3,1 % : le pouvoir d’achat redevient le sujet de l’automne",
+     "Carburants, pouvoir d’achat, budget : vers un retour de l’inflation ?",
+     "OPINION « Face à l'inflation, soyons TOUS responsables »",
+     "\"Si l'inflation se poursuit…\" Une hausse du Smic avant le 1er janvier envisagée ? C'est ce qu'évoque ce ministre",
+     "Livret A à 2,60 % le 1er février 2027 : la projection d'une grande banque après la flambée de l'inflation",
+     "Taux d'intérêt : la Fed tentée par une pause malgré l'inflation"
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMimgFBVV95cUxOby1YM3E2WkYybFNEZWZ4M0RKajE5WjE2MWdqbnR1VTlYRFA3WUZvNkpjSmhjd3NITGlGT1ZXTW56NUhuanpKTjBqZUhQbWxZcWNyM2JXVWE2bFd3T1VkRVNDWFFrY3h6VGl3Vk1aTUhZMU1aeHAzUFUtNG9KcEpPa0RHYTg5RGt6V2Rpd2k1Uk81NGxPSkZESjR3?oc=5",
+     "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOOXFLaTVFTWxOLXhNbl9mbU1Rc1Nsbl9BeVhzbzBWZTZGWlpyYXJ1aHFNRlE1YjBuVHBjZlhUbEdnLTVCeVBBLWpTTEpCQ0hWamVhdVl5Y2cxRjVMY3lRdTR2V0dvR20tNDZnSFR4bkdVcG9icmgzUGRNRXVHaFUxa0RuY01DMGxNMm5VdVJSbUVBU0FDMWFmSnppaWllVmhvM1VSeExGS1NZdGROOU1acTdnQXE0eDFjVEN5dGFvSjV1cHQzSzFrNFp3U2lWRktv?oc=5",
+     "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQX29GYXcwa0VmZXloX0dvVlpVLTRGbmhiOWlPX1J2WHV6UkY0Sl9SOFVDQ256eTRZdHZObkUzZmRiWTRrQWk5cW1sQVp6Rmo3RXExalhWb3dsOGdnUlF1Q3N6bFdlSlhfc1BEMF9zU2Q0ZWE0emtTYUFBdGc3c3dMZmFHNnBmUW4xZEpiSlJYQUlNVXFPeXg3MFpsN0xpTzQyb1JtaGJ6UVFqUQ?oc=5",
+     "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPQW5DcjF6OXFNVEhKTHdzVGdQRTJXcVUzOTlaeFJRakt0MFd5VlBiZ0RPMUtvQ01KYUptMnlNc2FaYlQ0VmRNWF9vdDRUbmJXRjh5MXMzN0EyY0RCYUVUX3l2ejhPLW0tdnFVcmlfOXJCcXNHclFXV2VuRFpPbm1jaG1JV2h2aHNKUUVpQnlnNmZpWnJxc3Jodl9tbUFvZlZVLUp1cFRHNGROa2tkWlM5dXg0X1VWRzNsYlROZlJxZjAtdV9iclFMNDFaTGdqRld5aEJjTjRFWjNfOVNkNzZj?oc=5",
+     "https://news.google.com/rss/articles/CBMipAFBVV95cUxQMTY1eDZ4SXpCX2VsX0RlYjlQSGlBZXM5SVhOX0g2RkdKRUl1OTZKTFBUWWlXTHZGQ3cwTW5DRzI1WkJzMDNNSW5lVzdKS0NLWHU4WXhYdFQ1ZVQ4TktxNmhTcklxeEtRdm1VQUZ3cWdlcTMtbFhScS1rY3JhejRhajhnWFhCNE1HSUFldzhDdlVfLVVmRWFEYzhTN2NxX2VrWk9wRw?oc=5",
+     "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9ET1RlRFJSOHFfMFo0LUFWY1p3RkkzUHhaVndtaWR2Q3gwNjBvb3FLTzZxbXVxVzc2WFB6N2tqU2oxWGZMdXJRT0FOSjJjcHB4TU9veWl5aVBLalVDdjNwNWFn?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.279,
+     "eco": 0.582,
+     "science": 0.028,
+     "qhse": 0.177,
+     "fun": 0.015
+    },
+    "score": 19.44
+   },
+   {
+    "sujet": "Projet de budget 2027 : les grandes orientations économiques, sociales et fiscales de la Tunisie",
+    "score_base": 13.02,
+    "nb_articles": 14,
+    "sources": [
+     "African Manager",
+     "Atlasinfo",
+     "DW.com",
+     "La Presse de Tunisie",
+     "Le Figaro",
+     "Le Matin.ma",
+     "RFI",
+     "Radio RTCI",
+     "Radio des sans voix",
+     "Tchadinfos",
+     "Yabiladi.com",
+     "afriquesenlutte.org"
+    ],
+    "vitesse_8h": 0.5,
+    "preuves_tendance": [],
+    "titres": [
+     "Le parlement algérien vote l’envoi de troupes au Niger",
+     "Sénégal: les députés du Pastef rejettent la loi de finances rectificative du gouvernement",
+     "Les députés sénégalais revoient l’équilibre des pouvoirs",
+     "Inflation : le pouvoir algérien choisit la répression plutôt que les solutions",
+     "Mondial 2030 : Le Maroc accorde un régime fiscal spécial pour la FIFA",
+     "Le Maroc veut exonérer la FIFA d’impôts jusqu’en 2032 pour le Mondial"
+    ],
+    "liens": [
+     "https://www.lefigaro.fr/international/le-parlement-algerien-vote-l-envoi-de-troupes-au-niger-20261025",
+     "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOS0tFS2xjS2VQU0NwYmtoN0pRQTEyNDYtQWlQZldPOFdzbW5Tb0pWXzQwS1A0aGhYNFRJd3FKU2taS3FFbWFhR2tLYkNsTXZfajFfSFRrVDBjT1hZY19tckpxMXpZM2g5OFd6ZTNSc2FoWXEwclc4eDJRTGY1eHhIMkpXN3BjckE0X2tHYXFoUzEta2NTS1pDZldYLU4zc1RMSGlqV2lHNVNCRDJnNGxRWEVvSmFfalY0VjQwYy1fRUxxNXA2bU1vU3d2N29wTFMyRnE3bHhLa2VDcmJoaFY5OA?oc=5",
+     "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRDd4dkV5V2pCTVVRaVR3NmNhRUh4MVNhZUtKaGl4WXRHSmhmYmw2ZEFnTEtxbE1SWkRoUDUtVFFrWnRQRktXTDJCcWY4QzVrWGJYbHlnVkdNb19qZ282NjhENmN6UXR6QndETTVINjkyVy1XTng4TUUxQ0gydkpzN2k1ci1yN2otaXVaRHBxZUxramw5OWFiV0pmdEludjJKUk4xSElR?oc=5",
+     "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbDF5Zk5nUTJEOU43TlRieFAzcy1CUFJrLXFZNUNCTVg5XzFZOElZbFR2TE1ESkxGSndRdUgzQkE3R2hwcmg4MlVYVS1xWmNObnJJTldORVgzZ1JTTm5jajh5V20zMU1IQktJaUd0Z2NCSHV2b29hSGJzdVl2cFZ1UnNzeTFGaDNHUFRiMS1aNGthQW1XRTE5Z050X3FmMTlhRTIyR0luRTVsQVNUalRCZ0FsM0d1V0RMcTZOTENyNE03QzNYWWVnNWFUQQ?oc=5",
+     "https://news.google.com/rss/articles/CBMikAFBVV95cUxQZElwdUpoS2R1X3Y3YXlzcEl1MnNkNzRIX1R5ckhnd0dzUXRGZkhQUHNISXhDekZxNkMzeVdFRGN1Vjh3OEtKYXo1YkFDQndrNjI2SHVPdURMM2Y2V3VsNEtjeHFaNGYtZmJSeHVMaEgtWWdLakFwN3FScFVsbG1FSjhabktFMy1aQmhuaXUyNEQ?oc=5",
+     "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMzVZN2hla1ZhUmFnRm5MNHg0d0lSLXB5dUxENmxVY051V05aazRueWVkUlFDVEIwNUNnbHh2Q3NwZUo4Z2IxdHRuanJkbWY0b29PbVQyUkJxX1RuTms3OWFIZG1DNzJmaHN2REFMVEgzdVcwN2xXWlVwTFN3OXh4M1dGSE5Wb1NfQVN3Zm5Rb3hiRklSQUthVA?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.496,
+     "eco": 0.471,
+     "science": 0.079,
+     "qhse": 0.145,
+     "fun": 0.072
+    },
+    "score": 16.72
+   },
+   {
+    "sujet": "Dette publique : Moody's maintient la note de la France malgré les tensions budgétaires et sociales",
+    "score_base": 23.8700008392334,
+    "nb_articles": 72,
+    "sources": [
+     "20 Minutes",
+     "Actu.fr",
+     "Anadolu Ajansı",
+     "Atlantico",
+     "Atlasinfo",
+     "BFM",
+     "Bourse Inside",
+     "Capital.fr",
+     "DNA.fr",
+     "Empruntis",
+     "France 24",
+     "France 3 Régions"
+    ],
+    "vitesse_8h": 0.33,
+    "preuves_tendance": [
+     "wiki : Liste de sondages sur l'élection présidentielle française de 2027",
+     "wiki : France",
+     "wiki : France Info (offre globale)",
+     "wiki : Élection présidentielle française de 2027"
+    ],
+    "titres": [
+     "La « fatigue informationnelle » touche de plus en plus de Français",
+     "«Le Palais» : le Désérable nouveau est arrivé",
+     "EN DIRECT - Manifestations en France : les gilets jaunes appellent à des «casserolades» vendredi",
+     "« Lupin », « Dix pour cent », « HPI »… Ces séries françaises qui ont conquis le monde",
+     "Paris : nasse en cours vers la porte de Vincennes",
+     "Quand l'IA déchiffre Napoléon et les registres de Notre-Dame de Paris"
+    ],
+    "liens": [
+     "https://www.lemonde.fr/economie/article/2026/10/25/la-fatigue-informationnelle-touche-de-plus-en-plus-de-francais_6800054_3234.html",
+     "https://www.liberation.fr/culture/livres/le-palais-le-deserable-nouveau-est-arrive-20261025_EAYK5E3N3ZA5FHZUOWHOQCI7EI/",
+     "https://www.lefigaro.fr/actualite-france/manifestation-24-octobre-orleans-rassemblement-national-20261025",
+     "https://www.20minutes.fr/diaporama/diaporama-4256854-lupin-dix-cent-hpi-series-francaises-conquis-monde?at_medium=display&at_campaign=149",
+     "https://www.humanite.fr/-/-/paris-nasse-en-cours-vers-la-porte-de-vincennes",
+     "https://www.sciencesetavenir.fr/sciences/d-une-lettre-chiffree-napoleonienne-au-big-data-l-ia-bouscule-la-recherche-historique_195422?xtor=RSS-18"
+    ],
+    "adequation": {
+     "actu": 0.688,
+     "eco": 0.274,
+     "science": 0.058,
+     "qhse": 0.221,
+     "fun": 0.172
+    },
+    "score": 11.84000015258789
+   },
+   {
+    "sujet": "Journée de mobilisation pour le pouvoir d'achat: les derniers développements",
+    "score_base": 10.98,
+    "nb_articles": 10,
+    "sources": [
+     "El Moudjahid",
+     "L'Alsace",
+     "L'Union",
+     "Le Bien Public",
+     "Le Dauphiné Libéré",
+     "Le Progrès",
+     "Le Télégramme",
+     "https://renseignementeconomique.fr/",
+     "lanouvellerepublique.fr",
+     "tv5monde"
+    ],
+    "vitesse_8h": 0.2,
+    "preuves_tendance": [],
+    "titres": [
+     "La question du jour. Pouvoir d’achat : comptez-vous réduire vos dépenses pour les fêtes de Noël ?",
+     "Pouvoir d'achat : comment ils font baisser la facture !",
+     "Journée de mobilisation pour le pouvoir d'achat: les derniers développements",
+     "Retour sur les décisions du Président en Conseil des ministres : le pouvoir d’achat comme priorité absolue",
+     "Pouvoir d’achat : pourquoi la baisse globale ne frappe pas tout le monde de la même manière [Infographies]",
+     "Le pouvoir d’achat au cœur des manifestations du 24 octobre en Loir-et-Cher"
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPc0tvQXdJUTVmUXNENW1OZU5GVWZ1enhfRW50aDZZQXhCS1F1Zk1hWDlJV01xNXFockM5Y3hQWjBSZlZ3TGF1NWlPWFhlbGZmMS1YRHNlTERDNGM3T0hLcWpCdFA0Y1dYVkpBbGdZdXpCMHlHWVFTRmNtTnh3QjBZTjZfRWJWakotLWVtSXNzTF9oc2FESElTRmRNNmE4NFM1U1VTdmRQN0pKa3hCQ0k5X1NHWlM4Z2ZxRklv?oc=5",
+     "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdnAtbTlnV3hMYVh1aXJiNTU3XzN5aWpJcHVNRW14bFZDd1Q4VFJwaFNzWkFncjFHSlZUMmZSOVJmajlWQ0tPSFduSEtrREVKWVNYM09TdnFFRnhxdGhManhvbUNpRGs5T0I1U3NXMDBIVTc0X09JVXRWTlhFVVRiNDZKNlVmQmNBZEhmcWRLZjZUQlhZcW1BeVlhTVJUNml3a0p5WWZFcVN5SklvUzhXRWdzeVFlenhQ?oc=5",
+     "https://news.google.com/rss/articles/CBMivwFBVV95cUxOS0Qwd2JzNHMxaHppcmhBUWQyM2VZNDV3em5Bb2dDc0JzVHFRUXBOcUtnd2NwMEU1V0hxUUwyVS1IZ3U5Uy1NQ0hORnN1X3FZTnZERE10alpuZmhkUUtkRV84VmZuSm5qamMzWl91S2VwRmdyODdTYnowdXBlOEZjNzFjSFRwMWZIRFBmWng2YzZtalQxWEk1MUltOWxPazFILVRvTXQxdmxQemtpc1o3NmRaYWdXVzg5WVpvNW5sUQ?oc=5",
+     "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNcV9GZHBleWplOXd3QnhLeUJDNWs3a0h4M0lwWTdGWDFvcUNnMmNVN3BXeXBfeDY4VUl4MHY1dUlGV3otdjladUR4WEZZZExMcklmMVlYQko1ZHZwQnJBamhRR3FmVG5DaWFrZS05MTBlaDRleXoxckxCQXNrTXNCUklYQlJUcXlTYUdydHgwb2ZqQzc5TzlZNGRvT3c5dFJONk1HcXFTTC1PbFNrY21RRmQ5WndHclFzMnNvbm56Vl83LWU3cEdOaHhJOEF4MUgwd3puVkxGMmhwRkdoSHZKbFE2TGEtQQ?oc=5",
+     "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOTDYza0N6RENFeVZSQU9KUlh6RVVTV0dsejVxUEFtZGFES3hZTXVpSEZTTmM0bnBhUmZJNkloMVE1a3hhMVgtaHVrMkpaQ050SjdQeFcwYXlmcDNZTDBxcU1JQkp4Tklna29DeWN0LVI0c01fZ3hSbkUwcTZ2dmk5LTF3emk5MVduVDdYekZYUUZGRmJDeG1hV24wRGYwd3U0MHhTNmtIMFpMTDRiZVAtemdDeHFDS1V1WV8zYVViYVVpWGJGWGRwaXFVbWdERHFHSkNZbnNleUpSWV9YWlhXMjRjeHdEMEpEOXJJYXRqRnlxN3dMYnJsMGoyeFk?oc=5",
+     "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRXNjVWhPSklSZGFKRHBGUlFBNGtCSU1vdE9DMDJkT1RsNU9jTk9oYUcxS0k5QW5aMU5ja1hUUUhCUjhBTVRrQmdwSUluTVI5ZVpmYm5YWTJuakhfb2hvdmQyb0RMY0Ztb2JRTncxb2Rtamp5VmROYVNKMXc4eW1HYXBsQ1VuNHFsZFBxZTRlMXNYdFE1VWtSS2hDUjF3MGpNc3lOVXlVLVVqRHZjMklvWEpmNGhab2VkaDVtOTZfZFU0Q1BnWVZGUA?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.364,
+     "eco": 0.415,
+     "science": 0.106,
+     "qhse": 0.238,
+     "fun": 0.259
+    },
+    "score": 11.64
+   },
+   {
+    "sujet": "Impôts : un prélèvement automatique arrive ce lundi sur les comptes bancaires de millions de Français",
+    "score_base": 11.19,
+    "nb_articles": 7,
+    "sources": [
+     "24matins.fr",
+     "Capital.fr",
+     "L'Union",
+     "MoneyVox",
+     "bfmtv.com",
+     "econostrum.info"
+    ],
+    "vitesse_8h": 0.86,
+    "preuves_tendance": [],
+    "titres": [
+     "Impôts : le Fisc va prélever de l’argent sur des comptes bancaires ce lundi pour deux raisons, découvrez si vous êtes concerné",
+     "Impôts sur les intérêts du Livret A, fraude bancaire remboursée : les 5 infos argent de la semaine",
+     "Un prélèvement des impôts tombe lundi sur des millions de comptes bancaires, vérifiez le vôtre",
+     "Impôts : un prélèvement automatique arrive ce lundi sur les comptes bancaires de millions de Français",
+     "Fraude bancaire , la CJUE change le timing du remboursement",
+     "Avec une telle somme , on comprend vite pourquoi des tonnes de Français ouvrent un compte chez cette banque en ligne"
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMixgFBVV95cUxQQnhYUkJXYUxyRl9YR0Z3WjYyempOMkpkODhxUnRIRVp3dkRXbVZDMlB6NUQzd1l1ZFpnVnFoUlMxNk44U2FZWFFiWWtBdHJmTDNpM0dKMlhxRkVVWVhBcV8xaDdVV0FCYzhldEIxcDlNcHVRdUJMN0Fpajdnbm4ydHVqdnBGeENyR0xBaVpidDZmdjctN3h3aDZuRUtaYTJWRlB2WmZUX2VIQ2VDcHNEQUhNSlNQLVdKOUdKRU9BZ2k2MlpwU3c?oc=5",
+     "https://news.google.com/rss/articles/CBMi5AFBVV95cUxORnA0OFhTZS1LaGtnUDB5dXo2V08tRkZLaXF6N0JrTGhRSU9Fblh1dVFrQVFDbXVZbVRYcXpQYUhDNkl0WThxdTR3ZElnZlJhbzM0QXNXci1Pa0s4QnBWb3hyVk5iZDZURzlyYkVqVV8xaDV2dzE1NHdndVZXS1E1dGo3VjctSU9xamxobkRreWJKVC1RYlhuam9WR3paMkUtOTBQSmxtUlEwX1dtdlhaUzVuQnlSLWRmcHRWc1hMNGlDclQ0ZnBPanQzN0JwMzdyc3NkbFVZRllQU2hxUGVRbVpxcFY?oc=5",
+     "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQUkxmOUNoWDROOU11MVVRMEVfSG9PSmpPX2lCa1JBSnVTTXgydkVNYmp4MXNXVTYtWDVpb2Z5RHYteTY0ODZKWmpURWpvRHl3Y2hVU1ZQRl9pdVo1T0tYX2UxbjUzRHVxZHZUaEZsSDZLb0dtV0lUNVJaSFljbnQwempSR2RLeHhYTURuNEQ1elFFQlJkczZlVlRGV3JQUlQ1UFF4VUxPbmxjTjAwTzFMN2FZYXZqT0MzN1VJd29pUXNGQ1VuclRDRnNiRXJSajBw?oc=5",
+     "https://econostrum.info/impots-un-prelevement-automatique-arrive/",
+     "https://www.24matins.fr/fraude-bancaire-la-cjue-change-le-timing-du-remboursement-1422960",
+     "https://www.bfmtv.com/tech/bons-plans/banque-en-ligne/avec-une-telle-somme-on-comprend-vite-pourquoi-des-tonnes-de-francais-ouvrent-un-compte-chez-cette-banque-en-ligne_AB-202610250015.html"
+    ],
+    "adequation": {
+     "actu": 0.409,
+     "eco": 0.366,
+     "science": 0.019,
+     "qhse": 0.141,
+     "fun": 0.11
+    },
+    "score": 9.67
+   },
+   {
+    "sujet": "Carburant : une baisse de 12 à 18 centimes par litre attendue dès le 1er novembre",
+    "score_base": 8.0,
+    "nb_articles": 3,
+    "sources": [
+     "JeChange",
+     "Sciences et Avenir",
+     "econostrum.info"
+    ],
+    "vitesse_8h": 0.67,
+    "preuves_tendance": [],
+    "titres": [
+     "A la COP17, haro sur les subventions aux énergies fossiles",
+     "Le réseau de gaz, emprunté par moins de foyers, coûte plus cher à ceux qui restent : l'effet caché de la PAC sur les factures de gaz",
+     "Carburant : une baisse de 12 à 18 centimes par litre attendue dès le 1er novembre"
+    ],
+    "liens": [
+     "https://www.sciencesetavenir.fr/nature-environnement/a-la-cop17-les-etats-sommes-de-rectifier-le-tir-sur-leurs-engagement-pour-la-nature_195453?xtor=RSS-15",
+     "https://news.google.com/rss/articles/CBMiowFBVV95cUxQazZXMHlCWDRvdi1PUVlWSjZ2VGVTS2xVdGNDNGpZVlc0STZnemJjc3BXYWVSbExZUmdvQ0h6Q29VbHZmcEpLTGJtQ2Q5ZXItbmEtSHlNOTVpaTRqSGNaUXgyYVVFWUpPa3gzT1BlN09yRFNYSFNlUE9GVzJOdERyRF9Iay1wSmZILVNXY2VsREVnSlBqNVFreldBdUpNU0JCWmxr?oc=5",
+     "https://econostrum.info/carburant-baisse-1er-novembre/"
+    ],
+    "adequation": {
+     "actu": 0.254,
+     "eco": 0.426,
+     "science": 0.154,
+     "qhse": 0.261,
+     "fun": 0.055
+    },
+    "score": 8.83
+   }
+  ],
+  "science": [
+   {
+    "sujet": "Pour un bon robot-pâtissier à prix abordable, privilégiez...",
+    "score_base": 15.24,
+    "nb_articles": 29,
+    "sources": [
+     "01net.com",
+     "20 Minutes",
+     "Android MT",
+     "Challenges",
+     "Foro3D",
+     "Frandroid",
+     "Journal du Geek",
+     "L'Usine Nouvelle",
+     "La Crème Du Gaming",
+     "La Revue Automobile",
+     "Le Dauphiné Libéré",
+     "Le Figaro"
+    ],
+    "vitesse_8h": 0.31,
+    "preuves_tendance": [],
+    "titres": [
+     "Il espère tirer profit d’un marché qui pourrait atteindre jusqu’à 635 milliards d’euros en 2035 : l’allemand Agile Robots se lance dans la course des humanoïdes",
+     "Au revoir Thermomix, ce robot multicuiseur Moulinex Cookeo+ passe à moins de 180 € ce dimanche 25 octobre",
+     "Cet aspirateur robot laveur ultra puissant est noté 4,6/5 par les clients, pourtant il coûte moins de 100 euros",
+     "Les robots se heurtent à la réalité : trop chers pour remplacer l’humain",
+     "eufy Omni E25 : l’aspirateur robot laveur qui s’occupe de tout, à 579 €",
+     "Dyson 360 Vis Nav : ce robot aspirateur au look de vaisseau spatial est 900 € moins cher qu'au lancement"
+    ],
+    "liens": [
+     "https://www.usinenouvelle.com/technos-et-innovations/robotique/il-espere-tirer-profit-dun-marche-qui-pourrait-atteindre-jusqua-635-milliards-deuros-en-2035-lallemand-agile-robots-se-lance-dans-la-course-des-humanoides.FFWEXYCIB5ON7OTVG3R6XIPMGY.html",
+     "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOSXBiZzlIZnM3aEFWVGtZMkhkanozWmFnN1RrSTFDM1V6NkJKb3Q4UnlTMzFDQW9QdmFWQjhtZ19ETFlvSWRPTkhTUXRXaHhZU0pVb2VYdHpRdXFsTHNoOFZOUzR0SXZVdnByOGhsTkJlYzZKS2tzRmlidVNkWmRpZHlNbVRyd0d0ZjJFcHVZNENDOFNNdVlZMEhrc3lsdEY4TXpzRjB2bk9LaUJFcnlaelV2bm5OVHBQNWllMGFRWUhXdWJfR0pQMU9NMnpwMnpscTNkYno4dkg0cFZaMXUwb1dRb3FKNVE?oc=5",
+     "https://news.google.com/rss/articles/CBMisgJBVV95cUxPRnB1UGJpcmlqS05DcHV4TnBZa3l6SDRkeWZSbnM1NU5nU25BUEQ2OXVBNU02TElCZktaMy1rX1lvdFJVbGlGcTRxMEU0OGpzeGNVTUxoY2I0Y1ByRFAzUTd5R0RJVmlfUGJ4NzF3VUZyUl9aYkVjUjVOakdpT3M4ekJOMFh0eWs5bjgxYlZsMWstRWFONzE1ZnE0WnpNSXZmLV9jQ2FhWTZRdmRkQWt0czE1WDNNUjdabDVDUGVyTEU3RTJsbGtXUTBGaVZEWFg3c0pHcm44c1RSTlBtSnYzQklRRTJ5TU1BYTJjRkR1eUs2LXl5ZS0yS3BzYkI3NnFXcHpTME01WHM1YktzRHQ0R2ZJdjAxbzRDaTRpVk9RXzlob2xMM0xxQnkyUkMzcXZpNGc?oc=5",
+     "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObWRVaTU4Q1ZjWHZuY01IMFlCMlp1VXRzOE1ROE5Jc0EzZ3VPQlFLWlAwMVVNdkNyQ1BPV1NoS2tYZUNxcG1HaHlyRFRyRXh3ZFFadmI3Ym9qcm5ZeEpTc3FHV1RZSDJoM3hzcVEyUHdvMTUzQ0lMbXBvOFJ5UEk3UnJWcHIxYlNRcFlaa1NWWFhtOW9RMmVzYUpKZVItV0dINW1OZ2p2QjdvLTQ?oc=5",
+     "https://news.google.com/rss/articles/CBMixgFBVV95cUxOY2xqeFd4N0k0Uy1PLVZYNjh3eHllb2NRSFdnUW9ad3lQcWs1RTdFbEh3d2otYUNUaU1IM0ROSlIwMGZYSU9BdEVldUNZTklFTFU1R0FzRlhheV81c2FoaUgtb1dFdEYxNUlOUDhHSDJIZVM0YkVzZHVyOXhERGNJc2dTOHhpOXpkcWNJRWdQN2VoMlIzbzJQWmpmY0I0RS1zRG1lckplZ2xzRnZnU3J5MTF2ay11REFPaXNieUVidFB1cFR2clE?oc=5",
+     "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPbTFrdmdEbWhaOWFnejE0V0hwakJac05TenlWVXFiQk13bHJVcFlmSV8wdi03bG9YeG9zZUkxdTFlQW1LV1pZN2J2RGpIMkFCeE1Ta2ZtSXZYd3ZKV19kQ3RpU1FuRkdLNjRYTUhvaW1ERWdjOTQ4S25HVWpDUk9lU1VvUFlOMGVOUm5sUWRveF9TalE1RjlNTjVkMWcwS3UtbkhiZTVTZ2pwenZnMWI0cUYxWlo4R1pwTG1pZkNOT19KbV9pQ3RMcjlnbWZRX2EwUUl0dXBxcEVtU2RBd2Ew?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.03,
+     "eco": 0.007,
+     "science": 0.444,
+     "qhse": 0.065,
+     "fun": 0.369
+    },
+    "score": 17.92
+   },
+   {
+    "sujet": "🦖 Découverte d'une créature mi-dinosaure, mi-oiseau - Techno-Science",
+    "score_base": 7.0,
+    "nb_articles": 3,
+    "sources": [
+     "Futura",
+     "L'Usine Nouvelle",
+     "Techno-Science"
+    ],
+    "vitesse_8h": 0.33,
+    "preuves_tendance": [],
+    "titres": [
+     "Une IA qui se reproduit comme un organisme vivant : les chercheurs explorent un scénario digne de la science-fiction !",
+     "Vu dans la chimie : une initiative en faveur de la biodiversité, un nom pour la fusion AkzoNobel-Axalta, TWB...",
+     "🦖 Découverte d'une créature mi-dinosaure, mi-oiseau - Techno-Science"
+    ],
+    "liens": [
+     "https://www.futura-sciences.com/tech/actualites/intelligence-artificielle-ia-reproduit-comme-organisme-vivant-chercheurs-explorent-scenario-digne-science-fiction-138717/#xtor%3DRSS-8",
+     "https://www.usinenouvelle.com/chimie/vu-dans-la-chimie-une-initiative-en-faveur-de-la-biodiversite-un-nom-pour-la-fusion-akzonobel-axalta-twb.74GHCFLC35AYPLXF2CCHUUDNEQ.html",
+     "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTVJza3dVbldMd0pfaXJ5d2tjakNha0NWMmJTS2ZuOHQzU3ViLUlPa0t4TGNaLVVOT2FtNlg1RkV6eVdXWTBlWXFXZ3hBVDdEdXhyYlgtd3BDTlJfcE5zdmxGcTlWWVFvcEplaTVGWWJaLUtTbTBtd1V4U2t1SDB0VHIyNDY0cDh5ZWM4VFZqbw?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.029,
+     "eco": 0.119,
+     "science": 0.498,
+     "qhse": 0.147,
+     "fun": 0.49
+    },
+    "score": 9.74
+   },
+   {
+    "sujet": "OPINION. « Souveraineté technologique : l'État coupe les racines de ce qu'il célèbre »",
+    "score_base": 7.17,
+    "nb_articles": 3,
+    "sources": [
+     "L'Usine Nouvelle",
+     "La Tribune"
+    ],
+    "vitesse_8h": 0.67,
+    "preuves_tendance": [],
+    "titres": [
+     "«Nous voulons inventer un autre chemin de transmission» : les fondations, des actionnaires toujours  plus crédibles",
+     "Un industriel au Panthéon ? Oui, mais pas n’importe lequel",
+     "OPINION. « Souveraineté technologique : l'État coupe les racines de ce qu'il célèbre »"
+    ],
+    "liens": [
+     "https://www.usinenouvelle.com/eco-social/nous-voulons-inventer-un-autre-chemin-de-transmission-les-fondations-des-actionnaires-toujours-plus-credibles.TSMJW3O5JRKJLPVNQCBNRTJ3HY.html",
+     "https://www.usinenouvelle.com/chroniques/un-industriel-au-pantheon-oui-mais-pas-nimporte-lequel.FPA543HQORMZNISKYMNEWV3POA.html",
+     "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNjJpcHZhNFVjR3pjeWJPM3UxLWNCUDNGVlFlNDVuWC1zOGZsNEZXNW1LRmoxeTd6Y1NXbnRpLUlKUWNZcFptdXJwZFpMWWl5ck4yY2FqSUM3YW5reUFBbW1tTW5neElXNGNocjI4SDJTVUN5QnAtT3lwX2NNTEZLWlc0a1lweEtvQ2ZTdl80dkEyV3VfYmVFUl9ISi1pWUxyeDlIcGdQVXRZbEFfeXRLVno5MDRILWpldldfa244ZUI2LXE2a3JSZnNCUXE2UQ?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.313,
+     "eco": 0.197,
+     "science": 0.427,
+     "qhse": 0.251,
+     "fun": 0.306
+    },
+    "score": 7.94
+   },
+   {
+    "sujet": "Données, armement, travailleurs du clic : la face cachée des IA",
+    "score_base": 8.0,
+    "nb_articles": 3,
+    "sources": [
+     "L'Humanité",
+     "Pasquale Pillitteri",
+     "lefilia.fr"
+    ],
+    "vitesse_8h": 0.67,
+    "preuves_tendance": [],
+    "titres": [
+     "Données, armement, travailleurs du clic : la face cachée des IA",
+     "Agents d'ingénierie avec mémoire persistante dans…",
+     "OpenAI dévoile des agents IA isolés qui se parlent via le cache du CPU"
+    ],
+    "liens": [
+     "https://www.humanite.fr/social-et-economie/armement/donnees-armement-travailleurs-du-clic-la-face-cachee-des-ia",
+     "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQZGl0V2FuOHRQTkFETmpWU21rZmNPUm1tN1J6bzhFZ21xZzh0UmQtamtoTE11QkN2ZGpmTWEwZzFwOS01SjJuUnFJZlU5al9xQVg4ZjFfeGVDMkVHVjhrRTdzc2lSbnl3RURkUHktOUZjaXRWU1RhZERTZFU0MGRHSXVfWExDUjd6TTlhU3BqS2Q3blFkNjRBV0VjMWtnT1RPUkd0UGNtR2xBazJDakE5T2t1M2xpSWd2Uk9ad3VVXzFSbjZVbjZVTUdldTVReUtqQWt6NjJoaGlZaEFzY2RWaUh5TE92SU55UkZxdDUydw?oc=5",
+     "https://news.google.com/rss/articles/CBMijAFBVV95cUxNQnF4SFcxbkYtZ08zQ3hOcUxQVVIwb0RMMWcxZGFmTktjUF9RMWowdHVnU0NwM2RwMENOQmVjalU3R0J5TEpTekZVMmVUbGNjcVZ5UVhlWV92UWNCTzZXS2FITzFZZGY5YTQ5X0tqNzFvU0VBcWdHaVpqd1gyNHpFQ3Bkbms3YzZxbTVCZA?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.013,
+     "eco": 0.011,
+     "science": 0.354,
+     "qhse": 0.173,
+     "fun": 0.316
+    },
+    "score": 6.53
+   },
+   {
+    "sujet": "Qu’est-ce que l’hafnium, ce métal stratégique, volé en grande quantité dans une usine Framatome classée Seveso seuil haut ?",
+    "score_base": 11.38,
+    "nb_articles": 8,
+    "sources": [
+     "Epoch Times",
+     "L'Humanité",
+     "Media24.fr",
+     "Sciencepost",
+     "Sud Ouest",
+     "franceinfo",
+     "ici.fr",
+     "sudouest.fr"
+    ],
+    "vitesse_8h": 0.62,
+    "preuves_tendance": [],
+    "titres": [
+     "Framatome dans l’Isère victime d’un vol : c’est quoi l’hafnium, ce métal ultra résistant qui a été dérobé ?",
+     "35 pays assemblent en Provence une machine de 23 000 tonnes : ce qui a repoussé de 18 ans son premier allumage n'était ni la physique ni l'argent",
+     "Qu’est-ce que l’hafnium, ce métal stratégique, volé en grande quantité dans une usine Framatome classée Seveso seuil haut ?",
+     "En Isère, plusieurs centaines de kilos de hafnium, un métal stratégique, volés dans une usine Framatome classée Seveso seuil haut",
+     "Encore un vol de cristaux d'hafnium, un métal stratégique, à l'usine Framatome de Jarrie, classée Seveso",
+     "Plusieurs millions d’euros d'hafnium, un métal stratégique utilisé dans le Rafale, dérobés sur un site Seveso en Isère"
+    ],
+    "liens": [
+     "https://www.humanite.fr/social-et-economie/justice/framatome-dans-lisere-victime-dun-vol-cest-quoi-lhafnium-ce-metal-ultra-resistant-qui-a-ete-derobe",
+     "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPbHBJU0xGbjJzcFplck0tb3JXVGVsRG5JUUtEZ1RPTXVma3E3N1ZHeVg1MU1Kc2lVYXZGS084RE1LeFE4NlVnM1pQNVp4ZXN3ZDhCRUoycENrNi1Wa1pmUjRMY2NRVHRaY215S3lINTJ2cmdEcEhlcUI4bVVUVm5jc0lJOUhkM2tZZkJpWVZBVGVDQVloOEUwdEdlMnhLRlRNdWFNaC1FWDlsdzNvbXBhcXN4anNIMmVCY0t1emhfTWU2a1YyR3lvdWpBX1BNalJqQ2w1ZjRZUklqOGZhVUY1c0NhWDBGN1liUUMxQUQ5RUs4bFJXaU1rNQ?oc=5",
+     "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOQWxFbDQ0SmNPeDVLMjF4VGJFV2tpWDRJM0Y3U25tdVc2QmczcmFLYjJ0bUdZSnd3NEZjdkRPSWJmaklqZk1TalgxZ2lMM3prT3NfelJHeEg0X2lWdjNhMV9Gb2ZNR3lieUl4b0c3MnhqUjJTRmRSWWFTMnRBSDJTdkFkWGRZYTZjeTlHNWdjNlM1MG9KQnBTdTNKYlVmUVgyajZzNjN0bmNPYTN4Wm1qbXJidnBGYWlxTEVmM19jUnJONURIaUJhODRuNU9vUXBhbzhYWm0zRHhwV0FzZmk0MDdVaDI4QW1BMWxRbkdXdERxaDhyZ2FhdGZoNldsZw?oc=5",
+     "https://news.google.com/rss/articles/CBMiigJBVV95cUxNaWRRUDU1MzlId0w0YTl6cDFhUXR3RkpLRXM0ckZ3Sk1wdTlWaFl5RGR6X1FNTGxPSDhxc2VXMlUza3BtZC1tYnhBb1dzYVluZW9UY3hwNndDQWxVQjhzU0ZXWjcwU1hzRVJCR1Jia09kRC1DTFQzZGFfd21WN1JmNWVLNV94N1htWjRWTk12MXpyNnRKYVEyMzQxLWYwd0pyY1l5R2k2WGYtQ2ljM1Q0OUVuRmlrU01PT3c5eERTUDZfZHAtT202bWxLVWg5S0lDcXh2aTRVVS1JQWRYcWdtakZURkM2UHViUS1WdWpILWFINW84dDAyYTNBMHZKbTBEeUs2bzBxN0ktUQ?oc=5",
+     "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPVlJOR29tOUR1c3ZDemFFNXVuODRsTlZsb2dLeFlaQVFucVdHYkhSN3BkZFJ0d2xWcThBX0NjX1lUcEYzU1d3TW1SR190dGg4bWRjcUlUM0hwWFV2c1B1bzNIY0ZFcGZCUU9fUGFBekFvSjZMY2g1ejRhV1ZzcVNYYU5IVURsM2lZNUZ1c2hYUlViTUpOZHk1d3ZfQlNtRWxxUE1QQlNDRWl6eXA0azdhN01XQlBRTTY1RXFaVnA3MXdEWFJwUENwbGFMdVRYRUdqbWJ3OGsyaFRsV3FJMkVLeGFDd0syNUxhajFER1Y2QnVEbmFYQk9WMw?oc=5",
+     "https://news.google.com/rss/articles/CBMiygFBVV95cUxOMTlQankwRUozZ0lOcVZjLU1VX0lLNTU0N0lVLVlGYUFvWTBWdThUVEdzOVZKcVh6OXpuSExyMm5DOGN4ZmRGYnlOb3JWVWZmcW5jNlZtaDB4aTRPV3RzVFB3dXJfdzN2VmlzdEZZdzhGbjI2M0Q1RVpXVmhEMlplN2tsMEtyYllRQnBmemVjSmg4YlhQbnRPOUE5dFpqdkFNUVdGRllNc0tfeEdWeklMOVdyR2pPWWFUam1DbGZOSzJTdk1wTjZUdE1n?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.173,
+     "eco": 0.125,
+     "science": 0.293,
+     "qhse": 0.257,
+     "fun": 0.079
+    },
+    "score": 6.51
+   },
+   {
+    "sujet": "Agriculteur, marin, ingénieur et navigateur : les 1 000 vies de Georges Havelka, doyen de France d’échecs âgé de 100 ans - Ouest-France",
+    "score_base": 10.390000343322754,
+    "nb_articles": 3,
+    "sources": [
+     "Ouest-France",
+     "Sciences et Avenir",
+     "larochesuryon.maville.com"
+    ],
+    "vitesse_8h": 0.67,
+    "preuves_tendance": [
+     "wiki : Hervé Vilard",
+     "wiki : Dominique de Villepin"
+    ],
+    "titres": [
+     "Qui étaient les bâtisseurs des dolmens du Quercy ?",
+     "Agriculteur, marin, ingénieur et navigateur : les 1 000 vies de Georges Havelka, doyen de France d’échecs âgé de 100 ans - Ouest-France",
+     "Pissenlit , ortie … En Normandie , une balade pour découvrir les vertus de celles quon appelle  les mauvaises herbes "
+    ],
+    "liens": [
+     "https://www.sciencesetavenir.fr/archeo-paleo/sur-les-traces-d-un-village-neolithique-oublie_195016?xtor=RSS-4",
+     "https://news.google.com/rss/articles/CBMinAJBVV95cUxNTUhmNWlrTTZobmVrTm93aWlReVpvZW9yN095ZEFzbE9aSFREYVNWaFBRUkU4bThjenNoU0w3aEFTYlNlNGNxcDY2S1JPRXlkNWNGckE5ZkNZaWlyOGZ2MXBjOUdsMnpZMFpSaTJ5OTN3anhkTWJURkJ5bFRMV2FoNGEzcmxyYXY1a2xCaGRqUHotQ1NkNGJZcDBTaWgxZHV0d19YNzBQVldkRmZZbWgzNWphbi1mOTAtdFlmbTdwdV9ndEZOSWRWOEh3cG01WXdGbVpYU0xjTy1HZHRUMDF6eElnMnRyMjg0aVRUOWpQZy1QZ0czSzc1S0drYlRhanI2WXRDRFBmY2RvLWxuUmtLbk1sVjNPWk5sVl9PWA?oc=5",
+     "https://larochesuryon.maville.com/actu/actudet_-pissenlit-ortie-en-normandie-une-balade-pour-decouvrir-les-vertus-de-celles-qu-on-appelle-les-mauvaises-herbes_54028-7543280_actu.Htm"
+    ],
+    "adequation": {
+     "actu": 0.355,
+     "eco": 0.101,
+     "science": 0.289,
+     "qhse": 0.11,
+     "fun": 0.222
+    },
+    "score": 5.78000020980835
+   },
+   {
+    "sujet": "Les États-Unis considèrent l'hélium comme un matériau critique alors que l'Europe subit une pénurie d'approvisionnement",
+    "score_base": 7.0,
+    "nb_articles": 3,
+    "sources": [
+     "L'Energeek",
+     "L'Usine Nouvelle",
+     "Quartz en Français"
+    ],
+    "vitesse_8h": 0.33,
+    "preuves_tendance": [],
+    "titres": [
+     "Batteries, matériaux quantiques, fabrication avancée… L’Institut Laue Langevin de Grenoble, source neutronique la plus brillante d’Europe, veut accroitre son impact dans la société",
+     "Les États-Unis considèrent l'hélium comme un matériau critique alors que l'Europe subit une pénurie d'approvisionnement",
+     "Les États-Unis ont désigné l'hélium comme un matériau critique pour les chaînes d'approvisionnement des puces."
+    ],
+    "liens": [
+     "https://www.usinenouvelle.com/industrie-technologie/cote-labos/batteries-materiaux-quantiques-fabrication-avancee-linstitut-laue-langevin-de-grenoble-source-neutronique-la-plus-brillante-deurope-veut-accroitre-son-impact-dans-la-societe.VDGELZ34DRHWTPF4QKZMUA3KW4.html",
+     "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPbmV6Njl3REo0SFRQVWRoN2ZiQlNQc09jMTZqblQxNzN6UFpiMjlSdnVWSDJjelZ5dkl6NlZVN3FodXhwcHpZcl9EUHdCUWR5TGltQ0FBZlVpZlZKQlJpQkJHOUJwdjRpNVY4Nng4ODNYVXJTa192MnhZbmR1VC1HTG14ZEd6UmdrT1dxSDZ4UzlESC1kNGttajR4WW5EdFNDZG9YdE1hV2tWTUZZVzVyYm1TZi1vT1gxbjNFeTlHOUdfYnVFVkM4OXJYTHE0RlhiQks0emo1SEV6T3FBbFI5aUlHSkQ?oc=5",
+     "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTk5melNJSFdVRmJrNkRzUjVSZTNjTmgtYTBZSWExVWdieDdncGo2X1RiS0ltYWFRYkFtdVhfY2FjTVVkTjNFdkZjM25CSC1RUHhmaUlkWTBqaGE4U040c2FtampYdkJMZjhpM1pXRFJ4Y2pHNF9hVWZCdGhNaGZFS1hvVnFVdmxxeXdmeFgyTGZGOEFfb1Zlcw?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.207,
+     "eco": 0.226,
+     "science": 0.351,
+     "qhse": 0.304,
+     "fun": 0.157
+    },
+    "score": 5.63
+   },
+   {
+    "sujet": "Maine-et-Loire : intégration de Sojadis Équipement au sein du pôle d’innovation Handilab",
+    "score_base": 9.119999885559082,
+    "nb_articles": 7,
+    "sources": [
+     "L'Usine Nouvelle",
+     "La Montagne",
+     "Mosaique FM",
+     "Presse Agence"
+    ],
+    "vitesse_8h": 0.14,
+    "preuves_tendance": [
+     "wiki : France Info (offre globale)"
+    ],
+    "titres": [
+     "Pas-de-Calais : partenariat entre Calais Promotion et EDF pour accompagner la décarbonation des entreprises",
+     "Maine-et-Loire : extension du partenariat entre Itancia Technology et Nucleon Security en France",
+     "Maine-et-Loire : restructuration industrielle de Néolithe, à Beaulieu-sur-Layon",
+     "Maine-et-Loire : intégration de Sojadis Équipement au sein du pôle d’innovation Handilab",
+     "PARIS : Entrepreneuriat - AmHappy déploie son réseau d'agences au service du pouvoir d'achat des TPE/PME",
+     "Yaïche plaide pour un nouveau partenariat industriel avec l’Europe"
+    ],
+    "liens": [
+     "https://www.usinenouvelle.com/hauts-de-france/pas-de-calais/pas-de-calais-partenariat-entre-calais-promotion-et-edf-pour-accompagner-la-decarbonation-des-entreprises.E5VV4JKMIRGEBKB2BKO4TVHF6Y.html",
+     "https://www.usinenouvelle.com/pays-de-la-loire/maine-et-loire/maine-et-loire-extension-du-partenariat-entre-itancia-technology-et-nucleon-security-en-france.F5255H4LJ5CKFJD3RVERMPZJIU.html",
+     "https://www.usinenouvelle.com/pays-de-la-loire/maine-et-loire/maine-et-loire-restructuration-industrielle-de-neolithe-a-beaulieu-sur-layon.DN5UJ2BHNNCDPHFPWAPVAJFNUU.html",
+     "https://www.usinenouvelle.com/pays-de-la-loire/maine-et-loire/maine-et-loire-integration-de-sojadis-equipement-au-sein-du-pole-dinnovation-handilab.4NE2SWWSGZHC3FUF2HNFH7ZO4U.html",
+     "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPY0NyQ29LQno3c0pMUTFEWDVyd2RsWmxmaUY4NkxESmltd21qaUtUMjJZeThMQWlEem9hdERNNHpWQXZIXzlHY1dwaDRpd0JqZkpjOGhSOENRUkRjMWZISzNabElTeERrSm1ZOHBXWXpXdjIwVFpPeTBsY2JOUVF1TjhfaFRURW5SUVg0RUF1SHZzeXE4czZhdjhnOUdJMGppMGN5WHhUdWhWajhoY2xMSUlQTEZDdW1lMEtLN1VQTUQ?oc=5",
+     "https://news.google.com/rss/articles/CBMivgFBVV95cUxNY1ZmWDg2NHoyVE9EbHBMUDRjME00QjhId0pwcS1acHk2TVJwSHZIRlZrNXlQZzZsRGNyd0p3cVdPWGFTR2RGNUkwWS1PLXlVMC1iRGh3T0IxRVZYTnRGSkNLU1ljdXR3VERBZDJvQi1BbUNBcEVBd2xxUzd3NHVVN2RaSnR0ZmJVcGR2UWJfWmNtTGhqOHNpNEs2M21uR25qWEpmREFzSFVyVVRNYll4X1A0cXVtLVRTNS03T2ln?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.447,
+     "eco": 0.214,
+     "science": 0.301,
+     "qhse": 0.379,
+     "fun": 0.277
+    },
+    "score": 5.510000228881836
+   }
+  ],
+  "qhse": [
+   {
+    "sujet": "Salaires : pourquoi les entreprises redoutent autant une hausse du smic",
+    "score_base": 10.63,
+    "nb_articles": 9,
+    "sources": [
+     "BFM",
+     "Boursorama",
+     "Force Ouvrière",
+     "L'Essentiel de l'Éco",
+     "LACTUACHO.COM",
+     "Le Figaro",
+     "Les Echos",
+     "NVO",
+     "Yahoo Life France"
+    ],
+    "vitesse_8h": 0.22,
+    "preuves_tendance": [],
+    "titres": [
+     "Pouvoir d'achat : les syndicats veulent un vrai coup de pouce au SMIC, le patronat veut voir Lecornu",
+     "Malgré un taux de chômage au plus haut, \"44% des entreprises ont des difficultés de recrutement\", constate le directeur général de France Travail",
+     "Salaires : pourquoi les entreprises redoutent autant une hausse du smic",
+     "Le recours collectif des employés de Chili's vise à remettre en cause le salaire minimum réduit appliqué par l",
+     "Salaires : les femmes gagnent toujours 12,8 % de moins que les hommes, selon les nouveaux chiffres de l’Insee",
+     "Emploi industriel : l’hémorragie continue"
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOTkVYaW9QaWxCcHIzVG1uYk9XVlhWR2ZLRGdKckR2eHZ4MXNCWkZxcVZ2elp4ODAxQXpnSTJPNmIzenVwT3NTRVcwMzYwdlVTVXp6aWtxenpTLU53QjJnS0k5dnhmdnFFOHFVdDEzeGJ6b2k5OEN5blZjWFFQVDBMOUJzQy1UQWxKUllyY2FRRUlhRzE3MTdTZks1Vnl5T3VnQktCSFJ3bFZTZ3BDb2JDZWs0SGVsLTB0endYcFo3TDBLclE5YXJxclVMbVpPQm1jQlpNbW9lZ214eF90Tm9WZUcwdThyUQ?oc=5",
+     "https://news.google.com/rss/articles/CBMipgJBVV95cUxOTnlvMEp3NE9rVWlxTUZHMVNsQ2xTd3NZbHI1Z0MzSk9vY1dzdVdpbHI0OG1CSEhBNnhPejFHTFBkQVhNWWhERHNidUtnZDg3dGNIbzgtakVzMWlZTWt4cG00YmtwWWVZcmVTUzJhTDYzVjgxQ3ZCMFNaVldraGRfb2NySG1SMERwQmRZRGFkbGozX1pKdjBDNi1zYXd6OEZOaXhVWlN6VGk4OFdSSHNkQkg5RHRQRnlyX2VfS2NQMGNpTnZRQWQxVENFZzNSWWxjdWR3Q0hVRDBpcy13QkVDalR4RnB2ZUhMeWh0dnpFNmdJZU5yVWdTd0NyTWVPWTI2aFRQZWx3U25HT2tndHJQbENnN0RTTlhJbGM0SVpnYmJ6UWQ0S3c?oc=5",
+     "https://news.google.com/rss/articles/CBMirgFBVV95cUxPbnVUQTZvc05CT0tBdU1ReVR3bXk5RTd4Nkt1azFLeF9zRkd2dkMtUGdLY1hEZWYwSlY2UUJMZEpLc2ZxOTlKaTFIYWRMWXJIbTd3cktVWU5reDZYSExNVWZ0bFRXemR0RDR1YzI1OExuMmdIRm1tdUpwdEUtTWdvZkNFaUJxMGFaTkhnVTJPdGdjclhGb0ZhbHVOekk4aWM1YUJ1U3A3Wm5malNIQmc?oc=5",
+     "https://news.google.com/rss/articles/CBMi7AJBVV95cUxNenBWNlgxc2NNYUo1TDNuUF9heGs5c3dHQ1JNYzlQSm1PU2RYVTctWk51RVBRdWxnWG5Fd1lwVm45ZWlVeDhfNk5vSks0bnh5ekRtSXJlMDRqeUNZNnJQQVpUR1cwOFB1WlcyM1RwemFNZDJaVFdJVTJkWjdUbjRNa2ZaLXFORzBPSkllV3A1cHBwS2hTaGFUQmFqb3JLaHpTWTdZRHB3d1VrX2RhWUcxQzhqOUFzRmdKZUh2SGNuNzRzOTJKa01kU1VuTHVCS00yR0E3amZEU2lTM1E1blFNUW9ock8yZUdJbFUwRUpONTFJdkxVS0dtUThCeE5jNXRvWWtzVDc0aVFKdWlTSE0wMVItMXlQdng2aVQxNzJVa0gyX1VmTWFuQ08yU0xlTXlKdHRwNTNWWjFIUmpCaFh3MDZJdXhXRkVJMXA0UkxIOHc2ZzdkdVplRWRjd1RJVEItZEFtOHItZS1QNGho0gHsAkFVX3lxTE16cFY2WDFzY01hSjVMM25QX2F4azlzd0dDUk1jOVBKbU9TZFhVNy1aTnVFUFF1bGdYbkV3WXBWbjllaVV4OF82Tm9KSzRueHl6RG1JcmUwNGp5Q1k2clBBWlRHVzA4UHVaVzIzVHB6YU1kMlpUV0lVMmRaN1RuNE1rZlotcU5HME9KSWVXcDVwcHBLaFNoYVRCYWpvcktoelNZN1lEcHd3VWtfZGFZRzFDOGo5QXNGZ0plSHZIY243NHM5MkprTWRTVW5MdUJLTTJHQTdqZkRTaVMzUTVuUU1Rb2hyTzJlR0lsVTBFSk41MUl2TFVLR21ROEJ4TmM1dG9Za3NUNzRpUUp1aVNITTAxUi0xeVB2eDZpVDE3MlVrSDJfVWZNYW5DTzJTTGVNeUp0dHA1M1ZaMUhSakJoWHcwNkl1eFdGRUkxcDRSTEg4dzZnN2R1WmVFZGN3VElUQi1kQW04ci1lLVA0aGg?oc=5",
+     "https://news.google.com/rss/articles/CBMigwFBVV95cUxOOTdiOXFRVU1nOFVXeVFkNHZZTk5LU3VCLU00UDE3VWQwM1BJRU5YbjZ2SDRRaEx1M21LTm0wRlV4LUpFM1F5N1BQQmdmZkM1Qzk4Yzh3OFdhaEU5Ylh0Zng2QktqRGtiRjJVSXpLeHVlTkNJd2lIeERyOFBGSDJWMDBiWQ?oc=5",
+     "https://news.google.com/rss/articles/CBMifEFVX3lxTFBiYXlCc2s1MFlJa2JXWi1hX2pfX2VYWW5rTENwZHgyTkxRZnZsMkFJeEczeGluemxOSnhjV1Izb19mZTVmaWxoTENUeFMyakpsTHdmX3JubEpkTndvVHUwQlF4UVRCWlE0TTNZZkgyRjNfSHczMkdPOGtZMTU?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.291,
+     "eco": 0.353,
+     "science": 0.211,
+     "qhse": 0.458,
+     "fun": 0.154
+    },
+    "score": 13.1
+   },
+   {
+    "sujet": "Projet de budget de l'Etat 2027: Orientations des réformes économiques et fiscales programmées",
+    "score_base": 16.86,
+    "nb_articles": 51,
+    "sources": [
+     "Actu.fr",
+     "African Manager",
+     "Andlil",
+     "Bourse Inside",
+     "Boursorama",
+     "CESdeFrance",
+     "Capital.fr",
+     "Europe 1",
+     "Kohen Avocats",
+     "L'Economiste",
+     "L'Usine Nouvelle",
+     "L'essentiel"
+    ],
+    "vitesse_8h": 0.2,
+    "preuves_tendance": [],
+    "titres": [
+     "Gironde : relèvement des objectifs financiers 2026 d’Exosens",
+     "Gironde : renforcement des moyens financiers et des compétences de Coravia avec NextStage AM et Medissimo",
+     "Budget 2027 : «Le gouvernement va tenter un 49-3», pressent Eric Coquerel",
+     "Fin de vie : le Parlement adopte définitivement la proposition de loi",
+     "«C’est normal que les députés sèchent» : à l’Assemblée, comment le chaudron budgétaire s’est transformé en petite bouilloire",
+     "Budget de la « Sécu » : les députés sabordent le projet de loi à l’Assemblée nationale"
+    ],
+    "liens": [
+     "https://www.usinenouvelle.com/nouvelle-aquitaine/gironde/gironde-relevement-des-objectifs-financiers-2026-dexosens.HAQ6OXSUJJDRTOT2Q55UTVHC5A.html",
+     "https://www.usinenouvelle.com/nouvelle-aquitaine/gironde/gironde-renforcement-des-moyens-financiers-et-des-competences-de-coravia-avec-nextstage-am-et-medissimo.2BY3LX4ZARHHTN4Q3FSRZ4IDKY.html",
+     "https://news.google.com/rss/articles/CBMirAFBVV95cUxPOVN2cURrSDhLei1iWEpleTM0ekVOUDQzdDNGNE9uU0NWV3ctdkJFNlZTaURXM0Z6ZHdFUHdTejNmc2p0V204MGVNM1AxcmVYeEFsQzQ4VzVOb1lVcC13WXI4LWZNRG5QR1Z3dGVkRGdlS3Y0NENGX3J4enlDZVZRa01sRkpnYVZGSzloQ3FJLXhZMlZ2SDZFTGhub2daRDZvVGExOG40QW92WUF00gGyAUFVX3lxTE1KSFR5SnEwQ2dyaVF0LU9wckUzbVdiLUN4eHROMjhjZm9OOENoVnBxZG01NlVSa2VScmUtTS00ZU9BMTh0eFlXcExiWUhpZHNEcDVpM3RVOTlleHFfWjBMelNJRXRXQXgtc0xKdWFGNTk3aDBQVnFmdVp2OE9oc0RhNDA1NzJ5clFfZDQ0WllBREVMQ2V5YVdnMVA1UEF5bnJOUGpNOWdyaU9WcWd2SnpOWkE?oc=5",
+     "https://news.google.com/rss/articles/CBMipAFBVV95cUxPdTFNdFdWNVB6bVZvNDZhbm1lTjQwQ1hTdkZQaVNxdzNRdngyT1llMWhzMm5RbjE0RUdkc19sRkROd1VmcHZEUVRwZ0wyMEJKVF9WbjN3LWdtMFNLQlpTeTZjcm9KblJTWlpGbnF0TkZmLUdLUUVLajNfckJtZ1FfY2Zsc1BGSFlvOF9jOEJYSXRYaGpZUDctZUp1ZFhCQmRoeE84Qw?oc=5",
+     "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPOVlELUcwSzBBeFRBWm1YWUZuYm50RkoweWFlak5hbDh5X3dpWnA4U3ZqT1lqQU0wWU9HWlc1eTd2aTE4R3dmQ1FaZFlhcExhNU5zUTVlQ2lGeEFCaG9JSnpWNm9BUk5TZkg5UUM2S19FbTFScmkySGFiMGFSOGIyTFVWV2ZwMmlTYU5lRnhJbk5sMlc5NFFBWGhLZU83R284alJzbHB4amJYVGpNbFJXZkttcGg5ZjlIUXQ1cmdqTlFqazRxYjhFOUNQV3NQMjh4Yk5Fck9Edng4akpZM04zeG5mbV9GNkFUTmFJY3BlbmV6aTVM?oc=5",
+     "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOUEFScEwyb0YxR1ZIb1Q3LVdsVXJGc3A0TWpuX205S2dadEo1LUlmZ0E2SU9iTXBlaTFYSmVGRWM4cFBvbVlYZGl1Q0Qtd3ZKWk42VlpLakl2OFFCX2pRckt3Z3c5T0NRb283ZmxiRzAtRThrYndMX0VVLWNNRG9zSjlGdTF2aHdiQ0swX050X21oN0taSXZ5cE91Z0JUak1WUHhtb0xtMXY4amwzUDdWbXdxMDM5S2E1TVdIMzlZTnVuVEltT3pfX2VKSktsTGdhQ1RJTXBqRm81SndvSnVsNGtYQkpjYWc?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.429,
+     "eco": 0.647,
+     "science": 0.114,
+     "qhse": 0.305,
+     "fun": 0.127
+    },
+    "score": 10.45
+   },
+   {
+    "sujet": "Dans quels secteurs les salaires ont-ils été le plus augmenté en 2026 ?",
+    "score_base": 11.3,
+    "nb_articles": 10,
+    "sources": [
+     "20 Minutes",
+     "24matins.fr",
+     "L'Echo",
+     "La Montagne",
+     "Le Revenu",
+     "Le Télégramme",
+     "Modes et travaux",
+     "Yahoo Actualités",
+     "www.horizons.dz"
+    ],
+    "vitesse_8h": 0.4,
+    "preuves_tendance": [],
+    "titres": [
+     "RN 2027 et PS 1981 : quelles similitudes économiques ?",
+     "« Une grande partie des ménages sera affectée » : en baisse en 2026, le pouvoir d’achat va-t-il augmenter en 2027 ?",
+     "A quoi sert encore le changement d'heure en 2026 alors que les économies réalisées \"sont anecdotiques\" d'après les experts",
+     "Opinion | Vieillissement et IA: la productivité plutôt que l'impôt",
+     "Impôt sur le revenu 2027 : voici les nouveaux seuils à ne pas dépasser selon votre situation familiale",
+     "Le Conseil des ministres adopte le PLF 2027: Intégration des augmentations des salaires"
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMipAFBVV95cUxNRWVybl9XS1o4cFZxR2RUVE1vYkQxSkZBWU5BVTRaanJwRnNyWEpCdTRWd1hkZkZGdklyelhXa2wxcXhTWmFpUVhKOUtwUE5oYW9PRk9tNEJyMTN1X0Fab21NN1RNSVFCWHJUREhQaWNXVEU1YkhiY185NTItM3BaZ3Q0dHFtNXdPcURPR1ZqXzNUbXJWTVg1R21Oc1VMWFlhWXBLaw?oc=5",
+     "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOc3YwWEgyUE9SUG9CVXdJaEM0MVU2X2l3OC1qU19NY0g3WHZjVXlFemptOGlIeWl1OHpibWVWeTZXVEplcUJuakEtMTNjajlfZE1GWmRfVHlfTmlHTjFBY05HcmtmNUVnUy1zeDNxSE44dTNhZDdYcHI1NENveGhyOFFONlRKN1dJU1E1MGZaWXlfUnhMSEs2ZHg4ejcxTHY2UGFSbUE4NkVROFZNbGxfYmpqT2FRZXdiX1BJRzFYUmFmTk1UeHNzb01MMmNqb0Q2NXdKZG9NaWRWWjF3ZVIzQ2Y3MU9KbDA?oc=5",
+     "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPbVl5M2c4VmRpbjZlc3loQ3lqV21KNGhKN0pxMWNFUlNjUC1WRWNKODFhYWFCSnBDSkdEU05qSGxoRXBnZnRkbWtCRmZtVG1xeUxqQ0F6Q0NRSnVrMnEwNFBrbk5hTXYwMXdYU0NfbzRkWEFtOS1fbVZtSlVsOGs1UGVTUTBhYTdIRVRBS2hsUXRMeldJYm5SV0JrNGk4cWRtZHRWcl9SM1dDZTcxVHY5MWlnQ2ZTWURFcmNPQmZRYko0X3hMSG5PcFcxcm53eGo1N1o4VS0wYTNDdWxsbUplRWpXQXAzOC1hZHJTSS1QOTRwU3lzUHRrd2pJSVNUaE9fSkFIR3RrZDY?oc=5",
+     "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSDFFTzBtSkU5MmJSNHN6ZUxfaVVLRXJzV0FmSXBKWFJXRzlrVktKYVFBeW55c3lzZDlBN2xSc0RVelo4SWt0TV9oS2ZrWmxObGtOWUhpQW1DLWZlQ2RmcTlHWGYyZlZSaXpNa01QcHRjald0MGpucTNqLTVHaWRTLXQ2WWJoYTZfcjVDSTF6LUd1TkpyUzNscVFRUEsxQjNOaWpCekY5UGR6MEZaLW1feEhUNmVldw?oc=5",
+     "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPSHZRaGpIVTRzWmJKVFluVm9MbjJoZFJkejByVXNtZjRqMGs4YmhNQlFTbENyN3kzRDk1cHVQSTJielNFSWtFc2pocm1VenZFUm4zbXRlUXJoc2pnTHpMSHBZaUVSMkdlZGpLenVYSzlZM2lGVUNub1h0cEdPdEdXQ3Y1clFrRmlDcnA5c3Q4NXh0bTRjTVJDSmZuMWowZmZ2TXY2eUlfbVBxMVRwZ2FLd0hjZ3BtZ3FjYUs4M25Jd1g5NjhNeWxmNzZvcWVmLUg4NXZUWFNhY3p0TktPN0diYTAxQUtYQnhuT053Q3dneUh3dw?oc=5",
+     "https://news.google.com/rss/articles/CBMiuwFBVV95cUxORmw5OVNGM256cnVfV3hlZTdsazg1Rm01RThuSHZxZ2poX3BFZG1WYXBUQ1NmVVdLcmFPSDdfa01iV1BqUjVEdUdKTExPRkxyak1qNVNhR0NKMjlfTVBVcHphLXlmQllFZk1yeEc4dWxJc0pVWmFFZkc4aHNuQ0c1YlNOWVk3QXBMWkJudHRaYmZWN0RCT2I3SjRTcWFtY2ppUkFvOWwzQk9JUHNtUEJwR2s3UUhSTEtVSHF3?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.32,
+     "eco": 0.609,
+     "science": 0.207,
+     "qhse": 0.343,
+     "fun": 0.117
+    },
+    "score": 8.72
+   },
+   {
+    "sujet": "Maine-et-Loire : intégration de Sojadis Équipement au sein du pôle d’innovation Handilab",
+    "score_base": 9.119999885559082,
+    "nb_articles": 7,
+    "sources": [
+     "L'Usine Nouvelle",
+     "La Montagne",
+     "Mosaique FM",
+     "Presse Agence"
+    ],
+    "vitesse_8h": 0.14,
+    "preuves_tendance": [
+     "wiki : France Info (offre globale)"
+    ],
+    "titres": [
+     "Pas-de-Calais : partenariat entre Calais Promotion et EDF pour accompagner la décarbonation des entreprises",
+     "Maine-et-Loire : extension du partenariat entre Itancia Technology et Nucleon Security en France",
+     "Maine-et-Loire : restructuration industrielle de Néolithe, à Beaulieu-sur-Layon",
+     "Maine-et-Loire : intégration de Sojadis Équipement au sein du pôle d’innovation Handilab",
+     "PARIS : Entrepreneuriat - AmHappy déploie son réseau d'agences au service du pouvoir d'achat des TPE/PME",
+     "Yaïche plaide pour un nouveau partenariat industriel avec l’Europe"
+    ],
+    "liens": [
+     "https://www.usinenouvelle.com/hauts-de-france/pas-de-calais/pas-de-calais-partenariat-entre-calais-promotion-et-edf-pour-accompagner-la-decarbonation-des-entreprises.E5VV4JKMIRGEBKB2BKO4TVHF6Y.html",
+     "https://www.usinenouvelle.com/pays-de-la-loire/maine-et-loire/maine-et-loire-extension-du-partenariat-entre-itancia-technology-et-nucleon-security-en-france.F5255H4LJ5CKFJD3RVERMPZJIU.html",
+     "https://www.usinenouvelle.com/pays-de-la-loire/maine-et-loire/maine-et-loire-restructuration-industrielle-de-neolithe-a-beaulieu-sur-layon.DN5UJ2BHNNCDPHFPWAPVAJFNUU.html",
+     "https://www.usinenouvelle.com/pays-de-la-loire/maine-et-loire/maine-et-loire-integration-de-sojadis-equipement-au-sein-du-pole-dinnovation-handilab.4NE2SWWSGZHC3FUF2HNFH7ZO4U.html",
+     "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPY0NyQ29LQno3c0pMUTFEWDVyd2RsWmxmaUY4NkxESmltd21qaUtUMjJZeThMQWlEem9hdERNNHpWQXZIXzlHY1dwaDRpd0JqZkpjOGhSOENRUkRjMWZISzNabElTeERrSm1ZOHBXWXpXdjIwVFpPeTBsY2JOUVF1TjhfaFRURW5SUVg0RUF1SHZzeXE4czZhdjhnOUdJMGppMGN5WHhUdWhWajhoY2xMSUlQTEZDdW1lMEtLN1VQTUQ?oc=5",
+     "https://news.google.com/rss/articles/CBMivgFBVV95cUxNY1ZmWDg2NHoyVE9EbHBMUDRjME00QjhId0pwcS1acHk2TVJwSHZIRlZrNXlQZzZsRGNyd0p3cVdPWGFTR2RGNUkwWS1PLXlVMC1iRGh3T0IxRVZYTnRGSkNLU1ljdXR3VERBZDJvQi1BbUNBcEVBd2xxUzd3NHVVN2RaSnR0ZmJVcGR2UWJfWmNtTGhqOHNpNEs2M21uR25qWEpmREFzSFVyVVRNYll4X1A0cXVtLVRTNS03T2ln?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.447,
+     "eco": 0.214,
+     "science": 0.301,
+     "qhse": 0.379,
+     "fun": 0.277
+    },
+    "score": 8.350000381469727
+   },
+   {
+    "sujet": "Inspection de la situation sanitaire à l'hôpital d'Al-Nashmah dans le district d'Al-Ma'afir, à Taïz",
+    "score_base": 6.0,
+    "nb_articles": 3,
+    "sources": [
+     "Paris Normandie",
+     "Vietnam.vn",
+     "وكالة سبأ"
+    ],
+    "vitesse_8h": 0.0,
+    "preuves_tendance": [],
+    "titres": [
+     "Dans cet hôpital près de Rouen, l’Inspection du travail pointe des défaillances graves pour les agents",
+     "Inspection de la situation sanitaire à l'hôpital d'Al-Nashmah dans le district d'Al-Ma'afir, à Taïz",
+     "Inspection du travail de première ligne dans les communes de Na Duong et Loc Binh."
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQTnFKZHgxV0pCb3Y4Q1hfLUxROEZ2U01BUGZkUUpjcE9CNjdmUEJSNlFmazRjcUw0X0NNS1VFNFl6bmRGSEd3MF9KNzhBaTJTUzIxa0dXTjJZUnoydm51SWV2Uy11LW01YWRCTGY3TGs4dDRJVnA1ZW1oY1RfcGx1YVFyMTY0c2xlUmxpdkFtV1hxR19SamMtYVdyMmh0MS16OWJLbjNYMjZTSWNsOUdrYXNFTl9fc2tDX2dPTW9Eb3JQeGpsQVhXX3AwMlg5T2VUX3c?oc=5",
+     "https://news.google.com/rss/articles/CBMiSkFVX3lxTE0tRzBXVXB3Ty1oUHcwM0JvR1VoejYyOEdRY0cydXU4WW9ZdVRjcllqcmY1Zmhkb3R6Q1NUNmNBczBBTHdhOGEybl93?oc=5",
+     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPNVg0eG8wWU5tb25HVWZQTnY1ckZ1UHg1Y0ZXQ09laFlIdUhpQWY2OEhFVGh2dDJFSU5XdW1MTE1pOGhmYmt5WkZZNjh5VmNpZ0tnVjNha3JkQklkTDJYblBSM2NWSTNWS2QwMDhEZHJwcGxLSWVuc0JHSmpXQ29NVl95ZGlHWHA2T0lV?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.073,
+     "eco": 0.073,
+     "science": 0.123,
+     "qhse": 0.458,
+     "fun": 0.067
+    },
+    "score": 7.39
+   },
+   {
+    "sujet": "Le ministère de l'Intérieur a publié une liste de 31 catégories professionnelles soumises à des exigences strictes en matière de sécurité au travail.",
+    "score_base": 4.0,
+    "nb_articles": 3,
+    "sources": [
+     "Vietnam.vn"
+    ],
+    "vitesse_8h": 0.0,
+    "preuves_tendance": [],
+    "titres": [
+     "Le ministère de l'Intérieur a publié une liste de 31 catégories professionnelles soumises à des exigences strictes en matière de sécurité au travail.",
+     "Pénurie de personnel de sécurité au travail.",
+     "31 catégories d'emplois sont soumises à des exigences strictes en matière de sécurité au travail."
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMipgFBVV95cUxOR1BGd2p2QWFzMVozN3REVldLT1ZvYUV4MGRPRlB0MEhHTlpITU85dWFPSDJzN2MyS2JaeUdwYlRocDJseDVpMDVSMnlxRjFBRVA4VFVtZThCRkphaTFqdkhUREU0YmEyaGJTVTJBc2c2VE5IU1JGMzBhUnpIbzVDQVpla1ZJZURfVDhfRmxpaGM2YjB2ZGRaUjd5S3NYNkVLTDN1enhn?oc=5",
+     "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5UZWlJa0ZKOENBUmpaZkVxdlA1WFJhcDk4SUNaVlNxUEtkXzM3U3RoTGt1dFBuNVVydk9zTzVTcFBOekEyYk9XYkY0elh6RkZ6cm1QOFFFYUQ4dVI2Y0k2OHdER3BEOWxi?oc=5",
+     "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcnI4eFJuQXZMRTZMci1YZktVUHZGeEY3cG9XczE4Q3NybHV5MDE3Ukh1ZXBfRWdSakpya0hSemVlcldodElHbzBSNXh2SXp2c2ZNNnNFYzJlWDhmcmdWX3lwU3o3MWJKeVd6aFhwNWhZYmNWV1V0Yy1GT1Jfamp3ZHJsd25kZF96MUtiWHJWQQ?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.187,
+     "eco": 0.235,
+     "science": 0.22,
+     "qhse": 0.592,
+     "fun": 0.095
+    },
+    "score": 7.07
+   },
+   {
+    "sujet": "Professeur de basse (H/F) dans la fonction publique : offres d’emploi et salaires en octobre 2026",
+    "score_base": 7.81,
+    "nb_articles": 8,
+    "sources": [
+     "Juristique",
+     "Le Club des Juristes",
+     "Thot Cursus",
+     "www.horizons.dz"
+    ],
+    "vitesse_8h": 0.0,
+    "preuves_tendance": [],
+    "titres": [
+     "Journée du 17 octobre : le Gouvernement peut-il ponctionner les prestations sociales accordées aux casseurs et pilleurs",
+     "Conseiller en économie sociale et familiale (H/F) dans la fonction publique : offres d’emploi et salaires en octobre 2026",
+     "Référent des enfants confiés (H/F) dans la fonction publique : offres d’emploi et salaires en octobre 2026",
+     "Professeur de flûte (H/F) dans la fonction publique : offres d’emploi et salaires en octobre 2026",
+     "Professeur de basse (H/F) dans la fonction publique : offres d’emploi et salaires en octobre 2026",
+     "Directeur insertion probation : offres d’emploi - octobre 2026"
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMikAJBVV95cUxQR2gyMUlOS0ZNSlQ0a3JvRXNDbXlVVkJodDhMU1J4cTZ0SlVhdDdwa0pXMFk3OXFYTWtuSkpwNXJRMXdHNE03OXpocDN5RHY2aHRHWEp3ZnJZSEZuMHRDUE5jWmViOUZscTJKUFVkT1ZoelQ1anBaYkk0OGlFRWVXRUx2M2E0aFlCdWpBNkhVei1UZ2lubHFVNEljR0lPdWhqb09mNmcwb1daTFZxQkIxNURHaFRPZFUySV9zM3ItenRtaEVXeFlsY3dXcGcwaHdWNnZ3UGVTaFlpMTVVSmp0ei1fYXBTX3FJaWJEeUVUODRCNGRnTktDc29tb29fdTFfNmtqQ0J5di1XSWdNb1V3Zg?oc=5",
+     "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZkJ1QU5aVmQtcjR2YUt2ZGhqcm1JbE5fZEtTX193SHdlQU1CUEU4MFRlN0YtdzZUV1J3QXZRWXdQVjFhSXR1al85eUFwWjhMNUh1d19ZSHpiVFYyX2E5dVkzeHhLaEJKaG5XS1R6Q0xsOGhSWHB5NE9NaVV5dk5OdHhBSDRfb1R0cmR1Y2VrMjlnb0kySmc3NHVTRXJmTHpVc0tnUDBSWmhMZVk5blpZa1k4aGpHT2ZMVDBvMUdweUN3U3JJ?oc=5",
+     "https://news.google.com/rss/articles/CBMisAFBVV95cUxObFZ6X055LUlrUHlHNGI2d1RGRC1MS09yNVU0cFphUW5kM1FxR3N4QUtYb2ZTSHhMU2E3TEgzYUNiMFBscFdRcHdqR1l4T1I1YnAyQTd5U2VTbmxrajRpOVJOUXpTSXJEZDJaTU81MEp3MnRSOVoycEVEWWg5TUVHR2xwa1FSSFl2cjN6TU1DWlk5T1oxY1JrdTFfR0VLNXNMeDhhQkYtRmJ5Nm4tZlFZcg?oc=5",
+     "https://news.google.com/rss/articles/CBMipAFBVV95cUxOcEliNHZNb1hEc250UzZoWEVtMlJJLVYzZFFlaWJlNjNJM3VJd2YxdURFY1kwa0pJWmhhRWxhVVR4Q25IZWN3YXhNbE40d01ySHB5RlJPWVhnYjV3aWdXYndHNExXUVJKRUxDT3RDUnJzenNkSUp2QmQ4LTRjcDkxYlJRR3paM2dtNk9DYzZ3a05KLS00dk5GaHFuU25VUFU1S01rdg?oc=5",
+     "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcTQ1QUt3TlVlaUtfZTFjekxGLWZRMXZubmJYR0xsZG1yTTJBZXdLTUpBYVRaNnB0Q0ZfVW1Mcl9pUDdUTnZGbDQ1MlpXcDJTaXZVQ0VuSFB1a1pGTks0MnlKXzFrYTR0RDJDYVVyR0otRXBiSzhGRkJoeGdUeGdEY0taQWxGeXdRTFhHdjM1Y1MxQk1qOTFHcUg4dHBhN3JhWXNOUg?oc=5",
+     "https://news.google.com/rss/articles/CBMizgFBVV95cUxOekxRRnJKWElFR3ZvaENNWTdGVFFRWmlHLS15cUF2STlMeVdEUGJRZ2NVUzlZdVdKOTdVQ3VLTnR0VUUzOU0yeUl4XzdTOFhhd3NmaGw5NnlVZ2VxSzdQZm1xSWZxdm4yUjdpS3c3ZHZiUHQ2akI2ZWdpc3Z5ZWVJWVlfVWEyT0R0bzN3STFGd3hqN1djQTRVaXQtR3FQN29Yb3ZLNVpTU1BEVktXVXFWd2tLU252Ui1jVTBvaEpCOXlNS0tXdkxLa2J3Ti1ldw?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.325,
+     "eco": 0.373,
+     "science": 0.13,
+     "qhse": 0.37,
+     "fun": 0.114
+    },
+    "score": 6.87
+   },
+   {
+    "sujet": "Dette publique : Moody's maintient la note de la France malgré les tensions budgétaires et sociales",
+    "score_base": 23.8700008392334,
+    "nb_articles": 72,
+    "sources": [
+     "20 Minutes",
+     "Actu.fr",
+     "Anadolu Ajansı",
+     "Atlantico",
+     "Atlasinfo",
+     "BFM",
+     "Bourse Inside",
+     "Capital.fr",
+     "DNA.fr",
+     "Empruntis",
+     "France 24",
+     "France 3 Régions"
+    ],
+    "vitesse_8h": 0.33,
+    "preuves_tendance": [
+     "wiki : Liste de sondages sur l'élection présidentielle française de 2027",
+     "wiki : France",
+     "wiki : France Info (offre globale)",
+     "wiki : Élection présidentielle française de 2027"
+    ],
+    "titres": [
+     "La « fatigue informationnelle » touche de plus en plus de Français",
+     "«Le Palais» : le Désérable nouveau est arrivé",
+     "EN DIRECT - Manifestations en France : les gilets jaunes appellent à des «casserolades» vendredi",
+     "« Lupin », « Dix pour cent », « HPI »… Ces séries françaises qui ont conquis le monde",
+     "Paris : nasse en cours vers la porte de Vincennes",
+     "Quand l'IA déchiffre Napoléon et les registres de Notre-Dame de Paris"
+    ],
+    "liens": [
+     "https://www.lemonde.fr/economie/article/2026/10/25/la-fatigue-informationnelle-touche-de-plus-en-plus-de-francais_6800054_3234.html",
+     "https://www.liberation.fr/culture/livres/le-palais-le-deserable-nouveau-est-arrive-20261025_EAYK5E3N3ZA5FHZUOWHOQCI7EI/",
+     "https://www.lefigaro.fr/actualite-france/manifestation-24-octobre-orleans-rassemblement-national-20261025",
+     "https://www.20minutes.fr/diaporama/diaporama-4256854-lupin-dix-cent-hpi-series-francaises-conquis-monde?at_medium=display&at_campaign=149",
+     "https://www.humanite.fr/-/-/paris-nasse-en-cours-vers-la-porte-de-vincennes",
+     "https://www.sciencesetavenir.fr/sciences/d-une-lettre-chiffree-napoleonienne-au-big-data-l-ia-bouscule-la-recherche-historique_195422?xtor=RSS-18"
+    ],
+    "adequation": {
+     "actu": 0.688,
+     "eco": 0.274,
+     "science": 0.058,
+     "qhse": 0.221,
+     "fun": 0.172
+    },
+    "score": 6.78000020980835
+   }
+  ],
+  "fun": [
+   {
+    "sujet": "Saint-Lary-Soulan. Le succès des randos gourmandes de La Mitoyenne",
+    "score_base": 33.720001220703125,
+    "nb_articles": 17,
+    "sources": [
+     "Chassons.com",
+     "Info-lux.com",
+     "L'Humanité",
+     "L'Usine Nouvelle",
+     "Le JSL",
+     "Libération",
+     "Mediapart",
+     "Midi Libre",
+     "Paris Normandie",
+     "Sud Ouest",
+     "bienpublic.com",
+     "dna.fr"
+    ],
+    "vitesse_8h": 0.53,
+    "preuves_tendance": [
+     "trends : dette",
+     "trends : monaco – lille",
+     "wiki : Fusillade de Trappes et La Verrière",
+     "wiki : Affaires Luc Tangorre",
+     "wiki : Vianney",
+     "wiki : Jean-Luc Mélenchon",
+     "wiki : Hervé Vilard",
+     "wiki : Outre-mer La Première"
+    ],
+    "titres": [
+     "«Signé Irène» de Vincent Almendros : Minuit à l’heure d’Irène",
+     "Foucault et la colonisation: du silence à l’omniprésence",
+     "« Les Garçons » de Mauro Bolognini : un parfum de dolce vita entre hommes à Rome",
+     "Pâte à papier : l’usine de Saint-Gaudens de Fibre Excellence dans l’incertitude totale",
+     "Saint-Lary-Soulan. Le succès des randos gourmandes de La Mitoyenne",
+     "Gourdan-Polignan. Lycée Paul-Mathou : le bonheur de partager au-delà des frontières"
+    ],
+    "liens": [
+     "https://www.liberation.fr/culture/livres/signe-irene-de-vincent-almendros-minuit-a-lheure-direne-20261025_KWDOXTPZSVDCJCOICTRLJCHK44/",
+     "https://www.mediapart.fr/journal/culture-et-idees/251026/foucault-et-la-colonisation-du-silence-l-omnipresence",
+     "https://www.humanite.fr/culture-et-savoir/cinema/les-garcons-de-mauro-bolognini-un-parfum-de-dolce-vita-entre-hommes-a-rome",
+     "https://www.usinenouvelle.com/emballage/pate-a-papier-lusine-de-saint-gaudens-de-fibre-excellence-dans-lincertitude-totale.YZUUDKE3A5AL7IKSQ5DKADPEPE.html",
+     "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQjBPOWljUHVKekt2dXQ3WnlOQzY1MVR5YW1KMmMxR1NFM3BSMm9zSGQydlVtRkt0TktwT0xkRWRmZ29mOTJXUEZhU2xFLWJ2S2hUZEdwc3Q5NTluam9hdjhYa1BvemNWV1dpdzJ5RDlkanN4S2dGVjU0azhpSVhUaEdoel9JTTFsWmpyUXl4VUxZenduY1NhN0xaS0k?oc=5",
+     "https://news.google.com/rss/articles/CBMisgFBVV95cUxONnVrRnQ4OVVGY21ScTZMYWlscTNObzZKczNWamQxNzhpN1hEbHN6QmZIMmhITWlXNHA0Z0QzWjBabXdZMjhKekJoMmJYNFNBRlhJZFo2aEtDTFhoNGN0TnM4eWRyekpmV1F5UVdyRGtQZTNTc3M1MjBhcXJyVzRRdG9Ua1Y4eThPVUdtVTdTWk5YNXJmaWZuQ3h2NVEzcFBzX0Rpakswb2E3QzAteHpHSG93?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.327,
+     "eco": 0.066,
+     "science": 0.133,
+     "qhse": 0.068,
+     "fun": 0.43
+    },
+    "score": 37.77000045776367
+   },
+   {
+    "sujet": "  Le mystere Lucy Lost  : Cinema Avant premiere a Mulhouse",
+    "score_base": 13.520000457763672,
+    "nb_articles": 8,
+    "sources": [
+     "20 Minutes",
+     "Mediapart",
+     "bfmtv.com",
+     "dna.fr",
+     "franceinfo",
+     "idboox.com",
+     "radiofrance.fr",
+     "telerama.fr"
+    ],
+    "vitesse_8h": 0.88,
+    "preuves_tendance": [
+     "wiki : Les Misérables (film, 2026)"
+    ],
+    "titres": [
+     "\"Moulin\" de Lazlo Nemes : la confrontation entre le héros de la Résistance et le tortionnaire Klaus Barbie dans un film éprouvant à la beauté crépusculaire",
+     "«L’esprit critique» théâtre: trois histoires de la violence",
+     "« The Storm » sur Netflix : Une comédie vacharde à ne surtout pas regarder entre amis",
+     "Du thtre au cinéma , les mots de Victor Hugo sur le front des luttes sociales",
+     "  Le mystere Lucy Lost  : Cinema Avant premiere a Mulhouse",
+     "De  La Princesse de Clèves  à  Materialists : comment la représentation de lamour dans nos fictions préférées a évolué au cours du temps"
+    ],
+    "liens": [
+     "https://www.franceinfo.fr/culture/cinema/sorties-de-films/moulin-de-lazlo-nemes-la-confrontation-entre-le-heros-de-la-resistance-et-le-tortionnaire-klaus-barbie-dans-un-film-eprouvant-a-la-beaute-crepusculaire_8245621.html#xtor=RSS-3-[lestitres]",
+     "https://www.mediapart.fr/journal/culture-et-idees/251026/l-esprit-critique-theatre-trois-histoires-de-la-violence",
+     "https://www.20minutes.fr/arts-stars/4255035-20261025-the-storm-netflix-comedie-vacharde-surtout-regarder-entre-amis?at_medium=display&at_campaign=149",
+     "https://www.telerama.fr/livre/du-theatre-au-cinema-les-mots-de-victor-hugo-sur-le-front-des-luttes-sociales-7033544.php",
+     "https://www.dna.fr/pour-sortir/loisirs/Cinema/Avant-premieres/Alsace/Haut-rhin/Mulhouse/2026/10/25/Le-mystere-lucy-lost",
+     "https://www.bfmtv.com/culture/cinema-series/de-la-princesse-de-cleves-a-materialists-comment-la-representation-de-l-amour-dans-nos-fictions-preferees-a-evolue-au-cours-du-temps_AN-202610250033.html"
+    ],
+    "adequation": {
+     "actu": 0.233,
+     "eco": 0.02,
+     "science": 0.092,
+     "qhse": 0.012,
+     "fun": 0.4
+    },
+    "score": 13.520000457763672
+   },
+   {
+    "sujet": "Pour un bon robot-pâtissier à prix abordable, privilégiez...",
+    "score_base": 15.24,
+    "nb_articles": 29,
+    "sources": [
+     "01net.com",
+     "20 Minutes",
+     "Android MT",
+     "Challenges",
+     "Foro3D",
+     "Frandroid",
+     "Journal du Geek",
+     "L'Usine Nouvelle",
+     "La Crème Du Gaming",
+     "La Revue Automobile",
+     "Le Dauphiné Libéré",
+     "Le Figaro"
+    ],
+    "vitesse_8h": 0.31,
+    "preuves_tendance": [],
+    "titres": [
+     "Il espère tirer profit d’un marché qui pourrait atteindre jusqu’à 635 milliards d’euros en 2035 : l’allemand Agile Robots se lance dans la course des humanoïdes",
+     "Au revoir Thermomix, ce robot multicuiseur Moulinex Cookeo+ passe à moins de 180 € ce dimanche 25 octobre",
+     "Cet aspirateur robot laveur ultra puissant est noté 4,6/5 par les clients, pourtant il coûte moins de 100 euros",
+     "Les robots se heurtent à la réalité : trop chers pour remplacer l’humain",
+     "eufy Omni E25 : l’aspirateur robot laveur qui s’occupe de tout, à 579 €",
+     "Dyson 360 Vis Nav : ce robot aspirateur au look de vaisseau spatial est 900 € moins cher qu'au lancement"
+    ],
+    "liens": [
+     "https://www.usinenouvelle.com/technos-et-innovations/robotique/il-espere-tirer-profit-dun-marche-qui-pourrait-atteindre-jusqua-635-milliards-deuros-en-2035-lallemand-agile-robots-se-lance-dans-la-course-des-humanoides.FFWEXYCIB5ON7OTVG3R6XIPMGY.html",
+     "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOSXBiZzlIZnM3aEFWVGtZMkhkanozWmFnN1RrSTFDM1V6NkJKb3Q4UnlTMzFDQW9QdmFWQjhtZ19ETFlvSWRPTkhTUXRXaHhZU0pVb2VYdHpRdXFsTHNoOFZOUzR0SXZVdnByOGhsTkJlYzZKS2tzRmlidVNkWmRpZHlNbVRyd0d0ZjJFcHVZNENDOFNNdVlZMEhrc3lsdEY4TXpzRjB2bk9LaUJFcnlaelV2bm5OVHBQNWllMGFRWUhXdWJfR0pQMU9NMnpwMnpscTNkYno4dkg0cFZaMXUwb1dRb3FKNVE?oc=5",
+     "https://news.google.com/rss/articles/CBMisgJBVV95cUxPRnB1UGJpcmlqS05DcHV4TnBZa3l6SDRkeWZSbnM1NU5nU25BUEQ2OXVBNU02TElCZktaMy1rX1lvdFJVbGlGcTRxMEU0OGpzeGNVTUxoY2I0Y1ByRFAzUTd5R0RJVmlfUGJ4NzF3VUZyUl9aYkVjUjVOakdpT3M4ekJOMFh0eWs5bjgxYlZsMWstRWFONzE1ZnE0WnpNSXZmLV9jQ2FhWTZRdmRkQWt0czE1WDNNUjdabDVDUGVyTEU3RTJsbGtXUTBGaVZEWFg3c0pHcm44c1RSTlBtSnYzQklRRTJ5TU1BYTJjRkR1eUs2LXl5ZS0yS3BzYkI3NnFXcHpTME01WHM1YktzRHQ0R2ZJdjAxbzRDaTRpVk9RXzlob2xMM0xxQnkyUkMzcXZpNGc?oc=5",
+     "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObWRVaTU4Q1ZjWHZuY01IMFlCMlp1VXRzOE1ROE5Jc0EzZ3VPQlFLWlAwMVVNdkNyQ1BPV1NoS2tYZUNxcG1HaHlyRFRyRXh3ZFFadmI3Ym9qcm5ZeEpTc3FHV1RZSDJoM3hzcVEyUHdvMTUzQ0lMbXBvOFJ5UEk3UnJWcHIxYlNRcFlaa1NWWFhtOW9RMmVzYUpKZVItV0dINW1OZ2p2QjdvLTQ?oc=5",
+     "https://news.google.com/rss/articles/CBMixgFBVV95cUxOY2xqeFd4N0k0Uy1PLVZYNjh3eHllb2NRSFdnUW9ad3lQcWs1RTdFbEh3d2otYUNUaU1IM0ROSlIwMGZYSU9BdEVldUNZTklFTFU1R0FzRlhheV81c2FoaUgtb1dFdEYxNUlOUDhHSDJIZVM0YkVzZHVyOXhERGNJc2dTOHhpOXpkcWNJRWdQN2VoMlIzbzJQWmpmY0I0RS1zRG1lckplZ2xzRnZnU3J5MTF2ay11REFPaXNieUVidFB1cFR2clE?oc=5",
+     "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPbTFrdmdEbWhaOWFnejE0V0hwakJac05TenlWVXFiQk13bHJVcFlmSV8wdi03bG9YeG9zZUkxdTFlQW1LV1pZN2J2RGpIMkFCeE1Ta2ZtSXZYd3ZKV19kQ3RpU1FuRkdLNjRYTUhvaW1ERWdjOTQ4S25HVWpDUk9lU1VvUFlOMGVOUm5sUWRveF9TalE1RjlNTjVkMWcwS3UtbkhiZTVTZ2pwenZnMWI0cUYxWlo4R1pwTG1pZkNOT19KbV9pQ3RMcjlnbWZRX2EwUUl0dXBxcEVtU2RBd2Ew?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.03,
+     "eco": 0.007,
+     "science": 0.444,
+     "qhse": 0.065,
+     "fun": 0.369
+    },
+    "score": 13.35
+   },
+   {
+    "sujet": "Pas-de-Calais : participation de Roquette au salon AAPS PharmSci 360 2026",
+    "score_base": 10.010000228881836,
+    "nb_articles": 6,
+    "sources": [
+     "L'Usine Nouvelle",
+     "La Montagne",
+     "Libération",
+     "Sciences et Avenir",
+     "lalsace.fr"
+    ],
+    "vitesse_8h": 0.33,
+    "preuves_tendance": [
+     "wiki : Manifestations du 17 octobre 2026"
+    ],
+    "titres": [
+     "EN IMAGES – Les mobilisations du 24 octobre dans le regard des photographes",
+     "Wildlife Photographer of the Year 2026 : découvrez les clichés primés",
+     "Pas-de-Calais : participation de Roquette au salon AAPS PharmSci 360 2026",
+     "Pas-de-Calais : Viči récompensée au SIAL Innovation 2026 pour ses nouilles à base de surimi",
+     "Vic-sur-Cère : découvrez le Cantal en réalité virtuelle avec \"Vol'Cantal 360\" à l'office de tourisme",
+     "Huningue . Jusquau 8 novembre  : comme un diamant taillé , les 15es Rencontres photographiques au Triangle"
+    ],
+    "liens": [
+     "https://www.liberation.fr/societe/en-images-les-mobilisations-du-24-octobre-dans-le-regard-des-photographes-20261025_IGBH5T6QSJBJDHZT2OIQSHDWFU/",
+     "https://www.sciencesetavenir.fr/animaux/biodiversite/wildlife-photographer-of-the-year-2026-decouvrez-les-cliches-primes-du-celebre-concours-photo_195436?xtor=RSS-26",
+     "https://www.usinenouvelle.com/hauts-de-france/pas-de-calais/pas-de-calais-participation-de-roquette-au-salon-aaps-pharmsci-360-2026.BJIEBNQ5NBBJTMIBD2A5SA2DOM.html",
+     "https://www.usinenouvelle.com/hauts-de-france/pas-de-calais/pas-de-calais-vici-recompensee-au-sial-innovation-2026-pour-ses-nouilles-a-base-de-surimi.EDHBXGOTZRAP5KGVNH5MBFR2YE.html",
+     "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNSU9reDJxNWR5aHJ0NXlJblk5R05uY1Z2Q0lpUkRPcXd5RmZqbEQ4ek85QlJOZFA5OF9tLVVmWFhtNlpWSWNKVDhpMUUzYm1neHZzQ2pXamZVcUIwdkYyWlYwLUl5N210dXVydEw1dXBSWHZIdnVKLUpMTkNLV29QeHV0UEJKUkZ5dUNuLW1EOVJqTHVlOUxrMUd2Rk0xU2NVbUdwc3E5N3B5c3Jmd3RZUE16T0ppb09KbHU5RG5wT1l1d1AwUXpyT0o2Q2gyWW1NbVVBdnY1czl5NnlER1V2UVRiQTZaUnpNMThSd3dELUpSVTZr?oc=5",
+     "https://www.lalsace.fr/culture-loisirs/2026/10/25/jusqu-au-8-novembre-comme-un-diamant-taille-les-15-es-rencontres-photographiques-au-triangle"
+    ],
+    "adequation": {
+     "actu": 0.196,
+     "eco": 0.056,
+     "science": 0.129,
+     "qhse": 0.098,
+     "fun": 0.465
+    },
+    "score": 12.609999656677246
+   },
+   {
+    "sujet": "VIDÉO. Courir 135 km les yeux bandés : c'est parti pour la tentative de record du monde en Sarthe - Ouest-France",
+    "score_base": 12.140000343322754,
+    "nb_articles": 8,
+    "sources": [
+     "DHnet",
+     "L'Avenir",
+     "Le Blog Moto",
+     "Ouest-France",
+     "RTL Info",
+     "Zamin.uz",
+     "maville.com"
+    ],
+    "vitesse_8h": 0.62,
+    "preuves_tendance": [
+     "wiki : Outre-mer La Première"
+    ],
+    "titres": [
+     "Après 24 heures et 145 km de course les yeux bandés, il pulvérise un record du monde : « Le vent a été intraitable » - Ouest-France",
+     "Un record personnel et le bronze mondial en Backyard pour Damien Mataigne",
+     "« On va prendre une bière et s’écrouler » : après avoir couru 830 kilomètres en cinq jours, Ivo et Merijn fêtent leur record",
+     "VIDÉO. Courir 135 km les yeux bandés : c'est parti pour la tentative de record du monde en Sarthe - Ouest-France",
+     "Semi de Valence : Jana Van Lent à sept secondes du record de Belgique",
+     "Le plus rapide des motards doit son record à une tondeuse"
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMilgJBVV95cUxOd3Rpb1lrdjM2dEFNVVFGWWUxdUkya1Q1VlNpTmY5RWxsdVZnMWl2YmVyVXpuWmNMN3o3SVQyTEZQMEhWTXdrcEJ4clpPWm9GOENsNU5QbTQ0cG51TG9WTnk2WVBTVXNiVFdzTFZZdkU1VWpqcVh6NWtCc19GTW5pN01seHhtZVdZNnhwYzZIU2dpLW1QQkpmQThBZDljTzQtNXJxb3FLS3JyVElUSTJTcjRwWEZXTW5QMmVidGpEb1ZfZlJIRHJ1VDl5UTFsbnlFLVpsOTU5bjV6YUhoZjllTkRvWHlxTl9sNjBwQXNrVUF5WGRFNmtwaUtuTUZ6eUt0NmFFRE9rSy1KcUZGQlBfQkpyNkNOQQ?oc=5",
+     "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNMF96SDN5YW1ZS3ozSF9YakVPSjl6RlJaSDljWk1GcEdrLXl4aVloTTdJcGlLbzZXV1BFUGdJdFRhNUo5UVhGVTFVY3pQQm1VdVF1X0lNS21WS0NSUDlXZHlmR1lEWXg2a2s3Ukw0MkJ0ajRjNEtRZzZPbGVsdHk3RnA2aVg5S3ZJRWlOQlY5Q0JxUFpzSXJxSkxWOFhSUXJXWDhZdk5GVnV3Qm5mOFRvZHhXU2owWjVMQ2ZhYVpER1hNM3p1S0IyY1UwQnY2cFNFV29DZEo5blB4S2o4RU5VSnBUZU5WVkNPWnpaSkZlRWhfQ1dJ?oc=5",
+     "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNX1ZpZ1BIRlB1WEVkd0p5b3VSR3JvcmYzNzJmeHF0a0xESnRIR3l2S2lLMjNGeWNSbHNrVlBwNE1FUFVKa0FkeTdZcDFIbXZyNDg2SjE5Ti1zc2dqTjNBekRSOEF2cy02ZWNvV2JuUVc0bV80TXRuWGxxenNCMkJSSWNIWEYycFNQRVhFV05odnJjTkx6bWFTN2w5WVRNaGo1b21Za3FVa3BGODdCWHRLY2xTWHpHeE8tb1JzVG1vRlh2Z2owTGJ2aU5fSFhJZjVEaUJBenpZMkM1RkRlbzI0?oc=5",
+     "https://news.google.com/rss/articles/CBMigwJBVV95cUxQQ2xuWFdEbDVDZms1ZmphcFJnbElqM3dHSTlJdnlxZmlqcVJXTFM0ZUFMZE1NbmxiZnd3amxJV3RxY2hKTE10NXFoQzVWeU1sTmJsTGx1bVBQck02VUU1TzluMDB3cGU4MzN4Z3ZyZ3BYMlRSbXVCeWl0SUNBTGhzdDY5ZlVfYmJlQWJCU0w2SUcwc3FaZkFhQlY2TllIaEpidWFMZGlxdmJxLVZPRE9GZ0psczVOWVIzS1FhRmxpMWstX1NDVlVIYkVRN3VzNVJrUEg0dFBuNVlEZUN4QTFLbDdhV1B4Skk1TW1VQlVKdmloQUwyQlhpZmVCdVFER1prTUd3?oc=5",
+     "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNUHFHOXA0MkVDRzNFaTB2NUxPRkFwWFd4a2JpLWt4eUpVWnhLOUpxYUdyaE83ZzVxQ0FPcHhlTXVYRmkwUXpXS2kyM0hmSWQzTldUNURGQVFwSUV3dWR5QmRjYlQ1b2llWlRhWEdSc3Z2YXk3cEd4QUhzQXdUZGJiQV9XVXJsNDNVUGdVR1hRTzllcVZLTTJndUFGVFl2VkNoM0lRak1Vd0ZrSHR4Mll0QmNoc25tWjA4SXJWbmR1Z0p0Z0ZjVjM3emVZLVRGbnA2MjhTeWJ6Y005ZTJKN3VKZjJQQzBZb0Zt?oc=5",
+     "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUFN2NHVESmVtX1dkemh4V3J2TmlOczRBNGgtaDNWM1k5bFFhRnRTbDQ4S0wyZ0wySWFOOVRzdHBYX3YybTlyZzdZU09yUUZYWTFOaHpmTmJmdmpBY0VaV1RsVWdXYkpNT3NCUTBtcVk5RWptWjFIcTA2M2lCTnI5dW9XMWs5TXJkcXBielN3?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.247,
+     "eco": 0.019,
+     "science": 0.152,
+     "qhse": 0.055,
+     "fun": 0.395
+    },
+    "score": 11.899999618530273
+   },
+   {
+    "sujet": "De la lumière au cœur des abysses",
+    "score_base": 13.510000228881836,
+    "nb_articles": 4,
+    "sources": [
+     "Futura",
+     "Sciences et Avenir",
+     "telerama.fr"
+    ],
+    "vitesse_8h": 0.25,
+    "preuves_tendance": [
+     "trends : élise lucet",
+     "wiki : Fusillade de Trappes et La Verrière",
+     "wiki : Bismillah, c'est les ténèbres",
+     "wiki : Stardust, le mystère de l'étoile"
+    ],
+    "titres": [
+     "Le ciel de « La Nuit étoilée » de Van Gogh existe vraiment : des scientifiques ont retrouvé la nuit qui l'aurait inspiré",
+     "EXPOSITION. De Eureka ! à Abracadabra !: les liens entre sciences et magie",
+     "De la lumière au cœur des abysses",
+     "  Un diamant dans les gravats  : Luz passe une nuit avec ses fantômes dans le Centre Pompidou en travaux"
+    ],
+    "liens": [
+     "https://www.futura-sciences.com/sciences/actualites/astronomie-ciel-nuit-etoilee-van-gogh-existe-vraiment-scientifiques-ont-retrouve-nuit-aurait-inspire-138767/#xtor%3DRSS-8",
+     "https://www.sciencesetavenir.fr/decouvrir/exposition-entre-magie-et-sciences-plus-qu-une-illusion_195434?xtor=RSS-27",
+     "https://www.sciencesetavenir.fr/nature-environnement/mers-et-oceans/bioluminescence-pourquoi-ces-animaux-des-abysses-produisent-ils-de-la-lumiere_194996?xtor=RSS-15",
+     "https://www.telerama.fr/livre/un-diamant-dans-les-gravats-luz-passe-une-nuit-avec-ses-fantomes-dans-le-centre-pompidou-en-travaux_cri-7046521.php"
+    ],
+    "adequation": {
+     "actu": 0.123,
+     "eco": 0.034,
+     "science": 0.239,
+     "qhse": 0.073,
+     "fun": 0.342
+    },
+    "score": 10.380000114440918
+   },
+   {
+    "sujet": "🦖 Découverte d'une créature mi-dinosaure, mi-oiseau - Techno-Science",
+    "score_base": 7.0,
+    "nb_articles": 3,
+    "sources": [
+     "Futura",
+     "L'Usine Nouvelle",
+     "Techno-Science"
+    ],
+    "vitesse_8h": 0.33,
+    "preuves_tendance": [],
+    "titres": [
+     "Une IA qui se reproduit comme un organisme vivant : les chercheurs explorent un scénario digne de la science-fiction !",
+     "Vu dans la chimie : une initiative en faveur de la biodiversité, un nom pour la fusion AkzoNobel-Axalta, TWB...",
+     "🦖 Découverte d'une créature mi-dinosaure, mi-oiseau - Techno-Science"
+    ],
+    "liens": [
+     "https://www.futura-sciences.com/tech/actualites/intelligence-artificielle-ia-reproduit-comme-organisme-vivant-chercheurs-explorent-scenario-digne-science-fiction-138717/#xtor%3DRSS-8",
+     "https://www.usinenouvelle.com/chimie/vu-dans-la-chimie-une-initiative-en-faveur-de-la-biodiversite-un-nom-pour-la-fusion-akzonobel-axalta-twb.74GHCFLC35AYPLXF2CCHUUDNEQ.html",
+     "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTVJza3dVbldMd0pfaXJ5d2tjakNha0NWMmJTS2ZuOHQzU3ViLUlPa0t4TGNaLVVOT2FtNlg1RkV6eVdXWTBlWXFXZ3hBVDdEdXhyYlgtd3BDTlJfcE5zdmxGcTlWWVFvcEplaTVGWWJaLUtTbTBtd1V4U2t1SDB0VHIyNDY0cDh5ZWM4VFZqbw?oc=5"
+    ],
+    "adequation": {
+     "actu": 0.029,
+     "eco": 0.119,
+     "science": 0.498,
+     "qhse": 0.147,
+     "fun": 0.49
+    },
+    "score": 9.52
+   },
+   {
+    "sujet": "Préservatifs, couveuse inflammable, pot de chambre... Ce musée de Rouen ouvre sa réserve d'objets insolites",
+    "score_base": 8.0,
+    "nb_articles": 3,
+    "sources": [
+     "Actu.fr",
+     "Sortir à Paris",
+     "closermag.fr"
+    ],
+    "vitesse_8h": 0.67,
+    "preuves_tendance": [],
+    "titres": [
+     "Révolutionnez vos sorties avec ces expositions immersives à découvrir à Paris et en Île-de-France",
+     "Préservatifs, couveuse inflammable, pot de chambre... Ce musée de Rouen ouvre sa réserve d'objets insolites",
+     "Zazie : son incroyable loft de 3000 m² dans une ancienne usine à Paris possède piscine et domotique ,  Je lai entièrement redécorée avec des objets rapportés de mes voyages , ou bien chinés dans les boutiques que jaime  "
+    ],
+    "liens": [
+     "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQZmJOQjJNcFJsTzlvdDdHYkptZG4zbkdKZ1hRdHptZDhCMnhWdHc0N2gxdkVLdHMyZUpMcUxsRVNjWEZWc1oyYjdneHRBOTdBRTlUVmxQQWxuUDRCYzZiSTJIa01tUGUzWUl4VmppMjlLaG4zandQV0pybmp1cHNlOUwxek1iV2o1SU1Yd3FpY0VsVHJkdjdmNE41MEZacWR2RWFHd0F2SjRPY2o2dmZfVVoxUF8zcVJIZHBzVVZnYzdLWm9PaWMwZ1BERlVRUkRvR214NDdJeUhMZ1JnNTRsZlRKdlA1NU14SjU4VkpEdUwyZw?oc=5",
+     "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNmx3Q2ZESjNmZFZ2aFEyX3FBYkZSVnRFSlJxTXVvNmQybENiVS1Oc0RYajg3eV9YaHZ3alM4UDhnRUIyZWtBaWVqOFRPUUl3Vkg3OUNXNl9UeTl4WWxrVXQ1eFZnQXJuTlR2VEZVUUx6elJuQmxMcUg1Rm4yamJ2aU1VQ3piZlMtVUdxSEVBbVJnWFh2Y25nY2lGSFo1aHlXWkRvbUZYekRxcmJOM1RUa0hqbjg5SDlha0xiVUVaLUhZTjY2dGVvYTVoZTN6eDY1c0FJUU9CRmltT2RSZ2pma2RWNjV4dnhHMFE?oc=5",
+     "https://www.closermag.fr/people/zazie-son-incroyable-loft-de-3000-mc2b2-dans-une-ancienne-usine-a-paris-possede-piscine-et-domotique-je-lai-entierement-redecoree-avec-des-objets-rapportes-de-mes-voyages-ou-bien-chin-3665626"
+    ],
+    "adequation": {
+     "actu": 0.278,
+     "eco": 0.008,
+     "science": 0.262,
+     "qhse": 0.169,
+     "fun": 0.436
+    },
+    "score": 9.15
+   }
+  ]
+ },
+ "tendances": {
+  "trends": [
+   {
+    "terme": "dette",
+    "volume": 500
+   },
+   {
+    "terme": "élise lucet",
+    "volume": 5000
+   },
+   {
+    "terme": "crystal palace – newcastle",
+    "volume": 500
+   },
+   {
+    "terme": "liverpool – brighton",
+    "volume": 2000
+   },
+   {
+    "terme": "lockheed martin f-35 lightning ii",
+    "volume": 1000
+   },
+   {
+    "terme": "neal maupay",
+    "volume": 500
+   },
+   {
+    "terme": "psv eindhoven – feyenoord",
+    "volume": 200
+   },
+   {
+    "terme": "atalanta – frosinone",
+    "volume": 200
+   },
+   {
+    "terme": "inter fiorentina",
+    "volume": 200
+   },
+   {
+    "terme": "monaco – lille",
+    "volume": 10000
+   }
+  ],
+  "wiki": [
+   {
+    "terme": "Cookie (informatique)",
+    "vues": 103106
+   },
+   {
+    "terme": "Ali Rabeh",
+    "vues": 38173
+   },
+   {
+    "terme": "Fusillade de Trappes et La Verrière",
+    "vues": 29550
+   },
+   {
+    "terme": "Liste de sondages sur l'élection présidentielle française de 2027",
+    "vues": 26253
+   },
+   {
+    "terme": "Lionel Messi",
+    "vues": 25854
+   },
+   {
+    "terme": "Affaires Luc Tangorre",
+    "vues": 25033
+   },
+   {
+    "terme": "Klaus Barbie",
+    "vues": 24159
+   },
+   {
+    "terme": "XXX",
+    "vues": 20891
+   },
+   {
+    "terme": "Laurent Nuñez",
+    "vues": 20816
+   },
+   {
+    "terme": "Mosimann",
+    "vues": 19586
+   },
+   {
+    "terme": "Sarah Knafo",
+    "vues": 18874
+   },
+   {
+    "terme": "David Lisnard",
+    "vues": 18409
+   },
+   {
+    "terme": "Lupin (série télévisée, 2021)",
+    "vues": 15823
+   },
+   {
+    "terme": "Kehlsteinhaus",
+    "vues": 15186
+   },
+   {
+    "terme": "Charlotte Gaccio",
+    "vues": 14956
+   },
+   {
+    "terme": "Zazie",
+    "vues": 13790
+   },
+   {
+    "terme": "Vianney",
+    "vues": 13579
+   },
+   {
+    "terme": "YouTube",
+    "vues": 12692
+   },
+   {
+    "terme": "Jean-Luc Mélenchon",
+    "vues": 12041
+   },
+   {
+    "terme": "Valérie Lemercier",
+    "vues": 12029
+   },
+   {
+    "terme": "Génération.s",
+    "vues": 11658
+   },
+   {
+    "terme": "Deva Cassel",
+    "vues": 11609
+   },
+   {
+    "terme": "Jean Moulin",
+    "vues": 11532
+   },
+   {
+    "terme": "Hervé Vilard",
+    "vues": 11437
+   },
+   {
+    "terme": "Gilles Lellouche",
+    "vues": 11140
+   },
+   {
+    "terme": "Trappes",
+    "vues": 11028
+   },
+   {
+    "terme": "Bismillah, c'est les ténèbres",
+    "vues": 10825
+   },
+   {
+    "terme": "Robert Hendy-Freegard",
+    "vues": 9907
+   },
+   {
+    "terme": "Outre-mer La Première",
+    "vues": 9813
+   },
+   {
+    "terme": "Clara Ysé",
+    "vues": 9624
+   }
+  ],
+  "tiktok_hashtags": [],
+  "tiktok_sons": [],
+  "reddit": []
+ }
+}
