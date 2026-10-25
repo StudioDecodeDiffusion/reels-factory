@@ -42,7 +42,7 @@ def appel(prompt: str, recherche: bool = False) -> str:
     if recherche:
         corps["tools"] = [{"google_search": {}}]
     derniere = None
-    for m in modeles()[:4]:
+    for m in sorted(modeles()[:5], key=lambda n: '2.5-flash' not in n):  # 2.5 Flash d'abord : la plus large offre gratuite
         for essai in range(3):
             r = requests.post(f"{API}/{m}:generateContent", params={"key": _cle()}, json=corps, timeout=180).json()
             if "candidates" in r:
@@ -51,6 +51,8 @@ def appel(prompt: str, recherche: bool = False) -> str:
             if (derniere or {}).get("code") not in (429, 500, 503):
                 break
             time.sleep(10 * (essai + 1))
+    if recherche:  # la recherche Google n'est pas toujours incluse dans l'offre gratuite : on réessaie sans
+        return appel(prompt + "\n(Utilise uniquement des faits sûrs que tu connais, avec leur source.)", recherche=False)
     raise RuntimeError(f"Gemini : {derniere}")
 
 
