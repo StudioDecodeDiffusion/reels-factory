@@ -1,0 +1,68 @@
+{
+  "id": "actu-20261025-1519-repub",
+  "profil": "actu",
+  "statut": "publiee",
+  "titre": "Le roi au concert, le peuple dans la rue (refait pour TikTok)",
+  "son_tendance": null,
+  "publication_le": "2026-10-25T15:19+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": "tiktok",
+  "legende": "Vendredi, Macron au concert de Céline Dion. Samedi, 550 000 manifestants selon l'Intérieur. Oui ou non : devait-il y être la veille ? 👇\n\nSources : Paris Match, LCP.\n\n#actu #macron #celinedion #manifestation #france\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [
+    "https://lcp.fr/actualites/mobilisation-du-17-octobre-des-lyceens-aux-gilets-jaunes-qui-appelle-a-manifester-et",
+    "https://www.parismatch.be/actualites/monde/2026/10/18/bilan-de-1200-interpellations-apres-la-journee-de-manifestation-chaotique-du-17-octobre-6LNL4S2QX5HTHFQD5OVZZP2PZI/",
+    "https://www.parismatch.be/culture/musique/2026/10/17/demarrage-un-peu-complexe-pour-celine-dion-lors-de-son-avant-dernier-concert-a-paris-devant-emmanuel-et-brigitte-macron-SZFZKHCRURBTLN4XWFIAT4LM5M/"
+  ],
+  "validation": {
+    "notes": {
+      "mode": "sobre",
+      "accroche": 8,
+      "clarte": 8,
+      "exactitude": 9,
+      "rythme": 8,
+      "conformite": 9
+    }
+  },
+  "tours_validation": 1,
+  "critique": {
+    "decision": "publiable",
+    "score_global": 8,
+    "coherence": "11 scènes, une seule idée (concert du vendredi 16/10 contre rue du samedi 17/10), ping-pong salle/rue, question fermée oui/non en fin.",
+    "controles": {
+      "images": "ok : aperçu muet avec carrés de remplacement ; titres, étiquettes, tampons et jauges sans débordement (scènes 0 à 10 vérifiées) ; sous-titres à environ 70 % de la hauteur, au-dessus de la zone des boutons et de la description TikTok ; titre haut hors bande supérieure ; couverture lisible",
+      "faits": "ok : 550 000 (Intérieur), 800 000 (organisateurs), 1 200 interpellations et 150 policiers blessés (Premier ministre), concert 16/10 La Défense, mobilisation 17/10, Macron et Brigitte, vie chère conformes à 9_precritique.json, 4_concept.json et 5_scenario.json ; chaque chiffre attribué ; aucune citation, aucune accusation",
+      "langue": "ok : nombres en toutes lettres dans les dialogues",
+      "legende": "ok : accroche, sources Paris Match/LCP, hashtags, aucune mention d'IA ; crédit de voix « UPMC Pierre/Jessica, CC BY-SA 4.0 » correct : narrateur = chatterbox ref=pierre (timbre UPMC), mascotte = chatterbox sans référence (aucun crédit requis), repli éventuel Piper UPMC aussi couvert ; legende.txt inchangé"
+    },
+    "projection": {
+      "potentiel": "moyen",
+      "vues_estimees": "500 à 1500 à 48 h",
+      "audience": "Abonnés actu, public politique ; partage et commentaires via la question fermée oui/non",
+      "raisonnement": "Agent 3 : non consulté (validation rapide) / Moi : sujet polémique chaud, contraste chiffré dès la 1re seconde, question qui pousse au commentaire",
+      "risque": "Sujet clivant : titre « roi / peuple » est une métaphore éditoriale, aucun fait affirmé ; carrés provisoires à remplacer par les vrais visuels, vérifier le rythme au rendu final"
+    },
+    "corrections": [],
+    "sources_verifiees": [],
+    "resume_pour_le_proprietaire": "Faits conformes à la pré-critique, aucune mention d'IA, textes sans débordement, sous-titres dans la zone sûre TikTok. Crédit de voix déjà exact, rien à corriger ; prêt à déposer."
+  },
+  "community": {},
+  "da_message": "Refonte TikTok : palette pourpre et or (après rouge fonderie), ping-pong salle/rue, 11 scènes ~42 s, sans personne réelle ni visuel Céline Dion. Question : on garde la question fermée finale sur TikTok ?",
+  "cree": "2026-10-25T14:19:21+00:00",
+  "duree_s": 45.0,
+  "voix": "chatterbox:fr?exag=0.6&cfg=0.4",
+  "media": {
+    "repo": "StudioDecodeDiffusion/reels-media",
+    "release_id": 423448846,
+    "tag": "reel-actu-20261025-1519-repub",
+    "urls": {
+      "video.mp4": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261025-1519-repub/video.mp4"
+    }
+  },
+  "envoyee": "2026-10-25T13:49:10+00:00",
+  "valide_par": "automatique (sans réponse)",
+  "story": "publiee",
+  "reprise_de": "actu-20261025-tiktok",
+  "publiee": "2026-10-25T14:19:26+00:00",
+  "tiktok_fait": true
+}
