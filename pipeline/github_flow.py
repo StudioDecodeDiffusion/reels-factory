@@ -724,6 +724,33 @@ def _tiktok(fiche: dict) -> None:
                      R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]})
 
 
+def republier(job: str, profil: str, plateforme: str = "instagram") -> None:
+    """Republie une vidéo déjà archivée sur un autre compte (Instagram, ou brouillon TikTok seul)."""
+    import tempfile, unicodedata
+    src = attente(job)
+    if not src:
+        raise SystemExit(f"{job} introuvable")
+    compte = (load_profile(src["profil"]).get("instagram") or src["profil"]).lstrip("@")
+    titre = unicodedata.normalize("NFKD", src.get("titre") or "video").encode("ascii", "ignore").decode()
+    titre = re.sub(r"[^A-Za-z0-9]+", "-", titre).strip("-").lower()[:60]
+    nom = f"{src['cree'][:10]}_{compte}_{titre}_video.mp4"
+    repo = os.getenv("GITHUB_REPOSITORY") or "StudioDecodeDiffusion/reels-factory"
+    h = {"Authorization": f"Bearer {os.environ['GH_PAT'] if os.getenv('GH_PAT') else os.environ['GITHUB_TOKEN']}"}
+    rel = requests.get(f"https://api.github.com/repos/{repo}/releases/tags/archive-{src['cree'][:7]}", headers=h, timeout=60).json()
+    asset = next(a for a in rel["assets"] if a["name"] == nom)
+    tmp = Path(tempfile.mkdtemp()) / "video.mp4"
+    tmp.write_bytes(requests.get(asset["url"], headers={**h, "Accept": "application/octet-stream"}, timeout=300).content)
+    nouveau = dict(src, id=f"{profil}-{datetime.now(TZ):%Y%m%d-%H%M}-repub", profil=profil, statut="approuvee",
+                   publication_le=datetime.now(TZ).isoformat(timespec="minutes"), plateforme=plateforme if plateforme == "tiktok" else None,
+                   cree=state.now_iso(), reprise_de=job)
+    for k in ("permalink", "media_id", "publiee", "archive", "tiktok_le", "tiktok_fait", "erreur", "erreurs"):
+        nouveau.pop(k, None)
+    nouveau["media"] = media_host.upload([tmp], nouveau["id"])
+    save_attente(nouveau)
+    _publier(nouveau, load_profile(profil))
+    print(f"{job} republiée sur {profil} ({plateforme}) : {attente(nouveau['id']).get('permalink') or 'brouillon TikTok'}")
+
+
 def tiktok_connexion() -> None:
     """Sans code : affiche le lien d'autorisation. Avec code : enregistre la connexion du compte."""
     from . import tiktok
@@ -973,6 +1000,8 @@ def main() -> None:
         digest()
     elif cmd == "stats":
         stats()
+    elif cmd == "republier":
+        republier(sys.argv[2], sys.argv[3], sys.argv[4] if len(sys.argv) > 4 else "instagram")
     elif cmd == "tiktok_connexion":
         tiktok_connexion()
     else:

@@ -28,3 +28,6 @@ Fin : 3 lignes (sujet, décision, créneau). Aucun mail.
 - Validations = réunions : `tool activite --agent 15 --etat "réunion concept" --salle reunion-2` (puis la même ligne pour
   chaque agent présent). Rôles précis à passer aux agents : 7.1 concept, 7.4 avant génération, 7.5 après génération ;
   6.1 son, 6.2 voix, 6.3 couleurs, 6.4 animations.
+
+## Aiguillage compte / plateforme (obligatoire)
+Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifier `--profile` et `plateforme` du concept. Vidéo TikTok seule = `"plateforme": "tiktok"` à la racine de 4_concept.json.

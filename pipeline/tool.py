@@ -160,9 +160,9 @@ def _read(d: Path, name: str, default=None):
 def _concept(d: Path) -> dict:
     c = _read(d, "4_concept.json")
     choisi = dict(c["concepts"][int(c.get("choix", 0))])
-    for k in ("titre_miniature", "mots_choc", "surtitre_miniature", "accroche_story"):  # champs ajoutés au niveau racine
-        if c.get(k) and not choisi.get(k):
-            choisi[k] = c[k]
+    for k, v in c.items():  # champs ajoutés au niveau racine (titre_miniature, plateforme, compte…)
+        if k not in ("concepts", "choix") and v and not choisi.get(k):
+            choisi[k] = v
     return choisi
 
 

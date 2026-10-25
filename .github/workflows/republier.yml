@@ -1,0 +1,49 @@
+name: Republier une vidéo sur un autre compte
+
+on:
+  workflow_dispatch:
+    inputs:
+      job: {description: "ID de la vidéo (ex. actu-20261025-1400)", required: true}
+      profil: {description: "Compte cible (actu, science, qhse, eco, fun)", required: true}
+      plateforme: {description: "instagram ou tiktok", required: true, default: "instagram"}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: courrier
+  cancel-in-progress: false
+
+jobs:
+  republier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - name: Republier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GMAIL_ADDRESS: ${{ vars.GMAIL_ADDRESS || secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          MEDIA_REPO: ${{ vars.MEDIA_REPO }}
+          IG_TOKEN_ACTU: ${{ secrets.IG_TOKEN_ACTU }}
+          IG_TOKEN_ECO: ${{ secrets.IG_TOKEN_ECO }}
+          IG_TOKEN_QHSE: ${{ secrets.IG_TOKEN_QHSE }}
+          IG_TOKEN_SCIENCE: ${{ secrets.IG_TOKEN_SCIENCE }}
+          IG_TOKEN_FUN: ${{ secrets.IG_TOKEN_FUN }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+        run: python -m pipeline.github_flow republier "${{ inputs.job }}" "${{ inputs.profil }}" "${{ inputs.plateforme }}"
+      - name: Sauvegarder la mémoire
+        if: always()
+        run: |
+          git config user.name "reels-bot"
+          git config user.email "reels-bot@users.noreply.github.com"
+          git add state/
+          git diff --cached --quiet || (git commit -m "état : republication" && for i in 1 2 3 4 5; do git pull --rebase -X theirs -q && git push -q && break; sleep $((i*4)); done)
