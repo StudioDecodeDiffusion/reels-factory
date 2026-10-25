@@ -260,6 +260,58 @@ def cmd_approbation(a) -> None:
     print("Remonté au propriétaire (journal de 20 h 40)." if a.niveau == "critique" else "Consigné, réglé par le manager.")
 
 
+def cmd_spec(a) -> None:
+    """Propriétaire, 25/10 (économie) : 7_spec.json assemblé par script à partir de 5_scenario.json et 6_da.json.
+    L'agent 8 ne fait plus que relire, lancer `check` et corriger ce que le contrôle signale."""
+    d = WORK / a.id
+    sc, da, co = _read(d, "5_scenario.json"), _read(d, "6_da.json"), _concept(d)
+    lignes = [l for pl in sc.get("plans", []) for l in pl.get("dialogue", [])]
+    scenes = [dict(x) for x in da.get("scenes", [])]
+    for x in scenes:
+        x["dialogue"] = []
+        x["duration"] = float(x.pop("duree", 3.5))
+    for i, l in enumerate(lignes):  # répartition dans l'ordre, proportionnelle au nombre de scènes
+        scenes[min(len(scenes) - 1, i * len(scenes) // max(1, len(lignes)))]["dialogue"].append(l)
+    for x in scenes:  # durée minimale = temps de parole (≈ 2,6 mots/s) + respiration
+        mots = sum(len(l.get("texte", "").split()) for l in x["dialogue"])
+        x["duration"] = round(max(x["duration"], mots / 2.6 + 0.4), 1)
+    mus = da.get("musique") or {}
+    spec = {k: v for k, v in da.items() if k not in ("scenes", "musique", "consignes_animation", "evolution_charte",
+                                                    "messages_traites", "message_au_proprietaire")}
+    spec["musique"] = {"genre": mus.get("genre") or mus.get("ambiance") or "tension", "volume": mus.get("volume", 0.4)}
+    spec.setdefault("variete", {})["trend"] = spec["variete"].get("trend") or co.get("trend") or co.get("format") or co.get("titre", "")
+    for k in ("titre_miniature", "mots_choc", "surtitre_miniature"):
+        if co.get(k):
+            spec[k] = co[k]
+    spec["scenes"] = scenes
+    (d / "7_spec.json").write_text(json.dumps(spec, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"7_spec.json : {len(scenes)} scènes, {len(lignes)} répliques, {sum(x['duration'] for x in scenes):.0f} s estimées")
+
+
+def cmd_dossier(a) -> None:
+    """Propriétaire, 25/10 (économie) : un seul petit fichier avec tout ce dont les agents ont besoin pour cette vidéo,
+    pour qu'ils ne parcourent plus les fichiers de règles. travail/<ID>/0_dossier.md"""
+    d = WORK / a.id
+    d.mkdir(parents=True, exist_ok=True)
+    prof = load_profile(a.profile)
+    file = state.load(f"file_sujets_{a.profile}", {}).get("sujets", [])
+    sujet = next((x for x in file if not x.get("fait") and (not a.creneau or (x.get("creneau") or "")[:16] == a.creneau[:16])), None)
+    veille = (state.load("veille_brute", {}).get("top_par_compte") or {}).get(a.profile, [])[:5]
+    var = state.load(f"variete_{a.profile}", [])[-1:] or [{}]
+    regles = (ROOT / "agents" / "REGLES_ACTIVES.md").read_text(encoding="utf-8") if (ROOT / "agents" / "REGLES_ACTIVES.md").exists() else ""
+    cles = ("nom_compte", "ligne_editoriale", "ton", "specialite", "perimetre", "inspiration")
+    txt = [f"# Dossier {a.id} · compte {a.profile}", "", "## Compte"] + [f"- **{k}** : {prof[k]}" for k in cles if prof.get(k)]
+    txt += ["", "## Sujet imposé" if sujet else "## Sujet : à choisir dans la veille ci-dessous",
+            json.dumps(sujet, ensure_ascii=False) if sujet else ""]
+    txt += ["", "## Veille automatique (top 5 pour ce compte)"] + [
+        f"- {v['sujet']} · {v['nb_articles']} articles, {len(v['sources'])} sources · {', '.join(v['liens'][:2])}" for v in veille]
+    txt += ["", "## Dernière vidéo (à ne pas répéter : accroche, fonctionnement, musique, voix)", json.dumps(var[0], ensure_ascii=False),
+            "", "## Scènes autorisées", ", ".join((prof.get("video") or {}).get("scenes_autorisees", [])),
+            "", "## Règles actives", regles]
+    (d / "0_dossier.md").write_text("\n".join(txt), encoding="utf-8")
+    print(f"{d / '0_dossier.md'} ({len(chr(10).join(txt)) // 4} jetons environ)")
+
+
 def cmd_notes(a) -> None:
     """Affiche les notes non traitées que le propriétaire a envoyées à un agent (mails « agent N - … »)."""
     fil = [m for m in state.load(f"messages/agent_{a.agent}", []) if not m.get("traite")]
@@ -568,6 +620,8 @@ def main() -> None:
     p = sub.add_parser("budget"); p.add_argument("--agent", required=True); p.add_argument("--jetons", required=True)
     p = sub.add_parser("approbation"); p.add_argument("--agent", required=True); p.add_argument("--demande", required=True)
     p.add_argument("--niveau", choices=["critique", "routine"], default="routine")
+    p = sub.add_parser("spec"); p.add_argument("id")
+    p = sub.add_parser("dossier"); p.add_argument("id"); p.add_argument("--profile", required=True); p.add_argument("--creneau")
     p = sub.add_parser("notes"); p.add_argument("--agent", required=True); p.add_argument("--profile")
     p = sub.add_parser("lu"); p.add_argument("--agent", required=True); p.add_argument("ids", nargs="+")
     a = ap.parse_args()

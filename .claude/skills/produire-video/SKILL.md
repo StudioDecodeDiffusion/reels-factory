@@ -37,3 +37,11 @@ Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifie
   et critique finale (agent 7, rôle 7.5) sur la planche après `tool frames`, toutes deux en haiku, consignes courtes.
 - Consignes aux agents : 5 lignes max, lire seulement les fichiers indispensables, une seule passe, pas de recherche web
   sauf vérification d'un chiffre.
+
+## Économie de contexte (propriétaire, 25/10 — actions 3, 5, 6)
+- Étape 2 bis : `python3 -m pipeline.tool dossier <ID> --profile <compte> --creneau <créneau>` → `travail/<ID>/0_dossier.md`.
+  Chaque agent ne lit que ce dossier + ses fichiers d'entrée. Ne JAMAIS lui demander de lire NUIT.md, CERVEAU.md ou le dépôt.
+- Étape 6 : `python3 -m pipeline.tool spec <ID>` assemble 7_spec.json ; l'agent 8 lance seulement `check`, corrige les
+  erreurs signalées, `render`, `frames`, `caption`, `story`.
+- Consignes ciblées et courtes (petites tâches) : ex. « Agent 5 : écris 160-170 mots de dialogue pour le concept de
+  0_dossier.md, au format de 5_scenario.json ; rien d'autre ». Une tâche = un fichier de sortie.
