@@ -1,16 +1,27 @@
 {
- "date": "2026-10-24",
+ "date": "2026-10-25",
  "recettes": [
   {
    "source": "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/",
-   "compte": "@emmakeitmann (Instagram, 525 000 abonnés au 20/10/2026, source Influenth)",
-   "accroche": "Créatrice assise dans la rue devant une entrée d'immeuble, smartphone en main, qui fait défiler son fil l'air las ; légende « France, 2026. 2027 fait très peur… » (Influenth/Le Parisien 20/10/2026). Durée et texte à l'écran : non vérifié.",
-   "structure": "Deux temps selon l'article : (1) posture lasse face au fil, (2) elle se redresse, écouteurs dans les oreilles, et le décor bascule vers un arrière-plan généré aux codes de la violence urbaine. Nombre de plans, rythme, moment exact de la bascule : non vérifié.",
-   "animation": "Bascule décor réel/généré (« arrière-plan généré »). Mouvements de caméra, transitions, sous-titres : non vérifié.",
-   "son": "Chanson « Non, je ne regrette rien » d'Édith Piaf (nommée par l'article). Voix off : non vérifié. L'article parle d'un fonctionnement « comme un clip ».",
-   "fin": "Fin du reel : non vérifié. Légende : « Fiction cinématographique, scènes ajoutées avec l'IA », censée éviter la confusion ; commentaires désactivés ; plus de 136 000 J'aime à la vérification.",
-   "recette_decode": "Mécanique à retenir : contraste écran/rue + bascule visuelle nette au milieu du plan, sur une musique connue décalée, ancrée dans l'actu du moment (mobilisations du 17/10/2026). Chez nous : plan 1 pixel doc calme (Lou face à son téléphone, fil d'actu), bascule vers la scène du fait réel (décor du fait, sourcé) sur une coupe nette, voix rapide sans blanc, question fermée finale. Pas de flou fiction/réel : bandeau « scène illustrée » discret et aucun faux événement. Aucune copie de personnage, texte ou image.",
-   "scene_manquante": "Transition « fil qui s'ouvre sur le décor » : le contenu du téléphone de Lou s'agrandit plein cadre et devient le décor de la scène suivante (zoom 0,6 s + glitch léger), avec bandeau « illustration » fixe. À vérifier dans CATALOGUE_VARIETE.md si existante."
+   "compte": "@emmakeitmann (Instagram, 525 000 abonnés au 20/10/2026 ; source Influenth/Le Parisien)",
+   "accroche": "Créatrice assise dans la rue devant une entrée d'immeuble, scrollant son téléphone l'air lasse ; légende d'ouverture sur 2026/2027 (Influenth). Texte à l'écran : non vérifié (lien = article, vidéo non accessible).",
+   "structure": "Deux temps (article) : geste réel familier, puis elle se redresse, met ses écouteurs, une chanson démarre et le fond bascule en décor de violence urbaine généré ; effet clip. Nombre de plans, durée, rythme : non vérifié (lien = article, vidéo non accessible).",
+   "animation": "Bascule fond réel vers fond généré. Caméra, transitions, textes : non vérifié (lien = article, vidéo non accessible).",
+   "son": "« Non, je ne regrette rien » (Piaf), nommée par l'article ; mixage et voix off : non vérifié (lien = article, vidéo non accessible).",
+   "fin": "Fin du reel : non vérifié (lien = article, vidéo non accessible). Légende « Fiction cinématographique, scènes ajoutées avec l'IA » ; commentaires désactivés ; plus de 136 000 J'aime (Influenth 20/10/2026).",
+   "recette_decode": "Mécanique : calme banal (Lou scrolle son fil) puis coupe nette vers le fait réel sourcé, sur contraste musique connue/sujet grave, ancré dans l'actu du moment. Chez nous : plan 1 pd_objet (Lou + téléphone), plan 2 bascule pd_flux vers la scène du fait, voix rapide, question fermée finale. Aucun faux événement, bandeau « scène illustrée » discret ; la confusion fiction/réel est le piège à éviter.",
+   "scene_manquante": "Transition « écran qui devient décor » : le contenu du téléphone de Lou s'agrandit plein cadre (zoom 0,6 s + glitch léger) et devient le décor de la scène suivante, bandeau « illustration » fixe. À vérifier dans CATALOGUE_VARIETE.md."
+  },
+  {
+   "source": "https://www.avcesar.com/intelligence-artificielle-tiffany-sloane-l-ia-d-instagram-qui-pille-les-vrais-humoristes-48724",
+   "compte": "@tiffany.bbyx (Instagram, > 375 000 abonnés depuis début septembre 2026 ; AVcesar 07/10/2026)",
+   "accroche": "Non décrite par l'article (vidéo non accessible). Seul fait : personnage entièrement généré présenté en humoriste de stand-up.",
+   "structure": "Format stand-up : blagues devant un public décrit comme faux ; plusieurs millions de vues pour les vidéos, sans chiffre par vidéo (AVcesar). Plans, durée, rythme, chute : non vérifié (lien = article, vidéo non accessible).",
+   "animation": "Personnage et public générés ; outils et techniques : non vérifié (lien = article, vidéo non accessible).",
+   "son": "Voix, rires, musique : non vérifié (lien = article, vidéo non accessible).",
+   "fin": "non vérifié (lien = article, vidéo non accessible).",
+   "recette_decode": "Contre-modèle : la mécanique « personnage récurrent qui parle face caméra » attire, mais les blagues seraient reprises presque mot pour mot de vrais comédiens (article) : confiance détruite dès la comparaison. À retenir pour nous : personnage récurrent (Lou/Déco) + format de scène fixe, mais texte 100 % original et sourcé, jamais de contenu repris.",
+   "scene_manquante": "Aucune déduite d'un article seul. Piste : scène « plateau face public » (Lou devant silhouettes pixel, rires en texte), à n'envisager qu'avec contenu original."
   }
  ]
 }
