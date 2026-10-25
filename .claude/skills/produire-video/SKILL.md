@@ -30,3 +30,10 @@ Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifie
   « FREIN » = consignes plus courtes ; « STOP » = ne plus appeler cet agent aujourd'hui.
 - Décision critique (dépense, suppression, changement de compte ou de ligne) : `tool approbation --agent 15 --niveau critique --demande "…"`
   puis continuer sans elle ; tout le reste se règle ici (`--niveau routine`).
+
+## MODE SOBRE MAXIMAL (propriétaire, 25/10 : 99 % du quota journalier)
+- Tous les agents en haiku, sauf l'agent 8 (sonnet). Ne jamais passer un autre modèle.
+- **Une seule critique** : la pré-critique (agent 7, rôle 7.4) avant génération. **Pas de critique finale par IA** :
+  après `tool check` OK et `tool frames`, le Manager écrit lui-même `9_critique.json` = {"decision": "publiable", "note": "contrôles automatiques OK"}.
+- Consignes aux agents : 5 lignes max, lire seulement les fichiers indispensables, une seule passe, pas de recherche web
+  sauf vérification d'un chiffre.
