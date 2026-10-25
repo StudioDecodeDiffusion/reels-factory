@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/reels-factory/reels-factory/pipeline/gemini.py", line 95, in <module>
+    print(appel("Réponds en une phrase : quelle est la capitale de la France ?"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/reels-factory/reels-factory/pipeline/gemini.py", line 38, in appel
+    raise RuntimeError(f"Gemini : {r.get('error', r)}")
+RuntimeError: Gemini : {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}
+✅ Clé Gemini valide · modèle : models/gemini-3.8-flash
