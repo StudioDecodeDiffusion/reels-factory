@@ -67,7 +67,7 @@ const Titre: React.FC<{s: Ex<'ed_titre'>; c: C}> = ({s, c}) => (
 const Chiffre: React.FC<{s: Ex<'ed_chiffre'>; c: C}> = ({s, c}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const n = interpolate(f, [4, fps * 1.6], [0, s.valeur], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.exp)});
+  const n = f >= fps * 1.6 ? s.valeur : interpolate(f, [4, fps * 1.6], [0, s.valeur], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.exp)}); // Easing.exp n'atteint que 99,9 % : valeur exacte à la fin
   const txt = `${s.prefixe ?? ''}${n.toLocaleString('fr-FR', {maximumFractionDigits: s.decimales ?? 0, minimumFractionDigits: s.decimales ?? 0})}${s.suffixe ?? ''}`;
   const trait = useP(fps * 1.2);
   return (
