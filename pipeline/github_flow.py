@@ -727,21 +727,36 @@ def _tiktok(fiche: dict) -> None:
                  "raison": str(e)[:200]}
         fiche["tiktok"] = r
         save_attente(fiche)
-        if r.get("visibilite") != "PUBLIC_TO_EVERYONE":  # seule action restante pour le propriétaire
-            mail.envoyer(9, f"🎵 TikTok · à finaliser : {fiche['titre']}",
-                         md("Tant que TikTok n'a pas validé l'app, il refuse la publication publique automatique. "
-                            + ("La vidéo est **sur ton profil, en privé** : ouvre-la → ⋯ → Confidentialité → **Tout le monde**."
-                               if r.get("visibilite") == "SELF_ONLY" else
-                               "La vidéo est dans l'**appli TikTok du téléphone** : Boîte de réception → notifications système "
-                               "(ou Profil → Brouillons). Colle la légende puis Publier :")
-                            + f"\n\n```\n{fiche.get('legende', '')}\n```"),
-                         R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]})
+        if r.get("visibilite") != "PUBLIC_TO_EVERYONE":  # propriétaire 25/10 : la vidéo + le texte prêt à coller, par mail
+            _mail_tiktok(fiche)
     except Exception as e:
         print(f"TikTok : {e}")
         fiche["tiktok"] = {"erreur": str(e)[:300]}
         save_attente(fiche)
         mail.envoyer(9, f"❌ TikTok · envoi impossible : {fiche['titre']}", md(f"Instagram n'est pas touché, TikTok non publié :\n\n{str(e)[:400]}"),
                      R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]})
+
+
+def _mail_tiktok(fiche: dict) -> None:
+    import tempfile
+    leg = fiche.get("legende", "")
+    tags = " ".join(dict.fromkeys(re.findall(r"#\w+", leg) + ["#pourtoi", "#apprendresurtiktok"]))
+    desc = "\n".join(l for l in leg.splitlines() if l.strip() and not l.strip().startswith("#")).strip()
+    mentions = " ".join((load_profile(fiche["profil"]).get("tiktok") or {}).get("mentions", [])) or "aucune (on ne tague pas de personnes réelles)"
+    video, lien = None, "https://studiodecodediffusion.github.io/reels-media/videos/"
+    try:
+        b = requests.get(fiche["media"]["urls"]["video.mp4"], timeout=300).content
+        if len(b) < 24_000_000:
+            video = Path(tempfile.mkdtemp()) / nom_fichier_video(fiche, Path("x")).name
+            video.write_bytes(b)
+    except Exception as e:
+        print(f"pièce jointe TikTok impossible : {e}")
+    mail.envoyer(9, f"🎵 TikTok · à publier : {fiche['titre']}",
+                 md("La vidéo est **jointe à ce mail** (et dans tes brouillons de l'appli TikTok : Boîte de réception → "
+                    f"notifications système). Si elle n'est pas jointe : [vidéothèque]({lien}).\n\n"
+                    f"**Description** (à coller) :\n\n```\n{desc}\n```\n\n**Hashtags** :\n\n```\n{tags}\n```\n\n"
+                    f"**Mentions** : {mentions}"),
+                 R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]}, pieces=[video] if video else None)
 
 
 def republier(job: str, profil: str, plateforme: str = "instagram") -> None:
