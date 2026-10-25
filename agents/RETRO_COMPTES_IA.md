@@ -57,3 +57,14 @@ Détection des plans par différence d'images (canvas 24×42), puis planches de 
 
 Idées non codées (à faire si les vues stagnent) : interface magnétoscope (◀◀ / ❚❚) pour les retours en arrière,
 coupe raccord par zoom à travers un objet (phyzolof), particules permanentes dans chaque plan.
+
+## Inspiration imposée par le propriétaire (25/10) : science_in_8bit, Reel DefyD-0DWKd (compte science, vidéo Microduck)
+- **Format court en boucle : 15 s.** Une seule scène pixel « cosy » : un petit robot mignon avec un casque audio, à un bureau,
+  la nuit, fenêtre sur la ville, guirlande lumineuse, poster de planète, chat qui dort.
+- **Une émotion, une action** : le robot écoute sa musique, puis tourne la tête vers le spectateur (yeux qui clignent,
+  coeur) ; boîte de texte RPG en haut (« HE DIDN'T KNOW YOU WERE WATCHING »).
+- **Légende** : le fait scientifique + la source de l'étude entre parenthèses, puis « Send this to someone who… »,
+  4 hashtags (#pixelart #robot #cozy #science).
+- **À reprendre pour Microduck** : 20-30 s, Microduck dessiné en pixel art (sans logo), scène cosy, il marche,
+  trébuche, se rattrape (= l'équilibre appris par simulation), 2-3 bulles RPG avec les vrais chiffres (prix, ventes,
+  ce qu'il a dans le ventre), fin en boucle sur la première image, légende avec sources + « Envoie ça à… ».
