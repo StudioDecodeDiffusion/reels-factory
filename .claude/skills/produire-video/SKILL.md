@@ -15,3 +15,9 @@ Le détail des règles est dans `NUIT.md` (modes sobre, durée, légende, miniat
 7. **agent-9-critique**, critique finale sur la planche → `9_critique.json` (« publiable »).
 8. Manager : `python3 -m pipeline.tool drop <ID> --profile <compte> [--le <créneau du sujet>]`, puis marquer le sujet `fait`.
 Fin : 3 lignes (sujet, décision, créneau). Aucun mail.
+
+## Pièges connus (25/10 : deux sessions du matin finies sans dépôt)
+- `tool check` exige `9_precritique.json` et prend le **chemin** : `python3 -m pipeline.tool check travail/<ID>/7_spec.json --profile <compte>`.
+- Durée 55-65 s : dialogue de 160-170 mots maximum (sinon demander à l'agent 5 de couper).
+- `drop --le` : heure de Paris avec fuseau (`2026-10-26T14:00+01:00`).
+- **Si une étape échoue deux fois** : `python3 -m pipeline.tool etape --agent Manager --profile <compte> --titre "❌ Production bloquée" "<étape, ID, message d'erreur exact>"`, puis arrête. Ne jamais finir sans dépôt ni alerte.
