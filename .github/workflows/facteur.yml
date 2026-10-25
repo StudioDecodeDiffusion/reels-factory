@@ -38,6 +38,8 @@ jobs:
           IG_TOKEN_QHSE: ${{ secrets.IG_TOKEN_QHSE }}
           IG_TOKEN_SCIENCE: ${{ secrets.IG_TOKEN_SCIENCE }}
           IG_TOKEN_FUN: ${{ secrets.IG_TOKEN_FUN }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
         run: python -m pipeline.github_flow facteur
       - name: Sauvegarder la mémoire
         if: always()

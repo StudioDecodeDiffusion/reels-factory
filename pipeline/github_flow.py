@@ -448,6 +448,7 @@ def _publier(fiche: dict, profile: dict) -> None:
     fiche.update(statut="publiee", media_id=info["id"], permalink=info.get("permalink"), publiee=state.now_iso())
     save_attente(fiche)
     _archiver(fiche)
+    _tiktok(fiche)
     media_host.cleanup(fiche["media"])
     story = _publier_story(fiche, profile)
     etat_story = "+ story publiée" if "publiée aussi" in story else ("(échec story)" if "non publiée" in story else "")
@@ -688,6 +689,38 @@ def stats() -> None:
             print(f"{pid} : erreur {e}")
 
 
+def _tiktok(fiche: dict) -> None:
+    """Même vidéo envoyée en brouillon sur le TikTok du compte (s'il est connecté) ; n'empêche jamais Instagram."""
+    if not os.getenv("TIKTOK_CLIENT_KEY") or fiche["profil"] not in state.load("tiktok", {}):
+        return
+    from . import tiktok
+    try:
+        tiktok.brouillon(fiche["profil"], fiche["media"]["urls"]["video.mp4"])
+        mail.envoyer(8, f"🎵 TikTok · brouillon prêt : {fiche['titre']}",
+                     md("La vidéo est dans tes **notifications TikTok** (brouillon). Ouvre-la, ajoute un son tendance si tu "
+                        f"veux, colle la légende ci-dessous puis **Publier**.\n\n```\n{fiche.get('legende', '')}\n```"),
+                     R_NOTE.format(n=8), ref={"type": "tiktok", "profil": fiche["profil"]})
+    except Exception as e:
+        mail.envoyer(8, f"❌ TikTok · envoi impossible : {fiche['titre']}", md(f"Instagram est publié, TikTok non :\n\n{str(e)[:400]}"),
+                     R_NOTE.format(n=8), ref={"type": "tiktok", "profil": fiche["profil"]})
+
+
+def tiktok_connexion() -> None:
+    """Sans code : affiche le lien d'autorisation. Avec code : enregistre la connexion du compte."""
+    from . import tiktok
+    compte, code = os.getenv("TIKTOK_COMPTE", "actu"), os.getenv("TIKTOK_CODE", "").strip()
+    resume = os.getenv("GITHUB_STEP_SUMMARY")
+    if not code:
+        txt = (f"### 1. Ouvre ce lien, connecte-toi au TikTok du compte « {compte} » et clique sur Autoriser\n\n"
+               f"{tiktok.lien(compte)}\n\n### 2. Copie le code affiché, puis relance ce workflow avec le code (dans les 5 min)")
+    else:
+        u = tiktok.connecter(compte, code)
+        txt = f"### ✅ TikTok connecté : {u.get('display_name', '')} (@{u.get('username', '?')}), {u.get('follower_count', 0)} abonnés"
+    print(txt)
+    if resume:
+        Path(resume).write_text(txt, encoding="utf-8")
+
+
 def releve_horaire() -> None:
     """Agent 3 : vues de chaque vidéo + abonnés, une fois par heure, pendant le passage du facteur (aucune minute
     GitHub ni aucun jeton en plus). → state/horaire_<pid>.json, puis classeur Excel régénéré."""
@@ -917,6 +950,8 @@ def main() -> None:
         digest()
     elif cmd == "stats":
         stats()
+    elif cmd == "tiktok_connexion":
+        tiktok_connexion()
     else:
         sys.exit(__doc__)
 
