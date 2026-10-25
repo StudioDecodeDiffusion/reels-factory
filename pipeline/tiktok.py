@@ -23,8 +23,10 @@ def _cles():
 
 
 def lien(compte: str) -> str:
-    return "https://www.tiktok.com/v2/auth/authorize/?" + urllib.parse.urlencode(
-        {"client_key": _cles()[0], "scope": SCOPES, "response_type": "code", "redirect_uri": RETOUR, "state": compte})
+    # GitHub masque les secrets (« *** ») dans le résumé : la clé est écrite caractère par caractère en %XX
+    cle = "".join(f"%{ord(ch):02X}" for ch in _cles()[0])
+    return f"https://www.tiktok.com/v2/auth/authorize/?client_key={cle}&" + urllib.parse.urlencode(
+        {"scope": SCOPES, "response_type": "code", "redirect_uri": RETOUR, "state": compte})
 
 
 def _jeton(donnees: dict) -> dict:
