@@ -308,8 +308,20 @@ def _controle_transcription(texte: str, wav: Path) -> str:
     return ""
 
 
+def prononcer(texte: str) -> str:
+    """Lexique de prononciation (state/prononciation.json, ex. « Nuñez » → « Nougnèze ») appliqué au seul texte envoyé à
+    la synthèse vocale : les sous-titres gardent l'orthographe réelle. Les agents 5 et 7 y ajoutent les noms difficiles."""
+    import re as _re
+    f = Path(__file__).resolve().parent.parent / "state" / "prononciation.json"
+    lex = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    for mot, dit in sorted(lex.items(), key=lambda kv: -len(kv[0])):
+        texte = _re.sub(rf"\b{_re.escape(mot)}\b", dit, texte, flags=_re.I)
+    return texte
+
+
 def _voix_propre(texte: str, voix: str, wav: Path, vitesse: float, masc: bool) -> None:
     """Génère la réplique, la contrôle, recommence jusqu'à 3 fois, puis bascule sur une voix Piper stable."""
+    texte = prononcer(texte)
     for essai in range(3):
         say(texte, voix, wav, vitesse)
         _rogner(wav)
