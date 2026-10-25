@@ -221,7 +221,7 @@ const MouvementPixelDoc: React.FC<{type: string; children: React.ReactNode}> = (
   const entree = interpolate(f, [0, 4], [1, 0], {...clamp, easing: Easing.out(Easing.cubic)});
   const sortie = interpolate(f, [d - 6, d], [0, 1], {...clamp, easing: Easing.in(Easing.cubic)});
   const poussee = interpolate(f, [0, d], [1, 1.05], clamp);
-  const grosPlan = d > fps * 3.5 && f >= Math.round(d / 2) && !['pd_chiffre', 'pd_jauge'].includes(type) ? 1.3 : 1;
+  const grosPlan = d > fps * 3.5 && f >= Math.round(d / 2) && !['pd_chiffre', 'pd_jauge'].includes(type) ? 1.12 : 1;
   const echelle = poussee * grosPlan * (1 + 0.25 * entree + 0.6 * sortie);
   return (
     <AbsoluteFill style={{transform: `scale(${echelle})`, transformOrigin: '50% 48%', filter: `blur(${14 * entree + 18 * sortie}px)`}}>
