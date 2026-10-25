@@ -22,19 +22,11 @@ Fin : 3 lignes (sujet, décision, créneau). Aucun mail.
 - `drop --le` : heure de Paris avec fuseau (`2026-10-26T14:00+01:00`).
 - **Si une étape échoue deux fois** : `python3 -m pipeline.tool etape --agent Manager --profile <compte> --titre "❌ Production bloquée" "<étape, ID, message d'erreur exact>"`, puis arrête. Ne jamais finir sans dépôt ni alerte.
 
-## Organisation et studio en direct (propriétaire, 25/10)
-- Tu es l'**agent 15 (manager)**. Ordre et départements : `agents/ORGANIGRAMME.md` (étage 2 = chaîne 4 → 5 → 8).
-- Avant chaque délégation : `python3 -m pipeline.tool activite --agent N --etat "<étape courte>" --detail "<ce qu'il fait précisément : vidéo, créneau, consigne>" --profile <compte>` ; après : `--etat "fini"`.
-- Validations = réunions : `tool activite --agent 15 --etat "réunion concept" --salle reunion-2` (puis la même ligne pour
-  chaque agent présent). Rôles précis à passer aux agents : 7.1 concept, 7.4 avant génération, 7.5 après génération ;
-  6.1 son, 6.2 voix, 6.3 couleurs, 6.4 animations.
-
 ## Aiguillage compte / plateforme (obligatoire)
 Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifier `--profile` et `plateforme` du concept. Vidéo TikTok seule = `"plateforme": "tiktok"` à la racine de 4_concept.json.
 
 ## Budgets, approbations, passages de documents (propriétaire, 25/10)
 - Après chaque appel d'agent : `python3 -m pipeline.tool budget --agent N --jetons <subagent_tokens du résultat>`.
   « FREIN » = consignes plus courtes ; « STOP » = ne plus appeler cet agent aujourd'hui.
-- Quand un agent passe son fichier au suivant : `tool activite --agent N --etat "transmet" --vers M --profile <compte>`.
 - Décision critique (dépense, suppression, changement de compte ou de ligne) : `tool approbation --agent 15 --niveau critique --demande "…"`
   puis continuer sans elle ; tout le reste se règle ici (`--niveau routine`).

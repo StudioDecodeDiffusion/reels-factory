@@ -35,4 +35,4 @@ L'ancien agent 13 (gestion Gmail) est supprimé.
 ## Organisation en étages (propriétaire, 25/10)
 Voir `agents/ORGANIGRAMME.md` : 0 secrétaire (seul interlocuteur du propriétaire), 14 coordinateur, 15 manager (= la session qui orchestre),
 départements par étage, sous-agents (1.1-1.5, 2.1-2.5, 3.1-3.5, 6.1-6.4, 7.1-7.5, 12.1-12.3), salles de réunion.
-Studio en direct : `tool activite` → https://studiodecodediffusion.github.io/reels-media/studio/
+Studio en direct : abandonné (propriétaire, 25/10) — ne plus appeler `tool activite`.
