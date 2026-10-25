@@ -33,7 +33,7 @@ Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifie
 
 ## MODE SOBRE MAXIMAL (propriétaire, 25/10 : 99 % du quota journalier)
 - Tous les agents en haiku, sauf l'agent 8 (sonnet). Ne jamais passer un autre modèle.
-- **Une seule critique** : la pré-critique (agent 7, rôle 7.4) avant génération. **Pas de critique finale par IA** :
-  après `tool check` OK et `tool frames`, le Manager écrit lui-même `9_critique.json` = {"decision": "publiable", "note": "contrôles automatiques OK"}.
+- **Deux critiques (propriétaire, 25/10 : la critique finale est essentielle)** : pré-critique (agent 7, rôle 7.4) avant génération
+  et critique finale (agent 7, rôle 7.5) sur la planche après `tool frames`, toutes deux en haiku, consignes courtes.
 - Consignes aux agents : 5 lignes max, lire seulement les fichiers indispensables, une seule passe, pas de recherche web
   sauf vérification d'un chiffre.
