@@ -1,0 +1,156 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 5.0,
+   "texte_ecran": "Comment ce canard tient sur 2 pattes ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Comment ce canard mécanique à trois cent quatre-vingt-dix-neuf dollars réussit-il à marcher sur deux pattes sans basculer ?",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Physique de la marche bipède",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Plongeons ensemble dans la physique émerveillante de la marche bipède avec le robot Microduck !",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 5.0,
+   "texte_ecran": "Gestion du centre de gravité",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le secret réside dans le centre de gravité : il doit rester constamment au-dessus de la surface de contact.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.0,
+   "texte_ecran": "MATCH : Roues vs Bipède",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Petit match d'ingénierie : le système à roues contre le système bipède !",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 5.5,
+   "texte_ecran": "Stabilité 100% vs Agilité terrain",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La roue gagne en vitesse avec cent pour cent de stabilité, mais le bipède l'emporte sur tous les terrains.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 5.0,
+   "texte_ecran": "Puces spécialisées & capteurs",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pour maintenir cet équilibre, des puces spécialisées analysent et ajustent la position en temps réel.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Servomoteurs haute précision",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "L'architecture matérielle optimisée envoie des impulsions aux servomoteurs avec une précision chirurgicale.",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Une chute constamment contrôlée",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ainsi, chaque pas devient une chute contrôlée, redressée instantanément par la mécanique.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "Prix : 399 $",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Proposé à seulement trois cent quatre-vingt-dix-neuf dollars, le robot démocratise la robotique.",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 5.0,
+   "texte_ecran": "+10 000 unités vendues !",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et le succès est total : plus de dix mille unités ont été vendues dès le lancement !",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "chute",
+   "duree_s": 5.0,
+   "texte_ecran": "Physique et ingénierie du quotidien",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Une véritable prouesse d'ingénierie miniaturisée qui prouve que la physique du quotidien est fascinante.",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.5,
+   "texte_ecran": "Quel prochain mécanisme décoder ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Quel mécanisme ou système d'ingénierie aimeriez-vous comparer et décoder dans le prochain épisode ?",
+     "expression": "sourire"
+    }
+   ]
+  }
+ ],
+ "legende": "Comment ce robot canard tient sur 2 pattes à 399 $ ?\n\nLe robot Microduck utilise des puces spécialisées pour ajuster ses servomoteurs en continu et maintenir un équilibre bipède parfait. Vendu à plus de 10 000 exemplaires dès son lancement, il démontre avec élégance les lois du centre de gravité.\n\nQuel système d'ingénierie devrions-nous décoder au prochain match ? 👇\n\nEnvoie cette vidéo à un passionné de mécanique ! 📤\n\nSources : Axios, The Standard, CNX Software",
+ "hashtags": [
+  "#ingenierie",
+  "#robotique",
+  "#huggingface",
+  "#microduck",
+  "#decodesciencesimplement"
+ ]
+}
