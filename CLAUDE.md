@@ -21,7 +21,7 @@
 ## Fonctionnement en entreprise (guide « AI Company » + règles DanAI Lab, 24/10)
 - **La session principale = le Manager (CEO)** : elle ne produit rien elle-même, elle découpe la mission, appelle chaque
   agent (sous-agent `.claude/agents/agent-N-*.md`, modèle fixé dans le fichier), transmet les fichiers et contrôle.
-- **Modèles (mode sobre maximal, 25/10)** : haiku pour tous les agents, sonnet pour l'agent 8 seulement ; jamais opus. Passer `model` à chaque appel Agent si besoin.
+- **Modèles (mode sobre maximal, 25/10)** : haiku pour tous les agents (y compris l'agent 8, la spec étant assemblée par script) ; jamais opus. Passer `model` à chaque appel Agent si besoin.
 - **Règles en 1 page** : `agents/REGLES_ACTIVES.md` (remplace NUIT.md et CERVEAU.md pour les agents) ; chaque vidéo a son `travail/<ID>/0_dossier.md` (`tool dossier`).
 - Paralléliser seulement les tâches indépendantes (ex. agents 1 et 2) ; jamais deux agents sur les mêmes fichiers.
 - Les rapports d'agents résument (5 lignes) ; le Manager lit les vrais fichiers quand une décision en dépend.

@@ -32,7 +32,7 @@ Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifie
   puis continuer sans elle ; tout le reste se règle ici (`--niveau routine`).
 
 ## MODE SOBRE MAXIMAL (propriétaire, 25/10 : 99 % du quota journalier)
-- Tous les agents en haiku, sauf l'agent 8 (sonnet). Ne jamais passer un autre modèle.
+- Tous les agents en haiku, y compris l'agent 8. Ne jamais passer un autre modèle.
 - **Deux critiques (propriétaire, 25/10 : la critique finale est essentielle)** : pré-critique (agent 7, rôle 7.4) avant génération
   et critique finale (agent 7, rôle 7.5) sur la planche après `tool frames`, toutes deux en haiku, consignes courtes.
 - Consignes aux agents : 5 lignes max, lire seulement les fichiers indispensables, une seule passe, pas de recherche web
@@ -45,3 +45,5 @@ Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifie
   erreurs signalées, `render`, `frames`, `caption`, `story`.
 - Consignes ciblées et courtes (petites tâches) : ex. « Agent 5 : écris 160-170 mots de dialogue pour le concept de
   0_dossier.md, au format de 5_scenario.json ; rien d'autre ». Une tâche = un fichier de sortie.
+- **Reprise** : au début, `tool reprendre <ID>` si une session précédente a été interrompue (même créneau) ; après chaque
+  étape terminée, `tool sauver <ID>` (quelques Ko, versionné).

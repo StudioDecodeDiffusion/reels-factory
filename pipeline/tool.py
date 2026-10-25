@@ -312,6 +312,33 @@ def cmd_dossier(a) -> None:
     print(f"{d / '0_dossier.md'} ({len(chr(10).join(txt)) // 4} jetons environ)")
 
 
+def cmd_sauver(a) -> None:
+    """Point de reprise (à la place de Beads) : copie les fichiers d'étape de travail/<ID> dans state/reprise/<ID>/
+    (versionné) pour qu'une session qui s'arrête en route puisse reprendre sans tout refaire."""
+    src, dst = WORK / a.id, state.STATE / "reprise" / a.id
+    dst.mkdir(parents=True, exist_ok=True)
+    for f in src.glob("*"):
+        if f.suffix in (".json", ".txt", ".md"):
+            shutil.copy(f, dst / f.name)
+    subprocess.run(["git", "-C", str(ROOT), "add", str(dst)], capture_output=True)
+    subprocess.run(["git", "-C", str(ROOT), "commit", "-q", "-m", f"reprise : {a.id}"], capture_output=True)
+    subprocess.run(["git", "-C", str(ROOT), "push", "-q"], capture_output=True)
+    print(f"point de reprise : {', '.join(sorted(f.name for f in dst.glob('*')))}")
+
+
+def cmd_reprendre(a) -> None:
+    """Restaure les fichiers d'étape d'une vidéo interrompue (state/reprise/<ID>/ → travail/<ID>/)."""
+    src, dst = state.STATE / "reprise" / a.id, WORK / a.id
+    if not src.exists():
+        print("aucun point de reprise")
+        return
+    dst.mkdir(parents=True, exist_ok=True)
+    for f in src.glob("*"):
+        if not (dst / f.name).exists():
+            shutil.copy(f, dst / f.name)
+    print(f"repris : {', '.join(sorted(f.name for f in src.glob('*')))}")
+
+
 def cmd_notes(a) -> None:
     """Affiche les notes non traitées que le propriétaire a envoyées à un agent (mails « agent N - … »)."""
     fil = [m for m in state.load(f"messages/agent_{a.agent}", []) if not m.get("traite")]
@@ -621,6 +648,8 @@ def main() -> None:
     p = sub.add_parser("approbation"); p.add_argument("--agent", required=True); p.add_argument("--demande", required=True)
     p.add_argument("--niveau", choices=["critique", "routine"], default="routine")
     p = sub.add_parser("spec"); p.add_argument("id")
+    p = sub.add_parser("sauver"); p.add_argument("id")
+    p = sub.add_parser("reprendre"); p.add_argument("id")
     p = sub.add_parser("dossier"); p.add_argument("id"); p.add_argument("--profile", required=True); p.add_argument("--creneau")
     p = sub.add_parser("notes"); p.add_argument("--agent", required=True); p.add_argument("--profile")
     p = sub.add_parser("lu"); p.add_argument("--agent", required=True); p.add_argument("ids", nargs="+")
