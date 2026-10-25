@@ -352,7 +352,8 @@ def cmd_drop(a) -> None:
         "da_message": _da_suivi(d, a.profile),
         "cree": state.now_iso(),
     }
-    _annonce_4h(d, a.id, a.profile, fiche, concept)
+    if concept.get("plateforme") != "tiktok":  # vidéo réservée à TikTok : pas de story Instagram
+        _annonce_4h(d, a.id, a.profile, fiche, concept)
     from .variete import enregistrer
     enregistrer(json.loads((d / "7_spec.json").read_text(encoding="utf-8")), a.profile, fiche.get("titre") or "", a.id)
     extra = {"couverture.png": d / "couverture.png"} if (d / "couverture.png").exists() else {}
