@@ -162,7 +162,7 @@ def main() -> None:
     top = correler(items, signaux)
     (ETAT / "veille_brute.json").write_text(json.dumps({
         "maj": datetime.now(timezone.utc).isoformat(timespec="minutes"), "nb_articles": len(items), "erreurs": erreurs,
-        "top_par_compte": top, "tendances": {k: v[:30] for k, v in signaux.items()}}, ensure_ascii=False, indent=1), encoding="utf-8")
+        "top_par_compte": top, "tendances": {k: v[:30] for k, v in signaux.items()}}, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
     print(f"{len(items)} articles, {sum(len(v) for v in signaux.values())} signaux, erreurs : {list(erreurs)}")
 
 
