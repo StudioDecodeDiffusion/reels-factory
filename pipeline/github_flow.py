@@ -714,15 +714,27 @@ def _tiktok(fiche: dict) -> None:
         return
     from . import tiktok
     try:
-        r = tiktok.publier(fiche["profil"], fiche["media"]["urls"]["video.mp4"], fiche.get("legende", ""))
+        try:
+            r = tiktok.publier(fiche["profil"], fiche["media"]["urls"]["video.mp4"], fiche.get("legende", ""))
+        except RuntimeError as e:  # app pas encore validée par TikTok et compte public : seul le brouillon passe
+            print(f"TikTok direct refusé ({e}) : envoi en brouillon")
+            r = {"publish_id": tiktok.brouillon(fiche["profil"], fiche["media"]["urls"]["video.mp4"]), "visibilite": "BROUILLON",
+                 "raison": str(e)[:200]}
         fiche["tiktok"] = r
         save_attente(fiche)
         if r.get("visibilite") != "PUBLIC_TO_EVERYONE":  # seule action restante pour le propriétaire
-            mail.envoyer(9, f"🎵 TikTok · publiée en privé : {fiche['titre']}",
-                         md("La vidéo est **sur ton profil TikTok, en privé** (TikTok l'impose tant qu'il n'a pas validé l'app). "
-                            "Pour la rendre publique : ouvre-la → ⋯ → **Paramètres de confidentialité** → **Tout le monde**."),
+            mail.envoyer(9, f"🎵 TikTok · à finaliser : {fiche['titre']}",
+                         md("Tant que TikTok n'a pas validé l'app, il refuse la publication publique automatique. "
+                            + ("La vidéo est **sur ton profil, en privé** : ouvre-la → ⋯ → Confidentialité → **Tout le monde**."
+                               if r.get("visibilite") == "SELF_ONLY" else
+                               "La vidéo est dans l'**appli TikTok du téléphone** : Boîte de réception → notifications système "
+                               "(ou Profil → Brouillons). Colle la légende puis Publier :")
+                            + f"\n\n```\n{fiche.get('legende', '')}\n```"),
                          R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]})
     except Exception as e:
+        print(f"TikTok : {e}")
+        fiche["tiktok"] = {"erreur": str(e)[:300]}
+        save_attente(fiche)
         mail.envoyer(9, f"❌ TikTok · envoi impossible : {fiche['titre']}", md(f"Instagram n'est pas touché, TikTok non publié :\n\n{str(e)[:400]}"),
                      R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]})
 
