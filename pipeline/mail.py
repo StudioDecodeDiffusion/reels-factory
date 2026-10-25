@@ -107,7 +107,7 @@ def envoyer(agent: int, titre: str, corps_html: str, reponse_html: str, ref: dic
         print(f"(mails coupés par le propriétaire : {titre})")
         return ""
     # Propriétaire (24/10) : un seul mail par jour (journal), plus les alertes ❌ critiques
-    if (ref or {}).get("type") not in ("digest", "tiktok") and "❌" not in titre:
+    if (ref or {}).get("type") not in ("digest", "tiktok", "secretariat") and "❌" not in titre:
         print(f"(mail non envoyé, repris dans le journal du soir : {titre})")
         return ""
     # Propriétaire (19/10) : plus de mails « Manager », sauf les alertes (échec, token, quota).

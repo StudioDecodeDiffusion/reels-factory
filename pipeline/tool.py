@@ -212,9 +212,10 @@ def cmd_activite(a) -> None:
     """Studio en direct : état d'un agent (+ passage de document vers un autre agent avec --vers)."""
     def maj(data):
         t = datetime.now(TZ).isoformat(timespec="seconds")
-        data["agents"][a.agent] = {"etat": a.etat, "salle": a.salle or "", "compte": a.profile or "", "depuis": t}
+        data["agents"][a.agent] = {"etat": a.etat, "salle": a.salle or "", "compte": a.profile or "", "depuis": t,
+                                   "detail": (a.detail or "")[:400]}
         data["journal"] = (data["journal"] + [{"t": t, "agent": a.agent, "etat": a.etat, "salle": a.salle or "",
-                                               "compte": a.profile or "", "vers": a.vers or ""}])[-80:]
+                                               "compte": a.profile or "", "vers": a.vers or "", "detail": (a.detail or "")[:400]}])[-80:]
         if a.profile and str(a.agent).isdigit() and int(a.agent) in ETAPES:  # tableau des tâches par compte
             data["taches"][a.profile] = {"etape": ETAPES[int(a.agent)], "agent": a.agent, "t": t}
     print(f"studio : agent {a.agent} → {a.etat}" + (f" (document → agent {a.vers})" if a.vers else "") if _studio(maj)
@@ -563,6 +564,7 @@ def main() -> None:
     p = sub.add_parser("activite"); p.add_argument("--agent", required=True); p.add_argument("--etat", required=True)
     p.add_argument("--salle", help="ex. reunion-1-veille, reunion-2-production"); p.add_argument("--profile")
     p.add_argument("--vers", help="agent qui reçoit le document (animation sur la page Studio)")
+    p.add_argument("--detail", help="détail précis de la tâche, visible au clic sur la page Studio (jamais de secret)")
     p = sub.add_parser("budget"); p.add_argument("--agent", required=True); p.add_argument("--jetons", required=True)
     p = sub.add_parser("approbation"); p.add_argument("--agent", required=True); p.add_argument("--demande", required=True)
     p.add_argument("--niveau", choices=["critique", "routine"], default="routine")

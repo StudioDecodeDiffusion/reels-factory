@@ -24,7 +24,7 @@ Fin : 3 lignes (sujet, décision, créneau). Aucun mail.
 
 ## Organisation et studio en direct (propriétaire, 25/10)
 - Tu es l'**agent 15 (manager)**. Ordre et départements : `agents/ORGANIGRAMME.md` (étage 2 = chaîne 4 → 5 → 8).
-- Avant chaque délégation : `python3 -m pipeline.tool activite --agent N --etat "<étape>" --profile <compte>` ; après : `--etat "fini"`.
+- Avant chaque délégation : `python3 -m pipeline.tool activite --agent N --etat "<étape courte>" --detail "<ce qu'il fait précisément : vidéo, créneau, consigne>" --profile <compte>` ; après : `--etat "fini"`.
 - Validations = réunions : `tool activite --agent 15 --etat "réunion concept" --salle reunion-2` (puis la même ligne pour
   chaque agent présent). Rôles précis à passer aux agents : 7.1 concept, 7.4 avant génération, 7.5 après génération ;
   6.1 son, 6.2 voix, 6.3 couleurs, 6.4 animations.

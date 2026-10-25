@@ -652,6 +652,13 @@ def publier_ce_qui_est_du() -> None:
             save_attente(fiche)
             _tiktok(fiche)
             media_host.cleanup(fiche.get("media"))
+    sec = state.load("secretariat", [])  # mails demandés à l'agent 0 (secrétaire)
+    for x in sec:
+        if x.get("mail") and not x.get("envoye"):
+            mail.envoyer(0, x.get("sujet") or "Réponse du secrétariat", md(x.get("reponse") or ""), R_NOTE.format(n=0),
+                         ref={"type": "secretariat"})
+            x["envoye"] = state.now_iso()
+    state.save("secretariat", sec)
     _stories_programmees(now)
     limite = datetime.now(timezone.utc) - timedelta(days=60)
     for fiche in all_attente():
