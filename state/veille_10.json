@@ -1,6 +1,6 @@
 {
   "semaine": "2026-S43",
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "comptes": [
     {
       "nom": "AntifakenewsAI (Thomas Huchon)",
@@ -46,7 +46,7 @@
       "lien": "https://www.instagram.com/laboscope/",
       "plateforme": "Instagram",
       "abonnes": "non vérifiable (aucun chiffre indexé ; page Instagram non accessible sans connexion)",
-      "source_chiffre": "aucune — recherches web du 18/10/2026 sans résultat (homonymes : appli photo, labo d'art) ; 19/10/2026 : liens directs du propriétaire reçus mais la page du post n'a pas pu être lue depuis la session (accès refusé), recherches web toujours sans résultat",
+      "source_chiffre": "aucune — recherches web du 25/10/2026 (laboscope, belltakesocial, phyzolof) : toujours aucun résultat indexé ; page Instagram non accessible sans connexion (interdite)",
       "format": "inconnu",
       "ton": "inconnu",
       "frequence": "inconnue",
@@ -59,7 +59,7 @@
       "lien": "https://www.instagram.com/belltakesocial/",
       "plateforme": "Instagram",
       "abonnes": "non vérifiable",
-      "source_chiffre": "aucune — seule trace indexée : belltake.com, réseau social en liste d'attente (« Every take, on a curve »), lien avec ce compte non confirmé ; 19/10/2026 : liens directs du propriétaire reçus mais la page du post n'a pas pu être lue depuis la session (accès refusé), recherches web toujours sans résultat",
+      "source_chiffre": "aucune — recherches web du 25/10/2026 (laboscope, belltakesocial, phyzolof) : toujours aucun résultat indexé ; page Instagram non accessible sans connexion (interdite)",
       "format": "inconnu (belltake.com annonce des « takes » texte, sondages et vidéos courtes)",
       "ton": "inconnu",
       "frequence": "inconnue",
@@ -72,7 +72,7 @@
       "lien": "https://www.instagram.com/phyzolof/",
       "plateforme": "Instagram (+ chaîne YouTube @phyzolof, lien non confirmé)",
       "abonnes": "non vérifiable",
-      "source_chiffre": "aucune — seule trace indexée : https://www.youtube.com/@phyzolof/shorts (mots-clés « League of Legend », peut-être un homonyme) ; 19/10/2026 : liens directs du propriétaire reçus mais la page du post n'a pas pu être lue depuis la session (accès refusé), recherches web toujours sans résultat",
+      "source_chiffre": "aucune — recherches web du 25/10/2026 (laboscope, belltakesocial, phyzolof) : toujours aucun résultat indexé ; page Instagram non accessible sans connexion (interdite)",
       "format": "inconnu",
       "ton": "inconnu",
       "frequence": "inconnue",
@@ -105,25 +105,38 @@
       "points_forts": "fin systématique « dis-nous ta ville / ton avis » → commentaires ; contre-modèle",
       "transparence_ia": "étiquette IA posée par TikTok",
       "statut": "nouveau"
+    },
+    {
+      "nom": "Tiffany Sloane (@tiffany.bbyx) — personnage IA de stand-up",
+      "lien": "https://www.instagram.com/tiffany.bbyx/",
+      "plateforme": "Instagram",
+      "abonnes": "> 375 000 (date non précisée ; AVcesar 07/10/2026)",
+      "source_chiffre": "AVcesar 07/10/2026 (https://www.avcesar.com/intelligence-artificielle-tiffany-sloane-l-ia-d-instagram-qui-pille-les-vrais-humoristes-48724) ; article non daté pour les vues (« plusieurs millions »)",
+      "format": "personnage IA présenté en stand-up devant un faux public ; arrivée sur Instagram début septembre 2026 (selon l'article)",
+      "ton": "humour ; blagues reprises presque mot pour mot à de vrais humoristes (selon l'article)",
+      "frequence": "inconnue",
+      "points_forts": "viralité par la fausse humanité ; contre-modèle (vol de contenu, transparence absente)",
+      "transparence_ia": "non précisée dans l'article (personnage IA affirmé par le journaliste, pas de mention sur le compte)",
+      "statut": "nouveau"
     }
   ],
   "contexte": [
     "17/10/2026, manifestations contre la vie chère : vague de faux visuels IA — vue aérienne de Paris en feu (> 640 000 vues, filigrane ChatGPT détecté par SynthID), personnage de dessin animé « arrêté » par les CRS (≥ 1 M, détournement d'une photo AFP du 31/05/2025), deepfake de Philippe Etchebest « protégeant son restaurant » (> 2 M sur X) (France 24 19/10/2026 via Yahoo https://fr.news.yahoo.com/panth%C3%A8re-rose-arr%C3%AAt%C3%A9e-paris-feu-165410326.html ; Les Surligneurs 20/10/2026 https://lessurligneurs.eu/manifestation-du-17-octobre-le-chef-philippe-etchebest-a-t-il-protege-lun-de-ses-restaurants-contre-les-pillages/)",
     "Instagram, 01/09/2026 : étiquette « Profil généré par IA » (remplace « Créateur IA ») ; vise surtout les faux humains mais aussi les comptes publiant régulièrement du contenu IA ou mettant en scène un personnage créé par IA ; portée limitée si non étiquetés (RTBF https://www.rtbf.be/article/intelligence-artificielle-instagram-va-identifier-les-comptes-entierement-generes-par-ia-11778004 ; Journal du Geek https://www.journaldugeek.com/2026/09/01/instagram-veut-que-ses-faux-humains-en-ia-se-presentent-clairement/)",
     "TikTok, 10/07/2026 : détection renforcée du spam IA « de faible qualité et très standardisé », en priorité sur politique/actualité, santé, finance (AFP via CB News https://www.cbnews.fr/mobile/tiktok-s-attaque-aux-comptes-proposant-uniquement-du-contenu-genere-ia)",
-    "Kapwing (mai 2026, publié 21/06/2026) : 59 % des 500 premières vidéos d'un compte TikTok neuf = AI slop, ~21 % sur YouTube Shorts ; 35 % en science/éducation (TNW https://thenextweb.com/news/tiktok-ai-slop-59-percent-new-users-kapwing-study)",
+    "Kapwing (snapshot mai 2026 ; TNW 21/06/2026, Tubefilter 16/06/2026) : 294 vidéos sur 500 (≈ 59 %) = AI slop pour un compte neuf, ~21 % sur YouTube Shorts (écart annoncé « ~3 fois » par TNW, 59/21 ≈ 2,8) ; science/éducation 35 %, santé ~34 %, enfants 57 % ; étude commerciale (Kapwing vend des outils de montage), échantillon 10 742 vidéos, classement manuel (TNW https://thenextweb.com/news/tiktok-ai-slop-59-percent-new-users-kapwing-study)",
     "Digital News Report 2026 (17/06/2026) : réseaux sociaux/vidéo 54 % vs sites 51 % comme 1re source en ligne ; Instagram 26 % pour l'info ; usage hebdo des chatbots pour l'info 10 % (16 % des moins de 35 ans), stable en France (The Media Leader https://fr.themedialeader.com/?p=216046)",
-    "Instagram, 31/08/2026 : label « AI-generated profile » obligatoire pour les profils mettant en scène un personnage synthétique récurrent PRÉSENTÉ COMME UNE PERSONNE ; non requis pour l'IA outil (retouche, sous-titres) ; profils détectés non déclarés : plus éligibles aux recommandations ; activation par un interrupteur dans « Modifier le profil » ; cas des personnages animés non tranché (Leptidigital 02/09/2026 https://www.leptidigital.fr/reseaux-sociaux/instagram-limite-portee-profils-ia-non-declares-91566/)",
     "Désinformation IA visant la France : 56 millions de vues pour les opérations de John Mark Dougan (Storm-1516) ; 14 millions pour la vidéo du faux coup d'État (newsia.fr 07/06/2026 d'après franceinfo 06/06/2026 https://newsia.fr/news/desinformation-ia-faux-scandales-france-2026)",
     "Médias français et IA, 2026 : Prisma Press ~40 % de production non rédigée par des humains selon Next ; Infopro Digital remplace 19 SR par 5 chefs d'édition IA (Politis 15/05/2026 https://www.politis.fr/articles/2026/05/plans-sociaux-comment-lia-commence-a-remplacer-les-journalistes/)",
-    "Formats Reels qui montent (Anijam, maj 10/10/2026, source commerciale, chiffres non vérifiés) : séries d'histoires IA à personnages récurrents numérotées > posts isolés ; « loading 0→100 % » calé sur le beat ; « POV : … en 2026 » ; bait-and-switch en deux temps (https://www.anijam.ai/blog/instagram-reels-trends/)"
+    "Formats Reels qui montent (Anijam, maj 10/10/2026, source commerciale, chiffres non vérifiés) : séries d'histoires IA à personnages récurrents numérotées > posts isolés ; « loading 0→100 % » calé sur le beat ; « POV : … en 2026 » ; bait-and-switch en deux temps (https://www.anijam.ai/blog/instagram-reels-trends/)",
+    "Instagram, 20/10/2026 (Les Actus du Net, lu 25/10) : label « Profil généré par IA » visant les comptes construits autour d'une personne qui n'existe pas (ex. influenceuse sortie d'un modèle d'images) ; retouches et montage/légendes par IA exclus ; non-déclarés = portée limitée (« pourraient bientôt »), recours via Account Status. Personnages animés non réalistes : non traités par la source (statut inconnu, à confirmer)."
   ],
   "idees": [
     "Série numérotée « Décodé, épisode N » : Lou et Déco comme personnages récurrents d'un feuilleton de l'actu (même générique de 1 s, numéro d'épisode en bandeau) — les séries à personnages récurrents surperforment les posts isolés (Anijam 10/10/2026, estimation).",
     "« Vrai ou faux JT ? » hebdomadaire : décrire (sans la diffuser) une fausse vidéo IA virale, montrer ses 3 indices de trucage, ce qui est établi, sources à l'écran — on retourne la mécanique « FLASH » des faux JT contre eux.",
     "Barre « loading » de l'info : une jauge 0→100 % en haut de l'écran qui avance à chaque fait sourcé, coupes calées sur le beat ; la jauge donne une raison de rester jusqu'à 100 %."
   ],
-  "position_decode": "Toujours quasi seuls sur l'actu française expliquée, faite par IA et transparente dans ce qui est publiquement indexé. Les trois comptes signalés par le propriétaire (laboscope, belltakesocial, phyzolof) sont invisibles sur le web public : impossible de les comparer sans liens directs. Le pair légitime reste AntifakenewsAI (avatar réaliste, débunk) ; le reste est de la désinformation qui fait des millions de vues avec un « FLASH » et une image-symbole. Notre différence : personnages animés non réalistes (pas un faux humain, donc a priori hors du label « AI-generated profile », à confirmer), dialogue, sources visibles.",
+  "position_decode": "Toujours quasi seuls sur l'actu française expliquée, faite par IA et transparente dans ce qui est publiquement indexé. Les trois comptes signalés par le propriétaire (laboscope, belltakesocial, phyzolof) restent introuvables sur le web public le 25/10 : impossible de les comparer sans liens directs. Le pair légitime reste AntifakenewsAI (avatar réaliste, débunk) ; le reste est de la désinformation ou du vol de contenu (faux JT, fausses manifestations, Tiffany Sloane) qui fait des millions de vues. Notre différence : personnages animés non réalistes (pixel art, pas de faux humain), dialogue Lou/Déco, sources visibles. Point de vigilance : la règle « Profil généré par IA » vise les personnes qui n'existent pas ; le statut de nos personnages animés reste à confirmer.",
   "a_reprendre_style": [
     "Personnages persistants : Lou et Déco restent à l'écran d'une scène à l'autre (pas de nouvelle entrée par le bas à chaque scène) ; seule l'expression change. Aujourd'hui le Duo est remonté dans chaque Sequence (dialogue.tsx, entree=2/6) → saut visible à chaque coupe.",
     "Transition par recouvrement de 6 à 10 images : la scène sortante continue (glisse/zoom de sortie) pendant que la suivante entre, au lieu d'une coupe sèche suivie de la dissolution pixel de l'ancienne couleur seule (TransitionPixel 12 images).",
@@ -147,16 +160,19 @@
       "belltakesocial",
       "phyzolof"
     ],
-    "etat": "24/10/2026 : toujours introuvables sur le web public (recherches du 24/10 sans résultat pour laboscope, belltakesocial, phyzolof). Aucune vidéo de ces comptes n'a été ajoutée à a_decortiquer ; il faut des liens directs du propriétaire (ou captures + légende dans la note de l'agent 10/11)."
+    "etat": "25/10/2026 : toujours introuvables sur le web public (20 requêtes au total depuis le 18/10). Il faut des liens directs du propriétaire (ou captures + légende)."
   },
   "a_decortiquer": [
-    [
-      {
-        "lien": "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/",
-        "compte": "@emmakeitmann (Instagram, 525 000 abonnés au 20/10/2026 ; source : Influenth, repris du Parisien 20/10/2026)",
-        "pourquoi_ca_marche": "reel de fiction IA (décor de rue en guerre, créatrice en mise en scène) : plus de 136 000 J'aime à la vérification (date exacte non précisée, source Influenth 20/10/2026). Légende qui revendique la fiction (« scènes ajoutées avec l'IA ») mais confusion malgré tout : mécanique à retenir = la transparence ne suffit pas, le cadrage et l'actu chaude font le reste. Reprendre la bascule, pas le flou fiction/réel."
-      }
-    ]
+    {
+      "lien": "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/",
+      "compte": "@emmakeitmann (Instagram, 525 000 abonnés au 20/10/2026 ; source : Influenth, repris du Parisien 20/10/2026)",
+      "pourquoi_ca_marche": "Reel de fiction IA (décor de rue en guerre, créatrice en mise en scène), plus de 136 000 J'aime (source Influenth 20/10/2026, date exacte non précisée). La légende revendique la fiction mais la confusion persiste : la transparence ne suffit pas, le cadrage et l'actu chaude font le reste. Lien = article de presse, pas la vidéo elle-même : lien direct à fournir."
+    },
+    {
+      "lien": "https://www.avcesar.com/intelligence-artificielle-tiffany-sloane-l-ia-d-instagram-qui-pille-les-vrais-humoristes-48724",
+      "compte": "@tiffany.bbyx (Instagram, > 375 000 abonnés, date non précisée ; AVcesar 07/10/2026)",
+      "pourquoi_ca_marche": "Personnage IA présenté comme une humoriste (stand-up devant faux public), vues en millions. Contre-modèle à décortiquer : les blagues sont reprises à de vrais humoristes, ce qui ruine la confiance dès qu'on le compare. Lien = article, pas la vidéo : lien direct à fournir."
+    }
   ],
   "historique_a_decortiquer": [
     {
@@ -181,6 +197,14 @@
         "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/"
       ],
       "note": "1 seule vidéo vérifiée ; laboscope, belltakesocial, phyzolof introuvables sur le web public (recherches du 24/10)"
+    },
+    {
+      "date": "2026-10-25",
+      "liens": [
+        "https://www.influenth.com/emma-keitmann-mise-en-scene-ia-confusion-legende-fiction/",
+        "https://www.avcesar.com/intelligence-artificielle-tiffany-sloane-l-ia-d-instagram-qui-pille-les-vrais-humoristes-48724"
+      ],
+      "note": "2 entrées, liens articles (vidéos directes non trouvées) ; laboscope, belltakesocial, phyzolof toujours introuvables (recherches du 25/10)"
     }
   ],
   "contexte_24_10": [
