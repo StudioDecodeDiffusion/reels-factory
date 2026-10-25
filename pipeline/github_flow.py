@@ -1028,6 +1028,11 @@ def digest() -> None:
             lignes += ["", "## 📅 Demain"] + [f"- **{s['creneau'][11:16].replace(':', ' h ')}** · {s['titre']}" for s in prog]
     except Exception:
         pass
+    bud = state.load("budgets", {})
+    if bud.get("jour") == now.strftime("%Y-%m-%d") and bud.get("agents"):
+        tot = sum(bud["agents"].values())
+        lignes += ["", f"## 🔋 Jetons du jour : {tot:,}".replace(",", " ") + f" (seuil {int(state.load('budgets_limites', {}).get('_jour', 2_000_000)):,})".replace(",", " "),
+                   " · ".join(f"agent {k} : {v // 1000} k" for k, v in sorted(bud["agents"].items(), key=lambda kv: -kv[1]))]
     app = [x for x in state.load("approbations", []) if x.get("statut") == "a_decider"]
     if app:
         lignes += ["", "## ⚠ À décider par toi"] + [f"- {x['demande']} (agent {x['agent']})" for x in app[-10:]]

@@ -237,6 +237,12 @@ def cmd_budget(a) -> None:
     lim = state.load("budgets_limites", {}).get(a.agent) or LIMITES.get(a.agent, 300_000)
     pct = round(100 * b["agents"][a.agent] / lim)
     _studio(lambda data: data["budgets"].update({a.agent: pct, "_jour": jour}))
+    total = sum(b["agents"].values())
+    seuil = int(state.load("budgets_limites", {}).get("_jour", 2_000_000))
+    if total >= seuil:  # coupe-circuit du jour (propriétaire, 25/10)
+        _approbation("15", "critique", f"Seuil du jour atteint ({total:,} jetons ≥ {seuil:,}) : productions suivantes reportées")
+        print(f"STOP JOUR ({total:,} jetons ≥ seuil {seuil:,}) : termine l'étape en cours, `tool sauver <ID>`, puis arrête la session.")
+        return
     if pct >= 100:
         _approbation(a.agent, "critique", f"Agent {a.agent} : budget du jour dépassé ({pct} %), arrêté jusqu'à demain")
         print(f"STOP ({pct} %) : n'appelle plus l'agent {a.agent} aujourd'hui ; termine sans lui ou avec un agent moins cher.")
@@ -416,6 +422,11 @@ def _prochain_creneau(pid: str, horizon_h: float | None = None) -> str | None:
 def cmd_creneau(a) -> None:
     """Créneau que la session doit remplir (dans les 8 h), ou AUCUN → la session s'arrête sans produire."""
     c = _prochain_creneau(a.profile, horizon_h=getattr(a, "horizon", None) or 8)
+    b = state.load("budgets", {})
+    if b.get("jour") == datetime.now(TZ).strftime("%Y-%m-%d") and \
+            sum(b.get("agents", {}).values()) >= int(state.load("budgets_limites", {}).get("_jour", 2_000_000)):
+        print("AUCUN (seuil de jetons du jour atteint : reprise demain)")
+        return
     if not c:
         print("AUCUN")
         return

@@ -47,3 +47,9 @@ Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifie
   0_dossier.md, au format de 5_scenario.json ; rien d'autre ». Une tâche = un fichier de sortie.
 - **Reprise** : au début, `tool reprendre <ID>` si une session précédente a été interrompue (même créneau) ; après chaque
   étape terminée, `tool sauver <ID>` (quelques Ko, versionné).
+
+## Brouillons Gemini et compteur (propriétaire, 25/10)
+- Si `state/brouillons/<compte>-<AAAAMMJJ-HHMM du créneau>/` existe : copier 4_concept.json et 5_scenario.json dans
+  travail/<ID>/ ; l'agent 4 ne fait que VÉRIFIER le concept (faits, sources, aiguillage) et l'agent 5 que CORRIGER le scénario.
+- Après chaque appel d'agent : `tool budget --agent N --jetons <subagent_tokens>` ; si la réponse est « STOP JOUR » : `tool sauver <ID>` puis arrêter.
+- Noms propres difficiles : l'agent 5 ajoute leur prononciation dans `state/prononciation.json` (ex. "Nuñez": "Nugnèze").
