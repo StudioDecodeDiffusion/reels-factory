@@ -747,8 +747,9 @@ def _mail_tiktok(fiche: dict) -> None:
     try:
         b = requests.get(fiche["media"]["urls"]["video.mp4"], timeout=300).content
         if len(b) < 24_000_000:
-            video = Path(tempfile.mkdtemp()) / nom_fichier_video(fiche, Path("x")).name
-            video.write_bytes(b)
+            brut = Path(tempfile.mkdtemp()) / "video.mp4"
+            brut.write_bytes(b)
+            video = nom_fichier_video(fiche, brut)
     except Exception as e:
         print(f"pièce jointe TikTok impossible : {e}")
     mail.envoyer(9, f"🎵 TikTok · à publier : {fiche['titre']}",
