@@ -46,31 +46,18 @@ voix:                                   # voix off IA gratuite, générée dans 
   vitesse: 1.0
 
 planning:
-  generation: "un jour sur deux à 01:10"   # tâche planifiée Claude, jours impairs du mois
+  generation: "tâche planifiée Claude chaque jour, ~3 h avant le créneau"
   publication_jours: [1, 2, 3, 4, 5, 6, 7]
-  publication_heure: 12                 # pause déjeuner : le public pro regarde à midi
-  hashtags_max: 5
+  auto_publication: true
+  creneaux:                             # propriétaire 25/10 : 1 Reel par jour
+    lun: ["12:00"]
+    mar: ["12:00"]
+    mer: ["12:00"]
+    jeu: ["12:00"]
+    ven: ["12:00"]
+    sam: ["12:00"]
+    dim: ["12:00"]
 
-mention_ia: "Sources officielles citées — vérifiez toujours le texte en vigueur."
-
-charte_initiale:
-  nom: "Signalétique"
-  fond: "#0B1F1A"
-  texte: "#F2F5F0"
-  accent: "#FFC531"                     # jaune sécurité
-  accent2: "#2BD99F"                    # vert évacuation
-  style: "pixel"                       # pixel art coloré et animé, mascotte, sous-titres mot à mot
-  tenues: {narrateur: "qhse", mascotte: "qhse"}   # tenues de base (voir video/src/personnages.ts)
-  palette: ['#FFC531', '#2BD99F', '#0B1F1A', '#FF6B35', '#3D5AFE', '#8E5CFF']
-  police_titre: "Rubik"
-  police_texte: "Rubik"
-  signature: "bandeau jaune en haut avec le format : VEILLE, COURS ou ACTU (+ n° d'épisode)"
-musique: "curieux"            # ambiance par défaut si l'agent 6 n'en choisit pas
-
-sous_agents:
-  1: 'Veille : textes officiels récents (Légifrance, JO, EUR-Lex, AFNOR/ISO) ; actu : santé-sécurité, environnement,
-    qualité, RSE.'
-  4: Respecter la rotation veille → cours → actu ; pour un cours, avancer d'un épisode dans la série.
-  5: 'Pédagogie : une notion, un exemple, un piège à éviter ; référence exacte du texte.'
-  6: Sobre, jamais choquant ; aucune victime montrée.
-  9: Chaque obligation avec sa référence exacte ; aucune victime nommée ; chiffres officiels uniquement.
+# Propriétaire 25/10 : public = gens du QSE, plutôt QUALITÉ
+specialite: "ISO 9001, EN 9100, normes qualité, normes sanitaires, Code du travail, directives européennes, ISO 45001, ISO 14001, audits qualité (audit ISO 9001), Qualiopi, CTI (habilitation des écoles d'ingénieurs), risque industriel, Seveso"
+inspiration: "posts LinkedIn de Camille Pradel (QSE) : sujets et angles seulement, jamais de copie ; toujours la référence exacte du texte (article, clause de la norme)"
