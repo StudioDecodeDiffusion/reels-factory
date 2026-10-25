@@ -1,10 +1,1 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/reels-factory/reels-factory/pipeline/gemini.py", line 95, in <module>
-    print(appel("Réponds en une phrase : quelle est la capitale de la France ?"))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/reels-factory/reels-factory/pipeline/gemini.py", line 38, in appel
-    raise RuntimeError(f"Gemini : {r.get('error', r)}")
-RuntimeError: Gemini : {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}
-✅ Clé Gemini valide · modèle : models/gemini-3.8-flash
+science-20261025-2000 : Gemini indisponible (Gemini : {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}]}) — les agents Claude feront le travail
