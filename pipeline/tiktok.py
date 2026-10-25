@@ -18,7 +18,7 @@ SCOPES = "user.info.basic,user.info.profile,user.info.stats,video.list,video.pub
 
 
 def _cles():
-    k, s = os.environ["TIKTOK_CLIENT_KEY"], os.environ["TIKTOK_CLIENT_SECRET"]
+    k, s = os.environ["TIKTOK_CLIENT_KEY"].strip(), os.environ["TIKTOK_CLIENT_SECRET"].strip()
     return k, s, Fernet(base64.urlsafe_b64encode(hashlib.sha256(s.encode()).digest()))
 
 
