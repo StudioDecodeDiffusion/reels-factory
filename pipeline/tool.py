@@ -177,9 +177,8 @@ def _marquer_lus(agent: int, ids) -> int:
     return n
 
 
-def cmd_activite(a) -> None:
-    """Studio en direct : met à jour l'état d'un agent dans reels-media/studio/activite.json (lu par la page
-    https://studiodecodediffusion.github.io/reels-media/studio/). Jamais de titre ni de donnée sensible : agent, étape, salle."""
+def _studio(maj) -> bool:
+    """Applique maj(data) à reels-media/studio/activite.json (page Studio en direct) puis pousse. Jamais de titre ni de secret."""
     d = WORK / ".reels-media"
     g = lambda *c: subprocess.run(["git", "-C", str(d), *c], capture_output=True, text=True)
     try:
@@ -189,25 +188,75 @@ def cmd_activite(a) -> None:
         f = d / "studio" / "activite.json"
         for _ in range(4):
             g("pull", "-q", "--rebase", "-X", "theirs")
-            data = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {"agents": {}, "journal": []}
-            t = datetime.now(TZ).isoformat(timespec="seconds")
-            data["agents"][a.agent] = {"etat": a.etat, "salle": a.salle or "", "compte": a.profile or "", "depuis": t}
-            data["journal"] = (data.get("journal", []) + [{"t": t, "agent": a.agent, "etat": a.etat, "salle": a.salle or "",
-                                                            "compte": a.profile or ""}])[-60:]
-            data["maj"] = t
+            data = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+            for k, v in (("agents", {}), ("journal", []), ("budgets", {}), ("taches", {})):
+                data.setdefault(k, v)
+            maj(data)
+            data["maj"] = datetime.now(TZ).isoformat(timespec="seconds")
             f.parent.mkdir(exist_ok=True)
-            f.write_text(json.dumps(data, ensure_ascii=False, indent=0), encoding="utf-8")
+            f.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
             g("add", "studio/activite.json")
-            g("-c", "user.name=reels-bot", "-c", "user.email=reels-bot@users.noreply.github.com", "commit", "-q", "-m",
-              f"studio : agent {a.agent} · {a.etat[:40]}")
+            g("-c", "user.name=reels-bot", "-c", "user.email=reels-bot@users.noreply.github.com", "commit", "-q", "-m", "studio")
             if g("push", "-q").returncode == 0:
-                print(f"studio : agent {a.agent} → {a.etat}")
-                return
+                return True
             g("reset", "-q", "--hard", "origin/main")
     except Exception as e:
-        print(f"(studio non mis à jour : {e} — sans conséquence)")
-        return
-    print("(studio non mis à jour — sans conséquence)")
+        print(f"(studio non mis à jour : {e})")
+    return False
+
+
+ETAPES = {1: "veille", 2: "veille", 13: "veille", 4: "concept", 5: "scénario", 6: "DA", 7: "critique", 8: "génération", 9: "publication"}
+
+
+def cmd_activite(a) -> None:
+    """Studio en direct : état d'un agent (+ passage de document vers un autre agent avec --vers)."""
+    def maj(data):
+        t = datetime.now(TZ).isoformat(timespec="seconds")
+        data["agents"][a.agent] = {"etat": a.etat, "salle": a.salle or "", "compte": a.profile or "", "depuis": t}
+        data["journal"] = (data["journal"] + [{"t": t, "agent": a.agent, "etat": a.etat, "salle": a.salle or "",
+                                               "compte": a.profile or "", "vers": a.vers or ""}])[-80:]
+        if a.profile and str(a.agent).isdigit() and int(a.agent) in ETAPES:  # tableau des tâches par compte
+            data["taches"][a.profile] = {"etape": ETAPES[int(a.agent)], "agent": a.agent, "t": t}
+    print(f"studio : agent {a.agent} → {a.etat}" + (f" (document → agent {a.vers})" if a.vers else "") if _studio(maj)
+          else "(studio non mis à jour — sans conséquence)")
+
+
+LIMITES = {"0": 60_000, "1": 300_000, "2": 300_000, "13": 300_000, "3": 200_000, "9": 200_000, "10": 200_000, "11": 150_000,
+           "12": 300_000, "14": 300_000, "15": 400_000, "4": 800_000, "5": 900_000, "6": 900_000, "7": 1_500_000, "8": 1_200_000}
+
+
+def cmd_budget(a) -> None:
+    """Budget de jetons par agent et par jour, avec coupe-circuit : OK < 80 % ≤ FREIN < 100 % ≤ STOP (idée Munder Difflin)."""
+    jour = datetime.now(TZ).strftime("%Y-%m-%d")
+    b = state.load("budgets", {})
+    if b.get("jour") != jour:
+        b = {"jour": jour, "agents": {}}
+    b["agents"][a.agent] = b["agents"].get(a.agent, 0) + int(a.jetons)
+    state.save("budgets", b)
+    lim = state.load("budgets_limites", {}).get(a.agent) or LIMITES.get(a.agent, 300_000)
+    pct = round(100 * b["agents"][a.agent] / lim)
+    _studio(lambda data: data["budgets"].update({a.agent: pct, "_jour": jour}))
+    if pct >= 100:
+        _approbation(a.agent, "critique", f"Agent {a.agent} : budget du jour dépassé ({pct} %), arrêté jusqu'à demain")
+        print(f"STOP ({pct} %) : n'appelle plus l'agent {a.agent} aujourd'hui ; termine sans lui ou avec un agent moins cher.")
+    elif pct >= 80:
+        print(f"FREIN ({pct} %) : consignes courtes, pas de relecture de fichiers inutiles, une seule passe.")
+    else:
+        print(f"OK ({pct} % du budget du jour)")
+
+
+def _approbation(agent: str, niveau: str, demande: str) -> None:
+    fil = state.load("approbations", [])
+    fil.append({"date": state.now_iso(), "agent": agent, "niveau": niveau, "demande": demande,
+                "statut": "a_decider" if niveau == "critique" else "reglee_par_le_manager"})
+    state.save("approbations", fil[-200:])
+
+
+def cmd_approbation(a) -> None:
+    """File d'approbations : seules les décisions critiques (dépense, suppression, changement de cap) remontent au propriétaire
+    (journal de 20 h 40) ; le reste est réglé par l'agent 15 et seulement consigné."""
+    _approbation(a.agent, a.niveau, a.demande)
+    print("Remonté au propriétaire (journal de 20 h 40)." if a.niveau == "critique" else "Consigné, réglé par le manager.")
 
 
 def cmd_notes(a) -> None:
@@ -513,6 +562,10 @@ def main() -> None:
     p.add_argument("--titre", required=True); p.add_argument("resume")
     p = sub.add_parser("activite"); p.add_argument("--agent", required=True); p.add_argument("--etat", required=True)
     p.add_argument("--salle", help="ex. reunion-1-veille, reunion-2-production"); p.add_argument("--profile")
+    p.add_argument("--vers", help="agent qui reçoit le document (animation sur la page Studio)")
+    p = sub.add_parser("budget"); p.add_argument("--agent", required=True); p.add_argument("--jetons", required=True)
+    p = sub.add_parser("approbation"); p.add_argument("--agent", required=True); p.add_argument("--demande", required=True)
+    p.add_argument("--niveau", choices=["critique", "routine"], default="routine")
     p = sub.add_parser("notes"); p.add_argument("--agent", required=True); p.add_argument("--profile")
     p = sub.add_parser("lu"); p.add_argument("--agent", required=True); p.add_argument("ids", nargs="+")
     a = ap.parse_args()

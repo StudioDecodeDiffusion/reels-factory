@@ -1021,6 +1021,9 @@ def digest() -> None:
             lignes += ["", "## 📅 Demain"] + [f"- **{s['creneau'][11:16].replace(':', ' h ')}** · {s['titre']}" for s in prog]
     except Exception:
         pass
+    app = [x for x in state.load("approbations", []) if x.get("statut") == "a_decider"]
+    if app:
+        lignes += ["", "## ⚠ À décider par toi"] + [f"- {x['demande']} (agent {x['agent']})" for x in app[-10:]]
     sec = [x for x in state.load("secretariat", []) if (x.get("date") or "")[:10] == now.strftime("%Y-%m-%d")]
     if sec:  # réponses de l'agent 0 (secrétaire) aux messages du propriétaire
         lignes += ["", "## 💬 Agent 0 · Secrétariat"] + [f"- **{x.get('question', '')}** → {x.get('reponse', '')}" for x in sec]

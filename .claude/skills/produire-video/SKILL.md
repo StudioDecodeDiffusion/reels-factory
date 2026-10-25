@@ -31,3 +31,10 @@ Fin : 3 lignes (sujet, décision, créneau). Aucun mail.
 
 ## Aiguillage compte / plateforme (obligatoire)
 Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifier `--profile` et `plateforme` du concept. Vidéo TikTok seule = `"plateforme": "tiktok"` à la racine de 4_concept.json.
+
+## Budgets, approbations, passages de documents (propriétaire, 25/10)
+- Après chaque appel d'agent : `python3 -m pipeline.tool budget --agent N --jetons <subagent_tokens du résultat>`.
+  « FREIN » = consignes plus courtes ; « STOP » = ne plus appeler cet agent aujourd'hui.
+- Quand un agent passe son fichier au suivant : `tool activite --agent N --etat "transmet" --vers M --profile <compte>`.
+- Décision critique (dépense, suppression, changement de compte ou de ligne) : `tool approbation --agent 15 --niveau critique --demande "…"`
+  puis continuer sans elle ; tout le reste se règle ici (`--niveau routine`).
