@@ -1,0 +1,295 @@
+{
+  "theme": {
+    "fond": "#2A0F3D",
+    "texte": "#FFFFFF",
+    "accent": "#F5C542",
+    "accent2": "#E8344E",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "25 octobre 2026",
+    "grille": true,
+    "style": "pixeldoc",
+    "transition": "pixels",
+    "plateforme": "tiktok",
+    "palette": [
+      "#F5C542",
+      "#E8344E",
+      "#2A0F3D",
+      "#7B2CBF",
+      "#F4EFE6",
+      "#19C3B1"
+    ]
+  },
+  "variete": {
+    "accroche": "chiffre_contraste",
+    "fonctionnement": "ping_pong",
+    "mise_en_page": "pixeldoc",
+    "musique": "orchestral",
+    "palette": "pourpre_or",
+    "trend": "« Vendredi / samedi » : ping-pong concert contre rue, question fermée oui/non",
+    "voix": "V2+V1dramatique"
+  },
+  "musique": {
+    "genre": "orchestral",
+    "volume": 0.4
+  },
+  "compteur": null,
+  "titre_miniature": "Concert pour le roi. Rue pour le peuple.",
+  "mots_choc": [
+    "roi",
+    "peuple"
+  ],
+  "scenes": [
+    {
+      "type": "pd_tampon",
+      "titre": "Concert → rue",
+      "mot_fort": "550 000",
+      "musique": "tension",
+      "sfx": [
+        "impact"
+      ],
+      "prompt": "a huge purple curtain split in two halves, left half a velvet concert hall, right half a street barrier, pixel art, no logo, no real person",
+      "tampon": "16 → 17 OCT",
+      "energie": 3,
+      "etiquette": "VENDREDI / SAMEDI",
+      "duration": 5.3,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Vendredi soir, Macron et Brigitte sont au concert de Céline Dion.",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "pd_chiffre",
+      "titre": "550 000 manifestants",
+      "mot_fort": "550 000",
+      "musique": "tension",
+      "sfx": [
+        "ding"
+      ],
+      "valeur": 550000,
+      "decimales": 0,
+      "jauge": 69,
+      "legende": "selon le ministre de l'Intérieur",
+      "source": "Paris Match",
+      "energie": 3,
+      "duration": 5.7,
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Samedi ? Cinq cent cinquante mille personnes dans la rue. Selon l'Intérieur.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "pd_chiffre",
+      "titre": "800 000",
+      "mot_fort": "800 000",
+      "musique": "tension",
+      "sfx": [
+        "ding",
+        "pop"
+      ],
+      "valeur": 800000,
+      "decimales": 0,
+      "jauge": 100,
+      "legende": "selon les organisateurs",
+      "source": "Paris Match",
+      "energie": 3,
+      "duration": 4.0,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Huit cent mille, selon les organisateurs.",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "titre": "La vie chère",
+      "mot_fort": "vie chère",
+      "musique": "curieux",
+      "sfx": [
+        "whoosh"
+      ],
+      "prompt": "a gas pump with a rising price display and an empty wallet beside a shopping basket, pixel art, no logo",
+      "energie": 2,
+      "etiquette": "VIE CHÈRE · ESSENCE",
+      "duration": 4.9,
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Leur colère ? La vie chère. Le prix de l'essence.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "titre": "Lui : la salle",
+      "mot_fort": "salle",
+      "musique": "joyeux",
+      "sfx": [
+        "whoosh"
+      ],
+      "prompt": "a concert hall interior with rows of red velvet seats, a lit stage and spotlight beams, tiny anonymous silhouettes, flat pixel art, no logo, no real person",
+      "energie": 2,
+      "etiquette": "16 OCT · LA DÉFENSE",
+      "duration": 3.7,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Lui, la salle, les projecteurs, la musique.",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "titre": "Eux : la rue",
+      "mot_fort": "rue",
+      "musique": "tension",
+      "sfx": [
+        "whoosh",
+        "impact"
+      ],
+      "prompt": "a boulevard with metal barriers, smoke and handmade protest signs, crowd of anonymous black pixel silhouettes, flat pixel art, no logo, no real person",
+      "energie": 3,
+      "etiquette": "17 OCT · LA RUE",
+      "duration": 3.7,
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Eux, des pancartes, contre la vie chère.",
+          "expression": "triste"
+        }
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "titre": "La veille",
+      "mot_fort": "veille",
+      "musique": "joyeux",
+      "sfx": [
+        "pop"
+      ],
+      "prompt": "an empty velvet balcony box with two empty red seats lit by a spotlight, pixel art, no faces, no real person",
+      "energie": 2,
+      "etiquette": "16 OCT → 17 OCT",
+      "duration": 4.5,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le concert, c'était la veille. Juste la veille !",
+          "expression": "choc"
+        }
+      ]
+    },
+    {
+      "type": "pd_chiffre",
+      "titre": "1 200 interpellations",
+      "mot_fort": "1 200",
+      "musique": "effroi",
+      "sfx": [
+        "impact"
+      ],
+      "valeur": 1200,
+      "decimales": 0,
+      "jauge": 60,
+      "legende": "bilan du 17/10, selon le Premier ministre",
+      "source": "Paris Match",
+      "energie": 3,
+      "duration": 6.5,
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Le bilan de la journée, selon le Premier ministre : mille deux cents interpellations.",
+          "expression": "pense"
+        }
+      ]
+    },
+    {
+      "type": "pd_chiffre",
+      "titre": "150 policiers blessés",
+      "mot_fort": "150",
+      "musique": "effroi",
+      "sfx": [
+        "ding"
+      ],
+      "valeur": 150,
+      "decimales": 0,
+      "jauge": 40,
+      "legende": "selon le Premier ministre",
+      "source": "Paris Match",
+      "energie": 3,
+      "duration": 4.1,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Cent cinquante policiers blessés, selon le Premier ministre.",
+          "expression": "triste"
+        }
+      ]
+    },
+    {
+      "type": "pd_versus",
+      "titre": "Salle contre rue",
+      "mot_fort": "rue",
+      "musique": "tension",
+      "sfx": [
+        "whoosh",
+        "impact"
+      ],
+      "gauche": {
+        "label": "Vendredi",
+        "valeur": "Concert",
+        "prompt": "concert hall with velvet seats, stage and spotlights, a few anonymous silhouettes, pixel art, no real person"
+      },
+      "droite": {
+        "label": "Samedi",
+        "valeur": "Rue",
+        "prompt": "street with metal barriers and a dense crowd of anonymous black pixel silhouettes holding blank signs, pixel art, no real person"
+      },
+      "energie": 3,
+      "duration": 5.0,
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Vendredi, le concert. Samedi, la rue. Deux jours, deux mondes.",
+          "expression": "colere"
+        }
+      ]
+    },
+    {
+      "type": "pd_tampon",
+      "titre": "Oui ou non ?",
+      "mot_fort": "Oui ou non",
+      "musique": "tension",
+      "sfx": [
+        "impact",
+        "ding"
+      ],
+      "prompt": "a black screen with a single empty velvet seat lit by a spotlight, pixel art, no real person",
+      "tampon": "OUI OU NON ?",
+      "energie": 3,
+      "etiquette": "AU CONCERT LA VEILLE ?",
+      "duration": 7.3,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Oui ou non : le président devait-il être au concert la veille de la mobilisation ?",
+          "expression": "pense"
+        }
+      ]
+    }
+  ],
+  "voix_override": {
+    "narrateur": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte": "chatterbox:fr?exag=0.9&cfg=0.4",
+    "mascotte_effet": "aucun"
+  }
+}
