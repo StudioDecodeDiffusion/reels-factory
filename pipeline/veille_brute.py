@@ -122,7 +122,7 @@ def correler(items: list[dict], signaux: dict) -> dict:
         return {}
     m = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
     E = m.encode([u["titre"] for u in uniques], normalize_embeddings=True, batch_size=64)
-    lab = AgglomerativeClustering(n_clusters=None, distance_threshold=0.55, metric="cosine", linkage="average").fit_predict(E)
+    lab = AgglomerativeClustering(n_clusters=None, distance_threshold=0.42, metric="cosine", linkage="average").fit_predict(E)
     termes = [("trends", s["terme"], math.log10(1 + s["volume"])) for s in signaux["trends"]] + \
              [("wiki", s["terme"], math.log10(1 + s["vues"]) / 2) for s in signaux["wiki"]] + \
              [("tiktok", s["terme"], 2.0) for s in signaux["tiktok_hashtags"] if s["terme"]] + \
@@ -141,7 +141,7 @@ def correler(items: list[dict], signaux: dict) -> dict:
         recents = sum(1 for i in idx if uniques[i]["date"] and maintenant - datetime.fromisoformat(uniques[i]["date"]) < timedelta(hours=8))
         preuves, bonus = [], 0.0
         for (typ, terme, poids), sim in zip(termes, T @ cen if len(T) else []):
-            if sim > 0.55:
+            if sim > 0.62:
                 preuves.append(f"{typ} : {terme}")
                 bonus += poids * sim
         rep = max(idx, key=lambda i: float(E[i] @ cen))
@@ -152,8 +152,8 @@ def correler(items: list[dict], signaux: dict) -> dict:
                        "adequation": {k: round(float(C[j] @ cen), 3) for j, k in enumerate(COMPTES)}})
     out = {}
     for k in COMPTES:
-        tri = sorted(sujets, key=lambda s: s["score_base"] * max(0.0, s["adequation"][k] - 0.15) * 4, reverse=True)
-        out[k] = [dict(s, score=round(s["score_base"] * max(0.0, s["adequation"][k] - 0.15) * 4, 2)) for s in tri[:8]]
+        tri = sorted(sujets, key=lambda s: s["score_base"] * max(0.0, s["adequation"][k] - 0.22) ** 1.5 * 10, reverse=True)
+        out[k] = [dict(s, score=round(s["score_base"] * max(0.0, s["adequation"][k] - 0.22) ** 1.5 * 10, 2)) for s in tri[:8]]
     return out
 
 
