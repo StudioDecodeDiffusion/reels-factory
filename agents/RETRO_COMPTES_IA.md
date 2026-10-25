@@ -43,3 +43,17 @@ phyzolof : légende très courte + 3 hashtags d'actu. **Durées** : 22-95 s, les
 8. **Habillage constant** = reconnaissable : même cadre (grille, coins, vignette, marque) sur toutes les vidéos d'une série.
 9. **Tampons / étiquettes** (« VÉRIDIQUE », « FAUX », HUD de chiffres) pour ponctuer.
 10. **Accroche = l'objet du scandale à l'écran + 1 chiffre** dès 0,5 s.
+
+## Image par image (25/10, navigateur intégré, captures toutes les 20 ms autour des changements de plan)
+Détection des plans par différence d'images (canvas 24×42), puis planches de 24 images à 20 ms (les Reels sont en
+30 images/s : 1 image réelle toutes les 33 ms, les captures à 20 ms montrent donc chaque image).
+
+| Compte | Ce qui se passe, mesuré | Codé dans pixeldoc.tsx |
+|---|---|---|
+| archive66.tv | **Transition zoom + flou** : le contenu grossit (×1 → ×1,6) et se floute en accélérant pendant 0,2 s (6 images), le plan suivant arrive flou et se resserre en 0,1-0,13 s. Le cadre (grille, coins, marque, sous-titres) ne bouge jamais. Entrée d'objet : petit → taille finale avec léger rebond (0,1 s), étiquette tapée lettre par lettre, mots des sous-titres qui passent du gris au blanc. | `MouvementPixelDoc` (sortie 6 images `Easing.in(cubic)`, entrée 4 images `Easing.out(cubic)`, flou 18/14 px) ; fondu noir supprimé |
+| science_in_8bit | **Coupes sèches** toutes les 1-1,5 s entre plusieurs cadrages d'une même scène (plan large → gros plan) ; tout bouge en continu (particules, faisceaux, compteur « 18 MPH », interface magnétoscope « ◀◀ REWIND / ❚❚ PAUSE »). | Gros plan ×1,3 en coupe sèche au milieu de chaque plan de plus de 3,5 s |
+| phyzolof (vidéo à 211 k vues, illustration vectorielle) | **Poussée continue** vers le sujet (×1 → ×2,5 en 0,5 s en accélérant) qui traverse l'objet pour révéler le plan suivant (coupe raccord par zoom) ; gouttes flottantes, fond en rayons de soleil, mot du sous-titre surligné jaune. | Poussée lente ×1 → ×1,05 sur chaque plan |
+| byte.sized.engineering | Fond de **rayons de vitesse** en pixels qui filent vers l'extérieur ; l'élément 2 glisse depuis le bord en 0,12 s ; **flash blanc** 80 % → 0 en 0,2 s au moment du « VS ». | `Rayons` (pd_versus, pd_chiffre) et `Flash` (pd_versus image 12, pd_tampon image 16) |
+
+Idées non codées (à faire si les vues stagnent) : interface magnétoscope (◀◀ / ❚❚) pour les retours en arrière,
+coupe raccord par zoom à travers un objet (phyzolof), particules permanentes dans chaque plan.

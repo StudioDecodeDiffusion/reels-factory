@@ -208,6 +208,47 @@ export const ScenePixelDoc: React.FC<{scene: Scene; theme: Theme}> = ({scene, th
   }
 };
 
+// Mouvements relevés image par image (25/10, captures toutes les 20 ms) :
+// - archive66 : sortie « zoom + flou » 0,2 s en accélération (×1→×1,6, flou 0→18 px), entrée floue 0,13 s qui se
+//   resserre ; le cadre (grille, coins, sous-titres) reste fixe, seul le contenu bouge.
+// - phyzolof : poussée lente continue sur le sujet (Ken Burns) ; science_in_8bit : coupe sèche en gros plan au milieu
+//   d'un plan long (changement visuel toutes les 2-3 s) ; byte.sized.engineering : rayons de vitesse en fond et
+//   flash blanc 80 % → 0 en 0,2 s à l'impact (versus, tampon).
+const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
+const MouvementPixelDoc: React.FC<{type: string; children: React.ReactNode}> = ({type, children}) => {
+  const f = useCurrentFrame();
+  const {durationInFrames: d, fps} = useVideoConfig();
+  const entree = interpolate(f, [0, 4], [1, 0], {...clamp, easing: Easing.out(Easing.cubic)});
+  const sortie = interpolate(f, [d - 6, d], [0, 1], {...clamp, easing: Easing.in(Easing.cubic)});
+  const poussee = interpolate(f, [0, d], [1, 1.05], clamp);
+  const grosPlan = d > fps * 3.5 && f >= Math.round(d / 2) && !['pd_chiffre', 'pd_jauge'].includes(type) ? 1.3 : 1;
+  const echelle = poussee * grosPlan * (1 + 0.25 * entree + 0.6 * sortie);
+  return (
+    <AbsoluteFill style={{transform: `scale(${echelle})`, transformOrigin: '50% 48%', filter: `blur(${14 * entree + 18 * sortie}px)`}}>
+      {children}
+    </AbsoluteFill>
+  );
+};
+
+const Rayons: React.FC<{c: C}> = ({c}) => {
+  const f = useCurrentFrame();
+  return (
+    <svg width={1080} height={1920} style={{position: 'absolute', inset: 0, opacity: 0.35}}>
+      {Array.from({length: 40}, (_, i) => {
+        const a = (i / 40) * Math.PI * 2;
+        const r0 = 180 + ((f * 18 + i * 97) % 700);
+        return <line key={i} x1={540 + Math.cos(a) * r0} y1={820 + Math.sin(a) * r0} x2={540 + Math.cos(a) * (r0 + 60)}
+          y2={820 + Math.sin(a) * (r0 + 60)} stroke={i % 3 ? c.accent : '#E5133A'} strokeWidth={10} />;
+      })}
+    </svg>
+  );
+};
+
+const Flash: React.FC<{a: number}> = ({a}) => {
+  const f = useCurrentFrame();
+  return <AbsoluteFill style={{background: '#FFF', opacity: interpolate(f, [a, a + 1, a + 7], [0, 0.8, 0], clamp), pointerEvents: 'none'}} />;
+};
+
 // Cadre commun : fond chaud vignetté, grille, coins de viseur, marque, sous-titres karaoké
 export const CadrePixelDoc: React.FC<{scene: Scene; theme: Theme; index: number; total: number; children: React.ReactNode}> = ({scene, theme, index, total, children}) => {
   const c = couleurs(theme);
@@ -233,7 +274,9 @@ export const CadrePixelDoc: React.FC<{scene: Scene; theme: Theme; index: number;
       {coin({right: 60, top: 1300, borderRightWidth: 6, borderBottomWidth: 6})}
       <div style={{position: 'absolute', left: 80, top: 170, fontFamily: fontPixel, fontSize: 26, color: 'rgba(255,255,255,0.75)', letterSpacing: 2}}>DÉCODÉ · {theme.bandeau ?? ''}</div>
       <div style={{position: 'absolute', right: 80, top: 170, fontFamily: fontPixel, fontSize: 26, color: c.accent}}>{String(index + 1).padStart(2, '0')}/{String(total).padStart(2, '0')}</div>
-      {children}
+      {['pd_versus', 'pd_chiffre'].includes(scene.type) ? <Rayons c={c} /> : null}
+      <MouvementPixelDoc type={scene.type}>{children}</MouvementPixelDoc>
+      {scene.type === 'pd_versus' ? <Flash a={12} /> : scene.type === 'pd_tampon' ? <Flash a={16} /> : null}
       <AbsoluteFill style={{backgroundImage: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.12) 0 2px, transparent 2px 5px)', mixBlendMode: 'multiply', pointerEvents: 'none'}} />
       <div style={{position: 'absolute', left: 70, right: 70, top: 1390, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '4px 16px'}}>
         {vis.map((m, i) => {

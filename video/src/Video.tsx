@@ -111,7 +111,7 @@ export const ReelVideo: React.FC<VideoSpec> = ({theme, scenes, music}) => {
                 <CadrePixelDoc scene={s} theme={theme} index={i} total={scenes.length}>
                   <ScenePixelDoc scene={s} theme={theme} />
                 </CadrePixelDoc>
-                {i > 0 ? <TransitionPixel couleur="#0B0603" seed={i} duree={8} /> : null}
+                {/* transition = zoom + flou dans MouvementPixelDoc (pixeldoc.tsx), plus de fondu noir */}
               </AbsoluteFill>
             ) : theme.style === 'editorial' ? (
               <AbsoluteFill>
