@@ -709,18 +709,21 @@ def stats() -> None:
 
 
 def _tiktok(fiche: dict) -> None:
-    """Même vidéo envoyée en brouillon sur le TikTok du compte (s'il est connecté) ; n'empêche jamais Instagram."""
+    """Même vidéo publiée sur le TikTok du compte (s'il est connecté) ; n'empêche jamais Instagram."""
     if not os.getenv("TIKTOK_CLIENT_KEY") or fiche["profil"] not in state.load("tiktok", {}):
         return
     from . import tiktok
     try:
-        tiktok.brouillon(fiche["profil"], fiche["media"]["urls"]["video.mp4"])
-        mail.envoyer(9, f"🎵 TikTok · brouillon prêt : {fiche['titre']}",
-                     md("La vidéo est dans tes **notifications TikTok** (brouillon). Ouvre-la, ajoute un son tendance si tu "
-                        f"veux, colle la légende ci-dessous puis **Publier**.\n\n```\n{fiche.get('legende', '')}\n```"),
-                     R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]})
+        r = tiktok.publier(fiche["profil"], fiche["media"]["urls"]["video.mp4"], fiche.get("legende", ""))
+        fiche["tiktok"] = r
+        save_attente(fiche)
+        if r.get("visibilite") != "PUBLIC_TO_EVERYONE":  # seule action restante pour le propriétaire
+            mail.envoyer(9, f"🎵 TikTok · publiée en privé : {fiche['titre']}",
+                         md("La vidéo est **sur ton profil TikTok, en privé** (TikTok l'impose tant qu'il n'a pas validé l'app). "
+                            "Pour la rendre publique : ouvre-la → ⋯ → **Paramètres de confidentialité** → **Tout le monde**."),
+                         R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]})
     except Exception as e:
-        mail.envoyer(9, f"❌ TikTok · envoi impossible : {fiche['titre']}", md(f"Instagram est publié, TikTok non :\n\n{str(e)[:400]}"),
+        mail.envoyer(9, f"❌ TikTok · envoi impossible : {fiche['titre']}", md(f"Instagram n'est pas touché, TikTok non publié :\n\n{str(e)[:400]}"),
                      R_NOTE.format(n=9), ref={"type": "tiktok", "profil": fiche["profil"]})
 
 

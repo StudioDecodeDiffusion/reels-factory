@@ -79,3 +79,29 @@ def brouillon(compte: str, video_url: str) -> str | None:
     if up.status_code >= 300:
         raise RuntimeError(f"TikTok : envoi refusé ({up.status_code}) {up.text[:200]}")
     return d.get("publish_id")
+
+
+def publier(compte: str, video_url: str, legende: str) -> dict:
+    """Publication directe (propriétaire, 25/10 : tout automatique). Publique si TikTok l'autorise ; tant que l'app
+    n'est pas validée par TikTok, seule la visibilité « moi uniquement » est permise : la vidéo est alors sur le profil, en privé."""
+    jeton = acces(compte)
+    if not jeton:
+        return {}
+    h = {"Authorization": f"Bearer {jeton}", "Content-Type": "application/json; charset=UTF-8"}
+    info = (requests.post(f"{API}/post/publish/creator_info/query/", headers=h, timeout=30).json().get("data") or {})
+    options = info.get("privacy_level_options") or ["SELF_ONLY"]
+    vis = "PUBLIC_TO_EVERYONE" if "PUBLIC_TO_EVERYONE" in options else options[0]
+    video = requests.get(video_url, timeout=300).content
+    n = len(video)
+    init = requests.post(f"{API}/post/publish/video/init/", headers=h, timeout=60, json={
+        "post_info": {"title": legende[:2200], "privacy_level": vis, "disable_duet": False, "disable_comment": False,
+                      "disable_stitch": False, "is_aigc": False},
+        "source_info": {"source": "FILE_UPLOAD", "video_size": n, "chunk_size": n, "total_chunk_count": 1}}).json()
+    d = init.get("data") or {}
+    if not d.get("upload_url"):
+        raise RuntimeError(f"TikTok refuse la publication : {init.get('error')}")
+    up = requests.put(d["upload_url"], data=video, timeout=600,
+                      headers={"Content-Type": "video/mp4", "Content-Range": f"bytes 0-{n - 1}/{n}"})
+    if up.status_code >= 300:
+        raise RuntimeError(f"TikTok : envoi refusé ({up.status_code}) {up.text[:200]}")
+    return {"publish_id": d.get("publish_id"), "visibilite": vis, "compte": info.get("creator_username")}
