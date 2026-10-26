@@ -1,0 +1,74 @@
+{
+  "id": "eco-20261026-0800",
+  "profil": "eco",
+  "statut": "rendu_en_cours",
+  "titre": "À qui la France doit-elle vraiment 2 882 milliards ?",
+  "son_tendance": null,
+  "publication_le": "2026-10-26T21:44",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": null,
+  "legende": "À qui la France doit-elle 2 882 milliards d'euros ? 📊\n\nPlus de la moitié de sa dette négociable est détenue par des non-résidents (57,5 % au 1er trimestre 2026). Les assureurs français en détiennent 9,6 %.\n\nEt vous, cette part vous semble-t-elle un problème ? 👇\n\nEnvoie cette vidéo à quelqu'un qui détient une assurance-vie ! 📤\n\nSources : Agence France Trésor, Insee\n\n#economie #insee #agencefrancetresor #dettepublique #decode\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [
+    "https://insee.fr/fr/statistiques/9053525",
+    "https://www.aft.gouv.fr/files/medias-aft/7_Publications/7.2_BM/435_Bulletin%20mensuel%20aout%202026.pdf",
+    "https://www.jechange.fr/credit/news/charge-dette-ministere-2027-budget-hausse-10-3-milliards"
+  ],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "agent": 7,
+    "role": "7.5 critique finale",
+    "id": "eco-20261026-0800",
+    "compte": "eco",
+    "decision": "publiable",
+    "defauts_bloquants": [],
+    "controles": {
+      "contenu_interdit": "aucun constaté sur les images : pas d'image de presse, pas de deepfake, pas de visage réel (personnages pixel originaux), aucune mention d'IA dans la légende ni à l'écran",
+      "video": "lisible, 1080x1920, h264, 78,4 s ; les 13 images de scène et apercu.png sont lisibles",
+      "voix": "dialogue narrateur présent sur les 13 scènes de 7_spec.json ; profil eco voix active=true (narrateur Lou). L'audio est ajouté au rendu final sur GitHub (NUIT.md §9) : le rendu de contrôle est muet, donc aucune piste audio dans video.mp4 n'est attendue ici.",
+      "credit_voix": "présent en fin de légende (UPMC Pierre/Jessica, CC BY-SA 4.0)",
+      "legende": "conforme au format : accroche + chiffre, contexte en 2 phrases, question 👇, partage ciblé 📤, « Sources : Agence France Trésor, Insee », 5 hashtags (#economie, #insee, #agencefrancetresor, #dettepublique, #decode), pas de #viral ni #fyp",
+      "accroche_1re_seconde": "pas de thèse à l'écran dans la scène 0 (texte de voix seulement) ; la question apparaît seulement en scène 12",
+      "visuel": "scènes 0 à 12 : mascottes pixel et sous-titres animés par mot, lisibles, aucun débordement de texte constaté. Aucune scène pd_* (pd_flux, pd_versus, pd_chiffre, etc.) visible dans les images, alors que 9_precritique.json les prévoyait"
+    },
+    "corrections": [
+      {
+        "priorite": "haute",
+        "sujet": "chiffre de l'accroche non repris par la voix",
+        "constat": "La légende et le titre annoncent « 2 882 milliards d'euros ». La scène 1 dit « deux mille vingt-six », et le chiffre 2 882 n'est pas prononcé. Le lien entre ce chiffre et « dette négociable » n'est donc pas clair à l'écran.",
+        "action": "agent 8 : faire dire le chiffre 2 882 milliards dans la voix (scène 1) ou retirer le chiffre de la légende si la source ne le confirme pas."
+      },
+      {
+        "priorite": "moyenne",
+        "sujet": "chiffre non sourcé dans la légende",
+        "constat": "La scène 9 dit « cent dix-neuf pour cent du PIB ». Ce chiffre n'apparaît pas dans la légende et n'est couvert par aucune des deux sources citées. Non vérifiable dans cette critique.",
+        "action": "ajouter la source du ratio dette/PIB dans « Sources : » ou retirer la phrase."
+      },
+      {
+        "priorite": "moyenne",
+        "sujet": "phrase de voix peu claire",
+        "constat": "Les scènes 2 à 4 (« à des non-résidents. France. leurs détenteurs. ») forment une phrase hachée et ambiguë ; la légende dit « détenue par des non-résidents ».",
+        "action": "réécrire la réplique en phrase complète alignée sur la légende."
+      },
+      {
+        "priorite": "basse",
+        "sujet": "pd_* absents des images",
+        "constat": "Le pré-critique prévoyait des scènes pixeldoc (pd_flux, pd_versus, pd_chiffre) avec mécanisme animé. Les 13 images montrent seulement des scènes de dialogue avec mascottes, sans visuel de données ni flux.",
+        "action": "signalé pour la finition ; non bloquant."
+      },
+      {
+        "priorite": "info",
+        "sujet": "durée et densité du dialogue",
+        "constat": "La vidéo dure 78,4 s, au-dessus du minimum de 55 s. Le dialogue visible est court (environ 50 mots) par rapport à la cible de 160-170 mots.",
+        "action": "signalé pour le rythme ; non bloquant."
+      }
+    ],
+    "verdict_texte": "Publiable : aucun défaut bloquant. Le rendu de contrôle est muet, la voix est ajoutée au rendu final sur GitHub ; dialogue présent sur les 13 scènes et voix active sur le profil eco. Faits non bloquants signalés dans corrections."
+  },
+  "community": {},
+  "da_message": "",
+  "cree": "2026-10-26T20:24:28+00:00"
+}
