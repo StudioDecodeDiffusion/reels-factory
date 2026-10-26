@@ -1,0 +1,11 @@
+{
+  "id": "qhse-20261026-1200",
+  "decision": "a_corriger",
+  "motifs": [
+    "Planche de 8 cases (et non 14) : les scènes 9 à 14 ne sont pas vérifiables sur apercu.png. Régénérer la planche à 14 cases.",
+    "Débordement de texte : 'IMPARTIALITÉ' (scène 7) touche le bord gauche du cadre, 'SÉLECTION' touche le bord droit, 'NON-CONFORMITÉ' et 'ACTION CORRIGÉE' touchent les bords. Règle 'rien ne doit déborder' non respectée.",
+    "Texte d'écran absent ou tronqué par rapport au scénario : 'Procédure : elle tourne ?' (hook) n'apparaît sur aucune case visible ; 'Procédure écrite' (scène 2) absent ; 'Clause 9.2.2 b · impartialité' réduit à 'IMPARTIALITÉ' ; 'Clause 9.2.1 · audit interne' réduit à '9.2.1'.",
+    "Étiquettes hors scénario : 'TRACE' et 'PAPIER' apparaissent sur la case de la scène 4 (ils sont prévus en scène 12) ; 'AUDITEUR', 'DOSSIER' et 'ACTION CORRIGÉE' ne figurent pas dans le scénario.",
+    "Lisibilité : le texte minuscule du coin haut-droit de chaque case est illisible."
+  ]
+}
