@@ -1,0 +1,9 @@
+{
+  "id": "qhse-etapeManager-20261026-201500",
+  "profil": "qhse",
+  "statut": "etape",
+  "agent": "Manager",
+  "cree": "2026-10-26T19:15:00+00:00",
+  "titre": "❌ Production bloquée · qhse 12 h",
+  "corps_md": "Étape : reprise de la vidéo qhse-20261026-1200 (sujet iso9001_auditeur). Raison : le dossier travail/qhse-20261026-1200 n'existe plus dans cette session (conteneur réinitialisé), 'tool reprendre' ne trouve aucun point de reprise (state/reprise absent, aucun commit), et 'tool creneau --profile qhse' répond AUCUN : le créneau de 12 h du 26/10 est passé. Sans video.mp4, 7_spec.json ni 9_critique.json, la correction de la planche (14 scènes) et du débordement de texte est impossible ; une reconstruction complète n'a pas été lancée car elle exigerait une nouvelle production hors créneau. Fichiers conservés : state/attente/qhse-etapeManager-20261026-052906.json (erreurs de la critique du 26/10 04 h 29) ; brouillons Gemini : state/brouillons/qhse-20261026-1200/4_concept.json et 5_scenario.json. Aucun dépôt, aucune publication, aucune ancienne vidéo republiée."
+}
