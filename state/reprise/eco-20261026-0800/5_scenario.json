@@ -26,7 +26,7 @@
   },
   {
    "type": "bigstat",
-   "duree_s": 4.5,
+   "duree_s": 4.0,
    "texte_ecran": "119,0 % du PIB",
    "dialogue": [
     {
@@ -43,31 +43,7 @@
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Autrement dit, la dette dépasse la richesse produite en un an.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "quiz",
-   "duree_s": 4.0,
-   "texte_ecran": "À qui doit-on cet argent ?",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Alors, à qui devons-nous tout cela, concrètement ?",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "pd_flux",
-   "duree_s": 4.0,
-   "texte_ecran": "L'État emprunte",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "L'État emprunte en émettant des titres de dette, achetés sur les marchés financiers.",
+     "texte": "Autrement dit, la dette représente plus d'une année de richesse.",
      "expression": "neutre"
     }
    ]
@@ -75,35 +51,59 @@
   {
    "type": "pd_objet",
    "duree_s": 4.0,
-   "texte_ecran": "Un titre = une créance",
+   "texte_ecran": "Dette publique",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Chaque titre est une créance : celui qui l'achète prête de l'argent à l'État.",
+     "texte": "La dette publique regroupe les dettes de l'État et des administrations publiques.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "pd_flux",
+   "type": "compare",
    "duree_s": 4.0,
-   "texte_ecran": "Remboursé à l'échéance",
+   "texte_ecran": "Dette et PIB",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "L'État doit ensuite le rembourser à l'échéance fixée.",
+     "texte": "Le ratio rapporte cette dette à la richesse produite sur une année.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "checklist",
-   "duree_s": 4.5,
-   "texte_ecran": "Qui peut acheter ?",
+   "type": "bars",
+   "duree_s": 4.0,
+   "texte_ecran": "Dette > PIB",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Une banque, un assureur, un fonds, un particulier ou un investisseur étranger peuvent l'acheter.",
+     "texte": "Au-delà de cent pour cent, la dette dépasse le PIB.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "≈ 3 600 Md€ (arrondi)",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Arrondi, on dit environ trois mille six cents milliards.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "quiz",
+   "duree_s": 4.0,
+   "texte_ecran": "Vous le saviez ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et vous, saviez-vous combien cette dette représente par rapport au PIB ?",
      "expression": "neutre"
     }
    ]
@@ -121,37 +121,37 @@
    ]
   },
   {
-   "type": "pd_chiffre",
+   "type": "kinetic",
    "duree_s": 4.0,
-   "texte_ecran": "3 595,5 Md€ au T2 2026",
+   "texte_ecran": "Le ratio en clair",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Au total, la dette atteint trois mille cinq cent quatre-vingt-quinze virgule cinq milliards d'euros.",
+     "texte": "Le ratio se lit simplement : dette divisée par richesse produite.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "compare",
+   "type": "checklist",
    "duree_s": 4.0,
-   "texte_ecran": "À qui la France est redevable",
+   "texte_ecran": "Deux chiffres à retenir",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Savoir qui détient cette dette, c'est savoir à qui la France est redevable.",
+     "texte": "À retenir : trois mille cinq cent quatre-vingt-quinze virgule cinq milliards, et cent dix-neuf pour cent du PIB.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "quiz",
+   "type": "pd_flux",
    "duree_s": 4.0,
-   "texte_ecran": "Vous le saviez ?",
+   "texte_ecran": "Dette ÷ PIB",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Et vous, saviez-vous qui détient la dette française ?",
+     "texte": "Dette divisée par PIB donne le ratio publié par l'Insee.",
      "expression": "neutre"
     }
    ]
@@ -163,13 +163,13 @@
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Répondez en commentaire, et partagez cette vidéo.",
+     "texte": "Quel chiffre retenez-vous ? Répondez en commentaire, puis partagez cette vidéo.",
      "expression": "neutre"
     }
    ]
   }
  ],
- "legende": "La France doit 3 595,5 milliards d'euros. 📊\n\nFin du deuxième trimestre 2026, la dette publique atteint 119,0 % du PIB, selon l'Insee. Savoir qui détient cette dette permet de comprendre à qui la France est redevable.\n\nEt vous, savez-vous qui détient la dette française ? 👇\n\nEnvoyez cette vidéo à quelqu'un qui suit les finances publiques ! 📤\n\nSources : Insee (Informations rapides n° 239, publiée le 29 septembre 2026)",
+ "legende": "La France doit 3 595,5 milliards d'euros. 📊\n\nFin du deuxième trimestre 2026, la dette publique atteint 119,0 % du PIB, selon l'Insee. Le ratio rapporte la dette à la richesse produite en un an.\n\nEt vous, quel chiffre retenez-vous ? 👇\n\nEnvoyez cette vidéo à quelqu'un qui suit les finances publiques ! 📤\n\nSources : Insee (Informations rapides n° 239, publiée le 29 septembre 2026)",
  "hashtags": [
   "#economie",
   "#insee",
