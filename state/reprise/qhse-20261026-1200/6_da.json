@@ -1,0 +1,187 @@
+{
+  "id": "iso9001_auditeur",
+  "compte": "qhse",
+  "choix": 0,
+  "titre": "ISO 9001 : ce que l'auditeur regarde vraiment",
+  "format": {
+    "ratio": "9:16",
+    "resolution": "1080x1920",
+    "duree_cible_s": 56,
+    "scenes_cibles": 14,
+    "zones_securisees": "titre dans le tiers haut (0 a 320 px), rien d'essentiel dans les 400 px du bas (légende et barre de progression)"
+  },
+  "style_visuel": {
+    "nom": "pixeldoc",
+    "principes": [
+      "illustration pixel art sur grille de 32 px, aplats sans dégradé, contours 2 px encre",
+      "un seul mécanisme animé par scène, mouvement court et net (pas de zoom flou, pas de particules)",
+      "personnages originaux en silhouette pixel, sans traits de visage réel ni ressemblance avec une personne existante",
+      "aucune image de presse, aucune photo, aucun logo d'organisme certificateur"
+    ],
+    "typographie": {
+      "titres": "pixel type Silkscreen ou VT323, majuscules, 72 px minimum",
+      "etiquettes": "pixel type, 48 px, 4 mots maximum par étiquette",
+      "texte_secondaire": "sans-serif sobre (Inter ou équivalent), 40 px, réservé aux références de clause"
+    }
+  },
+  "palette": {
+    "fond_papier": "#F4F1EA",
+    "encre": "#1F2A37",
+    "bleu_qse": "#2F5D8C",
+    "gris_pixel": "#8A94A0",
+    "vert_valide": "#3C7A5A",
+    "ambre_tampon": "#D98E04",
+    "usage": "fond papier pour les documents, encre pour les contours et le texte, bleu pour les flux et les processus, vert pour la preuve, ambre uniquement pour le tampon et la clause mise en avant ; pas de rouge (ton non alarmiste)"
+  },
+  "scenes": [
+    {
+      "n": 1,
+      "duree_s": 4,
+      "type": "pd_tampon",
+      "texte_ecran": "Preuve, pas procédure",
+      "mecanisme": "un tampon ambre s'abat sur une feuille de procédure, la feuille reste à plat sans trace de validation",
+      "prompt_image": "pixel art 32 px, feuille de papier crème posée sur un bureau vu de dessus, grand tampon ambre en forme de cercle encré, style pixeldoc, contours encre #1F2A37, fond #F4F1EA, pas de texte lisible",
+      "son": "tchak de tampon"
+    },
+    {
+      "n": 2,
+      "duree_s": 4,
+      "type": "pd_objet",
+      "texte_ecran": "La procédure",
+      "mecanisme": "le classeur pixel apparaît fermé puis glisse au centre de l'écran",
+      "prompt_image": "pixel art 32 px, classeur à anneaux bleu #2F5D8C fermé, étiquette vierge, fond papier, style pixeldoc, aplats sans dégradé",
+      "son": "glissement léger"
+    },
+    {
+      "n": 3,
+      "duree_s": 4,
+      "type": "pd_flux",
+      "texte_ecran": "Processus, résultat, preuve",
+      "mecanisme": "trois blocs apparaissent en séquence, reliés par des flèches bleues qui se tracent de gauche à droite",
+      "prompt_image": "pixel art 32 px, trois cases carrées alignées horizontalement, flèches pixel bleu #2F5D8C, dernière case verte #3C7A5A, fond papier, style pixeldoc",
+      "son": "tic par flèche"
+    },
+    {
+      "n": 4,
+      "duree_s": 4,
+      "type": "pd_objet",
+      "texte_ecran": "L'auditeur",
+      "mecanisme": "la silhouette entre par la gauche et s'arrête au centre, un carnet ouvert à la main",
+      "prompt_image": "pixel art 32 px, silhouette humaine originale sans visage détaillé, debout, tenant un carnet ouvert, couleurs encre #1F2A37 et bleu #2F5D8C, fond papier, style pixeldoc",
+      "son": "pas pixel"
+    },
+    {
+      "n": 5,
+      "duree_s": 4,
+      "type": "pd_flux",
+      "texte_ecran": "Remonter la trace",
+      "mecanisme": "les flèches s'inversent : le point vert (preuve) part vers la gauche jusqu'au point de départ",
+      "prompt_image": "pixel art 32 px, trois cases alignées, la case de droite verte #3C7A5A, flèches pixel inversées vers la gauche, fond papier, style pixeldoc",
+      "son": "tic par flèche inversé"
+    },
+    {
+      "n": 6,
+      "duree_s": 4,
+      "type": "pd_jauge",
+      "texte_ecran": "Procédure et preuve cohérentes",
+      "mecanisme": "l'aiguille de la jauge monte doucement de la zone grise vers la zone verte",
+      "prompt_image": "pixel art 32 px, jauge semi-circulaire pixel, zones gris #8A94A0 puis vert #3C7A5A, aiguille encre #1F2A37, fond papier, style pixeldoc, aucun chiffre",
+      "son": "tick d'aiguille"
+    },
+    {
+      "n": 7,
+      "duree_s": 4,
+      "type": "pd_versus",
+      "texte_ecran": "Relire la procédure | Suivre la preuve",
+      "mecanisme": "à gauche le document gris s'efface, à droite le document vert gagne en contraste",
+      "prompt_image": "pixel art 32 px, deux colonnes, à gauche une feuille grise #8A94A0 semi-effacée, à droite une feuille verte #3C7A5A nette avec coche pixel, fond papier, style pixeldoc",
+      "son": "bascule douce"
+    },
+    {
+      "n": 8,
+      "duree_s": 4,
+      "type": "pd_objet",
+      "texte_ecran": "Les enregistrements",
+      "mecanisme": "un registre s'ouvre, les lignes se remplissent une à une",
+      "prompt_image": "pixel art 32 px, registre ouvert avec lignes horizontales pixel, lignes remplies en vert #3C7A5A, fond papier, style pixeldoc, pas de texte lisible",
+      "son": "page tournée"
+    },
+    {
+      "n": 9,
+      "duree_s": 4,
+      "type": "pd_flux",
+      "texte_ecran": "Écart, cause, correction",
+      "mecanisme": "un point ambre (écart) traverse une case cause puis une case action corrective",
+      "prompt_image": "pixel art 32 px, trois cases alignées, un point ambre #D98E04 qui se déplace de gauche à droite, cases encre et bleu, fond papier, style pixeldoc",
+      "son": "tic par flèche"
+    },
+    {
+      "n": 10,
+      "duree_s": 4,
+      "type": "pd_tampon",
+      "texte_ecran": "Clause 9.2 : audit interne",
+      "mecanisme": "le tampon ambre s'imprime sur la page, la référence de clause apparaît sous le tampon",
+      "prompt_image": "pixel art 32 px, page de norme stylisée sans texte, tampon ambre #D98E04 imprimé au centre, fond papier, style pixeldoc",
+      "son": "tchak de tampon"
+    },
+    {
+      "n": 11,
+      "duree_s": 4,
+      "type": "pd_versus",
+      "texte_ecran": "Procédure figée | Processus vivant",
+      "mecanisme": "la colonne de gauche reste immobile, celle de droite se met en mouvement avec des flèches bleues",
+      "prompt_image": "pixel art 32 px, deux colonnes, à gauche un bloc gris #8A94A0 immobile, à droite un bloc bleu #2F5D8C avec flèches en boucle, fond papier, style pixeldoc",
+      "son": "bascule douce"
+    },
+    {
+      "n": 12,
+      "duree_s": 4,
+      "type": "pd_jauge",
+      "texte_ecran": "Impartialité de l'auditeur",
+      "mecanisme": "la jauge se stabilise dans la zone verte, un petit cadenas pixel apparaît à côté",
+      "prompt_image": "pixel art 32 px, jauge pixel stable dans la zone verte #3C7A5A, petit cadenas bleu #2F5D8C à côté, fond papier, style pixeldoc, aucun chiffre",
+      "son": "clic de cadenas"
+    },
+    {
+      "n": 13,
+      "duree_s": 4,
+      "type": "pd_objet",
+      "texte_ecran": "Procédure ou preuve ?",
+      "mecanisme": "le classeur gris recule dans l'étagère pendant que le registre vert avance au premier plan",
+      "prompt_image": "pixel art 32 px, étagère pixel avec un classeur gris #8A94A0 au fond et un registre vert #3C7A5A au premier plan, fond papier, style pixeldoc",
+      "son": "glissement léger"
+    },
+    {
+      "n": 14,
+      "duree_s": 4,
+      "type": "pd_tampon",
+      "texte_ecran": "Preuve, pas papier",
+      "mecanisme": "tampon final ambre, puis la question fermée apparaît sous le tampon",
+      "prompt_image": "pixel art 32 px, feuille crème avec grand tampon ambre #D98E04 centré, encre #1F2A37, fond papier, style pixeldoc, espace libre en bas pour la question",
+      "son": "tchak de tampon, silence final"
+    }
+  ],
+  "musique": {
+    "genre": "lo-fi pixel doux, instrumental, sans voix chantée",
+    "tempo_bpm": 96,
+    "ambiance": "posée, technique, sans suspense ni alerte",
+    "structure": "boucle propre de 60 s, pas de montée dramatique",
+    "mixage": "musique 18 dB sous la voix, baisse de 3 dB sur les tampons pour laisser la place aux sons",
+    "source": "composition originale ou bibliothèque libre de droits, aucune reprise d'un morceau existant"
+  },
+  "sons_fx": ["tchak de tampon", "tic par flèche", "tic d'aiguille", "glissement léger", "bascule douce", "clic de cadenas", "page tournée"],
+  "interdits": [
+    "aucun chiffre hors ceux déjà présents dans le texte (aucun chiffre ajouté par la DA)",
+    "aucune clause nouvelle hors 9.2, 9.2.1, 9.2.2 et 10.2",
+    "aucun rouge, aucun effet d'alerte, aucun visage réel",
+    "aucune mention d'IA dans l'image ou le texte d'écran",
+    "aucune photo ni logo d'organisme certificateur"
+  ],
+  "references_normatives": [
+    "ISO 9001:2015, clause 9.2 (audit interne)",
+    "ISO 9001:2015, clause 9.2.1",
+    "ISO 9001:2015, clause 9.2.2 (points a et b)",
+    "ISO 9001:2015, clause 10.2 (non-conformité et action corrective)"
+  ],
+  "note_agent_6": "DA calée sur le choix 0 de 4_concept.json. Aucune veille ni chiffre utilisé. Les faits de la clause 9.2 restent à confirmer par l'agent 7 (page iso.org non ouverte pendant la session)."
+}
