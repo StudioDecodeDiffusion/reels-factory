@@ -40,7 +40,9 @@
   "glissement léger",
   "bascule douce",
   "clic de cadenas",
-  "page tournée"
+  "page tournée",
+  "tic de boucle",
+  "tic régulier"
  ],
  "interdits": [
   "aucun chiffre hors ceux déjà présents dans le texte (aucun chiffre ajouté par la DA)",
@@ -55,7 +57,7 @@
   "ISO 9001:2015, clause 9.2.2 (points a et b)",
   "ISO 9001:2015, clause 10.2 (non-conformité et action corrective)"
  ],
- "note_agent_6": "DA calée sur le choix 0 de 4_concept.json. Aucune veille ni chiffre utilisé. Les faits de la clause 9.2 restent à confirmer par l'agent 7 (page iso.org non ouverte pendant la session).",
+ "note_agent_6": "DA réalignée sur les 14 plans de 5_scenario.json : même ordre, mêmes types, durées 4 s (56 s). Scène 1 = hook « Procédure : elle tourne ? ». Aucun chiffre ni clause ajouté ; clauses 9.2, 9.2.1, 9.2.2 (a, b) et 10.2 seulement. Faits de la clause 9.2 à confirmer par l'agent 7.",
  "musique": {
   "genre": "lo-fi pixel doux, instrumental, sans voix chantée",
   "volume": 0.4
@@ -70,33 +72,45 @@
   {
    "n": 1,
    "duree_s": 4,
-   "type": "pd_tampon",
-   "texte_ecran": "Preuve, pas procédure",
-   "mecanisme": "un tampon ambre s'abat sur une feuille de procédure, la feuille reste à plat sans trace de validation",
-   "prompt_image": "pixel art 32 px, feuille de papier crème posée sur un bureau vu de dessus, grand tampon ambre en forme de cercle encré, style pixeldoc, contours encre #1F2A37, fond #F4F1EA, pas de texte lisible",
-   "son": "tchak de tampon",
+   "type": "hook",
+   "texte_ecran": "Procédure : elle tourne ?",
+   "mecanisme": "une feuille de procédure reste immobile au centre, une flèche bleue tourne en boucle autour d'elle sans la toucher",
+   "prompt_image": "pixel art 32 px, feuille de procédure crème posée au centre, flèche circulaire pixel bleu #2F5D8C qui tourne autour de la feuille sans la toucher, contours encre #1F2A37, fond #F4F1EA, style pixeldoc, pas de texte lisible",
+   "son": "tic de boucle",
    "dialogue": [
     {
      "qui": "Narrateur",
-     "texte": "Un auditeur ISO 9001 ne vérifie pas si vous avez une procédure. Il vérifie si elle tourne.",
+     "texte": "Un auditeur ISO 9001 regarde moins si vous avez une procédure que si elle tourne.",
      "expression": "sérieux"
-    },
-    {
-     "qui": "Narrateur",
-     "texte": "Vous avez une procédure écrite. C'est un bon début.",
-     "expression": "neutre"
     }
    ],
-   "duration": 10.4
+   "duration": 6.2
   },
   {
    "n": 2,
    "duree_s": 4,
    "type": "pd_objet",
-   "texte_ecran": "La procédure",
-   "mecanisme": "le classeur pixel apparaît fermé puis glisse au centre de l'écran",
+   "texte_ecran": "Procédure écrite",
+   "mecanisme": "le classeur pixel bleu fermé glisse au centre, étiquette vierge",
    "prompt_image": "pixel art 32 px, classeur à anneaux bleu #2F5D8C fermé, étiquette vierge, fond papier, style pixeldoc, aplats sans dégradé",
    "son": "glissement léger",
+   "dialogue": [
+    {
+     "qui": "Narrateur",
+     "texte": "Vous avez une procédure écrite. C'est un bon début, mais ce n'est pas la fin.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 6.2
+  },
+  {
+   "n": 3,
+   "duree_s": 4,
+   "type": "pd_flux",
+   "texte_ecran": "Processus → preuve",
+   "mecanisme": "deux cases bleues apparaissent puis une flèche bleue se trace de gauche à droite jusqu'à une case verte",
+   "prompt_image": "pixel art 32 px, trois cases carrées alignées, deux bleues #2F5D8C puis une verte #3C7A5A à droite, flèches pixel bleues, fond papier, style pixeldoc",
+   "son": "tic par flèche",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -107,13 +121,13 @@
    "duration": 3.9
   },
   {
-   "n": 3,
+   "n": 4,
    "duree_s": 4,
-   "type": "pd_flux",
-   "texte_ecran": "Processus, résultat, preuve",
-   "mecanisme": "trois blocs apparaissent en séquence, reliés par des flèches bleues qui se tracent de gauche à droite",
-   "prompt_image": "pixel art 32 px, trois cases carrées alignées horizontalement, flèches pixel bleu #2F5D8C, dernière case verte #3C7A5A, fond papier, style pixeldoc",
-   "son": "tic par flèche",
+   "type": "pd_versus",
+   "texte_ecran": "Preuve ↔ procédure",
+   "mecanisme": "une case verte (preuve) à gauche et une feuille encre (procédure) à droite, une double flèche bleue s'allume entre elles",
+   "prompt_image": "pixel art 32 px, deux blocs côte à côte, à gauche un bloc vert #3C7A5A (preuve), à droite une feuille encre #1F2A37 (procédure), double flèche pixel bleu #2F5D8C entre eux, fond papier, style pixeldoc",
+   "son": "bascule douce",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -124,13 +138,13 @@
    "duration": 5.0
   },
   {
-   "n": 4,
+   "n": 5,
    "duree_s": 4,
-   "type": "pd_objet",
-   "texte_ecran": "L'auditeur",
-   "mecanisme": "la silhouette entre par la gauche et s'arrête au centre, un carnet ouvert à la main",
-   "prompt_image": "pixel art 32 px, silhouette humaine originale sans visage détaillé, debout, tenant un carnet ouvert, couleurs encre #1F2A37 et bleu #2F5D8C, fond papier, style pixeldoc",
-   "son": "pas pixel",
+   "type": "pd_tampon",
+   "texte_ecran": "Clause 9.2.1 · audit interne",
+   "mecanisme": "un tampon ambre s'imprime sur une page, la référence de clause apparaît sous le tampon",
+   "prompt_image": "pixel art 32 px, page de norme stylisée sans texte, tampon ambre #D98E04 imprimé au centre, fond papier, style pixeldoc",
+   "son": "tchak de tampon",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -141,13 +155,13 @@
    "duration": 4.6
   },
   {
-   "n": 5,
+   "n": 6,
    "duree_s": 4,
-   "type": "pd_flux",
-   "texte_ecran": "Remonter la trace",
-   "mecanisme": "les flèches s'inversent : le point vert (preuve) part vers la gauche jusqu'au point de départ",
-   "prompt_image": "pixel art 32 px, trois cases alignées, la case de droite verte #3C7A5A, flèches pixel inversées vers la gauche, fond papier, style pixeldoc",
-   "son": "tic par flèche inversé",
+   "type": "pd_objet",
+   "texte_ecran": "Intervalles planifiés",
+   "mecanisme": "une grille de calendrier sans chiffres, des coches bleues apparaissent à intervalles réguliers",
+   "prompt_image": "pixel art 32 px, grille de calendrier pixel sans aucun chiffre, coches bleues #2F5D8C qui apparaissent à intervalles réguliers, fond papier, style pixeldoc",
+   "son": "tic régulier",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -158,13 +172,13 @@
    "duration": 5.0
   },
   {
-   "n": 6,
+   "n": 7,
    "duree_s": 4,
-   "type": "pd_jauge",
-   "texte_ecran": "Procédure et preuve cohérentes",
-   "mecanisme": "l'aiguille de la jauge monte doucement de la zone grise vers la zone verte",
-   "prompt_image": "pixel art 32 px, jauge semi-circulaire pixel, zones gris #8A94A0 puis vert #3C7A5A, aiguille encre #1F2A37, fond papier, style pixeldoc, aucun chiffre",
-   "son": "tick d'aiguille",
+   "type": "pd_versus",
+   "texte_ecran": "Clause 9.2.2 b · impartialité",
+   "mecanisme": "un fléau de balance pixel se stabilise à l'horizontale entre une silhouette d'auditeur à gauche et un dossier à droite",
+   "prompt_image": "pixel art 32 px, balance pixel au centre, fléau qui se stabilise à l'horizontale, silhouette humaine originale sans visage détaillé à gauche, dossier bleu #2F5D8C à droite, repère ambre #D98E04 sur le fléau, fond papier, style pixeldoc",
+   "son": "bascule douce",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -175,13 +189,13 @@
    "duration": 6.6
   },
   {
-   "n": 7,
+   "n": 8,
    "duree_s": 4,
-   "type": "pd_versus",
-   "texte_ecran": "Relire la procédure | Suivre la preuve",
-   "mecanisme": "à gauche le document gris s'efface, à droite le document vert gagne en contraste",
-   "prompt_image": "pixel art 32 px, deux colonnes, à gauche une feuille grise #8A94A0 semi-effacée, à droite une feuille verte #3C7A5A nette avec coche pixel, fond papier, style pixeldoc",
-   "son": "bascule douce",
+   "type": "pd_flux",
+   "texte_ecran": "Non-conformité → clause 10.2",
+   "mecanisme": "une case grise de non-conformité s'ouvre, une flèche bleue la traverse vers une case verte corrigée",
+   "prompt_image": "pixel art 32 px, trois cases alignées, la première grise #8A94A0 (non-conformité), flèche pixel bleu #2F5D8C, la dernière verte #3C7A5A (corrigée), repère ambre #D98E04 sur la clause, fond papier, style pixeldoc",
+   "son": "tic par flèche",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -192,13 +206,13 @@
    "duration": 4.6
   },
   {
-   "n": 8,
+   "n": 9,
    "duree_s": 4,
-   "type": "pd_objet",
-   "texte_ecran": "Les enregistrements",
-   "mecanisme": "un registre s'ouvre, les lignes se remplissent une à une",
-   "prompt_image": "pixel art 32 px, registre ouvert avec lignes horizontales pixel, lignes remplies en vert #3C7A5A, fond papier, style pixeldoc, pas de texte lisible",
-   "son": "page tournée",
+   "type": "pd_tampon",
+   "texte_ecran": "Conséquences et causes",
+   "mecanisme": "un tampon ambre s'imprime sur une fiche, puis deux lignes pixel bleues se tracent sous le tampon",
+   "prompt_image": "pixel art 32 px, fiche papier avec tampon ambre #D98E04 au centre, deux lignes pixel bleu #2F5D8C tracées dessous, fond papier, style pixeldoc, pas de texte lisible",
+   "son": "tchak de tampon",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -209,30 +223,13 @@
    "duration": 3.5
   },
   {
-   "n": 9,
-   "duree_s": 4,
-   "type": "pd_flux",
-   "texte_ecran": "Écart, cause, correction",
-   "mecanisme": "un point ambre (écart) traverse une case cause puis une case action corrective",
-   "prompt_image": "pixel art 32 px, trois cases alignées, un point ambre #D98E04 qui se déplace de gauche à droite, cases encre et bleu, fond papier, style pixeldoc",
-   "son": "tic par flèche",
-   "dialogue": [
-    {
-     "qui": "Narrateur",
-     "texte": "L'erreur fréquente : préparer l'audit en relisant les procédures.",
-     "expression": "sérieux"
-    }
-   ],
-   "duration": 3.9
-  },
-  {
    "n": 10,
    "duree_s": 4,
-   "type": "pd_tampon",
-   "texte_ecran": "Clause 9.2 : audit interne",
-   "mecanisme": "le tampon ambre s'imprime sur la page, la référence de clause apparaît sous le tampon",
-   "prompt_image": "pixel art 32 px, page de norme stylisée sans texte, tampon ambre #D98E04 imprimé au centre, fond papier, style pixeldoc",
-   "son": "tchak de tampon",
+   "type": "pd_flux",
+   "texte_ecran": "Clause 9.2.2 a · planification",
+   "mecanisme": "trois entrées (processus, changements, résultats) convergent par des flèches bleues vers une case programme",
+   "prompt_image": "pixel art 32 px, trois petites cases à gauche reliées par des flèches pixel bleues vers une grande case bleue #2F5D8C à droite, fond papier, style pixeldoc, pas de texte lisible",
+   "son": "tic par flèche",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -245,11 +242,11 @@
   {
    "n": 11,
    "duree_s": 4,
-   "type": "pd_versus",
-   "texte_ecran": "Procédure figée | Processus vivant",
-   "mecanisme": "la colonne de gauche reste immobile, celle de droite se met en mouvement avec des flèches bleues",
-   "prompt_image": "pixel art 32 px, deux colonnes, à gauche un bloc gris #8A94A0 immobile, à droite un bloc bleu #2F5D8C avec flèches en boucle, fond papier, style pixeldoc",
-   "son": "bascule douce",
+   "type": "pd_objet",
+   "texte_ecran": "Procédure parfaite ≠ preuve",
+   "mecanisme": "une feuille de procédure grise parfaitement nette, la case de coche reste vide, aucune trace ne se forme",
+   "prompt_image": "pixel art 32 px, feuille grise #8A94A0 parfaitement rectangulaire, case de coche vide encre #1F2A37 en bas, fond papier, style pixeldoc, pas de texte lisible",
+   "son": "glissement léger",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -263,10 +260,10 @@
    "n": 12,
    "duree_s": 4,
    "type": "pd_jauge",
-   "texte_ecran": "Impartialité de l'auditeur",
-   "mecanisme": "la jauge se stabilise dans la zone verte, un petit cadenas pixel apparaît à côté",
-   "prompt_image": "pixel art 32 px, jauge pixel stable dans la zone verte #3C7A5A, petit cadenas bleu #2F5D8C à côté, fond papier, style pixeldoc, aucun chiffre",
-   "son": "clic de cadenas",
+   "texte_ecran": "La trace compte",
+   "mecanisme": "l'aiguille de la jauge monte doucement de la zone grise vers la zone verte",
+   "prompt_image": "pixel art 32 px, jauge semi-circulaire pixel, zones gris #8A94A0 puis vert #3C7A5A, aiguille encre #1F2A37, fond papier, style pixeldoc, aucun chiffre",
+   "son": "tick d'aiguille",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -279,11 +276,11 @@
   {
    "n": 13,
    "duree_s": 4,
-   "type": "pd_objet",
-   "texte_ecran": "Procédure ou preuve ?",
-   "mecanisme": "le classeur gris recule dans l'étagère pendant que le registre vert avance au premier plan",
-   "prompt_image": "pixel art 32 px, étagère pixel avec un classeur gris #8A94A0 au fond et un registre vert #3C7A5A au premier plan, fond papier, style pixeldoc",
-   "son": "glissement léger",
+   "type": "pd_versus",
+   "texte_ecran": "Papier vs trace",
+   "mecanisme": "à gauche une feuille grise pliée s'efface, à droite un registre vert glisse vers le centre",
+   "prompt_image": "pixel art 32 px, deux colonnes, à gauche une feuille grise #8A94A0 pliée, à droite un registre vert #3C7A5A ouvert, fond papier, style pixeldoc, pas de texte lisible",
+   "son": "bascule douce",
    "dialogue": [
     {
      "qui": "Narrateur",
@@ -296,9 +293,9 @@
   {
    "n": 14,
    "duree_s": 4,
-   "type": "pd_tampon",
-   "texte_ecran": "Preuve, pas papier",
-   "mecanisme": "tampon final ambre, puis la question fermée apparaît sous le tampon",
+   "type": "outro",
+   "texte_ecran": "ISO 9001:2015 · cl. 9.2 et 10.2",
+   "mecanisme": "tampon ambre final centré, puis la question fermée apparaît sous le tampon",
    "prompt_image": "pixel art 32 px, feuille crème avec grand tampon ambre #D98E04 centré, encre #1F2A37, fond papier, style pixeldoc, espace libre en bas pour la question",
    "son": "tchak de tampon, silence final",
    "dialogue": [
