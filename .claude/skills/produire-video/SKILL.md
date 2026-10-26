@@ -53,3 +53,7 @@ Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifie
   travail/<ID>/ ; l'agent 4 ne fait que VÉRIFIER le concept (faits, sources, aiguillage) et l'agent 5 que CORRIGER le scénario.
 - Après chaque appel d'agent : `tool budget --agent N --jetons <subagent_tokens>` ; si la réponse est « STOP JOUR » : `tool sauver <ID>` puis arrêter.
 - Noms propres difficiles : l'agent 5 ajoute leur prononciation dans `state/prononciation.json` (ex. "Nuñez": "Nugnèze").
+
+
+## Statut à chaque étape (obligatoire, 26/10)
+Après chaque étape déléguée (4, 5, 6, 7, 8, dépôt) et à l'arrêt, écris le statut : `python3 -m pipeline.tool statut <ID> "<étape>" "<OK ou raison de l'arrêt>"`. Si la session s'arrête sans vidéo déposée, la dernière ligne doit dire où : jamais de silence.

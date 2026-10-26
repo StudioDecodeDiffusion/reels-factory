@@ -629,6 +629,15 @@ def cmd_abandon(a) -> None:
     print("Propriétaire prévenu.")
 
 
+def cmd_statut(a) -> None:
+    """Statut de production visible dans le dépôt : une ligne par étape (état/statut_production.json)."""
+    f = state.STATE / "statut_production.json"
+    d = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    d.setdefault(a.id, []).append({"heure": datetime.now(TZ).strftime("%H:%M"), "etape": a.etape, "resultat": a.resultat})
+    f.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"{a.id} · {a.etape} · {a.resultat}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -659,6 +668,7 @@ def main() -> None:
     p = sub.add_parser("approbation"); p.add_argument("--agent", required=True); p.add_argument("--demande", required=True)
     p.add_argument("--niveau", choices=["critique", "routine"], default="routine")
     p = sub.add_parser("spec"); p.add_argument("id")
+    p = sub.add_parser("statut"); p.add_argument("id"); p.add_argument("etape"); p.add_argument("resultat")
     p = sub.add_parser("sauver"); p.add_argument("id")
     p = sub.add_parser("reprendre"); p.add_argument("id")
     p = sub.add_parser("dossier"); p.add_argument("id"); p.add_argument("--profile", required=True); p.add_argument("--creneau")
