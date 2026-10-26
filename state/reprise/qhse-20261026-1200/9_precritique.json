@@ -1,0 +1,52 @@
+{
+  "agent": 7,
+  "role": "precritique",
+  "id": "qhse-20261026-1200",
+  "compte": "qhse",
+  "fichiers_lus": ["4_concept.json", "5_scenario.json", "6_da.json"],
+  "decision": "go",
+  "bloquant": false,
+  "defauts_bloquants": [],
+  "controles": {
+    "contenu_interdit": "aucun (pas d'image de presse, pas de deepfake, pas de citation ; personnages originaux)",
+    "coherence_scenario_da": "coherente dans l'ensemble (ton, palette, personnages Lou et Déco, mécanisme PDCA animé)",
+    "clauses_iso": "§5.1.1 (direction, efficacité), §10.2 (actions sur les causes), §7.5 (informations documentées) : formulations conformes au sens de la norme 2015, non revérifiées au texte",
+    "duree": "14 plans x 3,7 s = 51,8 s"
+  },
+  "corrections": [
+    {
+      "type": "fait_non_verifie",
+      "ou": "4_concept.json, faits[0] et 5_scenario.json plan pd_chiffre",
+      "constat": "1 265 216 certificats ISO 9001 (ISO Survey 2022) : chiffre sourcé mais non revérifié sur le web. Non bloquant.",
+      "action_suggeree": "Revérifier le chiffre sur iso.org avant publication si possible, sinon garder la mention « fin 2022 »."
+    },
+    {
+      "type": "incoherence_mineure",
+      "ou": "6_da.json scenes_visuelles[3] vs 5_scenario.json plan pd_tampon (§5.1.1 / §10.2)",
+      "constat": "La DA prévoit un tampon « EFFICACITÉ », le scénario utilise « PAS DE LISTE IMPOSÉE », « CAUSE TRAITÉE » et « PREUVES, PAS CLASSEURS ».",
+      "action_suggeree": "Aligner la DA sur le scénario lors de la génération (agent 8)."
+    },
+    {
+      "type": "incoherence_mineure",
+      "ou": "6_da.json scenes_visuelles[0] vs 5_scenario.json plans 1 à 4",
+      "constat": "La DA place pd_versus en accroche ; le scénario ouvre sur un hook puis un pd_objet (classeurs), le pd_versus arrive au plan 4.",
+      "action_suggeree": "Suivre l'ordre du scénario, qui fait foi pour le montage."
+    },
+    {
+      "type": "finition",
+      "ou": "6_da.json consignes_animation",
+      "constat": "La DA demande des étiquettes de 3 mots maximum ; plusieurs texte_ecran du scénario dépassent (ex. « Audit ISO 9001 : preuves, pas classeurs », « Planifier, réaliser, contrôler, améliorer », « §5.1.1 : la direction répond de l'efficacité »).",
+      "action_suggeree": "Raccourcir ou accepter la dépassement sur 3,7 s ; vérifier qu'aucun texte ne déborde."
+    },
+    {
+      "type": "finition",
+      "ou": "5_scenario.json plan pd_objet « ISO 9001:2015, chapitre 7.5 »",
+      "constat": "La DA demande la référence « ISO 9001:2015, §7.5 » à l'écran ; le scénario écrit « chapitre 7.5 ».",
+      "action_suggeree": "Harmoniser sur « §7.5 » pour rester cohérent avec les autres références de clause."
+    }
+  ],
+  "questions_proprietaire": [
+    "Déco en détective : à garder pour tous les sujets d'audit (question posée par la DA)."
+  ],
+  "resume": "GO. Aucun défaut bloquant. Chiffre ISO Survey 2022 à revérifier si possible. Incohérences mineures DA/scénario sur les tampons et l'ordre des scènes, à aligner sur le scénario."
+}
