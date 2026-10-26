@@ -26,6 +26,8 @@ projection : **le dernier rapport de l'agent 3** (`state/rapport_3_<compte>.json
 l'agent 9 qui la publie.
 
 ## 1. Évaluer (spectateur exigeant + correcteur) — ouvrir réellement chaque image
+- **Durée** : seule une durée **inférieure à 55 s** est un défaut. Une vidéo plus longue (ex. 71 s) n'est pas un problème : ne la signale pas.
+- **Qualité, pas pinaillage** : concentre-toi sur les défauts visibles et audibles (texte coupé, animation vide, voix incompréhensible, fait faux). Ne refuse pas pour un détail de forme.
 - **Finition** : texte coupé, débordant, superposé ; contraste ; personnage ou bulle qui cache le
   contenu ; élément important tout en haut ou à droite sur les boutons Instagram ; animation vide.
 - **Cohérence** : la vidéo raconte-t-elle UNE idée claire, du début à la fin ? Lou questionne, Déco

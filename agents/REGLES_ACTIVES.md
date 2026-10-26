@@ -8,7 +8,7 @@ aucun appel à la violence, aucune image de presse, aucun deepfake, aucun visage
 QSE = expert, référence exacte de la norme ou de l'article ; science = « comment ça marche » + comparatifs ; fun = décalé).
 **Aiguillage** : la demande du propriétaire décide du compte et de la plateforme (`agents/REPARTITION.md` si doute).
 
-**Format** : 55-65 s, 12-15 scènes de 3-4 s, dialogue 160-170 mots, voix rapide sans blanc ; une révélation toutes les ~10 s.
+**Format** : au moins 55 s (plus long n'est pas un défaut ; le plafond technique est 110 s), 12-15 scènes de 3-4 s, dialogue 160-170 mots, voix rapide sans blanc ; une révélation toutes les ~10 s.
 Actu 14 h = vidéo phare (contraste pouvoir/gens, question fermée finale) ; autres créneaux = vidéos d'info.
 **Accroche** : la thèse critique à l'écran et dans la voix dès la 1re seconde = `titre_miniature` (≤ 8 mots), `mots_choc`
 (1-3 mots), `surtitre_miniature` (qui · quand) dans `4_concept.json`.
