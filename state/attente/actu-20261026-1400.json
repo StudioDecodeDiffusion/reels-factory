@@ -1,7 +1,7 @@
 {
   "id": "actu-20261026-1400",
   "profil": "actu",
-  "statut": "rendu_en_cours",
+  "statut": "a_valider",
   "titre": "54 milliards d'effort demandés, la colère descend dans la rue",
   "son_tendance": null,
   "publication_le": "2026-10-26T22:03",
@@ -45,5 +45,18 @@
   },
   "community": {},
   "da_message": "Aucun message du propriétaire à traiter. DA réalignée sur les 14 plans du scénario (même ordre, mêmes types, question finale sur l'outro). Style pixeldoc, palette braise rouge, musique funk en tension, voix V1+V3. La charte state/charte_actu.json reste en éditorial, non modifiée.",
-  "cree": "2026-10-26T20:28:42+00:00"
+  "cree": "2026-10-26T20:28:42+00:00",
+  "duree_s": 59.5,
+  "voix": "chatterbox:fr?exag=0.6&cfg=0.4",
+  "media": {
+    "repo": "StudioDecodeDiffusion/reels-media",
+    "release_id": 424762789,
+    "tag": "reel-actu-20261026-1400",
+    "urls": {
+      "video.mp4": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261026-1400/video.mp4",
+      "apercu.png": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261026-1400/apercu.png",
+      "couverture.png": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261026-1400/couverture.png"
+    }
+  },
+  "envoyee": "2026-10-26T20:58:06+00:00"
 }
