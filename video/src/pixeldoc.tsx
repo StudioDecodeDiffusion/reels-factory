@@ -25,9 +25,11 @@ const TitrePixel: React.FC<{texte?: string; mot?: string; c: C; taille?: number;
   const net = (x: string) => x.toLowerCase().replace(/[^\p{L}\d%€]/gu, '');
   const forts = new Set((mot ?? '').split(/\s+/).map(net).filter(Boolean));
   const n = Math.floor(interpolate(f, [2, 2 + texte.length * 0.7], [0, texte.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const motLong = Math.max(8, ...texte.split(' ').map((w) => w.length));
+  const fs = Math.min(taille, Math.min(64, Math.floor(860 / (0.8 * motLong))));
   let vu = 0;
   return (
-    <div style={{position: 'absolute', left: 70, right: 70, top, textAlign: 'center', fontFamily: fontPixel, fontSize: taille, lineHeight: 1.12, textTransform: 'uppercase', textShadow: '6px 6px 0 rgba(0,0,0,0.55)'}}>
+    <div style={{position: 'absolute', left: 70, right: 70, top, textAlign: 'center', fontFamily: fontPixel, fontSize: fs, lineHeight: 1.12, textTransform: 'uppercase', textShadow: '6px 6px 0 rgba(0,0,0,0.55)'}}>
       {texte.split(' ').map((m, i) => {
         const debut = vu;
         vu += m.length + 1;
@@ -154,7 +156,7 @@ const Jauge: React.FC<{s: Ex<'pd_jauge'>; c: C}> = ({s, c}) => {
       <svg viewBox="0 0 200 130" width={760} height={494} style={{position: 'absolute', left: 160, top: 560}} shapeRendering="crispEdges">
         {Array.from({length: 24}).map((_, k) => {
           const ang = ((-120 + k * 10.4) * Math.PI) / 180;
-          const col = k < 8 ? '#3FA34D' : k < 16 ? JAUNE : '#E3242B';
+          const col = k < 8 ? '#3FA34D' : k < 16 ? JAUNE : c.accent;
           return <rect key={k} x={100 + Math.sin(ang) * 80 - 4} y={110 - Math.cos(ang) * 80 - 4} width={8} height={8} fill={col} />;
         })}
         <g transform={`rotate(${a} 100 110)`}>
@@ -174,7 +176,7 @@ const Tampon: React.FC<{s: Ex<'pd_tampon'>; c: C}> = ({s, c}) => {
     <>
       <ObjetPixel src={s.src} c={c} />
       <div style={{position: 'absolute', left: 0, right: 0, top: 700, display: 'flex', justifyContent: 'center', transform: `rotate(-12deg) scale(${2.2 - 1.2 * p})`, opacity: p}}>
-        <span style={{fontFamily: fontPixel, fontSize: 96, color: '#E3242B', border: '12px solid #E3242B', padding: '10px 34px', background: 'rgba(0,0,0,0.25)'}}>{s.tampon}</span>
+        <span style={{fontFamily: fontPixel, fontSize: 96, color: c.accent, border: '12px solid ' + c.accent, padding: '10px 34px', background: 'rgba(0,0,0,0.25)'}}>{s.tampon}</span>
       </div>
     </>
   );
@@ -273,7 +275,6 @@ export const CadrePixelDoc: React.FC<{scene: Scene; theme: Theme; index: number;
       {coin({left: 60, top: 1300, borderLeftWidth: 6, borderBottomWidth: 6})}
       {coin({right: 60, top: 1300, borderRightWidth: 6, borderBottomWidth: 6})}
       <div style={{position: 'absolute', left: 80, top: 170, fontFamily: fontPixel, fontSize: 26, color: 'rgba(255,255,255,0.75)', letterSpacing: 2}}>DÉCODÉ · {theme.bandeau ?? ''}</div>
-      <div style={{position: 'absolute', right: 80, top: 170, fontFamily: fontPixel, fontSize: 26, color: c.accent}}>{String(index + 1).padStart(2, '0')}/{String(total).padStart(2, '0')}</div>
       {['pd_versus', 'pd_chiffre'].includes(scene.type) ? <Rayons c={c} /> : null}
       <MouvementPixelDoc type={scene.type}>{children}</MouvementPixelDoc>
       {scene.type === 'pd_versus' ? <Flash a={12} /> : scene.type === 'pd_tampon' ? <Flash a={16} /> : null}

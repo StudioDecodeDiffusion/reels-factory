@@ -282,13 +282,13 @@ def frames_per_scene(spec: dict, mp4: Path) -> list[Path]:
 
 def contact_sheet(images: list[Path], out: Path) -> Path:
     """Planche d'aperçu : les images des scènes côte à côte (affichée dans l'e-mail de validation)."""
-    imgs = images[:8]
+    imgs = images
+    n, cols, h = len(imgs), min(7, len(imgs)), 427
     inputs = []
     for i in imgs:
         inputs += ["-i", str(i)]
-    filt = "".join(f"[{k}:v]scale=240:-1[s{k}];" for k in range(len(imgs)))
-    filt += "".join(f"[s{k}]" for k in range(len(imgs))) + f"hstack=inputs={len(imgs)}"
-    if len(imgs) == 1:
-        filt = "[0:v]scale=240:-1"
+    filt = "".join(f"[{k}:v]scale=240:{h}[s{k}];" for k in range(n))
+    filt += "".join(f"[s{k}]" for k in range(n))
+    filt += f"xstack=inputs={n}:layout=" + "|".join(f"{(k % cols) * 240}_{(k // cols) * h}" for k in range(n))
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *inputs, "-filter_complex", filt, str(out)], check=True)
     return out
