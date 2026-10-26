@@ -1,0 +1,335 @@
+{
+ "id": "eco-20261026-0800",
+ "compte": "Décodé - l'éco simplement",
+ "concept_titre": "3 595,5 milliards de dette : le chiffre à retenir",
+ "format": {
+  "ratio": "9:16",
+  "resolution": "1080x1920",
+  "duree_cible_s": 56,
+  "nb_scenes": 14,
+  "fps": 30
+ },
+ "style": {
+  "nom": "pixeldoc",
+  "description": "Pixel art propre et sobre, aplats sans dégradé, contours nets, icônes simples. Ton neutre et pédagogique : on montre des mécanismes, pas des coupables.",
+  "regles": [
+   "Aucun visage réel ni personnage identifiable ; personnages originaux, silhouettes ou pictogrammes uniquement.",
+   "Aucun logo d'institution ou de banque, aucune photo de presse.",
+   "Aucune mention d'IA à l'écran.",
+   "Un mécanisme animé minimum (scène 13, pd_flux) ; pas plus de 2 couleurs d'accent par scène."
+  ]
+ },
+ "palette": {
+  "fond": "#F4EFE3",
+  "encre": "#1B2A41",
+  "accent_principal": "#2F6DB5",
+  "accent_secondaire": "#E0A526",
+  "neutre_moyen": "#8A94A6",
+  "fond_sombre": "#14202F",
+  "contraste": "encre sur fond crème ; texte d'accent bleu réservé aux labels ≥ 40 px"
+ },
+ "typographie": {
+  "titres": "Press Start 2P, 2 lignes max, 16 caractères par ligne max",
+  "labels": "VT323, 40 px minimum à 1080 px de large",
+  "chiffres": "Press Start 2P, valeur seule à l'écran, unité en label séparé",
+  "regle": "Rien ne doit déborder : tout texte passe par une boîte de largeur fixe, sinon on coupe le libellé."
+ },
+ "chiffres_autorises": [
+  {
+   "valeur": "3 595,5 Md€",
+   "libelle": "dette publique fin T2 2026",
+   "source": "Insee, Informations rapides n° 239 (29/09/2026)"
+  },
+  {
+   "valeur": "119,0 %",
+   "libelle": "du PIB",
+   "source": "Insee, Informations rapides n° 239 (29/09/2026)"
+  }
+ ],
+ "chiffres_interdits": "Tout autre chiffre, y compris un arrondi de la dette. Aucune répartition des créanciers (parts en %, montants par catégorie) : les scènes n'en montrent aucune.",
+ "accroche": {
+  "titre_miniature": "3 595,5 MD€ DE DETTE",
+  "mots_choc": "119,0 % DU PIB",
+  "surtitre_miniature": "DETTE PUBLIQUE · 2T 2026"
+ },
+ "prompts_images": {
+  "miniature": "Pixel art 9:16, fond crème #F4EFE3, une pile de pièces pixel à gauche, un pictogramme de personnage original qui regarde la pile, contours encre #1B2A41, accent bleu #2F6DB5 sur la pile. Pas de texte généré, pas de visage réel, pas de logo, style pixeldoc sobre.",
+  "fond_scene_pd": "Pixel art plat 1080x1920, grille de fond très légère, couleurs limitées à fond crème, encre, bleu et ambre #E0A526. Pas de texte, pas de personnage identifiable, pas de logo.",
+  "fond_bigstat": "Pixel art plat 1080x1920 fond #14202F, motifs de points gris #8A94A6 très discrets. Pas de texte, pas de personnage."
+ },
+ "transitions": "Coupes sèches ; fondu noir de 0,2 s uniquement avant l'outro (scène 14).",
+ "differenciation_derniere_video": "Aucune dernière vidéo connue pour ce compte : pas de comparaison à faire.",
+ "musique": {
+  "genre": "Lo-fi pixel doux, piano et synthé 8-bit léger, original, sans voix, sans musique sous licence.",
+  "volume": "sous la voix, -18 dB environ ; baisse à -24 dB sur les scènes chiffre (1, 3)"
+ },
+ "variete": {
+  "trend": "Jauge et barres animées : ratio dette / PIB"
+ },
+ "titre_miniature": "3 600 MILLIARDS DE DETTE : LE CHIFFRE",
+ "mots_choc": [
+  "119 % DU PIB"
+ ],
+ "surtitre_miniature": "DETTE PUBLIQUE · 2T 2026",
+ "scenes": [
+  {
+   "n": 1,
+   "type": "hook",
+   "duree_s": 4,
+   "visuel": "Fond crème, titre centré qui s'écrit lettre par lettre, pictogramme de pièce qui tombe.",
+   "texte": {
+    "surtitre": "DETTE PUBLIQUE · 2T 2026",
+    "titre": "3 595,5 MD€ DE DETTE",
+    "mot_choc": "À RETENIR"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La France doit trois mille cinq cent quatre-vingt-quinze virgule cinq milliards d'euros.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 5.0
+  },
+  {
+   "n": 2,
+   "type": "bigstat",
+   "duree_s": 4,
+   "visuel": "Fond encre, date en grand qui s'affiche, calendrier pixel en fond.",
+   "texte": {
+    "valeur": "T2 2026",
+    "libelle": "fin du deuxième trimestre"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "C'est la dette publique à la fin du deuxième trimestre deux mille vingt-six.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 5.4
+  },
+  {
+   "n": 3,
+   "type": "bigstat",
+   "duree_s": 4,
+   "visuel": "Fond encre, un seul chiffre très grand, animation de compteur de 0 à la valeur.",
+   "texte": {
+    "valeur": "119,0 %",
+    "libelle": "du PIB"
+   },
+   "source_affichee": "Insee",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Rapportée à la richesse produite, elle atteint cent dix-neuf virgule zéro pour cent du PIB, selon l'Insee.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 6.9
+  },
+  {
+   "n": 4,
+   "type": "pd_jauge",
+   "duree_s": 4,
+   "visuel": "Jauge horizontale qui se remplit, repère du PIB en pointillés, sans chiffre.",
+   "texte": {
+    "titre": "PLUS D'UNE ANNÉE DE RICHESSE",
+    "libelle": "rapport dette / PIB"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Autrement dit, la dette représente plus d'une année de richesse.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 4.2
+  },
+  {
+   "n": 5,
+   "type": "pd_objet",
+   "duree_s": 4,
+   "visuel": "Pictogramme d'un bâtiment d'État et de sa pile de documents de dette.",
+   "texte": {
+    "titre": "DETTE PUBLIQUE",
+    "libelle": "État et administrations publiques"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La dette publique regroupe les dettes de l'État et des administrations publiques.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 5.0
+  },
+  {
+   "n": 6,
+   "type": "compare",
+   "duree_s": 4,
+   "visuel": "Deux colonnes côte à côte, sans chiffre : une pile pour la dette, une pile pour le PIB.",
+   "texte": {
+    "titre": "DETTE ET PIB",
+    "gauche": "DETTE",
+    "droite": "PIB",
+    "libelle": "le ratio les rapporte"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le ratio rapporte cette dette à la richesse produite sur une année.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 5.0
+  },
+  {
+   "n": 7,
+   "type": "bars",
+   "duree_s": 4,
+   "visuel": "Deux barres animées, la barre dette dépasse la barre PIB, sans étiquette chiffrée.",
+   "texte": {
+    "titre": "DETTE > PIB"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Au-delà de cent pour cent, la dette dépasse le PIB.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 4.2
+  },
+  {
+   "n": 8,
+   "type": "pd_chiffre",
+   "duree_s": 4,
+   "visuel": "Pictogramme d'une pile de pièces pixel qui se construit, sans chiffre.",
+   "texte": {
+    "titre": "ARRONDI",
+    "libelle": "du montant ci-dessus"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Arrondi, on dit environ trois mille six cents milliards.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 3.9
+  },
+  {
+   "n": 9,
+   "type": "quiz",
+   "duree_s": 4,
+   "visuel": "Point d'interrogation pixel géant sur fond crème, sans options de réponse chiffrées.",
+   "texte": {
+    "titre": "VOUS LE SAVIEZ ?"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et vous, saviez-vous combien cette dette représente par rapport au PIB ?",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 5.0
+  },
+  {
+   "n": 10,
+   "type": "pd_tampon",
+   "duree_s": 4,
+   "visuel": "Tampon pixel 'SOURCE' qui s'appose sur une fiche.",
+   "texte": {
+    "titre": "SOURCE : INSEE",
+    "libelle": "chiffres officiels"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ces chiffres viennent de l'Insee, l'institut officiel de la statistique, publiés fin septembre.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 5.4
+  },
+  {
+   "n": 11,
+   "type": "kinetic",
+   "duree_s": 4,
+   "visuel": "Texte qui s'anime mot par mot, fond crème, une seule couleur d'accent.",
+   "texte": {
+    "titre": "LE RATIO EN CLAIR",
+    "libelle": "dette divisée par richesse produite"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le ratio se lit simplement : dette divisée par richesse produite.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 4.6
+  },
+  {
+   "n": 12,
+   "type": "checklist",
+   "duree_s": 4,
+   "visuel": "Liste à deux cases pixel, chaque case se coche l'une après l'autre.",
+   "texte": {
+    "titre": "DEUX CHIFFRES À RETENIR",
+    "items": [
+     "3 595,5 Md€",
+     "119,0 % DU PIB"
+    ]
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "À retenir : trois mille cinq cent quatre-vingt-quinze virgule cinq milliards, et cent dix-neuf pour cent du PIB.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 7.3
+  },
+  {
+   "n": 13,
+   "type": "pd_flux",
+   "duree_s": 4,
+   "mecanisme_anime": true,
+   "visuel": "Pièces qui circulent d'une case DETTE vers une case PIB, flèches qui clignotent, symbole ÷ au centre. Une seule couleur d'accent.",
+   "texte": {
+    "titre": "DETTE ÷ PIB",
+    "libelle": "le ratio publié par l'Insee"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Dette divisée par PIB donne le ratio publié par l'Insee.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 4.2
+  },
+  {
+   "n": 14,
+   "type": "outro",
+   "duree_s": 4,
+   "visuel": "Logo pixel du compte sur fond crème, question finale, fondu noir de 0,2 s avant la fin.",
+   "texte": {
+    "titre": "DITES-LE EN COMMENTAIRE",
+    "question": "Quel chiffre retenez-vous ?",
+    "signature": "Décodé - l'éco simplement"
+   },
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Quel chiffre retenez-vous ? Répondez en commentaire, puis partagez cette vidéo.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 4.6
+  }
+ ]
+}
