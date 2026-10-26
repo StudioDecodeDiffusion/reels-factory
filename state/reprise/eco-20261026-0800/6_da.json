@@ -1,0 +1,68 @@
+{
+  "id": "eco-20261026-0800",
+  "compte": "Décodé - l'éco simplement",
+  "concept_titre": "À qui la France doit-elle vraiment 3 600 milliards ?",
+  "format": {"ratio": "9:16", "resolution": "1080x1920", "duree_cible_s": 55, "nb_scenes": 15, "fps": 30},
+  "style": {
+    "nom": "pixeldoc",
+    "description": "Pixel art propre et sobre, aplats sans dégradé, contours nets, icônes simples. Ton neutre et pédagogique : on montre des mécanismes, pas des coupables.",
+    "regles": [
+      "Aucun visage réel ni personnage identifiable ; personnages originaux, silhouettes ou pictogrammes uniquement.",
+      "Aucun logo d'institution ou de banque, aucune photo de presse.",
+      "Aucune mention d'IA à l'écran.",
+      "Un mécanisme animé minimum (scène pd_flux) ; pas plus de 2 couleurs d'accent par scène."
+    ]
+  },
+  "palette": {
+    "fond": "#F4EFE3",
+    "encre": "#1B2A41",
+    "accent_principal": "#2F6DB5",
+    "accent_secondaire": "#E0A526",
+    "neutre_moyen": "#8A94A6",
+    "fond_sombre": "#14202F",
+    "contraste": "encre sur fond crème ; texte d'accent bleu réservé aux labels ≥ 40 px"
+  },
+  "typographie": {
+    "titres": "Press Start 2P, 2 lignes max, 16 caractères par ligne max",
+    "labels": "VT323, 40 px minimum à 1080 px de large",
+    "chiffres": "Press Start 2P, valeur seule à l'écran, unité en label séparé",
+    "regle": "Rien ne doit déborder : tout texte passe par une boîte de largeur fixe, sinon on coupe le libellé."
+  },
+  "chiffres_autorises": [
+    {"valeur": "3 595,5 Md€", "libelle": "dette publique fin T2 2026", "source": "Insee, Informations rapides n° 239 (29/09/2026)"},
+    {"valeur": "119,0 %", "libelle": "du PIB", "source": "Insee, Informations rapides n° 239 (29/09/2026)"},
+    {"valeur": "3 600 Md€", "libelle": "arrondi du titre uniquement", "source": "arrondi de 3 595,5 Md€"}
+  ],
+  "chiffres_interdits": "Aucune répartition des créanciers (parts en %, montants par catégorie) tant qu'elle n'est pas sourcée et vérifiée. Si elle ne l'est pas, la scène 6 garde des catégories sans chiffre.",
+  "scenes": [
+    {"n": 1, "type": "hook", "duree_s": 4, "visuel": "Fond crème, titre centré qui s'écrit lettre par lettre, pictogramme de pièce qui tombe.", "texte": {"surtitre": "DETTE PUBLIQUE · 2T 2026", "titre": "À QUI DOIT-ON 3 600 MILLIARDS ?", "mot_choc": "VRAIS CRÉANCIERS"}},
+    {"n": 2, "type": "pd_chiffre", "duree_s": 4, "visuel": "Grand chiffre sur pile de pixels qui se construit, légende dessous.", "texte": {"valeur": "3 595,5 Md€", "libelle": "dette fin T2 2026"}, "source_affichee": "Insee"},
+    {"n": 3, "type": "pd_jauge", "duree_s": 3, "visuel": "Jauge horizontale qui se remplit jusqu'à 119,0 %, repère 100 % en pointillés.", "texte": {"valeur": "119,0 %", "libelle": "du PIB"}},
+    {"n": 4, "type": "pd_objet", "duree_s": 4, "visuel": "Pictogramme d'un titre de dette : une feuille avec une promesse de remboursement et une ligne d'intérêts.", "texte": {"titre": "UN TITRE DE DETTE", "libelle": "une promesse de remboursement, avec intérêts"}},
+    {"n": 5, "type": "pd_flux", "duree_s": 3, "mecanisme_anime": true, "visuel": "Pièces qui circulent de la case État vers des cases créanciers, flèches qui clignotent. Une seule couleur d'accent.", "texte": {"titre": "QUI TOUCHE LES INTÉRÊTS ?", "libelle": "l'État paie"}},
+    {"n": 6, "type": "pd_versus", "duree_s": 4, "visuel": "Deux colonnes de pictogrammes sans chiffres : détenteurs résidents d'un côté, non-résidents de l'autre.", "texte": {"gauche": "RÉSIDENTS", "droite": "NON-RÉSIDENTS", "libelle": "répartition à sourcer"}, "verification": "Si pas de source vérifiée, remplacer par pd_objet."},
+    {"n": 7, "type": "pd_tampon", "duree_s": 3, "visuel": "Tampon pixel 'SOURCE' qui s'appose sur une fiche.", "texte": {"titre": "CHIFFRE OFFICIEL", "libelle": "Insee, T2 2026"}},
+    {"n": 8, "type": "bigstat", "duree_s": 4, "visuel": "Fond encre, un seul chiffre très grand, animation de compteur de 0 à la valeur.", "texte": {"valeur": "3 595,5", "unite": "Md€", "libelle": "une somme qui doit être financée chaque année"}},
+    {"n": 9, "type": "pd_chiffre", "duree_s": 4, "visuel": "Pictogramme de trois épargnants, un billet qui glisse vers une banque.", "texte": {"titre": "L'ÉPARGNE FINANCE", "libelle": "banques, assureurs, fonds"}},
+    {"n": 10, "type": "dots", "duree_s": 3, "visuel": "Grille de points qui se colorent un par un, sans chiffre.", "texte": {"libelle": "chaque créancier a une part, à vérifier"}},
+    {"n": 11, "type": "pd_objet", "duree_s": 4, "visuel": "Pictogramme d'une loupe posée sur un document officiel.", "texte": {"titre": "LES PARTS EXACTES", "libelle": "dans la publication officielle"}},
+    {"n": 12, "type": "pd_flux", "duree_s": 4, "mecanisme_anime": true, "visuel": "Flux de pièces qui revient vers l'épargnant sous forme d'intérêts, même logique que la scène 5.", "texte": {"titre": "LE CERCLE DES INTÉRÊTS", "libelle": "qui paie, qui reçoit"}},
+    {"n": 13, "type": "pd_tampon", "duree_s": 4, "visuel": "Tampon 'À VÉRIFIER' sur une fiche, puis disparaît.", "texte": {"titre": "À SUIVRE", "libelle": "PLF 2027 et prochains chiffres"}},
+    {"n": 14, "type": "dots", "duree_s": 3, "visuel": "Points qui se rassemblent en une ligne.", "texte": {"libelle": "la dette se finance par l'épargne"}},
+    {"n": 15, "type": "outro", "duree_s": 4, "visuel": "Logo pixel du compte sur fond crème, question finale.", "texte": {"question": "Vous étiez au courant ?", "signature": "Décodé - l'éco simplement"}}
+  ],
+  "accroche": {"titre_miniature": "À QUI DOIT-ON 3 600 MILLIARDS ?", "mots_choc": "VRAIS CRÉANCIERS", "surtitre_miniature": "DETTE PUBLIQUE · 2T 2026"},
+  "prompts_images": {
+    "miniature": "Pixel art 9:16, fond crème #F4EFE3, une pile de pièces pixel à gauche, un pictogramme de personnage original qui regarde la pile, contours encre #1B2A41, accent bleu #2F6DB5 sur la pile. Pas de texte généré, pas de visage réel, pas de logo, style pixeldoc sobre.",
+    "fond_scene_pd": "Pixel art plat 1080x1920, grille de fond très légère, couleurs limitées à fond crème, encre, bleu et ambre #E0A526. Pas de texte, pas de personnage identifiable, pas de logo.",
+    "fond_bigstat": "Pixel art plat 1080x1920 fond #14202F, motifs de points gris #8A94A6 très discrets. Pas de texte, pas de personnage."
+  },
+  "musique": {
+    "genre": "Lo-fi pixel doux, piano et synthé 8-bit léger, original, sans voix, sans musique sous licence.",
+    "tempo_bpm": 104,
+    "volume": "sous la voix, -18 dB environ ; baisse à -24 dB sur les scènes chiffre (2, 3, 8)",
+    "accents": "Petit clic sur chaque apparition de chiffre, son court sur les tampons (scènes 7 et 13)."
+  },
+  "transitions": "Coupes sèches ; fondu noir de 0,2 s uniquement avant l'outro (scène 15).",
+  "differenciation_derniere_video": "Aucune dernière vidéo connue pour ce compte : pas de comparaison à faire."
+}

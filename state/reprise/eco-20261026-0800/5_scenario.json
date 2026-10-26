@@ -3,154 +3,178 @@
   {
    "type": "hook",
    "duree_s": 4.0,
-   "texte_ecran": "3 228 milliards de dette",
+   "texte_ecran": "3 595,5 Md€ de dette",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Trois mille deux cent vingt-huit milliards d'euros.",
+     "texte": "La France doit trois mille cinq cent quatre-vingt-quinze virgule cinq milliards d'euros.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "chiffre",
-   "duree_s": 4.5,
-   "texte_ecran": "112 % du PIB français",
+   "type": "bigstat",
+   "duree_s": 4.0,
+   "texte_ecran": "Fin T2 2026",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "C'est la dette publique totale de la France au deuxième trimestre deux mille vingt-quatre.",
+     "texte": "C'est la dette publique à la fin du deuxième trimestre deux mille vingt-six.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "fait",
+   "type": "bigstat",
    "duree_s": 4.5,
-   "texte_ecran": "La richesse d'une année",
+   "texte_ecran": "119,0 % du PIB",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Ce montant astronomique représente exactement cent douze pour cent du produit intérieur brut du pays.",
+     "texte": "Rapportée à la richesse produite, elle atteint cent dix-neuf virgule zéro pour cent du PIB, selon l'Insee.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "question",
-   "duree_s": 4.5,
+   "type": "pd_jauge",
+   "duree_s": 4.0,
+   "texte_ecran": "Plus d'une année de richesse",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Autrement dit, la dette dépasse la richesse produite en un an.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "quiz",
+   "duree_s": 4.0,
    "texte_ecran": "À qui doit-on cet argent ?",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Mais une question cruciale se pose : à qui devons-nous vraiment tout cet argent ?",
+     "texte": "Alors, à qui devons-nous tout cela, concrètement ?",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "fait",
-   "duree_s": 5.0,
-   "texte_ecran": "Majoritairement détenue à l'étranger",
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "L'État emprunte",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Premier fait marquant : plus de la moitié de notre dette n'appartient pas à des Français.",
+     "texte": "L'État emprunte en émettant des titres de dette, achetés sur les marchés financiers.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "chiffre",
-   "duree_s": 5.0,
-   "texte_ecran": "53,2 % aux non-résidents",
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "Un titre = une créance",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "En effet, cinquante-trois virgule deux pour cent de la dette négociable est détenue par des investisseurs non-résidents.",
+     "texte": "Chaque titre est une créance : celui qui l'achète prête de l'argent à l'État.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "fait",
-   "duree_s": 5.0,
-   "texte_ecran": "Fonds souverains et banques",
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "Remboursé à l'échéance",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Il s'agit principalement de banques centrales étrangères, de fonds souverains et de fonds de pension internationaux.",
+     "texte": "L'État doit ensuite le rembourser à l'échéance fixée.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "versus",
-   "duree_s": 5.0,
-   "texte_ecran": "8,7 % chez les assureurs",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Du côté français, les compagnies d'assurance détiennent environ huit virgule sept pour cent de ces titres.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "fait",
-   "duree_s": 5.0,
-   "texte_ecran": "Votre épargne finance l'État",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Cela signifie que votre épargne placée sur des fonds en euros finance directement l'État.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "chiffre",
-   "duree_s": 5.0,
-   "texte_ecran": "50 milliards d'intérêts annuels",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Mais cette dette génère une charge colossale : plus de cinquante milliards d'euros d'intérêts en deux mille vingt-quatre.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "fait",
-   "duree_s": 5.0,
-   "texte_ecran": "Premier poste du budget",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Ce paiement annuel aux créanciers est devenu l'un des tout premiers postes du budget national.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "question",
+   "type": "checklist",
    "duree_s": 4.5,
-   "texte_ecran": "Risque ou opportunité ?",
+   "texte_ecran": "Qui peut acheter ?",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Pensez-vous que cette dépendance aux investisseurs étrangers représente un danger pour notre souveraineté économique ?",
+     "texte": "Une banque, un assureur, un fonds, un particulier ou un investisseur étranger peuvent l'acheter.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4.0,
+   "texte_ecran": "Source : Insee",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ces chiffres viennent de l'Insee, l'institut officiel de la statistique, publiés fin septembre.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "3 595,5 Md€ au T2 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Au total, la dette atteint trois mille cinq cent quatre-vingt-quinze virgule cinq milliards d'euros.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "compare",
+   "duree_s": 4.0,
+   "texte_ecran": "À qui la France est redevable",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Savoir qui détient cette dette, c'est savoir à qui la France est redevable.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "quiz",
+   "duree_s": 4.0,
+   "texte_ecran": "Vous le saviez ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et vous, saviez-vous qui détient la dette française ?",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "duree_s": 4.0,
+   "texte_ecran": "Dites-le en commentaire",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Répondez en commentaire, et partagez cette vidéo.",
      "expression": "neutre"
     }
    ]
   }
  ],
- "legende": "À qui la France doit-elle 3 228 milliards d'euros ? 📊\n\nAvec une dette atteignant 112 % du PIB, la répartition des créanciers est un enjeu stratégique majeur. Plus de la moitié des titres français est détenue par des investisseurs étrangers, tandis que les ménages français y participent indirectement via l'assurance-vie.\n\nQue pensez-vous de la part importante des créanciers étrangers ? 👇\n\nEnvoie cette vidéo à quelqu'un qui possède une assurance-vie ! 📤\n\nSources : Insee, Agence France Trésor, Banque de France, Ministère de l'Économie",
+ "legende": "La France doit 3 595,5 milliards d'euros. 📊\n\nFin du deuxième trimestre 2026, la dette publique atteint 119,0 % du PIB, selon l'Insee. Savoir qui détient cette dette permet de comprendre à qui la France est redevable.\n\nEt vous, savez-vous qui détient la dette française ? 👇\n\nEnvoyez cette vidéo à quelqu'un qui suit les finances publiques ! 📤\n\nSources : Insee (Informations rapides n° 239, publiée le 29 septembre 2026)",
  "hashtags": [
   "#economie",
   "#insee",
-  "#agencefrancetresor",
   "#dettepublique",
+  "#france",
   "#decode"
  ]
 }
