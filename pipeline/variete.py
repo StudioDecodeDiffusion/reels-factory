@@ -4,7 +4,7 @@ from __future__ import annotations
 from . import state
 
 CHAMPS = ["accroche", "trend", "fonctionnement", "mise_en_page", "musique", "voix", "palette"]
-JAMAIS_DEUX_FOIS = ["accroche", "fonctionnement", "mise_en_page", "musique", "voix"]
+JAMAIS_DEUX_FOIS = ["accroche", "fonctionnement", "musique"]  # les autres peuvent rester (ce qui fait les vues)
 
 
 def controler(spec: dict, compte: str) -> list[str]:
@@ -22,8 +22,8 @@ def controler(spec: dict, compte: str) -> list[str]:
                 errs.append(f"variete.{c} = « {v[c]} » : identique à la vidéo précédente ({prec.get('titre', '')}). Change-le.")
     for h in hist:
         communs = [c for c in CHAMPS if norm(h.get(c)) == norm(v[c])]
-        if len(communs) >= 3:
-            errs.append(f"trop proche de « {h.get('titre', '')} » ({', '.join(communs)}) : il faut une vidéo vraiment différente.")
+        if len(communs) >= 5:
+            errs.append(f"trop proche de « {h.get('titre', '')} » ({', '.join(communs)}) : il faut au moins 3 champs différents.")
     g = spec.get("musique")
     if not (isinstance(g, dict) and g.get("genre")):
         errs.append("musique.genre manquant : la musique doit être un morceau composé (voir CATALOGUE_VARIETE.md)")

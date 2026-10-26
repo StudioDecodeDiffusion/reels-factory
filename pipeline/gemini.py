@@ -46,7 +46,7 @@ def appel(prompt: str, recherche: bool = False) -> str:
         for essai in range(3):
             c = dict(corps, generationConfig=dict(corps["generationConfig"], thinkingConfig={"thinkingBudget": 0})) if "2.5-flash" in m else corps
             try:  # sans « réflexion » sur 2.5 Flash : plus rapide, moins de quota
-                r = requests.post(f"{API}/{m}:generateContent", params={"key": _cle()}, json=c, timeout=120).json()
+                r = requests.post(f"{API}/{m}:generateContent", params={"key": _cle()}, json=c, timeout=90).json()
             except requests.RequestException as e:  # délai dépassé : on passe au modèle suivant
                 derniere = {"code": 0, "message": str(e)[:200]}
                 break
