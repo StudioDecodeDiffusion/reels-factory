@@ -1,168 +1,363 @@
 {
+ "titre_interne": "ISO 9001 : ce que l'auditeur regarde vraiment",
  "plans": [
   {
    "type": "hook",
-   "duree_s": 4.5,
-   "texte_ecran": "Mythe : audit et paperasse",
+   "duree_s": 3.7,
+   "texte_ecran": "Audit ISO 9001 : preuves, pas classeurs",
+   "intention_visuelle": "Accroche : thèse critique à l'écran dès la 1re seconde",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Penser qu'un audit exige des tonnes de paperasse est la plus grande erreur en entreprise.",
+     "texte": "ISO 9001 : tonnes de paperasse ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Non ! Il cherche des preuves.",
      "expression": "choc"
     }
    ]
   },
   {
-   "type": "versus",
-   "duree_s": 4.0,
-   "texte_ecran": "L'auditeur ne compte pas",
+   "type": "pd_objet",
+   "duree_s": 3.7,
+   "texte_ecran": "Des classeurs ? Pas l'objectif",
+   "intention_visuelle": "Pile de classeurs poussiéreux sur un bureau, style pixeldoc",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Un auditeur ne compte jamais le volume de classeurs accumulés sur vos étagères.",
-     "expression": "ironie"
-    }
-   ]
-  },
-  {
-   "type": "chiffre",
-   "duree_s": 4.5,
-   "texte_ecran": "1 267 362 certificats valides",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Selon l'ISO, plus d'un million deux cent soixante-sept mille certificats sont actuellement actifs.",
+     "texte": "Il faut tout classer ?",
      "expression": "neutre"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Non, seulement l'utile.",
+     "expression": "clin"
     }
-   ]
+   ],
+   "donnees": {
+    "prompt": "a dusty stack of paper binders on a wooden desk, pixel art"
+   }
   },
   {
-   "type": "fait",
-   "duree_s": 4.0,
-   "texte_ecran": "1er standard mondial de qualité",
+   "type": "pd_chiffre",
+   "duree_s": 3.7,
+   "texte_ecran": "1 265 216 certificats (fin 2022)",
+   "intention_visuelle": "Compteur arcade animé sur le nombre de certificats",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Ce standard reste le premier système de management de la qualité au monde.",
+     "texte": "Combien de certificats ?",
      "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "versus",
-   "duree_s": 4.5,
-   "texte_ecran": "Erreur : confondre conformité et papier",
-   "dialogue": [
+    },
     {
-     "qui": "narrateur",
-     "texte": "Pourtant, beaucoup de managers confondent encore conformité normative et accumulation de documents.",
+     "qui": "mascotte",
+     "texte": "Fin 2022 : plus d'un million.",
      "expression": "choc"
     }
-   ]
+   ],
+   "donnees": {
+    "valeur": 1265216,
+    "decimales": 0,
+    "legende": "certificats ISO 9001 recensés dans le monde",
+    "source": "ISO Survey 2022"
+   }
   },
   {
-   "type": "fait",
-   "duree_s": 3.5,
-   "texte_ecran": "Exigence ISO 9001 : 2015",
+   "type": "pd_versus",
+   "duree_s": 3.7,
+   "texte_ecran": "Document ou preuve ?",
+   "intention_visuelle": "Deux plaques face à face : culture du document contre preuve d'efficacité",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Que dit précisément le texte officiel de la norme ?",
+     "texte": "De quoi à quoi ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Du document à la preuve d'efficacité.",
+     "expression": "content"
+    }
+   ],
+   "donnees": {
+    "gauche": {
+     "label": "Culture du document",
+     "prompt": "a tall stack of binders, pixel art"
+    },
+    "droite": {
+     "label": "Preuve d'efficacité",
+     "prompt": "a green checkmark on a process chart, pixel art"
+    }
+   }
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 3.7,
+   "texte_ecran": "ISO 9001:2015, chapitre 7.5",
+   "intention_visuelle": "Livre de norme ouvert avec marque-page, style pixeldoc",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et le texte officiel ?",
+     "expression": "neutre"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Sept point cinq : l'utile, pas la liste.",
      "expression": "neutre"
     }
-   ]
+   ],
+   "donnees": {
+    "prompt": "an open rulebook with a bookmark, pixel art"
+   }
   },
   {
-   "type": "fait",
-   "duree_s": 4.5,
-   "texte_ecran": "Chapitre 7.5 : informations documentées",
+   "type": "pd_tampon",
+   "duree_s": 3.7,
+   "texte_ecran": "Plus de liste imposée",
+   "intention_visuelle": "Dossier de procédures tamponné, la liste imposée barrée",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Le chapitre sept point cinq impose de conserver des informations documentées.",
+     "texte": "Une procédure par activité ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Non ! La version 2015 ne l'impose plus.",
+     "expression": "rire"
+    }
+   ],
+   "donnees": {
+    "tampon": "PAS DE LISTE IMPOSÉE",
+    "prompt": "a folder of procedures stamped in red, pixel art"
+   }
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 3.7,
+   "texte_ecran": "Processus → résultats vérifiés",
+   "intention_visuelle": "Pièces animées qui circulent du processus vers les résultats",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Il regarde quoi ?",
      "expression": "neutre"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Processus, résultats, preuve de maîtrise.",
+     "expression": "content"
     }
-   ]
+   ],
+   "donnees": {
+    "de": {
+     "label": "Processus",
+     "prompt": "a gear machine, pixel art"
+    },
+    "vers": {
+     "label": "Résultats vérifiés",
+     "prompt": "a green checkmark chart, pixel art"
+    },
+    "montant": "preuve"
+   }
   },
   {
-   "type": "fait",
-   "duree_s": 4.5,
-   "texte_ecran": "Seule exigence : preuve d'efficacité",
+   "type": "pd_objet",
+   "duree_s": 3.7,
+   "texte_ecran": "§5.1.1 : la direction répond de l'efficacité",
+   "intention_visuelle": "Manager à côté d'un tableau blanc, personnage original sans visage détaillé",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "L'objectif unique est d'apporter la preuve d'efficacité de vos processus internes.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "fait",
-   "duree_s": 4.5,
-   "texte_ecran": "Zéro procédure inutile requise",
-   "dialogue": [
+     "texte": "Qui répond de l'efficacité ?",
+     "expression": "pense"
+    },
     {
-     "qui": "narrateur",
-     "texte": "Rien n'impose de rédiger des procédures pour des activités déjà maîtrisées.",
-     "expression": "sourire"
+     "qui": "mascotte",
+     "texte": "La haute direction, paragraphe cinq point un point un.",
+     "expression": "content"
     }
-   ]
+   ],
+   "donnees": {
+    "prompt": "an original manager figure pointing at a whiteboard, pixel art, no detailed face"
+   }
   },
   {
-   "type": "fait",
-   "duree_s": 4.5,
-   "texte_ecran": "Cycle PDCA sur le terrain",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "L'auditeur évalue surtout l'application vivante du cycle PDCA sur le terrain.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "fait",
-   "duree_s": 4.5,
+   "type": "pd_objet",
+   "duree_s": 3.7,
    "texte_ecran": "Planifier, réaliser, contrôler, améliorer",
+   "intention_visuelle": "Cycle à quatre flèches qui tourne, style pixeldoc",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Planifier, réaliser, contrôler et améliorer : voilà le véritable cœur de la qualité.",
-     "expression": "sourire"
-    }
-   ]
-  },
-  {
-   "type": "chute",
-   "duree_s": 4.5,
-   "texte_ecran": "Supprimez la bureaucratie inutile",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Éliminez la bureaucratie inutile et concentrez vos équipes sur la création de valeur.",
-     "expression": "choc"
-    }
-   ]
-  },
-  {
-   "type": "question",
-   "duree_s": 4.0,
-   "texte_ecran": "Preuves d'efficacité ou papier ?",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Dans votre entreprise, privilégiez-vous la preuve d'efficacité ou le papier ?",
+     "texte": "Le fil conducteur ?",
      "expression": "neutre"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Le cycle PDCA : planifier, réaliser, contrôler, améliorer.",
+     "expression": "clin"
+    }
+   ],
+   "donnees": {
+    "prompt": "a four-stage circular arrow cycle, pixel art"
+   }
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 3.7,
+   "texte_ecran": "Sur le terrain, pas seulement au bureau",
+   "intention_visuelle": "Auditeur original avec un bloc-notes dans un atelier, style pixeldoc",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et il vérifie où ?",
+     "expression": "neutre"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Sur le terrain, au quotidien.",
+     "expression": "neutre"
+    }
+   ],
+   "donnees": {
+    "prompt": "an original auditor with a clipboard walking in a factory hall, pixel art"
+   }
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 3.7,
+   "texte_ecran": "§10.2 : agir sur les causes",
+   "intention_visuelle": "Engrenage cassé avec autocollant d'alerte, style pixeldoc",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et si problème ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "On traite la cause, puis on vérifie l'efficacité.",
+     "expression": "content"
+    }
+   ],
+   "donnees": {
+    "tampon": "CAUSE TRAITÉE",
+    "prompt": "a broken gear with a red warning sticker, pixel art"
+   }
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 3.7,
+   "texte_ecran": "Ce que l'auditeur retient",
+   "intention_visuelle": "Deux plaques : classeur oublié contre processus maîtrisé",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Il retient quoi ?",
+     "expression": "neutre"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Un processus qui tourne, des preuves.",
+     "expression": "rire"
+    }
+   ],
+   "donnees": {
+    "gauche": {
+     "label": "Classeur oublié",
+     "prompt": "a dusty binder, pixel art"
+    },
+    "droite": {
+     "label": "Processus maîtrisé",
+     "prompt": "a running machine with a green light, pixel art"
+    }
+   }
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 3.7,
+   "texte_ecran": "La bonne question avant l'audit",
+   "intention_visuelle": "Loupe sur un graphique, personnage original, style pixeldoc",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Quelle question ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Mes processus donnent-ils des résultats ?",
+     "expression": "neutre"
+    }
+   ],
+   "donnees": {
+    "prompt": "a magnifying glass over a results chart, pixel art"
+   }
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 3.7,
+   "texte_ecran": "Preuves > classeurs",
+   "intention_visuelle": "Dossier qui s'écrase sous le tampon, chute visuelle",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "On jette la paperasse ?",
+     "expression": "rire"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Oui : gardez les preuves, supprimez le superflu.",
+     "expression": "clin"
+    }
+   ],
+   "donnees": {
+    "tampon": "PREUVES, PAS CLASSEURS",
+    "prompt": "a pixel art folder stamped in red"
+   }
+  },
+  {
+   "type": "outro",
+   "duree_s": 3.7,
+   "texte_ecran": "Abonne-toi : la QHSE décodée",
+   "intention_visuelle": "Carte de fin, appel à l'action",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Abonne-toi à la QHSE décodée !",
+     "expression": "content"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Partage à qui prépare son audit !",
+     "expression": "rire"
     }
    ]
   }
  ],
- "legende": "ISO 9001 : 1 267 362 certificats valides, mais la paperasse reste un mythe !\n\nAvec plus d'un million de certificats délivrés dans le monde, l'ISO 9001 demeure la référence absolue du management de la qualité. Pourtant, le chapitre 7.5 réclame des preuves concrètes d'efficacité et non l'accumulation inutile de classeurs administratifs.\n\nVotre entreprise privilégie-t-elle la preuve d'efficacité ou la paperasse ? 👇\n\nEnvoie-la à quelqu'un qui prépare son prochain audit ISO ! 📤\n\nSources : ISO (ISO Survey 2022), AFNOR (ISO 9001:2015)",
+ "legende": "ISO 9001 : plus d'un million de certificats dans le monde, et l'auditeur ne compte pas vos classeurs.\n\nL'ISO recensait 1 265 216 certificats ISO 9001 fin 2022. Le chapitre 7.5 de la norme demande de maîtriser les informations nécessaires à l'efficacité, sans imposer de liste de procédures.\n\nPour toi, un audit, c'est des preuves ou des classeurs ? 👇\n\nEnvoie-la à quelqu'un qui prépare son audit ! 📤\n\nSources : ISO (ISO Survey 2022), ISO (ISO 9001:2015)",
  "hashtags": [
   "#qualite",
   "#iso9001",
-  "#afnor",
   "#auditqualite",
+  "#managementdelaqualite",
   "#decodeqse"
- ]
+ ],
+ "relecture": {
+  "notes": {
+   "accroche": 8,
+   "clarte": 8,
+   "exactitude": 8,
+   "rythme": 8,
+   "conformite": 8
+  },
+  "reecritures": 1,
+  "chiffres_verifies": [
+   "1 265 216 : fait sourcé du concept (ISO Survey 2022, fin 2022), non revérifié sur le web (demande de la session)"
+  ]
+ }
 }

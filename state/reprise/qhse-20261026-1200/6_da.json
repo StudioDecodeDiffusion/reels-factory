@@ -1,0 +1,44 @@
+{
+  "theme": {
+    "fond": "#1D2B53",
+    "texte": "#FFFFFF",
+    "accent": "#FFD23F",
+    "accent2": "#4FD1C5",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "COURS",
+    "grille": false,
+    "style": "pixel",
+    "palette": ["#FFD23F", "#4FD1C5", "#F28C6B", "#6C5CE7", "#1D2B53", "#9BE564"],
+    "tenues": {"narrateur": "qhse", "mascotte": "detective"}
+  },
+  "consignes_animation": "Rythme vif mais sérieux, pas d'effet alarmiste. Le mythe (paperasse) en couleur corail ou violet, la réponse (preuves, efficacité) en jaune accent. Texte posé sur une couleur de palette : #1D2B53 sur jaune, turquoise, corail et vert ; #FFFFFF sur violet et marine. Étiquettes pixel courtes (3 mots max), rien ne déborde. Au moins un mécanisme animé : le cycle PDCA (pd_flux) tourne en boucle. Référence du texte affichée à l'écran : « ISO 9001:2015, §7.5 » et « §5.1.1 » quand on les cite.",
+  "evolution_charte": "Première DA du compte QHSE : pas de charte existante (state/charte_qhse.json absent, pas de charte_initiale dans profiles/qhse.yaml). Base posée ici : jaune accent, marine de fond, pixel art, bandeau COURS.",
+  "scenes_visuelles": [
+    {"moment": "accroche : le mythe de la paperasse", "scene": "pd_versus", "fond": "#F28C6B", "texte": "#1D2B53", "note": "gauche : pile de classeurs, droite : la preuve (case cochée). Titre court."},
+    {"moment": "ce que l'auditeur regarde", "scene": "pd_objet", "fond": "#4FD1C5", "texte": "#1D2B53", "note": "un classeur barré d'une croix, à côté d'un processus qui tourne. Déco entre en scène en détective."},
+    {"moment": "cycle PDCA et informations documentées", "scene": "pd_flux", "fond": "#6C5CE7", "texte": "#FFFFFF", "note": "4 étapes Plan, Do, Check, Act en pixel, flèches animées. Étiquette « §7.5 » sur la pièce qui ne compte que si elle sert."},
+    {"moment": "direction et non-conformités", "scene": "pd_tampon", "fond": "#FFD23F", "texte": "#1D2B53", "note": "tampon pixel « EFFICACITÉ » qui s'imprime. Lou en gilet qhse commente la clause citée (§5.1.1, §10.2)."},
+    {"moment": "conclusion et abonnement", "scene": "outro", "fond": "#9BE564", "texte": "#1D2B53", "note": "Lou et Déco face caméra, CTA « Abonne-toi : la QHSE décodée »."}
+  ],
+  "prompts_images": [
+    "Personnage pixel art original, petit reporter en gilet jaune fluo et casque de chantier blanc, fond uni, contours noirs épais, sans visage réel, style 8 bits lisible sur téléphone (narrateur Lou).",
+    "Mascotte pixel art : petit écran-robot reporter portant un imperméable beige et un chapeau de détective, tenant une loupe, contours noirs épais, fond transparent (Déco).",
+    "Classeur pixel art épais posé sur une table, barré d'une grande croix, couleurs palette jaune et marine, fond uni, aucune lettre lisible hors titre.",
+    "Cycle pixel art de quatre pastilles reliées par des flèches courbes : Plan, Do, Check, Act, couleurs turquoise, jaune, corail, violet, fond marine.",
+    "Tampon pixel art rectangulaire incliné, bord noir épais, texte « EFFICACITÉ » en capitales, couleur jaune, fond transparent."
+  ],
+  "musique": {"ambiance": "curieux", "volume": 0.4},
+  "musique_scenes": [
+    {"moment": "accroche (le mythe de la paperasse)", "musique": "tension", "sfx": ["impact"], "pourquoi": "faux avertissement traité avec calme, pas d'effroi (ton non alarmiste)"},
+    {"moment": "ce que l'auditeur regarde (preuves)", "musique": "curieux", "sfx": ["pop"], "pourquoi": "révélation : l'auditeur cherche des preuves, pas du papier"},
+    {"moment": "cycle PDCA", "musique": "curieux", "sfx": ["whoosh"], "pourquoi": "explication pédagogique, rythme régulier"},
+    {"moment": "clauses 5.1.1 et 10.2 citées", "musique": "tension", "sfx": ["ding"], "pourquoi": "chaque référence de clause tombe sur un ding"},
+    {"moment": "conclusion et abonnement", "musique": "joyeux", "sfx": ["pop"], "pourquoi": "conclusion légère, CTA"}
+  ],
+  "tendance_suivie": "Aucune tendance de l'agent 2 n'est fournie dans le dossier pour ce compte ; la trend du concept (« Décryptage mythe vs réalité de norme ») guide le contraste mythe / preuve.",
+  "son_tendance": null,
+  "variete": "Première vidéo du compte dans le dossier (« Dernière vidéo » vide) : aucune reprise à éviter.",
+  "messages_traites": [],
+  "message_au_proprietaire": "DA QHSE posée : pixel coloré, marine et jaune, bandeau COURS. Lou en gilet qhse, Déco en détective (l'auditeur qui cherche des preuves). Musique en tension sur le mythe et curieux pour l'explication, sans effroi pour rester pédagogique. Question : on garde Déco en détective pour les sujets d'audit ?"
+}
