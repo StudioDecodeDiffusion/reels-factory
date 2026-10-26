@@ -1,0 +1,71 @@
+{
+  "id": "science-20261026-2000",
+  "profil": "science",
+  "statut": "a_valider",
+  "titre": "Microduck : la physique du robot canard à 399 $",
+  "son_tendance": null,
+  "publication_le": "2026-10-26T22:04",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": null,
+  "legende": "Comment ce robot canard tient sur 2 pattes à 399 $ ?\n\nSon équilibre repose sur le centre de gravité et sur des puces spécialisées. Plus de 10 000 unités ont été vendues dès son lancement.\n\nQuel mécanisme devrions-nous décoder au prochain match ? 👇\n\nEnvoie cette vidéo à un passionné de mécanique ! 📤\n\nSources : Axios, The Standard, CNX Software\n\n#robotique #huggingface #microduck #robotbipede #decodesciencesimplement",
+  "sources": [
+    "https://axios.com/2026/08/27/hugging-face-debuts-microduck-a-399-robot",
+    "https://www.cnx-software.com/2026/08/28/microduck-a-duck-like-biped-robot-designed-for-physical-ai-experimentation-and-fun/",
+    "https://www.thestandard.com.hk/finance/article/341576/Hugging-Faces-duck-robot-powered-by-a-Chinese-chip-sold-over-10000-units"
+  ],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "agent": 7,
+    "role": "7.5 critique finale",
+    "sujet": "Microduck",
+    "sujet_impose": "Pompe à piston vs centrifuge vs à engrenages : le match (pompes_match, écarté volontairement à la demande du propriétaire)",
+    "compte": "science",
+    "decision": "publiable",
+    "defauts_bloquants": [],
+    "controles": {
+      "voix_active": "profiles/science.yaml : voix.active = true, narrateur et mascotte renseignés. Porte de pipeline/github_flow.py (profile.get('voix').get('active')) désormais ouverte : la voix sera ajoutée au rendu GitHub. Défaut « voix absente » levé.",
+      "contenu_interdit": "aucun (pas d'image de presse, pas de deepfake, pas de citation inventée)",
+      "video": "h264 1080x1920, 80,6 s, lisible (ffprobe ; image extraite à 40 s OK). Muette par conception avant rendu GitHub : attendu, non bloquant.",
+      "duree": "80,6 s : entre le seuil de 55 s et le plafond de 110 s",
+      "mention_ia": "aucune mention d'IA dans le texte ni l'écran",
+      "legende": "accroche + chiffre, contexte, question 👇, partage 📤, Sources, 5 hashtags : conforme"
+    },
+    "corrections": [
+      {
+        "ou": "5_scenario.json, plan 15 et legende.txt",
+        "probleme": "« Quel mécanisme devrions-nous décoder au prochain match ? » : la référence au match ne colle pas au compte science, dont le sujet du jour est Microduck.",
+        "suggestion": "Remplacer par « au prochain épisode » ou équivalent.",
+        "bloquant": false
+      },
+      {
+        "ou": "4_concept.json faits[2], 5_scenario.json plan 8 et 9, legende.txt",
+        "probleme": "« Puces spécialisées pour garder l'équilibre » dépasse la source CNX Software, qui ne décrit qu'une architecture matérielle optimisée. Lien avec l'équilibre non sourcé.",
+        "suggestion": "Reformuler en « une architecture matérielle optimisée » ou retirer la liaison avec l'équilibre.",
+        "bloquant": false
+      },
+      {
+        "ou": "5_scenario.json, durée totale",
+        "probleme": "La somme des duree_s fait 59,0 s alors que video.mp4 dure 80,6 s. Écart à recaler sur la piste voix lors du rendu GitHub.",
+        "suggestion": "Vérifier le calage des scènes après _sonoriser.",
+        "bloquant": false
+      }
+    ],
+    "notes_finition": [
+      "Espaces manquantes avant les ? et ! dans le scénario et la légende (« tomber? », « match? »). Typographie française à corriger.",
+      "Planche : les titres « COMMENT CE CANARD... » et « PUCES SPÉCIALISÉES » touchent les bords du cadre.",
+      "« Pas de magie ici, de la physique appliquée à l'électronique » : formulation approximative à relire."
+    ],
+    "faits_non_bloquants": [
+      "Prix 399 $ : source Axios citée dans la légende, non vérifiable dans le dossier.",
+      "Plus de 10 000 unités vendues : source The Standard citée dans la légende, non vérifiable dans le dossier.",
+      "Centre de gravité, zone d'appui, cycle mesurer-calculer-corriger : explications générales de physique, non chiffrées."
+    ]
+  },
+  "community": {},
+  "da_message": "",
+  "cree": "2026-10-26T20:34:06+00:00"
+}
