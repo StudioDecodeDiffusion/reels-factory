@@ -1,0 +1,72 @@
+{
+  "id": "qhse-20261026-1200",
+  "profil": "qhse",
+  "statut": "rendu_en_cours",
+  "titre": "ISO 9001 : l'auditeur ne cherche pas du papier",
+  "son_tendance": null,
+  "publication_le": "2026-10-26T22:18+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": null,
+  "legende": "ISO 9001 : plus d'un million de certificats dans le monde, et l'auditeur ne compte pas vos classeurs.\n\nL'ISO recensait 1 265 216 certificats ISO 9001 fin 2022. Le chapitre 7.5 de la norme demande de maîtriser les informations nécessaires à l'efficacité, sans imposer de liste de procédures.\n\nPour toi, un audit, c'est des preuves ou des classeurs ? 👇\n\nEnvoie-la à quelqu'un qui prépare son audit ! 📤\n\nSources : ISO (ISO Survey 2022), ISO (ISO 9001:2015)\n\n#qualite #iso9001 #auditqualite #managementdelaqualite #decodeqse\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [
+    "https://www.iso.org/standard/62085.html",
+    "https://www.iso.org/the-iso-survey.html"
+  ],
+  "validation": {
+    "notes": {
+      "accroche": 8,
+      "clarte": 8,
+      "exactitude": 8,
+      "rythme": 8,
+      "conformite": 8
+    }
+  },
+  "tours_validation": 2,
+  "critique": {
+    "agent": 7,
+    "role": "critique",
+    "id": "qhse-20261026-1200",
+    "compte": "qhse",
+    "fichiers_lus": [
+      "0_dossier.md",
+      "apercu.png",
+      "video.mp4 (ffprobe)",
+      "7_spec.json",
+      "9_precritique.json"
+    ],
+    "decision": "publiable",
+    "bloquant": false,
+    "defauts_bloquants": [],
+    "controles": {
+      "contenu_interdit": "aucun (personnages originaux, pas d'image de presse, pas de deepfake, pas de citation)",
+      "video": "lisible, h264, 86,0 s (>= 55 s OK), 15 scenes ; video de session muette par conception, voix prevue dans 7_spec.json (170 mots de dialogue Lou et Déco), sonorisation en aval (github_flow)",
+      "voix": "dialogue present dans la spec ; absence de piste audio dans video.mp4 non bloquante (conception)",
+      "planche": "apercu.png montre les scenes 01/15 a 08/15 seulement (planche incomplete, non bloquant)",
+      "finition": "decors de la planche : carres jaunes de remplacement, pictogrammes pd_* peu lisibles, titres coupes (ex. « Non ! Il cherche des ») ; non bloquant"
+    },
+    "corrections": [
+      {
+        "type": "fait_non_verifie",
+        "ou": "7_spec.json, scene pd_chiffre (1 265 216 certificats ISO 9001, ISO Survey 2022)",
+        "constat": "Chiffre sourcé mais non revérifié. Non bloquant.",
+        "action_suggeree": "Revérifier sur iso.org ; sinon garder la mention « fin 2022 »."
+      },
+      {
+        "type": "clauses_iso_non_verifiees",
+        "ou": "7_spec.json : §5.1.1, §10.2, §7.5 (ISO 9001:2015)",
+        "constat": "Formulations conformes au sens de la norme, non revérifiées au texte. Non bloquant.",
+        "action_suggeree": "Verifier le libelle exact des clauses avant publication."
+      },
+      {
+        "type": "incoherence_mineure",
+        "ou": "6_da.json vs 5_scenario.json (tampon pd_tampon)",
+        "constat": "La DA prevoit « EFFICACITE », le scenario utilise « PAS DE LISTE IMPOSEE » et « PREUVES, PAS CLASSEURS ». Non bloquant.",
+        "action_suggeree": "Aligner la DA sur le scenario lors de la regeneration."
+      }
+    ]
+  },
+  "community": {},
+  "da_message": "",
+  "cree": "2026-10-26T20:53:10+00:00"
+}
