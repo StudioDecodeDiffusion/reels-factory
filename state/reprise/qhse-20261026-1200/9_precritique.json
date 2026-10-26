@@ -1,0 +1,13 @@
+{
+  "decision": "retour_5",
+  "motifs": [
+    "Scénario et DA ne concordent pas : le scénario compte 15 plans (hook en plan 1, outro en plan 15), la DA 14 scènes sans hook ni outro, et la scène 1 de la DA (pd_tampon « Preuve, pas procédure ») remplace le hook « Procédure : elle tourne ? ».",
+    "Durée : scénario 15 x 4 s = 60 s (duree_totale_s 60), DA duree_cible_s 56 pour 14 scènes. 60 s reste dans 55-65 s, mais les deux fichiers doivent être alignés.",
+    "La question fermée de l'outro (« Et vous, vos procédures tournent-elles ? ») n'apparaît pas comme texte d'écran dans la DA : la scène 14 porte « Preuve, pas papier ».",
+    "Fait à nuancer : « Un auditeur ISO 9001 ne vérifie pas si vous avez une procédure » (accroche, plan 1) est absolu. La clause 9.2.1 vise la conformité et la mise en œuvre efficace du système, ce qui n'exclut pas une vérification documentaire. Reformuler sans absolu.",
+    "Affirmation non sourcée : « L'erreur fréquente des entreprises » (plan 10) annonce une fréquence sans source. À sourcer ou à retirer.",
+    "Hors de ma décision (agent 4) : titre_miniature du concept 0 « L'auditeur ne lit pas la procédure, il suit la preuve » fait 11 mots, au-delà de la limite de 8 mots des règles actives. À corriger au concept.",
+    "Clauses limitées à 9.2, 9.2.1, 9.2.2 (a et b) et 10.2, conformes au concept. iso.org n'a pas été ouvert (pas de recherche web, consigne d'une seule passe) : la paraphrase des clauses reste à confirmer contre le texte officiel.",
+    "Points conformes : titre et accroche cohérents avec le scénario ; dialogue d'environ 168 mots (cible 160-170) ; scènes toutes dans la liste autorisée ; palette sans rouge ; aucune mention d'IA ; 4 hashtags dont #QSE."
+  ]
+}
