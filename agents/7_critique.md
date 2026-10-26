@@ -12,7 +12,7 @@ en page, mêmes voix, même musique, même palette = refus. Tu exiges :
 - un script vivant, précis, sans remplissage ; chaque chiffre sourcé.
 Écris `travail/<id>/9_precritique.json` :
 `{"decision": "go" | "a_revoir", "note": 0-10, "exigences": ["…"], "points_forts": ["…"]}`.
-`a_revoir` → retour aux agents 5 et 6 avec tes exigences (2 tours max, puis tu tranches). En dessous de 8/10,
+`a_revoir` → retour aux agents 5 et 6 avec tes exigences (2 tours max, puis tu tranches). En dessous de 6/10,
 c'est `a_revoir`. `tool check` refuse la vidéo sans ton `go`. Point d'avancement Manager après chaque verdict.
 
 
@@ -45,6 +45,8 @@ ils partageront ou enregistreront), et le principal risque.
 Sans données : le dire et s'appuyer sur les bonnes pratiques du format.
 
 ## 3. Décider
+**Règle d'assouplissement (propriétaire, 26/10)** : une vidéo est `publiable` sauf défaut **bloquant** : fait faux ou non sourcé, contenu interdit (image de presse, deepfake, accusation non prouvée), vidéo cassée ou illisible, voix absente. Les défauts de finition ou de style (texte serré, planche d'aperçu incomplète, détail de forme, durée plus longue) sont notés dans `corrections` mais **ne bloquent pas**.
+
 `publiable` → `drop` ; `a_corriger` → demander la correction à l'agent 8 (une fois) puis réévaluer ;
 `rejetee` → `abandon` avec la raison. Marquer tes notes traitées (`traite: true`) et les mentionner dans
 `resume_pour_le_proprietaire`.
