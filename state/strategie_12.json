@@ -1,106 +1,139 @@
 {
- "date": "2026-10-24",
- "compte": "actu",
- "type": "résumé quotidien (stratégie complète lundi 26/10)",
- "ou_on_en_est": {
-  "abonnes": 4,
-  "source_abonnes": "state/abonnes_actu.json (API Instagram, 24/10/2026)",
-  "reels_mesures": 15,
-  "vues_15_derniers": 2770,
-  "meilleure_video_vues": 1155,
-  "meilleure_video": "Macron au concert, la France dans la rue (18/10)",
-  "portee_compte_jour": {
-   "22/10": 343,
-   "23/10": 71,
-   "24/10": 26
+ "date": "2026-10-26",
+ "type": "stratégie complète (lundi 26/10/2026)",
+ "sources": "state/stats_actu.json, stats_eco.json, stats_qhse.json, stats_science.json (API Instagram, maj 26/10 07:51 UTC) ; state/abonnes_*.json (26/10) ; rapport_3_*.json et feedback_cm_*.json (26/10)",
+ "statistiques_generales": {
+  "actu": {
+   "abonnes": 7,
+   "abonnes_detail": "4 au 18/10, 4 jusqu'au 24/10, 6 au 25/10 (1er gain le 25/10), 7 au 26/10",
+   "publications_mesurees": 15,
+   "periode_publications": "19/10 au 25/10",
+   "vues_cumulees": 1860,
+   "vues_moyenne": 124,
+   "vues_mediane": 114,
+   "vues_min_max": "76 (22/10) / 244 (24/10)",
+   "interactions": 17,
+   "j_aime": 11,
+   "commentaires": 0,
+   "partages": 0,
+   "enregistrements": 3,
+   "abonnes_pour_1000_vues": 1.6,
+   "abonnes_pour_1000_vues_note": "3 abonnés gagnés depuis le 18/10 pour 1 860 vues cumulées : échantillon très petit, ordre de grandeur seulement",
+   "enregistrements_pour_1000_vues": 1.6,
+   "taux_interaction": "0,9 % (17 interactions / 1 860 vues)",
+   "rythme": "15 publications en 7 jours (environ 2 par jour)",
+   "ecart_avec_1000_abonnes": 993,
+   "ecart_avec_10000_abonnes": 9993,
+   "note_chiffre_24_10": "Le relevé du 24/10 (2 770 vues cumulées sur 15 reels, meilleure vidéo à 1 155 vues) n'est pas retrouvé dans les stats du 26/10 : il est remplacé par les chiffres ci-dessus. A ne pas reprendre."
   },
-  "visites_profil_jour": {
-   "22/10": 2,
-   "23/10": 0,
-   "24/10": 0
+  "eco": {
+   "abonnes": 0,
+   "publications_mesurees": 1,
+   "publication": "25/10, Fonderie de Bretagne, 129 vues, 120 comptes touchés, 1 j'aime, 0 commentaire, 0 partage, 0 enregistrement",
+   "note": "Échantillon d'une seule vidéo : aucune conclusion sur le format"
   },
-  "partages": 0,
-  "enregistrements": 2,
-  "enregistrements_pour_1000_vues": 0.72,
-  "abonnes_pour_1000_vues_depuis_18_10": 0,
-  "source_video": "state/stats_actu.json et state/suivi_actu.json, relevé du 24/10/2026 07:35 UTC",
-  "ecart_10000": "9 996 abonnés manquants pour les Abonnements Instagram"
+  "qhse": {
+   "abonnes": 0,
+   "publications_mesurees": 0,
+   "note": "Aucune publication dans stats_qhse.json ni abonnes_qhse.json"
+  },
+  "science": {
+   "abonnes": 0,
+   "publications_mesurees": 0,
+   "note": "Aucune publication dans stats_science.json ni abonnes_science.json"
+  }
+ },
+ "alerte_doublon": "Le sujet Fonderie de Bretagne est publié le 25/10 sur deux comptes : Reel 18114078578109882 sur actu (13 h 58, 113 vues) et Reel 18337718269261639 sur eco (14 h 17, 129 vues). Légendes identiques en début de texte. A vérifier avant toute nouvelle publication croisée.",
+ "analyse_actu": {
+  "meilleure": "244 vues, 5 interactions, 24/10 : « Oui, nous avons perdu le contrôle » (citation d'autorité + décision politique)",
+  "bon_second": "158 vues, 5 interactions dont 2 enregistrements, 20/10 : libertés (couvre-feux, manifs « encadrées »)",
+  "pire": "76 vues, 0 interaction, 22/10 : couper les réseaux sociaux pendant les émeutes",
+  "format_oui_ou_non": "Les accroches « Oui ou non » (5 publications) ont 0 à 2 interactions et une moyenne d'environ 111 vues, contre 124 pour l'ensemble ; aucun commentaire sur les 15 publications. Format à tester contre une question ouverte ou un chiffre à contester.",
+  "conclusion": "Le problème principal est la conversion (peu d'abonnés pour les vues), pas la portée seule. La portée est stable entre 76 et 244 vues par vidéo, sans pic."
  },
  "paliers": [
   {
    "objectif": "1 000 abonnés",
    "debloque": "dossier média crédible (petits médias, ONG, associations), Ko-fi/Tipeee en bio",
    "echeance_visee": "2026-12-31",
-   "statut": "à risque élevé : 0 abonné gagné depuis le 18/10 ; portée 26 comptes/jour le 24/10 après 48 h sans Reel (mode économie de quota du 21 au 23/10)"
+   "statut": "très en retard : 7 abonnés. Au rythme actuel (environ 1 860 vues par semaine, 1,6 abonné pour 1 000 vues), ce palier demande plusieurs années ; l'échéance de fin 2026 doit être revue"
   },
   {
    "objectif": "5 000 abonnés",
    "debloque": "premiers partenariats rémunérés nano (50-300 $ par Reel, Influee 26/03/2026)",
-   "echeance_visee": "2027-03-31"
+   "echeance_visee": "2027-03-31",
+   "statut": "non atteignable à l'échéance avec les chiffres actuels"
   },
   {
    "objectif": "10 000 abonnés",
-   "debloque": "Abonnements Instagram (10 000 followers, compte pro, 18 ans, sur invitation — Metricool, maj 18/02/2025) ; TikTok Creator Rewards (10 000 abonnés + 100 000 vues/30 j + vidéos d'au moins 1 min — Metricool 31/03/2026)",
-   "echeance_visee": "2027-06-30"
+   "debloque": "Abonnements Instagram (10 000 abonnés, compte pro, 18 ans, sur invitation — Metricool, maj 18/02/2025) ; TikTok Creator Rewards (10 000 abonnés + 100 000 vues/30 j + vidéos d'au moins 1 min — Metricool 31/03/2026)",
+   "echeance_visee": "2027-06-30",
+   "statut": "non atteignable à l'échéance avec les chiffres actuels"
   }
  ],
  "sources_de_revenus_prioritaires": [
   "Contenu de marque / partenariats directs avec médias indépendants, ONG, associations, outils d'info (hors partis et pub politique)",
-  "Dons (Ko-fi, Tipeee) dès le lien en bio",
+  "Dons (Ko-fi, Tipeee) dès le lien en bio : page Ko-fi pas encore créée",
   "Abonnements Instagram à 10 000 abonnés",
   "Reprise TikTok / YouTube Shorts pour l'audience ; TikTok paie seulement les vidéos d'1 min et plus"
  ],
  "non_accessibles": [
   "Facebook Creator Fast Track : États-Unis et Canada seulement, 100 000 abonnés minimum (Les Gens d'Internet 20/03/2026)"
  ],
+ "plan_action": [
+  {
+   "quand": "aujourd'hui",
+   "qui": "agent 3 et agent 4/5",
+   "action": "Remplacer l'accroche « Oui ou non » par une question ouverte ou un chiffre à contester ; garder la structure « citation vérifiée + conséquence concrète » (format du 24/10)."
+  },
+  {
+   "quand": "aujourd'hui",
+   "qui": "propriétaire",
+   "action": "Vérifier la double publication Fonderie de Bretagne (actu et eco, 25/10) et décider si l'un des deux Reels doit être retiré ou si le sujet ne doit plus être publié sur les deux comptes."
+  },
+  {
+   "quand": "cette semaine",
+   "qui": "propriétaire",
+   "action": "Créer la page Ko-fi et la mettre en lien en bio (échéance 01/11) ; bio « Actu décodée en 50 s · voix et visuels IA · faits sourcés » avec promesse d'abonnement."
+  },
+  {
+   "quand": "cette semaine",
+   "qui": "agent 8",
+   "action": "Suivre chaque jour abonnés gagnés, visites du profil et enregistrements ; signaler le premier commentaire lisible ou contact de marque, média ou ONG."
+  },
+  {
+   "quand": "cette semaine",
+   "qui": "agent 9 avec le propriétaire",
+   "action": "Contrôler la publication automatique des comptes qhse et science (0 publication alors que le créneau est programmé) avant de juger leur contenu."
+  },
+  {
+   "quand": "cette semaine",
+   "qui": "agent 4",
+   "action": "Série « Commission du 17 octobre » avec fin « épisode suivant demain » et récap « à garder » (test à mesurer sur 4 Reels)."
+  },
+  {
+   "quand": "d'ici 4 semaines",
+   "qui": "agent 10",
+   "action": "Bilan à 4 semaines : abonnés gagnés, enregistrements pour 1 000 vues, comparaison des formats ; revoir les échéances des paliers si le rythme ne change pas."
+  }
+ ],
  "consignes_agents": {
-  "4": "Image-symbole pouvoir/gens en 1re seconde ; 45-55 s ; série feuilletonnée avec suite annoncée ; fin « à garder » ; garder 2 Reels/jour sans trou.",
+  "3": "Indicateurs : abonnés pour 1 000 vues (1,6) et enregistrements pour 1 000 vues (1,6). Tester le format « question ouverte » contre « Oui ou non ». Sourcer chaque chiffre.",
+  "4": "Image-symbole pouvoir/gens en 1re seconde ; 45-55 s ; série feuilletonnée avec suite annoncée ; fin « à garder » ; 2 Reels/jour sans trou ; angle citation vérifiée + conséquence concrète.",
   "8": "Suivre abonnés gagnés, visites du profil et enregistrements ; chaque réponse proposée invite à s'abonner ; signaler le premier commentaire lisible ou contact de marque/média/ONG.",
-  "3": "Indicateurs : abonnés pour 1 000 vues (1,5 total, 0 depuis le 18/10) et enregistrements pour 1 000 vues (0,8) ; mener le test « fin à garder »."
+  "9": "Signaler les questions et critiques de l'audience ; à ce jour aucun commentaire reçu sur les 15 publications actu."
  },
- "actions_proprietaire": [
-  "Avant le 22/10 : réduire à 1-2 Reels par jour, 4 h d'écart minimum (5 Reels le 19/10, le dernier à 7 vues en 2 h 40)",
-  "Avant le 22/10 : bio « Actu décodée en 50 s · voix et visuels IA · faits sourcés » + une phrase-promesse d'abonnement",
-  "Avant le 25/10 : Tableau de bord professionnel > Monétisation : noter les programmes affichés",
-  "Le 20/10 : relever dans l'app la durée moyenne de visionnage et la part de non-abonnés des Reels 1046, 1047 et 1509",
-  "Avant le 01/11 : ouvrir une page Ko-fi et la mettre en lien en bio",
-  "Tester les Trial Reels sur 2 vidéos par semaine"
- ],
- "risques": [
-  "Contenu politique moins recommandé par défaut aux non-abonnés sur Instagram (depuis 2024)",
-  "Publicité politique interdite dans l'UE sur Meta depuis le 06/10/2025 (TTPA) : pas de partenariat avec partis/campagnes",
-  "Contenu IA répétitif = risque de démonétisation (Facebook juil. 2025, YouTube 15/07/2025)",
-  "Loi influenceurs : mention « Publicité » ou équivalent et mention « image virtuelle » ou équivalent pour visuels IA dans un contenu sponsorisé"
- ],
  "questions_en_attente": {
-  "3": true,
-  "8": true
+  "3": "Aucune question écrite en attente ; les points de l'agent 3 sont traités dans plan_action.",
+  "8": "Aucune question écrite en attente."
  },
- "resume_du_jour": {
-  "date": "2026-10-20",
-  "type": "résumé quotidien",
-  "ou_on_en_est": "4 abonnés (0 gagné depuis le 18/10), 12 Reels, 2 620 vues cumulées, 0 partage, 2 enregistrements, 6 visites du profil le 20/10 (API Instagram, 20/10 16 h 36)",
-  "ce_qui_a_bouge": [
-   "2 premiers enregistrements du compte sur « Ils s'attaquent à nos libertés » (63 vues en 4 h)",
-   "Test A/B faux JT / messagerie : nul (+10,8 %, 0 partage), clos",
-   "Reel Macron plafonné (+30 vues en 24 h) et n'a pas amené de visites du profil",
-   "Rythme ramené à 2 Reels/jour, comme demandé le 19/10"
-  ],
-  "conversion": "1,5 abonné pour 1 000 vues au total, 0 depuis le 18/10 : le problème n° 1 est la conversion, pas la portée",
-  "actions_du_jour": [
-   "Bio + promesse d'abonnement (« l'actu décodée chaque soir à 18 h ») : dans l'app, aujourd'hui",
-   "Annoncer la suite en fin de Reel (« demain : … ») et caler un rendez-vous fixe à 18 h",
-   "Test « fin à garder » (récap 3 chiffres + Enregistre) sur les 4 prochains Reels"
-  ]
- },
- "actions_du_jour": [
-  "Propriétaire : garder la publication automatique active même en économie de quota (préparer 2 Reels d'avance la veille si un arrêt est prévu)",
-  "Agents 4/5 : série Commission du 17 octobre avec fin « épisode suivant demain » + récap « à garder » (test agent 3)",
-  "Agent 8 : légendes au modèle « accroche-histoire + question + envoie-le à… », suivi quotidien visites du profil"
- ],
- "ce_qui_a_bouge": [
-  "Publication arrêtée du 22/10 14 h au 24/10 16 h : portée du compte ÷13 (343 → 26), visites du profil à 0",
-  "Reprise le 24/10 avec « Ils ont perdu le contrôle. Et personne ne part. » et lancement de la série « Commission du 17 octobre »",
-  "Sujets éco « institution » remontés à la médiane à J+3 (agent 3)"
+ "risques": [
+  "Données faibles : 15 publications sur un seul compte et 7 jours ; un seul Reel eco ; aucune donnée qhse ou science. Toute conclusion reste provisoire.",
+  "Double publication sur deux comptes (Fonderie de Bretagne, 25/10) : dilution de l'audience et risque de contenu répétitif.",
+  "Conversion faible : 0 commentaire et 3 enregistrements sur 15 publications ; la croissance des abonnés dépend de l'audience, pas de la portée seule.",
+  "Contenu politique moins recommandé par défaut aux non-abonnés sur Instagram (depuis 2024).",
+  "Publicité politique interdite dans l'UE sur Meta depuis le 06/10/2025 (TTPA) : pas de partenariat avec partis ni campagnes.",
+  "Contenu IA répétitif = risque de démonétisation (Facebook juil. 2025, YouTube 15/07/2025).",
+  "Loi influenceurs : mention « Publicité » ou équivalent et mention « image virtuelle » ou équivalent pour visuels IA dans un contenu sponsorisé."
  ]
 }
