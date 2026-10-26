@@ -41,3 +41,10 @@ perimetre: "physique et ingénierie du quotidien (« comment ça marche ») + pe
 
 tiktok:                               # propriétaire 25/10 : heure de publication TikTok (brouillon envoyé à cette heure)
   heure: "22:00"
+
+voix:                                   # voix off, générée dans GitHub Actions (même réglage que actu)
+  active: true
+  narrateur: "chatterbox:fr?exag=0.6&cfg=0.4"
+  mascotte: "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3"
+  mascotte_effet: "aigu"
+  vitesse: 1.0
