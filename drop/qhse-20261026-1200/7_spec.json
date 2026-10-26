@@ -1,0 +1,356 @@
+{
+  "theme": {
+    "fond": "#1D2B53",
+    "texte": "#FFFFFF",
+    "accent": "#FFD23F",
+    "accent2": "#4FD1C5",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "COURS",
+    "grille": false,
+    "style": "pixeldoc",
+    "palette": [
+      "#FFD23F",
+      "#4FD1C5",
+      "#F28C6B",
+      "#6C5CE7",
+      "#1D2B53",
+      "#9BE564"
+    ],
+    "tenues": {
+      "narrateur": "qhse",
+      "mascotte": "detective"
+    }
+  },
+  "tendance_suivie": "Décryptage mythe vs réalité de norme (concept), pas de tendance agent 2 fournie.",
+  "variete": {
+    "accroche": "mythe de la paperasse contre preuves",
+    "trend": "Décryptage mythe vs réalité de norme",
+    "fonctionnement": "pixeldoc : pd_objet, pd_chiffre, pd_versus, pd_tampon, pd_flux",
+    "musique": "curieux",
+    "palette": "marine et jaune, bandeau COURS",
+    "voix": "Lou (narrateur, gilet qhse) et Déco (mascotte détective)",
+    "mise_en_page": "pixeldoc"
+  },
+  "musique": {
+    "genre": "curieux",
+    "volume": 0.4
+  },
+  "titre_miniature": "ISO 9001 : stoppez la paperasse inutile",
+  "mots_choc": [
+    "Preuves",
+    "Efficacité"
+  ],
+  "surtitre_miniature": "Audit ISO 9001 · 2026",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Audit ISO 9001 : preuves, pas classeurs",
+      "musique": "tension",
+      "sfx": [
+        "impact"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "ISO 9001 : tonnes de paperasse ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Non ! Il cherche des preuves.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.4
+    },
+    {
+      "type": "pd_objet",
+      "prompt": "a dusty stack of paper binders on a wooden desk, pixel art",
+      "etiquette": "Des classeurs ? Pas l'objectif",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il faut tout classer ?",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Non, seulement l'utile.",
+          "expression": "clin"
+        }
+      ],
+      "duration": 4.4
+    },
+    {
+      "type": "pd_chiffre",
+      "valeur": 1265216,
+      "decimales": 0,
+      "legende": "certificats ISO 9001 recensés dans le monde",
+      "source": "ISO Survey 2022",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Combien de certificats ?",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Fin 2022 : plus d'un million.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.2
+    },
+    {
+      "type": "pd_versus",
+      "gauche": {
+        "label": "Culture du document",
+        "prompt": "a tall stack of binders, pixel art"
+      },
+      "droite": {
+        "label": "Preuve d'efficacité",
+        "prompt": "a green checkmark on a process chart, pixel art"
+      },
+      "musique": "curieux",
+      "sfx": [
+        "pop"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "De quoi à quoi ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Du document à la preuve d'efficacité.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.6
+    },
+    {
+      "type": "pd_objet",
+      "prompt": "an open rulebook with a bookmark, pixel art",
+      "etiquette": "ISO 9001:2015, §7.5",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et le texte officiel ?",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Sept point cinq : l'utile, pas la liste.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.4
+    },
+    {
+      "type": "pd_tampon",
+      "tampon": "PAS DE LISTE IMPOSÉE",
+      "prompt": "a folder of procedures stamped in red, pixel art",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une procédure par activité ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Non ! La version 2015 ne l'impose plus.",
+          "expression": "rire"
+        }
+      ],
+      "duration": 6.4
+    },
+    {
+      "type": "pd_flux",
+      "de": {
+        "label": "Processus",
+        "prompt": "a gear machine, pixel art"
+      },
+      "vers": {
+        "label": "Résultats vérifiés",
+        "prompt": "a green checkmark chart, pixel art"
+      },
+      "montant": "preuve",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il regarde quoi ?",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Processus, résultats, preuve de maîtrise.",
+          "expression": "content"
+        }
+      ],
+      "duration": 4.8
+    },
+    {
+      "type": "pd_objet",
+      "prompt": "an original manager figure pointing at a whiteboard, pixel art, no detailed face",
+      "etiquette": "§5.1.1",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Qui répond de l'efficacité ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "La haute direction, paragraphe cinq point un point un.",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.8
+    },
+    {
+      "type": "pd_objet",
+      "prompt": "a four-stage circular arrow cycle, pixel art",
+      "etiquette": "Planifier, réaliser, contrôler, améliorer",
+      "musique": "curieux",
+      "sfx": [
+        "whoosh"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le fil conducteur ?",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Le cycle PDCA : planifier, réaliser, contrôler, améliorer.",
+          "expression": "clin"
+        }
+      ],
+      "duration": 6.0
+    },
+    {
+      "type": "pd_objet",
+      "prompt": "an original auditor with a clipboard walking in a factory hall, pixel art",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et il vérifie où ?",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Sur le terrain, au quotidien.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.2
+    },
+    {
+      "type": "pd_tampon",
+      "tampon": "CAUSE TRAITÉE",
+      "prompt": "a broken gear with a red warning sticker, pixel art",
+      "etiquette": "§10.2",
+      "musique": "tension",
+      "sfx": [
+        "ding"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et si problème ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "On traite la cause, puis on vérifie l'efficacité.",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.0
+    },
+    {
+      "type": "pd_versus",
+      "gauche": {
+        "label": "Classeur oublié",
+        "prompt": "a dusty binder, pixel art"
+      },
+      "droite": {
+        "label": "Processus maîtrisé",
+        "prompt": "a running machine with a green light, pixel art"
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il retient quoi ?",
+          "expression": "neutre"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Un processus qui tourne, des preuves.",
+          "expression": "rire"
+        }
+      ],
+      "duration": 5.2
+    },
+    {
+      "type": "pd_objet",
+      "prompt": "a magnifying glass over a results chart, pixel art",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Quelle question ?",
+          "expression": "pense"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Mes processus donnent-ils des résultats ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.8
+    },
+    {
+      "type": "pd_tampon",
+      "tampon": "PREUVES, PAS CLASSEURS",
+      "prompt": "a pixel art folder stamped in red",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "On jette la paperasse ?",
+          "expression": "rire"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Oui : gardez les preuves, supprimez le superflu.",
+          "expression": "clin"
+        }
+      ],
+      "duration": 6.4
+    },
+    {
+      "type": "outro",
+      "text": "Abonne-toi : la QHSE décodée",
+      "cta": "Partage à qui prépare son audit !",
+      "musique": "joyeux",
+      "sfx": [
+        "pop"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Abonne-toi à la QHSE décodée !",
+          "expression": "content"
+        },
+        {
+          "qui": "mascotte",
+          "texte": "Partage à qui prépare son audit !",
+          "expression": "rire"
+        }
+      ],
+      "duration": 6.4
+    }
+  ]
+}
