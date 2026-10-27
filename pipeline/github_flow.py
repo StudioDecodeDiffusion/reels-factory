@@ -570,7 +570,7 @@ def ecg() -> None:
     d = state.STATE / "attente"
     fiches = [json.loads(f.read_text(encoding="utf-8")) for f in d.glob("*.json")] if d.exists() else []
     a_verifier = [f for f in fiches if f.get("statut") in ("approuvee", "a_valider") and f.get("media")
-                  and f.get("publication_le") and datetime.fromisoformat(f["publication_le"]) < now - timedelta(minutes=10)]
+                  and f.get("publication_le") and datetime.fromisoformat(f["publication_le"]).replace(tzinfo=datetime.fromisoformat(f["publication_le"]).tzinfo or TZ) < now - timedelta(minutes=10)]
     if a_verifier:
         try:
             recents = IG(load_profile("actu")).recent_media(8)
@@ -629,7 +629,7 @@ def publier_ce_qui_est_du() -> None:
         quand = fiche.get("publication_le")  # date + heure précises (ISO), prioritaires sur l'heure
         h_pub = fiche.get("publication_heure", p.get("publication_heure", 18))
         m_pub = fiche.get("publication_minute", 0) if "publication_heure" in fiche else p.get("publication_minute", 0)
-        pret = (datetime.fromisoformat(quand) <= now) if quand else (now.hour, now.minute) >= (h_pub, m_pub)
+        pret = (datetime.fromisoformat(quand).replace(tzinfo=datetime.fromisoformat(quand).tzinfo or TZ) <= now) if quand else (now.hour, now.minute) >= (h_pub, m_pub)
         if fiche["statut"] == "approuvee" and pret \
                 and now.isoweekday() in p.get("publication_jours", range(1, 8)) and fiche.get("erreurs", 0) < 3:
             _publier(fiche, profile)

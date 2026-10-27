@@ -512,7 +512,7 @@ def cmd_drop(a) -> None:
     fiche = {
         "id": a.id, "profil": a.profile, "statut": "a_valider", "titre": concept.get("titre"),
         "son_tendance": _read(d, "7_spec.json", {}).get("son_tendance"),
-        **({"publication_le": a.le} if getattr(a, "le", None) else {"publication_heure": a.heure} if getattr(a, "heure", None) is not None else {"publication_le": _prochain_creneau(a.profile)}),
+        **({"publication_le": datetime.fromisoformat(a.le).replace(tzinfo=datetime.fromisoformat(a.le).tzinfo or TZ).isoformat(timespec="minutes")} if getattr(a, "le", None) else {"publication_heure": a.heure} if getattr(a, "heure", None) is not None else {"publication_le": _prochain_creneau(a.profile)}),
         "format_qhse": concept.get("format_qhse"), "episode": concept.get("episode"),
         "plateforme": concept.get("plateforme"),  # "tiktok" = brouillon TikTok seulement
         "legende": (d / "legende.txt").read_text(encoding="utf-8"),
