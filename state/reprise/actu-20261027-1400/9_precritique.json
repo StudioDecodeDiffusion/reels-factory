@@ -1,0 +1,49 @@
+{
+  "id": "actu-20261027-1400",
+  "agent": 7,
+  "role": "7.4 pre-critique (scenario + DA, avant generation)",
+  "verdict": "go",
+  "motif": "Aucun defaut bloquant (pas de contenu interdit, pas de fausse citation, pas d'accusation nominative, pas d'image de presse ni de visage reel). Les points ci-dessous sont des corrections a appliquer dans la spec (agent 8) ou a signaler, non bloquantes (decision du proprietaire, 26/10).",
+  "controles": {
+    "contenu_interdit": "aucun",
+    "image_presse_ou_visage_reel": "aucun (personnages originaux, pixeldoc)",
+    "mention_ia": "aucune",
+    "citations": "aucune citation dessinee ni attribuee",
+    "duree": "14 scenes x 4 s = 56 s (>= 55 s)",
+    "dialogue": "environ 159 mots, en dessous de la cible 160-170 : borderline, non bloquant",
+    "variete_vs_derniere_video": "ok : accroche these_directe (vs chiffre_geant), decomposition_prix (vs explication_mecanisme), electro_sombre (vs funk), V2 (vs V1+V3), gris_acier_jaune (vs braise_rouge)",
+    "mecanisme_anime": "ok : scenes 4, 5 et 10",
+    "hashtags": "5, dont #DecodeActu, conforme",
+    "legende": "accroche + chiffre, question, partage, Sources presentes"
+  },
+  "corrections": [
+    {
+      "priorite": 1,
+      "cible": "4_concept.json > titre_miniature",
+      "constat": "Le titre fait 10 mots (Plus de la moitie de taxes : ou va ton argent ?), au-dela de la regle <= 8 mots.",
+      "action": "Raccourcir a 8 mots maximum, par exemple « Plus de la moitié en taxes : où va ton argent ? » (8 mots, à vérifier)."
+    },
+    {
+      "priorite": 1,
+      "cible": "chiffre ≈ 30 Md€ / an (concept.faits non sourcé ; scènes 7 et légende du 5_scenario.json)",
+      "constat": "Le concept ne contient aucun fait sourcé à 30 Md€ : la seule source (Public Sénat) dit « dizaines de milliards ». Le chiffre est repris en gros plan (scène 7) et dans la légende.",
+      "action": "Soit ajouter une source qui chiffre ce montant, soit retirer le chiffre et garder « des dizaines de milliards » (règle : en cas de doute, on retire le chiffre)."
+    },
+    {
+      "priorite": 2,
+      "cible": "concept.faits[2] « taxe sur la taxe » attribuée à la Cour des comptes",
+      "constat": "source_url est null. La mention Cour des comptes dans la légende (Sources) n'est donc pas adossée à une URL.",
+      "action": "Ajouter l'URL de la publication, ou retirer l'attribution Cour des comptes (le mécanisme TVA sur accise reste explicable sans elle, voir le texte de la TVA dans le dossier)."
+    },
+    {
+      "priorite": 3,
+      "cible": "chiffre 55 à 60 % (concept.faits[0])",
+      "constat": "Correction à votre note : ce fait a bien une source_url (UFIP Énergies et Mobilités). Il n'est pas non sourcé. Le chiffre est cohérent avec « plus de la moitié » du titre et de l'accroche.",
+      "action": "Aucune action requise."
+    }
+  ],
+  "notes_finition": [
+    "Scène 12 : le prompt demande un camembert « TRANSITION » sans valeur chiffrée : sans donnée, le visuel reste neutre, ok.",
+    "Scène 9 : deux personnages originaux, sans visage détaillé : conforme."
+  ]
+}
