@@ -1,0 +1,51 @@
+{
+  "id": "brut_net",
+  "compte": "eco",
+  "plateforme": "instagram",
+  "titre_miniature": "Ton salaire : où part chaque euro",
+  "mots_choc": "chaque euro",
+  "surtitre_miniature": "Salariés · octobre 2026",
+  "sujet": "Ton salaire : du brut au net, où part chaque euro",
+  "angle": "Pédagogique et neutre : suivre une fiche de paie étape par étape, du salaire brut au net versé, en nommant chaque prélèvement (cotisations salariales, CSG, CRDS, prélèvement à la source) et ce qu'il finance. Question de fond : qui prélève quoi, et à quelle étape. Aucun parti pris sur le niveau des prélèvements ; on explique le mécanisme et on renvoie aux chiffres officiels.",
+  "ligne_editoriale": "neutre et pédagogique : chiffres officiels, qui paie et qui gagne",
+  "contexte_actu": {
+    "veille_liee": "PLF 2027 : principaux indicateurs du budget de l'État (titre de la veille, non vérifié au-delà du titre)",
+    "usage": "accroche optionnelle en fin de vidéo seulement si le Manager valide ; ne pas affirmer de mesure de la loi de finances sans texte officiel"
+  },
+  "faits_chiffres": [],
+  "faits_a_verifier_avant_script": [
+    {
+      "fait": "Taux CSG/CRDS, taux de cotisations salariales, taux du prélèvement à la source, part des cotisations patronales",
+      "statut": "non retenu : sources officielles (urssaf.fr, impots.gouv.fr) inaccessibles (permission refusée, 2e essai). Aucun taux ni montant dans la vidéo.",
+      "source_a_consulter": "urssaf.fr, impots.gouv.fr (hors vidéo tant que non vérifié)"
+    }
+  ],
+  "structure_suggeree": [
+    "Hook : « Ton salaire brut n'est jamais ton salaire net. » (formule, sans chiffre)",
+    "Étape 1 : le salaire brut, la base de calcul",
+    "Étape 2 : les cotisations salariales (retraite, santé, chômage selon le statut), nommées sans taux",
+    "Étape 3 : la CSG et la CRDS, deux prélèvements sur une assiette propre, nommés sans taux",
+    "Étape 4 : le prélèvement à la source, calculé sur le net imposable, expliqué sans barème",
+    "Étape 5 : le net versé, et ce que finance chaque prélèvement (sans jugement)",
+    "Outro : où vérifier sa fiche de paie (bulletin de salaire), et la question fermée finale"
+  ],
+  "scenes_suggerees": [
+    "pd_flux",
+    "pd_chiffre",
+    "pd_jauge",
+    "pd_objet",
+    "pd_tampon"
+  ],
+  "sources_veille": [
+    "Google News (veille automatique) : PLF 2027, budget de l'État, 17 articles",
+    "Google News (veille automatique) : gaz, retraites, crédit à la conso, impôts, novembre 2026, 7 articles"
+  ],
+  "contraintes": [
+    "Aucun chiffre sans source officielle vérifiée ; sans vérification, le chiffre est retiré",
+    "Aucune mention d'IA",
+    "Ton neutre, aucune accusation"
+  ],
+  "statut": "complet",
+  "accroche": "Ton salaire brut n'est jamais ton salaire net. Voici où passe la différence, étape par étape.",
+  "note_agent_4": "2e essai : sources officielles inaccessibles, aucun chiffre retenu. Vidéo pédagogique sans taux ni montant ; chiffres ajoutables seulement si vérifiés à la source avant l'agent 5."
+}
