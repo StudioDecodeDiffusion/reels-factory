@@ -1,0 +1,156 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.5,
+   "texte_ecran": "100€ versés : la réalité",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Sur cent euros versés par ton entreprise, combien arrivent vraiment sur ton compte bancaire ?",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Le superbrut : coût total",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pour comprendre ta fiche de paie, il faut partir du coût total employeur, appelé superbrut.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "Exemple : 2500 € brut",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Prenons l'exemple d'un salarié payé deux mille cinq cents euros brut par mois.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "3500 € de superbrut",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pour cette rémunération, le coût réel pour l'entreprise s'élève à environ trois mille cinq cents euros.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Cotisations patronales : 25 à 45%",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La différence provient des cotisations patronales. Elles varient entre vingt-cinq et quarante-cinq pour cent du brut.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.0,
+   "texte_ecran": "Du brut au net",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ensuite, sur ton bulletin de paie, apparaissent les cotisations salariales.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "Cotisations salariales : 22%",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ces prélèvements salariaux représentent environ vingt-deux pour cent du salaire brut affiché.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "Résultat : 1950 € nets",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Résultat pour notre exemple : le salarié perçoit environ mille neuf cent cinquante euros nets avant impôt.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Le coin fiscal global",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce mécanisme financier global entre le coût total et le net est appelé le coin fiscal.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "France : 47% de coin fiscal",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Selon l'OCDE, le coin fiscal moyen en France atteint environ quarante-sept pour cent du travail.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Où vont ces cotisations ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ces cotisations financent directement la protection sociale, la santé, les retraites et le chômage.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.5,
+   "texte_ecran": "Comprends-tu ta fiche de paie ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Savais-tu que ton entreprise versait autant pour ton poste ? Dis-le-nous en commentaire !",
+     "expression": "sourire"
+    }
+   ]
+  }
+ ],
+ "legende": "Sur 100 € versés par ton entreprise, environ 47 % partent en cotisations et impôts.\n\nPour un salaire brut de 2 500 €, le coût total pour l'employeur est d'environ 3 500 € alors que le salarié perçoit 1 950 € net avant impôt. Cette différence s'explique par la combinaison des cotisations patronales et salariales qui financent notre système social.\n\nSavais-tu ce que coûte réellement ton poste à ton entreprise ? 👇\nEnvoie cette vidéo à un collègue pour lui expliquer sa fiche de paie ! 📤\nSources : OCDE, Service-Public.fr, Urssaf",
+ "hashtags": [
+  "#économie",
+  "#OCDE",
+  "#Urssaf",
+  "#fichedepaie",
+  "#décodé"
+ ]
+}
