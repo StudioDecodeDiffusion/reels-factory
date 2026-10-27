@@ -22,7 +22,7 @@ UA = {"User-Agent": "Mozilla/5.0 (DecodeStudio veille; contact studiodecodediffu
 MEDIAS = {
     # sources diversifiées (presse, médias indépendants, institutions, science) — celles qui échouent sont journalisées puis retirées
     "BFM": "https://www.bfmtv.com/rss/news-24-7/", "France 24": "https://www.france24.com/fr/rss", "RFI": "https://www.rfi.fr/fr/rss",
-    "La Croix": "https://www.la-croix.com/RSS", "Le Point": "https://www.lepoint.fr/rss.xml", "L'Express": "https://www.lexpress.fr/rss/alaune.xml",
+    "La Croix": "https://www.la-croix.com/RSS", "L'Express": "https://www.lexpress.fr/rss/alaune.xml",
     "Courrier international": "https://www.courrierinternational.com/feed/all/rss.xml",
     "Politis": "https://www.politis.fr/feed/", "Reporterre": "https://reporterre.net/spip.php?page=backend",
     "Basta": "https://basta.media/spip.php?page=backend", "Alternatives économiques": "https://www.alternatives-economiques.fr/rss.xml",
@@ -39,7 +39,7 @@ MEDIAS = {
     "L'Usine Nouvelle": "https://www.usinenouvelle.com/rss/", "Numerama": "https://www.numerama.com/feed/",
 }
 GNEWS = "https://news.google.com/rss{}?hl=fr&gl=FR&ceid=FR:fr"
-GNEWS_SITES = ["lesechos.fr", "lemonde.fr", "mediapart.fr", "legifrance.gouv.fr", "inrs.fr", "insee.fr", "banque-france.fr"]
+GNEWS_SITES = ["lesechos.fr", "lemonde.fr", "mediapart.fr", "legifrance.gouv.fr", "inrs.fr", "insee.fr", "banque-france.fr", "lepoint.fr"]
 REQUETES = {  # Google Actualités ciblé par compte
     "actu": ["gouvernement", "manifestation", "Assemblée nationale", "pouvoir d'achat"],
     "eco": ["économie France", "inflation", "impôts", "budget de l'État", "salaires"],
@@ -100,18 +100,7 @@ def collecter() -> tuple[list[dict], dict, dict]:
             signaux["trends"].append({"terme": e.get("title"), "volume": int(vol)})
     except Exception as ex:
         erreurs["Google Trends"] = str(ex)[:120]
-    base = "https://ads.tiktok.com/creative_radar_api/v1/popular_trend"
-    for cle, chemin in (("tiktok_hashtags", "/hashtag/list"), ("tiktok_sons", "/sound/rank_list")):
-        try:  # TikTok Creative Center (France, 7 jours) : accès public non garanti
-            t = _get(base + chemin, params={"page": 1, "limit": 30, "period": 7, "country_code": "FR", "sort_by": "popular"},
-                     headers={**UA, "Referer": "https://ads.tiktok.com/business/creativecenter/"}).json()
-            liste = (t.get("data") or {}).get("list") or (t.get("data") or {}).get("sound_list") or []
-            signaux[cle] = [{"terme": x.get("hashtag_name") or x.get("title"), "rang": x.get("rank"),
-                             "vues": x.get("video_views") or x.get("publish_cnt")} for x in liste]
-            if not liste:
-                erreurs["TikTok " + cle] = f"réponse vide ({t.get('msg') or t.get('code')})"
-        except Exception as ex:
-            erreurs["TikTok " + cle] = str(ex)[:120]
+    # TikTok Creative Center : accès refusé sans compte publicitaire (« no permission ») — retiré, pas de fausse donnée
     return items, signaux, erreurs
 
 
