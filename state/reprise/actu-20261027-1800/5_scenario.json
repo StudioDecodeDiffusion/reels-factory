@@ -1,0 +1,192 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "Ton info vient des réseaux",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Plus d'une personne interrogée sur deux s'informe sur les réseaux sociaux ou les plateformes vidéo.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 3.7,
+   "texte_ecran": "Digital News Report 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le Digital News Report 2026, du Reuters Institute, donne un chiffre précis.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 3.7,
+   "texte_ecran": "54 % des répondants",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cinquante-quatre pour cent des répondants dans le monde.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 3.7,
+   "texte_ecran": "Un réseau ou une vidéo",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ils ont lu ou regardé l'info sur les réseaux la semaine précédant le sondage.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 3.7,
+   "texte_ecran": "L'info arrive par le fil",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Souvent, l'info arrive sans qu'on la cherche : une vidéo, un titre, un partage d'ami.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 3.7,
+   "texte_ecran": "Un titre",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un titre se lit en un clin d'œil.",
+     "expression": "ironie"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 3.7,
+   "texte_ecran": "Une source",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Vérifier la source prend du temps, et le fil n'en laisse pas.",
+     "expression": "colere"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 3.7,
+   "texte_ecran": "Qui a vérifié ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le titre, lui, ne dit presque jamais qui a vérifié quoi.",
+     "expression": "colere"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "Décodé : la source à l'écran",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "C'est pour ça que Décodé existe : chaque info arrive avec sa source écrite à l'écran.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 3.7,
+   "texte_ecran": "Des faits sourcés",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Des faits sourcés, dans le format où tu es déjà.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_jauge",
+   "duree_s": 3.7,
+   "texte_ecran": "Vérifier, c'est un choix",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce n'est pas une fatalité : vérifier une info, c'est un choix.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 3.7,
+   "texte_ecran": "Pas de rumeur",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pas de rumeur habillée en scoop : des faits, et l'endroit où les vérifier.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 3.7,
+   "texte_ecran": "Partage-le",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Partage-la à quelqu'un qui n'a que le fil.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 3.7,
+   "texte_ecran": "Abonne-toi à Décodé",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Abonne-toi à Décodé pour recevoir la prochaine info, sourcée.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "duree_s": 3.7,
+   "texte_ecran": "Tu t'informes où, toi ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Alors, tu t'informes où, toi ?",
+     "expression": "neutre"
+    }
+   ]
+  }
+ ],
+ "legende": "Plus d'une personne interrogée sur deux s'informe sur les réseaux sociaux ou les plateformes vidéo : 54 % dans le monde 📱\n\nLe Digital News Report 2026 du Reuters Institute mesure ces usages dans le monde, sur la semaine précédant le sondage. Décodé existe pour que chaque info arrive avec sa source écrite à l'écran.\n\nAbonne-toi pour les faits sourcés.\nTu t'informes où, toi ? 👇\nEnvoie cette vidéo à quelqu'un qui n'a que le fil 📤\nSources : Reuters Institute, Digital News Report 2026",
+ "hashtags": [
+  "#info",
+  "#ReutersInstitute",
+  "#DigitalNewsReport",
+  "#reseauxsociaux",
+  "#decodeactu"
+ ]
+}

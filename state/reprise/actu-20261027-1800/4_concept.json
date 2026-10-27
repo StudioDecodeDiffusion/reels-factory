@@ -1,0 +1,60 @@
+{
+  "id": "18_24",
+  "compte": "actu",
+  "creneau": "2026-10-27T18:00",
+  "sujet": "Les 18-24 ans s'informent d'abord sur les réseaux : pourquoi Décodé existe (promotion du compte)",
+  "titre_miniature": "Ton info vient des réseaux, pas des médias",
+  "mots_choc": "des réseaux",
+  "surtitre_miniature": "Reuters Institute · 2026",
+  "accroche": "constat_chiffre",
+  "accroche_texte": "Plus d'une personne interrogée sur deux s'informe sur les réseaux sociaux ou les plateformes vidéo.",
+  "fonctionnement": "pd_flux",
+  "fonctionnement_detail": "Flux animé : des sources d'info (réseaux, vidéos, médias, agents IA) coulent vers un écran de téléphone ; le flux s'élargit sans vérification affichée. Étiquettes courtes, une seule révélation par étape.",
+  "musique": "percussions_urbaines",
+  "voix": "V3",
+  "palette": "bleu_nuit_orange",
+  "angle": "Le constat est sourcé et factuel : l'info arrive surtout par le fil, pas par la recherche. D'où la promotion de Décodé : des faits vérifiés et sourcés, rangés dans le format où ces gens sont déjà. Ton clair et engagé, du point de vue des jeunes et des précaires ; pas d'attaque nominative.",
+  "structure_narrative": [
+    "Accroche : « Plus d'une personne interrogée sur deux s'informe sur les réseaux. »",
+    "Constat : ce que dit le Digital News Report 2026 (monde, semaine précédant le sondage).",
+    "Pourquoi c'est un problème : on lit des titres sans voir qui a vérifié quoi.",
+    "Pourquoi Décodé existe : chaque info avec sa source écrite à l'écran.",
+    "Appel : s'abonner, partager à quelqu'un qui n'a que le fil ; question finale ouverte sur l'endroit où l'on s'informe."
+  ],
+  "sources": [
+    {
+      "nom": "Reuters Institute, Digital News Report 2026",
+      "retenue": true,
+      "chiffre_retenu": "54 % des répondants ont utilisé au moins un réseau social ou une plateforme vidéo pour s'informer, sur la semaine précédant le sondage (monde).",
+      "verification": "Vérifié via l'article RTBF qui reprend le rapport. Le rapport original n'a pas été ouvert ; à relire dans le PDF avant publication.",
+      "lien": "https://www.rtbf.be/article/les-reseaux-sociaux-sont-devenus-la-premiere-source-d-information-devant-les-medias-traditionnels-selon-le-digital-news-report-2026-du-reuters-institute-11742183",
+      "mention_video": "Sources : Reuters Institute, Digital News Report 2026"
+    },
+    {
+      "nom": "Arcom, étude 2026 sur les usages audiovisuels",
+      "retenue": false,
+      "raison": "Chiffre trouvé seulement dans un résumé de presse (62 % des moins de 35 ans regardent des vidéos sur les réseaux, 78 % chez les 15-24 ans) : ce n'est pas un chiffre sur l'information. Non retenu faute de vérification sur le PDF Arcom.",
+      "lien": "https://lareclame.fr/arcom-etude-audio-video-333013"
+    },
+    {
+      "nom": "Médiamétrie",
+      "retenue": false,
+      "raison": "Aucun chiffre sourcé trouvé pour les 18-24 ans sur l'information. Non utilisé."
+    }
+  ],
+  "chiffres_retires": [
+    "Part des 18-24 ans qui s'informent d'abord sur les réseaux : aucun chiffre sourcé trouvé, retiré.",
+    "Tout chiffre Médiamétrie : aucun trouvé, retiré.",
+    "Tout chiffre Arcom sur l'information des jeunes : non trouvé, retiré."
+  ],
+  "trend": "Au choix + appel à s'abonner et partager",
+  "appel": "S'abonner ; partager à quelqu'un qui n'a que le fil ; question finale : « Tu t'informes où, toi ? »",
+  "variation_vs_derniere": {
+    "accroche": "constat_chiffre (dernière : these_directe)",
+    "fonctionnement": "pd_flux (dernière : decomposition_prix)",
+    "musique": "percussions_urbaines (dernière : electro_sombre)",
+    "voix": "V3 (dernière : V2)",
+    "palette": "bleu_nuit_orange (dernière : gris_acier_jaune)"
+  },
+  "rappels_regles": "Aucune mention d'IA dans la vidéo, la miniature ou la légende. Pas de visage réel. Pas de fausse citation. Aucune accusation nominative non prouvée."
+}
