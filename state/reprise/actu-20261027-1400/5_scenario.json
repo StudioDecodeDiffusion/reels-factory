@@ -1,0 +1,180 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "Où va l'argent du plein ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Quand tu fais ton plein, une bonne partie de ton argent part en taxes, pas en carburant.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Dans un litre de gazole",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Dans un litre de gazole, il y a le produit, le raffinage et la distribution.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "2,37 € le litre (exemple)",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Prenons un litre à 2,37 euros, à la pompe.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Accise (ex-TICPE)",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ensuite vient l'accise, l'ancienne TICPE, fixée à chaque litre.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "TVA 20 % sur tout le prix",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La TVA, à vingt pour cent, s'applique sur le prix, accise comprise.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Une taxe sur la taxe",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Résultat : tu paies un impôt calculé sur un autre impôt.",
+     "expression": "ironie"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "≈ 30 milliards par an",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Au total, ces taxes rapportent près de trente milliards d'euros par an.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "État et collectivités",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cet argent va à l'État et aux collectivités.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Payé à chaque plein",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cet impôt est payé à chaque plein, par tout le monde, salariés et ménages modestes compris.",
+     "expression": "colere"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.0,
+   "texte_ecran": "Plus le prix monte, plus la TVA rapporte",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Quand les prix montent, la TVA rapporte mécaniquement plus à l'État.",
+     "expression": "colere"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Mécanisme automatique",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et l'État n'a rien à faire pour ça : le mécanisme est automatique.",
+     "expression": "ironie"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Où vont ces milliards ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Combien de ces milliards finance vraiment la transition écologique, aujourd'hui ?",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chute",
+   "duree_s": 4.0,
+   "texte_ecran": "Chiffres à publier",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce chiffre, Bercy doit le publier, noir sur blanc.",
+     "expression": "colere"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.0,
+   "texte_ecran": "Faut-il baisser ces taxes ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Faut-il baisser d'urgence la fiscalité du carburant pour préserver les ménages ?",
+     "expression": "neutre"
+    }
+   ]
+  }
+ ],
+ "legende": "Ton plein : près de 30 milliards d'euros de taxes par an ⛽️\n\nDans un litre de gazole, l'accise (ex-TICPE) puis la TVA s'ajoutent au prix, et la TVA est aussi calculée sur l'accise. Ces taxes rapportent à l'État et aux collectivités, et leur montant grimpe avec le prix du carburant.\n\nFaut-il réduire la fiscalité sur le carburant pour redonner du pouvoir d'achat aux travailleurs ? 👇\n\nEnvoie-la à quelqu'un qui râle à chaque passage à la pompe ! 📤\n\nSources : UFIP Énergies et Mobilités, Public Sénat, Cour des comptes",
+ "hashtags": [
+  "#Carburant",
+  "#Bercy",
+  "#CourDesComptes",
+  "#PouvoirDAchat",
+  "#DecodeActu"
+ ]
+}
