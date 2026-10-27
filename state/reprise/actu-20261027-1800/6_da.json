@@ -28,11 +28,11 @@
   "musique": {
     "genre": "percussions_urbaines",
     "tempo": "medium, 92 à 100 bpm, frappes de type batterie de rue en chiptune, pas de blanc dans la voix",
-    "volume": "sous la voix, monte légèrement sur la scène 13 (appel à s'abonner)"
+    "volume": "sous la voix, monte légèrement sur la scène 14 (appel à s'abonner)"
   },
   "voix": "V3",
   "animation": {
-    "mecanisme_anime": "scènes 3 et 6 (flux de sources vers l'écran du téléphone) et scène 9 (tampon SOURCÉ qui s'applique)",
+    "mecanisme_anime": "scènes 4, 5 et 12 (flux de sources vers l'écran du téléphone) et scène 8 (tampon qui s'applique)",
     "regle": "une révélation toutes les ~10 s ; les étiquettes des sources apparaissent une par une"
   },
   "scenes": [
@@ -41,111 +41,119 @@
       "plan_type": "hook",
       "scene": "hook",
       "duree_s": 4.0,
-      "texte_ecran": "TON INFO VIENT D'OÙ ?",
+      "texte_ecran": "Ton info vient des réseaux",
       "prompt_image": "Pixel art, deep blue night background, a pixel phone in the center with a large orange question mark on its screen, one original pixel character with no face details holding the phone, bold pixel title area at top, flat composition, no logos, no text beyond the title."
     },
     {
       "n": 2,
-      "plan_type": "constat",
+      "plan_type": "pd_chiffre",
       "scene": "pd_chiffre",
-      "duree_s": 4.0,
-      "texte_ecran": "54 % · PAR LE FIL",
-      "prompt_image": "Pixel art, giant orange pixel digits 54 % on dark navy background, a small pixel phone icon beside them, label PAR LE FIL in light blue capitals, bold, uncluttered."
+      "duree_s": 3.7,
+      "texte_ecran": "Digital News Report 2026",
+      "prompt_image": "Pixel art, a pixel document card with the title DIGITAL NEWS REPORT 2026 in bold cream capitals, a small orange pixel globe icon beside it, dark navy background, flat composition, no logos."
     },
     {
       "n": 3,
-      "plan_type": "fait",
-      "scene": "pd_flux",
-      "duree_s": 4.0,
-      "texte_ecran": "RÉSEAUX · VIDÉOS",
-      "prompt_image": "Pixel art, three colored pixel source blocks at the left labeled RÉSEAUX, VIDÉOS and MÉDIAS, light blue animated flow arrows pouring into a pixel phone screen on the right, dark navy background, label in capitals, no logos."
+      "plan_type": "pd_chiffre",
+      "scene": "pd_chiffre",
+      "duree_s": 3.7,
+      "texte_ecran": "54 % des répondants",
+      "prompt_image": "Pixel art, giant orange pixel digits 54 % on dark navy background, a small pixel phone icon beside them, label 54 % DES RÉPONDANTS in light blue capitals, bold, uncluttered, no logos."
     },
     {
       "n": 4,
-      "plan_type": "fait",
-      "scene": "pd_objet",
-      "duree_s": 4.0,
-      "texte_ecran": "UN TITRE. UN POUCE.",
-      "prompt_image": "Pixel art, a single pixel phone with a headline bar and a thumb icon scrolling, light blue and cream tones, dark navy background, clean flat layout, no logos, no real app interface."
+      "plan_type": "pd_flux",
+      "scene": "pd_flux",
+      "duree_s": 3.7,
+      "texte_ecran": "Un réseau ou une vidéo",
+      "prompt_image": "Pixel art, three colored pixel source blocks at the left labeled RÉSEAU, VIDÉO and MÉDIA, light blue animated flow arrows pouring into a pixel phone screen on the right, dark navy background, label in capitals, no logos."
     },
     {
       "n": 5,
-      "plan_type": "pourquoi",
-      "scene": "pd_versus",
-      "duree_s": 4.0,
-      "texte_ecran": "LE FIL OU LA SOURCE ?",
-      "prompt_image": "Pixel art, two pixel panels side by side, left panel a scrolling feed with no source line, right panel a document with a labeled SOURCE line, an orange arrow pointing to the right panel, dark navy background, bold capitals."
+      "plan_type": "pd_flux",
+      "scene": "pd_flux",
+      "duree_s": 3.7,
+      "texte_ecran": "L'info arrive par le fil",
+      "prompt_image": "Pixel art, pixel source blocks sliding down a vertical feed into a pixel phone, light blue flow, one label FIL in capitals, dark navy background, flat layout, no logos."
     },
     {
       "n": 6,
-      "plan_type": "fait",
-      "scene": "pd_flux",
-      "duree_s": 4.0,
-      "texte_ecran": "QUI A VÉRIFIÉ ?",
-      "prompt_image": "Pixel art, light blue pixel blocks drifting across the screen without anything attached, one pixel phone with a blank label slot, orange question mark pulsing above, dark navy background, label in capitals."
+      "plan_type": "pd_versus",
+      "scene": "pd_versus",
+      "duree_s": 3.7,
+      "texte_ecran": "Un titre",
+      "prompt_image": "Pixel art, a single pixel headline bar on a pixel phone with a thumb icon scrolling past, light blue and cream tones, label TITRE in capitals, dark navy background, clean flat layout, no logos, no real app interface."
     },
     {
       "n": 7,
-      "plan_type": "fait",
-      "scene": "pd_objet",
-      "duree_s": 4.0,
-      "texte_ecran": "DÉCODÉ : LA SOURCE",
-      "prompt_image": "Pixel art, a pixel information card with a bold orange SOURCE line written under the headline, a small pixel book icon, dark navy background, flat layout, no logos."
+      "plan_type": "pd_versus",
+      "scene": "pd_versus",
+      "duree_s": 3.7,
+      "texte_ecran": "Une source",
+      "prompt_image": "Pixel art, two pixel panels side by side, left panel a headline with no source line, right panel a document with a labeled SOURCE line, an orange arrow pointing to the right panel, dark navy background, bold capitals."
     },
     {
       "n": 8,
-      "plan_type": "fait",
-      "scene": "pd_chiffre",
-      "duree_s": 4.0,
-      "texte_ecran": "1 INFO = 1 SOURCE",
-      "prompt_image": "Pixel art, large orange pixel digits 1 with an equals sign and a second 1 in light blue, a small pixel document beside them, dark navy background, bold, no more than two lines."
+      "plan_type": "pd_tampon",
+      "scene": "pd_tampon",
+      "duree_s": 3.7,
+      "texte_ecran": "Qui a vérifié ?",
+      "prompt_image": "Pixel art, a pixel document with a blank verification box, an orange stamp applying onto it, orange question mark above, dark navy background, label in capitals, flat composition."
     },
     {
       "n": 9,
-      "plan_type": "fait",
-      "scene": "pd_tampon",
+      "plan_type": "pd_objet",
+      "scene": "pd_objet",
       "duree_s": 4.0,
-      "texte_ecran": "SOURCÉ",
-      "prompt_image": "Pixel art, a pixel document with a bold orange stamp SOURCÉ pressed onto it in capitals, dark navy background, small light blue tick marks around the stamp, flat composition."
+      "texte_ecran": "Décodé : la source à l'écran",
+      "prompt_image": "Pixel art, a pixel phone whose screen shows a card with a bold orange SOURCE line under the headline, dark navy background, flat layout, label DÉCODÉ in capitals, no logos."
     },
     {
       "n": 10,
-      "plan_type": "fait",
+      "plan_type": "pd_objet",
       "scene": "pd_objet",
-      "duree_s": 4.0,
-      "texte_ecran": "ICI : FAITS + SOURCE",
-      "prompt_image": "Pixel art, a pixel phone showing two short lines, one labeled FAIT and one labeled SOURCE, orange underline under SOURCE, dark navy background, label in capitals, no logos."
+      "duree_s": 3.7,
+      "texte_ecran": "Des faits sourcés",
+      "prompt_image": "Pixel art, a pixel information card with two short lines, one labeled FAIT and one labeled SOURCE, orange underline under SOURCE, small pixel book icon, dark navy background, label in capitals, no logos."
     },
     {
       "n": 11,
-      "plan_type": "pourquoi",
-      "scene": "pd_flux",
-      "duree_s": 4.0,
-      "texte_ecran": "ENVOIE-LE À QUI N'A QUE LE FIL",
-      "prompt_image": "Pixel art, an orange pixel share arrow leaving a pixel phone and flowing to a second pixel phone labeled FIL, light blue flow, dark navy background, label in two short lines."
+      "plan_type": "pd_jauge",
+      "scene": "pd_jauge",
+      "duree_s": 3.7,
+      "texte_ecran": "Vérifier, c'est un choix",
+      "prompt_image": "Pixel art, a pixel gauge meter with an orange needle set on the VÉRIFIER side, light blue ticks, dark navy background, bold capitals, flat composition, no logos."
     },
     {
       "n": 12,
-      "plan_type": "fait",
-      "scene": "pd_tampon",
-      "duree_s": 4.0,
-      "texte_ecran": "ABONNE-TOI",
-      "prompt_image": "Pixel art, a pixel bell icon with a bold orange stamp ABONNE-TOI pressed over it, dark navy background, flat composition, bold capitals."
+      "plan_type": "pd_flux",
+      "scene": "pd_flux",
+      "duree_s": 3.7,
+      "texte_ecran": "Pas de rumeur",
+      "prompt_image": "Pixel art, light blue pixel blocks flowing into a pixel phone, each block carrying a small orange SOURCE tag, a crossed-out pixel speech bubble at the side, dark navy background, label in capitals, no logos."
     },
     {
       "n": 13,
-      "plan_type": "appel",
-      "scene": "pd_versus",
-      "duree_s": 4.0,
-      "texte_ecran": "PARTAGE-LE",
-      "prompt_image": "Pixel art, two original pixel figures facing a phone, one passing it to the other with an orange share arrow, no face details, dark navy background, bold capitals, music swells slightly here."
+      "plan_type": "pd_tampon",
+      "scene": "pd_tampon",
+      "duree_s": 3.7,
+      "texte_ecran": "Partage-le",
+      "prompt_image": "Pixel art, a pixel document with a bold orange stamp PARTAGE-LE pressed onto it, small light blue share arrows around the stamp, dark navy background, flat composition, bold capitals."
     },
     {
       "n": 14,
-      "plan_type": "question",
+      "plan_type": "pd_objet",
+      "scene": "pd_objet",
+      "duree_s": 3.7,
+      "texte_ecran": "Abonne-toi à Décodé",
+      "prompt_image": "Pixel art, a pixel bell icon above a pixel phone with a bold orange stamp ABONNE-TOI pressed over it, dark navy background, flat composition, bold capitals, no logos."
+    },
+    {
+      "n": 15,
+      "plan_type": "outro",
       "scene": "outro",
-      "duree_s": 4.0,
-      "texte_ecran": "TU T'INFORMES OÙ, TOI ?",
+      "duree_s": 3.7,
+      "texte_ecran": "Tu t'informes où, toi ?",
       "prompt_image": "Pixel art, a pixel phone with a large orange question mark on its screen, a small pixel call-to-action area at the bottom, dark navy background, no logos, bold capitals in two short lines."
     }
   ],
@@ -154,9 +162,9 @@
     "aucune mention d'IA dans les visuels, ni dans les étiquettes des sources",
     "aucune citation dessinée, aucun logo de plateforme ou de média",
     "chiffre repris uniquement du concept : 54 % (monde, Reuters Institute Digital News Report 2026) ; à relire dans le PDF avant publication",
-    "au moins un mécanisme animé (scènes 3, 6, 9)",
-    "14 scènes de 4 s, total 56 s",
+    "au moins un mécanisme animé (scènes 4, 5, 12 et 8)",
+    "15 scènes, une par plan de 5_scenario.json, même ordre et mêmes textes d'écran, total 56,1 s",
     "étiquettes courtes en capitales, aucune qui déborde du cadre"
   ],
-  "negatif": "photo, real face, real logo, real brand, press photo, gore, text overflow, watermark, blurry, 3D render, extra fingers, AI label, IA, robot text, chatbot"
+  "negatif": "photo, real face, real logo, real brand, press photo, gore, text overflow, watermark, blurry, 3D render, extra fingers, robot text, chatbot"
 }
