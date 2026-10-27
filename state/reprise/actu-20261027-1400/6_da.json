@@ -1,0 +1,161 @@
+{
+  "id": "actu-20261027-1400",
+  "compte": "Décodé · Actu",
+  "style_visuel": {
+    "mise_en_page": "pixeldoc",
+    "description": "Documentaire en pixel art : personnages originaux stylisés (aucun visage réel, aucune photo de presse), objets de la pompe et du baril en pixels, flèches animées pour montrer les flux d'argent, étiquettes courtes en capitales.",
+    "palette": "gris_acier_jaune",
+    "couleurs": {
+      "fond": "#1B1F24",
+      "encre": "#0E1013",
+      "acier": "#5C6670",
+      "jaune_alerte": "#F2C230",
+      "rouge_colere": "#D9432B",
+      "blanc_casse": "#F4F1EA"
+    },
+    "typographie": "Titres en capitales épaisses pixel, texte d'écran 2 lignes max, aucune étiquette qui déborde du cadre.",
+    "contraste": "Fond sombre, chiffres et montants en jaune, colère et mots-clés en rouge."
+  },
+  "variete_vs_derniere_video": {
+    "accroche": "these_directe (dernière : chiffre_geant)",
+    "fonctionnement": "decomposition_prix (dernière : explication_mecanisme)",
+    "musique": "electro_sombre (dernière : funk)",
+    "voix": "V2 (dernière : V1+V3)",
+    "palette": "gris_acier_jaune (dernière : braise_rouge)"
+  },
+  "accroche": "these_directe",
+  "fonctionnement": "decomposition_prix",
+  "musique": {
+    "genre": "electro_sombre",
+    "tempo": "lent, 96 à 104 bpm, pulsation de pompe, pas de blanc dans la voix",
+    "volume": "sous la voix, monte légèrement sur la scène 14"
+  },
+  "voix": "V2",
+  "animation": {
+    "mecanisme_anime": "scènes 4 (flux accise) et 5 (jauge des taxes)",
+    "regle": "une révélation toutes les ~10 s"
+  },
+  "scenes": [
+    {
+      "n": 1,
+      "plan_type": "hook",
+      "scene": "hook",
+      "duree_s": 4.0,
+      "texte_ecran": "Où va l'argent du plein ?",
+      "prompt_image": "Pixel art, dark steel-grey background, a pixel gas pump in the center with a large yellow arrow pointing to the nozzle, one original pixel character (no face details) looking at the pump, bold pixel title area at top, flat composition, no real logos, no text beyond the title."
+    },
+    {
+      "n": 2,
+      "plan_type": "fait",
+      "scene": "pd_objet",
+      "duree_s": 4.0,
+      "texte_ecran": "Dans un litre de gazole",
+      "prompt_image": "Pixel art, a single pixel jerrycan-style litre block labeled 1 L, split into three colored pixel blocks: product, refining, distribution, steel-grey and yellow tones, clean flat layout, no logos, no real brand."
+    },
+    {
+      "n": 3,
+      "plan_type": "fait",
+      "scene": "pd_chiffre",
+      "duree_s": 4.0,
+      "texte_ecran": "2,37 € le litre (exemple)",
+      "prompt_image": "Pixel art, giant pixel digits showing 2,37 € in yellow on dark background, a small pixel pump icon beside it, bold, uncluttered."
+    },
+    {
+      "n": 4,
+      "plan_type": "fait",
+      "scene": "pd_flux",
+      "duree_s": 4.0,
+      "texte_ecran": "Accise (ex-TICPE)",
+      "prompt_image": "Pixel art, a pixel litre block at left, a yellow pixel arrow animating to a stacked block labeled ACCISE, the arrow pulses, dark background, steel-grey accents, label in capitals, no logos."
+    },
+    {
+      "n": 5,
+      "plan_type": "fait",
+      "scene": "pd_jauge",
+      "duree_s": 4.0,
+      "texte_ecran": "TVA 20 % sur tout le prix",
+      "prompt_image": "Pixel art, a horizontal pixel gauge representing the pump price, a red segment filling the right side marked TAXES, ticks at 0 and 100 percent, label TVA 20 %, dark background, animated fill from left to right."
+    },
+    {
+      "n": 6,
+      "plan_type": "fait",
+      "scene": "pd_tampon",
+      "duree_s": 4.0,
+      "texte_ecran": "Une taxe sur la taxe",
+      "prompt_image": "Pixel art, a pixel block labeled IMPOT stacked on a second pixel block labeled IMPOT, a red pixel stamp SUR LA TAXE slams down on top, dark background, bold capitals."
+    },
+    {
+      "n": 7,
+      "plan_type": "chiffre",
+      "scene": "pd_chiffre",
+      "duree_s": 4.0,
+      "texte_ecran": "≈ 30 milliards par an",
+      "prompt_image": "Pixel art, giant yellow pixel digits 30 MD EUR per year, a pixel coin stack beside it, red accent underline, dark steel background."
+    },
+    {
+      "n": 8,
+      "plan_type": "fait",
+      "scene": "pd_flux",
+      "duree_s": 4.0,
+      "texte_ecran": "État et collectivités",
+      "prompt_image": "Pixel art, a yellow pixel arrow leaving a pump and splitting into two pixel buildings labeled ÉTAT and COLLECTIVITÉS, dark background, flat, no real monuments."
+    },
+    {
+      "n": 9,
+      "plan_type": "fait",
+      "scene": "pd_versus",
+      "duree_s": 4.0,
+      "texte_ecran": "Payé à chaque plein",
+      "prompt_image": "Pixel art, two original pixel figures at a pump, one labeled TOI with a small wallet, one generic pixel commuter, no face details, the wallet is pulled by a yellow arrow toward a pixel bank labeled ÉTAT, dark background."
+    },
+    {
+      "n": 10,
+      "plan_type": "versus",
+      "scene": "pd_jauge",
+      "duree_s": 4.0,
+      "texte_ecran": "Plus le prix monte, plus la TVA rapporte",
+      "prompt_image": "Pixel art, a pixel price bar rising step by step, a red TVA segment growing with it, labels PRIX and TVA, the red segment animates upward, dark background."
+    },
+    {
+      "n": 11,
+      "plan_type": "fait",
+      "scene": "pd_tampon",
+      "duree_s": 4.0,
+      "texte_ecran": "Mécanisme automatique",
+      "prompt_image": "Pixel art, a pixel gear turning by itself, a yellow stamp AUTOMATIQUE pressed onto a pixel document, dark background, bold capitals."
+    },
+    {
+      "n": 12,
+      "plan_type": "fait",
+      "scene": "pd_chiffre",
+      "duree_s": 4.0,
+      "texte_ecran": "Où vont ces milliards ?",
+      "prompt_image": "Pixel art, a large pixel question mark in yellow over a pixel pie chart with one grey slice labeled TRANSITION and the rest unlabeled grey, dark background, no real data values beyond the title."
+    },
+    {
+      "n": 13,
+      "plan_type": "chute",
+      "scene": "pd_versus",
+      "duree_s": 4.0,
+      "texte_ecran": "Chiffres à publier",
+      "prompt_image": "Pixel art, a pixel ledger page on the left labeled CHIFFRES, a red pixel stamp A PUBLIER on the right, dark background, bold capitals."
+    },
+    {
+      "n": 14,
+      "plan_type": "question",
+      "scene": "outro",
+      "duree_s": 4.0,
+      "texte_ecran": "Faut-il baisser ces taxes ?",
+      "prompt_image": "Pixel art, a pixel gas pump with a large yellow question mark on its screen, a pixel call-to-action area at the bottom, music swells slightly here, dark steel background, no logos."
+    }
+  ],
+  "regles_respectees": [
+    "aucune image de presse, aucun visage réel, personnages originaux",
+    "aucune mention d'IA dans les visuels",
+    "aucune citation dessinée",
+    "chiffres repris uniquement du scénario et du concept (2,37 €, ≈30 Md€, environ 55 à 60 %)",
+    "au moins un mécanisme animé (scènes 4, 5, 10)",
+    "14 scènes de 4 s, total 56 s"
+  ],
+  "negatif": "photo, real face, real logo, real brand, gore, text overflow, watermark, blurry, 3D render, extra fingers, AI label"
+}
