@@ -1,0 +1,37 @@
+{
+  "theme": {
+    "fond": "#0F3D2E",
+    "texte": "#FFFFFF",
+    "accent": "#FF7A59",
+    "accent2": "#A8E6CF",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "VEILLE",
+    "grille": false,
+    "style": "pixeldoc",
+    "palette": ["#FF7A59", "#A8E6CF", "#F4E9D8", "#0F3D2E", "#E63946", "#8E7DFF"],
+    "tenues": {"narrateur": "qhse", "mascotte": "science"}
+  },
+  "scenes": [
+    {"type": "hook", "duree": 3.8, "title": "Seveso seuil haut : votre ville aussi", "musique": "tension", "sfx": ["impact"]},
+    {"type": "pd_objet", "duree": 3.8, "prompt": "a pixel art industrial plant with tall tanks and pipes, no people", "etiquette": "Site industriel"},
+    {"type": "pd_objet", "duree": 3.8, "prompt": "a pixel art warning sign with a chemical flask icon", "etiquette": "Substances dangereuses"},
+    {"type": "pd_chiffre", "duree": 3.8, "valeur": 2012, "decimales": 0, "legende": "année de la directive Seveso III (2012/18/UE)", "source": "Directive 2012/18/UE", "sfx": ["ding"]},
+    {"type": "pd_flux", "duree": 3.8, "de": {"label": "Au-dessus du seuil", "prompt": "a pixel art barrel of chemicals with a hazard label"}, "vers": {"label": "Seveso seuil haut", "prompt": "a pixel art plant with a red ring around it"}, "montant": "dossier"},
+    {"type": "pd_versus", "duree": 3.8, "gauche": {"label": "Seuil bas", "prompt": "a pixel art small plant with a yellow sign"}, "droite": {"label": "Seuil haut", "prompt": "a pixel art large plant with red warning lights"}, "sfx": ["pop"]},
+    {"type": "pd_objet", "duree": 3.8, "prompt": "a pixel art thick report binder with a red cover", "etiquette": "Étude de dangers"},
+    {"type": "pd_flux", "duree": 3.8, "de": {"label": "Exploitant", "prompt": "an original pixel art worker in a blue coat, no detailed face"}, "vers": {"label": "Préfet", "prompt": "an original pixel art official holding a stamp, no detailed face"}, "montant": "dossier"},
+    {"type": "pd_objet", "duree": 3.8, "prompt": "a pixel art map with a circle drawn around an industrial zone", "etiquette": "Autour du site"},
+    {"type": "pd_tampon", "duree": 3.8, "tampon": "PPI DU PRÉFET", "prompt": "a pixel art official stamp on a town plan"},
+    {"type": "pd_objet", "duree": 3.8, "prompt": "a pixel art town with houses, a school and a bus stop", "etiquette": "Écoles, habitations"},
+    {"type": "pd_tampon", "duree": 3.8, "tampon": "DROIT À L'INFORMATION", "prompt": "a pixel art open public notice board"},
+    {"type": "pd_versus", "duree": 3.8, "gauche": {"label": "Alarmisme", "prompt": "a pixel art siren with flashing lights"}, "droite": {"label": "Information claire", "prompt": "a pixel art open book with a green check"}, "musique": "joyeux", "sfx": ["pop"]},
+    {"type": "pd_tampon", "duree": 3.8, "tampon": "À CONNAÎTRE", "prompt": "a pixel art checklist with a green tick"},
+    {"type": "outro", "duree": 3.8, "text": "Abonne-toi : la QHSE décodée", "cta": "Partage à qui habite près d'un site !", "musique": "joyeux", "sfx": ["pop"]}
+  ],
+  "musique": {"ambiance": "tension", "volume": 0.35},
+  "consignes_animation": "Flux animé sur les scènes pd_flux (le seuil fait passer le site en seuil haut) ; chiffre 2012 en couleur d'accent ; ton posé, sans effet alarmiste.",
+  "evolution_charte": "aucune",
+  "tendance_suivie": "Concept seveso (décryptage de texte réglementaire) ; aucune tendance de la veille du jour n'est directement liée au sujet.",
+  "variete": {}
+}
