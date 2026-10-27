@@ -1,53 +1,92 @@
-# Compte 2 : actualité française, ligne libérale / économie
 id: eco
-numero: 2                       # n° de compte : sous-agents « Agent N.1 »
-nom_compte: "Décodé - l'éco simplement"
-instagram: "@decode.eco"
+numero: 2
+nom_compte: Décodé - l'éco simplement
+instagram: '@decode.eco'
 instagram_secret: IG_TOKEN_ECO
 langue: fr
-public: "25-45 ans, actifs, entrepreneurs, épargnants ; veulent comprendre l'économie et ce que ça change pour leur argent"
-ton: "clair, pragmatique, orienté chiffres, entreprise et liberté économique ; factuel et sourcé"
-ligne_editoriale: "neutre et pédagogique (propriétaire 25/10) : les chiffres officiels, qui paie et qui gagne, sans parti pris ; impôts, dette, salaires, inflation, épargne, budget de l'État, entreprises"
-niche: "expliquer UNE info économique du jour en 45-60 s avec chiffres et graphiques animés"
+public: 25-45 ans, actifs, entrepreneurs, épargnants ; veulent comprendre l'économie
+  et ce que ça change pour leur argent
+ton: clair, pragmatique, orienté chiffres, entreprise et liberté économique ; factuel
+  et sourcé
+ligne_editoriale: 'neutre et pédagogique (propriétaire 25/10) : les chiffres officiels,
+  qui paie et qui gagne, sans parti pris ; impôts, dette, salaires, inflation, épargne,
+  budget de l''État, entreprises'
+niche: expliquer UNE info économique du jour en 45-60 s avec chiffres et graphiques
+  animés
 veille:
   actualite: true
   pays: FR
-  thematiques: ["économie", "tech", "science", "international", "société", "climat", "consommation"]
-  exclusions:                          # sujets à ne jamais traiter
-    - "faits divers violents, attentats, décès de personnes privées"
-    - "rumeurs non confirmées"
-    - "désinformation : l'angle est assumé, mais les faits restent exacts et sourcés, jamais déformés"
-    - "attaques personnelles, appels à la violence"
-  sources_preferees: ["lemonde.fr", "francetvinfo.fr", "afp.com", "reuters.com", "insee.fr", "lesechos.fr", "service-public.fr"]
-
+  thematiques:
+  - économie
+  - tech
+  - science
+  - international
+  - société
+  - climat
+  - consommation
+  exclusions:
+  - faits divers violents, attentats, décès de personnes privées
+  - rumeurs non confirmées
+  - 'désinformation : l''angle est assumé, mais les faits restent exacts et sourcés,
+    jamais déformés'
+  - attaques personnelles, appels à la violence
+  sources_preferees:
+  - lemonde.fr
+  - francetvinfo.fr
+  - afp.com
+  - reuters.com
+  - insee.fr
+  - lesechos.fr
+  - service-public.fr
 video:
   duree_cible_s: 50
-  scenes_autorisees: [hook, kinetic, counter, bars, timeline, dots, compare, outro, quiz, bigstat, checklist, pancartes, sms, debat, reaction, conte, photo, pendant, ed_titre, ed_chiffre, ed_citation, ed_photo, ed_liste, ed_versus, ed_allocution, pd_objet, pd_flux, pd_chiffre, pd_versus, pd_jauge, pd_tampon]
-  cta: "Abonne-toi pour l'éco décodée"
-
-voix:                                   # voix off IA gratuite, générée dans GitHub Actions
+  scenes_autorisees:
+  - hook
+  - kinetic
+  - counter
+  - bars
+  - timeline
+  - dots
+  - compare
+  - outro
+  - quiz
+  - bigstat
+  - checklist
+  - pancartes
+  - sms
+  - debat
+  - reaction
+  - conte
+  - photo
+  - pendant
+  - ed_titre
+  - ed_chiffre
+  - ed_citation
+  - ed_photo
+  - ed_liste
+  - ed_versus
+  - ed_allocution
+  - pd_objet
+  - pd_flux
+  - pd_chiffre
+  - pd_versus
+  - pd_jauge
+  - pd_tampon
+  cta: Abonne-toi pour l'éco décodée
+voix:
   active: true
-  # Voix retenues (voir voix/echantillons) :
-  #   chatterbox standard (femme, naturelle) : "chatterbox:fr?exag=0.6&cfg=0.4"
-  #   Jessica (femme, claire et posée)       : "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0"
-  #   Pierre Chatterbox (homme, très expressif) : "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3"
-  narrateur: "chatterbox:fr?exag=0.6&cfg=0.4"            # Lou (à gauche)
-  mascotte: "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3"  # Déco (à droite) = Pierre Chatterbox…
-  mascotte_effet: "aigu"                                 # … avec l'effet aigu
+  narrateur: chatterbox:fr?exag=0.6&cfg=0.4
+  mascotte: chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3
+  mascotte_effet: aigu
   vitesse: 1.0
-
 planning:
-  generation: "tâche planifiée Claude chaque jour, ~3 h avant le créneau"
-  publication_jours: [1, 2, 3, 4, 5, 6, 7]
+  generation: tâche planifiée Claude chaque jour, ~3 h avant le créneau
+  publication_jours:
+  - 2
+  - 5
   auto_publication: true
-  creneaux:                             # propriétaire 25/10 : 1 Reel par jour
-    lun: ["08:00"]
-    mar: ["08:00"]
-    mer: ["08:00"]
-    jeu: ["08:00"]
-    ven: ["08:00"]
-    sam: ["08:00"]
-    dim: ["08:00"]
-
-tiktok:                               # propriétaire 25/10 : heure de publication TikTok (brouillon envoyé à cette heure)
-  heure: "10:00"
+  creneaux:
+    mar:
+    - 08:00
+    ven:
+    - 08:00

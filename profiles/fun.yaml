@@ -1,32 +1,64 @@
-# Compte (à la demande) : trucs fun (compte perso)
 id: fun
-numero: 4                       # n° de compte : sous-agents « Agent N.4 »
-nom_compte: "Diffusion de fun"
-instagram: "@diffusiondefun"
+numero: 4
+nom_compte: Diffusion de fun
+instagram: '@diffusiondefun'
 instagram_secret: IG_TOKEN_FUN
 langue: fr
-public: "amis et curieux ; humour léger, absurde, satisfaisant"
-ton: "décalé, complice, autodérision ; jamais méchant envers une personne réelle"
-niche: "animation, trends et autres formats légers : défis visuels, faits absurdes, mini-jeux"
+public: amis et curieux ; humour léger, absurde, satisfaisant
+ton: décalé, complice, autodérision ; jamais méchant envers une personne réelle
+niche: 'animation, trends et autres formats légers : défis visuels, faits absurdes,
+  mini-jeux'
 veille:
-  frequence: "2 fois par semaine"
-  actualite: false                    # pipeline allégé : pas de veille d'actu, seulement les trends
+  frequence: 2 fois par semaine
+  actualite: false
   pays: FR
-  thematiques: ["satisfaisant", "illusions d'optique", "faits absurdes", "défis", "nostalgie"]
+  thematiques:
+  - satisfaisant
+  - illusions d'optique
+  - faits absurdes
+  - défis
+  - nostalgie
   exclusions:
-    - "moqueries de personnes réelles"
-    - "contenu choquant"
-
+  - moqueries de personnes réelles
+  - contenu choquant
 video:
   duree_cible_s: 15
-  scenes_autorisees: [hook, particles, kinetic, counter, compare, outro, quiz, bigstat, checklist, pancartes, sms, debat, reaction, conte, photo, pendant, ed_titre, ed_chiffre, ed_citation, ed_photo, ed_liste, ed_versus, ed_allocution, pd_objet, pd_flux, pd_chiffre, pd_versus, pd_jauge, pd_tampon]
-  cta: "Envoie ça à quelqu'un qui doit voir ça"
-
+  scenes_autorisees:
+  - hook
+  - particles
+  - kinetic
+  - counter
+  - compare
+  - outro
+  - quiz
+  - bigstat
+  - checklist
+  - pancartes
+  - sms
+  - debat
+  - reaction
+  - conte
+  - photo
+  - pendant
+  - ed_titre
+  - ed_chiffre
+  - ed_citation
+  - ed_photo
+  - ed_liste
+  - ed_versus
+  - ed_allocution
+  - pd_objet
+  - pd_flux
+  - pd_chiffre
+  - pd_versus
+  - pd_jauge
+  - pd_tampon
+  cta: Envoie ça à quelqu'un qui doit voir ça
 planning:
-  generation: "tâche planifiée Claude, ~3 h avant le créneau"
-  publication_jours: [1, 3, 5]
+  generation: tâche planifiée Claude, ~3 h avant le créneau
+  publication_jours:
+  - 6
   auto_publication: true
-  creneaux:                             # propriétaire 25/10 : Instagram + TikTok à 10 h lundi, mercredi, vendredi
-    lun: ["10:00"]
-    mer: ["10:00"]
-    ven: ["10:00"]
+  creneaux:
+    sam:
+    - 08:00

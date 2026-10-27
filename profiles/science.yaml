@@ -1,50 +1,82 @@
-# Compte (à la demande) : simulation / science vulgarisée
 id: science
-numero: 3                       # n° de compte : sous-agents « Agent N.3 »
-nom_compte: "Décodé - la science simplement"
-instagram: "@decodelascience"
+numero: 3
+nom_compte: Décodé - la science simplement
+instagram: '@decodelascience'
 instagram_secret: IG_TOKEN_SCIENCE
 langue: fr
-public: "15-40 ans, curieux de science, aiment les visuels hypnotiques et les 'wow' faciles à partager"
-ton: "émerveillé mais rigoureux ; une question en accroche, une réponse visuelle, un fait surprenant à la fin"
-niche: "un phénomène physique / maths / astronomie montré par une simulation animée, expliqué en une phrase"
-
+public: 15-40 ans, curieux de science, aiment les visuels hypnotiques et les 'wow'
+  faciles à partager
+ton: émerveillé mais rigoureux ; une question en accroche, une réponse visuelle, un
+  fait surprenant à la fin
+niche: un phénomène physique / maths / astronomie montré par une simulation animée,
+  expliqué en une phrase
 veille:
-  frequence: "3 fois par semaine"
+  frequence: 3 fois par semaine
   pays: FR
-  thematiques: ["astronomie", "physique", "mathématiques", "biologie", "découvertes récentes", "records"]
+  thematiques:
+  - astronomie
+  - physique
+  - mathématiques
+  - biologie
+  - découvertes récentes
+  - records
   exclusions:
-    - "pseudo-sciences, astrologie"
-    - "conseils médicaux"
-  sources_preferees: ["nasa.gov", "esa.int", "cnrs.fr", "nature.com", "sciencesetavenir.fr", "futura-sciences.com"]
-
+  - pseudo-sciences, astrologie
+  - conseils médicaux
+  sources_preferees:
+  - nasa.gov
+  - esa.int
+  - cnrs.fr
+  - nature.com
+  - sciencesetavenir.fr
+  - futura-sciences.com
 video:
   duree_cible_s: 20
-  scenes_autorisees: [hook, particles, kinetic, counter, compare, outro, quiz, bigstat, checklist, pancartes, sms, debat, reaction, conte, photo, pendant, ed_titre, ed_chiffre, ed_citation, ed_photo, ed_liste, ed_versus, ed_allocution, pd_objet, pd_flux, pd_chiffre, pd_versus, pd_jauge, pd_tampon]
-  cta: "Abonne-toi pour une dose de science par jour"
-
+  scenes_autorisees:
+  - hook
+  - particles
+  - kinetic
+  - counter
+  - compare
+  - outro
+  - quiz
+  - bigstat
+  - checklist
+  - pancartes
+  - sms
+  - debat
+  - reaction
+  - conte
+  - photo
+  - pendant
+  - ed_titre
+  - ed_chiffre
+  - ed_citation
+  - ed_photo
+  - ed_liste
+  - ed_versus
+  - ed_allocution
+  - pd_objet
+  - pd_flux
+  - pd_chiffre
+  - pd_versus
+  - pd_jauge
+  - pd_tampon
+  cta: Abonne-toi pour une dose de science par jour
 planning:
-  generation: "tâche planifiée Claude chaque jour, ~3 h avant le créneau"
-  publication_jours: [1, 2, 3, 4, 5, 6, 7]
+  generation: tâche planifiée Claude chaque jour, ~3 h avant le créneau
+  publication_jours:
+  - 3
   auto_publication: true
-  creneaux:                             # propriétaire 25/10 : 1 Reel par jour
-    lun: ["20:00"]
-    mar: ["20:00"]
-    mer: ["20:00"]
-    jeu: ["20:00"]
-    ven: ["20:00"]
-    sam: ["20:00"]
-    dim: ["20:00"]
-
-# Propriétaire 25/10 : dans la lignée des comptes science IA (science_in_8bit, byte.sized.engineering, askdraha)
-perimetre: "physique et ingénierie du quotidien (« comment ça marche ») + petits comparatifs rigolos de systèmes d'ingénierie (ex. pompe à piston vs centrifuge vs à engrenages), présentés comme un match avec stats"
-
-tiktok:                               # propriétaire 25/10 : heure de publication TikTok (brouillon envoyé à cette heure)
-  heure: "22:00"
-
-voix:                                   # voix off, générée dans GitHub Actions (même réglage que actu)
+  creneaux:
+    mer:
+    - 08:00
+perimetre: physique et ingénierie du quotidien (« comment ça marche ») + petits comparatifs
+  rigolos de systèmes d'ingénierie (ex. pompe à piston vs centrifuge vs à engrenages),
+  présentés comme un match avec stats
+voix:
   active: true
-  narrateur: "chatterbox:fr?exag=0.6&cfg=0.4"
-  mascotte: "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3"
-  mascotte_effet: "aigu"
+  narrateur: chatterbox:fr?exag=0.6&cfg=0.4
+  mascotte: chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3
+  mascotte_effet: aigu
   vitesse: 1.0
