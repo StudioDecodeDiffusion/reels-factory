@@ -1,0 +1,71 @@
+{
+  "id": "eco-20261027-0800",
+  "profil": "eco",
+  "statut": "a_valider",
+  "titre": null,
+  "son_tendance": null,
+  "publication_le": "2026-10-27T08:00+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": "instagram",
+  "legende": "Ton salaire brut n'est jamais ton salaire net.\n\nEntre le brut affiché sur ton contrat et le net qui arrive sur ton compte, il y a plusieurs prélèvements. Chacun a un rôle, et chacun se vérifie sur ta fiche de paie.\n\nEt toi, tu as déjà vérifié ta fiche de paie ? 👇\nEnvoie-la à quelqu'un qui découvre sa paie 📤\nSources : urssaf.fr, service-public.fr, impots.gouv.fr\n\n#economie #fichedepaie #URSSAF #PLF2027 #DecodeEco\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "decision": "publiable",
+    "problemes": [
+      {
+        "categorie": "fait",
+        "gravite": "correction",
+        "scene": "Cotisations salariales",
+        "detail": "« Elles financent retraite, santé et chômage » : la part salariale de l'assurance chômage a été supprimée en 2018 pour la plupart des salariés. Préciser ou retirer « chômage » pour la part salariale."
+      },
+      {
+        "categorie": "accroche",
+        "gravite": "style",
+        "scene": "Brut n'est pas net (hook)",
+        "detail": "Le texte d'écran « Brut n'est pas net » n'apparaît pas sur la planche : seule la bulle de dialogue porte la thèse. Le haut de chaque cadre est un fond damier vide. Titre d'accroche à afficher dès la 1re seconde."
+      },
+      {
+        "categorie": "visuel",
+        "gravite": "style",
+        "scene": "Toutes les scènes",
+        "detail": "Types fait / question / chute absents de la liste des scènes autorisées ; aucune scène pd_* ni mécanisme animé visible sur la planche. Aligner avec les règles visuelles (pixeldoc, au moins un mécanisme animé)."
+      },
+      {
+        "categorie": "finition",
+        "gravite": "style",
+        "scene": "Bulles de dialogue",
+        "detail": "Les derniers mots de plusieurs bulles (« net. », « tout prélèvement. », « selon ton statut. », « plus large. », « retenu chaque mois. », « barème officiel. ») sont en vert pâle sur fond vert : contraste très faible. Vérifier en vidéo si c'est une révélation mot à mot en cours d'animation."
+      },
+      {
+        "categorie": "legende",
+        "gravite": "style",
+        "scene": "Première ligne",
+        "detail": "La règle veut accroche + chiffre en 1re ligne ; la légende n'a aucun chiffre. Ajouter un chiffre (ex. le taux ou la part prélevée) si la source le permet."
+      },
+      {
+        "categorie": "variete",
+        "gravite": "info",
+        "scene": "Global",
+        "detail": "6_da.json non fourni : la variété (accroche, fonctionnement, musique, voix, palette) par rapport à la dernière vidéo n'est pas vérifiable ici."
+      }
+    ],
+    "verifications": {
+      "duree_s": 56,
+      "nb_scenes": 14,
+      "mots_dialogue": 163,
+      "sources_presentes": true,
+      "hashtags": 5,
+      "hashtags_interdits": false,
+      "contenu_interdit": false,
+      "voix_credit_presente": true
+    }
+  },
+  "community": {},
+  "da_message": "",
+  "cree": "2026-10-27T04:14:42+00:00"
+}
