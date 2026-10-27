@@ -285,7 +285,7 @@ def cmd_spec(a) -> None:
     spec = {k: v for k, v in da.items() if k not in ("scenes", "musique", "consignes_animation", "evolution_charte",
                                                     "messages_traites", "message_au_proprietaire")}
     spec["musique"] = {"genre": mus.get("genre") or mus.get("ambiance") or "tension", "volume": mus.get("volume", 0.4)}
-    spec.setdefault("variete", {})["trend"] = spec["variete"].get("trend") or co.get("trend") or co.get("format") or co.get("titre", "")
+    spec.setdefault("variete", {})["trend"] = spec.get("variete", {}).get("trend") or co.get("trend") or co.get("format") or co.get("titre", "")
     for k in ("titre_miniature", "mots_choc", "surtitre_miniature"):
         if co.get(k):
             spec[k] = co[k]
