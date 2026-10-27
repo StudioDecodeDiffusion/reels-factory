@@ -1,12 +1,9 @@
 {
-  "decision": "retour",
+  "decision": "go",
   "problemes": [
-    "Scenes non alignees : le scenario a 14 plans (dont pd_jauge, sans pd_chiffre) et la DA 15 scenes (dont pd_chiffre 2012, sans pd_jauge). Aligner les deux sur la meme liste de scenes avant la spec.",
-    "Hook DA : titre « Seveso seuil haut : votre ville aussi » vouvoie alors que le compte tutoie (scenario : « ta ville »). Remplacer par « ta ville ».",
-    "Fait non sourcé : « Plus de contrôles, plus d'information pour le public » (scene 3) et « le risque industriel figure dans les documents d'urbanisme » (scene 11) n'ont pas de reference. Reformuler en termes sourcés (directive 2012/18/UE) ou retirer. Signale, non bloquant.",
-    "Legende : la 1re ligne n'a pas de chiffre (regle accroche + chiffre). Ajouter le chiffre 2012 (ou « depuis 2012 ») dans la 1re ligne.",
-    "Variete : voix (Lou/Déco) et fonctionnement pixeldoc (pd_objet, pd_flux, pd_versus, pd_tampon, pd_chiffre) sont identiques a la derniere video. Palette, bandeau et musique sont bien changes. Non bloquant, a noter.",
-    "Etiquette trop longue : tampon « Industriel : obligations. Toi : information. » (43 caracteres) risque de deborder. Raccourcir (ex. « Industriel / Toi »).",
-    "Verifie OK : directive 2012/18/UE correcte ; PPI etabli par le prefet exact ; aucune mention d'IA ; accroche des la 1re seconde ; « Sources : » present ; 5 hashtags sans #viral #fyp ; 14 scenes de 4 s = 56 s ; environ 167 mots de dialogue (dans la cible 160-170, rythme rapide)."
+    "Scène 10 : scénario = pd_jauge (« Autour du site : le risque compte »), DA = pd_objet (plan d'urbanisme, étiquette « Urbanisme ») : type non aligné, la jauge qualitative n'existe pas côté DA. À corriger dans 7_spec (non bloquant).",
+    "Scène 11 : scénario = sortie « fiche pixel / repère clair », DA = flux vers « Document d'urbanisme » : cible du flux non alignée (non bloquant).",
+    "Dialogue d'environ 171 mots, légèrement au-dessus de la cible 160-170 (non bloquant).",
+    "Légende : la 1re ligne n'a pas de chiffre (règle « accroche + chiffre »), la vidéo n'en contient pas non plus (non bloquant)."
   ]
 }
