@@ -1,168 +1,206 @@
 {
-  "id": "brut_net",
-  "compte": "eco",
-  "agent": 6,
-  "style": "pixeldoc",
-  "mise_en_page": "cadre_pixel",
-  "palette": {
-    "nom": "menthe_pixel",
-    "precedente_interdite": "papier_journal",
-    "fond": "#0E2B2E",
-    "encre": "#F2F7F4",
-    "accent_principal": "#5EE6A8",
-    "accent_alerte": "#FFC857",
-    "accent_retrait": "#FF7A59",
-    "trame": "#2F5A5E"
-  },
-  "musique": {
-    "genre": "pizzicato_cordes_legeres",
-    "precedente_interdite": "lofi",
-    "tempo_bpm": 100,
-    "voix": false,
-    "volume_sous_narration": "baisse de 12 dB pendant la voix"
-  },
-  "personnages": [
-    {
-      "nom": "Pico",
-      "type": "pièce pixel avec deux yeux, sans visage humain",
-      "role": "guide, présent dans les scènes 1, 2, 9, 10 et 14"
-    }
-  ],
-  "titres_etiquettes": {
-    "titre_video": "Ton salaire : où part chaque euro",
-    "mots_choc": "chaque euro",
-    "regles": "titre 6 mots max ; étiquette 3 mots max ; 18 caractères max par étiquette ; rien ne déborde du cadre"
-  },
-  "mecanisme_anime": {
-    "scene": 4,
-    "type": "pd_flux",
-    "description": "Pico descend un escalier pixel de 5 marches. À chaque marche, un bloc de la couleur accent_retrait sort de la pièce et tombe dans un seau ; la pièce perd une partie de sa taille à chaque marche. Une marche toutes les 0,6 s."
-  },
-  "avertissement_chiffres": "Aucun taux, aucun montant, aucun chiffre dans les scènes. Les proportions des jauges sont illustratives et ne représentent aucun taux réel.",
-  "scenes": [
-    {
-      "n": 1,
-      "duree_s": 4,
-      "type": "pd_objet",
-      "visuel": "Un bulletin de paie pixel se déplie en haut de l'écran ; le titre « Brut ≠ net » est estampé en accent_alerte.",
-      "etiquettes": ["Brut ≠ net"],
-      "animation": "dépliage du bulletin en 0,8 s"
-    },
-    {
-      "n": 2,
-      "duree_s": 4,
-      "type": "pd_flux",
-      "visuel": "Pico tombe du haut vers une ligne horizontale intitulée « BRUT ».",
-      "etiquettes": ["BRUT"],
-      "animation": "chute de Pico en 1 s, rebond de 2 pixels"
-    },
-    {
-      "n": 3,
-      "duree_s": 4,
-      "type": "pd_objet",
-      "visuel": "Le bulletin apparaît avec une seule ligne surlignée : « Salaire de base ».",
-      "etiquettes": ["Salaire de base"],
-      "animation": "surlignage qui se remplit de gauche à droite en 0,6 s"
-    },
-    {
-      "n": 4,
-      "duree_s": 4,
-      "type": "pd_flux",
-      "visuel": "Mécanisme animé : Pico descend l'escalier de 5 marches, chaque marche fait sortir un bloc accent_retrait.",
-      "etiquettes": ["Cotisations"],
-      "animation": "5 marches, une toutes les 0,6 s ; le seau se remplit de blocs"
-    },
-    {
-      "n": 5,
-      "duree_s": 4,
-      "type": "pd_objet",
-      "visuel": "Trois badges pixel sur le bulletin : retraite, santé, chômage. Un badge gris « selon le statut » en dessous.",
-      "etiquettes": ["Retraite", "Santé", "Chômage"],
-      "animation": "les badges s'allument un par un, 0,5 s chacun"
-    },
-    {
-      "n": 6,
-      "duree_s": 4,
-      "type": "pd_jauge",
-      "visuel": "Une jauge pixel horizontale, découpée en deux segments : CSG puis CRDS. Proportions illustratives.",
-      "etiquettes": ["CSG", "CRDS"],
-      "animation": "remplissage des segments en 1,5 s"
-    },
-    {
-      "n": 7,
-      "duree_s": 4,
-      "type": "pd_tampon",
-      "visuel": "Un tampon pixel « ASSIETTE » s'écrase sur la jauge ; la base de calcul est mise en évidence en accent_principal.",
-      "etiquettes": ["Assiette"],
-      "animation": "tampon qui s'abat en 0,3 s avec un léger tremblement"
-    },
-    {
-      "n": 8,
-      "duree_s": 4,
-      "type": "pd_chiffre",
-      "visuel": "Une grande tuile pixel avec un point d'interrogation, étiquetée « net imposable ».",
-      "etiquettes": ["Net imposable", "?"],
-      "animation": "la tuile tourne de 90 degrés puis se stabilise"
-    },
-    {
-      "n": 9,
-      "duree_s": 4,
-      "type": "pd_flux",
-      "visuel": "Pico traverse un tuyau pixel étiqueté « impôt à la source », qui prélève un petit bloc accent_retrait sur le trajet.",
-      "etiquettes": ["Impôt à la source"],
-      "animation": "Pico glisse dans le tuyau en 2 s, le bloc sort au milieu"
-    },
-    {
-      "n": 10,
-      "duree_s": 4,
-      "type": "pd_jauge",
-      "visuel": "Une jauge pixel finale remplie en accent_principal, étiquetée « NET ».",
-      "etiquettes": ["NET", "Sur ton compte"],
-      "animation": "remplissage de la jauge en 1,2 s"
-    },
-    {
-      "n": 11,
-      "duree_s": 4,
-      "type": "pd_flux",
-      "visuel": "Le net se divise en trois tuyaux qui mènent à des cases : « retraite », « santé », « dette sociale ».",
-      "etiquettes": ["Retraite", "Santé", "Dette sociale"],
-      "animation": "division en trois tuyaux, remplissage successif des cases"
-    },
-    {
-      "n": 12,
-      "duree_s": 4,
-      "type": "pd_objet",
-      "visuel": "Une loupe pixel passe sur le bulletin de paie et s'arrête sur la ligne « Net à payer ».",
-      "etiquettes": ["Ta fiche de paie"],
-      "animation": "la loupe glisse de gauche à droite en 1 s"
-    },
-    {
-      "n": 13,
-      "duree_s": 4,
-      "type": "pd_tampon",
-      "visuel": "Un tampon pixel « VÉRIFIE » s'imprime sur le bulletin.",
-      "etiquettes": ["Vérifie à la source"],
-      "animation": "tampon en 0,3 s"
-    },
-    {
-      "n": 14,
-      "duree_s": 4,
-      "type": "pd_objet",
-      "visuel": "Pico pose la question fermée : deux boutons pixel « OUI » et « NON ». Pico pointe vers « OUI ».",
-      "etiquettes": ["Tu savais ?", "OUI", "NON"],
-      "animation": "Pico saute sur le bouton OUI en 0,5 s"
-    }
-  ],
-  "duree_totale_s": 56,
-  "verifications": {
-    "scenes_dans_plage": "14 scènes, 4 s chacune",
-    "pd_autorises": true,
-    "mecanisme_anime": true,
-    "palette_differente": true,
-    "musique_differente_de_lofi": true,
-    "personnages_originaux": true,
-    "aucun_visage_reel": true,
-    "aucune_image_de_presse": true,
-    "aucune_mention_ia": true
+ "id": "brut_net",
+ "compte": "eco",
+ "agent": 6,
+ "style": "pixeldoc",
+ "mise_en_page": "cadre_pixel",
+ "palette": {
+  "nom": "menthe_pixel",
+  "precedente_interdite": "papier_journal",
+  "fond": "#0E2B2E",
+  "encre": "#F2F7F4",
+  "accent_principal": "#5EE6A8",
+  "accent_alerte": "#FFC857",
+  "accent_retrait": "#FF7A59",
+  "trame": "#2F5A5E"
+ },
+ "musique": {
+  "genre": "pizzicato_cordes_legeres",
+  "precedente_interdite": "lofi",
+  "tempo_bpm": 100,
+  "voix": false,
+  "volume_sous_narration": "baisse de 12 dB pendant la voix"
+ },
+ "personnages": [
+  {
+   "nom": "Pico",
+   "type": "pièce pixel avec deux yeux, sans visage humain",
+   "role": "guide, présent dans les scènes 1, 2, 9, 10 et 14"
   }
+ ],
+ "titres_etiquettes": {
+  "titre_video": "Ton salaire : où part chaque euro",
+  "mots_choc": "chaque euro",
+  "regles": "titre 6 mots max ; étiquette 3 mots max ; 18 caractères max par étiquette ; rien ne déborde du cadre"
+ },
+ "mecanisme_anime": {
+  "scene": 4,
+  "type": "pd_flux",
+  "description": "Pico descend un escalier pixel de 5 marches. À chaque marche, un bloc de la couleur accent_retrait sort de la pièce et tombe dans un seau ; la pièce perd une partie de sa taille à chaque marche. Une marche toutes les 0,6 s."
+ },
+ "avertissement_chiffres": "Aucun taux, aucun montant, aucun chiffre dans les scènes. Les proportions des jauges sont illustratives et ne représentent aucun taux réel.",
+ "scenes": [
+  {
+   "n": 1,
+   "duree_s": 4,
+   "type": "pd_objet",
+   "visuel": "Un bulletin de paie pixel se déplie en haut de l'écran ; le titre « Brut ≠ net » est estampé en accent_alerte.",
+   "etiquettes": [
+    "Brut ≠ net"
+   ],
+   "animation": "dépliage du bulletin en 0,8 s"
+  },
+  {
+   "n": 2,
+   "duree_s": 4,
+   "type": "pd_flux",
+   "visuel": "Pico tombe du haut vers une ligne horizontale intitulée « BRUT ».",
+   "etiquettes": [
+    "BRUT"
+   ],
+   "animation": "chute de Pico en 1 s, rebond de 2 pixels"
+  },
+  {
+   "n": 3,
+   "duree_s": 4,
+   "type": "pd_objet",
+   "visuel": "Le bulletin apparaît avec une seule ligne surlignée : « Salaire de base ».",
+   "etiquettes": [
+    "Salaire de base"
+   ],
+   "animation": "surlignage qui se remplit de gauche à droite en 0,6 s"
+  },
+  {
+   "n": 4,
+   "duree_s": 4,
+   "type": "pd_flux",
+   "visuel": "Mécanisme animé : Pico descend l'escalier de 5 marches, chaque marche fait sortir un bloc accent_retrait.",
+   "etiquettes": [
+    "Cotisations"
+   ],
+   "animation": "5 marches, une toutes les 0,6 s ; le seau se remplit de blocs"
+  },
+  {
+   "n": 5,
+   "duree_s": 4,
+   "type": "pd_objet",
+   "visuel": "Trois badges pixel sur le bulletin : retraite, santé, chômage. Un badge gris « selon le statut » en dessous.",
+   "etiquettes": [
+    "Retraite",
+    "Santé",
+    "Chômage"
+   ],
+   "animation": "les badges s'allument un par un, 0,5 s chacun"
+  },
+  {
+   "n": 6,
+   "duree_s": 4,
+   "type": "pd_jauge",
+   "visuel": "Une jauge pixel horizontale, découpée en deux segments : CSG puis CRDS. Proportions illustratives.",
+   "etiquettes": [
+    "CSG",
+    "CRDS"
+   ],
+   "animation": "remplissage des segments en 1,5 s"
+  },
+  {
+   "n": 7,
+   "duree_s": 4,
+   "type": "pd_tampon",
+   "visuel": "Un tampon pixel « ASSIETTE » s'écrase sur la jauge ; la base de calcul est mise en évidence en accent_principal.",
+   "etiquettes": [
+    "Assiette"
+   ],
+   "animation": "tampon qui s'abat en 0,3 s avec un léger tremblement"
+  },
+  {
+   "n": 8,
+   "duree_s": 4,
+   "type": "pd_chiffre",
+   "visuel": "Une grande tuile pixel avec un point d'interrogation, étiquetée « net imposable ».",
+   "etiquettes": [
+    "Net imposable",
+    "?"
+   ],
+   "animation": "la tuile tourne de 90 degrés puis se stabilise"
+  },
+  {
+   "n": 9,
+   "duree_s": 4,
+   "type": "pd_flux",
+   "visuel": "Pico traverse un tuyau pixel étiqueté « impôt à la source », qui prélève un petit bloc accent_retrait sur le trajet.",
+   "etiquettes": [
+    "Impôt à la source"
+   ],
+   "animation": "Pico glisse dans le tuyau en 2 s, le bloc sort au milieu"
+  },
+  {
+   "n": 10,
+   "duree_s": 4,
+   "type": "pd_jauge",
+   "visuel": "Une jauge pixel finale remplie en accent_principal, étiquetée « NET ».",
+   "etiquettes": [
+    "NET",
+    "Sur ton compte"
+   ],
+   "animation": "remplissage de la jauge en 1,2 s"
+  },
+  {
+   "n": 11,
+   "duree_s": 4,
+   "type": "pd_flux",
+   "visuel": "Le net se divise en trois tuyaux qui mènent à des cases : « retraite », « santé », « dette sociale ».",
+   "etiquettes": [
+    "Retraite",
+    "Santé",
+    "Dette sociale"
+   ],
+   "animation": "division en trois tuyaux, remplissage successif des cases"
+  },
+  {
+   "n": 12,
+   "duree_s": 4,
+   "type": "pd_objet",
+   "visuel": "Une loupe pixel passe sur le bulletin de paie et s'arrête sur la ligne « Net à payer ».",
+   "etiquettes": [
+    "Ta fiche de paie"
+   ],
+   "animation": "la loupe glisse de gauche à droite en 1 s"
+  },
+  {
+   "n": 13,
+   "duree_s": 4,
+   "type": "pd_tampon",
+   "visuel": "Un tampon pixel « VÉRIFIE » s'imprime sur le bulletin.",
+   "etiquettes": [
+    "Vérifie à la source"
+   ],
+   "animation": "tampon en 0,3 s"
+  },
+  {
+   "n": 14,
+   "duree_s": 4,
+   "type": "pd_objet",
+   "visuel": "Pico pose la question fermée : deux boutons pixel « OUI » et « NON ». Pico pointe vers « OUI ».",
+   "etiquettes": [
+    "Tu savais ?",
+    "OUI",
+    "NON"
+   ],
+   "animation": "Pico saute sur le bouton OUI en 0,5 s"
+  }
+ ],
+ "duree_totale_s": 56,
+ "verifications": {
+  "scenes_dans_plage": "14 scènes, 4 s chacune",
+  "pd_autorises": true,
+  "mecanisme_anime": true,
+  "palette_differente": true,
+  "musique_differente_de_lofi": true,
+  "personnages_originaux": true,
+  "aucun_visage_reel": true,
+  "aucune_image_de_presse": true,
+  "aucune_mention_ia": true
+ },
+ "variete": {}
 }

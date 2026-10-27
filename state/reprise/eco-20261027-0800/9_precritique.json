@@ -1,0 +1,23 @@
+{
+  "decision": "go",
+  "bloquant": false,
+  "controles_ok": [
+    "Aucune mention d'IA dans le dialogue, les textes d'écran ni la légende",
+    "Aucun chiffre dans le scénario ni la DA, donc aucun chiffre sans source",
+    "Accroche : la thèse ('Ton salaire brut n'est jamais ton salaire net' / 'Brut ≠ net') est à l'écran et dans la voix dès la scène 1",
+    "14 scènes x 4 s = 56 s (dans la plage 55 s à 110 s), 163 mots de dialogue (dans la cible 160-170)",
+    "Palette menthe_pixel et musique pizzicato, différentes de la dernière vidéo (papier_journal, lofi)",
+    "Légende : sources (urssaf.fr, service-public.fr, impots.gouv.fr), question 👇, partage 📤, 5 hashtags, pas de #viral ni #fyp"
+  ],
+  "problemes": [
+    {"scene": "DA 11 / scénario 11", "type": "fait_faux", "raison": "Le visuel envoie le net vers retraite, santé et dette sociale ; ces prélèvements se font sur le brut, pas sur le net. A corriger avant la spec (non bloquant)."},
+    {"scene": "DA 3-9 / scénario 3-7", "type": "desynchro", "raison": "Le texte parle de cotisations en scène 3, CSG/CRDS en 4-6 et impôt à la source en 7 ; le visuel montre salaire de base en 3, cotisations en 4, CSG/CRDS en 6 et impôt en 9 : décalage de 1 à 2 scènes."},
+    {"scene": "scénario 13-14 / DA 13-14", "type": "desynchro", "raison": "La scène 14 du scénario (« Envoie à quelqu'un ») n'a pas de visuel en DA ; la question en DA 14 (« Tu savais ? ») ne correspond pas à « Déjà vérifié ? » du scénario."},
+    {"scene": "DA 8 à 14 (étiquettes)", "type": "finition", "raison": "« Vérifie à la source » fait 5 mots et 19 caractères, « Impôt à la source » et « Ta fiche de paie » 4 mots : dépassement de la règle 3 mots / 18 caractères."},
+    {"scene": "DA (Pico)", "type": "finition", "raison": "Le rôle annonce Pico en scènes 1, 2, 9, 10 et 14, mais il apparaît aussi en 4 et n'est pas en 10."},
+    {"scene": "scénario 3, 7, 11, 12", "type": "rythme", "raison": "163 mots en 56 s (environ 175 mots/min) ; quatre scènes portent 14 à 15 mots en 4 s : serré, à surveiller au rendu (la règle admet la voix rapide sans blanc)."},
+    {"scene": "légende 1re ligne", "type": "style", "raison": "La règle attend un chiffre en première ligne ; il n'y en a pas, et on ne doit pas en inventer : on signale seulement."},
+    {"scene": "scénario types fait/question/chute", "type": "a_confirmer", "raison": "Ces types ne figurent pas dans la liste des scènes autorisées ; à confirmer comme rôles narratifs et non comme gabarits."}
+  ],
+  "non_verifie": "4_concept.json n'était pas dans le périmètre : titre_miniature, mots_choc et surtitre_miniature ne sont pas contrôlés ici."
+}
