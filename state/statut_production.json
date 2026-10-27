@@ -242,5 +242,57 @@
    "etape": "render",
    "resultat": "ARRÊT : render en échec deux fois (node_modules manquants dans video/) ; alerte envoyée"
   }
+ ],
+ "science-20261027-2000": [
+  {
+   "heure": "16:25",
+   "etape": "2 dossier",
+   "resultat": "OK"
+  },
+  {
+   "heure": "16:26",
+   "etape": "4 concept",
+   "resultat": "1er essai : concept écrit, chiffre 500 t non sourcé ; 2e essai demandé avec vérification MTOW A380"
+  },
+  {
+   "heure": "16:27",
+   "etape": "4 concept",
+   "resultat": "OK : 575 t sourcé (fiche Airbus A380 2022), titre ajusté"
+  },
+  {
+   "heure": "16:29",
+   "etape": "5 scénario + 6 DA",
+   "resultat": "OK : scénario 15 scènes 56 s ; DA 14 scènes. Miniature corrigée (« Le temps de transit : un mythe »)"
+  },
+  {
+   "heure": "16:30",
+   "etape": "7 pré-critique",
+   "resultat": "GO (motifs non bloquants)"
+  },
+  {
+   "heure": "16:30",
+   "etape": "6 spec",
+   "resultat": "OK : 7_spec.json assemblé (14 scènes, ~70 s)"
+  },
+  {
+   "heure": "16:31",
+   "etape": "8 check 1er essai",
+   "resultat": "ÉCHEC : 26 erreurs de schéma dans 7_spec.json ; 9_precritique.decision ajouté ; 2e essai demandé"
+  },
+  {
+   "heure": "16:40",
+   "etape": "8 render",
+   "resultat": "OK : check, video.mp4, apercu.png, légende, story"
+  },
+  {
+   "heure": "16:41",
+   "etape": "7 critique finale 1er avis",
+   "resultat": "publiable, mais jauge scène 11 affiche 1,225 kg/m³ (faux) : correction demandée"
+  },
+  {
+   "heure": "16:52",
+   "etape": "8 correction jauge",
+   "resultat": "OK : jauge remplacée par chiffre 575 t sourcé, check/render/frames/caption OK"
+  }
  ]
 }
