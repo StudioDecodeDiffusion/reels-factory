@@ -116,5 +116,52 @@
    "etape": "dépôt",
    "resultat": "OK : envoyé à GitHub pour le créneau 12 h"
   }
+ ],
+ "actu-20261026-1800": [
+  {
+   "heure": "07:07",
+   "etape": "4 concept",
+   "resultat": "OK (info3_plfss_pensions, 4 faits sourcés, S3 remplacé)"
+  },
+  {
+   "heure": "07:09",
+   "etape": "5+6 scénario/DA",
+   "resultat": "OK (14 scènes, 167 mots ; DA pixeldoc, Tuile)"
+  },
+  {
+   "heure": "07:10",
+   "etape": "7 pré-critique",
+   "resultat": "RETOUR (DA ≠ scénario ; formulation 2026/2027) → régénération 6 puis 7"
+  },
+  {
+   "heure": "07:14",
+   "etape": "5+6 régénérés",
+   "resultat": "OK 5 au schéma (14 plans) ; 6 à vérifier"
+  },
+  {
+   "heure": "07:15",
+   "etape": "7 pré-critique 2",
+   "resultat": "GO"
+  },
+  {
+   "heure": "07:17",
+   "etape": "6 DA + spec + check",
+   "resultat": "OK (7_spec 14 scènes, 73 s estimées, check OK)"
+  },
+  {
+   "heure": "07:18",
+   "etape": "8 render",
+   "resultat": "reprise : npm ci dans video/ (node_modules absent), relance"
+  },
+  {
+   "heure": "07:22",
+   "etape": "8 render+frames+caption+story",
+   "resultat": "OK (video.mp4 2535 images ≈ 84,5 s, planche apercu.png)"
+  },
+  {
+   "heure": "07:23",
+   "etape": "dépôt",
+   "resultat": "STOP avant dépôt : rendu OK mais sous-titres illisibles sur fonds clairs (planche), titre à l'écran absent sur scène 1 ; critique 9_critique.json : publiable mais accroche 6, rythme 6, exactitude 7 ; échéance 7 h dépassée"
+  }
  ]
 }
