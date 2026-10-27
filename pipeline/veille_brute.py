@@ -1,5 +1,5 @@
 """Veille externalisée (propriétaire, 25/10) : aucun jeton Claude.
-1. Collecte : flux RSS des médias, Google Actualités, Google Trends FR, Wikipédia FR (pages les plus vues),
+1. Collecte : flux RSS des médias, Google Actualités, Google Trends FR, 
    GDELT (base mondiale des articles), Reddit r/france, TikTok Creative Center (hashtags et sons FR, si accessible).
 2. Corrélation : regroupement des titres par sens (modèle Sentence-Transformers multilingue, open source),
    puis score de potentiel = diversité des sources × vitesse × tendance Google/Wikipédia/TikTok/Reddit × adéquation au compte.
@@ -12,21 +12,34 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import time
+
 import feedparser
 import requests
 
 ETAT = Path(__file__).resolve().parent.parent / "state"
 UA = {"User-Agent": "Mozilla/5.0 (DecodeStudio veille; contact studiodecodediffusion@gmail.com)"}
 MEDIAS = {
+    # sources diversifiées (presse, médias indépendants, institutions, science) — celles qui échouent sont journalisées puis retirées
+    "BFM": "https://www.bfmtv.com/rss/news-24-7/", "France 24": "https://www.france24.com/fr/rss", "RFI": "https://www.rfi.fr/fr/rss",
+    "La Croix": "https://www.la-croix.com/RSS", "Le Point": "https://www.lepoint.fr/rss.xml", "L'Express": "https://www.lexpress.fr/rss/alaune.xml",
+    "Courrier international": "https://www.courrierinternational.com/feed/all/rss.xml",
+    "Politis": "https://www.politis.fr/feed/", "Reporterre": "https://reporterre.net/spip.php?page=backend",
+    "Basta": "https://basta.media/spip.php?page=backend", "Alternatives économiques": "https://www.alternatives-economiques.fr/rss.xml",
+    "Challenges": "https://www.challenges.fr/rss.xml", "La Tribune": "https://www.latribune.fr/rss/rubriques/actualite.html",
+    "The Conversation": "https://theconversation.com/fr/articles.atom", "CNRS Le journal": "https://lejournal.cnrs.fr/rss",
+    "NASA": "https://www.nasa.gov/news-release/feed/", "ESA": "https://www.esa.int/rssfeed/Our_Activities/Space_News",
+    "Vie publique": "https://www.vie-publique.fr/rss/actualites", "Actu-Environnement": "https://www.actu-environnement.com/flux/rss/environnement/",
     "franceinfo": "https://www.francetvinfo.fr/titres.rss", "Le Monde": "https://www.lemonde.fr/rss/une.xml",
     "Libération": "https://www.liberation.fr/arc/outboundfeeds/rss-all/?outputType=xml",
     "Mediapart": "https://www.mediapart.fr/articles/feed", "Le Figaro": "https://www.lefigaro.fr/rss/figaro_actualites.xml",
     "20 Minutes": "https://www.20minutes.fr/feeds/rss-une.xml", "Ouest-France": "https://www.ouest-france.fr/rss/une",
-    "Les Echos": "https://syndication.lesechos.fr/rss/rss_une.xml", "L'Humanité": "https://www.humanite.fr/feed",
+"L'Humanité": "https://www.humanite.fr/feed",
     "Futura": "https://www.futura-sciences.com/rss/actualites.xml", "Sciences et Avenir": "https://www.sciencesetavenir.fr/rss.xml",
     "L'Usine Nouvelle": "https://www.usinenouvelle.com/rss/", "Numerama": "https://www.numerama.com/feed/",
 }
 GNEWS = "https://news.google.com/rss{}?hl=fr&gl=FR&ceid=FR:fr"
+GNEWS_SITES = ["lesechos.fr", "lemonde.fr", "mediapart.fr", "legifrance.gouv.fr", "inrs.fr", "insee.fr", "banque-france.fr"]
 REQUETES = {  # Google Actualités ciblé par compte
     "actu": ["gouvernement", "manifestation", "Assemblée nationale", "pouvoir d'achat"],
     "eco": ["économie France", "inflation", "impôts", "budget de l'État", "salaires"],
@@ -44,17 +57,24 @@ COMPTES = {  # description servant à mesurer l'adéquation sujet ↔ compte
 
 
 def _get(url, **kw):
-    r = requests.get(url, headers=UA, timeout=25, **kw)
+    kw["headers"] = {**UA, **kw.get("headers", {})}
+    for essai in range(3):  # 429 / 503 : on attend un peu (GDELT limite à 1 requête / 5 s)
+        r = requests.get(url, timeout=25, **kw)
+        if r.status_code not in (429, 503) or essai == 2:
+            break
+        time.sleep(6 * (essai + 1))
     r.raise_for_status()
     return r
 
 
 def collecter() -> tuple[list[dict], dict, dict]:
-    items, signaux, erreurs = [], {"trends": [], "wiki": [], "tiktok_hashtags": [], "tiktok_sons": [], "reddit": []}, {}
+    items, signaux, erreurs = [], {"trends": [], "tiktok_hashtags": [], "tiktok_sons": []}, {}
     flux = dict(MEDIAS, **{"Google Actualités": GNEWS.format("")})
     for c, qs in REQUETES.items():
         for q in qs:
             flux[f"Google Actualités · {c} · {q}"] = GNEWS.format("/search") + "&q=" + requests.utils.quote(q + " when:2d")
+    for site in GNEWS_SITES:  # sites qui bloquent les robots : on passe par Google Actualités
+        flux[f"Google Actualités · site · {site}"] = GNEWS.format("/search") + "&q=" + requests.utils.quote(f"site:{site} when:2d")
     for src, url in flux.items():
         try:
             for e in feedparser.parse(_get(url).content).entries[:40]:
@@ -80,18 +100,6 @@ def collecter() -> tuple[list[dict], dict, dict]:
             signaux["trends"].append({"terme": e.get("title"), "volume": int(vol)})
     except Exception as ex:
         erreurs["Google Trends"] = str(ex)[:120]
-    try:  # Wikipédia FR : articles les plus consultés hier
-        j = (datetime.now(timezone.utc) - timedelta(days=1)).strftime("%Y/%m/%d")
-        w = _get(f"https://wikimedia.org/api/rest_v1/metrics/pageviews/top/fr.wikipedia/all-access/{j}").json()
-        signaux["wiki"] = [{"terme": a["article"].replace("_", " "), "vues": a["views"]}
-                           for a in w["items"][0]["articles"][:80] if ":" not in a["article"] and a["article"] != "Wikipédia"]
-    except Exception as ex:
-        erreurs["Wikipédia"] = str(ex)[:120]
-    try:
-        r = _get("https://www.reddit.com/r/france/hot.json", params={"limit": 60}).json()
-        signaux["reddit"] = [{"terme": p["data"]["title"], "score": p["data"]["score"]} for p in r["data"]["children"]]
-    except Exception as ex:
-        erreurs["Reddit"] = str(ex)[:120]
     base = "https://ads.tiktok.com/creative_radar_api/v1/popular_trend"
     for cle, chemin in (("tiktok_hashtags", "/hashtag/list"), ("tiktok_sons", "/sound/rank_list")):
         try:  # TikTok Creative Center (France, 7 jours) : accès public non garanti
@@ -124,9 +132,7 @@ def correler(items: list[dict], signaux: dict) -> dict:
     E = m.encode([u["titre"] for u in uniques], normalize_embeddings=True, batch_size=64)
     lab = AgglomerativeClustering(n_clusters=None, distance_threshold=0.42, metric="cosine", linkage="average").fit_predict(E)
     termes = [("trends", s["terme"], math.log10(1 + s["volume"])) for s in signaux["trends"]] + \
-             [("wiki", s["terme"], math.log10(1 + s["vues"]) / 2) for s in signaux["wiki"]] + \
-             [("tiktok", s["terme"], 2.0) for s in signaux["tiktok_hashtags"] if s["terme"]] + \
-             [("reddit", s["terme"], math.log10(1 + s["score"]) / 2) for s in signaux["reddit"]]
+             [("tiktok", s["terme"], 2.0) for s in signaux["tiktok_hashtags"] if s["terme"]]
     T = m.encode([t[1] for t in termes], normalize_embeddings=True) if termes else np.zeros((0, E.shape[1]))
     C = m.encode(list(COMPTES.values()), normalize_embeddings=True)
     maintenant = datetime.now(timezone.utc)
