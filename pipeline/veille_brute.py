@@ -152,9 +152,42 @@ def correler(items: list[dict], signaux: dict) -> dict:
     return out
 
 
+def _og_image(url: str) -> str | None:
+    """Image principale (og:image) d'un article source. Les liens Google Actualités sont d'abord décodés."""
+    try:
+        if "news.google.com" in url:
+            from googlenewsdecoder import gnewsdecoder
+            d = gnewsdecoder(url, interval=1)
+            if not d.get("status"):
+                return None
+            url = d["decoded_url"]
+        html = _get(url).text[:200_000]
+        m = re.search(r'<meta[^>]+(?:property|name)=["\'](?:og:image|twitter:image)["\'][^>]+content=["\']([^"\']+)', html) \
+            or re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\'](?:og:image|twitter:image)["\']', html)
+        img = m.group(1).replace("&amp;", "&") if m else None
+        return img if img and img.startswith("http") else None
+    except Exception:
+        return None
+
+
+def ajouter_images(top: dict) -> None:
+    """Pour les meilleurs sujets de chaque compte : images des articles sources (pour illustrer la vidéo avec du réel)."""
+    for liste in top.values():
+        for sujet in liste[:6]:
+            imgs = []
+            for lien in sujet.get("liens", [])[:6]:
+                img = _og_image(lien)
+                if img and img not in imgs:
+                    imgs.append(img)
+                if len(imgs) >= 3:
+                    break
+            sujet["images"] = imgs
+
+
 def main() -> None:
     items, signaux, erreurs = collecter()
     top = correler(items, signaux)
+    ajouter_images(top)
     (ETAT / "veille_brute.json").write_text(json.dumps({
         "maj": datetime.now(timezone.utc).isoformat(timespec="minutes"), "nb_articles": len(items), "erreurs": erreurs,
         "top_par_compte": top, "tendances": {k: v[:30] for k, v in signaux.items()}}, ensure_ascii=False, indent=1, default=float), encoding="utf-8")

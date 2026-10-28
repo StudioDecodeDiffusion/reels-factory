@@ -26,7 +26,7 @@ jobs:
         with:
           path: ~/.cache/huggingface
           key: hf-minilm-v1
-      - run: pip install feedparser requests scikit-learn sentence-transformers --extra-index-url https://download.pytorch.org/whl/cpu
+      - run: pip install feedparser requests googlenewsdecoder scikit-learn sentence-transformers --extra-index-url https://download.pytorch.org/whl/cpu
       - run: set -o pipefail; python -m pipeline.veille_brute 2>&1 | tail -40 | tee state/veille_log.txt
       - name: Sauvegarder
         if: always()
