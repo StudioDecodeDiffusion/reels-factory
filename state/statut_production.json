@@ -49,5 +49,72 @@
    "etape": "9 dépôt",
    "resultat": "OK : vidéo déposée (créneau 2026-10-27 20 h 00), sujet avion_portance marqué fait"
   }
+ ],
+ "science-20261028-0800": [
+  {
+   "heure": "04:50",
+   "etape": "Démarrage",
+   "resultat": "Créneau science 08 h 00 trouvé ; quota non bloquant (relevé périmé, fin d'économie 23/10 passée)"
+  },
+  {
+   "heure": "04:51",
+   "etape": "Brouillon",
+   "resultat": "5_scenario.json Gemini copié ; 4_concept vide, agent 4 à produire"
+  },
+  {
+   "heure": "04:51",
+   "etape": "Concept (agent 4)",
+   "resultat": "OK : Tacoma Narrows, instagram, sources Wikipédia"
+  },
+  {
+   "heure": "04:53",
+   "etape": "Scénario + DA (agents 5-6)",
+   "resultat": "OK : 14 scènes Tacoma, palette acier_ambre, V1+V3"
+  },
+  {
+   "heure": "04:54",
+   "etape": "Pré-critique (agent 7)",
+   "resultat": "RETOUR (scénario 14 plans / DA 13 scènes désalignés) : une reprise DA"
+  },
+  {
+   "heure": "04:54",
+   "etape": "DA réalignée (agent 6, reprise)",
+   "resultat": "OK : 14 scènes alignées sur le scénario"
+  },
+  {
+   "heure": "04:55",
+   "etape": "Pré-critique bis (agent 7)",
+   "resultat": "GO"
+  },
+  {
+   "heure": "04:55",
+   "etape": "Spec (tool spec)",
+   "resultat": "7_spec.json assemblé : 14 scènes, 71 s estimées"
+  },
+  {
+   "heure": "04:56",
+   "etape": "Rendu (agent 8)",
+   "resultat": "échec 2× (remotion absent) ; npm ci dans video/ puis relance"
+  },
+  {
+   "heure": "05:02",
+   "etape": "Rendu (agent 8)",
+   "resultat": "échec 2× : npm ci OK ; erreur valeur pd_jauge « élevé » → 85 ; relance rendu"
+  },
+  {
+   "heure": "05:07",
+   "etape": "Rendu (agent 8)",
+   "resultat": "OK : video.mp4 rendu (2418 frames)"
+  },
+  {
+   "heure": "05:07",
+   "etape": "Planche + légende + story",
+   "resultat": "OK : apercu.png, legende.txt, story générés"
+  },
+  {
+   "heure": "05:08",
+   "etape": "Critique finale (agent 7)",
+   "resultat": "BLOQUANT signalé : piste audio absente de video.mp4 — vérification : la voix est ajoutée au dépôt par reels-media (sonoriser), donc revérification avec ce contexte"
+  }
  ]
 }
