@@ -1,0 +1,56 @@
+{
+  "id": "science-20261028-0800",
+  "profil": "science",
+  "statut": "a_valider",
+  "titre": null,
+  "son_tendance": null,
+  "publication_le": "2026-10-28T08:00+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": "instagram",
+  "legende": "Un pont tombé par un vent de 64 km/h : Tacoma Narrows, 7 novembre 1940.\n\nUn pont suspendu tient par la tension de ses câbles. Celui de Tacoma n'a pas cédé sous son poids : il a été détruit par un flottement aéroélastique, un vent qui entretient lui-même les oscillations du tablier.\n\nSavez-vous pourquoi un pont suspendu tient en l'air ? 👇\n\nEnvoie-la à quelqu'un qui traverse un pont tous les jours ! 📤\n\nSources : Wikipédia\n\n#science #TacomaNarrows #pontsuspendu #ingénierie #décodelasciensesimplement\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "id": "science-20261028-0800",
+    "compte": "science",
+    "agent": "7.5",
+    "passage": "revérification",
+    "decision": "publiable",
+    "motif": "Aucun défaut bloquant : pas de contenu interdit, pas de mention d'IA, vidéo lisible (1080x1920, 80,6 s, plafond 110 s), aucune scène entièrement vide, aucun texte hors cadre. L'absence de piste audio dans video.mp4 est attendue (voix et musique ajoutées par le rendu public, _sonoriser).",
+    "defauts_bloquants": [],
+    "finitions": [
+      {
+        "scene": 1,
+        "constat": "Plan hook sans visuel : zone centrale vide (le prompt « pont avec point d'interrogation » n'apparaît pas). Titre et sous-titres présents."
+      },
+      {
+        "scene": 14,
+        "constat": "Plan quiz sans visuel : zone centrale vide, mascotte détective prévue par la DA absente."
+      },
+      {
+        "scene": 4,
+        "constat": "« 853,4 mètres » apparaît dans le sous-titre à l'écran alors que la DA prévoit que ce chiffre reste dans la voix."
+      }
+    ],
+    "corrections": [
+      {
+        "type": "fait",
+        "constat": "Aucun fait faux relevé. 1er juillet 1940 (ouverture), 7 novembre 1940 (effondrement), 129 jours (calcul exact), 853,4 m, 64 km/h = 40 mph : cohérents avec les sources citées (Wikipédia)."
+      }
+    ],
+    "verification": {
+      "apercu_png": "vu (planche : scènes 1 à 8)",
+      "video_scene0_et_scene13": "vus (scène 1 : titre et sous-titres sans visuel central ; scène 14 : idem)",
+      "video_mp4": "ffprobe : 1080x1920, durée 80,6 s, flux vidéo seul (audio attendu absent au stade contrôle)",
+      "mention_ia": "aucune",
+      "contenu_interdit": "aucun (pas d'image de presse, pas de personne réelle)"
+    }
+  },
+  "community": {},
+  "da_message": "DA réalignée sur le scénario de science-20261028-0800 (pont suspendu) : 14 scènes, même ordre et même type que les 14 plans, reprise après retour de la pré-critique. Palette acier_ambre, style pixeldoc, voix V1+V3, au moins une scène pd_flux animée (plans 3, 8, 9). Chiffres : 1er juillet 1940, 129 jours (calcul), 64 km/h (40 mph). Le chiffre 853,4 m reste dans la voix du plan 4, non affiché à l'écran.",
+  "cree": "2026-10-28T04:09:07+00:00"
+}

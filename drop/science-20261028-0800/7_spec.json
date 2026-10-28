@@ -1,0 +1,353 @@
+{
+  "id": "science-20261028-0800",
+  "compte": "science",
+  "theme": {
+    "fond": "#0B1F2A",
+    "texte": "#F4F1E8",
+    "accent": "#FFB400",
+    "accent2": "#4FD1C5",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "acier_ambre",
+    "palette": [
+      "#0B1F2A",
+      "#16384A",
+      "#FFB400",
+      "#4FD1C5",
+      "#F4F1E8",
+      "#E4572E"
+    ],
+    "mise_en_page": "plein_ecran",
+    "tenues": {
+      "narrateur": "science",
+      "mascotte": "detective"
+    }
+  },
+  "variete": {
+    "accroche": "question_choc",
+    "trend": "aucune (sujet de la file ; veille hors périmètre)",
+    "fonctionnement": "explication_mecanisme",
+    "mise_en_page": "plein_ecran",
+    "musique": "orchestral",
+    "voix": "V1+V3",
+    "palette": "acier_ambre"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "4": [
+      "pop"
+    ],
+    "5": [
+      "ding"
+    ],
+    "6": [
+      "pop"
+    ],
+    "11": [
+      "impact"
+    ],
+    "14": [
+      "ding"
+    ]
+  },
+  "musique": {
+    "genre": "orchestral",
+    "volume": 0.4
+  },
+  "titre_miniature": "Un pont tombé par vent modéré",
+  "mots_choc": "vent modéré",
+  "surtitre_miniature": "Tacoma · 7 novembre 1940",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "duree_s": 4.0,
+      "titre": "Vent modéré, pont tombé ?",
+      "mot_fort": "tombé",
+      "prompt": "a suspension bridge at dusk with a large question mark in the sky, pixel art, side view, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Un pont de plus de huit cents mètres peut-il tomber par vent modéré ? La réponse est oui.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 8.1,
+      "title": "Vent modéré, pont tombé ?"
+    },
+    {
+      "n": 2,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Pont suspendu : tension",
+      "mot_fort": "tension",
+      "prompt": "a single thick steel suspension cable under tension, pixel art, side view, single object",
+      "etiquette": "Câble",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Un pont suspendu tient grâce à ses câbles, qui travaillent en tension.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 3,
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "titre": "Le poids descend",
+      "mot_fort": "descend",
+      "de": {
+        "label": "Suspentes",
+        "prompt": "a vertical steel hanger rod, pixel art, single object"
+      },
+      "vers": {
+        "label": "Pylônes",
+        "prompt": "a tall stone bridge tower, pixel art, single object"
+      },
+      "montant": "poids",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le poids descend par les suspentes, puis les pylônes le transmettent au sol.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 4,
+      "type": "pd_chiffre",
+      "duree_s": 4.0,
+      "titre": "1er juillet 1940",
+      "mot_fort": "1er juillet 1940",
+      "valeur": null,
+      "legende": "Ouverture du pont de Tacoma Narrows",
+      "source": "Wikipedia (Tacoma Narrows Bridge, 1940)",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le pont de Tacoma Narrows ouvre le 1er juillet 1940. Sa travée mesure 853,4 mètres.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 5,
+      "type": "pd_chiffre",
+      "duree_s": 4.0,
+      "titre": "129 jours plus tard",
+      "mot_fort": "129 jours",
+      "valeur": 129,
+      "suffixe": " jours",
+      "legende": "Entre l'ouverture et l'effondrement",
+      "source": "calcul à partir des deux dates",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il s'effondre 129 jours plus tard, le 7 novembre 1940, dans le Puget Sound.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 6,
+      "type": "pd_chiffre",
+      "duree_s": 4.0,
+      "titre": "Vent : 64 km/h",
+      "mot_fort": "64 km/h",
+      "valeur": 64,
+      "suffixe": " km/h",
+      "legende": "Soit 40 mph ce jour-là",
+      "source": "Wikipedia (Tacoma Narrows Bridge, 1940)",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ce jour-là, le vent souffle à 64 km/h, soit 40 mph.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 7,
+      "type": "pd_versus",
+      "duree_s": 4.0,
+      "titre": "Pas de surcharge",
+      "mot_fort": "surcharge",
+      "de": {
+        "label": "Poids",
+        "prompt": "a heavy stone block, pixel art, single object"
+      },
+      "vers": {
+        "label": "Vent modéré",
+        "prompt": "a gust of wind swirl, pixel art, single object"
+      },
+      "verdict": "Le vent suffit",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Pas de surcharge : un vent modéré suffit à faire tomber ce pont.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1,
+      "gauche": "Poids",
+      "droite": "Vent modéré"
+    },
+    {
+      "n": 8,
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "titre": "Le tablier tourne",
+      "mot_fort": "tourne",
+      "de": {
+        "label": "Vent",
+        "prompt": "a gust of wind swirl, pixel art, single object"
+      },
+      "vers": {
+        "label": "Tablier",
+        "prompt": "a bridge deck twisting sideways, pixel art, single object"
+      },
+      "montant": "rotation",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le vent fait tourner légèrement le tablier.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 3.7
+    },
+    {
+      "n": 9,
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "titre": "L'angle change",
+      "mot_fort": "angle",
+      "de": {
+        "label": "Angle du vent",
+        "prompt": "a wind arrow changing direction, pixel art, single object"
+      },
+      "vers": {
+        "label": "Oscillation",
+        "prompt": "a bridge deck bouncing up and down, pixel art, single object"
+      },
+      "montant": "énergie",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ce mouvement change l'angle du vent, qui relance l'oscillation.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 10,
+      "type": "pd_jauge",
+      "duree_s": 4.0,
+      "titre": "Pas une résonance",
+      "mot_fort": "résonance",
+      "niveau": "élevé",
+      "etiquette": "Mouvement propre",
+      "legende": "L'énergie vient du mouvement lui-même",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ce n'est pas une résonance forcée : l'énergie vient du mouvement lui-même.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7,
+      "valeur": 85
+    },
+    {
+      "n": 11,
+      "type": "pd_tampon",
+      "duree_s": 4.0,
+      "titre": "Flottement aéroélastique",
+      "mot_fort": "flottement",
+      "tampon": "FLOTTEMENT",
+      "prompt": "a suspension bridge deck oscillating in strong wind, pixel art, side view, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le mouvement s'amplifie alors : c'est un flottement aéroélastique.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 12,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Pas le poids",
+      "mot_fort": "pas le poids",
+      "prompt": "a heavy stone block resting on a bridge deck, pixel art, single object",
+      "etiquette": "Poids",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le pont n'a pas cédé sous son poids, mais sous ce mouvement.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 13,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Étudier le vent",
+      "mot_fort": "vent",
+      "prompt": "a small wind tunnel model of a bridge deck, pixel art, single object",
+      "etiquette": "Soufflerie",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Un pont suspendu doit donc être étudié face au vent, pas seulement au poids.",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "duree_s": 4.0,
+      "titre": "Vous le saviez ?",
+      "mot_fort": "saviez",
+      "question": "Pourquoi un pont suspendu tient-il en l'air ?",
+      "prompt": "a suspension bridge with a question mark, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et vous, savez-vous pourquoi un pont suspendu tient en l'air ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3,
+      "options": [
+        "Ses câbles le tiennent en tension",
+        "Il flotte sur l'eau",
+        "Le vent le soulève"
+      ],
+      "bonne": 0
+    }
+  ]
+}
