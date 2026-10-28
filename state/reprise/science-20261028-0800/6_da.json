@@ -1,0 +1,59 @@
+{
+  "id": "science-20261028-0800",
+  "compte": "science",
+  "theme": {
+    "fond": "#0B1F2A",
+    "texte": "#F4F1E8",
+    "accent": "#FFB400",
+    "accent2": "#4FD1C5",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "acier_ambre",
+    "palette": ["#0B1F2A", "#16384A", "#FFB400", "#4FD1C5", "#F4F1E8", "#E4572E"],
+    "mise_en_page": "plein_ecran",
+    "tenues": {"narrateur": "science", "mascotte": "detective"}
+  },
+  "variete": {
+    "accroche": "question_choc",
+    "trend": "aucune (sujet de la file ; veille hors périmètre)",
+    "fonctionnement": "explication_mecanisme",
+    "mise_en_page": "plein_ecran",
+    "musique": "orchestral",
+    "voix": "V1+V3",
+    "palette": "acier_ambre"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "musique": {
+    "genre": "orchestral",
+    "volume": 0.4,
+    "ambiance_globale": "curieux",
+    "ambiance_par_scene": {"1": "effroi", "2": "curieux", "3": "curieux", "7": "tension", "8": "tension", "9": "tension", "10": "tension", "11": "tension", "12": "curieux", "13": "joyeux"}
+  },
+  "sfx": {"1": ["impact"], "5": ["pop"], "6": ["ding"], "9": ["pop"], "10": ["ding"], "11": ["impact"], "13": ["ding"]},
+  "scenes": [
+    {"n": 1, "type": "pd_objet", "duree_s": 4.3, "titre": "Un pont qui tombe ?", "mot_fort": "tombe", "prompt": "a suspension bridge with two tall towers and thin steel cables, pixel art, side view, single object", "etiquette": "Pont suspendu"},
+    {"n": 2, "type": "pd_objet", "duree_s": 4.3, "titre": "Des câbles tendus", "mot_fort": "tendus", "prompt": "a single thick steel suspension cable under tension, pixel art, side view, single object", "etiquette": "Câble"},
+    {"n": 3, "type": "pd_flux", "duree_s": 4.3, "titre": "Où va la force", "mot_fort": "tension", "de": {"label": "Tablier", "prompt": "a concrete road deck segment, pixel art, single object"}, "vers": {"label": "Tours", "prompt": "a tall stone bridge tower, pixel art, single object"}, "montant": "tension"},
+    {"n": 4, "type": "pd_objet", "duree_s": 4.3, "titre": "Léger et souple", "mot_fort": "souple", "prompt": "a light suspension bridge deck over a grey sea at dusk, pixel art, side view, single object", "etiquette": "Tablier fin"},
+    {"n": 5, "type": "pd_chiffre", "duree_s": 4.3, "titre": "Une travée géante", "mot_fort": "853,4 m", "valeur": 853.4, "decimales": 1, "suffixe": " m", "legende": "Travée principale du pont de Tacoma Narrows", "source": "Wikipedia (Tacoma Narrows Bridge, 1940)"},
+    {"n": 6, "type": "pd_chiffre", "duree_s": 4.3, "titre": "Un vent modéré", "mot_fort": "64 km/h", "valeur": 64, "suffixe": " km/h", "legende": "Vent de 40 mph lors de la chute", "source": "Wikipedia (Tacoma Narrows Bridge, 1940)"},
+    {"n": 7, "type": "pd_objet", "duree_s": 4.3, "titre": "Le tablier se tord", "mot_fort": "se tord", "prompt": "a bridge deck twisting sideways in strong wind, pixel art, side view, single object", "etiquette": "Torsion"},
+    {"n": 8, "type": "pd_objet", "duree_s": 4.3, "titre": "Comme un drapeau", "mot_fort": "flottement", "prompt": "a flag fluttering in strong wind, pixel art, single object", "etiquette": "Flottement"},
+    {"n": 9, "type": "pd_flux", "duree_s": 4.3, "titre": "Le vent alimente le pont", "mot_fort": "auto-entretenu", "de": {"label": "Vent", "prompt": "a gust of wind swirl, pixel art, single object"}, "vers": {"label": "Oscillation", "prompt": "a bridge deck bouncing up and down, pixel art, single object"}, "montant": "énergie"},
+    {"n": 10, "type": "pd_chiffre", "duree_s": 4.3, "titre": "Du premier jour à la chute", "mot_fort": "129 jours", "valeur": 129, "suffixe": " jours", "legende": "Entre l'ouverture et l'effondrement", "source": "calcul à partir des deux dates"},
+    {"n": 11, "type": "pd_objet", "duree_s": 4.3, "titre": "Effondré en 1940", "mot_fort": "7 nov. 1940", "prompt": "a collapsed bridge deck falling into the water, pixel art, single object", "etiquette": "Puget Sound"},
+    {"n": 12, "type": "pd_tampon", "duree_s": 4.3, "titre": "Le vent, pas la charge", "mot_fort": "flottement", "tampon": "FLOTTEMENT", "prompt": "a suspension bridge deck over calm water, pixel art, side view, single object"},
+    {"n": 13, "type": "pd_tampon", "duree_s": 4.3, "titre": "Un fait qui surprend", "mot_fort": "vent modéré", "tampon": "VÉRIDIQUE", "prompt": "a suspension bridge at dusk with a small glowing sun, pixel art, single object"}
+  ],
+  "consignes_animation": "Rythme : un plan toutes les 4 s environ, 13 scènes, durée visée 55 à 56 s. Titres 3 à 5 mots, mot_fort en accent jaune #FFB400 ; étiquettes courtes. Scènes 3 et 9 : flux animé (pièces qui circulent entre les deux étiquettes). Scènes 5, 6 et 10 : compteur arcade, couleur accent. Fond bleu acier : texte crème #F4F1E8 partout. Pas de personne réelle, pas de visage de ministre. Mascotte Déco en tenue détective seulement sur la scène 12 (gag d'enquête).",
+  "evolution_charte": "aucune (palette acier_ambre pour cette vidéo seulement)",
+  "messages_traites": [],
+  "message_au_proprietaire": "Mes choix pour science-20261028-0800 (pont suspendu) : style pixeldoc, palette acier_ambre (bleu acier, ambre, turquoise) au lieu du papier_millimetre ; accroche question_choc ; fonctionnement explication_mecanisme avec deux flux animés (la force dans les câbles, puis le vent qui entretient l'oscillation) ; musique orchestral au lieu du chiptune ; voix V1 (narrateur) et V3 (Déco), différentes de V2. Chiffres utilisés : 853,4 m, 64 km/h (40 mph), 129 jours (calcul interne). Le chiffre 67 mph reste retiré. Question pour la suite : on garde Déco en détective uniquement pour le gag de la scène 12, ou on lui donne une tenue science sur toute la vidéo ?"
+}
