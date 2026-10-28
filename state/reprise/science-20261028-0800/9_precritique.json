@@ -2,20 +2,22 @@
   "id": "science-20261028-0800",
   "agent": "7.4",
   "role": "pre-critique",
-  "decision": "retour",
-  "motif": "Scenario et DA mal alignes : le scenario compte 14 plans, la DA 13 scenes, et les contenus different a partir du plan 4. Un mapping par index associerait la voix '1er juillet 1940' a l'image 'Leger et souple', la voix '129 jours' a l'image '853,4 m', et la voix 'Pas de surcharge' a l'image 'Le tablier se tord'. A realigner (agents 5 et 6) avant le spec.",
+  "passage": 2,
+  "decision": "go",
+  "motif": "Passage 2 apres reprise DA : scenario (14 plans) et DA (14 scenes) sont alignes index par index, meme type et meme titre a chaque rang. Duree 56 s (14 x 4,0 s), au-dessus du minimum de 55 s. Faits verifies, aucune mention d'IA, aucun contenu interdit. Trois points de formulation a corriger, sans blocage.",
   "checks": {
-    "coherence_scenario_da": "KO : meme sujet, memes chiffres et meme ordre general, mais sequences decalees (scenes 4, 5, 7, 8, 10 en desaccord ; scene 4 DA sans dialogue ; quiz final du scenario absent de la DA).",
-    "faits_concept": "OK : 1er juillet 1940 ; 7 novembre 1940 ; 853,4 m (2 800 pieds) ; 64 km/h = 40 mph ; 129 jours (recalcul exact) ; flottement aeroelastique, pas resonance forcee. Chiffre 67 mph absent de scenario et DA (retire, conforme).",
-    "duree": "OK : scenario 14 x 4,0 s = 56 s ; DA 13 x 4,3 s = 55,9 s ; minimum 55 s atteint. Ecart de 0,1 s entre les deux, a harmoniser.",
-    "mention_ia": "OK : aucune mention d'IA dans le dialogue, les textes ecran, la legende ou les hashtags. Les champs 'prompt' et 'voix' sont internes, non visibles.",
-    "contenu_interdit": "OK : pas de photo de presse, pas de visage reel, pas de deepfake, pas de citation inventee, pas d'accusation nominative.",
-    "variete_vs_derniere_video": "OK : accroche, fonctionnement, mise en page, musique, voix et palette tous differents de science-20261027-2000.",
-    "dialogue": "OK : environ 168 mots (cible 160-170)."
+    "alignement_plan_par_plan": "OK : 14 plans = 14 scenes, memes types dans le meme ordre (hook, pd_objet, pd_flux, pd_chiffre x3, pd_versus, pd_flux x2, pd_jauge, pd_tampon, pd_objet x2, quiz). Titres concordants a chaque rang, sauf l'ecart mineur du plan 6 (voir corrections).",
+    "faits": "OK : 1er juillet 1940 ; 7 novembre 1940 ; 853,4 m (2 800 pieds) ; 64 km/h = 40 mph ; 129 jours (recalcul exact entre les deux dates) ; flottement aeroelastique, pas resonance forcee. Chiffre 67 mph absent du scenario et de la DA (retire, conforme).",
+    "duree": "OK : 14 x 4,0 s = 56 s dans le scenario et dans la DA (consignes_animation : 56 s). Minimum 55 s atteint.",
+    "mention_ia": "OK : aucune mention d'IA dans le dialogue, les textes ecran, la legende ou les hashtags.",
+    "contenu_interdit": "OK : pas de photo de presse, pas de personne reelle (mascotte Dece uniquement en scene 14), pas de deepfake, pas de citation inventee, pas d'accusation nominative. Voix de synthese (narrateur, mascotte) : pipeline habituel, pas une personne reelle.",
+    "limites_du_controle": "Lecture limitee aux trois fichiers demandes (5_scenario.json, 6_da.json, 4_concept.json) et a la 9_precritique precedente. Non verifies : notes du proprietaire, variete par rapport a la video precedente, nombre exact de mots du dialogue."
   },
   "corrections": [
-    "Titre de scene 10 'Du premier jour a la chute' : 6 mots (regle 3 a 5).",
-    "Scene DA 11 'Effondre en 1940' et scene DA 4 'Leger et souple' n'ont pas de plan equivalent dans le scenario : a realigner avec le point precedent."
+    "Plan 1 et plan 7, mot 'vent modere' : 64 km/h (40 mph) correspond plutot a un coup de vent que a un vent modere. Formulation a nuancer ('vent de 64 km/h' ou 'vent de force moderee a forte'). Le mot-cle de la miniature et des mots_choc du concept est concerne.",
+    "Plan 9 : 'Ce mouvement change l'angle du vent, qui relance l'oscillation' decrit un mecanisme non present dans les faits verifies. Source a ajouter ou formulation a alleger.",
+    "Plan 8 : 'Le vent fait tourner legerement le tablier' : 'legerement' n'est pas sourcé. Retirer l'adverbe ou sourcer.",
+    "Plan 6 : le texte ecran affiche '40 MPH' mais le titre de scene DA est 'Vent : 64 km/h' ; le 40 mph n'apparait qu'en legende. Harmoniser si le texte ecran doit rester identique au plan."
   ],
   "rien_corrige": true
 }
