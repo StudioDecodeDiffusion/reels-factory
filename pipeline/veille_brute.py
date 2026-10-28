@@ -143,7 +143,7 @@ def correler(items: list[dict], signaux: dict) -> dict:
         base = math.log2(1 + len(sources)) * 2 + math.log2(1 + len(idx)) + 3 * recents / len(idx) + bonus
         sujets.append({"sujet": uniques[rep]["titre"], "score_base": round(base, 2), "nb_articles": len(idx),
                        "sources": sorted(sources)[:12], "vitesse_8h": round(recents / len(idx), 2), "preuves_tendance": preuves[:8],
-                       "titres": [uniques[i]["titre"] for i in idx[:6]], "liens": [uniques[i]["lien"] for i in idx[:6]],
+                       "titres": [uniques[i]["titre"] for i in idx[:6]], "liens": [uniques[i]["lien"] for i in idx[:14]],
                        "adequation": {k: round(float(C[j] @ cen), 3) for j, k in enumerate(COMPTES)}})
     out = {}
     for k in COMPTES:
@@ -159,6 +159,9 @@ def _og_image(url: str) -> str | None:
             from googlenewsdecoder import gnewsdecoder
             d = gnewsdecoder(url, interval=1)
             if not d.get("status"):
+                time.sleep(2)
+                d = gnewsdecoder(url, interval=2)
+            if not d.get("status"):
                 return None
             url = d["decoded_url"]
         html = _get(url).text[:200_000]
@@ -173,9 +176,9 @@ def _og_image(url: str) -> str | None:
 def ajouter_images(top: dict) -> None:
     """Pour les meilleurs sujets de chaque compte : images des articles sources (pour illustrer la vidéo avec du réel)."""
     for liste in top.values():
-        for sujet in liste[:6]:
+        for sujet in liste[:8]:
             imgs = []
-            for lien in sujet.get("liens", [])[:6]:
+            for lien in sujet.get("liens", [])[:14]:
                 img = _og_image(lien)
                 if img and img not in imgs:
                     imgs.append(img)
