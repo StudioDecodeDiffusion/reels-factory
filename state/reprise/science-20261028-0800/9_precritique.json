@@ -1,0 +1,21 @@
+{
+  "id": "science-20261028-0800",
+  "agent": "7.4",
+  "role": "pre-critique",
+  "decision": "retour",
+  "motif": "Scenario et DA mal alignes : le scenario compte 14 plans, la DA 13 scenes, et les contenus different a partir du plan 4. Un mapping par index associerait la voix '1er juillet 1940' a l'image 'Leger et souple', la voix '129 jours' a l'image '853,4 m', et la voix 'Pas de surcharge' a l'image 'Le tablier se tord'. A realigner (agents 5 et 6) avant le spec.",
+  "checks": {
+    "coherence_scenario_da": "KO : meme sujet, memes chiffres et meme ordre general, mais sequences decalees (scenes 4, 5, 7, 8, 10 en desaccord ; scene 4 DA sans dialogue ; quiz final du scenario absent de la DA).",
+    "faits_concept": "OK : 1er juillet 1940 ; 7 novembre 1940 ; 853,4 m (2 800 pieds) ; 64 km/h = 40 mph ; 129 jours (recalcul exact) ; flottement aeroelastique, pas resonance forcee. Chiffre 67 mph absent de scenario et DA (retire, conforme).",
+    "duree": "OK : scenario 14 x 4,0 s = 56 s ; DA 13 x 4,3 s = 55,9 s ; minimum 55 s atteint. Ecart de 0,1 s entre les deux, a harmoniser.",
+    "mention_ia": "OK : aucune mention d'IA dans le dialogue, les textes ecran, la legende ou les hashtags. Les champs 'prompt' et 'voix' sont internes, non visibles.",
+    "contenu_interdit": "OK : pas de photo de presse, pas de visage reel, pas de deepfake, pas de citation inventee, pas d'accusation nominative.",
+    "variete_vs_derniere_video": "OK : accroche, fonctionnement, mise en page, musique, voix et palette tous differents de science-20261027-2000.",
+    "dialogue": "OK : environ 168 mots (cible 160-170)."
+  },
+  "corrections": [
+    "Titre de scene 10 'Du premier jour a la chute' : 6 mots (regle 3 a 5).",
+    "Scene DA 11 'Effondre en 1940' et scene DA 4 'Leger et souple' n'ont pas de plan equivalent dans le scenario : a realigner avec le point precedent."
+  ],
+  "rien_corrige": true
+}
