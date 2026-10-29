@@ -1,0 +1,303 @@
+{
+  "job": "actu-20261029-0800",
+  "compte": "actu",
+  "plateforme": "instagram",
+  "creneau": "2026-10-29T08:00+01:00",
+  "mise_en_page": "pixeldoc",
+  "ecart_derniere_video": {
+    "palette": "gris_acier_jaune -> papier_encre_rouge",
+    "musique": "electro_sombre -> cordes_pizzicato_tendu",
+    "accroche": "non reprise (concept : titre_miniature en thèse critique)",
+    "fonctionnement": "non repris (pas de décomposition de prix)"
+  },
+  "palette": {
+    "--fond": "#F3EDE0",
+    "--encre": "#1B1B1B",
+    "--accent": "#C2392B",
+    "--secondaire": "#1F3A5F",
+    "--texte_sur_accent": "#F3EDE0",
+    "--trame": "#D9CFBC",
+    "contraste_principal": "encre sur fond >= 12:1 ; texte sur accent >= 4.5:1"
+  },
+  "animation": {
+    "mecanisme_anime": "pd_jauge",
+    "effet": "la jauge se remplit de 0 à 52 cases sur 96 en 2,5 s, les cases franchissent une ligne « Smic 1 867,02 € » ; pd_flux : flèches qui défilent vers les branches",
+    "contrainte": "aucune animation au-delà de 1 mouvement par scène, rien ne déborde du cadre 9:16"
+  },
+  "total_duree_s": 72.9,
+  "images": {
+    "prompts": [],
+    "regle": "style pixeldoc dessiné ; aucun visage réel, aucune image de presse, aucun personnage reconnaissable ; personnages originaux si besoin"
+  },
+  "lisibilite": {
+    "titre_max_mots": 4,
+    "etiquette_max_mots": 5,
+    "taille_min_titre_px": 64
+  },
+  "sources_visuelles": [
+    "base KALI (DILA) via calculer-salaire.com",
+    "Le Figaro via titrespresse.com"
+  ],
+  "note_scenario": "voix non fixée par la DA : à choisir par l'agent 5 avec une voix différente de V2",
+  "musique": {
+    "genre": "tension",
+    "volume": 0.4
+  },
+  "variete": {
+    "accroche": "constat_choc",
+    "trend": "« Answer in One Word »",
+    "fonctionnement": "jauge_smic",
+    "mise_en_page": "pixeldoc",
+    "musique": "tension",
+    "voix": "V1",
+    "palette": "papier_encre_rouge"
+  },
+  "titre_miniature": "52 branches sur 96 payent sous le Smic",
+  "mots_choc": "sous le Smic",
+  "surtitre_miniature": "Salaires · octobre 2026",
+  "scenes": [
+    {
+      "id": 1,
+      "type": "pd_tampon",
+      "titre": "SOUS LE SMIC",
+      "etiquette": "Salaires · octobre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Macron demande aux branches de négocier. Plus de la moitié ont des minima sous le Smic."
+        }
+      ],
+      "duration": 7.3,
+      "tampon": "SOUS LE SMIC",
+      "voix": "Macron demande aux branches de négocier. Plus de la moitié ont des minima sous le Smic."
+    },
+    {
+      "id": 2,
+      "type": "pd_objet",
+      "titre": "Fiche de paie",
+      "etiquette": "Minimum de branche",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "52 branches sur 96 ont un premier minimum sous le Smic."
+        }
+      ],
+      "duration": 5.3,
+      "voix": "52 branches sur 96 ont un premier minimum sous le Smic."
+    },
+    {
+      "id": 3,
+      "type": "pd_chiffre",
+      "titre": "1 867,02 €",
+      "etiquette": "Smic brut mensuel",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le Smic : 1 867,02 euros brut par mois depuis le 1er juin 2026."
+        }
+      ],
+      "duration": 6.5,
+      "valeur": "1 867,02 €",
+      "legende": "Smic brut mensuel",
+      "voix": "Le Smic : 1 867,02 euros brut par mois depuis le 1er juin 2026."
+    },
+    {
+      "id": 4,
+      "type": "pd_versus",
+      "titre": "Smic",
+      "etiquette": "Minimum de branche",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une branche, c'est un secteur avec sa convention collective."
+        }
+      ],
+      "duration": 4.5,
+      "gauche": "Smic",
+      "droite": "Minimum de branche",
+      "voix": "Une branche, c'est un secteur avec sa convention collective."
+    },
+    {
+      "id": 5,
+      "type": "pd_flux",
+      "titre": "Négocier",
+      "etiquette": "Le président demande",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Au 1er juin, 37 branches sont passées sous le Smic. 15 l'étaient déjà en janvier."
+        }
+      ],
+      "duration": 6.9,
+      "de": "Le président",
+      "vers": "Les branches",
+      "voix": "Au 1er juin, 37 branches sont passées sous le Smic. 15 l'étaient déjà en janvier."
+    },
+    {
+      "id": 6,
+      "type": "pd_jauge",
+      "titre": "52 / 96",
+      "etiquette": "Branches sous le Smic",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le chiffre vient de la base publique KALI, état au 5 octobre."
+        }
+      ],
+      "duration": 5.7,
+      "valeur": "52 / 96",
+      "legende": "Branches sous le Smic",
+      "voix": "Le chiffre vient de la base publique KALI, état au 5 octobre."
+    },
+    {
+      "id": 7,
+      "type": "pd_chiffre",
+      "titre": "15",
+      "etiquette": "Déjà en janvier 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ce n'est pas un détail : c'est plus de la moitié."
+        }
+      ],
+      "duration": 5.3,
+      "valeur": "15",
+      "legende": "Déjà en janvier 2026",
+      "voix": "Ce n'est pas un détail : c'est plus de la moitié."
+    },
+    {
+      "id": 8,
+      "type": "pd_versus",
+      "titre": "15 → 37",
+      "etiquette": "Passées dessous au 1er juin",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le 28 octobre, il appelle ces branches à reprendre les négociations."
+        }
+      ],
+      "duration": 5.3,
+      "gauche": "15 en janvier",
+      "droite": "37 au 1er juin",
+      "voix": "Le 28 octobre, il appelle ces branches à reprendre les négociations."
+    },
+    {
+      "id": 9,
+      "type": "pd_objet",
+      "titre": "Grille",
+      "etiquette": "Base KALI · 5/10/2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Renégocier, très bien. Mais la loi vaut pour tous."
+        }
+      ],
+      "duration": 4.5,
+      "voix": "Renégocier, très bien. Mais la loi vaut pour tous."
+    },
+    {
+      "id": 10,
+      "type": "pd_flux",
+      "titre": "Branche → Smic",
+      "etiquette": "Le minimum doit monter",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La vraie question : pourquoi faut-il rappeler une règle déjà écrite ?"
+        }
+      ],
+      "duration": 5.7,
+      "de": "Branche",
+      "vers": "Smic",
+      "voix": "La vraie question : pourquoi faut-il rappeler une règle déjà écrite ?"
+    },
+    {
+      "id": 11,
+      "type": "pd_tampon",
+      "titre": "À NÉGOCIER",
+      "etiquette": "Demande publique",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Sur ces grilles, le premier échelon est sous le Smic."
+        }
+      ],
+      "duration": 4.9,
+      "tampon": "À NÉGOCIER",
+      "voix": "Sur ces grilles, le premier échelon est sous le Smic."
+    },
+    {
+      "id": 12,
+      "type": "pd_chiffre",
+      "titre": "96",
+      "etiquette": "Conventions nationales",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Payé à ce niveau, on est sous le plancher légal."
+        }
+      ],
+      "duration": 4.9,
+      "valeur": "96",
+      "legende": "Conventions nationales",
+      "voix": "Payé à ce niveau, on est sous le plancher légal."
+    },
+    {
+      "id": 13,
+      "type": "pd_jauge",
+      "titre": "Qui attend ?",
+      "etiquette": "Salariés des 52 branches",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Pendant ce temps, les salariés attendent une vraie réponse."
+        }
+      ],
+      "duration": 4.5,
+      "valeur": "Qui attend ?",
+      "legende": "Salariés des 52 branches",
+      "voix": "Pendant ce temps, les salariés attendent une vraie réponse."
+    },
+    {
+      "id": 14,
+      "type": "pd_versus",
+      "titre": "Eux",
+      "etiquette": "Le chiffre",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La base est publique. La réponse, elle, reste à écrire."
+        }
+      ],
+      "duration": 4.9,
+      "gauche": "Salariés",
+      "droite": "Minimum légal",
+      "voix": "La base est publique. La réponse, elle, reste à écrire."
+    },
+    {
+      "id": 15,
+      "type": "pd_objet",
+      "titre": "Qui attend encore ?",
+      "etiquette": "Question finale",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Tu trouves normal que des minima soient sous le Smic ? Oui ou non ?"
+        }
+      ],
+      "duration": 6.9,
+      "voix": "Tu trouves normal que des minima soient sous le Smic ? Oui ou non ?"
+    }
+  ],
+  "theme": {
+    "fond": "#F3EDE0",
+    "texte": "#1B1B1B",
+    "accent": "#C2392B",
+    "accent2": "#1F3A5F",
+    "police_titre": "Space Grotesk",
+    "police_texte": "Inter",
+    "bandeau": null,
+    "style": "pixel",
+    "grille": false
+  }
+}

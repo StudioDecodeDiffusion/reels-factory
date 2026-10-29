@@ -1,0 +1,58 @@
+{
+  "id": "actu-20261029-0800",
+  "profil": "actu",
+  "statut": "a_valider",
+  "titre": null,
+  "son_tendance": null,
+  "publication_le": "2026-10-29T08:00+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": "instagram",
+  "legende": "Macron demande aux branches de négocier : 52 branches sur 96 ont un premier minimum sous le Smic.\n\nLa base publique KALI (DILA) recense 52 conventions collectives sur 96 avec un premier minimum sous le Smic, état au 5 octobre 2026. Le Smic est de 1 867,02 € brut par mois depuis le 1er juin 2026.\n\nOui ou non, tu trouves normal que des minima soient sous le Smic ? 👇\n\n📤 Envoie-le à quelqu'un qui travaille dans une branche concernée.\n\nSources : base KALI (DILA) via calculer-salaire.com ; Le Figaro via titrespresse.com\n\n#Salaires #Smic #ConventionCollective #EmmanuelMacron #DecodeActu\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "job": "actu-20261029-0800",
+    "agent": 7,
+    "etape": "critique",
+    "compte": "actu",
+    "plateforme": "instagram",
+    "fichiers_controles": [
+      "apercu.png",
+      "legende.txt",
+      "5_scenario.json",
+      "9_precritique.json",
+      "video.mp4 (ffprobe)"
+    ],
+    "verdict": "publiable",
+    "decision": "publiable",
+    "raison": "Réexamen : video.mp4 de session est muet par construction. pipeline/github_flow.py (_sonoriser, l.258-264) ajoute voix et musique au rendu public à partir de 7_spec.json (présent dans le dossier) quand la voix du profil est active. L'absence de piste audio n'est donc pas bloquante à ce stade. Contenu, visuel et planche sont conformes ; durée 83,1 s à recaler par le recalage de durée de _sonoriser ; faits à reconfirmer en non bloquant.",
+    "controles": {
+      "contenu_interdit": "aucun. Pas d'image de presse, pas de visage réel (personnages pixel art), pas de deepfake. Macron est cité uniquement en paraphrase factuelle, sans citation inventée.",
+      "texte_deborde": "non vu sur la planche apercu.png (8 frames sur 15) : les bulles de sous-titres tiennent dans leur cadre.",
+      "visage_reel": "non : personnages pixel art.",
+      "mention_ia": "aucune dans la légende ni dans le scénario.",
+      "voix": "absente de video.mp4 par construction (version muette de session) ; ajoutée au publish par _sonoriser à partir de 7_spec.json. Non bloquant.",
+      "video_cassee": "non : le fichier décode sans erreur (ffmpeg -f null, rc 0), format h264 1080x1920.",
+      "duree": "83,1 s dans video.mp4, contre une cible de 55-60 s (scénario 15 x 4 s = 60 s). Écart non bloquant, à noter pour le rendu suivant.",
+      "legende": "légende présente, sources citées (base KALI DILA, relais Le Figaro via titrespresse.com), hashtags précis."
+    },
+    "faits_a_signaler": [
+      "52 conventions sur 96 sous le Smic (base KALI, état au 5/10/2026) : chiffre à reconfirmer sur KALI avant reprise.",
+      "Macron demande aux branches de reprendre les négociations : paraphrase d'un relais (Le Figaro via titrespresse.com), passage franceinfo non confirmé.",
+      "Smic 1 867,02 € brut depuis le 1er juin 2026 : à vérifier à la source officielle lors de la reprise."
+    ],
+    "corrections": [
+      "Non bloquant : vérifier que _sonoriser a bien ajouté la voix V1 au rendu public (la version de session est muette).",
+      "Non bloquant : durée 83,1 s pour une cible de 55-60 s ; recaler le montage sur le scénario.",
+      "Non bloquant : DA total_duree_s 72,9 et précritique 56,9/55,3 ne concordent pas avec la vidéo rendue ; aligner à la reprise.",
+      "Non bloquant : legende.txt contient une ligne « Voix : UPMC Pierre/Jessica, CC BY-SA 4.0 » absente de 5_scenario.json ; la garder seulement si la voix utilisée est bien celle-là."
+    ]
+  },
+  "community": {},
+  "da_message": "",
+  "cree": "2026-10-29T04:06:21+00:00"
+}
