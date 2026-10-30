@@ -692,7 +692,7 @@ def stats() -> None:
             seen = set(state.load(f"commentaires_vus_{pid}", []))
             old = state.load(f"stats_{pid}", {})
             posts, new = [], []
-            for m in ig.recent_media(15):
+            for m in ig.recent_media(30):
                 posts.append({"id": m["id"], "date": m.get("timestamp"), "lien": m.get("permalink"),
                               "legende": (m.get("caption") or "")[:120], **ig.insights(m["id"])})
                 for c in ig.comments(m["id"]):
