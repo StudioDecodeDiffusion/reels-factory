@@ -1,0 +1,156 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.5,
+   "texte_ecran": "30 % du budget financé par la dette",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Sur cent euros dépensés par l'État français, trente euros sont financés par la dette.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "D'où vient l'argent public ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pour comprendre ce déséquilibre, regardons d'abord d'où vient l'argent de nos caisses publiques.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 5.0,
+   "texte_ecran": "La TVA, première recette fiscale",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La première recette fiscale n'est pas l'impôt sur le revenu, mais la taxe sur la valeur ajoutée.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "TVA : 100 milliards d'euros",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La TVA rapporte environ cent milliards d'euros par an directement dans le budget national.",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Impôt sur le revenu : 90 milliards",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Juste derrière, l'impôt sur le revenu fournit environ quatre-vingt-dix milliards d'euros à l'État.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 5.0,
+   "texte_ecran": "Où part l'argent récolté ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Mais face à ces rentrées fiscales, comment se répartissent les plus grosses dépenses de la nation ?",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 5.0,
+   "texte_ecran": "Éducation : premier poste de dépense",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le tout premier poste reste l'enseignement scolaire, avec plus de soixante milliards d'euros alloués.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "Le coût des intérêts explose",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Vient ensuite un poste silencieux : la charge d'intérêts de la dette publique accumulée.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 5.0,
+   "texte_ecran": "Dette : 50 milliards d'intérêts",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Les seuls intérêts dépassent cinquante milliards d'euros par an, soit autant que la Défense nationale.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chute",
+   "duree_s": 5.0,
+   "texte_ecran": "Déficit annuel : 140 milliards",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Résultat, l'écart annuel entre recettes et dépenses creuse un déficit de plus de cent quarante milliards d'euros.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 5.0,
+   "texte_ecran": "Nouvelles obligations émises chaque semaine",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce trou est comblé chaque semaine par l'émission de nouvelles obligations souveraines sur les marchés.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.5,
+   "texte_ecran": "Comment rééquilibrer le budget ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Faut-il réduire les dépenses publiques ou augmenter les recettes pour combler cet écart budgétaire ?",
+     "expression": "neutre"
+    }
+   ]
+  }
+ ],
+ "legende": "Sur 100 € dépensés par l'État, 30 € viennent de la dette.\n\nLe budget annuel de la France repose principalement sur la TVA et l'impôt sur le revenu, mais les dépenses de fonctionnement et la charge de la dette dépassent largement les rentrées fiscales. L'État doit emprunter chaque semaine sur les marchés pour financer les services publics.\n\nFaut-il réduire les dépenses ou augmenter les recettes pour assainir le budget ? 👇\nEnvoie-la à quelqu'un qui veut comprendre le budget de l'État 📤\nSources : Ministère de l'Économie et des Finances, Cour des comptes",
+ "hashtags": [
+  "#budget",
+  "#financespubliques",
+  "#dette",
+  "#bercy",
+  "#decodeleco"
+ ]
+}
