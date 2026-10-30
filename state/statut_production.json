@@ -158,5 +158,57 @@
    "etape": "Dépôt",
    "resultat": "OK : publiable, drop lancé pour 08h00"
   }
+ ],
+ "eco-20261030-0800": [
+  {
+   "heure": "04:50",
+   "etape": "setup",
+   "resultat": "créneau eco 08h00, sujet imposé budget_etat ; dossier créé (economie expirée le 23/10)"
+  },
+  {
+   "heure": "04:50",
+   "etape": "brouillons",
+   "resultat": "brouillons Gemini copiés (concept + scénario) ; vérification agent 4 puis correction agent 5"
+  },
+  {
+   "heure": "04:51",
+   "etape": "agent 4 concept",
+   "resultat": "OK : concept vérifié et corrigé (chiffres non sourcés retirés ; 135 Md€ à confirmer sur budget.gouv.fr)"
+  },
+  {
+   "heure": "04:54",
+   "etape": "agent 5 scénario",
+   "resultat": "OK : 14 scènes, 165 mots, 56 s ; 135 Md€ à confirmer (signalé)"
+  },
+  {
+   "heure": "04:55",
+   "etape": "agent 6 DA",
+   "resultat": "OK : pixeldoc, ocre_pixel, piano_sobre_horloge, V1+V4 (identifiants à valider par l'agent 8)"
+  },
+  {
+   "heure": "04:55",
+   "etape": "agent 7 pré-critique",
+   "resultat": "go (pas de bloquant ; 135 Md€ à confirmer)"
+  },
+  {
+   "heure": "04:57",
+   "etape": "agent 8 rendu",
+   "resultat": "échec : Remotion absent (node_modules manquant dans video/) ; npm ci OK, relance"
+  },
+  {
+   "heure": "05:02",
+   "etape": "agent 8 rendu + planche",
+   "resultat": "vidéo rendue (4 min 47 s), frames/caption/story tentés"
+  },
+  {
+   "heure": "05:02",
+   "etape": "agent 8 planche/caption/story",
+   "resultat": "frames, planche apercu.png, caption, story OK"
+  },
+  {
+   "heure": "05:03",
+   "etape": "agent 7 critique finale",
+   "resultat": "1re critique : non publiable (motif : pas de piste audio) ; la voix et la musique sont ajoutées par le rendu public, la version muette est attendue ; relance de la critique"
+  }
  ]
 }
