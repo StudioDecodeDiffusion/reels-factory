@@ -1,0 +1,332 @@
+{
+  "job": "eco-20261030-0800",
+  "compte": "eco",
+  "style": "pixeldoc",
+  "accroche": "breaking",
+  "fonctionnement": "autopsie_pas_a_pas",
+  "mise_en_page": "colonnes",
+  "trend": "Autopsie de budget / infographie explicative pas à pas",
+  "voix": "V1+V4",
+  "titre": "Le budget de l'État, en pixels",
+  "palette": {
+    "nom": "ocre_pixel",
+    "fond": "#1F1B16",
+    "encre": "#F4EBD9",
+    "recettes": "#E0A526",
+    "depenses": "#D9573B",
+    "ecart": "#7A3B2E",
+    "accent_neutre": "#8FB8B0"
+  },
+  "mecanismes_animes": [
+    {
+      "scene": 2,
+      "type": "pd_flux",
+      "animation": "flux_anime",
+      "description": "pixels de recettes qui entrent dans la caisse de l'État"
+    },
+    {
+      "scene": 7,
+      "type": "pd_jauge",
+      "animation": "remplissage_anime",
+      "description": "jauge dont la partie basse se remplit d'emprunts pour combler l'écart"
+    }
+  ],
+  "regles_respectees": {
+    "aucune_mention_ia": true,
+    "aucun_visage_reel": true,
+    "aucune_image_de_presse": true,
+    "palette_differente_de_27_10": true,
+    "musique_differente_de_27_10": true,
+    "voix_differente_de_27_10": true,
+    "textes_ecran_max_22_caracteres": true
+  },
+  "a_verifier_par_agent_8": "identifiants musique (piano_sobre_horloge) et voix (V1+V4) à valider contre la liste des voix et musiques disponibles avant rendu",
+  "musique": {
+    "genre": "orchestral",
+    "volume": 0.4
+  },
+  "variete": {
+    "accroche": "breaking",
+    "trend": "Autopsie de budget / infographie explicative pas à pas",
+    "fonctionnement": "autopsie_pas_a_pas",
+    "mise_en_page": "colonnes",
+    "musique": "orchestral",
+    "voix": "V1+V4",
+    "palette": "ocre_pixel"
+  },
+  "titre_miniature": "Budget de l'État : le grand déséquilibre",
+  "mots_choc": [
+    "Recettes vs Dépenses"
+  ],
+  "surtitre_miniature": "Bercy · 2026",
+  "scenes": [
+    {
+      "index": 0,
+      "type_scenario": "breaking",
+      "type": "pd_objet",
+      "texte_ecran": "FLASH : le déficit",
+      "visuel": "registre pixel de l'État avec un tampon rouge de déficit",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le budget 2026 de l'État affiche un déficit : il dépense plus qu'il n'encaisse.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.5,
+      "prompt": "a pixel art state budget ledger with a red deficit stamp"
+    },
+    {
+      "index": 1,
+      "type_scenario": "pd_objet",
+      "type": "pd_objet",
+      "texte_ecran": "Deux colonnes",
+      "visuel": "livre de comptes pixel ouvert, colonnes Recettes et Dépenses",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Un budget, c'est simple sur le papier : des recettes d'un côté, des dépenses de l'autre.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 7.3
+    },
+    {
+      "index": 2,
+      "type_scenario": "pd_flux",
+      "type": "pd_flux",
+      "texte_ecran": "Recettes",
+      "visuel": "pixels dorés qui entrent dans la caisse",
+      "animation": "flux_anime",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les recettes, ce sont les sommes que l'État encaisse, notamment grâce aux impôts.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1,
+      "de": {
+        "label": "Contribuables",
+        "prompt": "a pixel art stack of gold coins"
+      },
+      "vers": {
+        "label": "Caisse de l'État",
+        "prompt": "a pixel art treasury safe"
+      }
+    },
+    {
+      "index": 3,
+      "type_scenario": "pd_objet",
+      "type": "pd_objet",
+      "texte_ecran": "TVA · IR · IS",
+      "visuel": "trois pièces pixel étiquetées TVA, IR, IS",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Parmi elles : la TVA, l'impôt sur le revenu et l'impôt sur les sociétés.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "index": 4,
+      "type_scenario": "pd_flux",
+      "type": "pd_flux",
+      "texte_ecran": "Dépenses",
+      "visuel": "pixels rouges qui sortent de la caisse vers quatre blocs de postes",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les dépenses financent le fonctionnement de l'État et ses politiques publiques.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3,
+      "de": {
+        "label": "Caisse de l'État",
+        "prompt": "a pixel art treasury safe"
+      },
+      "vers": {
+        "label": "Postes de dépenses",
+        "prompt": "a pixel art row of four blocks labelled with public spending"
+      }
+    },
+    {
+      "index": 5,
+      "type_scenario": "pd_versus",
+      "type": "pd_versus",
+      "texte_ecran": "Recettes < dépenses",
+      "visuel": "deux barres pixel, la rouge plus haute que la dorée",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le problème apparaît quand les recettes ne couvrent plus les dépenses.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3,
+      "gauche": {
+        "label": "Recettes",
+        "prompt": "a pixel art tall stack of gold coins"
+      },
+      "droite": {
+        "label": "Dépenses",
+        "prompt": "a pixel art taller stack of red coins"
+      }
+    },
+    {
+      "index": 6,
+      "type_scenario": "pd_chiffre",
+      "type": "pd_objet",
+      "texte_ecran": "L'écart",
+      "visuel": "bloc pixel de l'écart en brun",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Cet écart, c'est le déficit : la différence entre les recettes et les dépenses.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.5,
+      "prompt": "a pixel art brown block representing an empty gap"
+    },
+    {
+      "index": 7,
+      "type_scenario": "pd_jauge",
+      "type": "pd_jauge",
+      "texte_ecran": "Écart = emprunts",
+      "visuel": "jauge pixel qui se remplit de blocs d'emprunt",
+      "animation": "remplissage_anime",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Cet écart est comblé par de nouveaux emprunts sur les marchés financiers.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7,
+      "valeur": 100,
+      "legende": "Écart comblé par l'emprunt"
+    },
+    {
+      "index": 8,
+      "type_scenario": "pd_objet",
+      "type": "pd_objet",
+      "texte_ecran": "Emprunter",
+      "visuel": "tirelire pixel avec une flèche entrante",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Comme un ménage qui emprunte pour boucler ses fins de mois.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "index": 9,
+      "type_scenario": "pd_flux",
+      "type": "pd_flux",
+      "texte_ecran": "L'État emprunte",
+      "visuel": "flèche pixel des marchés vers la caisse de l'État",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Concrètement, l'État emprunte pour payer une part de ses dépenses.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9,
+      "de": {
+        "label": "Marchés financiers",
+        "prompt": "a pixel art bank building"
+      },
+      "vers": {
+        "label": "Caisse de l'État",
+        "prompt": "a pixel art treasury safe"
+      }
+    },
+    {
+      "index": 10,
+      "type_scenario": "pd_versus",
+      "type": "pd_versus",
+      "texte_ecran": "Dépenses ou recettes ?",
+      "visuel": "balance pixel entre deux plateaux",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Faut-il réduire les dépenses ou augmenter les recettes pour combler cet écart ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1,
+      "gauche": {
+        "label": "Réduire les dépenses",
+        "prompt": "a pixel art scissors cutting a stack of red coins"
+      },
+      "droite": {
+        "label": "Augmenter les recettes",
+        "prompt": "a pixel art stack of gold coins rising"
+      }
+    },
+    {
+      "index": 11,
+      "type_scenario": "quiz",
+      "type": "pd_objet",
+      "texte_ecran": "Votre avis ?",
+      "visuel": "urne pixel avec un bulletin qui tombe",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le débat est ouvert : à vous de juger, en connaissance de cause.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "index": 12,
+      "type_scenario": "pd_tampon",
+      "type": "pd_tampon",
+      "texte_ecran": "Sans parti pris",
+      "visuel": "tampon pixel incliné sur fond ocre",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ici, pas de camp : des chiffres officiels, sans parti pris.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3,
+      "tampon": "SANS PARTI PRIS"
+    },
+    {
+      "index": 13,
+      "type_scenario": "outro",
+      "type": "pd_objet",
+      "texte_ecran": "Suivez l'éco",
+      "visuel": "pièce pixel qui tourne et s'arrête sur le logo",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Rendez-vous pour la prochaine vidéo sur l'économie.",
+          "expression": "content"
+        }
+      ],
+      "duration": 3.7
+    }
+  ],
+  "theme": {
+    "style": "pixeldoc",
+    "fond": "#1F1B16",
+    "texte": "#F4EBD9",
+    "accent": "#E0A526",
+    "accent2": "#D9573B",
+    "bandeau": null,
+    "police_titre": "Space Grotesk",
+    "police_texte": "Inter",
+    "grille": false
+  }
+}
