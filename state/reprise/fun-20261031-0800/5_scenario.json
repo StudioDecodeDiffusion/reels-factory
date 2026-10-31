@@ -7,145 +7,169 @@
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Saviez-vous qu'un animal produit des selles en forme de cube parfait sans aucun moule ?",
+     "texte": "Saviez-vous qu'un animal produit des crottes en forme de cube ?",
      "expression": "choc"
     }
    ]
   },
   {
-   "type": "fait",
+   "type": "pd_objet",
    "duree_s": 4.0,
-   "texte_ecran": "Rencontrez le wombat",
+   "texte_ecran": "Le wombat",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Bienvenue chez le wombat, ce petit marsupial australien qui bouscule toutes nos lois de la géométrie.",
+     "texte": "Ce petit marsupial australien, le wombat, bouscule toutes nos lois de la géométrie.",
      "expression": "sourire"
     }
    ]
   },
   {
-   "type": "chiffre",
+   "type": "counter",
    "duree_s": 4.0,
    "texte_ecran": "Jusqu'à cent par nuit",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Chaque nuit, cet animal dépose jusqu'à cent petits cubes d'environ deux centimètres.",
+     "texte": "Chaque nuit, il dépose jusqu'à cent petits cubes d'environ deux centimètres chacun.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "fait",
+   "type": "pd_flux",
    "duree_s": 4.0,
    "texte_ecran": "Pourquoi des cubes ?",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Pourquoi des cubes ? Des chercheurs se sont penchés sur ses intestins, pour de bon.",
+     "texte": "Pourquoi des cubes ? Pour l'instant, la nature ne nous a laissé aucune notice.",
      "expression": "sourire"
     }
    ]
   },
   {
-   "type": "fait",
+   "type": "pd_jauge",
    "duree_s": 4.0,
-   "texte_ecran": "Une digestion très lente",
+   "texte_ecran": "Deux semaines de digestion",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Toute la digestion prend environ deux semaines : le wombat ne se presse jamais, lui.",
+     "texte": "Toute la digestion prend environ deux semaines. Le wombat ne se presse jamais.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "versus",
-   "duree_s": 4.0,
-   "texte_ecran": "Un intestin, pas un moule",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Pas de moule : la paroi de l'intestin façonne la matière.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "fait",
-   "duree_s": 4.0,
-   "texte_ecran": "Élasticité variable",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Cette paroi n'a pas la même élasticité partout, et cela façonne la forme.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "fait",
-   "duree_s": 4.0,
-   "texte_ecran": "Des cubes bien nets",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Les cubes sortent bien nets, sans notice de montage ni outil.",
-     "expression": "sourire"
-    }
-   ]
-  },
-  {
-   "type": "chiffre",
-   "duree_s": 4.0,
-   "texte_ecran": "Prix Ig Nobel",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Le wombat a même décroché un prix Ig Nobel, celui qui récompense les recherches qui font rire.",
-     "expression": "ironie"
-    }
-   ]
-  },
-  {
-   "type": "fait",
+   "type": "pd_versus",
    "duree_s": 4.0,
    "texte_ecran": "Glaçons carrés",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Pendant ce temps, nous, on fait des glaçons carrés et on trouve ça génial.",
+     "texte": "Nous, on rêve de glaçons carrés. Lui, il en fait sans y penser.",
+     "expression": "ironie"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "Seul animal connu",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Seul animal connu à faire ça : aucun concurrent à l'horizon.",
      "expression": "sourire"
     }
    ]
   },
   {
-   "type": "chute",
+   "type": "pd_objet",
    "duree_s": 4.0,
-   "texte_ecran": "Le génie de l'évolution",
+   "texte_ecran": "Environ 2 cm",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "La nature reste la meilleure bricoleuse, même quand le résultat est franchement improbable.",
+     "texte": "Chaque cube tient à peu près sur un petit dé à jouer.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4.0,
+   "texte_ecran": "Cube certifié",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Certifié cube, bien net, sans bavure.",
      "expression": "sourire"
     }
    ]
   },
   {
-   "type": "question",
+   "type": "quiz",
    "duree_s": 4.0,
-   "texte_ecran": "Plutôt cube ou sphère ?",
+   "texte_ecran": "Cube ou boule ?",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Connaissiez-vous le secret géométrique du wombat ? Dites-le-nous tout de suite en commentaire !",
+     "texte": "Un test rapide : cube ou boule, quelle forme choisiriez-vous pour vos crottes ?",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "kinetic",
+   "duree_s": 4.0,
+   "texte_ecran": "La nature bricole",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La nature reste la meilleure bricoleuse, même quand le résultat est improbable.",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "bigstat",
+   "duree_s": 4.0,
+   "texte_ecran": "Jusqu'à 100 par nuit",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Jusqu'à cent par nuit : ça, c'est une vraie production industrielle.",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "reaction",
+   "duree_s": 4.0,
+   "texte_ecran": "Sport de haut niveau",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Bon, on a compris : chez lui, la géométrie est un sport de haut niveau.",
+     "expression": "ironie"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "duree_s": 4.0,
+   "texte_ecran": "Vous connaissiez ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Dites-le-nous en commentaire : vous connaissiez ce secret géométrique du wombat ?",
      "expression": "sourire"
     }
    ]
   }
  ],
- "legende": "Le wombat produit jusqu'à 100 cubes par nuit ! 🔲\n\nC'est le seul animal connu à produire des crottes en forme de cube, et la forme vient de la paroi de son intestin. Chaque cube fait environ 2 cm, et toute la digestion dure à peu près deux semaines.\n\nTu savais que la nature faisait du Lego ? 👇\nEnvoie-la à quelqu'un qui manque de géométrie dans sa vie 📤\nSources : Wikipédia (en), article « Wombat feces »",
+ "legende": "Le wombat produit jusqu'à 100 cubes par nuit ! 🔲\n\nC'est le seul animal connu à produire des crottes en forme de cube. Chaque cube fait environ 2 cm, et toute la digestion dure à peu près deux semaines.\n\nTu savais que la nature faisait du Lego ? 👇\nEnvoie-la à quelqu'un qui manque de géométrie dans sa vie 📤\nSources : Wikipédia (en), article « Wombat feces »",
  "hashtags": [
   "#science",
   "#wombat",

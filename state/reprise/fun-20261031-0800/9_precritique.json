@@ -1,0 +1,15 @@
+{
+  "decision": "retour",
+  "motifs": [
+    "Durée : le scénario compte 12 plans de 4 s, soit 48 s, sous le minimum de 55 s. La DA prévoit 55 s. Allonger le scénario à au moins 55 s (une scène de plus, ou des plans plus longs).",
+    "Cohérence scénario / DA : la DA a été écrite sans le scénario (note_scenario de 6_da.json). Elle compte 14 scènes, le scénario en compte 12, et leur contenu diverge : « Prix Ig Nobel », « Une digestion très lente » et « Élasticité variable » ne correspondent pas aux mêmes scènes ; « Nuit → matin », « Ronde ? Cube ? » et « Pile propre » n'apparaissent pas dans le scénario. Réaligner la DA sur le scénario final.",
+    "Types de plans hors liste autorisée : le scénario utilise fait, chiffre, chute et question, qui ne figurent pas dans les scènes autorisées (hook, outro, pd_*). Les remplacer par les types autorisés ou valider l'équivalence.",
+    "Fait non confirmé : la mécanique « paroi de l'intestin qui façonne la forme » (plans 6 et 7 du scénario, scènes 4 et 5 de la DA, légende) ne repose que sur un extrait de titre d'un résultat de recherche, sans source ouverte. Retirer cette explication ou la remplacer par la seule formulation vérifiée.",
+    "Déduction non sourcée : « les autres animaux ont des crottes rondes » (scène 6 de la DA, « LES AUTRES : ROND ») découle seulement de « seul animal connu ». Reformuler sans affirmer la forme des crottes des autres animaux.",
+    "Points conformes : dialogue d'environ 165 mots (cible 160-170), 12 à 14 scènes de 3,5 à 4 s, chiffres vérifiés (jusqu'à 100 par nuit, environ 2 cm, environ 2 semaines), ton décalé sans personne réelle visée, aucune mention d'IA, pas d'image de presse."
+  ],
+  "faits_faux": [
+    "« La forme des crottes vient de la paroi de l'intestin / de son élasticité variable » (scénario plans 6-7, DA scènes 4-5, légende) : non confirmé par une source ouverte. À retirer.",
+    "« Les autres animaux ont des crottes rondes » (DA scène 6) : déduction non sourcée. À reformuler."
+  ]
+}
