@@ -1,0 +1,56 @@
+{
+  "compte": "fun",
+  "plateforme": "instagram",
+  "sujet": "Le wombat, seul animal connu à produire des crottes en forme de cube",
+  "sujet_source": "brouillon 5_scenario.json (sujet wombat), vérifié ; aucun sujet de la veille du dossier n'est adapté au compte fun (la veille du dossier est vide de sujet choisi)",
+  "angle": "Décalé et complice : une anomalie de la nature qui fait passer la géométrie du wombat pour du bricolage",
+  "titre_miniature": "Le wombat fabrique des crottes en cube",
+  "mots_choc": "CUBE PARFAIT",
+  "surtitre_miniature": "Le wombat · chaque nuit",
+  "faits_verifies": [
+    {
+      "fait": "Les crottes du wombat sont les seules crottes animales connues en forme de cube.",
+      "statut": "verifie",
+      "source": "https://en.wikipedia.org/wiki/Wombat_feces"
+    },
+    {
+      "fait": "Le wombat produit jusqu'à 100 crottes par nuit, d'environ 2 cm chacune.",
+      "statut": "verifie_avec_correction",
+      "source": "https://en.wikipedia.org/wiki/Wombat_feces",
+      "note": "La source dit « up to 100 droppings a night » : c'est un maximum, pas « exactement cent ». Le brouillon disait « exactement cent » : faux, corrigé en « jusqu'à cent »."
+    },
+    {
+      "fait": "Le système digestif du wombat prend environ deux semaines.",
+      "statut": "verifie_partiellement",
+      "source": "https://en.wikipedia.org/wiki/Wombat_feces",
+      "note": "La source dit « around two weeks » (et « several days » pour les intestins). Le chiffre 8 à 14 jours du brouillon n'est pas confirmé : retiré, on garde « environ deux semaines »."
+    },
+    {
+      "fait": "Le wombat a remporté un prix Ig Nobel pour ses crottes.",
+      "statut": "verifie_sans_annee",
+      "source": "https://en.wikipedia.org/wiki/Wombat_feces",
+      "note": "La source ne donne ni l'année ni la catégorie. L'année 2019 et la mention « Soft Matter 2018 » du brouillon ne sont pas confirmées par la source : retirées."
+    },
+    {
+      "fait": "L'élasticité variable de la paroi intestinale joue un rôle dans la forme des crottes.",
+      "statut": "verifie_partiellement",
+      "source": "https://tweakyourbiz.com/posts/j-wombats-produce-cube-shaped-droppings-the-only-animal-on-earth-known-to-do-so-and-researchers-studying-their-intestines-in-2018-found-that-varying-elasticity-along-the-gut-walls-slowly-shapes-the-wa",
+      "note": "Extrait de titre seulement (résultat de recherche, page non ouverte). Formulé de façon générale, sans détail de mécanisme."
+    }
+  ],
+  "faits_retires": [
+    "« exactement cent cubes par nuit » : remplacé par « jusqu'à cent ».",
+    "« digestion de 8 à 14 jours » : non confirmé, retiré.",
+    "« Soft Matter Journal (2018) » et « Prix Ig Nobel de Physique (2019) » : non confirmés par la source, retirés.",
+    "« les angles empêchent les crottes de rouler » et « baliser son territoire en hauteur » : non vérifiés, retirés.",
+    "« les ingénieurs étudient ce procédé pour façonner des matériaux rares » : non sourcé, retiré."
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Wombat_feces"
+  ],
+  "sources_pistes_non_ouvertes": [
+    "https://www.smithsonianmag.com/smart-news/scientists-have-solved-mystery-how-wombats-poop-cubes-180976898/",
+    "https://gizmodo.com/scientists-learn-even-more-about-wombats-and-their-beau-1846159392"
+  ],
+  "sons_formats": "Non vérifiés dans cette passe (hors périmètre : une seule vérification demandée)."
+}

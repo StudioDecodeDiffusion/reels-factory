@@ -1,0 +1,163 @@
+{
+  "id": "fun-20261031-0800",
+  "compte": "fun",
+  "agent": 6,
+  "sujet": "Le wombat, seul animal connu à produire des crottes en forme de cube",
+  "titre_miniature": "Le wombat fabrique des crottes en cube",
+  "mots_choc": "CUBE PARFAIT",
+  "surtitre_miniature": "Le wombat · chaque nuit",
+  "note_scenario": "5_scenario.json absent au moment de la rédaction : les scènes ci-dessous suivent le concept (4_concept.json) et les faits vérifiés. À réaligner si le scénario change les faits ou l'ordre.",
+  "style_visuel": {
+    "nom": "pixeldoc Décodé, fun",
+    "description": "Pixel art 2D, sprites nets, aplats sans dégradé, contour sombre net. Personnage original : wombat rond, trapu, yeux ronds. Cadre vertical 9:16 (1080x1920). Grille pixel de base 64x64 agrandie en net, pas de flou.",
+    "regles": [
+      "Aucun visage humain réel, aucune image de presse, aucun logo, aucune marque.",
+      "Aucune mention d'IA dans l'image, les étiquettes ou la miniature.",
+      "Texte à l'écran en police pixel, 3 mots maximum par étiquette, rien ne déborde du cadre.",
+      "Une seule idée visuelle par plan ; le cube est toujours la forme la plus nette de l'image.",
+      "Ton décalé et complice : le wombat est sérieux, la scène est absurde, jamais moqueur envers une personne réelle."
+    ],
+    "mecanisme_anime": "Le cube tombe au sol en pixels, rebondit une fois et s'aligne sur la pile (scènes 2 et 13)."
+  },
+  "palette": {
+    "fond_nuit": "#14123A",
+    "ombre": "#0B0A22",
+    "wombat": "#B9793F",
+    "wombat_ventre": "#E8B57A",
+    "cube_creme": "#F6E7B4",
+    "accent_vert": "#7CFF6B",
+    "accent_rose": "#FF5CA8",
+    "texte": "#FFFFFF",
+    "texte_sur_accent": "#0B0A22",
+    "usage": "Fond nuit pour les scènes de nuit, cube creme toujours mis en avant, accent vert pour le chiffre, rose pour les mots choc."
+  },
+  "musique": {
+    "style": "Chiptune décalé et léger, percussions sèches, basse pizzicato, ~112 BPM, pas de voix chantée.",
+    "montee": "Montée de synthé sur la scène 6 (versus), retour au calme sur la scène 8.",
+    "source": "Banque de sons libre de droits, licence à consigner dans la légende si requise. Pas de titre protégé."
+  },
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "duree_s": 3.5,
+      "texte_ecran": "CUBE PARFAIT",
+      "prompt_image": "pixel art round brown wombat at night in a dark forest clearing, a perfect small cube dropping from its rear, wide-eyed serious face, limited palette, flat colors, thick dark outline, vertical 9:16, no text",
+      "intention": "Accroche : l'anomalie visible dès la première seconde."
+    },
+    {
+      "n": 2,
+      "type": "pd_objet",
+      "duree_s": 4,
+      "texte_ecran": "≈ 2 CM",
+      "prompt_image": "pixel art close-up of a single cream-colored cube dropping pellet on green moss, a tiny pixel ruler beside it, flat colors, thick outline, vertical 9:16, no text",
+      "intention": "Fait : taille d'une crotte, environ 2 cm."
+    },
+    {
+      "n": 3,
+      "type": "pd_chiffre",
+      "duree_s": 4,
+      "texte_ecran": "JUSQU'À 100 / NUIT",
+      "prompt_image": "pixel art wombat standing beside a large pile of small cream cubes, night sky, pixel stars, flat colors, vertical 9:16, no text",
+      "intention": "Chiffre : jusqu'à 100 par nuit (un maximum, pas un nombre exact)."
+    },
+    {
+      "n": 4,
+      "type": "pd_flux",
+      "duree_s": 4,
+      "texte_ecran": "INTESTIN → CUBE",
+      "prompt_image": "pixel art side cutaway of a wombat body, intestine drawn as a pixel tube, arrow flowing through, a cube forming at the end, flat colors, vertical 9:16, no text",
+      "intention": "Fait : la forme se fait dans l'intestin."
+    },
+    {
+      "n": 5,
+      "type": "pd_jauge",
+      "duree_s": 4,
+      "texte_ecran": "PAROI ÉLASTIQUE",
+      "prompt_image": "pixel art gauge meter in the shape of an intestinal wall, needle sliding from soft pink to firm cream, flat colors, thick outline, vertical 9:16, no text",
+      "intention": "Fait : l'élasticité variable de la paroi joue un rôle. Formulé sans détail de mécanisme."
+    },
+    {
+      "n": 6,
+      "type": "pd_versus",
+      "duree_s": 4,
+      "texte_ecran": "LES AUTRES : ROND",
+      "prompt_image": "pixel art split screen, left side a round pellet on a rock, right side a wombat with a perfect cube, sharp contrast, flat colors, vertical 9:16, no text",
+      "intention": "Versus : forme ronde chez les autres animaux, cube chez le wombat."
+    },
+    {
+      "n": 7,
+      "type": "pd_tampon",
+      "duree_s": 3.5,
+      "texte_ecran": "SEUL ANIMAL CONNU",
+      "prompt_image": "pixel art wombat posing proudly in front of a pixel stamp graphic, cream cube at its feet, flat colors, vertical 9:16, no text",
+      "intention": "Fait : seul animal connu à produire des crottes cubiques."
+    },
+    {
+      "n": 8,
+      "type": "pd_chiffre",
+      "duree_s": 4,
+      "texte_ecran": "ENVIRON 2 SEMAINES",
+      "prompt_image": "pixel art calendar-style strip with a wombat walking through days, a cube at the end of the strip, flat colors, vertical 9:16, no text",
+      "intention": "Fait : la digestion dure environ deux semaines (sans précision de jours)."
+    },
+    {
+      "n": 9,
+      "type": "pd_objet",
+      "duree_s": 4,
+      "texte_ecran": "PILE PROPRE",
+      "prompt_image": "pixel art neat stack of cream cubes arranged like bricks on a dark wood floor, flat colors, thick outline, vertical 9:16, no text",
+      "intention": "Visuel décoratif sans affirmation factuelle nouvelle."
+    },
+    {
+      "n": 10,
+      "type": "pd_flux",
+      "duree_s": 4,
+      "texte_ecran": "NUIT → MATIN",
+      "prompt_image": "pixel art timeline from a dark night sky to a sunrise, a wombat trail of cubes across the ground, flat colors, vertical 9:16, no text",
+      "intention": "Rythme : la production se fait pendant la nuit."
+    },
+    {
+      "n": 11,
+      "type": "pd_versus",
+      "duree_s": 4,
+      "texte_ecran": "RONDE ? CUBE ?",
+      "prompt_image": "pixel art two pellets side by side on a pedestal, one round, one a cube with a question mark floating above, flat colors, vertical 9:16, no text",
+      "intention": "Question fermée au spectateur, avant la chute finale."
+    },
+    {
+      "n": 12,
+      "type": "pd_jauge",
+      "duree_s": 4,
+      "texte_ecran": "FORME : CUBE",
+      "prompt_image": "pixel art gauge meter fully filled with cream cube icon, green needle at the top, flat colors, vertical 9:16, no text",
+      "intention": "Jauge pleine : la forme cubique est bien le résultat."
+    },
+    {
+      "n": 13,
+      "type": "pd_tampon",
+      "duree_s": 4,
+      "texte_ecran": "CUBE PARFAIT",
+      "prompt_image": "pixel art big pink stamp over a cream cube on a night background, wombat peeking from behind, flat colors, vertical 9:16, no text",
+      "intention": "Reprise du mot choc, ferme la boucle avec la miniature."
+    },
+    {
+      "n": 14,
+      "type": "outro",
+      "duree_s": 4,
+      "texte_ecran": "À TOI DE DIRE",
+      "prompt_image": "pixel art wombat waving at the viewer, one small cube beside it, night sky, flat colors, vertical 9:16, no text",
+      "intention": "Sortie : question dans la légende (👇) et partage ciblé."
+    }
+  ],
+  "duree_totale_s": 55.0,
+  "contraintes_respectees": [
+    "14 scènes de 3,5 à 4 s, total 55,0 s (minimum 55 s, à la limite : allonger une scène si le scénario ajoute du texte).",
+    "Seuls les faits vérifiés dans 4_concept.json apparaissent (100 = maximum, environ 2 cm, environ 2 semaines, sans année Ig Nobel, sans mécanisme détaillé).",
+    "Scènes uniquement dans la liste autorisée (hook, pd_objet, pd_chiffre, pd_flux, pd_jauge, pd_versus, pd_tampon, outro)."
+  ],
+  "a_verifier": [
+    "Scène 6 : « les autres animaux ont des crottes rondes » est une déduction de « seul animal connu » ; à valider dans le scénario si la formule change.",
+    "Musique : choisir le morceau dans la banque libre ; aucune piste n'est fixée ici."
+  ]
+}
