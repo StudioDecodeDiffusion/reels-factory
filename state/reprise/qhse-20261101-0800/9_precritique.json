@@ -1,0 +1,54 @@
+{
+  "id": "qhse-20261101-0800",
+  "compte": "qhse",
+  "agent": "7.4",
+  "role": "pre-critique (scenario + DA)",
+  "date": "2026-11-01",
+  "decision": "go",
+  "raison": "Aucun défaut bloquant : chiffres (11, 50, 40 ans) tous présents dans faits_verifies, aucune sanction chiffrée, R4121-1 absent de l'écran, dialogue, légende et DA, aucune mention d'IA, voix V2 assignée, durée 56 à 59 s (≥ 55 s). Points de correction non bloquants ci-dessous.",
+  "defauts_bloquants": [],
+  "verifications": {
+    "contenu_interdit": "conforme : aucun faux chiffre, aucune sanction chiffrée, aucune citation inventée, aucune image de presse ni visage réel",
+    "faits": "conformes aux faits_verifies (R4121-2 : 11 salariés ; L4121-3-1 II : 50 salariés ; L4121-3-1 : conservation 40 ans)",
+    "R4121-1": "absent de l'écran, du dialogue, de la légende et de la DA",
+    "mention_IA": "absente (vidéo, légende, DA)",
+    "voix": "V2 assignée dans concept, scénario et DA",
+    "duree": "scénario 59 s, DA 56 s : au-dessus de 55 s",
+    "dialogue_mots": "déclaré 163 ; recompté environ 169 hors phrase de référence, environ 179 avec (voir corrections)",
+    "enums_coherents": "palette bleu_nuit, musique pulsation, accroche contraste_realite, fonctionnement pas_a_pas, voix V2 identiques dans les trois fichiers et différentes de la dernière vidéo (question_choc, explication_mecanisme, tension, V1+V3, vert_terminal)",
+    "enums_listes_autorisees": "non confirmées : seuls les quatre fichiers demandés ont été lus"
+  },
+  "corrections": [
+    {
+      "categorie": "legende",
+      "severite": "non_bloquant",
+      "constat": "Le crédit de licence des voix est absent en fin de légende. La règle est pourtant dans le dossier (« seul le crédit de licence des voix reste en fin de légende »).",
+      "action": "Ajouter le crédit de licence des voix en dernière ligne de la légende."
+    },
+    {
+      "categorie": "dialogue",
+      "severite": "finition",
+      "constat": "Le compte de mots déclaré (163) ne correspond pas au recomptage : environ 169 mots sans la phrase « Référence : ... », environ 179 avec. La cible est 160 à 170.",
+      "action": "Vérifier le compte ; raccourcir d'une dizaine de mots si la phrase de référence est comptée."
+    },
+    {
+      "categorie": "cohérence_scenario_DA",
+      "severite": "non_bloquant",
+      "constat": "Le scénario compte 15 scènes (59 s) et la DA 14 scènes à 4 s (56 s). Les types diffèrent : hook, quiz, bigstat, checklist et timeline sont dans le scénario mais pas dans la DA ; la DA repose surtout sur des pd_*.",
+      "action": "Aligner le nombre de scènes et les types lors de l'assemblage du 7_spec.json."
+    },
+    {
+      "categorie": "DA",
+      "severite": "finition",
+      "constat": "Scène 13 de la DA : « tampon vert », alors que la palette bleu_nuit n'a pas de vert (accent_2 jaune, contraste rouge).",
+      "action": "Remplacer par une couleur de la palette (accent ou accent_2)."
+    },
+    {
+      "categorie": "sujet",
+      "severite": "note",
+      "constat": "Le sujet DUERP ne figure pas dans la veille du dossier (liste vide à « Sujet »). Le sujet reste évergreen et conforme au compte QSE.",
+      "action": "Aucune si la décision est prise par le Manager ; à noter pour la traçabilité."
+    }
+  ],
+  "suite": "9_precritique.json = go : passer à 7_spec.json (tool spec)."
+}
