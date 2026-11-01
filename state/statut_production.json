@@ -254,5 +254,32 @@
    "etape": "Agent 8 check",
    "resultat": "ARRÊT — check en erreur après correction : schéma pixeldoc incomplet (quiz, flux, jauge, versus, tampon, kinetic, counter, thème). Correction exigerait d'inventer contenus. Pas de dépôt."
   }
+ ],
+ "qhse-20261101-0800": [
+  {
+   "heure": "04:50",
+   "etape": "démarrage",
+   "resultat": "OK : créneau qhse 08 h 00, dossier créé"
+  },
+  {
+   "heure": "04:51",
+   "etape": "étape 4 concept",
+   "resultat": "OK : sujet DUERP, concept écrit (4_concept.json)"
+  },
+  {
+   "heure": "04:52",
+   "etape": "étapes 5 et 6",
+   "resultat": "OK : scénario et DA écrits (5_scenario.json, 6_da.json)"
+  },
+  {
+   "heure": "04:53",
+   "etape": "étape 7 pré-critique",
+   "resultat": "OK : GO (9_precritique.json), corrections non bloquantes notées"
+  },
+  {
+   "heure": "04:54",
+   "etape": "étape 8 spec",
+   "resultat": "BLOQUÉ : tool spec ne lit pas le format des fichiers 5/6 (plans[].dialogue absent de 5_scenario.json ; dialogue au niveau scène absent de 6_da.json). Fichiers 4/6 corrigés en format seulement. Aucune vidéo déposée."
+  }
  ]
 }
