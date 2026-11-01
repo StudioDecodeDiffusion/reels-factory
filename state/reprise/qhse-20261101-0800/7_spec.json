@@ -1,0 +1,176 @@
+{
+ "id": "qhse-20261101-0800",
+ "compte": "qhse",
+ "style": "pixeldoc",
+ "palette": "bleu_nuit",
+ "couleurs": {
+  "fond": "#0b1a33",
+  "texte": "#e8f0ff",
+  "accent": "#4fa3ff",
+  "accent_2": "#ffc857",
+  "contraste": "#ff6b6b"
+ },
+ "accroche": "contraste_realite",
+ "fonctionnement": "pas_a_pas",
+ "mise_en_page": "plein_ecran",
+ "duree_cible_s": 56,
+ "regles": {
+  "titres_courts": true,
+  "rien_ne_deborde": true,
+  "pas_de_montant_de_sanction": true,
+  "pas_de_R4121-1": true,
+  "pas_de_mention_IA": true
+ },
+ "musique": {
+  "genre": "pulsation",
+  "volume": 0.4
+ },
+ "variete": {
+  "trend": ""
+ },
+ "titre_miniature": "DUERP : une mise à jour annuelle obligatoire",
+ "mots_choc": "annuelle obligatoire",
+ "surtitre_miniature": "R4121-2 · Code du travail",
+ "scenes": [
+  {
+   "n": 1,
+   "type": "pd_objet",
+   "duree_s": 4,
+   "titre": "DUERP",
+   "etiquette": "Document unique",
+   "mecanisme_anime": "la fiche se déploie page par page",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 2,
+   "type": "pd_tampon",
+   "duree_s": 4,
+   "titre": "Figé ?",
+   "etiquette": "Non",
+   "mecanisme_anime": "tampon qui s'abat sur la fiche",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 3,
+   "type": "pd_flux",
+   "duree_s": 4,
+   "titre": "Le cycle",
+   "etiquette": "Risques > Mise à jour > Transmission",
+   "mecanisme_anime": "flèches qui se tracent une à une",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 4,
+   "type": "pd_objet",
+   "duree_s": 4,
+   "titre": "R4121-2",
+   "etiquette": "Code du travail",
+   "mecanisme_anime": "étiquette qui glisse sur la fiche",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 5,
+   "type": "pd_chiffre",
+   "duree_s": 4,
+   "titre": "11",
+   "etiquette": "salariés et plus",
+   "mecanisme_anime": "compteur qui s'incrémente jusqu'à 11",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 6,
+   "type": "pd_jauge",
+   "duree_s": 4,
+   "titre": "Chaque année",
+   "etiquette": "Mise à jour minimale",
+   "mecanisme_anime": "jauge qui se remplit jusqu'à 100 %",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 7,
+   "type": "pd_versus",
+   "duree_s": 4,
+   "titre": "Papier figé",
+   "etiquette": "Document vivant",
+   "mecanisme_anime": "les deux colonnes s'échangent",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 8,
+   "type": "pd_flux",
+   "duree_s": 4,
+   "titre": "Changement",
+   "etiquette": "Modification importante",
+   "mecanisme_anime": "un nouveau bloc s'insère dans la chaîne",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 9,
+   "type": "pd_objet",
+   "duree_s": 4,
+   "titre": "L4121-3-1",
+   "etiquette": "Contenu et traçabilité",
+   "mecanisme_anime": "lignes de risques qui s'alignent",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 10,
+   "type": "pd_flux",
+   "duree_s": 4,
+   "titre": "Transmission",
+   "etiquette": "Service de santé au travail",
+   "mecanisme_anime": "enveloppe qui part vers la droite",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 11,
+   "type": "pd_chiffre",
+   "duree_s": 4,
+   "titre": "40 ans",
+   "etiquette": "Conservation minimale",
+   "mecanisme_anime": "chiffre qui pulse à chaque battement",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 12,
+   "type": "pd_chiffre",
+   "duree_s": 4,
+   "titre": "50",
+   "etiquette": "salariés : programme annuel",
+   "mecanisme_anime": "compteur qui monte puis se fige",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 13,
+   "type": "pd_tampon",
+   "duree_s": 4,
+   "titre": "À jour",
+   "etiquette": "Référence exacte",
+   "mecanisme_anime": "tampon vert qui s'imprime",
+   "dialogue": [],
+   "duration": 3.5
+  },
+  {
+   "n": 14,
+   "type": "outro",
+   "duree_s": 4,
+   "titre": "R4121-2 · L4121-3-1",
+   "etiquette": "Code du travail",
+   "mecanisme_anime": "aucun",
+   "dialogue": [],
+   "duration": 3.5
+  }
+ ]
+}
