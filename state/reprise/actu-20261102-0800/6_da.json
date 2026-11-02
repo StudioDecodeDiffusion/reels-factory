@@ -1,0 +1,74 @@
+{
+  "id": "actu-20261102-0800",
+  "compte": "actu",
+  "agent": 6,
+  "date_production": "2026-11-02",
+  "style_visuel": {
+    "style": "pixeldoc",
+    "principe": "Dessin pixel-art documentaire : personnages originaux stylisés (aucun visage réel, aucun visage identifiable), cadrages larges, foules vues de dos ou silhouettes, aucune image de presse, aucun deepfake. Rien de violent à l'écran : pas de heurts montrés, pas de fumée, pas de feu, pas de forces de l'ordre dessinées.",
+    "typo": {"titre": "Rubik", "texte": "Rubik"},
+    "signature": "bandeau rouge en haut avec la date du jour (02/11)",
+    "titres_etiquettes": "courts (3 mots max par étiquette) ; rien ne doit déborder du cadre 9:16"
+  },
+  "palette": {
+    "nom": "nuit_orange_bleu",
+    "fond": "#0E1116",
+    "texte": "#F4F1EA",
+    "accent": "#FF5A36",
+    "accent2": "#3FA7FF",
+    "jaune": "#FFD23F",
+    "note": "Palette différente de la dernière vidéo (papier_encre_rouge), tirée de la charte du compte."
+  },
+  "mise_en_page": "pixeldoc",
+  "accroche": "chiffre_choc_question",
+  "accroche_detail": "Chiffre 10 000 en 1re seconde, puis titre miniature en question. Remplace constat_choc de la dernière vidéo.",
+  "fonctionnement": "pd_flux",
+  "fonctionnement_detail": "Flux animé : les revendications partent de la rue et heurtent une porte fermée (pouvoir). Mécanisme animé présent dès la scène 8. Remplace jauge_smic.",
+  "musique": {
+    "ambiance": "curieux",
+    "bpm_indicatif": "100-110",
+    "note": "Remplace tension ; ambiance d'enquête légère, sans percussion agressive. Choix du profil par défaut."
+  },
+  "voix": {
+    "scenes_1_8": "narrateur chatterbox:fr?exag=0.6&cfg=0.4",
+    "scenes_9_14": "mascotte chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3, effet aigu",
+    "note": "Alternance narrateur / mascotte pour changer par rapport à V1. Identifiant V2 non présent dans le profil : à confirmer."
+  },
+  "titre_miniature": "Marseille : 10 000 manifestants, et le pouvoir ?",
+  "mots_choc": "10 000 DANS LA RUE",
+  "surtitre": "Marseille · 31/10",
+  "duree_cible_s": 56,
+  "scenes": [
+    {"n": 1, "duree_s": 4, "type": "hook", "voix": "narrateur", "texte_ecran": "10 000 DANS LA RUE", "visuel": "Foule pixel vue de dos, silhouettes serrées sur fond de ville nocturne, chiffre géant qui tombe dans le cadre.", "prompt_image": "pixel art documentary style, wide shot from behind, dense crowd of original anonymous silhouettes walking down a city street at dusk, Marseille-like seafront buildings in background, orange and blue lighting, no visible faces, no violence, no police, flat vector pixel grid, dark navy background #0E1116, orange accent #FF5A36, 9:16 vertical"},
+    {"n": 2, "duree_s": 4, "type": "bigstat", "voix": "narrateur", "texte_ecran": "SAMEDI 31 OCTOBRE · MARSEILLE", "visuel": "Calendrier pixel avec le 31 entouré, petite silhouette de ville en bas.", "prompt_image": null},
+    {"n": 3, "duree_s": 4, "type": "pd_chiffre", "voix": "narrateur", "texte_ecran": "~10 000", "sous_texte": "selon la préfecture", "visuel": "Compteur pixel qui monte puis se fige ; mention « selon la préfecture » obligatoire.", "prompt_image": null},
+    {"n": 4, "duree_s": 4, "type": "pd_objet", "voix": "narrateur", "texte_ecran": "LA PLAINE", "visuel": "Carte stylisée de Marseille, épingle orange sur le quartier de La Plaine, sans détail de rue.", "prompt_image": "pixel art minimal map of Marseille, simplified coastline and streets, single orange pin marker, dark background #0E1116, no text labels other than LA PLAINE, 9:16 vertical"},
+    {"n": 5, "duree_s": 4, "type": "pancartes", "voix": "narrateur", "texte_ecran": "SALAIRES · SERVICES PUBLICS · FIN DU MOIS", "visuel": "Trois pancartes pixel tenues par des silhouettes anonymes, libellés génériques illustratifs.", "prompt_image": "pixel art, three hand-held protest placards held by anonymous silhouettes, blank-ish placards with short generic words SALAIRES, SERVICES PUBLICS, FIN DU MOIS, no faces, no violence, orange and cream palette, dark background, 9:16 vertical"},
+    {"n": 6, "duree_s": 4, "type": "timeline", "voix": "narrateur", "texte_ecran": "Parcours improvisé → Heurts à La Plaine → Bilan préfecture", "visuel": "Frise horizontale à trois jalons pixel, le dernier jalon en jaune.", "prompt_image": null},
+    {"n": 7, "duree_s": 4, "type": "checklist", "voix": "narrateur", "texte_ecran": "Fins de mois · Austérité · Réponses ?", "visuel": "Liste à cases : deux premières cases cochées, la troisième vide et clignotante.", "prompt_image": null},
+    {"n": 8, "duree_s": 4, "type": "pd_flux", "voix": "narrateur", "texte_ecran": "La rue → Le pouvoir", "visuel": "Flux animé de petits carrés orange partant de la rue, buter sur une porte pixel fermée en bleu.", "prompt_image": null},
+    {"n": 9, "duree_s": 4, "type": "quiz", "voix": "mascotte", "texte_ecran": "Qui doit répondre ?", "visuel": "Trois réponses pixel : Le gouvernement · Les élus · Les employeurs ; réponse mise en avant à la fin de la scène.", "prompt_image": null},
+    {"n": 10, "duree_s": 4, "type": "pd_versus", "voix": "mascotte", "texte_ecran": "Ce que dit la préfecture VS Ce que vivent les gens", "visuel": "Deux colonnes pixel, colonne de gauche grisée, colonne de droite orange.", "prompt_image": null},
+    {"n": 11, "duree_s": 4, "type": "pd_jauge", "voix": "mascotte", "texte_ecran": "Dette publique : 95 % du PIB", "visuel": "Jauge pixel qui se remplit jusqu'à 95 %, couleur accent.", "prompt_image": null, "a_verifier": "chiffre issu d'un titre de presse de la veille, à confirmer avant publication, sinon retirer la scène et remplacer par un plan sans chiffre"},
+    {"n": 12, "duree_s": 4, "type": "kinetic", "voix": "mascotte", "texte_ecran": "LA RUE PARLE", "visuel": "Texte kinétique : mots qui apparaissent un par un, rythme rapide sur la musique.", "prompt_image": null},
+    {"n": 13, "duree_s": 4, "type": "ed_liste", "voix": "mascotte", "texte_ecran": "3 questions à poser", "visuel": "Liste numérotée pixel : 1 Fins de mois · 2 Austérité · 3 Dialogue.", "prompt_image": null},
+    {"n": 14, "duree_s": 4, "type": "outro", "voix": "mascotte", "texte_ecran": "Ces questions vous concernent-elles ? Abonne-toi pour l'actu décodée chaque soir", "visuel": "Question fermée en grand, bouton pixel « Abonne-toi » en bas, bandeau rouge.", "prompt_image": null}
+  ],
+  "sources_scenes": [
+    "France 3 Provence-Alpes-Côte d'Azur (franceinfo), 31/10 : bilan et chiffre préfectoral",
+    "La Clé Républicaine, 01/11 : 10 000 manifestants, heurts à La Plaine",
+    "BFM, 01/11 : parcours improvisé, dialogue"
+  ],
+  "points_de_doute": [
+    "Chiffre 10 000 = source préfectorale : toujours écrire « selon la préfecture ». Les organisateurs peuvent annoncer davantage.",
+    "Scène 11 : dette publique 95 % vient d'un titre de presse de la veille, non vérifié. A confirmer ou retirer.",
+    "Scène 7 et 10 : « réponses non apportées » et « ce que vivent les gens » sont des opinions de ligne éditoriale, non des faits sourcés. A valider par le Manager, ou reformuler en question.",
+    "Scène 5 : libellés de pancartes génériques et illustratifs, ce ne sont pas des citations de manifestants.",
+    "Aucune image de presse, aucun visage réel, aucune forces de l'ordre ni scène de heurts à l'écran (demande explicite du concept).",
+    "Voix V2 : identifiant non présent dans le profil ; alternance narrateur / mascotte proposée à la place.",
+    "Sujet sans entrée récente dans la file (concept) : le Manager doit confirmer le choix du sujet.",
+    "Durée : 14 scènes x 4 s = 56 s, au-dessus du minimum de 55 s."
+  ],
+  "statut": "a_valider_par_manager",
+  "mention_ia": ""
+}
