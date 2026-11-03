@@ -1,0 +1,53 @@
+{
+  "job": "eco-20261103-0800",
+  "compte": "eco",
+  "sujet": "Niches fiscales : ce qu'elles coûtent au budget de l'État",
+  "style": "pixeldoc",
+  "mise_en_page": "plein_cadre",
+  "accroche": "question",
+  "fonctionnement": "flux_argent",
+  "musique": "chiptune_doux",
+  "voix": "V2+V3",
+  "palette": "bleu_encre_papier",
+  "palette_couleurs": {
+    "fond": "#F4EFE3",
+    "encre": "#1B2433",
+    "accent_tampon": "#C8402A",
+    "flux_argent": "#E0A526",
+    "secondaire": "#2E7D6B",
+    "gris_note": "#6B7280"
+  },
+  "contraste": "encre sur fond : ratio élevé ; accent_tampon réservé aux gros titres et tampons (>= 48 px)",
+  "mecanisme_anime": {
+    "scene": "pd_flux",
+    "description": "Pixels dorés qui coulent depuis la case « Impôts » vers « Budget de l'État », puis une partie part vers « Niches » par un tuyau en pointillés",
+    "duree_s": 4
+  },
+  "regles_visuelles": [
+    "Aucun visage, aucune personne réelle dessinée ; objets, documents et flèches seulement",
+    "Aucune image de presse, aucun logo d'organisme",
+    "Titres 2 à 4 mots, étiquettes 1 à 3 mots, rien ne déborde du cadre",
+    "Une seule idée par scène ; chiffre en grand, source en petit en bas",
+    "Pas de mention d'IA dans l'image ni dans la légende"
+  ],
+  "scenes": [
+    {"n": 1, "type": "pd_chiffre", "titre": "88 Md€", "etiquette": "par an", "anime": "compteur qui monte de 0 à 88", "duree_s": 4},
+    {"n": 2, "type": "pd_objet", "titre": "Niches fiscales", "etiquette": "dépenses fiscales", "anime": "tampon « ANNEXE » qui s'imprime", "duree_s": 4},
+    {"n": 3, "type": "pd_flux", "titre": "L'argent change de route", "etiquette": "Impôts → Budget", "anime": "pixels dorés qui coulent", "duree_s": 4},
+    {"n": 4, "type": "pd_versus", "titre": "Dépense ou manque à recevoir ?", "etiquette_gauche": "Dépense directe", "etiquette_droite": "Niche fiscale", "anime": "les deux colonnes s'allument à tour de rôle", "duree_s": 4},
+    {"n": 5, "type": "pd_chiffre", "titre": "470", "etiquette": "niches recensées", "anime": "chiffre qui glisse en place", "duree_s": 3},
+    {"n": 6, "type": "pd_jauge", "titre": "15 niches", "etiquette": "plus de la moitié", "anime": "jauge qui se remplit au-delà de 50 %", "duree_s": 4},
+    {"n": 7, "type": "pd_flux", "titre": "Moins de recettes", "etiquette": "Budget → déficit", "anime": "flèche qui pointe vers « Déficit »", "duree_s": 4},
+    {"n": 8, "type": "pd_objet", "titre": "Qui en profite ?", "etiquette": "lignes par dispositif", "anime": "fiches qui se déplient une à une", "duree_s": 4},
+    {"n": 9, "type": "pd_jauge", "titre": "Le reste", "etiquette": "autres dispositifs", "anime": "jauge restante qui se vide", "duree_s": 3},
+    {"n": 10, "type": "pd_versus", "titre": "Le choix", "etiquette_gauche": "Garder", "etiquette_droite": "Revoir", "anime": "curseur qui bascule", "duree_s": 4},
+    {"n": 11, "type": "pd_tampon", "titre": "Source : PLF", "etiquette": "annexe dépenses fiscales", "anime": "tampon qui s'abaisse sur la page", "duree_s": 4},
+    {"n": 12, "type": "outro", "titre": "Faut-il revoir les niches ?", "etiquette": "dites-nous en commentaire", "anime": "point d'interrogation pixel qui clignote", "duree_s": 4}
+  ],
+  "textes_a_eviter": ["viral", "fyp", "IA", "intelligence artificielle", "deepfake"],
+  "verifications": {
+    "chiffres_affiches": ["88 Md€", "470", "15 niches", "plus de la moitié"],
+    "source_chiffres": "Annexe dépenses fiscales du PLF (ministère de l'Économie et des Finances), via 4_concept.json",
+    "chiffres_non_sourcés_retirés": true
+  }
+}

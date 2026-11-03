@@ -1,0 +1,192 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 3.8,
+   "texte_ecran": "Environ 88 Md€ par an",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Chaque année, les niches fiscales coûtent environ quatre-vingt-huit milliards d'euros au budget de l'État.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 3.8,
+   "texte_ecran": "Niche fiscale : définition",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Une niche fiscale est une réduction d'impôt accordée à un groupe précis de contribuables ou d'activités.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 3.8,
+   "texte_ecran": "Près de 470 niches",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le ministère de l'Économie en recense près de quatre cent soixante-dix.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 3.8,
+   "texte_ecran": "Moins de recettes pour l'État",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Chacune réduit les recettes de l'État sans passer par une dépense directe.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_jauge",
+   "duree_s": 3.8,
+   "texte_ecran": "15 dispositifs : plus de la moitié",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Quinze dispositifs concentrent plus de la moitié de ce montant.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 3.8,
+   "texte_ecran": "15 gros postes vs plus de 400 autres",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le reste se répartit entre plus de quatre cents autres dispositifs.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 3.8,
+   "texte_ecran": "Qui en profite ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Entreprises, ménages, secteurs entiers : les bénéficiaires varient.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 3.8,
+   "texte_ecran": "Soutien à l'activité",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pour leurs défenseurs, elles soutiennent l'activité et l'emploi.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 3.8,
+   "texte_ecran": "Recettes en moins",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pour leurs critiques, elles réduisent d'autant les recettes.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 3.8,
+   "texte_ecran": "Incitation vs finances",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "L'État doit donc arbitrer entre incitation économique et préservation de ses finances.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 3.8,
+   "texte_ecran": "Supprimer : gain vs effet",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Supprimer une niche rapporte, mais change le comportement des bénéficiaires.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_jauge",
+   "duree_s": 3.8,
+   "texte_ecran": "Coût budgétaire vs objectifs",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le débat porte sur le bon équilibre entre coût budgétaire et objectifs économiques.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "Environ 88 Md€, 470 niches",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Retenez : quatre-vingt-huit milliards, près de quatre cent soixante-dix niches, quinze dispositifs clés.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 3.8,
+   "texte_ecran": "Source : annexe PLF",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Tous ces chiffres viennent de l'annexe dépenses fiscales du PLF.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "duree_s": 4.0,
+   "texte_ecran": "Faut-il réduire les niches ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Selon vous, faut-il réduire les niches fiscales pour réduire le déficit ?",
+     "expression": "neutre"
+    }
+   ]
+  }
+ ],
+ "legende": "Environ 88 milliards d'euros par an : voici ce que coûtent réellement les niches fiscales à la France.\n\nUne niche fiscale est une réduction d'impôt accordée à un groupe précis de contribuables ou d'activités. L'État en recense près de 470, et 15 d'entre elles concentrent plus de la moitié du coût.\n\nFaut-il réduire le nombre de niches fiscales ? 👇\nEnvoie-la à quelqu'un qui suit les comptes publics 📤\nSources : Ministère de l'Économie et des Finances (annexe PLF)",
+ "hashtags": [
+  "#Economie",
+  "#NichesFiscales",
+  "#BudgetEtat",
+  "#PLF",
+  "#DecodeEco"
+ ]
+}
