@@ -1,51 +1,38 @@
 {
-  "date": "2026-10-26",
-  "source": "state/stats_actu.json (API Instagram, maj 26/10 07:51 UTC, 15 posts) ; state/suivi_actu.json (jours 18/10 a 26/10) ; state/feedback_cm_actu.json (agent 9, 26/10)",
+  "date": "2026-11-04",
+  "source": "state/stats_actu.json (API Instagram, maj 04/11 14:57 UTC, 25 posts du 17/10 au 29/10) ; state/abonnes_actu.json (jusqu'au 04/11) ; state/historique_actu.json ; state/feedback_cm_actu.json (agent 9 datant du 26/10, PAS du jour : obsolete de 9 jours). Source complementaire instrack.app non consultee.",
+  "alerte": "Aucune publication depuis le 29/10 07:55 (6 jours) : le relevé des publications reste a 25 depuis le 29/10. Feedback de l'agent 9 non mis a jour depuis le 26/10.",
   "classement": [
-    "244 vues, 5 interactions, 24/10 : « Oui, nous avons perdu le contrôle » (citation + décision politique)",
-    "158 vues, 5 interactions dont 2 enregistrements, 20/10 : « Couvre-feux, manifs encadrées… » (libertés)",
-    "134 vues, 0 interaction, 24/10 : « Cinq infos de la semaine »",
-    "133 vues, 2 interactions, 24/10 : « Enquête indépendante sur le renseignement ? » (Oui ou non)",
-    "129 vues, 1 interaction, 25/10 : Macron au concert de Céline Dion",
-    "128 vues, 1 interaction, 21/10 : taxer les profits du pétrole",
-    "115 vues, 0 interaction, 25/10 : 2 513 gardes à vue (Darmanin)",
-    "114 vues, 0 interaction, 21/10 : gel des pensions (Oui ou non)",
-    "113 vues, 0 interaction, 25/10 : Fonderie de Bretagne",
-    "113 vues, 1 interaction, 19/10 : vitrines pillées, cellule de crise",
-    "111 vues, 0 interaction, 19/10 : « Jeudi 5 novembre, la France s'arrête »",
-    "108 vues, 0 interaction, 20/10 : couvre-feu pour les ados",
-    "105 vues, 1 interaction, 21/10 : syndicats à la table de Bercy (Oui ou non)",
-    "79 vues, 1 interaction, 19/10 : agriculteurs en colère",
-    "76 vues, 0 interaction, 22/10 : couper TikTok pendant les émeutes (pire de la période)"
+    "1156 vues, 20 interactions (17 j'aime, 2 commentaires, 1 enregistrement), 18/10 : « Vendredi soir : Macron au concert... Samedi : 550 000 a 800 000 personnes » (meilleure, environ 9 fois la mediane)",
+    "348 vues, 4 interactions, 17/10 : « Contenu effrayant... ou pas ? » (TikTok du 17 octobre)",
+    "244 vues, 5 interactions, 24/10 : « Oui, nous avons perdu le controle » (citation + decision politique)",
+    "76 vues, 0 interaction, 22/10 : couper TikTok pendant les emeutes (la plus faible)"
   ],
   "ce_qui_marche": [
-    "Citation d'autorité + décision politique (24/10) : seule vidéo au-dessus de 200 vues (244)",
-    "Libertés / droits (20/10) : 158 vues, 2 enregistrements, 2e meilleure performance",
-    "Reprise : portée 446 (25/10) et 373 (26/10), au-dessus de 343 le 22/10, dernier jour avant l'arrêt",
-    "Visites du profil : 10 (25/10) et 6 (26/10) contre 2 le 22/10",
-    "Abonnés : 4 au 18/10, 7 au 26/10 (+2 le 25/10, +1 le 26/10)"
+    "Chiffre fort et date dans l'accroche (18/10) : 1156 vues et 20 interactions, seule publication au-dessus de 350 vues",
+    "Citation d'autorite + decision politique (24/10) : 244 vues, 5 interactions",
+    "Mediane des 25 posts : 118 vues ; moyenne 174, ramenee a 133 sans le 18/10",
+    "Abonnes : 4 au 18/10, 6 au 25/10, 7 depuis le 26/10 (stable depuis 9 jours)"
   ],
   "ce_qui_ne_marche_pas": [
-    "0 commentaire et 0 partage sur les 15 posts ; les formats « Oui ou non ? Réponds en commentaire » (21/10, 24/10) n'en ont produit aucun",
-    "Sujet TikTok / Attal (22/10) : 76 vues, 0 interaction, sous la médiane",
-    "Arrêt de publication 22/10 au 24/10 : portée 343 puis 71 (23/10) ; le 24/10 était à 26 dans le relevé du matin, 131 dans suivi_actu (relevé complet)",
-    "Test « fin à garder » : 1 enregistrement pour 1 291 vues depuis le 21/10 (0,8 pour 1 000), présence de la fin non confirmée : non concluant"
+    "2 commentaires au total sur 25 posts, tous sous la meilleure publication ; 0 partage",
+    "Formats « Oui ou non ? » (6 posts) : mediane 121 vues contre 118 pour les autres : aucun gain, aucun commentaire ajoute",
+    "Sujet TikTok / Attal (22/10) : 76 vues, 0 interaction, le plus bas de la periode",
+    "Arret de publication depuis le 29/10 : le compte n'a plus de nouvelles donnees depuis 6 jours"
   ],
   "enseignements": [
-    "Ne pas couper la publication : après 48 h d'arrêt, la portée est revenue au-dessus du niveau d'avant en 2 jours",
-    "Angles qui retiennent : pouvoir face aux gens, libertés, décision concrète ; éviter les sujets médias et institutionnels seuls",
-    "Le CTA « réponds en commentaire » ne fait pas réagir (0 commentaire sur 15) : l'accroche doit donner envie de répondre sans l'exiger"
+    "Un chiffre precis en accroche semble mieux retenir (1156 vues pour le seul post a chiffre-choc, 118 en mediane) : un seul cas, a confirmer",
+    "Le CTA « reponds en commentaire » ne fait pas reagir : 0 commentaire sur les posts qui le contiennent",
+    "Reprendre la publication avant tout : sans nouveaux posts, aucune mesure ne peut etre faite"
   ],
-  "test": "Accroche à contester sans CTA explicite (chiffre discutable dans la 1re seconde) sur les 4 prochains Reels ; mesure = commentaires pour 1 000 vues (référence 0 sur 15 posts). Le test « fin à garder » reste en cours, non concluant.",
+  "test": "Reprendre la publication, puis tester sur 4 Reels une accroche chiffree a contester, sans CTA explicite. Mesure : commentaires pour 1000 vues (reference : 2 commentaires pour environ 4 350 vues cumulees, soit 0,5 pour 1000). Test non lance : aucun post depuis le 29/10.",
   "reperes_projection": {
-    "vues_mediane": 114,
-    "vues_moyenne": 124,
-    "moyenne_10_derniers": 129,
-    "meilleure": 244,
+    "vues_mediane": 118,
+    "vues_moyenne": 174,
+    "moyenne_10_derniers": 128,
+    "mediane_10_derniers": 116,
+    "meilleure": 1156,
     "pire": 76,
-    "enregistrements_pour_1000_vues": 1.6,
-    "portee_reprise_jour": 373,
     "abonnes_actuel": 7
-  },
-  "reponse_agent_12": "1) Portée 446 (25/10, 10 visites du profil) et 373 (26/10, 6 visites), contre 343 (22/10, 2 visites) : au-dessus du niveau d'avant l'arrêt sur les 2 jours disponibles ; le 27/10 n'est pas encore dans les données. 2) Non mesurable : les visites du profil ne sont pas relevées par Reel dans les données, et l'épisode 2 de la série Commission n'apparaît pas dans state/historique_actu.json."
+  }
 }
