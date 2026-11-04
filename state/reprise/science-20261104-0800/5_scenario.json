@@ -1,0 +1,289 @@
+{
+ "titre_interne": "Comment tourne un moteur électrique",
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4,
+   "texte_ecran": "Comment un moteur sans essence peut-il tourner ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un moteur sans essence, ça peut tourner ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Oui ! Et sans explosion, promis.",
+     "expression": "clin"
+    }
+   ],
+   "intention_visuelle": "Question en gros plan, moteur stylisé au centre, sans carburant",
+   "donnees": ""
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4,
+   "texte_ecran": "Le secret : des aimants et des bobines",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Qu'est-ce qui le fait tourner ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Des bobines de fil et des aimants.",
+     "expression": "content"
+    }
+   ],
+   "intention_visuelle": "Coupe pixeldoc du moteur : bobines de fil et aimants étiquetés",
+   "donnees": ""
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4,
+   "texte_ecran": "Courant → champ magnétique",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et là, la magie commence ?",
+     "expression": "neutre"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Le courant crée un champ magnétique.",
+     "expression": "content"
+    }
+   ],
+   "intention_visuelle": "Animation : des traits lumineux se propagent depuis la bobine parcourue par le courant",
+   "donnees": ""
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4,
+   "texte_ecran": "Le champ attire et repousse l'aimant",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et l'aimant, il fait quoi ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Il est attiré, repoussé, et tourne.",
+     "expression": "content"
+    }
+   ],
+   "intention_visuelle": "Animation : l'aimant de la partie mobile est attiré puis repoussé, flèches de rotation",
+   "donnees": ""
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4,
+   "texte_ecran": "Tant que le courant circule, ça tourne",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et ça tourne en continu ?",
+     "expression": "neutre"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Tant que le courant circule, oui.",
+     "expression": "content"
+    }
+   ],
+   "intention_visuelle": "Animation en boucle : l'axe tourne tant que le courant circule",
+   "donnees": ""
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 4,
+   "texte_ecran": "Explosion ou électricité ? Le match",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Allez, le match : explosion contre électricité !",
+     "expression": "content"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Le moteur thermique brûle du carburant.",
+     "expression": "rire"
+    }
+   ],
+   "intention_visuelle": "Écran de match à deux colonnes, thermique à gauche, électrique à droite",
+   "donnees": ""
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 4,
+   "texte_ecran": "Thermique : combustion. Électrique : aimants.",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ça change quoi ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Pas de combustion, donc pas de gaz d'échappement.",
+     "expression": "clin"
+    }
+   ],
+   "intention_visuelle": "Deux colonnes comparées, ligne d'échappement barrée côté électrique",
+   "donnees": ""
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4,
+   "texte_ecran": "Zéro combustion dans le moteur",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Attends, il ne brûle vraiment rien ?",
+     "expression": "choc"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Rien. Il transforme l'électricité en mouvement.",
+     "expression": "content"
+    }
+   ],
+   "intention_visuelle": "Tampon pixeldoc « zéro combustion » sur le moteur",
+   "donnees": ""
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4,
+   "texte_ecran": "L'électricité vient d'une centrale",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Elle sort d'où ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "D'une centrale. Le moteur, lui, ne brûle rien.",
+     "expression": "neutre"
+    }
+   ],
+   "intention_visuelle": "Schéma : centrale, câble, moteur sur la route",
+   "donnees": ""
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4,
+   "texte_ecran": "Courant inversé : il tourne à l'envers",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Il peut reculer ?",
+     "expression": "choc"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "En inversant le courant.",
+     "expression": "rire"
+    }
+   ],
+   "intention_visuelle": "Animation : flèche de rotation qui s'inverse quand le courant s'inverse",
+   "donnees": ""
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4,
+   "texte_ecran": "Peu de pièces en mouvement",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et côté mécanique, c'est plus simple ?",
+     "expression": "content"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Bien moins de pièces en mouvement.",
+     "expression": "content"
+    }
+   ],
+   "intention_visuelle": "Étiquettes pixeldoc sur le moteur, peu de pièces mobiles surlignées",
+   "donnees": ""
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4,
+   "texte_ecran": "Un aimant, du courant, et ça tourne",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Donc, en une phrase ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Un aimant, du courant, et ça tourne.",
+     "expression": "content"
+    }
+   ],
+   "intention_visuelle": "Résumé visuel : aimant + éclair + rotation",
+   "donnees": ""
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4,
+   "texte_ecran": "Et toi, tu roulerais en électrique ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et toi, t'en penses quoi ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Dis-le en commentaire !",
+     "expression": "clin"
+    }
+   ],
+   "intention_visuelle": "Question finale en gros, bulle de commentaire pixeldoc",
+   "donnees": ""
+  },
+  {
+   "type": "outro",
+   "duree_s": 4,
+   "texte_ecran": "Le moteur tourne. Il ne brûle rien.",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Verdict : il tourne sans essence ?",
+     "expression": "clin"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Il ne brûle rien. Abonne-toi !",
+     "expression": "rire"
+    }
+   ],
+   "intention_visuelle": "Plan final sur le moteur qui tourne, logo Décodé en bas",
+   "donnees": ""
+  }
+ ],
+ "legende": "Un moteur sans essence peut tourner ? Zéro explosion, zéro flamme.\n\nLe Mondial de l'auto met les moteurs électriques au cœur du futur de la voiture. Voici comment ils fonctionnent, sans formule compliquée.\n\nEt toi, tu roulerais en électrique ? 👇\nEnvoie-le à un ami qui croit que c'est de la magie 📤\n\nSources : L'Express, Usine Nouvelle",
+ "hashtags": [
+  "#voitureelectrique",
+  "#moteurelectrique",
+  "#mondialdelauto",
+  "#decodelascience"
+ ],
+ "relecture": {
+  "notes": {
+   "accroche": 8,
+   "clarte": 8,
+   "exactitude": 8,
+   "rythme": 7,
+   "conformite": 8
+  },
+  "reecritures": 0,
+  "chiffres_verifies": []
+ }
+}

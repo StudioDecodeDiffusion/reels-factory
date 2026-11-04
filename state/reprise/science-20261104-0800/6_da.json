@@ -1,0 +1,86 @@
+{
+  "compte": "science",
+  "job": "science-20261104-0800",
+  "sujet": "Comment tourne un moteur électrique, et pourquoi il n'a pas besoin de brûler quoi que ce soit",
+  "style_visuel": "pixeldoc",
+  "mise_en_page": "plein_ecran",
+  "palette": "cuivre_vert_nuit",
+  "palette_detail": {
+    "fond": "vert très sombre presque noir",
+    "trait": "cuivre clair",
+    "accent": "vert menthe pour le champ magnétique et le courant",
+    "texte": "blanc cassé"
+  },
+  "musique": "electronique_legere",
+  "voix": "V2",
+  "ecarts_derniere_video": "palette, musique et voix changent (dernière : acier_ambre, orchestral, V1+V3) ; accroche question et fonctionnement explication_mecanisme repris du concept, inchangés",
+  "scenes_autorisees_utilisees": ["pd_objet", "pd_flux", "pd_versus", "pd_tampon"],
+  "scene_animee_requise": {
+    "type": "pd_flux",
+    "mecanisme": "rotation de l'aimant et flux de champ magnétique qui poussent le rotor, flèches animées"
+  },
+  "personnages": "aucun visage ; objets seulement (moteur schématique, aimant, bobine)",
+  "scenes": [
+    {
+      "id": 1,
+      "type": "pd_objet",
+      "role": "hook",
+      "duree_s": 3,
+      "prompt_image": "Pixel art style documentation, fond vert nuit, un moteur électrique schématique en coupe, cuivre clair, vue de côté, lumière douce, pas de texte sauf le titre court",
+      "texte_affiche": "Zéro explosion ?"
+    },
+    {
+      "id": 2,
+      "type": "pd_objet",
+      "role": "decor",
+      "duree_s": 3,
+      "prompt_image": "Pixel art documentation, un aimant en fer à cheval cuivre et vert menthe, pôles nord et sud marqués, fond vert nuit, vue isométrique légère",
+      "texte_affiche": "Aimant"
+    },
+    {
+      "id": 3,
+      "type": "pd_flux",
+      "role": "mecanisme_anime",
+      "duree_s": 4,
+      "prompt_image": "Pixel art documentation, bobine cuivre dans un stator, flèches vert menthe qui circulent autour de la bobine, rotor avec aimant qui tourne, flux animé, fond vert nuit",
+      "texte_affiche": "Courant + aimant"
+    },
+    {
+      "id": 4,
+      "type": "pd_flux",
+      "role": "mecanisme_anime",
+      "duree_s": 4,
+      "prompt_image": "Pixel art documentation, champ magnétique représenté par des lignes vert menthe, le rotor est poussé pas à pas, rotation en boucle, fond vert nuit",
+      "texte_affiche": "Le champ pousse"
+    },
+    {
+      "id": 5,
+      "type": "pd_versus",
+      "role": "comparatif",
+      "duree_s": 4,
+      "prompt_image": "Pixel art match de catch, deux moteurs face à face dans un cadre de ring, à gauche moteur à explosion avec petite flamme et fumée, à droite moteur électrique propre, fond vert nuit",
+      "texte_affiche": "Explosion : oui / non",
+      "note": "comparaison qualitative uniquement, aucun chiffre"
+    },
+    {
+      "id": 6,
+      "type": "pd_tampon",
+      "role": "outro",
+      "duree_s": 3,
+      "prompt_image": "Pixel art documentation, tampon rond cuivre sur fond vert nuit, icône de moteur électrique au centre, style timbre",
+      "texte_affiche": "Pas de carburant"
+    }
+  ],
+  "musique_notes": "nappe électronique légère, pulsation régulière, pas de montée dramatique ; baisse au moment de la scène de comparaison",
+  "regles": {
+    "pas_de_visage_reel": true,
+    "pas_de_mention_IA": true,
+    "pas_de_chiffre_invente": true,
+    "pas_d_image_de_presse": true,
+    "lisibilite_mobile": "un seul message court par scène, texte à au moins 40 px sur 1080 px de large"
+  },
+  "a_verifier": [
+    "V2 et electronique_legere : noms de voix et de musique à confirmer contre le catalogue des options (non vérifié ici)",
+    "accroche : le concept fixe déjà fonctionnement explication_mecanisme, identique à la dernière vidéo ; à valider côté 5_scenario"
+  ]
+}
