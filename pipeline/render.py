@@ -161,22 +161,83 @@ def _credit_commons(sc: dict) -> None:
         print(f"crédit Commons non lu ({e}) : crédit de la spec conservé")
 
 
+def _chercher_images(requete: str, n: int = 8) -> list[str]:
+    """Recherche d'images réelles sur le sujet (Bing Images, sans clé) : URL des originaux, la plus pertinente d'abord.
+    Appelée au rendu (GitHub a accès au web, pas la session). Jamais d'image Wikipédia ni de banque d'images."""
+    import html
+    import re
+    import urllib.parse
+    import urllib.request
+    url = "https://www.bing.com/images/search?" + urllib.parse.urlencode({"q": requete, "qft": "+filterui:imagesize-large+filterui:aspect-tall", "form": "IRFLTR", "first": 1})
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36", "Accept-Language": "fr-FR,fr;q=0.9"})
+        page = html.unescape(urllib.request.urlopen(req, timeout=40).read().decode("utf-8", "ignore"))
+    except Exception as e:
+        print(f"recherche d'images impossible ({e})")
+        return []
+    urls = [u for u in re.findall(r'"murl":"(https?://[^"]+)"', page)
+            if not re.search(r"wikipedia|wikimedia|shutterstock|istock|alamy|gettyimages|adobe|depositphotos|123rf|pinterest", u, re.I)]
+    return list(dict.fromkeys(urls))[:n]
+
+
+def _telecharger_photo(src: str):
+    """Télécharge une image (≥ 700 px de large) dans video/public/photos/ ; retourne le chemin relatif ou None."""
+    import hashlib
+    import urllib.request
+    nom = hashlib.sha1(src.encode()).hexdigest()[:16] + ".jpg"
+    dest = VIDEO / "public" / "photos" / nom
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        if not dest.exists():
+            req = urllib.request.Request(src, headers={"User-Agent": "Mozilla/5.0 (compatible; DecodeStudio/1.0)", "Accept": "image/*"})
+            dest.write_bytes(urllib.request.urlopen(req, timeout=40).read())
+        from PIL import Image
+        with Image.open(dest) as im:
+            if im.width < 700 or im.height < 500:
+                dest.unlink(missing_ok=True)
+                return None
+            if im.format != "JPEG":
+                im.convert("RGB").save(dest, "JPEG", quality=92)
+        return f"photos/{nom}"
+    except Exception:
+        dest.unlink(missing_ok=True)
+        return None
+
+
+def _fonds_photo(spec: dict) -> None:
+    """`fond_photo` (URL donnée par la veille) et/ou `fond_photo_requete` (recherche au rendu) → fichier local, sans crédit.
+    Une URL qui échoue (blocage anti-hotlink, image trop petite) est remplacée par une image trouvée avec la requête."""
+    deja: set[str] = set()
+    for sc in spec.get("scenes", []):
+        url, req = str(sc.get("fond_photo") or ""), str(sc.get("fond_photo_requete") or "")
+        local = _telecharger_photo(url) if url.startswith("http") else None
+        if not local and req:
+            for cand in _chercher_images(req):
+                local = _telecharger_photo(cand)
+                if local and local not in deja:
+                    break
+                local = None
+        sc.pop("fond_photo_requete", None)
+        if local:
+            deja.add(local)
+            sc["fond_photo"] = local
+        else:
+            sc.pop("fond_photo", None)
+        if sc.get("fond_photo"):
+            print(f"scène {sc.get('n', '?')} : photo réelle {sc['fond_photo']}")
+
+
 def _photos(spec: dict) -> None:
     """Scènes « photo » : télécharge l'image (licence libre : Wikimedia Commons, sites publics…) dans video/public/photos/."""
     import hashlib
     import urllib.request
+    _fonds_photo(spec)
     for sc in spec.get("scenes", []):
         if sc.get("type") == "pendant" and str(sc.get("src", "")).startswith("http"):
             tmp = {"type": "photo", "src": sc["src"], "credit": sc.get("credit", "")}
             _photos({"scenes": [tmp]})
             sc["src"], sc["credit"] = tmp["src"], tmp["credit"]
             continue
-        if str(sc.get("fond_photo", "")).startswith("http"):  # fond photo réel d'actualité (sans crédit)
-            tmp = {"type": "photo", "src": sc["fond_photo"]}
-            _photos({"scenes": [tmp]})
-            sc["fond_photo"] = tmp["src"] or None
-            if not sc["fond_photo"]:
-                sc.pop("fond_photo")
         src = str(sc.get("src", ""))
         if sc.get("type") in ("photo", "ed_photo") and src.startswith("http"):
             if "commons.wikimedia" in src or "Special:FilePath" in src:

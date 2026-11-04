@@ -1,0 +1,24 @@
+name: Test recherche d'images
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install pillow requests pyyaml
+      - run: |
+          python - <<'PY' > state/test_images.txt 2>&1
+          from pipeline import render
+          for q in ["Microduck robot canard Disney", "pont suspendu Tacoma Narrows effondrement 1940", "audit ISO 9001 qualité entreprise", "niches fiscales Bercy budget 2027"]:
+              urls = render._chercher_images(q)
+              ok = [render._telecharger_photo(u) for u in urls[:4]]
+              print(q, "->", len(urls), "urls,", sum(1 for x in ok if x), "téléchargées")
+              print("  ", urls[:2])
+          PY
+      - run: |
+          git config user.name "studio"; git config user.email "studio@users.noreply.github.com"
+          git add state/test_images.txt; git commit -m "test images" ; git pull --rebase -X theirs origin main; git push
