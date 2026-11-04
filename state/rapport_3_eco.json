@@ -1,23 +1,37 @@
 {
-  "date": "2026-10-26",
+  "date": "2026-11-04",
+  "source": "state/stats_eco.json (maj 2026-11-04), state/abonnes_eco.json (25/10 au 04/11), state/historique_eco.json",
+  "fraicheur": "stats et abonnés à jour ; retour agent 9 (state/feedback_cm_eco.json) daté du 26/10, donc obsolète (il ne compte qu'une vidéo, on en a 5)",
+  "echantillon": "5 vidéos publiées du 25/10 au 03/11 : trop peu pour conclure, à traiter comme des pistes",
   "classement": [
-    {"id": "18337718269261639", "date": "2026-10-25", "sujet": "Fonderie de Bretagne : 244 salariés en liquidation, millions publics promis", "views": 129, "reach": 120, "likes": 1, "comments": 0, "shares": 0, "saved": 0}
+    {"date": "27/10", "titre_legende": "À qui la France doit-elle 2 882 milliards d'euros ?", "views": 203, "reach": 189, "likes": 2, "comments": 0, "shares": 0, "saved": 0},
+    {"date": "03/11", "titre_legende": "Niches fiscales : environ 88 milliards d'euros par an", "views": 172, "reach": 157, "likes": 1, "comments": 0, "shares": 0, "saved": 1},
+    {"date": "25/10", "titre_legende": "Fonderie de Bretagne : 244 salariés en liquidation", "views": 131, "reach": 121, "likes": 1, "comments": 0, "shares": 0, "saved": 0},
+    {"date": "30/10", "titre_legende": "Budget 2026 de l'État : environ 135 milliards de déficit", "views": 115, "reach": 109, "likes": 0, "comments": 0, "shares": 0, "saved": 0},
+    {"date": "27/10", "titre_legende": "Ton salaire brut n'est jamais ton salaire net", "views": 94, "reach": 91, "likes": 1, "comments": 0, "shares": 0, "saved": 1}
   ],
   "ce_qui_marche": [
-    "Une seule vidéo publiée (25/10) : 129 vues, 120 comptes touchés, 1 j'aime (source : stats_eco, maj 26/10 07 h 51)."
+    "Les deux sujets à chiffre chiffré en accroche (dette de 2 882 Md, niches fiscales 88 Md) sont les deux meilleures vues : 203 et 172",
+    "Les interactions viennent surtout des sujets chiffrés : 8 interactions au total sur 5 vidéos, dont 6 sur les posts 27/10 dette, 03/11 niches et 27/10 salaire"
   ],
   "ce_qui_ne_marche_pas": [
-    "Aucun commentaire, aucun partage, aucun enregistrement : pas de signal d'engagement fort à ce stade.",
-    "Abonnés : 0 au 25/10 et au 26/10, aucune variation (source : abonnes_eco)."
+    "Aucun commentaire ni partage sur les 5 vidéos",
+    "Le sujet pratique « salaire brut / net » est le plus faible en vues (94) ; le budget de l'État (115) n'a aucune interaction",
+    "Abonnés : 0 sur toute la période (25/10 au 04/11), malgré 5 publications"
   ],
   "enseignements": [
-    "Pas assez de données pour conclure sur un format : garder la même structure de chiffres sourcés et comparer sur les 5 prochaines vidéos.",
-    "Noter le sujet et les vues de chaque vidéo pour voir si les sujets économiques de portée nationale marchent mieux que les sujets locaux (un seul point de comparaison pour l'instant)."
+    "Garder un chiffre fort dans la première phrase : les 2 meilleurs posts en ont un, à vérifier sur les prochaines vidéos",
+    "Le sujet économique national (dette, niches) surperforme le sujet pratique du quotidien : piste, pas une certitude (5 posts seulement)",
+    "Aucun signal d'heure exploitable : les 5 vidéos sont sorties entre 07 h et 16 h UTC sans écart net de vues"
   ],
-  "test": "Publier les 5 prochaines vidéos dans la même structure et comparer vues, comptes touchés et partages entre sujets nationaux et sujets locaux.",
+  "test": "Sur les 3 prochaines vidéos : 2 sujets à gros chiffre national en accroche, 1 sujet pratique ; comparer les vues médianes et les enregistrements",
   "reperes_projection": {
-    "vues_mediane": 129,
-    "meilleure": 129
+    "vues_mediane": 131,
+    "vues_moyenne": 143,
+    "meilleure": 203,
+    "plus_faible": 94,
+    "reach_mediane": 121,
+    "taux_interaction_pct": 1.1
   },
-  "source": "state/stats_eco.json, state/abonnes_eco.json, state/feedback_cm_eco.json (retour agent 9, 26/10). Échantillon : 1 vidéo. Suivi public instrack non consulté."
+  "notes_traitees": "aucune note en attente pour l'agent 3 (eco)"
 }

@@ -1,11 +1,69 @@
 {
-  "date": "2026-10-26",
-  "compte": "science",
-  "classement": [],
-  "ce_qui_marche": [],
-  "ce_qui_ne_marche_pas": [],
-  "enseignements": [],
-  "test": "Aucun test à mener tant qu'aucune publication n'a de statistiques.",
-  "reperes_projection": {"vues_mediane": 0, "meilleure": 0},
-  "note": "Aucune publication, aucune vue, aucun abonné (abonnes_science.json : 0 les 25 et 26/10 ; stats_science.json : posts vides). Aucune donnée à analyser ; aucune conclusion sur le contenu. Aucune note du propriétaire en attente. Feedback agent 9 : aucun commentaire."
+  "date": "2026-11-04",
+  "classement": [
+    {
+      "lien": "https://www.instagram.com/reel/De_S6G7DZxP/",
+      "date": "2026-10-27",
+      "sujet": "Microduck : robot canard a 399 $",
+      "vues": 120,
+      "portee": 115,
+      "sauvegardes": 1,
+      "interactions": 1
+    },
+    {
+      "lien": "https://www.instagram.com/reel/DfB8ESDjxmM/",
+      "date": "2026-10-28",
+      "sujet": "Pont suspendu / Tacoma Narrows",
+      "vues": 116,
+      "portee": 102,
+      "sauvegardes": 0,
+      "interactions": 0
+    },
+    {
+      "lien": "https://www.instagram.com/reel/DfAl3CfF6dl/",
+      "date": "2026-10-27",
+      "sujet": "Avion de 575 t : pourquoi il vole",
+      "vues": 101,
+      "portee": 96,
+      "sauvegardes": 0,
+      "interactions": 0
+    },
+    {
+      "lien": "https://www.instagram.com/reel/DfUZLYjlZmw/",
+      "date": "2026-11-04",
+      "sujet": "Moteur sans essence (Mondial de l'auto)",
+      "vues": 22,
+      "portee": 18,
+      "sauvegardes": 0,
+      "interactions": 0,
+      "note": "publie il y a moins de 24 h, chiffre non stabilise"
+    }
+  ],
+  "ce_qui_marche": [
+    "Sujets de physique du quotidien expliques par une question (Comment / Pourquoi) : 3 posts a 101-120 vues sur 3 posts ayant 24 h ou plus",
+    "Le seul like-equivalent enregistre (1 sauvegarde) est sur le post le plus vu (Microduck, 120 vues)"
+  ],
+  "ce_qui_ne_marche_pas": [
+    "Aucun like, commentaire ni partage enregistre sur les 4 posts : l'engagement est nul",
+    "Abonnes a 0 chaque jour du 25/10 au 04/11 (state/abonnes_science.json) : pas de croissance mesuree",
+    "Le post du 04/11 (22 vues) est trop recent pour etre juge"
+  ],
+  "enseignements": [
+    "Garder le format question en accroche (Comment / Pourquoi) sur les sujets de physique : c'est le seul format qui a fait plus de 100 vues",
+    "Viser une interaction par post : finir par une question ouverte ou une invitation a sauvegarder, l'engagement est aujourd'hui quasi nul",
+    "Ne pas tirer de conclusion sur l'heure : les posts a 8 h Paris (120 et 116 vues) et a 20 h Paris (101 vues) sont trop peu nombreux pour comparer"
+  ],
+  "test": "Pendant une semaine, terminer chaque reel par une question ouverte sur le sujet et comparer les sauvegardes et commentaires avec les 4 posts actuels",
+  "reperes_projection": {
+    "vues_mediane": 116,
+    "meilleure": 120,
+    "echantillon": 3,
+    "abonnes_croissance": 0,
+    "remarque": "Echantillon de 3 posts, a traiter comme indicatif. Pas de donnee d'abonnes exploitable."
+  },
+  "lacunes": [
+    "state/feedback_cm_science.json date du 26/10/2026 : pas de retour de l'agent 9 pour aujourd'hui, donc pas d'avis d'audience a jour",
+    "historique_science.json : deux lignes en double pour le 26/10 et un titre vide pour le 04/11",
+    "Aucune note du proprietaire en attente pour l'agent 3"
+  ]
 }
