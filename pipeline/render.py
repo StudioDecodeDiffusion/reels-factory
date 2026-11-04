@@ -71,6 +71,7 @@ def validate_spec(spec: dict, allowed: list[str], voix_obligatoire: bool = False
                     errs.append(f"scène {i} réplique {j} : « qui » doit valoir narrateur ou mascotte")
                 if not str(r.get("texte", "")).strip():
                     errs.append(f"scène {i} réplique {j} : texte vide")
+                r["expression"] = {"sourire": "content", "ironie": "sarcasme", "joie": "content", "surprise": "choc", "colère": "colere"}.get(r.get("expression"), r.get("expression"))
                 if r.get("expression") and r["expression"] not in EXPRESSIONS:
                     errs.append(f"scène {i} réplique {j} : expression parmi {sorted(EXPRESSIONS)}")
         if voix_obligatoire and not dia and not str(s.get("voix", "")).strip():

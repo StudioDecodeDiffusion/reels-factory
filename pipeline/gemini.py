@@ -105,7 +105,7 @@ SCHEMA_CONCEPT = """{"concepts":[{"titre":"…","accroche":"phrase dite à la 1r
 "mots_choc":["1-3 mots"],"surtitre_miniature":"qui · quand",
 "variete":{"accroche":"","fonctionnement":"","musique":""}}],"choix":0}"""
 SCHEMA_SCENARIO = """{"plans":[{"type":"hook|fait|chiffre|versus|chute|question","duree_s":3.5,"texte_ecran":"≤ 6 mots",
-"dialogue":[{"qui":"narrateur","texte":"…","expression":"neutre|choc|ironie|colere|sourire"}]}],
+"dialogue":[{"qui":"narrateur","texte":"…","expression":"neutre|choc|sarcasme|colere|content|rire|pense|clin|triste|peur|degout"}]}],
 "legende":"accroche + chiffre\\n\\ncontexte 2 phrases\\n\\nquestion 👇\\nEnvoie-la à quelqu'un qui… 📤\\nSources : X, Y","hashtags":["#…"]}"""
 
 

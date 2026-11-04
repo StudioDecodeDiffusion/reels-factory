@@ -170,6 +170,8 @@ def _read(d: Path, name: str, default=None):
 
 def _concept(d: Path) -> dict:
     c = _read(d, "4_concept.json")
+    if "concepts" not in c:  # concept « à plat » (un seul concept, champs à la racine) : accepté
+        return dict(c)
     choisi = dict(c["concepts"][int(c.get("choix", 0))])
     for k, v in c.items():  # champs ajoutés au niveau racine (titre_miniature, plateforme, compte…)
         if k not in ("concepts", "choix") and v and not choisi.get(k):
