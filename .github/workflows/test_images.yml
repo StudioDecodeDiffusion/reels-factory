@@ -14,6 +14,7 @@ jobs:
           python - <<'PY' > state/test_images.txt 2>&1
           from pipeline import render
           for q in ["Microduck robot canard Disney", "pont suspendu Tacoma Narrows effondrement 1940", "audit ISO 9001 qualité entreprise", "niches fiscales Bercy budget 2027"]:
+              print("bing:", len(render._images_bing(q)), "ddg:", len(render._images_ddg(q)))
               urls = render._chercher_images(q)
               ok = [render._telecharger_photo(u) for u in urls[:12]]
               print(q, "->", len(urls), "urls,", sum(1 for x in ok if x), "téléchargées")

@@ -161,28 +161,63 @@ def _credit_commons(sc: dict) -> None:
         print(f"crédit Commons non lu ({e}) : crédit de la spec conservé")
 
 
-def _chercher_images(requete: str, n: int = 16) -> list[str]:
-    """Recherche d'images réelles sur le sujet (Bing Images, sans clé) : URL des originaux, la plus pertinente d'abord.
-    Appelée au rendu (GitHub a accès au web, pas la session). Jamais d'image Wikipédia ni de banque d'images."""
+_UA_WEB = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36", "Accept-Language": "fr-FR,fr;q=0.9"}
+_REFUSES = r"wikipedia|wikimedia|shutterstock|istock|alamy|gettyimages|adobe|depositphotos|123rf|pinterest|\.svg|\.gif"
+
+
+def _web(url: str, entetes: dict | None = None) -> str:
+    import urllib.request
+    return urllib.request.urlopen(urllib.request.Request(url, headers={**_UA_WEB, **(entetes or {})}), timeout=40).read().decode("utf-8", "ignore")
+
+
+def _images_bing(requete: str) -> list[str]:
     import html
     import re
     import urllib.parse
-    import urllib.request
+    for filtre in ("+filterui:imagesize-large", ""):
+        try:
+            page = html.unescape(_web("https://www.bing.com/images/async?" + urllib.parse.urlencode(
+                {"q": requete, "qft": filtre, "first": 1, "count": 35, "mmasync": 1})))
+        except Exception as e:
+            print(f"  bing : {str(e)[:80]}")
+            continue
+        urls = re.findall(r'"murl":"(https?://[^"]+)"', page)
+        if urls:
+            return urls
+    return []
+
+
+def _images_ddg(requete: str) -> list[str]:
+    import json
+    import re
+    import urllib.parse
+    try:
+        q = urllib.parse.quote(requete)
+        vqd = re.search(r"vqd=([\d-]+)", _web(f"https://duckduckgo.com/?q={q}&iax=images&ia=images"))
+        if not vqd:
+            return []
+        data = json.loads(_web(f"https://duckduckgo.com/i.js?l=fr-fr&o=json&q={q}&vqd={vqd.group(1)}&f=,,,,,&p=1",
+                               {"Referer": "https://duckduckgo.com/"}))
+        return [r["image"] for r in data.get("results", []) if r.get("image")]
+    except Exception as e:
+        print(f"  ddg : {str(e)[:80]}")
+        return []
+
+
+def _chercher_images(requete: str, n: int = 16) -> list[str]:
+    """Recherche d'images réelles sur le sujet (Bing puis DuckDuckGo, sans clé) : URL des originaux, la plus pertinente d'abord.
+    Appelée au rendu (GitHub a accès au web, pas la session). Jamais d'image Wikipédia ni de banque d'images."""
+    import re
     import time
     urls: list[str] = []
-    for filtre in ("+filterui:imagesize-large", ""):  # sans filtre de taille si la 1re recherche ne donne rien
-        url = "https://www.bing.com/images/async?" + urllib.parse.urlencode({"q": requete, "qft": filtre, "first": 1, "count": 35, "mmasync": 1})
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36", "Accept-Language": "fr-FR,fr;q=0.9"})
-            page = html.unescape(urllib.request.urlopen(req, timeout=40).read().decode("utf-8", "ignore"))
-        except Exception as e:
-            print(f"recherche d'images impossible ({e})")
-            page = ""
-        urls = [u for u in re.findall(r'"murl":"(https?://[^"]+)"', page)
-                if not re.search(r"wikipedia|wikimedia|shutterstock|istock|alamy|gettyimages|adobe|depositphotos|123rf|pinterest|\.svg|\.gif", u, re.I)]
+    for essai in range(2):
+        for moteur in (_images_bing, _images_ddg):
+            urls += [u for u in moteur(requete) if not re.search(_REFUSES, u, re.I)]
+            if len(set(urls)) >= 6:
+                break
         if urls:
             break
-        time.sleep(2)
+        time.sleep(3)
     return list(dict.fromkeys(urls))[:n]
 
 
