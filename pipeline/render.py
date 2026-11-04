@@ -161,22 +161,28 @@ def _credit_commons(sc: dict) -> None:
         print(f"crédit Commons non lu ({e}) : crédit de la spec conservé")
 
 
-def _chercher_images(requete: str, n: int = 8) -> list[str]:
+def _chercher_images(requete: str, n: int = 16) -> list[str]:
     """Recherche d'images réelles sur le sujet (Bing Images, sans clé) : URL des originaux, la plus pertinente d'abord.
     Appelée au rendu (GitHub a accès au web, pas la session). Jamais d'image Wikipédia ni de banque d'images."""
     import html
     import re
     import urllib.parse
     import urllib.request
-    url = "https://www.bing.com/images/async?" + urllib.parse.urlencode({"q": requete, "qft": "+filterui:imagesize-large", "first": 1, "count": 35, "mmasync": 1})
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36", "Accept-Language": "fr-FR,fr;q=0.9"})
-        page = html.unescape(urllib.request.urlopen(req, timeout=40).read().decode("utf-8", "ignore"))
-    except Exception as e:
-        print(f"recherche d'images impossible ({e})")
-        return []
-    urls = [u for u in re.findall(r'"murl":"(https?://[^"]+)"', page)
-            if not re.search(r"wikipedia|wikimedia|shutterstock|istock|alamy|gettyimages|adobe|depositphotos|123rf|pinterest", u, re.I)]
+    import time
+    urls: list[str] = []
+    for filtre in ("+filterui:imagesize-large", ""):  # sans filtre de taille si la 1re recherche ne donne rien
+        url = "https://www.bing.com/images/async?" + urllib.parse.urlencode({"q": requete, "qft": filtre, "first": 1, "count": 35, "mmasync": 1})
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36", "Accept-Language": "fr-FR,fr;q=0.9"})
+            page = html.unescape(urllib.request.urlopen(req, timeout=40).read().decode("utf-8", "ignore"))
+        except Exception as e:
+            print(f"recherche d'images impossible ({e})")
+            page = ""
+        urls = [u for u in re.findall(r'"murl":"(https?://[^"]+)"', page)
+                if not re.search(r"wikipedia|wikimedia|shutterstock|istock|alamy|gettyimages|adobe|depositphotos|123rf|pinterest|\.svg|\.gif", u, re.I)]
+        if urls:
+            break
+        time.sleep(2)
     return list(dict.fromkeys(urls))[:n]
 
 
