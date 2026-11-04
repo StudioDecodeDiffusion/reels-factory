@@ -505,7 +505,7 @@ def cmd_drop(a) -> None:
     if missing:
         raise SystemExit(f"Fichiers manquants dans {d} : {missing}")
     controle = _read(d, "9_critique.json")
-    if controle.get("decision") != "publiable":
+    if controle.get("decision") != "publiable" and controle.get("publiable") is not True:
         raise SystemExit("L'agent 7 n'a pas déclaré la vidéo « publiable » : corriger ou utiliser `abandon`.")
     concept = _concept(d)
     relecture = _read(d, "5_scenario.json", {}).get("relecture", {})
