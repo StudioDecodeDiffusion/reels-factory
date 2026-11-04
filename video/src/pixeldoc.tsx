@@ -35,7 +35,7 @@ const TitrePixel: React.FC<{texte?: string; mot?: string; c: C; taille?: number;
   }
   const net = (x: string) => x.toLowerCase().replace(/[^\p{L}\d%€]/gu, '');
   const forts = new Set((mot ?? '').split(/\s+/).map(net).filter(Boolean));
-  const n = Math.floor(interpolate(f, [2, 2 + texte.length * 0.7], [0, texte.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const n = Math.floor(interpolate(f, [1, 1 + texte.length * 0.35], [0, texte.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
   let vu = 0;
   return (
     <div style={{position: 'absolute', left: 140, right: 140, top, textAlign: 'center', fontFamily: fontPixel, fontSize: taille, lineHeight: 1.12, textTransform: 'uppercase', textShadow: '6px 6px 0 rgba(0,0,0,0.55)'}}>

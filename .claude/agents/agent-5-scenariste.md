@@ -15,3 +15,5 @@ d'invention de chiffre ou de citation. En cas de doute sur un fait : tu le retir
 
 
 **Format (04/11)** : recopie la structure de `agents/MODELE_5_SCENARIO.json` ; la variété (accroche, fonctionnement) doit différer de « Dernière vidéo » du dossier.
+
+**Rythme (04/11)** : phrases courtes (≤ 12 mots), voix rapide, pas de blanc ; la 1re phrase est la thèse (≤ 8 mots) ; une idée ou un chiffre par plan de 3 s ; pas de formule d'introduction.

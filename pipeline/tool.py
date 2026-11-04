@@ -291,7 +291,7 @@ def cmd_spec(a) -> None:
         scenes[min(len(scenes) - 1, i * len(scenes) // max(1, len(lignes)))]["dialogue"].append(l)
     for x in scenes:  # durée minimale = temps de parole (≈ 2,6 mots/s) + respiration
         mots = sum(len(l.get("texte", "").split()) for l in x["dialogue"])
-        x["duration"] = round(max(x["duration"], mots / 2.6 + 0.4), 1)
+        x["duration"] = round(max(x["duration"], mots / 2.9 + 0.25), 1)
     mus = da.get("musique") or {}
     spec = {k: v for k, v in da.items() if k not in ("scenes", "musique", "consignes_animation", "evolution_charte",
                                                     "messages_traites", "message_au_proprietaire")}
