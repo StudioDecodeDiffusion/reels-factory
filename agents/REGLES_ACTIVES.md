@@ -1,7 +1,7 @@
 # Règles actives (1 page — remplace la lecture de NUIT.md et CERVEAU.md ; mis à jour le 25/10)
 
 **Faits** : exacts et sourcés ; en cas de doute, on retire le chiffre. Aucune fausse citation, aucune accusation non prouvée,
-aucun appel à la violence, aucune image de presse, aucun deepfake, aucun visage réel dessiné. Personnages originaux.
+aucun appel à la violence, aucun deepfake ni visage réel généré ou dessiné ; images de presse et extraits YouTube du sujet autorisés (propriétaire, 27/10 : sans crédit, jamais Wikipédia ni hors sujet). Personnages originaux.
 **Aucune mention d'IA** (vidéo, miniature, légende) ; seul le crédit de licence des voix reste en fin de légende.
 
 **Ton par compte** : voir « Compte » dans le dossier (actu = acerbe anti-pouvoir ; éco = neutre et pédagogique ;

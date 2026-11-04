@@ -45,7 +45,7 @@ ils partageront ou enregistreront), et le principal risque.
 Sans données : le dire et s'appuyer sur les bonnes pratiques du format.
 
 ## 3. Décider
-**Règle d'assouplissement (propriétaire, 26/10)** : une vidéo est `publiable` sauf défaut **bloquant** : contenu interdit (image de presse, deepfake, citation inventée), vidéo cassée ou illisible, voix absente. Un fait faux ou non sourcé n'est **pas** bloquant : il est signalé dans `corrections` (décision du propriétaire, 26/10). Les défauts de finition ou de style (texte serré, planche d'aperçu incomplète, détail de forme, durée plus longue) sont notés dans `corrections` mais **ne bloquent pas**.
+**Règle d'assouplissement (propriétaire, 26/10)** : une vidéo est `publiable` sauf défaut **bloquant** : contenu interdit (deepfake ou visage réel généré, citation inventée ; images de presse et extraits YouTube sur le sujet AUTORISÉS par le propriétaire le 27/10, sans crédit, jamais Wikipédia ni image hors sujet), vidéo cassée ou illisible, voix absente. Un fait faux ou non sourcé n'est **pas** bloquant : il est signalé dans `corrections` (décision du propriétaire, 26/10). Les défauts de finition ou de style (texte serré, planche d'aperçu incomplète, détail de forme, durée plus longue) sont notés dans `corrections` mais **ne bloquent pas**.
 
 `publiable` → `drop` ; `a_corriger` → demander la correction à l'agent 8 (une fois) puis réévaluer ;
 `rejetee` → `abandon` avec la raison. Marquer tes notes traitées (`traite: true`) et les mentionner dans

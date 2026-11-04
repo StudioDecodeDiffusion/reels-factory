@@ -3,7 +3,7 @@
 **Marque** : @decodeactu « Décodé · L'actu expliquée simplement ». Actu française, du côté des gens contre le pouvoir
 et les ultra-riches. Ton : acerbe, ironique, indigné, jamais vulgaire. Opinions assumées comme telles
 (« dérive autoritaire » = notre jugement), **faits toujours exacts et sourcés**, aucune fausse citation, aucune
-accusation non prouvée contre une personne, aucun appel à la violence, aucune image de presse ni deepfake.
+accusation non prouvée contre une personne, aucun appel à la violence, aucun deepfake (images de presse autorisées, voir REGLES_ACTIVES).
 
 **Formats** : 2 Reels/jour — 14 h vidéo phare (contraste pouvoir/gens, question fermée finale), 18 h vidéo d'info.
 Durée 55-75 s, 12-18 plans de 3-4 s, voix rapide sans blanc. Miniature : titre critique ≤ 8 mots + mots en rouge.
