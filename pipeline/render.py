@@ -168,7 +168,7 @@ def _chercher_images(requete: str, n: int = 8) -> list[str]:
     import re
     import urllib.parse
     import urllib.request
-    url = "https://www.bing.com/images/search?" + urllib.parse.urlencode({"q": requete, "qft": "+filterui:imagesize-large+filterui:aspect-tall", "form": "IRFLTR", "first": 1})
+    url = "https://www.bing.com/images/async?" + urllib.parse.urlencode({"q": requete, "qft": "+filterui:imagesize-large", "first": 1, "count": 35, "mmasync": 1})
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36", "Accept-Language": "fr-FR,fr;q=0.9"})
         page = html.unescape(urllib.request.urlopen(req, timeout=40).read().decode("utf-8", "ignore"))
