@@ -1,0 +1,409 @@
+{
+  "id": "actu-20261105-0800",
+  "compte": "actu",
+  "theme": {
+    "fond": "#0A0B1E",
+    "texte": "#F4F6FF",
+    "accent": "#FF2E9A",
+    "accent2": "#00E5FF",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "nuit_neon",
+    "palette": [
+      "#0A0B1E",
+      "#1A1B3A",
+      "#FF2E9A",
+      "#00E5FF",
+      "#F4F6FF",
+      "#FFD23F"
+    ],
+    "mise_en_page": "plein_ecran",
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "ouvrier"
+    }
+  },
+  "variete": {
+    "accroche": "compte_a_rebours",
+    "trend": "aucune",
+    "fonctionnement": "chiffres_cles",
+    "mise_en_page": "plein_ecran",
+    "musique": "trap8bit",
+    "voix": "V3+V2",
+    "palette": "nuit_neon"
+  },
+  "voix_override": {
+    "narrateur": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte_effet": "grave"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "whoosh"
+    ],
+    "3": [
+      "pop"
+    ],
+    "4": [
+      "whoosh"
+    ],
+    "5": [
+      "pop"
+    ],
+    "6": [
+      "whoosh"
+    ],
+    "7": [
+      "pop"
+    ],
+    "8": [
+      "whoosh"
+    ],
+    "9": [
+      "pop"
+    ],
+    "10": [
+      "whoosh"
+    ],
+    "11": [
+      "pop"
+    ],
+    "12": [
+      "whoosh"
+    ],
+    "13": [
+      "pop"
+    ],
+    "14": [
+      "whoosh"
+    ]
+  },
+  "musique": {
+    "genre": "trap8bit",
+    "volume": 0.4
+  },
+  "titre_miniature": "Tout augmente sauf les salaires",
+  "mots_choc": "sauf les salaires",
+  "surtitre_miniature": "Intersyndicale · 5 novembre",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "counter",
+      "energie": 3,
+      "titre": "J moins zéro : grève générale",
+      "mot_fort": "grève",
+      "to": 0.0,
+      "label": "J MOINS ZÉRO",
+      "fond_photo": "https://i.la-croix.com/1400x933/5x5/2026/11/03/2579832-des-associations-et-syndicats-de-sept-pays-europee.jpg",
+      "prompt": "pixel art countdown panel, dark night background, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "J moins zéro : grève générale. Voilà ce qu'on te cache en trois chiffres.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 2,
+      "type": "bigstat",
+      "energie": 2,
+      "titre": "Jeudi 5 novembre",
+      "mot_fort": "5 novembre",
+      "value": "5 NOVEMBRE",
+      "label": "JEUDI · GRÈVE GÉNÉRALE",
+      "source": "Sortir à Paris",
+      "prompt": "pixel art calendar page showing thursday 5, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Jeudi cinq novembre. Transports et écoles, les plus touchés. D'autres secteurs aussi.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 3,
+      "type": "pd_objet",
+      "energie": 3,
+      "titre": "Collèges et lycées : grève",
+      "mot_fort": "grève",
+      "legende": "Snes-FSU : très grande grève",
+      "fond_photo": "https://focus.courrierinternational.com/2026/11/02/0/0/5922/3948/1200/630/60/0/611d040_upload-1-ztdiag5bfjli-hay-manif17octobre-courrier-01.jpg",
+      "prompt": "pixel art school gate, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les collèges et lycées : très grande grève appelée par le Snes-FSU.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 4,
+      "type": "pancartes",
+      "energie": 2,
+      "titre": "Sauf la CFE-CGC",
+      "mot_fort": "CFE-CGC",
+      "items": [
+        {
+          "pancarte": "CFDT",
+          "reponse": "Appelle à la grève"
+        },
+        {
+          "pancarte": "CGT",
+          "reponse": "Appelle à la grève"
+        },
+        {
+          "pancarte": "FO",
+          "reponse": "Appelle à la grève"
+        },
+        {
+          "pancarte": "Solidaires",
+          "reponse": "Appelle à la grève"
+        },
+        {
+          "pancarte": "CFE-CGC",
+          "reponse": "Pas d'appel"
+        }
+      ],
+      "prompt": "pixel art placards held by anonymous silhouettes, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les grands syndicats appellent : CFDT, CGT, FO, Solidaires, FSU, CFTC, Unsa.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 5,
+      "type": "bigstat",
+      "energie": 3,
+      "titre": "54 milliards de coupes (projet)",
+      "mot_fort": "54 milliards",
+      "value": "54 Md€",
+      "label": "de coupes dans le projet de budget 2027",
+      "source": "Économie Matin",
+      "fond_photo": "https://focus.courrierinternational.com/2026/11/02/0/0/5922/3948/1200/630/60/0/611d040_upload-1-ztdiag5bfjli-hay-manif17octobre-courrier-01.jpg",
+      "prompt": "pixel art budget document with a red cut mark, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le projet de budget prévoit cinquante-quatre milliards d'euros de coupes.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 6,
+      "type": "timeline",
+      "energie": 2,
+      "titre": "Budget 2027 : un projet",
+      "mot_fort": "projet",
+      "title": "Budget 2027",
+      "events": [
+        {
+          "date": "Oct. 2026",
+          "text": "Projet de budget du gouvernement"
+        },
+        {
+          "date": "2027",
+          "text": "Année visée par le budget"
+        }
+      ],
+      "prompt": "pixel art horizontal timeline, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ce projet vient du gouvernement, pour l'année deux mille vingt-sept.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 7,
+      "type": "bigstat",
+      "energie": 3,
+      "titre": "Gel du point d'indice",
+      "mot_fort": "gel",
+      "fond_photo": "https://focus.courrierinternational.com/2026/11/02/0/0/5922/3948/1200/630/60/0/611d040_upload-1-ztdiag5bfjli-hay-manif17octobre-courrier-01.jpg",
+      "prompt": "pixel art padlock on a pay slip, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Gel du point d'indice des fonctionnaires, et gel des salaires dénoncés.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3,
+      "value": "GELÉ",
+      "label": "POINT D'INDICE · FONCTIONNAIRES",
+      "source": "Économie Matin"
+    },
+    {
+      "n": 8,
+      "type": "ed_citation",
+      "energie": 3,
+      "titre": "Tout augmente sauf les salaires",
+      "mot_fort": "salaires",
+      "texte": "Tout augmente sauf les salaires et les pensions.",
+      "auteur": "Intersyndicale, communiqué",
+      "prompt": "pixel art quotation card, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "L'intersyndicale écrit : « Tout augmente sauf les salaires et les pensions ».",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 9,
+      "type": "pd_jauge",
+      "energie": 3,
+      "titre": "Plus cent euros du Smic",
+      "mot_fort": "cent euros",
+      "valeur": 100,
+      "legende": "CFDT : +100 € pour le Smic",
+      "fond_photo": "https://i.la-croix.com/1400x933/5x5/2026/11/03/2579832-des-associations-et-syndicats-de-sept-pays-europee.jpg",
+      "prompt": "pixel art paycheck envelope, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La CFDT, elle, demande une hausse de cent euros du Smic.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 10,
+      "type": "pd_chiffre",
+      "energie": 3,
+      "titre": "54 milliards d'effort",
+      "mot_fort": "54 milliards",
+      "valeur": 54,
+      "suffixe": " Md€",
+      "legende": "Coupes du projet de budget 2027",
+      "source": "Économie Matin",
+      "prompt": "pixel art coin stack falling, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Elle réclame d'évaluer, puis de redéployer les aides aux entreprises. Le budget, lui, prévoit cinquante-quatre milliards de coupes.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 8.1
+    },
+    {
+      "n": 11,
+      "type": "pd_chiffre",
+      "energie": 2,
+      "titre": "Les trois chiffres",
+      "mot_fort": "trois chiffres",
+      "valeur": 100,
+      "suffixe": " €",
+      "legende": "Hausse du Smic demandée par la CFDT",
+      "source": "Sud Radio",
+      "fond_photo": "https://focus.courrierinternational.com/2026/11/02/0/0/5922/3948/1200/630/60/0/611d040_upload-1-ztdiag5bfjli-hay-manif17octobre-courrier-01.jpg",
+      "prompt": "pixel art three number tiles, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Cinquante-quatre milliards de coupes, gel du point, cent euros de Smic demandés.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 12,
+      "type": "pd_versus",
+      "energie": 2,
+      "titre": "Aides ou salaires ?",
+      "mot_fort": "salaires",
+      "gauche": {
+        "label": "Aides (chiffre syndical)",
+        "valeur": "211 Md€",
+        "prompt": "a stack of euro coins, pixel art, single object"
+      },
+      "droite": {
+        "label": "Salaires",
+        "valeur": "Gelés",
+        "prompt": "a paycheck envelope with a padlock, pixel art, single object"
+      },
+      "prompt": "pixel art versus panel, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les aides aux entreprises d'un côté. Les salaires gelés de l'autre.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 13,
+      "type": "pd_flux",
+      "energie": 3,
+      "titre": "Qui paie ?",
+      "mot_fort": "paie",
+      "de": {
+        "label": "Budget de l'État",
+        "prompt": "a stack of euro banknotes, pixel art, single object"
+      },
+      "vers": {
+        "label": "Salariés, services publics",
+        "prompt": "a worker silhouette next to a school, pixel art, single object"
+      },
+      "montant": "coupes",
+      "fond_photo": "https://i.la-croix.com/1400x933/5x5/2026/11/03/2579832-des-associations-et-syndicats-de-sept-pays-europee.jpg",
+      "prompt": "pixel art money flow, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Qui paie, au final ? Les salariés, les pensionnés, les services publics.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "energie": 2,
+      "titre": "Jeudi, en grève ?",
+      "mot_fort": "grève",
+      "question": "Jeudi, serez-vous en grève ?",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "bonne": 0,
+      "prompt": "pixel art question mark with two answer buttons, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et vous, jeudi, serez-vous en grève ? Oui ou non ? Dites-le en commentaire.",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.5
+    }
+  ]
+}
