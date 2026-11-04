@@ -14,7 +14,7 @@
   "musique": "electronique_legere",
   "voix": "V2",
   "ecarts_derniere_video": "palette, musique et voix changent (dernière : acier_ambre, orchestral, V1+V3) ; accroche question et fonctionnement explication_mecanisme repris du concept, inchangés",
-  "scenes_autorisees_utilisees": ["pd_objet", "pd_flux", "pd_versus", "pd_tampon"],
+  "scenes_autorisees_utilisees": ["hook", "pd_objet", "pd_flux", "pd_versus", "pd_tampon", "outro"],
   "scene_animee_requise": {
     "type": "pd_flux",
     "mecanisme": "rotation de l'aimant et flux de champ magnétique qui poussent le rotor, flèches animées"
@@ -23,52 +23,129 @@
   "scenes": [
     {
       "id": 1,
-      "type": "pd_objet",
+      "type": "hook",
       "role": "hook",
-      "duree_s": 3,
-      "prompt_image": "Pixel art style documentation, fond vert nuit, un moteur électrique schématique en coupe, cuivre clair, vue de côté, lumière douce, pas de texte sauf le titre court",
-      "texte_affiche": "Zéro explosion ?"
+      "duree_s": 4,
+      "prompt_image": "Pixel art style documentation, fond vert nuit, moteur électrique stylisé au centre en cuivre clair, vue de côté, aucune flamme ni bidon, lumière douce, pas de visage, pas de texte autre que le titre court",
+      "texte_affiche": "Comment un moteur sans essence peut-il tourner ?",
+      "note": "question en gros plan, moteur stylisé au centre, sans carburant"
     },
     {
       "id": 2,
       "type": "pd_objet",
       "role": "decor",
-      "duree_s": 3,
-      "prompt_image": "Pixel art documentation, un aimant en fer à cheval cuivre et vert menthe, pôles nord et sud marqués, fond vert nuit, vue isométrique légère",
-      "texte_affiche": "Aimant"
+      "duree_s": 4,
+      "prompt_image": "Pixel art documentation, coupe schématique du moteur électrique, bobines de fil cuivre et aimants étiquetés avec des libellés courts, fond vert nuit, vue de côté",
+      "texte_affiche": "Le secret : des aimants et des bobines",
+      "note": "coupe pixeldoc du moteur, étiquettes courtes"
     },
     {
       "id": 3,
       "type": "pd_flux",
       "role": "mecanisme_anime",
       "duree_s": 4,
-      "prompt_image": "Pixel art documentation, bobine cuivre dans un stator, flèches vert menthe qui circulent autour de la bobine, rotor avec aimant qui tourne, flux animé, fond vert nuit",
-      "texte_affiche": "Courant + aimant"
+      "prompt_image": "Pixel art documentation, bobine cuivre parcourue par le courant, traits lumineux vert menthe qui se propagent depuis la bobine, fond vert nuit",
+      "texte_affiche": "Courant → champ magnétique",
+      "note": "animation : des traits lumineux se propagent depuis la bobine parcourue par le courant"
     },
     {
       "id": 4,
       "type": "pd_flux",
       "role": "mecanisme_anime",
       "duree_s": 4,
-      "prompt_image": "Pixel art documentation, champ magnétique représenté par des lignes vert menthe, le rotor est poussé pas à pas, rotation en boucle, fond vert nuit",
-      "texte_affiche": "Le champ pousse"
+      "prompt_image": "Pixel art documentation, aimant de la partie mobile attiré puis repoussé par le champ, flèches vert menthe de rotation autour de l'axe, fond vert nuit",
+      "texte_affiche": "Le champ attire et repousse l'aimant",
+      "note": "animation : l'aimant de la partie mobile est attiré puis repoussé, flèches de rotation"
     },
     {
       "id": 5,
-      "type": "pd_versus",
-      "role": "comparatif",
+      "type": "pd_flux",
+      "role": "mecanisme_anime",
       "duree_s": 4,
-      "prompt_image": "Pixel art match de catch, deux moteurs face à face dans un cadre de ring, à gauche moteur à explosion avec petite flamme et fumée, à droite moteur électrique propre, fond vert nuit",
-      "texte_affiche": "Explosion : oui / non",
-      "note": "comparaison qualitative uniquement, aucun chiffre"
+      "prompt_image": "Pixel art documentation, axe du rotor qui tourne en boucle, flux de champ vert menthe actif tant que le courant circule, fond vert nuit",
+      "texte_affiche": "Tant que le courant circule, ça tourne",
+      "note": "animation en boucle : l'axe tourne tant que le courant circule"
     },
     {
       "id": 6,
+      "type": "pd_versus",
+      "role": "comparatif",
+      "duree_s": 4,
+      "prompt_image": "Pixel art match de catch, écran de match à deux colonnes, à gauche moteur thermique avec petite flamme et fumée, à droite moteur électrique propre, fond vert nuit",
+      "texte_affiche": "Explosion ou électricité ? Le match",
+      "note": "comparaison qualitative uniquement, aucun chiffre"
+    },
+    {
+      "id": 7,
+      "type": "pd_versus",
+      "role": "comparatif",
+      "duree_s": 4,
+      "prompt_image": "Pixel art documentation, deux colonnes comparées, thermique avec combustion à gauche, électrique avec aimants à droite, ligne d'échappement barrée côté électrique, fond vert nuit",
+      "texte_affiche": "Thermique : combustion. Électrique : aimants.",
+      "note": "comparaison qualitative uniquement, aucun chiffre"
+    },
+    {
+      "id": 8,
       "type": "pd_tampon",
+      "role": "mecanisme",
+      "duree_s": 4,
+      "prompt_image": "Pixel art documentation, tampon rond cuivre « zéro combustion » posé sur le moteur, fond vert nuit, style timbre",
+      "texte_affiche": "Zéro combustion dans le moteur",
+      "note": "tampon pixeldoc « zéro combustion » sur le moteur"
+    },
+    {
+      "id": 9,
+      "type": "pd_objet",
+      "role": "contexte",
+      "duree_s": 4,
+      "prompt_image": "Pixel art documentation, schéma simple : centrale électrique, câble, moteur sur une route, fond vert nuit, vue de côté",
+      "texte_affiche": "L'électricité vient d'une centrale",
+      "note": "schéma : centrale, câble, moteur sur la route"
+    },
+    {
+      "id": 10,
+      "type": "pd_flux",
+      "role": "mecanisme_anime",
+      "duree_s": 4,
+      "prompt_image": "Pixel art documentation, flèche de rotation vert menthe qui s'inverse quand le sens du courant s'inverse, moteur en coupe, fond vert nuit",
+      "texte_affiche": "Courant inversé : il tourne à l'envers",
+      "note": "animation : flèche de rotation qui s'inverse quand le courant s'inverse"
+    },
+    {
+      "id": 11,
+      "type": "pd_objet",
+      "role": "contexte",
+      "duree_s": 4,
+      "prompt_image": "Pixel art documentation, moteur électrique avec étiquettes pixeldoc courtes, peu de pièces mobiles surlignées en cuivre clair, fond vert nuit",
+      "texte_affiche": "Peu de pièces en mouvement",
+      "note": "étiquettes pixeldoc sur le moteur, peu de pièces mobiles surlignées"
+    },
+    {
+      "id": 12,
+      "type": "pd_tampon",
+      "role": "resume",
+      "duree_s": 4,
+      "prompt_image": "Pixel art documentation, résumé visuel : un aimant, un éclair vert menthe, une flèche de rotation cuivre, fond vert nuit, style timbre",
+      "texte_affiche": "Un aimant, du courant, et ça tourne",
+      "note": "résumé visuel : aimant + éclair + rotation"
+    },
+    {
+      "id": 13,
+      "type": "pd_tampon",
+      "role": "question",
+      "duree_s": 4,
+      "prompt_image": "Pixel art documentation, bulle de commentaire pixeldoc en gros au centre, fond vert nuit, pas de visage",
+      "texte_affiche": "Et toi, tu roulerais en électrique ?",
+      "note": "question finale en gros, bulle de commentaire pixeldoc"
+    },
+    {
+      "id": 14,
+      "type": "outro",
       "role": "outro",
-      "duree_s": 3,
-      "prompt_image": "Pixel art documentation, tampon rond cuivre sur fond vert nuit, icône de moteur électrique au centre, style timbre",
-      "texte_affiche": "Pas de carburant"
+      "duree_s": 4,
+      "prompt_image": "Pixel art style documentation, plan final sur le moteur électrique qui tourne, fond vert nuit, logo Décodé discret en bas de l'image",
+      "texte_affiche": "Le moteur tourne. Il ne brûle rien.",
+      "note": "plan final sur le moteur qui tourne, logo Décodé en bas"
     }
   ],
   "musique_notes": "nappe électronique légère, pulsation régulière, pas de montée dramatique ; baisse au moment de la scène de comparaison",

@@ -1,0 +1,65 @@
+{
+  "agent": "7.4",
+  "role": "pre-critique (scenario + DA)",
+  "compte": "science",
+  "job": "science-20261104-0800",
+  "verdict": "retour",
+  "retour_vers": ["6", "5"],
+  "publiable": false,
+  "defauts_bloquants": [
+    {
+      "id": "B1",
+      "fichier": "6_da.json",
+      "constat": "La DA ne correspond pas au scénario : 6 scènes totalisant 21 s (3+3+4+4+4+3) contre 14 plans de 4 s (56 s) dans 5_scenario.json. Le hook est en pd_objet côté DA alors que le scénario le type 'hook'. Les scènes DA (ids 1 à 6) ne se mappent pas sur les plans du scénario, ce qui rend le plan de production incohérent (durée, nombre de scènes, pd_flux animé placé sur des plans différents).",
+      "action": "Réaligner 6_da.json sur les 14 plans de 5_scenario.json (même ordre, même durée, même type de scène), en gardant le pd_flux animé requis (rotation rotor + champ magnétique)."
+    },
+    {
+      "id": "B2",
+      "fichier": "5_scenario.json + 6_da.json",
+      "constat": "Accroche (question_choc) et fonctionnement (explication_mecanisme) repris à l'identique de la dernière vidéo (science-20261028-0800). Le dossier précise 'Dernière vidéo (à ne pas répéter : accroche, fonctionnement, musique, voix)'. C'est une interdiction explicite du dossier, donc défaut bloquant. Musique (electronique_legere vs orchestral) et voix (V2 vs V1+V3) sont bien différentes, la palette aussi.",
+      "action": "Changer l'accroche et/ou le fonctionnement dans 5_scenario.json (hook et mécanisme). Si le type d'accroche ou de fonctionnement est fixé dans 4_concept.json, la correction doit remonter à l'agent 4 : le Manager tranchera."
+    }
+  ],
+  "corrections_non_bloquantes": [
+    {
+      "id": "C1",
+      "constat": "Dialogue total d'environ 154 mots (somme des répliques de 5_scenario.json), en dessous de la cible du dossier (160-170 mots). Durée 56 s, au-dessus du minimum de 55 s, donc OK.",
+      "action": "Ajouter 6 à 16 mots dans les répliques (ex. une phrase sur le champ magnétique ou sur l'inversion du courant)."
+    },
+    {
+      "id": "C2",
+      "constat": "Formulations absolues sur 'ne brûle rien' (scènes 8, 14 et outro). Vrai pour le moteur lui-même, mais l'électricité peut venir d'une centrale à combustion (scène 9 le mentionne). Pas un fait faux, mais une simplification trompeuse possible.",
+      "action": "Préciser 'le moteur lui-même ne brûle rien' dans l'outro ou la scène 8."
+    },
+    {
+      "id": "C3",
+      "constat": "Légende : la première ligne contient une accroche mais aucun chiffre, alors que la règle du compte demande accroche + chiffre. Le compte est qualitatif (comparaison sans chiffre), donc à arbitrer.",
+      "action": "Arbitrage Manager : accepter la légende telle quelle (compte qualitatif) ou ajouter un chiffre sourcé."
+    },
+    {
+      "id": "C4",
+      "constat": "Voix V2 et musique electronique_legere : non vérifiées contre le catalogue des options (signalé par 6_da.json lui-même). Une voix absente serait bloquante.",
+      "action": "Vérifier l'existence de V2 et de electronique_legere avant la spec 7 ; sinon fallback sur une voix et une musique connues du catalogue."
+    }
+  ],
+  "faits": {
+    "verifies": [
+      "Un moteur électrique n'a pas de combustion ni de gaz d'échappement (exact pour le moteur seul).",
+      "Le courant crée un champ magnétique ; l'inversion du courant inverse le sens de rotation (exact, simplifié)."
+    ],
+    "non_sources_ou_a_retirer": [],
+    "faux_signales": []
+  },
+  "conformite_regles": {
+    "scenes_autorisees": "OK (pd_objet, pd_flux, pd_versus, pd_tampon, hook, outro autorisés)",
+    "scenes_12_a_15": "OK (14 plans)",
+    "pas_de_visage_reel": "OK (objets + mascotte originale)",
+    "pas_de_mention_IA": "OK",
+    "pas_d_image_de_presse": "OK",
+    "pas_de_chiffre_invente": "OK (comparaison qualitative)",
+    "hashtags": "OK (4, sans #viral ni #fyp)",
+    "sources_legende": "OK (L'Express, Usine Nouvelle, couvrant la veille Mondial de l'auto)",
+    "palette_differente": "OK (cuivre_vert_nuit vs acier_ambre)"
+  },
+  "note_mise_en_production": "Pas de go tant que B1 et B2 ne sont pas corrigés. Après correction, repasser en pré-critique (agent 7.4) avant la spec 7."
+}

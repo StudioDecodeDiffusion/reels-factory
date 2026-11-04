@@ -4,16 +4,16 @@
   {
    "type": "hook",
    "duree_s": 4,
-   "texte_ecran": "Comment un moteur sans essence peut-il tourner ?",
+   "texte_ecran": "Comment un moteur peut-il tourner sans explosion ?",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Un moteur sans essence, ça peut tourner ?",
+     "texte": "Un moteur sans carburant, ça tourne ?",
      "expression": "pense"
     },
     {
      "qui": "mascotte",
-     "texte": "Oui ! Et sans explosion, promis.",
+     "texte": "Oui, et sans explosion, promis.",
      "expression": "clin"
     }
    ],
@@ -46,12 +46,12 @@
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Et là, la magie commence ?",
+     "texte": "Le déclic, il se passe où ?",
      "expression": "neutre"
     },
     {
      "qui": "mascotte",
-     "texte": "Le courant crée un champ magnétique.",
+     "texte": "Le courant rend le fil magnétique.",
      "expression": "content"
     }
    ],
@@ -65,12 +65,12 @@
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Et l'aimant, il fait quoi ?",
+     "texte": "Et l'aimant, il réagit comment ?",
      "expression": "pense"
     },
     {
      "qui": "mascotte",
-     "texte": "Il est attiré, repoussé, et tourne.",
+     "texte": "Attiré, repoussé : il pivote.",
      "expression": "content"
     }
    ],
@@ -127,7 +127,7 @@
     },
     {
      "qui": "mascotte",
-     "texte": "Pas de combustion, donc pas de gaz d'échappement.",
+     "texte": "Pas de combustion, donc pas d'échappement.",
      "expression": "clin"
     }
    ],
@@ -146,7 +146,7 @@
     },
     {
      "qui": "mascotte",
-     "texte": "Rien. Il transforme l'électricité en mouvement.",
+     "texte": "Le moteur seul ne brûle rien.",
      "expression": "content"
     }
    ],
@@ -165,7 +165,7 @@
     },
     {
      "qui": "mascotte",
-     "texte": "D'une centrale. Le moteur, lui, ne brûle rien.",
+     "texte": "D'une centrale ou d'une batterie.",
      "expression": "neutre"
     }
    ],
@@ -251,7 +251,7 @@
   {
    "type": "outro",
    "duree_s": 4,
-   "texte_ecran": "Le moteur tourne. Il ne brûle rien.",
+   "texte_ecran": "Le moteur seul ne brûle rien.",
    "dialogue": [
     {
      "qui": "narrateur",
@@ -260,7 +260,7 @@
     },
     {
      "qui": "mascotte",
-     "texte": "Il ne brûle rien. Abonne-toi !",
+     "texte": "Le moteur seul ne brûle rien. Abonne-toi !",
      "expression": "rire"
     }
    ],
