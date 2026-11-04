@@ -20,3 +20,5 @@ musique, voix, palette).
 
 **Fichiers produits** : 4_concept.json → 5_scenario.json + 6_da.json → 9_precritique.json (go) → 7_spec.json
 (`tool spec <ID>` l'assemble, l'agent 8 corrige) → video.mp4, apercu.png → 9_critique.json (publiable) → `tool drop`.
+
+**Rendu de référence (validé par le propriétaire le 04/11, tous les comptes)** : photos réelles du sujet en fond sur ≥ 6 scènes sur 14 (`fond_photo` = URL du dossier, `fond_photo_requete` = recherche précise ; au rendu GitHub cherche sur Bing puis DuckDuckGo, sans Wikipédia ni banque d'images, sans crédit), scènes animées pd_* en alternance, titres adaptés, sous-titres sur bandeau, musique dynamique.
