@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-04",
+  "compte": "eco",
+  "agent": "2",
+  "mode": "veille rapide : veille_brute.json (classement par compte, vérifié sur titres et liens) + une page de tendances (newengen.com, mise à jour 2 novembre 2026). Pas d'ouverture d'articles au-delà du titre et de la source. Pas de connexion Instagram.",
+  "formats": [
+    {"nom": "Réaction à un chiffre (« My Reaction To ___ »)", "description": "Plan serré sur le visage, réaction brève à un chiffre affiché à l'écran. Pour nous : réagir à un chiffre officiel du jour (inflation, déficit) puis l'expliquer en 3 plans.", "source": "https://newengen.com/insights/instagram-trends/ (2/11/2026)"},
+    {"nom": "Avant / après (« The Before State »)", "description": "Montrer la situation de départ, puis la conséquence. Pour nous : « ce que coûtait X avant » puis « ce que ça change pour ton argent ».", "source": "https://newengen.com/insights/instagram-trends/ (2/11/2026)"},
+    {"nom": "Révélation en fin de Reel (« The Stakes Setup »)", "description": "Poser l'enjeu dès les premières secondes, garder le responsable ou le montant pour la fin. Pour nous : annoncer la question au début, donner le chiffre sourcé à la fin.", "source": "https://newengen.com/insights/instagram-trends/ (2/11/2026)"}
+  ],
+  "accroches_types": [
+    "The Realization Hook : « Tu paies peut-être déjà ça sans le savoir. »",
+    "The Specificity Bait : un montant précis et sourcé en ouverture (chiffre du jour, source affichée).",
+    "The Direct Address : « Si tu as un livret A, lis ça. »"
+  ],
+  "sujets_qui_buzzent": [
+    {"sujet": "Inflation de la zone euro à 4 % sur un an en octobre", "source": "titre vu dans la veille : https://www.liberation.fr/economie/linflation-au-plus-haut-dans-la-zone-euro-depuis-trois-ans-20261104_L76FLZAU2BHIBBLHS (4/11/2026) ; à vérifier à la source INSEE/Eurostat avant usage", "vitesse": "forte (score veille 15,3, 21 articles)"},
+    {"sujet": "Budget 2027 : le débat à l'Assemblée", "source": "https://www.latribune.fr/article/economie/53006198665941/budget-2027-il-y-a-un-garrot-a-poser-d-urgence-alerte-bruno-le-maire (titre vu dans la veille)", "vitesse": "moyenne à forte (score 14,5, 25 articles)"},
+    {"sujet": "Croissance 2026 gouvernementale à 0,5 % jugée difficile à atteindre", "source": "agrégat veille (BFM, Boursorama, Mediapart), 6 articles", "vitesse": "forte (1,0 sur 8 h)"}
+  ],
+  "sons_tendance": [
+    {"nom": "Be OK (Ingrid Michaelson)", "usage": "contraste joie / texte dur à l'écran ; sous licence, à vérifier dans l'app. Sans le son : fond neutre et phrase choc.", "source": "https://newengen.com/insights/instagram-trends/ (2/11/2026)"},
+    {"nom": "Autumn Colors (LuLuMusic)", "usage": "autorisé pour les comptes business selon la page ; à vérifier sur notre compte avant usage.", "source": "https://newengen.com/insights/instagram-trends/ (2/11/2026)"}
+  ],
+  "communaute": "Retour de l'agent 9 (bilan du 26/10) : une seule vidéo publiée, 0 commentaire, 0 abonné nouveau. Pas de tendance communautaire exploitable. Garder la structure chiffres sourcés (source et date sur chaque chiffre).",
+  "a_eviter": [
+    "Sons sous licence sans vérification de droits : on compose ou on transpose le style.",
+    "Chiffres repris de la veille sans ouverture de la source : tant que le lien n'est pas vérifié, on ne l'affiche pas en vidéo.",
+    "Formats qui demandent une personne en gros plan qui ne parle pas du sujet éco : le fond doit rester l'économie."
+  ],
+  "notes_proprietaire": "Aucune note en attente pour l'agent 2 (eco)."
+}
