@@ -22,12 +22,23 @@ const usePop = (delai = 0) => {
 const TitrePixel: React.FC<{texte?: string; mot?: string; c: C; taille?: number; top?: number}> = ({texte, mot, c, taille = 74, top = 300}) => {
   const f = useCurrentFrame();
   if (!texte) return null;
+  // largeur sûre : 800 px (le zoom lent de la scène agrandit jusqu'à ~1,15) ; police pixel ≈ 0,8 em par caractère ; 3 lignes max
+  const lignes = (cpl: number) => texte.split(' ').reduce<string[]>((acc, m) => {
+    if (acc.length && (acc[acc.length - 1] + ' ' + m).length <= cpl) acc[acc.length - 1] += ' ' + m; else acc.push(m);
+    return acc;
+  }, []);
+  for (let t = taille; t >= 40; t -= 4) {
+    const cpl = Math.floor(800 / (0.8 * t));
+    const l = lignes(cpl);
+    taille = t;
+    if (l.length <= 3 && l.every((x) => x.length <= cpl)) break;
+  }
   const net = (x: string) => x.toLowerCase().replace(/[^\p{L}\d%€]/gu, '');
   const forts = new Set((mot ?? '').split(/\s+/).map(net).filter(Boolean));
   const n = Math.floor(interpolate(f, [2, 2 + texte.length * 0.7], [0, texte.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
   let vu = 0;
   return (
-    <div style={{position: 'absolute', left: 70, right: 70, top, textAlign: 'center', fontFamily: fontPixel, fontSize: taille, lineHeight: 1.12, textTransform: 'uppercase', textShadow: '6px 6px 0 rgba(0,0,0,0.55)'}}>
+    <div style={{position: 'absolute', left: 140, right: 140, top, textAlign: 'center', fontFamily: fontPixel, fontSize: taille, lineHeight: 1.12, textTransform: 'uppercase', textShadow: '6px 6px 0 rgba(0,0,0,0.55)'}}>
       {texte.split(' ').map((m, i) => {
         const debut = vu;
         vu += m.length + 1;
@@ -267,6 +278,7 @@ export const CadrePixelDoc: React.FC<{scene: Scene; theme: Theme; index: number;
   return (
     <AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 42%, ${c.fond}EE 0%, ${c.fond} 45%, #0B0603 100%)`}}>
       <AbsoluteFill style={{backgroundImage: 'linear-gradient(rgba(255,255,255,0.045) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.045) 2px, transparent 2px)', backgroundSize: '60px 60px'}} />
+      {scene.fond_photo ? <FondPhotoCadre src={scene.fond_photo} /> : null}
       <AbsoluteFill style={{background: 'radial-gradient(circle at 50% 45%, rgba(255,190,90,0.18), transparent 55%)'}} />
       {coin({left: 60, top: 230, borderLeftWidth: 6, borderTopWidth: 6})}
       {coin({right: 60, top: 230, borderRightWidth: 6, borderTopWidth: 6})}
@@ -278,16 +290,28 @@ export const CadrePixelDoc: React.FC<{scene: Scene; theme: Theme; index: number;
       <MouvementPixelDoc type={scene.type}>{children}</MouvementPixelDoc>
       {scene.type === 'pd_versus' ? <Flash a={12} /> : scene.type === 'pd_tampon' ? <Flash a={16} /> : null}
       <AbsoluteFill style={{backgroundImage: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.12) 0 2px, transparent 2px 5px)', mixBlendMode: 'multiply', pointerEvents: 'none'}} />
-      <div style={{position: 'absolute', left: 70, right: (theme as {plateforme?: string}).plateforme === 'tiktok' ? 190 : 70, top: (theme as {plateforme?: string}).plateforme === 'tiktok' ? 1300 : 1390, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '4px 16px'}}>
+      <div style={{position: 'absolute', left: 70, right: (theme as {plateforme?: string}).plateforme === 'tiktok' ? 190 : 70, top: (theme as {plateforme?: string}).plateforme === 'tiktok' ? 1300 1330, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '4px 18px', padding: '14px 20px', borderRadius: 20, backgroundColor: 'rgba(0,0,0,0.38)'}}>
         {vis.map((m, i) => {
           const idx = bloc * 5 + i;
           return (
-            <span key={idx} style={{fontFamily: SANS, fontWeight: 900, fontSize: 60, color: idx === courant ? c.accent : '#FFFFFF', textShadow: '4px 4px 0 rgba(0,0,0,0.8)', opacity: idx <= courant ? 1 : 0.45}}>
+            <span key={idx} style={{fontFamily: SANS, fontWeight: 900, fontSize: 76, color: idx === courant ? c.accent : '#FFFFFF', textShadow: '4px 4px 0 rgba(0,0,0,0.8)', opacity: idx <= courant ? 1 : 0.45}}>
               {m}
             </span>
           );
         })}
       </div>
+    </AbsoluteFill>
+  );
+};
+
+// Photo réelle d'actualité derrière les éléments animés (assombrie, zoom lent, dégradé pour garder le texte lisible)
+const FondPhotoCadre: React.FC<{src: string}> = ({src}) => {
+  const f = useCurrentFrame();
+  const zoom = 1.05 + Math.min(0.14, f * 0.0016);
+  return (
+    <AbsoluteFill>
+      <Img src={staticFile(src)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zoom})`, filter: 'brightness(0.6) saturate(1.1)'}} />
+      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.65) 100%)'}} />
     </AbsoluteFill>
   );
 };

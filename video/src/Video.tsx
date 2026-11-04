@@ -106,7 +106,7 @@ export const ReelVideo: React.FC<VideoSpec> = ({theme, scenes, music}) => {
         const seq = (
           <Sequence key={i} from={from} durationInFrames={dur}>
             {s.audio ? <Audio src={staticFile(s.audio)} /> : null}
-            {s.fond_photo ? <FondPhoto src={s.fond_photo} dur={dur} /> : null}
+            {s.fond_photo && theme.style !== 'pixeldoc' ? <FondPhoto src={s.fond_photo} dur={dur} /> : null}
             {theme.style === 'pixeldoc' ? (
               <AbsoluteFill>
                 <CadrePixelDoc scene={s} theme={theme} index={i} total={scenes.length}>
