@@ -20,3 +20,5 @@ d'invention de chiffre ou de citation. En cas de doute sur un fait : tu le retir
 
 
 **Variété (04/11)** : compare l'accroche, le fonctionnement et la musique du concept à « Dernière vidéo » du dossier ; s'ils sont identiques, change-les (catalogue `agents/CATALOGUE_VARIETE.md`) et écris `variete` dans 4_concept.json, même si le brouillon Gemini les avait repris.
+
+**Images réelles (04/11)** : la section « Images réelles du sujet » du dossier liste des URL de presse ; copie dans 4_concept.json le champ `images` avec celles du sujet retenu (3 max).

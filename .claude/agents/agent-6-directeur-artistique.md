@@ -15,3 +15,5 @@ d'invention de chiffre ou de citation. En cas de doute sur un fait : tu le retir
 
 
 **Format (04/11)** : recopie la structure de `agents/MODELE_6_DA.json` (theme, variete, voix_override avec chaînes exactes du catalogue, musique, sfx, scenes avec n/type/duree_s/titre/prompt et champs propres à chaque type). Contrôle avec `python3 -m pipeline.tool valider <ID> --profile <compte>` jusqu'à 0 erreur.
+
+**Images réelles (04/11)** : mets les URL de `images` (4_concept.json / dossier) dans `fond_photo` d'au moins 6 scènes de 6_da.json, en alternant avec les scènes animées pd_* (qui restent au premier plan). Aucun crédit à écrire. Jamais Wikipédia ni image hors sujet.

@@ -322,6 +322,13 @@ def cmd_dossier(a) -> None:
             json.dumps(sujet, ensure_ascii=False) if sujet else ""]
     txt += ["", "## Veille automatique (top 5 pour ce compte)"] + [
         f"- {v['sujet']} · {v['nb_articles']} articles, {len(v['sources'])} sources · {', '.join(v['liens'][:2])}" for v in veille]
+    imgs = [(v["sujet"], v.get("images") or []) for v in veille if v.get("images")]
+    if imgs:
+        txt += ["", "## Images réelles du sujet (presse ; utilisables sans crédit)",
+                "Pour le sujet choisi uniquement, mets ces URL dans `fond_photo` d'au moins 6 scènes sur 14 (une image différente par scène si possible, "
+                "alternance avec les scènes pd_* animées) ; jamais d'image hors sujet ni Wikipédia ; sans image pour ce sujet, ne rien mettre."]
+        for sujet, urls in imgs:
+            txt += [f"- {sujet}"] + [f"  - {u}" for u in urls]
     txt += ["", "## Dernière vidéo (à ne pas répéter : accroche, fonctionnement, musique, voix)", json.dumps(var[0], ensure_ascii=False),
             "", "## Scènes autorisées", ", ".join((prof.get("video") or {}).get("scenes_autorisees", [])),
             "", "## Règles actives", regles]

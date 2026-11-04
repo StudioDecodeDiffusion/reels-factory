@@ -109,7 +109,7 @@ const Photo: React.FC<{s: Ex<'ed_photo'>; c: C}> = ({s, c}) => {
         <Kicker texte={s.kicker} c={{...c, accent: c.accent}} delai={8} />
         {s.titre ? <Revele texte={s.titre} taille={84} couleur="#FFFFFF" delai={10} /> : null}
       </div>
-      <div style={{position: 'absolute', right: 30, top: 230, fontFamily: SANS, fontSize: 20, color: '#ddd', backgroundColor: 'rgba(0,0,0,0.45)', padding: '4px 10px'}}>© {s.credit}</div>
+
     </AbsoluteFill>
   );
 };

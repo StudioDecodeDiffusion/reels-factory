@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig, Img} from 'remotion';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/space-grotesk/700.css';
@@ -106,6 +106,7 @@ export const ReelVideo: React.FC<VideoSpec> = ({theme, scenes, music}) => {
         const seq = (
           <Sequence key={i} from={from} durationInFrames={dur}>
             {s.audio ? <Audio src={staticFile(s.audio)} /> : null}
+            {s.fond_photo ? <FondPhoto src={s.fond_photo} dur={dur} /> : null}
             {theme.style === 'pixeldoc' ? (
               <AbsoluteFill>
                 <CadrePixelDoc scene={s} theme={theme} index={i} total={scenes.length}>
@@ -139,3 +140,14 @@ export const ReelVideo: React.FC<VideoSpec> = ({theme, scenes, music}) => {
 };
 
 export {encrePour};
+
+// Photo réelle d'actualité : plein cadre, assombrie (le texte reste lisible), zoom lent. Aucun crédit affiché (choix du propriétaire).
+const FondPhoto: React.FC<{src: string; dur: number}> = ({src, dur}) => {
+  const f = useCurrentFrame();
+  const zoom = interpolate(f, [0, dur], [1.04, 1.16], {extrapolateRight: 'clamp'});
+  return (
+    <AbsoluteFill style={{backgroundColor: '#000'}}>
+      <Img src={staticFile(src)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zoom})`, filter: 'brightness(0.55) saturate(1.05)'}} />
+    </AbsoluteFill>
+  );
+};

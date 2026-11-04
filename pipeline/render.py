@@ -26,8 +26,8 @@ REQUIRED = {
     "bars": ["title", "items"], "timeline": ["events"], "dots": ["total", "highlighted", "label"],
     "compare": ["left", "right"], "particles": ["mode", "caption"], "outro": ["text", "cta"],
     "quiz": ["question", "options", "bonne"], "bigstat": ["value", "label"], "checklist": ["items"],
-    "photo": ["src", "credit"], "ed_titre": ["titre"], "ed_chiffre": ["valeur", "legende"], "ed_citation": ["texte", "auteur"],
-    "ed_photo": ["src", "credit"], "ed_liste": ["points"], "ed_versus": ["gauche", "droite"], "ed_allocution": ["texte", "auteur"], "pd_objet": [], "pd_flux": ["de", "vers"], "pd_chiffre": ["valeur", "legende"], "pd_versus": ["gauche", "droite"], "pd_jauge": ["valeur", "legende"], "pd_tampon": ["tampon"], "pendant": ["haut", "bas"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
+    "photo": ["src"], "ed_titre": ["titre"], "ed_chiffre": ["valeur", "legende"], "ed_citation": ["texte", "auteur"],
+    "ed_photo": ["src"], "ed_liste": ["points"], "ed_versus": ["gauche", "droite"], "ed_allocution": ["texte", "auteur"], "pd_objet": [], "pd_flux": ["de", "vers"], "pd_chiffre": ["valeur", "legende"], "pd_versus": ["gauche", "droite"], "pd_jauge": ["valeur", "legende"], "pd_tampon": ["tampon"], "pendant": ["haut", "bas"], "pancartes": ["items"], "sms": ["texte"], "debat": ["pour", "contre"], "reaction": ["paliers"], "conte": ["texte"],
 }
 
 
@@ -150,7 +150,7 @@ def _credit_commons(sc: dict) -> None:
     url = ("https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&format=json&titles="
            + urllib.parse.quote("File:" + nom))
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "DecodeStudio/1.0 (studiodecodediffusion@gmail.com)"})
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; DecodeStudio/1.0)", "Accept": "image/*"})
         data = json.loads(urllib.request.urlopen(req, timeout=30).read())
         meta = next(iter(data["query"]["pages"].values()))["imageinfo"][0]["extmetadata"]
         auteur = _re.sub(r"<[^>]+>", "", meta.get("Artist", {}).get("value", "")).strip()[:60]
@@ -170,15 +170,22 @@ def _photos(spec: dict) -> None:
             _photos({"scenes": [tmp]})
             sc["src"], sc["credit"] = tmp["src"], tmp["credit"]
             continue
+        if str(sc.get("fond_photo", "")).startswith("http"):  # fond photo réel d'actualité (sans crédit)
+            tmp = {"type": "photo", "src": sc["fond_photo"]}
+            _photos({"scenes": [tmp]})
+            sc["fond_photo"] = tmp["src"] or None
+            if not sc["fond_photo"]:
+                sc.pop("fond_photo")
         src = str(sc.get("src", ""))
         if sc.get("type") in ("photo", "ed_photo") and src.startswith("http"):
-            _credit_commons(sc)
+            if "commons.wikimedia" in src or "Special:FilePath" in src:
+                _credit_commons(sc)
             nom = hashlib.sha1(src.encode()).hexdigest()[:16] + (Path(src.split("?")[0]).suffix or ".jpg")
             dest = VIDEO / "public" / "photos" / nom
             dest.parent.mkdir(parents=True, exist_ok=True)
             if not dest.exists():
                 try:
-                    req = urllib.request.Request(src, headers={"User-Agent": "DecodeStudio/1.0 (studiodecodediffusion@gmail.com)"})
+                    req = urllib.request.Request(src, headers={"User-Agent": "Mozilla/5.0 (compatible; DecodeStudio/1.0)", "Accept": "image/*"})
                     dest.write_bytes(urllib.request.urlopen(req, timeout=60).read())
                 except Exception as e:
                     print(f"photo non téléchargée ({e}) : remplacée par un fond")

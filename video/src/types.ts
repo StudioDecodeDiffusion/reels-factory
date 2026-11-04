@@ -26,6 +26,7 @@ type Base = {
   sprite_anim?: 'bounce' | 'float' | 'shake' | 'spin' | 'grow' | 'rain' | 'orbit';
   mascotte?: 'neutre' | 'content' | 'choc' | 'pense' | 'clin' | 'aucune';
   fond?: string; // couleur de fond de la scène (#RRGGBB) ; sinon palette du thème
+  fond_photo?: string; // photo réelle d'actualité en fond (URL, téléchargée au rendu), assombrie + zoom lent ; le contenu s'anime par-dessus
   // Format dialogue : Lou (narrateur, à gauche) pose les questions, Déco (mascotte, à droite) répond
   dialogue?: {qui: 'narrateur' | 'mascotte'; texte: string; expression?: string; debut?: number; fin?: number}[];
   tenue_narrateur?: string;
@@ -73,11 +74,11 @@ export type Scene =
   | (Base & {type: 'debat'; title?: string; pour: string[]; contre: string[]; label_pour?: string; label_contre?: string})
   | (Base & {type: 'reaction'; paliers: {valeur: string; label: string}[]})
   | (Base & {type: 'conte'; titre?: string; texte: string; chute?: string})
-  | (Base & {type: 'photo'; src: string; credit: string; titre?: string; legende?: string})
+  | (Base & {type: 'photo'; src: string; credit?: string; titre?: string; legende?: string})
   | (Base & {type: 'ed_titre'; titre: string; kicker?: string; sous_titre?: string; mot_fort?: string})
   | (Base & {type: 'ed_chiffre'; valeur: number; legende: string; kicker?: string; prefixe?: string; suffixe?: string; decimales?: number; source?: string})
   | (Base & {type: 'ed_citation'; texte: string; auteur: string})
-  | (Base & {type: 'ed_photo'; src: string; credit: string; debut_s?: number; titre?: string; kicker?: string})
+  | (Base & {type: 'ed_photo'; src: string; credit?: string; debut_s?: number; titre?: string; kicker?: string})
   | (Base & {type: 'ed_liste'; points: string[]; titre?: string; kicker?: string})
   | (Base & {type: 'pd_objet'; titre?: string; mot_fort?: string; src?: string; prompt?: string; etiquette?: string})
   | (Base & {type: 'pd_flux'; titre?: string; mot_fort?: string; de: {label: string; src?: string; prompt?: string}; vers: {label: string; src?: string; prompt?: string}; montant?: string})
