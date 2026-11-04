@@ -57,3 +57,9 @@ Avant `drop` : relire la demande d'origine et `agents/REPARTITION.md` ; vérifie
 
 ## Statut à chaque étape (obligatoire, 26/10)
 Après chaque étape déléguée (4, 5, 6, 7, 8, dépôt) et à l'arrêt, écris le statut : `python3 -m pipeline.tool statut <ID> "<étape>" "<OK ou raison de l'arrêt>"`. Si la session s'arrête sans vidéo déposée, la dernière ligne doit dire où : jamais de silence.
+
+## Retour du critique = régénération (obligatoire, 04/11)
+- Un retour de l'agent 7 sur `accroche`, `fonctionnement` ou `musique` identiques à la dernière vidéo est **bloquant** (règle du dossier) : le Manager ne le requalifie jamais en « non bloquant ».
+- Boucle jusqu'à **3 essais** : relancer l'agent 5 (puis 6) avec la consigne écrite noir sur blanc, ex. « ACCROCHE = contre_intuitif (pas question_choc) ; FONCTIONNEMENT = vrai_faux (pas explication_mecanisme) » ; choisir les valeurs dans `agents/CATALOGUE_VARIETE.md` en excluant celles du bloc « Dernière vidéo » du dossier et en ajoutant `variete` dans 5_scenario.json. Ne pas se contenter de « corriger » : changer réellement les valeurs.
+- Les corrections non bloquantes (mots manquants, formulations) se font dans la même relance.
+- Arrêt avec alerte ❌ seulement après 3 essais refusés ; `tool statut` à chaque essai.
