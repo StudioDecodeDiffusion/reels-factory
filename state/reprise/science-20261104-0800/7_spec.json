@@ -1,0 +1,360 @@
+{
+ "compte": "science",
+ "job": "science-20261104-0800",
+ "sujet": "Comment tourne un moteur électrique, et pourquoi il n'a pas besoin de brûler quoi que ce soit",
+ "style_visuel": "pixeldoc",
+ "mise_en_page": "plein_ecran",
+ "palette": "cuivre_vert_nuit",
+ "palette_detail": {
+  "fond": "vert très sombre presque noir",
+  "trait": "cuivre clair",
+  "accent": "vert menthe pour le champ magnétique et le courant",
+  "texte": "blanc cassé"
+ },
+ "voix": "V2",
+ "ecarts_derniere_video": "palette, musique et voix changent (dernière : acier_ambre, orchestral, V1+V3) ; accroche question et fonctionnement explication_mecanisme repris du concept, inchangés",
+ "scenes_autorisees_utilisees": [
+  "hook",
+  "pd_objet",
+  "pd_flux",
+  "pd_versus",
+  "pd_tampon",
+  "outro"
+ ],
+ "scene_animee_requise": {
+  "type": "pd_flux",
+  "mecanisme": "rotation de l'aimant et flux de champ magnétique qui poussent le rotor, flèches animées"
+ },
+ "personnages": "aucun visage ; objets seulement (moteur schématique, aimant, bobine)",
+ "musique_notes": "nappe électronique légère, pulsation régulière, pas de montée dramatique ; baisse au moment de la scène de comparaison",
+ "regles": {
+  "pas_de_visage_reel": true,
+  "pas_de_mention_IA": true,
+  "pas_de_chiffre_invente": true,
+  "pas_d_image_de_presse": true,
+  "lisibilite_mobile": "un seul message court par scène, texte à au moins 40 px sur 1080 px de large"
+ },
+ "a_verifier": [
+  "V2 et electronique_legere : noms de voix et de musique à confirmer contre le catalogue des options (non vérifié ici)",
+  "accroche : le concept fixe déjà fonctionnement explication_mecanisme, identique à la dernière vidéo ; à valider côté 5_scenario"
+ ],
+ "musique": {
+  "genre": "synthwave",
+  "volume": 0.4
+ },
+ "variete": {
+  "trend": ""
+ },
+ "titre_miniature": "Comment tourne un moteur électrique ?",
+ "mots_choc": "Zéro explosion",
+ "scenes": [
+  {
+   "id": 1,
+   "type": "hook",
+   "role": "hook",
+   "duree_s": 4,
+   "prompt_image": "Pixel art style documentation, fond vert nuit, moteur électrique stylisé au centre en cuivre clair, vue de côté, aucune flamme ni bidon, lumière douce, pas de visage, pas de texte autre que le titre court",
+   "texte_affiche": "Comment un moteur sans essence peut-il tourner ?",
+   "note": "question en gros plan, moteur stylisé au centre, sans carburant",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un moteur sans carburant, ça tourne ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Oui, et sans explosion, promis.",
+     "expression": "clin"
+    }
+   ],
+   "duration": 5.0
+  },
+  {
+   "id": 2,
+   "type": "pd_objet",
+   "role": "decor",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, coupe schématique du moteur électrique, bobines de fil cuivre et aimants étiquetés avec des libellés courts, fond vert nuit, vue de côté",
+   "texte_affiche": "Le secret : des aimants et des bobines",
+   "note": "coupe pixeldoc du moteur, étiquettes courtes",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Qu'est-ce qui le fait tourner ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Des bobines de fil et des aimants.",
+     "expression": "content"
+    }
+   ],
+   "duration": 5.4
+  },
+  {
+   "id": 3,
+   "type": "pd_flux",
+   "role": "mecanisme_anime",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, bobine cuivre parcourue par le courant, traits lumineux vert menthe qui se propagent depuis la bobine, fond vert nuit",
+   "texte_affiche": "Courant → champ magnétique",
+   "note": "animation : des traits lumineux se propagent depuis la bobine parcourue par le courant",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le déclic, il se passe où ?",
+     "expression": "neutre"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Le courant rend le fil magnétique.",
+     "expression": "content"
+    }
+   ],
+   "duration": 5.4
+  },
+  {
+   "id": 4,
+   "type": "pd_flux",
+   "role": "mecanisme_anime",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, aimant de la partie mobile attiré puis repoussé par le champ, flèches vert menthe de rotation autour de l'axe, fond vert nuit",
+   "texte_affiche": "Le champ attire et repousse l'aimant",
+   "note": "animation : l'aimant de la partie mobile est attiré puis repoussé, flèches de rotation",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et l'aimant, il réagit comment ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Attiré, repoussé : il pivote.",
+     "expression": "content"
+    }
+   ],
+   "duration": 4.6
+  },
+  {
+   "id": 5,
+   "type": "pd_flux",
+   "role": "mecanisme_anime",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, axe du rotor qui tourne en boucle, flux de champ vert menthe actif tant que le courant circule, fond vert nuit",
+   "texte_affiche": "Tant que le courant circule, ça tourne",
+   "note": "animation en boucle : l'axe tourne tant que le courant circule",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et ça tourne en continu ?",
+     "expression": "neutre"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Tant que le courant circule, oui.",
+     "expression": "content"
+    }
+   ],
+   "duration": 5.0
+  },
+  {
+   "id": 6,
+   "type": "pd_versus",
+   "role": "comparatif",
+   "duree_s": 4,
+   "prompt_image": "Pixel art match de catch, écran de match à deux colonnes, à gauche moteur thermique avec petite flamme et fumée, à droite moteur électrique propre, fond vert nuit",
+   "texte_affiche": "Explosion ou électricité ? Le match",
+   "note": "comparaison qualitative uniquement, aucun chiffre",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Allez, le match : explosion contre électricité !",
+     "expression": "content"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Le moteur thermique brûle du carburant.",
+     "expression": "rire"
+    }
+   ],
+   "duration": 5.8
+  },
+  {
+   "id": 7,
+   "type": "pd_versus",
+   "role": "comparatif",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, deux colonnes comparées, thermique avec combustion à gauche, électrique avec aimants à droite, ligne d'échappement barrée côté électrique, fond vert nuit",
+   "texte_affiche": "Thermique : combustion. Électrique : aimants.",
+   "note": "comparaison qualitative uniquement, aucun chiffre",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ça change quoi ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Pas de combustion, donc pas d'échappement.",
+     "expression": "clin"
+    }
+   ],
+   "duration": 4.2
+  },
+  {
+   "id": 8,
+   "type": "pd_tampon",
+   "role": "mecanisme",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, tampon rond cuivre « zéro combustion » posé sur le moteur, fond vert nuit, style timbre",
+   "texte_affiche": "Zéro combustion dans le moteur",
+   "note": "tampon pixeldoc « zéro combustion » sur le moteur",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Attends, il ne brûle vraiment rien ?",
+     "expression": "choc"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Le moteur seul ne brûle rien.",
+     "expression": "content"
+    }
+   ],
+   "duration": 5.4
+  },
+  {
+   "id": 9,
+   "type": "pd_objet",
+   "role": "contexte",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, schéma simple : centrale électrique, câble, moteur sur une route, fond vert nuit, vue de côté",
+   "texte_affiche": "L'électricité vient d'une centrale",
+   "note": "schéma : centrale, câble, moteur sur la route",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Elle sort d'où ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "D'une centrale ou d'une batterie.",
+     "expression": "neutre"
+    }
+   ],
+   "duration": 3.9
+  },
+  {
+   "id": 10,
+   "type": "pd_flux",
+   "role": "mecanisme_anime",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, flèche de rotation vert menthe qui s'inverse quand le sens du courant s'inverse, moteur en coupe, fond vert nuit",
+   "texte_affiche": "Courant inversé : il tourne à l'envers",
+   "note": "animation : flèche de rotation qui s'inverse quand le courant s'inverse",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Il peut reculer ?",
+     "expression": "choc"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "En inversant le courant.",
+     "expression": "rire"
+    }
+   ],
+   "duration": 3.5
+  },
+  {
+   "id": 11,
+   "type": "pd_objet",
+   "role": "contexte",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, moteur électrique avec étiquettes pixeldoc courtes, peu de pièces mobiles surlignées en cuivre clair, fond vert nuit",
+   "texte_affiche": "Peu de pièces en mouvement",
+   "note": "étiquettes pixeldoc sur le moteur, peu de pièces mobiles surlignées",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et côté mécanique, c'est plus simple ?",
+     "expression": "content"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Bien moins de pièces en mouvement.",
+     "expression": "content"
+    }
+   ],
+   "duration": 5.4
+  },
+  {
+   "id": 12,
+   "type": "pd_tampon",
+   "role": "resume",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, résumé visuel : un aimant, un éclair vert menthe, une flèche de rotation cuivre, fond vert nuit, style timbre",
+   "texte_affiche": "Un aimant, du courant, et ça tourne",
+   "note": "résumé visuel : aimant + éclair + rotation",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Donc, en une phrase ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Un aimant, du courant, et ça tourne.",
+     "expression": "content"
+    }
+   ],
+   "duration": 5.0
+  },
+  {
+   "id": 13,
+   "type": "pd_tampon",
+   "role": "question",
+   "duree_s": 4,
+   "prompt_image": "Pixel art documentation, bulle de commentaire pixeldoc en gros au centre, fond vert nuit, pas de visage",
+   "texte_affiche": "Et toi, tu roulerais en électrique ?",
+   "note": "question finale en gros, bulle de commentaire pixeldoc",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et toi, t'en penses quoi ?",
+     "expression": "pense"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Dis-le en commentaire !",
+     "expression": "clin"
+    }
+   ],
+   "duration": 4.2
+  },
+  {
+   "id": 14,
+   "type": "outro",
+   "role": "outro",
+   "duree_s": 4,
+   "prompt_image": "Pixel art style documentation, plan final sur le moteur électrique qui tourne, fond vert nuit, logo Décodé discret en bas de l'image",
+   "texte_affiche": "Le moteur tourne. Il ne brûle rien.",
+   "note": "plan final sur le moteur qui tourne, logo Décodé en bas",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Verdict : il tourne sans essence ?",
+     "expression": "clin"
+    },
+    {
+     "qui": "mascotte",
+     "texte": "Le moteur seul ne brûle rien. Abonne-toi !",
+     "expression": "rire"
+    }
+   ],
+   "duration": 6.2
+  }
+ ]
+}

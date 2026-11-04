@@ -11,10 +11,20 @@
     "accent": "vert menthe pour le champ magnétique et le courant",
     "texte": "blanc cassé"
   },
-  "musique": "electronique_legere",
+  "musique": {
+    "genre": "synthwave",
+    "volume": 0.4
+  },
   "voix": "V2",
   "ecarts_derniere_video": "palette, musique et voix changent (dernière : acier_ambre, orchestral, V1+V3) ; accroche question et fonctionnement explication_mecanisme repris du concept, inchangés",
-  "scenes_autorisees_utilisees": ["hook", "pd_objet", "pd_flux", "pd_versus", "pd_tampon", "outro"],
+  "scenes_autorisees_utilisees": [
+    "hook",
+    "pd_objet",
+    "pd_flux",
+    "pd_versus",
+    "pd_tampon",
+    "outro"
+  ],
   "scene_animee_requise": {
     "type": "pd_flux",
     "mecanisme": "rotation de l'aimant et flux de champ magnétique qui poussent le rotor, flèches animées"
