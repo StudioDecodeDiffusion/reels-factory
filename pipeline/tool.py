@@ -57,7 +57,9 @@ def cmd_check(a) -> None:
     from .variete import controler
     errs += controler(spec, a.profile)
     pre = Path(a.spec).parent / "9_precritique.json"
-    if not pre.exists():
+    if getattr(a, "avant_critique", False):
+        pass  # `valider` : contrôle de format avant la pré-critique
+    elif not pre.exists():
         errs.append("9_precritique.json manquant : l'agent 7 doit critiquer le scénario et la DA AVANT la génération")
     else:
         d9 = json.loads(pre.read_text(encoding="utf-8"))
@@ -76,6 +78,15 @@ def cmd_check(a) -> None:
         sys.exit(1)
     Path(a.spec).write_text(json.dumps(spec, ensure_ascii=False, indent=2), encoding="utf-8")  # version normalisée
     print("OK")
+
+
+def cmd_valider(a) -> None:
+    """Contrat de format : assemble la spec depuis 5/6 et la contrôle comme `check`, AVANT la pré-critique.
+    Les agents 5/6 corrigent jusqu'à 0 erreur (même contrôle que le dépôt : plus de surprise à l'étape 8)."""
+    cmd_spec(a)
+    a.spec = str(WORK / a.id / "7_spec.json")
+    a.avant_critique = True
+    cmd_check(a)
 
 
 def cmd_render(a) -> None:
@@ -275,7 +286,7 @@ def cmd_spec(a) -> None:
     scenes = [dict(x) for x in da.get("scenes", [])]
     for x in scenes:
         x["dialogue"] = []
-        x["duration"] = float(x.pop("duree", 3.5))
+        x["duration"] = float(x.pop("duree", None) or x.pop("duree_s", None) or 3.5)
     for i, l in enumerate(lignes):  # répartition dans l'ordre, proportionnelle au nombre de scènes
         scenes[min(len(scenes) - 1, i * len(scenes) // max(1, len(lignes)))]["dialogue"].append(l)
     for x in scenes:  # durée minimale = temps de parole (≈ 2,6 mots/s) + respiration
@@ -667,6 +678,7 @@ def main() -> None:
     p = sub.add_parser("budget"); p.add_argument("--agent", required=True); p.add_argument("--jetons", required=True)
     p = sub.add_parser("approbation"); p.add_argument("--agent", required=True); p.add_argument("--demande", required=True)
     p.add_argument("--niveau", choices=["critique", "routine"], default="routine")
+    p = sub.add_parser("valider"); p.add_argument("id"); p.add_argument("--profile", required=True)
     p = sub.add_parser("spec"); p.add_argument("id")
     p = sub.add_parser("statut"); p.add_argument("id"); p.add_argument("etape"); p.add_argument("resultat")
     p = sub.add_parser("sauver"); p.add_argument("id")

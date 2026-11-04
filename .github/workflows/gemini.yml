@@ -1,4 +1,4 @@
-name: Gemini · brouillons de concept et de scénario
+name: Brouillons de concept et de scénario (Gemini, puis IA gratuites de secours)
 
 # Offre gratuite Google AI Studio (aucune facturation) : prépare les brouillons avant chaque session de production Claude.
 on:
@@ -27,6 +27,10 @@ jobs:
       - run: pip install -q -r requirements.txt
       - env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
           set -o pipefail
           python -m pipeline.gemini ${{ inputs.action == 'test' && 'test' || 'preparer' }} 2>&1 | tee state/gemini_log.txt

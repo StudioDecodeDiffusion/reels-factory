@@ -1,0 +1,60 @@
+{
+  "id": "science-20261028-0800",
+  "compte": "science",
+  "theme": {
+    "fond": "#0B1F2A",
+    "texte": "#F4F1E8",
+    "accent": "#FFB400",
+    "accent2": "#4FD1C5",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "acier_ambre",
+    "palette": ["#0B1F2A", "#16384A", "#FFB400", "#4FD1C5", "#F4F1E8", "#E4572E"],
+    "mise_en_page": "plein_ecran",
+    "tenues": {"narrateur": "science", "mascotte": "detective"}
+  },
+  "variete": {
+    "accroche": "question_choc",
+    "trend": "aucune (sujet de la file ; veille hors périmètre)",
+    "fonctionnement": "explication_mecanisme",
+    "mise_en_page": "plein_ecran",
+    "musique": "orchestral",
+    "voix": "V1+V3",
+    "palette": "acier_ambre"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "musique": {
+    "genre": "orchestral",
+    "volume": 0.4,
+    "ambiance_globale": "curieux",
+    "ambiance_par_scene": {"1": "effroi", "2": "curieux", "3": "curieux", "4": "curieux", "5": "curieux", "6": "tension", "7": "tension", "8": "tension", "9": "tension", "10": "tension", "11": "tension", "12": "tension", "13": "curieux", "14": "joyeux"}
+  },
+  "sfx": {"1": ["impact"], "4": ["pop"], "5": ["ding"], "6": ["pop"], "11": ["impact"], "14": ["ding"]},
+  "scenes": [
+    {"n": 1, "type": "hook", "duree_s": 4.0, "titre": "Vent modéré, pont tombé ?", "mot_fort": "tombé", "prompt": "a suspension bridge at dusk with a large question mark in the sky, pixel art, side view, single object"},
+    {"n": 2, "type": "pd_objet", "duree_s": 4.0, "titre": "Pont suspendu : tension", "mot_fort": "tension", "prompt": "a single thick steel suspension cable under tension, pixel art, side view, single object", "etiquette": "Câble"},
+    {"n": 3, "type": "pd_flux", "duree_s": 4.0, "titre": "Le poids descend", "mot_fort": "descend", "de": {"label": "Suspentes", "prompt": "a vertical steel hanger rod, pixel art, single object"}, "vers": {"label": "Pylônes", "prompt": "a tall stone bridge tower, pixel art, single object"}, "montant": "poids"},
+    {"n": 4, "type": "pd_chiffre", "duree_s": 4.0, "titre": "1er juillet 1940", "mot_fort": "1er juillet 1940", "valeur": null, "legende": "Ouverture du pont de Tacoma Narrows", "source": "Wikipedia (Tacoma Narrows Bridge, 1940)"},
+    {"n": 5, "type": "pd_chiffre", "duree_s": 4.0, "titre": "129 jours plus tard", "mot_fort": "129 jours", "valeur": 129, "suffixe": " jours", "legende": "Entre l'ouverture et l'effondrement", "source": "calcul à partir des deux dates"},
+    {"n": 6, "type": "pd_chiffre", "duree_s": 4.0, "titre": "Vent : 64 km/h", "mot_fort": "64 km/h", "valeur": 64, "suffixe": " km/h", "legende": "Soit 40 mph ce jour-là", "source": "Wikipedia (Tacoma Narrows Bridge, 1940)"},
+    {"n": 7, "type": "pd_versus", "duree_s": 4.0, "titre": "Pas de surcharge", "mot_fort": "surcharge", "de": {"label": "Poids", "prompt": "a heavy stone block, pixel art, single object"}, "vers": {"label": "Vent modéré", "prompt": "a gust of wind swirl, pixel art, single object"}, "verdict": "Le vent suffit"},
+    {"n": 8, "type": "pd_flux", "duree_s": 4.0, "titre": "Le tablier tourne", "mot_fort": "tourne", "de": {"label": "Vent", "prompt": "a gust of wind swirl, pixel art, single object"}, "vers": {"label": "Tablier", "prompt": "a bridge deck twisting sideways, pixel art, single object"}, "montant": "rotation"},
+    {"n": 9, "type": "pd_flux", "duree_s": 4.0, "titre": "L'angle change", "mot_fort": "angle", "de": {"label": "Angle du vent", "prompt": "a wind arrow changing direction, pixel art, single object"}, "vers": {"label": "Oscillation", "prompt": "a bridge deck bouncing up and down, pixel art, single object"}, "montant": "énergie"},
+    {"n": 10, "type": "pd_jauge", "duree_s": 4.0, "titre": "Pas une résonance", "mot_fort": "résonance", "niveau": "élevé", "etiquette": "Mouvement propre", "legende": "L'énergie vient du mouvement lui-même"},
+    {"n": 11, "type": "pd_tampon", "duree_s": 4.0, "titre": "Flottement aéroélastique", "mot_fort": "flottement", "tampon": "FLOTTEMENT", "prompt": "a suspension bridge deck oscillating in strong wind, pixel art, side view, single object"},
+    {"n": 12, "type": "pd_objet", "duree_s": 4.0, "titre": "Pas le poids", "mot_fort": "pas le poids", "prompt": "a heavy stone block resting on a bridge deck, pixel art, single object", "etiquette": "Poids"},
+    {"n": 13, "type": "pd_objet", "duree_s": 4.0, "titre": "Étudier le vent", "mot_fort": "vent", "prompt": "a small wind tunnel model of a bridge deck, pixel art, single object", "etiquette": "Soufflerie"},
+    {"n": 14, "type": "quiz", "duree_s": 4.0, "titre": "Vous le saviez ?", "mot_fort": "saviez", "question": "Pourquoi un pont suspendu tient-il en l'air ?", "prompt": "a suspension bridge with a question mark, pixel art, single object"}
+  ],
+  "consignes_animation": "Rythme : un plan toutes les 4 s, 14 scènes, durée 56 s, un plan par plan du scénario dans le même ordre. Titres 3 à 5 mots, mot_fort en accent jaune #FFB400 ; étiquettes courtes. Scènes 3, 8 et 9 : flux animé (pièces qui circulent entre les deux étiquettes). Scène 7 : versus avec verdict. Scène 10 : jauge qualitative, sans chiffre. Scènes 5 et 6 : compteur arcade, couleur accent. Fond bleu acier : texte crème #F4F1E8 partout. Pas de personne réelle, pas de visage de ministre. Mascotte Déco en tenue détective seulement sur la scène 14.",
+  "evolution_charte": "aucune (palette acier_ambre pour cette vidéo seulement)",
+  "messages_traites": [],
+  "message_au_proprietaire": "DA réalignée sur le scénario de science-20261028-0800 (pont suspendu) : 14 scènes, même ordre et même type que les 14 plans, reprise après retour de la pré-critique. Palette acier_ambre, style pixeldoc, voix V1+V3, au moins une scène pd_flux animée (plans 3, 8, 9). Chiffres : 1er juillet 1940, 129 jours (calcul), 64 km/h (40 mph). Le chiffre 853,4 m reste dans la voix du plan 4, non affiché à l'écran."
+}

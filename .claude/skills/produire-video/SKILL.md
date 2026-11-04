@@ -10,6 +10,7 @@ Le détail des règles est dans `NUIT.md` (modes sobre, durée, légende, miniat
 2. Créer `travail/<ID>/` (ID = <compte>-AAAAMMJJ-HHMM).
 3. **agent-4-concept** (haiku) → `4_concept.json` (sujet de la file, titre_miniature, mots_choc, surtitre).
 4. En parallèle : **agent-5-scenariste** (sonnet) → `5_scenario.json` ; **agent-6-directeur-artistique** (sonnet) → `6_da.json`.
+4 bis. **Contrat de format (04/11)** : `python3 -m pipeline.tool valider <ID> --profile <compte>` assemble la spec et la contrôle (format 5/6, voix_override, champs des scènes, variété) AVANT la pré-critique ; renvoyer les erreurs exactes aux agents 5/6 jusqu'à 0 erreur. Modèles de format : `agents/MODELE_5_SCENARIO.json` et `agents/MODELE_6_DA.json` (à recopier, jamais inventer la structure).
 5. **agent-7-critique** (sonnet), pré-critique → `9_precritique.json` (nom de fichier historique, gardé) (« go » sinon retour 5/6, une fois).
 6. **agent-8-generateur** (opus) : spec, `tool check`, `PIXELS_HORS_LIGNE=1 tool render`, `tool frames`, `tool caption`, `tool story`.
 7. **agent-7-critique**, critique finale sur la planche → `9_critique.json` (« publiable »).
@@ -63,3 +64,8 @@ Après chaque étape déléguée (4, 5, 6, 7, 8, dépôt) et à l'arrêt, écris
 - Boucle jusqu'à **3 essais** : relancer l'agent 5 (puis 6) avec la consigne écrite noir sur blanc, ex. « ACCROCHE = contre_intuitif (pas question_choc) ; FONCTIONNEMENT = vrai_faux (pas explication_mecanisme) » ; choisir les valeurs dans `agents/CATALOGUE_VARIETE.md` en excluant celles du bloc « Dernière vidéo » du dossier et en ajoutant `variete` dans 5_scenario.json. Ne pas se contenter de « corriger » : changer réellement les valeurs.
 - Les corrections non bloquantes (mots manquants, formulations) se font dans la même relance.
 - Arrêt avec alerte ❌ seulement après 3 essais refusés ; `tool statut` à chaque essai.
+
+## Rendu de contrôle et variété avec Gemini (04/11)
+- `video.mp4` de la session est muet par conception ; voix et musique sont ajoutées par GitHub. La voix se vérifie dans `7_spec.json` (`voix_override`).
+- Le brouillon de `state/brouillons/` ne fait pas foi pour la variété : l'agent 4 compare accroche / fonctionnement / musique à « Dernière vidéo » du dossier et les CHANGE s'ils sont identiques ; il remplit `variete` dans 4_concept.json. `tool valider` le contrôle.
+- Verdicts de l'agent 7 : `"decision": "go"` (pré-critique) et `"decision": "publiable"` (critique finale) ; les scripts acceptent aussi `verdict` et `publiable: true`.

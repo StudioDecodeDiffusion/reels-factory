@@ -1,0 +1,180 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "VENT MODÉRÉ, PONT TOMBÉ ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un pont de plus de huit cents mètres peut-il tomber par vent modéré ? La réponse est oui.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "PONT SUSPENDU : TENSION",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un pont suspendu tient grâce à ses câbles, qui travaillent en tension.",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "LE POIDS DESCEND",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le poids descend par les suspentes, puis les pylônes le transmettent au sol.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "1ER JUILLET 1940",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le pont de Tacoma Narrows ouvre le 1er juillet 1940. Sa travée mesure 853,4 mètres.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "129 JOURS PLUS TARD",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Il s'effondre 129 jours plus tard, le 7 novembre 1940, dans le Puget Sound.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "VENT : 64 KM/H · 40 MPH",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce jour-là, le vent souffle à 64 km/h, soit 40 mph.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 4.0,
+   "texte_ecran": "PAS DE SURCHARGE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pas de surcharge : un vent modéré suffit à faire tomber ce pont.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "LE TABLIER TOURNE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le vent fait tourner légèrement le tablier.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "L'ANGLE CHANGE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce mouvement change l'angle du vent, qui relance l'oscillation.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_jauge",
+   "duree_s": 4.0,
+   "texte_ecran": "PAS UNE RÉSONANCE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce n'est pas une résonance forcée : l'énergie vient du mouvement lui-même.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4.0,
+   "texte_ecran": "FLOTTEMENT AÉROÉLASTIQUE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le mouvement s'amplifie alors : c'est un flottement aéroélastique.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "PAS LE POIDS",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le pont n'a pas cédé sous son poids, mais sous ce mouvement.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "ÉTUDIER LE VENT",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un pont suspendu doit donc être étudié face au vent, pas seulement au poids.",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "quiz",
+   "duree_s": 4.0,
+   "texte_ecran": "VOUS LE SAVIEZ ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et vous, savez-vous pourquoi un pont suspendu tient en l'air ?",
+     "expression": "sourire"
+    }
+   ]
+  }
+ ],
+ "legende": "Un pont tombé par un vent de 64 km/h : Tacoma Narrows, 7 novembre 1940.\n\nUn pont suspendu tient par la tension de ses câbles. Celui de Tacoma n'a pas cédé sous son poids : il a été détruit par un flottement aéroélastique, un vent qui entretient lui-même les oscillations du tablier.\n\nSavez-vous pourquoi un pont suspendu tient en l'air ? 👇\n\nEnvoie-la à quelqu'un qui traverse un pont tous les jours ! 📤\n\nSources : Wikipédia",
+ "hashtags": [
+  "#science",
+  "#TacomaNarrows",
+  "#pontsuspendu",
+  "#ingénierie",
+  "#décodelasciensesimplement"
+ ]
+}
