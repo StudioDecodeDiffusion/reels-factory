@@ -61,8 +61,8 @@ def cmd_check(a) -> None:
         errs.append("9_precritique.json manquant : l'agent 7 doit critiquer le scénario et la DA AVANT la génération")
     else:
         d9 = json.loads(pre.read_text(encoding="utf-8"))
-        if str(d9.get("decision")).lower() != "go":
-            errs.append(f"l'agent 7 n'a pas donné son feu vert (décision : {d9.get('decision')}) : appliquer ses demandes")
+        if str(d9.get("decision") or d9.get("verdict")).lower() != "go":
+            errs.append(f"l'agent 7 n'a pas donné son feu vert (décision : {d9.get('decision') or d9.get('verdict')}) : appliquer ses demandes")
     if (Path(a.spec).parent / "4_concept.json").exists():
         cc = _concept(Path(a.spec).parent)
         tm = str(cc.get("titre_miniature", "")).strip()
