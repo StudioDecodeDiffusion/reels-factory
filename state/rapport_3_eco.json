@@ -1,37 +1,81 @@
 {
-  "date": "2026-11-04",
-  "source": "state/stats_eco.json (maj 2026-11-04), state/abonnes_eco.json (25/10 au 04/11), state/historique_eco.json",
-  "fraicheur": "stats et abonnés à jour ; retour agent 9 (state/feedback_cm_eco.json) daté du 26/10, donc obsolète (il ne compte qu'une vidéo, on en a 5)",
-  "echantillon": "5 vidéos publiées du 25/10 au 03/11 : trop peu pour conclure, à traiter comme des pistes",
+  "date": "2026-11-05",
   "classement": [
-    {"date": "27/10", "titre_legende": "À qui la France doit-elle 2 882 milliards d'euros ?", "views": 203, "reach": 189, "likes": 2, "comments": 0, "shares": 0, "saved": 0},
-    {"date": "03/11", "titre_legende": "Niches fiscales : environ 88 milliards d'euros par an", "views": 172, "reach": 157, "likes": 1, "comments": 0, "shares": 0, "saved": 1},
-    {"date": "25/10", "titre_legende": "Fonderie de Bretagne : 244 salariés en liquidation", "views": 131, "reach": 121, "likes": 1, "comments": 0, "shares": 0, "saved": 0},
-    {"date": "30/10", "titre_legende": "Budget 2026 de l'État : environ 135 milliards de déficit", "views": 115, "reach": 109, "likes": 0, "comments": 0, "shares": 0, "saved": 0},
-    {"date": "27/10", "titre_legende": "Ton salaire brut n'est jamais ton salaire net", "views": 94, "reach": 91, "likes": 1, "comments": 0, "shares": 0, "saved": 1}
+    {
+      "id": "18451523419122542",
+      "date": "2026-10-27",
+      "sujet": "À qui la France doit-elle 2 882 milliards ?",
+      "views": 203,
+      "reach": 189,
+      "likes": 2,
+      "comments": 0,
+      "shares": 0,
+      "saved": 0
+    },
+    {
+      "id": null,
+      "date": "2026-11-03",
+      "sujet": "Niches fiscales : 88 milliards par an",
+      "views": 172,
+      "reach": null,
+      "likes": null,
+      "comments": null,
+      "shares": null,
+      "saved": 1
+    },
+    {
+      "id": "18337718269261639",
+      "date": "2026-10-25",
+      "sujet": "Fonderie de Bretagne : 244 salariés en liquidation",
+      "views": 131,
+      "reach": 121,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0,
+      "saved": 0
+    },
+    {
+      "id": "18079552931732970",
+      "date": "2026-10-30",
+      "sujet": "Budget 2026 : 135 milliards de déficit",
+      "views": 115,
+      "reach": 109,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "saved": 0
+    },
+    {
+      "id": "18181816987435437",
+      "date": "2026-10-27",
+      "sujet": "Ton salaire brut n'est jamais ton salaire net",
+      "views": 94,
+      "reach": 91,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0,
+      "saved": 1
+    }
   ],
   "ce_qui_marche": [
-    "Les deux sujets à chiffre chiffré en accroche (dette de 2 882 Md, niches fiscales 88 Md) sont les deux meilleures vues : 203 et 172",
-    "Les interactions se concentrent sur 3 posts : 7 interactions sur 8 au total (dette 27/10, niches 03/11, salaire 27/10) ; taux d'interaction global 1,1 % (8 / 715 vues)"
+    "Un chiffre dans la première phrase : 4 vidéos sur 5 à 115 vues ou plus en ont un (203, 172, 131, 115 vues).",
+    "Les chiffres nationaux vont de 115 à 203 vues : pas de règle nette entre national et social (un seul point de comparaison)."
   ],
   "ce_qui_ne_marche_pas": [
-    "Aucun commentaire ni partage sur les 5 vidéos",
-    "Le sujet pratique « salaire brut / net » est le plus faible en vues (94) ; le budget de l'État (115) n'a aucune interaction",
-    "Abonnés : 0 sur toute la période (25/10 au 04/11), malgré 5 publications"
+    "Interactions quasi nulles : 0 commentaire, 0 partage, 7 j'aime + enregistrements pour 715 vues (environ 1 %).",
+    "Abonnés : 0 sur toute la période (25/10 au 02/11), aucune variation.",
+    "L'explication « salaire brut / net », sans chiffre dans l'accroche, est la plus faible : 94 vues."
   ],
   "enseignements": [
-    "Un chiffre en accroche ne suffit pas : le budget (135 Md en phrase 1) fait 115 vues et 0 interaction. Le sujet compte plus que le seul chiffre",
-    "Le sujet économique national (dette, niches) surperforme le sujet pratique du quotidien (203 et 172 contre 94) : piste, pas une certitude (5 posts seulement)",
-    "Aucun signal d'heure exploitable : les 5 vidéos sont sorties entre 07 h et 14 h UTC, sans écart net de vues"
+    "Garder un chiffre dans la première phrase de chaque vidéo.",
+    "Les vues ne se transforment ni en abonnés ni en partages : tester une question de fin de vidéo.",
+    "Échantillon de 5 vidéos sur 10 jours : rien de ferme sur le format pour l'instant."
   ],
-  "test": "Sur les 3 prochaines vidéos : 2 sujets à gros chiffre national en accroche, 1 sujet pratique ; comparer les vues médianes et les enregistrements",
+  "test": "Publier les 5 prochaines vidéos avec un chiffre en tête et une question de fin ; comparer vues médianes (repère 131), partages et enregistrements avec les 5 précédentes.",
   "reperes_projection": {
     "vues_mediane": 131,
-    "vues_moyenne": 143,
     "meilleure": 203,
-    "plus_faible": 94,
-    "reach_mediane": 121,
-    "taux_interaction_pct": 1.1
+    "plancher": 94
   },
-  "notes_traitees": "aucune note en attente pour l'agent 3 (eco)"
+  "source": "state/stats_eco.json (maj 02/11, 4 vidéos ; la vidéo du 03/11 est reprise du rapport agent 9 car absente du fichier), state/abonnes_eco.json (25/10 au 02/11), travail/rapport8_eco.json. Suivi public instrack non consulté."
 }

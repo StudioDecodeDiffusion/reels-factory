@@ -1,38 +1,44 @@
 {
-  "date": "2026-11-04",
-  "source": "state/stats_actu.json (API Instagram, maj 04/11 14:57 UTC, 25 posts du 17/10 au 29/10) ; state/abonnes_actu.json (jusqu'au 04/11) ; state/historique_actu.json ; state/feedback_cm_actu.json (agent 9 datant du 26/10, PAS du jour : obsolete de 9 jours). Source complementaire instrack.app non consultee.",
-  "alerte": "Aucune publication depuis le 29/10 07:55 (6 jours) : le relevé des publications reste a 25 depuis le 29/10. Feedback de l'agent 9 non mis a jour depuis le 26/10.",
+  "date": "2026-11-05",
+  "source": "state/stats_actu.json (API Instagram, maj 2026-11-02 14:58 UTC, 25 posts) ; state/abonnes_actu.json (jusqu'au 02/11) ; state/feedback_cm_actu.json (agent 9)",
+  "avertissement": "Donnees de stats vieilles de 3 jours (maj 02/11). Le rapport 9 du 05/11 annonce 26 posts et 4 465 vues : ecart de 1 post et 116 vues non resolu, a verifier au prochain releve.",
   "classement": [
-    "1156 vues, 20 interactions (17 j'aime, 2 commentaires, 1 enregistrement), 18/10 : « Vendredi soir : Macron au concert... Samedi : 550 000 a 800 000 personnes » (meilleure, environ 9 fois la mediane)",
-    "348 vues, 4 interactions, 17/10 : « Contenu effrayant... ou pas ? » (TikTok du 17 octobre)",
-    "244 vues, 5 interactions, 24/10 : « Oui, nous avons perdu le controle » (citation + decision politique)",
-    "76 vues, 0 interaction, 22/10 : couper TikTok pendant les emeutes (la plus faible)"
+    "1 156 vues, 20 interactions, 18/10 : « Vendredi soir : Macron au concert de Céline Dion… » (pic, 9 fois la moyenne ; a analyser avant de reproduire)",
+    "348 vues, 4 interactions, 17/10 : « Contenu effrayant… ou pas ? Le 17 octobre… » (2e meilleure performance)",
+    "244 vues, 5 interactions, 24/10 : « Oui, nous avons perdu le contrôle » (meilleur post hors pic)",
+    "191 vues, 5 interactions, 18/10 : « On ne parle que des casseurs… et les revendications ? »",
+    "158 vues, 5 interactions dont 2 enregistrements, 20/10 : « Couvre-feux, manifs encadrées… »",
+    "112 vues, 0 interaction, 29/10 : « Macron demande aux branches de négocier » (dernier post du releve)",
+    "76 vues, 0 interaction, 22/10 : « Couper les réseaux sociaux pendant les émeutes » (pire de la période)"
   ],
   "ce_qui_marche": [
-    "Chiffre fort et date dans l'accroche (18/10) : 1156 vues et 20 interactions, seule publication au-dessus de 350 vues",
-    "Citation d'autorite + decision politique (24/10) : 244 vues, 5 interactions",
-    "Mediane des 25 posts : 118 vues ; moyenne 174, ramenee a 133 sans le 18/10",
-    "Abonnes : 4 au 18/10, 6 au 25/10, 7 depuis le 26/10 (stable depuis 9 jours)"
+    "Citation d'autorité + décision politique (24/10) : 244 vues, 5 interactions",
+    "Libertés et droits (20/10) : 158 vues, 5 interactions, 2 enregistrements",
+    "Abonnés : 4 au 18/10, 7 au 26/10 (+3), stables jusqu'au 02/11"
   ],
   "ce_qui_ne_marche_pas": [
-    "2 commentaires au total sur 25 posts, tous sous la meilleure publication ; 0 partage",
-    "Formats « Oui ou non ? » (6 posts) : mediane 121 vues contre 118 pour les autres : aucun gain, aucun commentaire ajoute",
-    "Sujet TikTok / Attal (22/10) : 76 vues, 0 interaction, le plus bas de la periode",
-    "Arret de publication depuis le 29/10 : le compte n'a plus de nouvelles donnees depuis 6 jours"
+    "0 commentaire sur 25 posts (2 comptés dans les stats, aucun texte dans commentaires_actu.json) ; 0 partage",
+    "Formats « Oui ou non ? » : 5 posts, 4 interactions au total, 0 commentaire (CTA explicite sans effet)",
+    "Aucun post releve entre le 30/10 et le 02/11 dans stats_actu.json : rythme a verifier (ou releve incomplet)",
+    "Sujets institutionnels ou médias seuls (TikTok/Attal 22/10 : 76 vues, 0 interaction)"
   ],
   "enseignements": [
-    "Un chiffre precis en accroche semble mieux retenir (1156 vues pour le seul post a chiffre-choc, 118 en mediane) : un seul cas, a confirmer",
-    "Le CTA « reponds en commentaire » ne fait pas reagir : 0 commentaire sur les posts qui le contiennent",
-    "Reprendre la publication avant tout : sans nouveaux posts, aucune mesure ne peut etre faite"
+    "Garder l'angle citation vérifiée + conséquence concrète : meilleur signal hors pic (244 vues, 5 interactions)",
+    "Ne plus reconduire le CTA « réponds en commentaire » : 0 commentaire sur 25 posts",
+    "Relancer la publication régulière : aucun post releve depuis le 29/10 (a confirmer)"
   ],
-  "test": "Reprendre la publication, puis tester sur 4 Reels une accroche chiffree a contester, sans CTA explicite. Mesure : commentaires pour 1000 vues (reference : 2 commentaires pour environ 4 350 vues cumulees, soit 0,5 pour 1000). Test non lance : aucun post depuis le 29/10.",
+  "test": "Test en cours depuis le 26/10 : accroche à contester sans CTA explicite (chiffre discutable dans la 1re seconde). Mesure : commentaires pour 1 000 vues. Seulement 2 posts releves depuis le 26/10 (107 et 112 vues, 0 commentaire) : trop tôt pour conclure, a poursuivre sur les 4 prochains Reels.",
   "reperes_projection": {
     "vues_mediane": 118,
     "vues_moyenne": 174,
+    "vues_moyenne_hors_pic": 133,
     "moyenne_10_derniers": 128,
-    "mediane_10_derniers": 116,
-    "meilleure": 1156,
+    "meilleure": 244,
+    "meilleure_hors_pic": 244,
     "pire": 76,
-    "abonnes_actuel": 7
+    "enregistrements_pour_1000_vues": 0.7,
+    "interactions_pour_1000_vues": 12.4,
+    "abonnes_actuel": 7,
+    "nb_posts": 25
   }
 }
