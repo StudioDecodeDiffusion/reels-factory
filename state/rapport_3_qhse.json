@@ -1,34 +1,40 @@
 {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "compte": "qhse",
   "classement": [
-    {"rang": 1, "lien": "https://www.instagram.com/reel/De_t5RiAcBq/", "date": "2026-10-27 11:10 UTC", "sujet": "Seveso seuil haut", "vues": 131, "portee": 129, "j_aime": 2, "commentaires": 0, "partages": 0, "enregistrements": 0},
-    {"rang": 2, "lien": "https://www.instagram.com/reel/De_SvXwDOC2/", "date": "2026-10-27 07:13 UTC", "sujet": "ISO 9001 certificats", "vues": 17, "portee": 15, "j_aime": 0, "commentaires": 0, "partages": 0, "enregistrements": 0}
+    {
+      "titre": "Seveso : une usine près de chez toi peut être classée Seveso seuil haut",
+      "date": "2026-10-27",
+      "vues": 131,
+      "comptes_atteints": 129,
+      "j_aime": 2,
+      "commentaires": 0,
+      "partages": 0,
+      "enregistrements": 0
+    },
+    {
+      "titre": "ISO 9001 : plus d'un million de certificats, l'auditeur ne compte pas vos classeurs",
+      "date": "2026-10-27",
+      "vues": 17,
+      "comptes_atteints": 15,
+      "j_aime": 0,
+      "commentaires": 0,
+      "partages": 0,
+      "enregistrements": 0
+    }
   ],
-  "ce_qui_marche": [
-    "Le post Seveso fait 131 vues contre 17 pour le post ISO 9001 : seul écart observé, mais sur 2 publications seulement",
-    "Le post Seveso est le seul à avoir reçu des j'aime (2)"
-  ],
-  "ce_qui_ne_marche_pas": [
-    "Abonnés à 0 à chaque date de suivi (du 25/10 au 04/11)",
-    "Aucun commentaire, partage ni enregistrement sur les 2 publications",
-    "Aucune nouvelle publication enregistrée depuis le 27/10 (8 jours sans entrée dans stats_qhse.json)"
-  ],
+  "ce_qui_marche": [],
+  "ce_qui_ne_marche_pas": [],
   "enseignements": [
-    "Échantillon de 2 vidéos : aucune conclusion statistique possible ; l'écart 131 / 17 vues peut venir du sujet, de l'heure (11 h 10 contre 7 h 13 UTC) ou de l'accroche",
-    "Le sujet réglementaire (Seveso) est la piste la plus prometteuse, non confirmée",
-    "Avant toute optimisation : vérifier que la publication automatique du compte qhse repart"
+    "Aucune conclusion sur le format : 2 publications seulement, les deux le 27/10. Aucune publication depuis le 27/10 (stats mises à jour le 02/11)."
   ],
-  "test": "Sur les prochaines publications, garder le même sujet avec deux accroches différentes, à la même heure, et comparer vues et j'aime",
+  "test": "",
   "reperes_projection": {
     "vues_mediane": 74,
     "meilleure": 131,
-    "abonnes": 0,
-    "note": "indicatif, n=2 publications"
+    "n": 2,
+    "note": "Calculé sur 2 publications seulement : ce n'est pas une projection, ne pas s'en servir pour prévoir."
   },
-  "avertissements": [
-    "Retour de l'agent 9 daté du 26/10 : il ne couvre pas les 2 publications du 27/10 (données d'audience en retard)",
-    "Historique : aucun titre ni format enregistré pour le 27/10 (job qhse-20261027-1200)",
-    "Source complémentaire instrack.app non consultée (hors fichiers désignés par le Manager)"
-  ]
+  "calendrier": "Sujets du 28/10 au 01/11 non faits (signalé par l'agent 9). À vérifier par le Manager.",
+  "note": "Données d'audience : 2 publications, 0 abonné signalé, 0 commentaire, 0 question ou critique. Pas de conclusion tirée."
 }
