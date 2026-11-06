@@ -1,44 +1,30 @@
 {
-  "date": "2026-11-05",
-  "source": "state/stats_actu.json (API Instagram, maj 2026-11-02 14:58 UTC, 25 posts) ; state/abonnes_actu.json (jusqu'au 02/11) ; state/feedback_cm_actu.json (agent 9)",
-  "avertissement": "Donnees de stats vieilles de 3 jours (maj 02/11). Le rapport 9 du 05/11 annonce 26 posts et 4 465 vues : ecart de 1 post et 116 vues non resolu, a verifier au prochain releve.",
+  "date": "2026-11-06",
   "classement": [
-    "1 156 vues, 20 interactions, 18/10 : « Vendredi soir : Macron au concert de Céline Dion… » (pic, 9 fois la moyenne ; a analyser avant de reproduire)",
-    "348 vues, 4 interactions, 17/10 : « Contenu effrayant… ou pas ? Le 17 octobre… » (2e meilleure performance)",
-    "244 vues, 5 interactions, 24/10 : « Oui, nous avons perdu le contrôle » (meilleur post hors pic)",
-    "191 vues, 5 interactions, 18/10 : « On ne parle que des casseurs… et les revendications ? »",
-    "158 vues, 5 interactions dont 2 enregistrements, 20/10 : « Couvre-feux, manifs encadrées… »",
-    "112 vues, 0 interaction, 29/10 : « Macron demande aux branches de négocier » (dernier post du releve)",
-    "76 vues, 0 interaction, 22/10 : « Couper les réseaux sociaux pendant les émeutes » (pire de la période)"
+    "1. 18 oct. « bilan du week-end » : 1 156 vues, 17 likes, 2 commentaires (record du compte)",
+    "2. 24 oct. « Oui, nous avons perdu le contrôle » : 244 vues, 4 likes, 1 enregistrement (meilleure des 10 dernières)",
+    "3. 17 oct. « Contenu effrayant… ou pas ? » : 348 vues, 4 likes",
+    "Dernière : 22 oct. « Couper les réseaux sociaux pendant les émeutes : oui ou non ? » : 76 vues, 0 interaction"
   ],
   "ce_qui_marche": [
-    "Citation d'autorité + décision politique (24/10) : 244 vues, 5 interactions",
-    "Libertés et droits (20/10) : 158 vues, 5 interactions, 2 enregistrements",
-    "Abonnés : 4 au 18/10, 7 au 26/10 (+3), stables jusqu'au 02/11"
+    "Bilan chiffré d'un événement fort : 1 156 vues et 20 des 54 interactions du compte (record).",
+    "Citation d'autorité suivie d'une décision politique concrète : 244 vues, 5 interactions (un seul post, à confirmer).",
+    "Format « À toi de juger » (2 posts) : médiane 130,5 vues, 3 interactions."
   ],
   "ce_qui_ne_marche_pas": [
-    "0 commentaire sur 25 posts (2 comptés dans les stats, aucun texte dans commentaires_actu.json) ; 0 partage",
-    "Formats « Oui ou non ? » : 5 posts, 4 interactions au total, 0 commentaire (CTA explicite sans effet)",
-    "Aucun post releve entre le 30/10 et le 02/11 dans stats_actu.json : rythme a verifier (ou releve incomplet)",
-    "Sujets institutionnels ou médias seuls (TikTok/Attal 22/10 : 76 vues, 0 interaction)"
+    "CTA « oui ou non ? » : 6 posts depuis le 21 oct., 5 interactions au total, 0 commentaire.",
+    "Sujets éloignés du quotidien (réseaux sociaux pendant les émeutes) : 76 vues, la plus faible.",
+    "Engagement très faible : 54 interactions sur 26 publications, soit environ 2 par publication ; 0,8 sur les 10 dernières.",
+    "Abonnés bloqués à 7 depuis le 26 oct. (11 jours sans gain)."
   ],
   "enseignements": [
-    "Garder l'angle citation vérifiée + conséquence concrète : meilleur signal hors pic (244 vues, 5 interactions)",
-    "Ne plus reconduire le CTA « réponds en commentaire » : 0 commentaire sur 25 posts",
-    "Relancer la publication régulière : aucun post releve depuis le 29/10 (a confirmer)"
+    "Arrêter le CTA « oui ou non ? » tel quel : 6 essais, zéro commentaire.",
+    "Reprendre l'angle citation vérifiée + conséquence concrète, en restant sur des sujets liés au quotidien des 18-35 ans.",
+    "Les bilans chiffrés (qui compte quoi, combien) sont le format qui a le plus fait réagir : en faire la base des prochaines vidéos fortes."
   ],
-  "test": "Test en cours depuis le 26/10 : accroche à contester sans CTA explicite (chiffre discutable dans la 1re seconde). Mesure : commentaires pour 1 000 vues. Seulement 2 posts releves depuis le 26/10 (107 et 112 vues, 0 commentaire) : trop tôt pour conclure, a poursuivre sur les 4 prochains Reels.",
+  "test": "Cette semaine, 2 vidéos : accroche chiffrée (comme le bilan du 18 oct.) + consigne de commentaire précise (un chiffre ou une ville). Comparer à la médiane de 117,5 vues et à 0,8 interaction par vidéo, à 48 h de publication.",
   "reperes_projection": {
-    "vues_mediane": 118,
-    "vues_moyenne": 174,
-    "vues_moyenne_hors_pic": 133,
-    "moyenne_10_derniers": 128,
-    "meilleure": 244,
-    "meilleure_hors_pic": 244,
-    "pire": 76,
-    "enregistrements_pour_1000_vues": 0.7,
-    "interactions_pour_1000_vues": 12.4,
-    "abonnes_actuel": 7,
-    "nb_posts": 25
+    "vues_mediane": 117.5,
+    "meilleure": 1156
   }
 }
