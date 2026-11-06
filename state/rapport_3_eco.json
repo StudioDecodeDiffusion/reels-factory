@@ -1,81 +1,34 @@
 {
-  "date": "2026-11-05",
+  "date": "2026-11-06",
   "classement": [
-    {
-      "id": "18451523419122542",
-      "date": "2026-10-27",
-      "sujet": "À qui la France doit-elle 2 882 milliards ?",
-      "views": 203,
-      "reach": 189,
-      "likes": 2,
-      "comments": 0,
-      "shares": 0,
-      "saved": 0
-    },
-    {
-      "id": null,
-      "date": "2026-11-03",
-      "sujet": "Niches fiscales : 88 milliards par an",
-      "views": 172,
-      "reach": null,
-      "likes": null,
-      "comments": null,
-      "shares": null,
-      "saved": 1
-    },
-    {
-      "id": "18337718269261639",
-      "date": "2026-10-25",
-      "sujet": "Fonderie de Bretagne : 244 salariés en liquidation",
-      "views": 131,
-      "reach": 121,
-      "likes": 1,
-      "comments": 0,
-      "shares": 0,
-      "saved": 0
-    },
-    {
-      "id": "18079552931732970",
-      "date": "2026-10-30",
-      "sujet": "Budget 2026 : 135 milliards de déficit",
-      "views": 115,
-      "reach": 109,
-      "likes": 0,
-      "comments": 0,
-      "shares": 0,
-      "saved": 0
-    },
-    {
-      "id": "18181816987435437",
-      "date": "2026-10-27",
-      "sujet": "Ton salaire brut n'est jamais ton salaire net",
-      "views": 94,
-      "reach": 91,
-      "likes": 1,
-      "comments": 0,
-      "shares": 0,
-      "saved": 1
-    }
+    {"date": "2026-10-27", "lien": "https://www.instagram.com/reel/De_SaiPAaxn/", "sujet": "Dette publique : 2 882 milliards d'euros, qui détient la dette", "vues": 203, "portee": 189, "interactions": 2, "enregistrements": 0},
+    {"date": "2026-11-03", "lien": "https://www.instagram.com/reel/DfRa00iDlml/", "sujet": "Niches fiscales : environ 88 milliards par an", "vues": 172, "portee": 157, "interactions": 2, "enregistrements": 1},
+    {"date": "2026-10-30", "lien": "https://www.instagram.com/reel/DfHF7QYleDn/", "sujet": "Budget 2026 : environ 135 milliards de déficit", "vues": 115, "portee": 109, "interactions": 0, "enregistrements": 0},
+    {"date": "2026-10-25", "lien": "https://www.instagram.com/reel/De65sYkjO9n/", "sujet": "Fonderie de Bretagne : 244 salariés en liquidation", "vues": 131, "portee": 121, "interactions": 1, "enregistrements": 0},
+    {"date": "2026-10-27", "lien": "https://www.instagram.com/reel/De_SmGHICU2/", "sujet": "Salaire brut vs net", "vues": 94, "portee": 91, "interactions": 3, "enregistrements": 1}
   ],
   "ce_qui_marche": [
-    "Un chiffre dans la première phrase : 4 vidéos sur 5 à 115 vues ou plus en ont un (203, 172, 131, 115 vues).",
-    "Les chiffres nationaux vont de 115 à 203 vues : pas de règle nette entre national et social (un seul point de comparaison)."
+    "Sujets économiques nationaux à chiffre fort en accroche : la vidéo dette (203 vues, 189 de portée) et la vidéo niches fiscales (172 vues, 1 enregistrement) sont les deux meilleures.",
+    "Dernière publication (03/11) : 172 vues, en hausse sur la précédente (115 vues le 30/10)."
   ],
   "ce_qui_ne_marche_pas": [
-    "Interactions quasi nulles : 0 commentaire, 0 partage, 7 j'aime + enregistrements pour 715 vues (environ 1 %).",
-    "Abonnés : 0 sur toute la période (25/10 au 02/11), aucune variation.",
-    "L'explication « salaire brut / net », sans chiffre dans l'accroche, est la plus faible : 94 vues."
+    "Vidéo sur le salaire brut vs net : la plus faible (94 vues, 91 de portée), malgré 3 interactions.",
+    "Aucun commentaire ni partage sur les 5 publications ; abonnés à 0 à chaque relevé depuis le 25/10."
   ],
   "enseignements": [
-    "Garder un chiffre dans la première phrase de chaque vidéo.",
-    "Les vues ne se transforment ni en abonnés ni en partages : tester une question de fin de vidéo.",
-    "Échantillon de 5 vidéos sur 10 jours : rien de ferme sur le format pour l'instant."
+    "Les sujets de finances publiques (dette, budget, niches fiscales) font entre 115 et 203 vues ; le sujet salaire fait 94. Échantillon de 5 vidéos : tendance à confirmer, pas une conclusion.",
+    "Les signaux d'engagement sont très faibles (8 interactions au total sur 5 vidéos, 2 enregistrements) : une question explicite en fin de Reel est à tester."
   ],
-  "test": "Publier les 5 prochaines vidéos avec un chiffre en tête et une question de fin ; comparer vues médianes (repère 131), partages et enregistrements avec les 5 précédentes.",
+  "test": "Pendant les 3 prochaines vidéos : traiter des sujets de finances publiques nationales avec un chiffre choc en première seconde, et ajouter une question simple en fin de Reel. Comparer la médiane de vues à 131 (repère actuel) et le nombre de commentaires à 0.",
   "reperes_projection": {
     "vues_mediane": 131,
     "meilleure": 203,
-    "plancher": 94
+    "pire": 94,
+    "moyenne": 143,
+    "abonnes_variation": 0
   },
-  "source": "state/stats_eco.json (maj 02/11, 4 vidéos ; la vidéo du 03/11 est reprise du rapport agent 9 car absente du fichier), state/abonnes_eco.json (25/10 au 02/11), travail/rapport8_eco.json. Suivi public instrack non consulté."
+  "notes": {
+    "source": "state/stats_eco.json (maj 2026-11-06) et state/abonnes_eco.json ; feedback agent 9 du 26/10 cité pour la vidéo du 25/10 (129 vues dans le feedback, 131 dans les stats : les stats retenues)",
+    "avertissement": "5 publications seulement, pas de conclusion avant 10 publications. Abonnés à 0 sur toute la période : collecte à vérifier."
+  }
 }
