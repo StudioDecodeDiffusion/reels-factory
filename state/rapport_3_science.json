@@ -1,63 +1,40 @@
 {
-  "date": "2026-11-05",
+  "date": "2026-11-06",
   "compte": "science",
-  "source_donnees": "state/stats_science.json (maj 2026-11-02), state/suivi_science.json et state/abonnes_science.json (relevés jusqu'au 2026-11-02)",
+  "source_donnees": "state/stats_science.json (maj 2026-11-06 14:56 UTC), state/abonnes_science.json (relevés 25/10 au 06/11), travail/rapport8_science.json (agent 9)",
   "classement": [
-    {
-      "titre": "Microduck : la physique du robot canard à 399 $",
-      "date": "2026-10-28",
-      "vues": 120,
-      "portee": 115,
-      "likes": 0,
-      "commentaires": 0,
-      "partages": 0,
-      "sauvegardes": 1
-    },
-    {
-      "titre": "Pourquoi un pont suspendu tient (et pourquoi Tacoma est tombé)",
-      "date": "2026-10-28",
-      "vues": 116,
-      "portee": 102,
-      "likes": 0,
-      "commentaires": 0,
-      "partages": 0,
-      "sauvegardes": 0
-    },
-    {
-      "titre": "Pourquoi un avion de 575 t ne tombe-t-il pas",
-      "date": "2026-10-27",
-      "vues": 101,
-      "portee": 96,
-      "likes": 0,
-      "commentaires": 0,
-      "partages": 0,
-      "sauvegardes": 0
-    }
+    {"titre": "Microduck : la physique du robot canard à 399 $", "date": "2026-10-27", "vues": 120, "portee": 115, "likes": 0, "commentaires": 0, "partages": 0, "sauvegardes": 1},
+    {"titre": "Pourquoi un pont suspendu tient (et pourquoi Tacoma est tombé)", "date": "2026-10-28", "vues": 116, "portee": 102, "likes": 0, "commentaires": 0, "partages": 0, "sauvegardes": 0},
+    {"titre": "Pourquoi un avion de 575 t ne tombe-t-il pas", "date": "2026-10-27", "vues": 101, "portee": 96, "likes": 0, "commentaires": 0, "partages": 0, "sauvegardes": 0},
+    {"titre": "Un moteur sans essence peut-il tourner ?", "date": "2026-11-04", "vues": 30, "portee": 25, "likes": 0, "commentaires": 0, "partages": 0, "sauvegardes": 0, "note": "mesuré à environ 50 h de publication, non comparable aux autres à 72 h"}
   ],
   "ce_qui_marche": [
-    "Seule interaction mesurée : 1 sauvegarde sur le reel Microduck (120 vues, le meilleur des 3)."
+    "Seule interaction du compte : 1 sauvegarde sur le robot canard (120 vues, 115 de portée, le meilleur des 4).",
+    "Angle « pourquoi ça tient / tombe » sur 3 reels sur 4 : avion 101 vues, pont 116 vues, dans la même fourchette que le robot."
   ],
   "ce_qui_ne_marche_pas": [
-    "0 like, 0 commentaire, 0 partage sur les 3 reels.",
-    "0 abonné gagné du 25/10 au 02/11 (abonnes_science.json et suivi_science.json)."
+    "0 like, 0 commentaire, 0 partage sur les 4 reels.",
+    "0 abonné gagné du 25/10 au 06/11 (abonnes_science.json) : la portée ne se convertit pas en abonnés.",
+    "Reel moteur sans essence (04/11) : 30 vues à environ 50 h, à re-mesurer à 72 h avant tout jugement."
   ],
   "enseignements": [
-    "Échantillon de 3 reels : aucune conclusion fiable sur le contenu, l'accroche ou la question de fin.",
-    "Les 3 reels sont dans une fourchette étroite (101 à 120 vues) : pas de différence exploitable entre sujets."
+    "Échantillon de 4 reels : aucune conclusion fiable sur le sujet, l'accroche ou la question de fin.",
+    "Le problème actuel est la conversion (vues sans interaction ni abonné), pas la portée.",
+    "Le fil « physique du quotidien » est à suivre sur les prochains reels, mais ce n'est pas encore une preuve."
   ],
-  "test": "Finir les prochains reels par une question ouverte (une par reel) et comparer, sur 6 reels, sauvegardes + commentaires par reel avec les 3 reels actuels. Aucun résultat avant 6 reels de 72 h minimum.",
+  "test": "Finir les 2 prochains reels par une question ouverte, puis comparer sauvegardes + commentaires à 72 h avec les 4 reels actuels (base : 1 sauvegarde, 0 commentaire au total). Aucun résultat avant 2 reels mesurés à 72 h.",
   "reperes_projection": {
-    "n_reels": 3,
-    "vues_mediane": 116,
-    "vues_min": 101,
+    "n_reels": 4,
+    "vues_mediane": 108.5,
+    "vues_moyenne": 92,
+    "vues_min": 30,
     "vues_max": 120,
-    "note": "Repère observé sur 3 reels seulement. Aucune projection au-delà de cette fourchette."
+    "projection_prudente": "100 à 120 vues pour un reel de même format ; 0 abonné attendu à court terme.",
+    "note": "Repère sur 4 reels seulement ; le reel du 04/11 n'est pas encore à maturité."
   },
   "ecarts_a_verifier": [
-    "abonnes_science.json indique 1 publication le 27/10, stats_science.json et suivi_science.json en comptent 2 (07:14 et 19:19 UTC) ; les deux fichiers s'accordent à 3 le 28/10.",
-    "historique_science.json : Microduck en double (26/10, même job science-20261026-2000) et aucune entrée pour le 04/11.",
-    "Vues compte du 28/10 (suivi) : 336, somme des 3 reels : 337 (écart d'un point, à vérifier).",
-    "Reel du 04/11 (30 vues, 338 comptes touchés, cité par l'agent 9) : absent de state/ (stats et suivi s'arrêtent au 02/11). Non repris ici."
+    "abonnes_science.json compte 1 publication le 27/10 (relevé probablement pris avant la 2e publication de 19 h 19 UTC) ; stats_science.json en compte 2 ce jour-là. Les deux fichiers s'accordent à 3 publications le 28/10 et à 4 le 04/11.",
+    "Aucune trace du reel du 04/11 dans historique_science.json (dernière entrée : job science-20261104-0800, sans titre)."
   ],
-  "note": "Aucune note du propriétaire en attente pour l'agent 3. Rapport 3 remplace celui du 26/10 (aucune donnée à l'époque). Aucun commentaire à analyser (commentaires_science.json vide)."
+  "note": "Aucune note du propriétaire en attente pour l'agent 3. Aucun commentaire à analyser (commentaires_science.json absent ou vide). Suivi public instrack non consulté."
 }
