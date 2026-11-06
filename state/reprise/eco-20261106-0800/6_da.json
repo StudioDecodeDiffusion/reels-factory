@@ -2,17 +2,38 @@
   "id": "eco-20261106-0800",
   "compte": "eco",
   "theme": {
-    "fond": "#12161C", "texte": "#F2EFE6", "accent": "#FF4D4D", "accent2": "#3CC8E0",
-    "police_titre": "Rubik", "police_texte": "Rubik", "bandeau": null, "grille": false,
-    "style": "pixeldoc", "palette_nom": "retro_tv",
-    "palette": ["#12161C", "#1F2A36", "#FF4D4D", "#3CC8E0", "#F2EFE6", "#F5C542"],
+    "fond": "#12161C",
+    "texte": "#F2EFE6",
+    "accent": "#FF4D4D",
+    "accent2": "#3CC8E0",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "retro_tv",
+    "palette": [
+      "#12161C",
+      "#1F2A36",
+      "#FF4D4D",
+      "#3CC8E0",
+      "#F2EFE6",
+      "#F5C542"
+    ],
     "mise_en_page": "jt",
-    "tenues": {"narrateur": "eco", "mascotte": "detective"}
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "detective"
+    }
   },
   "variete": {
-    "accroche": "breaking", "trend": "Décryptage chiffré & infographie de flux",
-    "fonctionnement": "recit_chrono", "mise_en_page": "jt", "musique": "suspense",
-    "voix": "V1+V4", "palette": "retro_tv"
+    "accroche": "breaking",
+    "trend": "Décryptage chiffré & infographie de flux",
+    "fonctionnement": "recit_chrono",
+    "mise_en_page": "jt",
+    "musique": "suspense",
+    "voix": "V1+V4",
+    "palette": "retro_tv"
   },
   "voix_override": {
     "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
@@ -20,25 +41,248 @@
     "mascotte_effet": "aucun"
   },
   "musique": {
-    "genre": "suspense", "volume": 0.4, "ambiance_globale": "tension",
-    "ambiance_par_scene": {"1": "effroi", "2": "tension", "3": "tension", "4": "tension", "5": "tension", "6": "tension", "7": "tension", "8": "tension", "9": "tension", "10": "tension", "11": "tension", "12": "curieux", "13": "curieux", "14": "joyeux"}
+    "genre": "suspense",
+    "volume": 0.4,
+    "ambiance_globale": "tension",
+    "ambiance_par_scene": {
+      "1": "effroi",
+      "2": "tension",
+      "3": "tension",
+      "4": "tension",
+      "5": "tension",
+      "6": "tension",
+      "7": "tension",
+      "8": "tension",
+      "9": "tension",
+      "10": "tension",
+      "11": "tension",
+      "12": "curieux",
+      "13": "curieux",
+      "14": "joyeux"
+    }
   },
-  "sfx": {"1": ["impact"], "2": ["impact"], "3": ["whoosh"], "4": ["pop"], "5": ["whoosh"], "6": ["whoosh"], "7": ["pop"], "8": ["pop"], "9": ["whoosh"], "10": ["pop"], "11": ["impact"], "12": ["pop"], "13": ["whoosh"], "14": ["ding"]},
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "impact"
+    ],
+    "3": [
+      "whoosh"
+    ],
+    "4": [
+      "pop"
+    ],
+    "5": [
+      "whoosh"
+    ],
+    "6": [
+      "whoosh"
+    ],
+    "7": [
+      "pop"
+    ],
+    "8": [
+      "pop"
+    ],
+    "9": [
+      "whoosh"
+    ],
+    "10": [
+      "pop"
+    ],
+    "11": [
+      "impact"
+    ],
+    "12": [
+      "pop"
+    ],
+    "13": [
+      "whoosh"
+    ],
+    "14": [
+      "ding"
+    ]
+  },
   "scenes": [
-    {"n": 1, "type": "hook", "duree_s": 4.0, "titre": "FLASH : budget rejeté", "mot_fort": "rejeté", "prompt": "a retro television showing a breaking news banner, pixel art, single object", "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/05/member-of-parliament-eric-coquerel-of-la-france-insoumise-lfi-and-the-nouveau-front-populaire-new-po-1793887147_5fc981f68cea61ff981f68cea930a8v_.jpg", "fond_photo_requete": "Assemblée nationale rejet projet de budget 2027 vote hémicycle novembre 2026"},
-    {"n": 2, "type": "pd_tampon", "duree_s": 4.0, "titre": "Rejet à l'unanimité", "mot_fort": "unanimité", "tampon": "REJETÉ", "prompt": "a budget folder with a red stamp, pixel art, single object"},
-    {"n": 3, "type": "pd_flux", "duree_s": 4.0, "titre": "Le texte arrive", "mot_fort": "texte", "de": {"label": "Gouvernement", "prompt": "a sealed document folder, pixel art, single object"}, "vers": {"label": "Assemblée", "prompt": "a parliament building facade, pixel art, single object"}, "montant": "projet", "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/04/le-minsit-1793814155_b11595a16bea6b51595a16bea99159v_.jpg", "fond_photo_requete": "budget de l'État 2027 Assemblée nationale séance vote unanimité"},
-    {"n": 4, "type": "pd_objet", "duree_s": 4.0, "titre": "Le vote du 5 novembre", "mot_fort": "vote", "prompt": "a ballot box with a paper slip, pixel art, side view, single object", "etiquette": "Vote"},
-    {"n": 5, "type": "pd_versus", "duree_s": 4.0, "titre": "Copie contre députés", "mot_fort": "députés", "de": {"label": "Copie", "prompt": "a budget document stack, pixel art, single object"}, "vers": {"label": "Députés", "prompt": "a raised hand voting, pixel art, single object"}, "verdict": "Rejet", "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/03/bruno-le-maire-s-est-dit-consterne-par-la-tournure-prise-par-la-discussion-budgetaire-au-parlement-1793726065_7bfcd6821aea66ffcd6821aea830ddv_.jpg", "fond_photo_requete": "Bruno Le Maire discussion budgétaire Parlement novembre 2026"},
-    {"n": 6, "type": "pd_flux", "duree_s": 4.0, "titre": "Direction le Sénat", "mot_fort": "Sénat", "de": {"label": "Assemblée", "prompt": "a parliament building facade, pixel art, single object"}, "vers": {"label": "Sénat", "prompt": "a stone palace with dome, pixel art, single object"}, "montant": "texte"},
-    {"n": 7, "type": "pd_objet", "duree_s": 4.0, "titre": "Le texte continue", "mot_fort": "continue", "prompt": "a document travelling on a path, pixel art, side view, single object", "etiquette": "Sénat", "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/05/member-of-parliament-eric-coquerel-of-la-france-insoumise-lfi-and-the-nouveau-front-populaire-new-po-1793887147_5fc981f68cea61ff981f68cea930a8v_.jpg", "fond_photo_requete": "Sénat examen projet de budget de l'État 2027 novembre 2026"},
-    {"n": 8, "type": "pd_jauge", "duree_s": 4.0, "titre": "Budget adopté ?", "mot_fort": "adopté", "niveau": "faible", "etiquette": "Adoption", "legende": "Le texte n'est pas adopté"},
-    {"n": 9, "type": "pd_objet", "duree_s": 4.0, "titre": "Le budget de l'État", "mot_fort": "budget", "prompt": "a state budget ledger book, pixel art, side view, single object", "etiquette": "Budget 2027", "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/04/le-minsit-1793814155_b11595a16bea6b51595a16bea99159v_.jpg", "fond_photo_requete": "Assemblée nationale Palais Bourbon hémicycle budget 2027 rejet"},
-    {"n": 10, "type": "pd_versus", "duree_s": 4.0, "titre": "Rejeté, pas terminé", "mot_fort": "pas terminé", "de": {"label": "Assemblée", "prompt": "a closed door, pixel art, single object"}, "vers": {"label": "Sénat", "prompt": "an open door with light, pixel art, single object"}, "verdict": "Il continue"},
-    {"n": 11, "type": "pd_tampon", "duree_s": 4.0, "titre": "Prochaine étape", "mot_fort": "étape", "tampon": "AU SÉNAT", "prompt": "a document with a stamp, pixel art, single object", "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/03/bruno-le-maire-s-est-dit-consterne-par-la-tournure-prise-par-la-discussion-budgetaire-au-parlement-1793726065_7bfcd6821aea66ffcd6821aea830ddv_.jpg", "fond_photo_requete": "budget de l'État 2027 Assemblée nationale séance vote unanimité"},
-    {"n": 12, "type": "pd_objet", "duree_s": 4.0, "titre": "Ce qui reste à voter", "mot_fort": "voter", "prompt": "a calendar page with a pen, pixel art, side view, single object", "etiquette": "À suivre"},
-    {"n": 13, "type": "pd_jauge", "duree_s": 4.0, "titre": "Issue du budget", "mot_fort": "issue", "niveau": "moyen", "etiquette": "Incertitude", "legende": "À suivre au Sénat", "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/05/member-of-parliament-eric-coquerel-of-la-france-insoumise-lfi-and-the-nouveau-front-populaire-new-po-1793887147_5fc981f68cea61ff981f68cea930a8v_.jpg", "fond_photo_requete": "Eric Coquerel commission des finances budget 2027 Assemblée nationale"},
-    {"n": 14, "type": "quiz", "duree_s": 4.5, "titre": "Et le Sénat ?", "mot_fort": "Sénat", "question": "Le Sénat va-t-il adopter ce budget ?", "prompt": "a parliament dome with a question mark, pixel art, single object"}
+    {
+      "n": 1,
+      "type": "hook",
+      "duree_s": 4.0,
+      "titre": "FLASH : budget rejeté",
+      "mot_fort": "rejeté",
+      "prompt": "a retro television showing a breaking news banner, pixel art, single object",
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/05/member-of-parliament-eric-coquerel-of-la-france-insoumise-lfi-and-the-nouveau-front-populaire-new-po-1793887147_5fc981f68cea61ff981f68cea930a8v_.jpg",
+      "fond_photo_requete": "Assemblée nationale rejet projet de budget 2027 vote hémicycle novembre 2026",
+      "title": "FLASH : budget rejeté"
+    },
+    {
+      "n": 2,
+      "type": "pd_tampon",
+      "duree_s": 4.0,
+      "titre": "Rejet à l'unanimité",
+      "mot_fort": "unanimité",
+      "tampon": "REJETÉ",
+      "prompt": "a budget folder with a red stamp, pixel art, single object"
+    },
+    {
+      "n": 3,
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "titre": "Le texte arrive",
+      "mot_fort": "texte",
+      "de": {
+        "label": "Gouvernement",
+        "prompt": "a sealed document folder, pixel art, single object"
+      },
+      "vers": {
+        "label": "Assemblée",
+        "prompt": "a parliament building facade, pixel art, single object"
+      },
+      "montant": "projet",
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/04/le-minsit-1793814155_b11595a16bea6b51595a16bea99159v_.jpg",
+      "fond_photo_requete": "budget de l'État 2027 Assemblée nationale séance vote unanimité"
+    },
+    {
+      "n": 4,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Le vote du 5 novembre",
+      "mot_fort": "vote",
+      "prompt": "a ballot box with a paper slip, pixel art, side view, single object",
+      "etiquette": "Vote"
+    },
+    {
+      "n": 5,
+      "type": "pd_versus",
+      "duree_s": 4.0,
+      "titre": "Copie contre députés",
+      "mot_fort": "députés",
+      "verdict": "Rejet",
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/03/bruno-le-maire-s-est-dit-consterne-par-la-tournure-prise-par-la-discussion-budgetaire-au-parlement-1793726065_7bfcd6821aea66ffcd6821aea830ddv_.jpg",
+      "fond_photo_requete": "Bruno Le Maire discussion budgétaire Parlement novembre 2026",
+      "gauche": {
+        "label": "Copie",
+        "prompt": "a budget document stack, pixel art, single object"
+      },
+      "droite": {
+        "label": "Députés",
+        "prompt": "a raised hand voting, pixel art, single object"
+      }
+    },
+    {
+      "n": 6,
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "titre": "Direction le Sénat",
+      "mot_fort": "Sénat",
+      "de": {
+        "label": "Assemblée",
+        "prompt": "a parliament building facade, pixel art, single object"
+      },
+      "vers": {
+        "label": "Sénat",
+        "prompt": "a stone palace with dome, pixel art, single object"
+      },
+      "montant": "texte"
+    },
+    {
+      "n": 7,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Le texte continue",
+      "mot_fort": "continue",
+      "prompt": "a document travelling on a path, pixel art, side view, single object",
+      "etiquette": "Sénat",
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/05/member-of-parliament-eric-coquerel-of-la-france-insoumise-lfi-and-the-nouveau-front-populaire-new-po-1793887147_5fc981f68cea61ff981f68cea930a8v_.jpg",
+      "fond_photo_requete": "Sénat examen projet de budget de l'État 2027 novembre 2026"
+    },
+    {
+      "n": 8,
+      "type": "pd_jauge",
+      "duree_s": 4.0,
+      "titre": "Budget adopté ?",
+      "mot_fort": "adopté",
+      "niveau": "faible",
+      "etiquette": "Adoption",
+      "legende": "Le texte n'est pas adopté",
+      "valeur": "faible"
+    },
+    {
+      "n": 9,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Le budget de l'État",
+      "mot_fort": "budget",
+      "prompt": "a state budget ledger book, pixel art, side view, single object",
+      "etiquette": "Budget 2027",
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/04/le-minsit-1793814155_b11595a16bea6b51595a16bea99159v_.jpg",
+      "fond_photo_requete": "Assemblée nationale Palais Bourbon hémicycle budget 2027 rejet"
+    },
+    {
+      "n": 10,
+      "type": "pd_versus",
+      "duree_s": 4.0,
+      "titre": "Rejeté, pas terminé",
+      "mot_fort": "pas terminé",
+      "verdict": "Il continue",
+      "gauche": {
+        "label": "Assemblée",
+        "prompt": "a closed door, pixel art, single object"
+      },
+      "droite": {
+        "label": "Sénat",
+        "prompt": "an open door with light, pixel art, single object"
+      }
+    },
+    {
+      "n": 11,
+      "type": "pd_tampon",
+      "duree_s": 4.0,
+      "titre": "Prochaine étape",
+      "mot_fort": "étape",
+      "tampon": "AU SÉNAT",
+      "prompt": "a document with a stamp, pixel art, single object",
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/03/bruno-le-maire-s-est-dit-consterne-par-la-tournure-prise-par-la-discussion-budgetaire-au-parlement-1793726065_7bfcd6821aea66ffcd6821aea830ddv_.jpg",
+      "fond_photo_requete": "budget de l'État 2027 Assemblée nationale séance vote unanimité"
+    },
+    {
+      "n": 12,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Ce qui reste à voter",
+      "mot_fort": "voter",
+      "prompt": "a calendar page with a pen, pixel art, side view, single object",
+      "etiquette": "À suivre"
+    },
+    {
+      "n": 13,
+      "type": "pd_jauge",
+      "duree_s": 4.0,
+      "titre": "Issue du budget",
+      "mot_fort": "issue",
+      "niveau": "moyen",
+      "etiquette": "Incertitude",
+      "legende": "À suivre au Sénat",
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/05/member-of-parliament-eric-coquerel-of-la-france-insoumise-lfi-and-the-nouveau-front-populaire-new-po-1793887147_5fc981f68cea61ff981f68cea930a8v_.jpg",
+      "fond_photo_requete": "Eric Coquerel commission des finances budget 2027 Assemblée nationale",
+      "valeur": "moyen"
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "duree_s": 4.5,
+      "titre": "Et le Sénat ?",
+      "mot_fort": "Sénat",
+      "question": "Le Sénat va-t-il adopter ce budget ?",
+      "prompt": "a parliament dome with a question mark, pixel art, single object",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "bonne": 0
+    }
   ],
   "consignes_animation": "Mise en page JT (bandeau info retro_tv), fond sombre, texte crème, mot_fort en accent rouge. Photos réelles assombries en fond sur les scènes 1, 3, 5, 7, 9, 11, 13 ; les scènes pd_* restent au premier plan. Scènes 3, 6 : flux animé. Scènes 5, 10 : versus avec verdict. Scènes 8, 13 : jauge qualitative sans chiffre. Aucun montant affiché. Aucun visage dessiné ni généré.",
   "evolution_charte": "aucune (palette retro_tv pour cette vidéo seulement)",
