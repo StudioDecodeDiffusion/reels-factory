@@ -1,7 +1,7 @@
 {
   "date": "2026-11-06",
-  "type": "résumé quotidien (vendredi 06/11/2026 ; stratégie complète réservée au lundi)",
-  "sources": "state/rapport_3_actu.json et travail/rapport3_actu.md (agent 3, API au 06/11 14 h 55 UTC) ; travail/rapport8_actu.json (agent 9, 06/11) ; state/feedback_cm_actu.json daté du 26/10 (ancien, non repris pour les chiffres) ; stats eco/qhse/science non relues aujourd'hui (valeurs du 05/11 conservées)",
+  "type": "résumé quotidien (vendredi 06/11/2026 ; stratégie complète réservée au lundi). Compte eco mis à jour ; actu, qhse, science non relus aujourd'hui",
+  "sources": "state/rapport_3_actu.json et travail/rapport3_actu.md (agent 3, API au 06/11 14 h 55 UTC) ; travail/rapport8_actu.json (agent 9, 06/11) ; state/feedback_cm_actu.json daté du 26/10 (ancien, non repris pour les chiffres) ; stats eco/qhse/science non relues aujourd'hui (valeurs du 05/11 conservées) ; compte science : state/stats_science.json (maj 06/11 14:56 UTC), state/abonnes_science.json (25/10 au 06/11), travail/rapport8_science.json, travail/rapport3_science.md, state/rapport_3_science.json ; eco : state/stats_eco.json (maj 06/11 14:56 UTC), state/abonnes_eco.json, travail/rapport8_eco.json, travail/rapport3_eco.md, state/rapport_3_eco.json, state/feedback_cm_eco.json",
   "statistiques": {
     "actu": {
       "abonnes": 7,
@@ -21,10 +21,20 @@
     },
     "eco": {
       "abonnes": 0,
+      "abonnes_depuis": "25/10 (0 à chaque relevé, à vérifier)",
       "publications": 5,
       "vues_cumulees": 715,
+      "vues_mediane": 131,
+      "vues_moyenne": 143,
       "interactions": 8,
-      "derniere_publication": "03/11"
+      "commentaires": 0,
+      "partages": 0,
+      "enregistrements": 2,
+      "meilleur": "203 vues, 189 de portée, 27/10 (dette publique 2 882 milliards)",
+      "pire": "94 vues, 91 de portée, 27/10 (salaire brut vs net)",
+      "derniere_publication": "03/11 (172 vues, niches fiscales)",
+      "tendance": "dernière vidéo en hausse sur la précédente (115 vues le 30/10) ; échantillon de 5 seulement, rien de conclu",
+      "maj": "2026-11-06"
     },
     "qhse": {
       "abonnes": 0,
@@ -41,11 +51,20 @@
       "abonnes": 0,
       "publications": 4,
       "vues_cumulees": 367,
+      "vues_mediane": 108.5,
+      "vues_moyenne": 92,
       "interactions": 1,
-      "derniere_publication": "04/11"
+      "sauvegardes": 1,
+      "commentaires": 0,
+      "partages": 0,
+      "derniere_publication": "04/11",
+      "meilleur": "robot canard, 27/10, 120 vues, 115 de portée, 1 sauvegarde",
+      "reel_moteur_04_11": "30 vues à environ 50 h, non comparable aux autres à 72 h",
+      "gain_abonne": "aucun depuis le 25/10",
+      "revenus": "aucun revenu, aucun lien de monétisation, aucune conversion payante"
     }
   },
-  "revenus": "Aucun revenu, aucun lien de monétisation ni aucune conversion payante n'apparaissent dans les fichiers lus : aucun chiffre de revenu n'est calculé ni projeté.",
+  "revenus": "Aucun revenu, aucun lien de monétisation ni aucune conversion payante n'apparaissent dans les fichiers lus (eco compris) : aucun chiffre de revenu n'est calculé ni projeté.",
   "ecarts_resolus": [
     "Chiffres actu du 06/11 (agent 3, API 14 h 55 UTC) : 26 publications, 4 466 vues cumulées (4 465 le 05/11, écart d'un vue retenu à la dernière lecture).",
     "state/feedback_cm_actu.json est daté du 26/10 : ses chiffres (ex. 129 vues moyenne) ne sont pas repris comme état actuel ; la médiane 117,5 vient de l'agent 3.",
@@ -54,11 +73,14 @@
   "actions_du_jour": [
     "Actu : ne pas reconduire le CTA « oui ou non ? » tel quel (6 posts depuis le 21/10, 5 interactions, 0 commentaire).",
     "Actu : préparer la prochaine vidéo avec l'accroche chiffrée (bilan du 18/10 : 1 156 vues) et une consigne de commentaire précise (un chiffre ou une ville), comparée à la médiane de 117,5 vues à 48 h.",
-    "Agents 3 et 9 : faire confirmer la complétude des stats (15 posts renvoyés par l'API) et le rythme de publication actu (une seule vidéo entre le 30/10 et le 06/11)."
+    "Agents 3 et 9 : faire confirmer la complétude des stats (15 posts renvoyés par l'API) et le rythme de publication actu (une seule vidéo entre le 30/10 et le 06/11).",
+    "Éco (06/11) : publier les 3 prochaines vidéos sur finances publiques nationales (dette, budget, niches) avec un chiffre choc en première seconde (test de l'agent 3, médiane à battre : 131 vues).",
+    "Éco (06/11) : ajouter une question explicite en fin de Reel sur les 3 prochaines vidéos ; viser au moins 1 commentaire (0 sur 5 à ce jour).",
+    "Éco (06/11) : vérifier la collecte des abonnés (0 depuis le 25/10 : bug de relevé ou compte neuf) avant de tirer une conclusion ; pas de conclusion avant 10 publications."
   ],
   "a_trancher_par_le_manager": [
     "QHSE : aucune publication depuis le 27/10 ; sujets du 28/10 au 01/11 non faits (signalé par l'agent 9).",
-    "Éco : aucune publication depuis le 03/11."
+    "Éco : aucune publication depuis le 03/11 (3 jours) ; rythme à confirmer. Le test de l'agent 3 suppose qu'il reprenne."
   ],
   "questions_agents": [
     {
@@ -68,9 +90,13 @@
     {
       "agent": 9,
       "question": "Motif de la seule publication actu (05/11) entre le 30/10 et le 06/11 : rythme voulu ou file vide ?"
+    },
+    {
+      "agent": 3,
+      "question": "Eco : confirmer que le relevé abonnés (0 depuis le 25/10) est fiable, sinon le corriger avant le test de la semaine."
     }
   ],
-  "notes_proprietaire": "Aucune note en attente pour l'agent 10 (profil actu).",
+  "notes_proprietaire": "Aucune note en attente pour l'agent 10 (profil eco, lues le 06/11).",
   "rien_publie_rien_envoye": true,
   "qhse_du_jour": {
     "date": "2026-11-06",
@@ -87,5 +113,14 @@
       "QHSE : aucune publication depuis le 27/10 (déjà signalé dans le bloc actu)."
     ],
     "rien_publie_rien_envoye": true
-  }
+  },
+  "date_par_compte": {
+    "actu": "2026-11-05 (inchangé aujourd'hui)",
+    "science": "2026-11-06"
+  },
+  "actions_du_jour_science": [
+    "Science : finir les 2 prochains reels par une question ouverte (test de l'agent 3) ; comparer sauvegardes et commentaires à 72 h avec la base actuelle (1 sauvegarde, 0 commentaire).",
+    "Science : ne tirer aucune conclusion du reel moteur sans essence (04/11) avant sa mesure à 72 h.",
+    "Science : garder l'angle « pourquoi ça tient / tombe » comme piste à suivre (3 reels sur 4), sans le traiter comme une preuve tant que l'échantillon est de 4 reels."
+  ]
 }
