@@ -1,0 +1,204 @@
+{
+ "accroche": "FLASH. Le budget 2027 est rejeté à l'unanimité. Et maintenant ?",
+ "variete": {
+  "accroche": "breaking",
+  "fonctionnement": "recit_chrono",
+  "mise_en_page": "jt",
+  "musique": "suspense",
+  "voix": "V1+V4",
+  "palette": "retro_tv",
+  "trend": "Décryptage chiffré & infographie de flux"
+ },
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "LE BUDGET 2027 REJETÉ",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Flash : le budget 2027 est rejeté à l'unanimité. Et maintenant ?",
+     "expression": "neutre"
+    }
+   ],
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/05/member-of-parliament-eric-coquerel-of-la-france-insoumise-lfi-and-the-nouveau-front-populaire-new-po-1793887147_5fc981f68cea61ff981f68cea930a8v_.jpg",
+   "fond_photo_requete": "Assemblée nationale rejet projet de budget 2027 vote hémicycle novembre 2026"
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "LE PROJET DE BUDGET",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce texte prévoit les recettes et les dépenses de l'État en 2027.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "LE 5 NOVEMBRE : LE VOTE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le 5 novembre, l'Assemblée nationale vote sur le projet de budget de l'État.",
+     "expression": "neutre"
+    }
+   ],
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/04/le-minsit-1793814155_b11595a16bea6b51595a16bea99159v_.jpg",
+   "fond_photo_requete": "budget de l'État 2027 Assemblée nationale séance vote unanimité"
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4.0,
+   "texte_ecran": "REJETÉ À L'UNANIMITÉ",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Résultat : le texte est rejeté à l'unanimité. Le vote est net.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 4.0,
+   "texte_ecran": "PERSONNE POUR",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Personne n'a voté pour ce texte à l'Assemblée. Il ne passe pas.",
+     "expression": "neutre"
+    }
+   ],
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/03/bruno-le-maire-s-est-dit-consterne-par-la-tournure-prise-par-la-discussion-budgetaire-au-parlement-1793726065_7bfcd6821aea66ffcd6821aea830ddv_.jpg",
+   "fond_photo_requete": "Eric Coquerel commission des finances budget 2027 Assemblée nationale"
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "FIN ? NON",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Mais ce rejet ne met pas fin à la discussion budgétaire.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "DIRECTION : LE SÉNAT",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le texte rejeté poursuit son chemin au Sénat. Voilà la suite.",
+     "expression": "choc"
+    }
+   ],
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/05/member-of-parliament-eric-coquerel-of-la-france-insoumise-lfi-and-the-nouveau-front-populaire-new-po-1793887147_5fc981f68cea61ff981f68cea930a8v_.jpg",
+   "fond_photo_requete": "Sénat examen projet de budget de l'État 2027 novembre 2026"
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "LE SÉNAT",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le Sénat est l'autre chambre du Parlement. Il examine ensuite le texte.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "timeline",
+   "duree_s": 4.0,
+   "texte_ecran": "ÉTAPE 1 : LE REJET",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Étape un : le vote de rejet à l'Assemblée nationale. C'est déjà fait.",
+     "expression": "neutre"
+    }
+   ],
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/04/le-minsit-1793814155_b11595a16bea6b51595a16bea99159v_.jpg",
+   "fond_photo_requete": "Assemblée nationale Palais Bourbon hémicycle budget 2027 rejet"
+  },
+  {
+   "type": "timeline",
+   "duree_s": 4.0,
+   "texte_ecran": "ÉTAPE 2 : LE SÉNAT",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Étape deux : l'examen du texte par les sénateurs. C'est la suite.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_jauge",
+   "duree_s": 4.0,
+   "texte_ecran": "ÉTAPE 3 : EN DISCUSSION",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Étape trois : le budget de l'État reste en discussion. Le débat continue.",
+     "expression": "neutre"
+    }
+   ],
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/03/bruno-le-maire-s-est-dit-consterne-par-la-tournure-prise-par-la-discussion-budgetaire-au-parlement-1793726065_7bfcd6821aea66ffcd6821aea830ddv_.jpg",
+   "fond_photo_requete": "Bruno Le Maire discussion budgétaire Parlement novembre 2026"
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "BUDGET FINAL : INCONNU",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un rejet ne dit pas quel sera le budget final. À suivre.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 4.0,
+   "texte_ecran": "SAIT / IGNORE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce qu'on sait : le rejet. Ce qu'on ignore : la version finale.",
+     "expression": "neutre"
+    }
+   ],
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/05/member-of-parliament-eric-coquerel-of-la-france-insoumise-lfi-and-the-nouveau-front-populaire-new-po-1793887147_5fc981f68cea61ff981f68cea930a8v_.jpg",
+   "fond_photo_requete": "Sénat hémicycle budget 2027 examen texte rejeté Assemblée"
+  },
+  {
+   "type": "quiz",
+   "duree_s": 4.0,
+   "texte_ecran": "LE SÉNAT DOIT-IL CORRIGER ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et vous, le Sénat doit-il corriger ce budget ? Dites-le en commentaire.",
+     "expression": "sourire"
+    }
+   ]
+  }
+ ],
+ "legende": "Le budget 2027 rejeté à l'unanimité par l'Assemblée nationale, le 5 novembre.\n\nLe texte rejeté poursuit son chemin au Sénat. Un rejet ne dit pas quel sera le budget final : le débat continue.\n\nLe Sénat doit-il corriger ce budget ? 👇\n\nEnvoie-le à quelqu'un qui suit le budget de l'État ! 📤\n\nSources : France 24, La Tribune",
+ "hashtags": [
+  "#économie",
+  "#Budget2027",
+  "#AssembléeNationale",
+  "#Sénat",
+  "#décodéléco"
+ ]
+}
