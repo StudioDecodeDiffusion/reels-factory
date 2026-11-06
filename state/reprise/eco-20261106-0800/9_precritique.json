@@ -1,0 +1,35 @@
+{
+  "id": "eco-20261106-0800",
+  "compte": "eco",
+  "agent": "7.4",
+  "decision": "go",
+  "controles": {
+    "contenu_interdit": "aucun (images de presse du sujet, sans crédit, autorisées ; pas de visage généré, pas de deepfake, pas de citation)",
+    "voix": "présente : voix_override.narrateur et mascotte définis ; dialogues narrateur non vides (14 plans)",
+    "duree_format": "14 plans x 4 s = 56 s (>= 55 s) ; dialogue d'environ 165 mots (cible 160-170)",
+    "photos_reelles": "7 plans sur 14 avec fond_photo (seuil 6), URL issues de la veille du dossier, fond_photo_requete renseigné",
+    "variete_vs_derniere_video": "accroche breaking (vs question_choc), fonctionnement recit_chrono (vs explication_mecanisme), musique suspense (vs lofi), voix V1+V4 (vs V2+V3), palette retro_tv (vs papier_journal) : aucune identité",
+    "faits": "France 24 (rejet à l'unanimité) et La Tribune (poursuite au Sénat) : sourcés dans 4_concept.json ; aucun chiffre affiché"
+  },
+  "defauts_bloquants": [],
+  "corrections": [
+    {
+      "plan": "quiz (scène 14)",
+      "defaut": "bonne: 0 désigne « Oui » comme bonne réponse à « Le Sénat va-t-il adopter ce budget ? » : c'est une prédiction, non sourcée.",
+      "suggestion": "Retirer le marquage de bonne réponse ou reformuler en question d'opinion sans réponse validée."
+    },
+    {
+      "plan": "pd_versus « PERSONNE POUR » (scène 5)",
+      "defaut": "« Personne n'a voté pour ce texte à l'Assemblée » est une déduction du mot « unanimité », non sourcée en ces termes.",
+      "suggestion": "Reformuler : « Le texte est rejeté à l'unanimité. »"
+    },
+    {
+      "plan": "pd_versus « PERSONNE POUR » (scène 5)",
+      "defaut": "« Il ne passe pas » contredit les plans suivants « Le texte rejeté poursuit son chemin au Sénat ».",
+      "suggestion": "Remplacer par « Il ne passe pas en l'état. » ou supprimer la phrase."
+    }
+  ],
+  "defauts_finition": [
+    "Mascotte définie dans voix_override mais sans aucune réplique : rien à corriger, à garder en tête pour le rendu."
+  ]
+}
