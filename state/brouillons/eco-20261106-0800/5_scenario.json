@@ -1,0 +1,156 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.5,
+   "texte_ecran": "53 % de pouvoir d'achat perdu",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cinquante-trois pour cent des cadres affirment avoir perdu du pouvoir d'achat en trois ans.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Les hauts salaires protégés ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "On pense souvent les hauts salaires complètement protégés face à la hausse des prix.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "54 000 € bruts par an",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pourtant, selon l'Apec, le salaire brut annuel médian des cadres s'élève à cinquante-quatre mille euros.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Une rémunération sous pression",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "C'est un niveau de vie confortable, mais très sensible à l'inflation.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 5.0,
+   "texte_ecran": "+3,5 % de hausse en 2023",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "En deux mille vingt-trois, la hausse médiane de leur salaire atteignait trois virgule cinq pour cent.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 5.0,
+   "texte_ecran": "+4,9 % d'inflation selon l'INSEE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Mais sur la même période, l'inflation globale grimpait à quatre virgule neuf pour cent selon l'INSEE.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 5.0,
+   "texte_ecran": "-1,4 % de pouvoir d'achat",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le calcul est simple : une perte nette de pouvoir d'achat de un virgule quatre pour cent en un an.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 5.0,
+   "texte_ecran": "53 % des cadres touchés",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Désormais, plus d'un cadre sur deux estime que sa rémunération décroche face au coût de la vie.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Le poids des impôts",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "À cela s'ajoute le poids des cotisations sociales et de l'impôt sur le revenu.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Un reste à vivre réduit",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Même avec un salaire élevé, la hausse des factures réelles se fait ressentir au quotidien.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chute",
+   "duree_s": 4.0,
+   "texte_ecran": "L'inflation touche tout le monde",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "L'inflation n'épargne donc personne, pas même les diplômés du supérieur.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.5,
+   "texte_ecran": "Ton salaire a suivi l'inflation ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et toi, ta rémunération a-t-elle augmenté plus vite que l'inflation cette année ?",
+     "expression": "clin"
+    }
+   ]
+  }
+ ],
+ "legende": "53 % des cadres déclarent avoir perdu du pouvoir d'achat en 3 ans.\n\nEn 2023, la hausse médiane des salaires des cadres a été de 3,5 %, alors que l'inflation atteignait 4,9 %. Résultat : même les rémunérations élevées subissent une érosion de leur niveau de vie.\n\nTon salaire a-t-il suivi l'inflation cette année ? 👇\nEnvoie cette vidéo à un collègue cadre 📤\n\nSources : Apec, INSEE",
+ "hashtags": [
+  "#salaires",
+  "#cadres",
+  "#inflation",
+  "#apec",
+  "#decode"
+ ]
+}
