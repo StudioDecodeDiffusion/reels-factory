@@ -1,0 +1,36 @@
+{
+  "id": "fun-20261107-0800",
+  "agent": "7.4",
+  "compte": "fun",
+  "sujet": "Guinness des Records : le PSG entre dans l'histoire avec 12 accomplissements légendaires",
+  "decision": "go",
+  "motif": "Aucun défaut bloquant : pas de personne réelle moquée ni de visage généré ; pas de mention d'IA ; 14 scènes de 4 s = 56 s (au-dessus du minimum de 55 s) ; voix narrateur et mascotte définies dans 6_da.json ; 6 scènes photo sur 14 avec fond_photo_requete (sujet PSG, sans URL inventée) ; ton décalé sans attaque.",
+  "controles": {
+    "contenu_interdit": "rien de bloquant",
+    "duree_s": 56,
+    "duree_minimum_ok": true,
+    "scenes": 14,
+    "scenes_photo_requete": 6,
+    "voix": "narrateur et mascotte présents dans 6_da.json (voix_override)",
+    "dialogue_mots_approx": 170,
+    "titre_miniature_mots": 7,
+    "variete_vs_derniere_video": "non vérifiable : « Dernière vidéo » est vide ({})",
+    "legende": "accroche + chiffre en 1re ligne, question 👇, partage 📤, « Sources : » présent, 5 hashtags, pas de #viral/#fyp"
+  },
+  "corrections": [
+    {
+      "type": "fait_a_verifier",
+      "bloquant": false,
+      "where": "4_concept.json mots_choc, titre_miniature ; 5_scenario.json scènes 1, 7, 14 ; 6_da.json scène 7 (valeur 12, suffixe « records ») ; légende",
+      "probleme": "Le chiffre 12 ne vient que du titre de la veille (« 12 accomplissements légendaires »), sans détail de la liste. La veille parle d'accomplissements, le scénario et les mots choc écrivent « 12 records ». Le quiz (bonne réponse « Une douzaine ») repose sur le même chiffre.",
+      "suggestion": "Avant publication, vérifier la source Guinness et aligner le terme (« accomplissements » ou « records ») ; si le chiffre n'est pas confirmé, retirer le compteur 12 (scène 7) et la question 14."
+    },
+    {
+      "type": "style",
+      "bloquant": false,
+      "where": "légende, première ligne",
+      "probleme": "Le chiffre de l'accroche est écrit en toutes lettres (« une douzaine »), alors que la règle demande accroche + chiffre ; sans effet bloquant."
+    }
+  ],
+  "transmis_a": "Manager, pour passage à 7_spec.json"
+}
