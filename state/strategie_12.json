@@ -45,7 +45,7 @@
       "vues_cumulees": 148,
       "interactions": 2,
       "derniere_publication": "27/10",
-      "maj": "06/11/2026",
+      "maj": "07/11/2026",
       "mediane_vues": 74,
       "meilleure": "131 vues, 129 comptes atteints, 2 j'aime, 27/10 11 h 10 (Seveso)",
       "note": "n = 2 publications : pas une projection. Abonnés 0 figé du 25/10 au 06/11, à vérifier. ISO du 26/10 absente des stats, à vérifier."
@@ -100,18 +100,18 @@
   "notes_proprietaire": "Aucune note en attente pour l'agent 10 (profil actu, lues le 07/11).",
   "rien_publie_rien_envoye": true,
   "qhse_du_jour": {
-    "date": "2026-11-06",
-    "type": "résumé quotidien (vendredi 06/11/2026 ; stratégie complète réservée au lundi)",
-    "sources": "travail/rapport8_qhse.json (agent 9), travail/rapport3_qhse.md et state/rapport_3_qhse.json (agent 3), state/feedback_cm_qhse.json (26/10)",
-    "ou_on_en_est": "2 publications, toutes le 27/10, aucune depuis 10 jours. 148 vues cumulées, 2 j'aime, 0 commentaire. Pas de tendance exploitable.",
-    "a_bouge": "Rien de nouveau depuis le 27/10. Abonnés toujours à 0 (collecte à vérifier). ISO du 26/10 absente des statistiques.",
+    "date": "2026-11-07",
+    "type": "résumé quotidien (samedi 07/11/2026 ; stratégie complète réservée au lundi)",
+    "sources": "state/stats_qhse.json (maj 07/11 14:42 UTC), state/feedback_cm_qhse.json (07/11), travail/rapport8_qhse.json (agent 9), travail/rapport3_qhse.md et state/rapport_3_qhse.json (agent 3, 07/11)",
+    "ou_on_en_est": "2 publications, toutes le 27/10, aucune depuis 11 jours. 148 vues cumulées, 2 j'aime, 0 commentaire, 0 abonné. Pas de tendance exploitable (n = 2).",
+    "a_bouge": "Rien de nouveau depuis le 06/11. Abonnés toujours à 0 depuis le 25/10 (collecte à vérifier). Publication ISO absente des statistiques.",
     "actions_du_jour": [
-      "QHSE : vérifier pourquoi aucune publication n'est enregistrée depuis le 27/10 (sujets du 28/10 au 06/11 non faits).",
-      "QHSE : vérifier la collecte des abonnés (0 figé du 25/10 au 06/11) et la présence du job qhse-20261026-1200 dans les statistiques.",
-      "QHSE : rétablir un rythme régulier, puis comparer sur 2 semaines Seveso (décryptage) et ISO (mythe contre preuve)."
+      "QHSE (à proposer au Manager, pas à faire) : rétablir la publication automatique qhse et vérifier l'alimentation de sa file.",
+      "QHSE : vérifier la collecte des abonnés (0 figé depuis le 25/10) et la présence de la publication ISO (job qhse-20261026-1200) dans les statistiques.",
+      "QHSE : une fois le rythme rétabli, lancer le test de 2 semaines Seveso contre ISO (vues et enregistrements par publication)."
     ],
     "a_trancher_par_le_manager": [
-      "QHSE : aucune publication depuis le 27/10 (déjà signalé dans le bloc actu)."
+      "QHSE : reprise de la publication automatique qhse (aucune publication depuis le 27/10)."
     ],
     "rien_publie_rien_envoye": true
   },
