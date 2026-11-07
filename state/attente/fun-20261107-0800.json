@@ -1,7 +1,7 @@
 {
   "id": "fun-20261107-0800",
   "profil": "fun",
-  "statut": "a_valider",
+  "statut": "approuvee",
   "titre": null,
   "son_tendance": null,
   "publication_le": "2026-11-07T08:00+01:00",
@@ -82,5 +82,8 @@
       "couverture.png": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-fun-20261107-0800/couverture.png"
     }
   },
-  "envoyee": "2026-11-07T04:05:42+00:00"
+  "envoyee": "2026-11-07T04:05:42+00:00",
+  "valide_par": "automatique (sans réponse)",
+  "erreur": "Variable d'environnement manquante : IG_TOKEN_FUN (à ajouter dans les secrets GitHub)",
+  "erreurs": 1
 }
