@@ -1,28 +1,65 @@
 {
-  "date": "2026-11-04",
-  "source": "tokchart.com/trending/FR (4 nov. 2026)",
+  "date": "2026-11-07",
+  "source": "veille automatique (state/veille_brute.json) + tokchart.com/trending/FR (7 nov. 2026)",
   "formats": [],
   "accroches_types": [],
-  "sujets_qui_buzzent": [],
+  "hashtags": [],
+  "hashtags_note": "aucun hashtag TikTok vérifié aujourd'hui : page tokchart sans liste, rien inventé",
   "sons": [
     {
       "nom": "Ramalama (Bang Bang)",
       "auteur": "roisinmurphyofficial",
-      "videos": "840 K",
-      "evolution_jour": "+9750",
-      "usage": "Reel de liste ou de chiffres (son à ajouter dans l'app)"
+      "videos": "845 K",
+      "evolution_jour": "-2900",
+      "statut": "en baisse, à éviter pour les nouveaux Reels",
+      "source": "https://tokchart.com/trending/FR",
+      "date": "2026-11-07"
     },
     {
-      "nom": "Piano Hush",
-      "auteur": "Sid Ferris",
-      "videos": "408 K",
-      "evolution_jour": "+11100",
-      "usage": "fond calme sous explication"
+      "nom": "Son original",
+      "auteur": "Avel Nkendo",
+      "videos": "77 K",
+      "evolution_jour": "+17733",
+      "statut": "en hausse, nom du son à relever dans l'app avant usage",
+      "source": "https://tokchart.com/trending/FR",
+      "date": "2026-11-07"
+    },
+    {
+      "nom": "Son original",
+      "auteur": "Trendformusic",
+      "videos": "108 K",
+      "evolution_jour": "+9500",
+      "statut": "en hausse, nom du son à relever dans l'app avant usage",
+      "source": "https://tokchart.com/trending/FR",
+      "date": "2026-11-07"
     }
   ],
   "communaute": "Aucun retour agent 9 pour TikTok dans cette veille.",
+  "formats_note": "aucun format TikTok chiffré trouvé aujourd'hui : rien à copier sans preuve",
+  "sujets_qui_buzzent": [
+    {
+      "sujet": "Manifestations du 7 novembre : Paris, Lyon, Marseille, province",
+      "lien": "https://www.bfmtv.com/societe/manifestations/direct-mobilisation-du-7-novembre-de-nouvelles-manifestations-prevues-sous-haute-securite-pour-l-acte-iv-de-la-contestation-70-000-forces-de-l-ordre-mobilisees_LN-202611070074.html",
+      "source": "state/veille_brute.json (maj 2026-11-07 16 h 02 UTC)",
+      "date": "2026-11-07"
+    },
+    {
+      "sujet": "Pouvoir d'achat : le décrochage de la France par rapport au reste de l'Europe",
+      "lien": "",
+      "source": "state/veille_brute.json (maj 2026-11-07 16 h 02 UTC)",
+      "date": "2026-11-07",
+      "note": "lien non repris dans la veille, titre seul"
+    },
+    {
+      "sujet": "Colère sociale : forte baisse de la mobilisation par rapport aux semaines précédentes",
+      "lien": "https://www.courrierinternational.com/article/vu-du-royaume-uni-sur-les-free-partys-la-france-aussi-a-choisi-la-repression_272206",
+      "source": "state/veille_brute.json (maj 2026-11-07 16 h 02 UTC)",
+      "date": "2026-11-07",
+      "note": "lien à vérifier : il renvoie à un autre sujet"
+    }
+  ],
   "a_eviter": [
-    "hashtags non verifies",
-    "sons Halloween en baisse depuis le 31 octobre"
-  ]
+    "titres de presse repris sans vérification de l'angle"
+  ],
+  "compte": "actu"
 }
