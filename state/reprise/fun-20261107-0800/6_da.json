@@ -1,0 +1,61 @@
+{
+  "id": "fun-20261107-0800",
+  "compte": "fun",
+  "theme": {
+    "fond": "#1B0B2E",
+    "texte": "#FFF8E7",
+    "accent": "#FF2E88",
+    "accent2": "#00E5FF",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "pop",
+    "palette": ["#1B0B2E", "#3A1563", "#FF2E88", "#00E5FF", "#FFF8E7", "#FFD23F"],
+    "mise_en_page": "jt",
+    "tenues": {"narrateur": "fete", "mascotte": "detective"}
+  },
+  "variete": {
+    "accroche": "chiffre_geant",
+    "trend": "aucune (sujet de la veille fun ; pas de trend Instagram)",
+    "fonctionnement": "top3",
+    "mise_en_page": "jt",
+    "musique": "funk",
+    "voix": "V1+V3",
+    "palette": "pop"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.1&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "musique": {
+    "genre": "funk",
+    "volume": 0.45,
+    "ambiance_globale": "joyeux",
+    "ambiance_par_scene": {"1": "joyeux", "2": "joyeux", "3": "joyeux", "4": "joyeux", "5": "joyeux", "6": "joyeux", "7": "joyeux", "8": "curieux", "9": "joyeux", "10": "joyeux", "11": "joyeux", "12": "joyeux", "13": "joyeux", "14": "joyeux"},
+    "energie_par_scene": {"1": 3, "2": 3, "3": 2, "4": 3, "5": 2, "6": 3, "7": 3, "8": 2, "9": 3, "10": 3, "11": 2, "12": 3, "13": 3, "14": 3}
+  },
+  "sfx": {"1": ["impact"], "2": ["pop"], "3": ["whoosh"], "4": ["pop"], "5": ["whoosh"], "6": ["pop"], "7": ["whoosh"], "8": ["pop"], "9": ["whoosh"], "10": ["pop"], "11": ["whoosh"], "12": ["pop"], "13": ["whoosh"], "14": ["ding"]},
+  "scenes": [
+    {"n": 1, "type": "hook", "duree_s": 4.0, "title": "UNE DOUZAINE", "mot_fort": "DOUZAINE"},
+    {"n": 2, "type": "photo", "duree_s": 4.0, "titre": "LE JUGE DE PAIX", "mot_fort": "JUGE", "src": "", "fond_photo": "", "fond_photo_requete": "Paris Saint-Germain Guinness World Records 2026"},
+    {"n": 3, "type": "pd_objet", "duree_s": 4.0, "titre": "UN RECORD = UN TITRE", "mot_fort": "TITRE", "prompt": "a golden trophy cup, pixel art, single object", "etiquette": "Record"},
+    {"n": 4, "type": "photo", "duree_s": 4.0, "titre": "UNE PAGE ET DEMIE", "mot_fort": "PAGE", "src": "", "fond_photo": "", "fond_photo_requete": "PSG record du monde Guinness 2026 Parc des Princes"},
+    {"n": 5, "type": "pd_flux", "duree_s": 4.0, "titre": "LA LISTE S'ALLONGE", "mot_fort": "ALLONGE", "de": {"label": "Exploits", "prompt": "a football ball rolling on a pitch, pixel art, single object"}, "vers": {"label": "Livre", "prompt": "a thick record book, pixel art, single object"}, "montant": "exploits"},
+    {"n": 6, "type": "photo", "duree_s": 4.0, "titre": "TÉLÉPHONES DEHORS", "mot_fort": "TÉLÉPHONES", "src": "", "fond_photo": "", "fond_photo_requete": "Paris Saint-Germain trophée record historique 2026"},
+    {"n": 7, "type": "pd_chiffre", "duree_s": 4.0, "titre": "LA DOUZAINE, EN BOÎTE", "mot_fort": "DOUZAINE", "valeur": 12, "suffixe": " records", "legende": "Accomplissements légendaires", "source": "Veille fun : Guinness des Records (6 articles)"},
+    {"n": 8, "type": "photo", "duree_s": 4.0, "titre": "LE REFRAIN", "mot_fort": "REFRAIN", "src": "", "fond_photo": "", "fond_photo_requete": "PSG supporters Parc des Princes célébration 2026"},
+    {"n": 9, "type": "pd_versus", "duree_s": 4.0, "titre": "PAPIER / STADE", "mot_fort": "STADE", "gauche": {"label": "Papier", "prompt": "a paper record certificate, pixel art, single object"}, "droite": {"label": "Stade", "prompt": "a football stadium, pixel art, single object"}, "verdict": "Le stade gagne"},
+    {"n": 10, "type": "bigstat", "duree_s": 4.0, "titre": "AMBIANCE : MAX", "mot_fort": "MAX", "value": "MAX", "label": "Ambiance"},
+    {"n": 11, "type": "photo", "duree_s": 4.0, "titre": "LA VITRINE S'ENRICHIT", "mot_fort": "VITRINE", "src": "", "fond_photo": "", "fond_photo_requete": "Paris Saint-Germain Ligue des champions record 2026"},
+    {"n": 12, "type": "pd_tampon", "duree_s": 4.0, "titre": "OFFICIEL", "mot_fort": "OFFICIEL", "tampon": "OFFICIEL", "prompt": "an open record book page with a stamp, pixel art, single object"},
+    {"n": 13, "type": "photo", "duree_s": 4.0, "titre": "NUIT DE MATCH", "mot_fort": "NUIT", "src": "", "fond_photo": "", "fond_photo_requete": "Parc des Princes nuit match PSG 2026"},
+    {"n": 14, "type": "quiz", "duree_s": 4.0, "titre": "VOUS LE SAVIEZ ?", "mot_fort": "SAVIEZ", "question": "Combien de records le PSG aurait-il décrochés ?", "options": ["Une douzaine", "Deux", "Cinq", "Vingt"], "bonne": 0}
+  ],
+  "consignes_animation": "Rythme : un plan toutes les 4 s, 14 scènes, durée 56 s, un plan par plan du scénario 5_scenario.json dans le même ordre. Titres courts en majuscules, mot_fort en accent rose #FF2E88 ; étiquettes courtes. Scènes photo (2, 4, 6, 8, 11, 13) : photo réelle du sujet assombrie en fond, titre et sous-titres sur bandeau. Scène 1 : « UNE DOUZAINE » dès la 1re seconde. Scènes 5 et 12 : flux et tampon animés. Scène 9 : versus avec verdict. Scène 10 : chiffre géant qualitatif, sans chiffre inventé. Scène 7 : compteur 12, à vérifier avant publication. Fond violet nuit, texte crème partout. Pas de personne réelle moquée, pas de visage généré.",
+  "evolution_charte": "aucune (palette pop pour cette vidéo seulement)",
+  "messages_traites": [],
+  "message_au_proprietaire": "DA fun-20261107-0800 (PSG, Guinness) réalignée sur le scénario réel : 14 scènes, pixeldoc, palette pop, musique funk, 6 scènes photo (fond_photo_requete, src vide). Le chiffre 12 et le quiz viennent de la veille et du scénario : à vérifier avant publication."
+}
