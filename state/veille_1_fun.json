@@ -1,64 +1,36 @@
 {
- "date": "2026-11-06",
+ "date": "2026-11-07",
  "compte": "fun",
- "agent": "1",
- "mode": "économe : 5 sujets max, à partir de state/veille_brute.json (top_par_compte) ; faits limités aux titres et sources listés, chiffres seulement s'ils figurent dans un titre sourcé",
  "sujets": [
   {
-   "titre": "Agility Robotics entre en Bourse : le robot humanoïde Digit au Nasdaq",
-   "resume": "Selon L'Usine Digitale, Agility Robotics devient la première société de robotique humanoïde cotée aux États-Unis, avec son robot Digit au Nasdaq. Des médias parlent aussi du passage des humanoïdes du spectacle à l'usine.",
-   "chiffres_cles": "aucun chiffre vérifié",
-   "source_url": "https://news.google.com/rss/articles/CBMi4gJBVV95cUxOZWxzUDk0dXBKZ2dGT2g0N3VqcFJyRGkyaWt4UE1DeE9LejZ5dzRBXzBZMTJKamNudHNGTDkteHBsc3JKU2k1ZHNHc0xKUWsySWgwTEJpZ2RBRW1TQUdHX3VVQmEteEo2bmZzZ1JFdnVQd1pUanlEdmtuN18yUlh4MU5VaUJ3X1dLOFBvUmp1Y0h6RENITUFRZ3h1TVB1Q1RpT01LMkxxSmRQbjFaeXh3OUFyTVViX2FjRFU4NXRYRzN4VlVhdURlNjR0S1A2RXJzNzV2ajhvMjRpbUFCX01IT0RJbzJRS1RSc1JaVjZnZy1GWHdWcmpBa2VfTWpkLTZRTktRc0dyLTRhMVNoZTVjbEVhU2pHM2N6ZUFkQ05wVzRiRms5aTFPeUtxNzJKRmdBZEdhMXRNUXhuazZVb3lZVGFFYWJmdEhGMmJ6NU5qOXpSbnVFMjhhTkltakhmbnBKWGc?oc=5",
-   "date_info": "2026-11-06",
-   "vu_chez": [
-    "L'Usine Digitale",
-    "Nord Littoral",
-    "La Tribune",
-    "Les Echos Etudes"
-   ],
-   "faisabilite": 5,
-   "potentiel": 7
-  },
-  {
-   "titre": "TikTok dans le viseur de Bruxelles pour un algorithme jugé trop addictif",
-   "resume": "L'Express rapporte que Bruxelles s'intéresse à TikTok, dont l'algorithme est jugé trop addictif. Libération relaie aussi les débats sur les réseaux sociaux.",
-   "chiffres_cles": "aucun chiffre retenu",
-   "source_url": "https://www.lexpress.fr/economie/high-tech/reseaux-sociaux-tiktok-dans-le-viseur-de-bruxelles-pour-son-algorithme-juge-trop-addictif-7UGQ5M2AEZC3BPOGRMDDGF2RCY/",
-   "date_info": "2026-11-06",
-   "vu_chez": [
-    "L'Express",
-    "Libération",
-    "Sciences et Avenir"
-   ],
-   "faisabilite": 5,
-   "potentiel": 8
-  },
-  {
-   "titre": "Le PSG entre au Guinness World Records avec 12 records",
-   "resume": "CulturePSG, Le Parisien et Foot Mercato rapportent que le PSG établit 12 records au Guinness World Records.",
-   "chiffres_cles": "12 records (titres de presse)",
-   "source_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNOXNzVDR",
-   "date_info": "2026-11-06",
-   "vu_chez": [
-    "CulturePSG",
-    "Le Parisien",
-    "Foot Mercato"
-   ],
-   "faisabilite": 5,
-   "potentiel": 6
-  },
-  {
-   "titre": "Un Pissarro spolié par les nazis restitué : un tournant pour Sotheby's",
-   "resume": "Challenges rapporte la restitution d'un tableau de Camille Pissarro spolié par les nazis, par la maison de vente Sotheby's, présentée comme un tournant pour le marché de l'art.",
-   "chiffres_cles": "aucun chiffre vérifié",
-   "source_url": "https://www.challenges.fr/entreprise/culture/restitution-dun-tableau-de-pissarro-spolie-par-les-nazis-la-maison-de-vente-aux-encheres-sothebys-face-a-un-tournant-pour-le-marche-de-lart_646872",
-   "date_info": "2026-11-06",
-   "vu_chez": [
-    "Challenges",
-    "Le Dauphiné Libéré"
-   ],
+   "titre": "Netflix développe un préquel de Stranger Things se déroulant dans les années 1950",
+   "resume": "Courrier international et Numerama : Netflix prépare un préquel de Stranger Things. Angle nostalgie.",
+   "chiffres_cles": [],
+   "source_url": "https://www.courrierinternational.com/article/television-netflix-developpe-un-prequel-de-sa-serie-a-succes-stranger-things_285521",
+   "date_info": "2026-11-07",
    "faisabilite": 4,
-   "potentiel": 6
+   "potentiel": 6,
+   "vu_chez": [
+    "Courrier international",
+    "Numerama",
+    "aufeminin.com"
+   ],
+   "statut": "retenu"
+  },
+  {
+   "titre": "Walibi sur RMC Story : la technologie derrière les montagnes russes",
+   "resume": "Titres Numerama, La Lettre M et Serie News sur le format RMC Story consacré aux montagnes russes de Walibi.",
+   "chiffres_cles": [],
+   "source_url": "https://reporterre.net/Poulets-labellises-Bien-etre-animal-des-associations-animalistes-attaquent-les-marques-en",
+   "date_info": "2026-11-07",
+   "faisabilite": 4,
+   "potentiel": 5,
+   "vu_chez": [
+    "Numerama",
+    "La Lettre M",
+    "Serie News"
+   ],
+   "statut": "retenu"
   }
  ]
 }

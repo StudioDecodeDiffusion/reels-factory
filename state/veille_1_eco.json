@@ -1,67 +1,90 @@
 {
- "date": "2026-11-06",
+ "date": "2026-11-07",
  "compte": "eco",
- "agent": "1",
- "mode": "économe : 5 sujets max, à partir de state/veille_brute.json (top_par_compte) ; faits limités aux titres et sources listés, chiffres seulement s'ils figurent dans un titre sourcé",
  "sujets": [
   {
-   "titre": "Budget 2027 : l'Assemblée nationale rejette le projet de loi de finances",
-   "resume": "D'après les titres repris par La Tribune, 20 Minutes, Actu.fr et BFM, l'Assemblée nationale a rejeté en première lecture le projet de loi de finances pour 2027 ; le texte poursuit son parcours au Sénat.",
-   "chiffres_cles": "rejet « à l'unanimité » (titre agrégé, à vérifier au compte rendu de l'Assemblée)",
-   "source_url": "https://www.latribune.fr/article/economie/7026819425336/budget-rejete-par-l-assemblee-nationale-le-texte-poursuit-son-chemin-au-senat",
-   "date_info": "2026-11-06",
-   "vu_chez": [
-    "La Tribune",
-    "20 Minutes",
-    "Actu.fr",
-    "BFM"
+   "titre": "Budget 2027 : l'Assemblée nationale rejette le projet de budget",
+   "resume": "Titres France 24, RTL, La Tribune et franceinfo : le projet de budget de l'État est rejeté par l'Assemblée nationale et poursuit son chemin au Sénat. Un titre parle d'un rejet « à l'unanimité ».",
+   "chiffres_cles": [
+    "« rejeté à l'unanimité » (titre, non revérifié)"
    ],
+   "source_url": "https://www.challenges.fr/argent-et-placements/epargne-salariale-dassault-orange-eiffage-decouvrez-le-palmares-des-24-entreprises-championnes-du-partage-de-la-valeur_646839",
+   "date_info": "2026-11-07",
    "faisabilite": 5,
-   "potentiel": 9
+   "potentiel": 8,
+   "vu_chez": [
+    "France 24",
+    "La Tribune",
+    "RTL",
+    "franceinfo",
+    "JDN",
+    "Banque des Territoires"
+   ],
+   "statut": "retenu"
   },
   {
-   "titre": "Pouvoir d'achat et impôt sur la fortune : des mesures alternatives pour le budget 2027",
-   "resume": "Basta et Alternatives économiques présentent des mesures alternatives au budget 2027 (pouvoir d'achat, impôt sur la fortune), portées par des formations de gauche selon l'URL de l'article.",
-   "chiffres_cles": "aucun chiffre vérifié",
-   "source_url": "https://basta.media/pouvoir-d-achat-impot-sur-la-fortune-mesures-alternatives-budget-2027-LFI-Ecologistes-Attac",
-   "date_info": "2026-11-06",
+   "titre": "Dépenses publiques et budget 2027 : qui décide des économies, et à quelle étape ?",
+   "resume": "Explication du circuit de décision budgétaire 2027 ; titres de La Tribune et de médias régionaux sur la cible de déficit.",
+   "chiffres_cles": [],
+   "source_url": "https://www.latribune.fr/article/economie/22153424154281/budget-le-gouvernement-saccroche-a-sa-cible-de-deficit-pour-2026",
+   "date_info": "2026-11-07",
+   "faisabilite": 5,
+   "potentiel": 6,
+   "vu_chez": [
+    "La Tribune",
+    "Actu.fr",
+    "Dordogne Libre"
+   ],
+   "statut": "retenu"
+  },
+  {
+   "titre": "Budget 2027 : impôt sur la fortune ou pouvoir d'achat, les mesures alternatives",
+   "resume": "Basta et L'Humanité présentent des pistes alternatives pour le budget 2027 (pouvoir d'achat, impôt sur la fortune).",
+   "chiffres_cles": [],
+   "source_url": "https://www.challenges.fr/economie/un-choc-fiscal-dune-ampleur-sans-precedent-la-france-insoumise-fait-le-pari-risque-de-lever-106-milliards-sans-deteriorer-lactivite_646895",
+   "date_info": "2026-11-07",
+   "faisabilite": 5,
+   "potentiel": 6,
    "vu_chez": [
     "Basta",
-    "Alternatives économiques",
-    "Les Echos"
+    "L'Humanité",
+    "NextPlz"
    ],
-   "faisabilite": 4,
-   "potentiel": 7
+   "statut": "retenu"
   },
   {
-   "titre": "Midterms américaines : inflation, pétrole, dette et IA, les grands dossiers économiques",
-   "resume": "La Tribune recense les grands dossiers économiques des élections de mi-mandat américaines (inflation, pétrole, dette, IA). L'Express publie les scénarios d'un économiste sur une nouvelle dérive budgétaire aux États-Unis.",
-   "chiffres_cles": "aucun chiffre retenu (l'inflation de 3,7 % du titre Zonebourse est une question, non retenue)",
+   "titre": "Plus de 30 000 € de pensions à deux : un couple de retraités paiera plus d'impôt en 2027",
+   "resume": "Titre L'Express : exemple d'un couple de retraités dont l'impôt augmente en 2027 ; Alternatives économiques et Les Echos traitent aussi des retraites.",
+   "chiffres_cles": [],
+   "source_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFAxYmVWZ2c2YWRZOTJURUZDV3BBbHFRUHZjc1V3eksyUW04aXRiZE9CeERoVTNqRmJMcmRuajlSdUp0WXZuRU84MGgxX1BwSDlFdW5hWkx5U3FPdEZrVm16Y21EUTNKLW5PdnVlYlB1YU9qQzVoeXptR0NydHc?oc=5",
+   "date_info": "2026-11-07",
+   "faisabilite": 4,
+   "potentiel": 6,
+   "vu_chez": [
+    "L'Express",
+    "Alternatives économiques",
+    "Les Echos",
+    "Challenges"
+   ],
+   "statut": "retenu"
+  },
+  {
+   "titre": "Agenda du 9 au 13 novembre : l'inflation américaine au centre de l'attention",
+   "resume": "Agenda économique de la semaine : inflation aux États-Unis, « 7 grands dossiers économiques des midterms » (La Tribune, Le Monde.fr). Un titre annonce un Smic au 1er janvier 2027 d'environ 12,46 € de l'heure.",
+   "chiffres_cles": [
+    "Smic 2027 d'environ 12,46 €/h (titre, non revérifié)"
+   ],
    "source_url": "https://www.latribune.fr/article/economie/international/50817436294853/inflation-petrole-dette-ia-les-8-grands-dossiers-economiques-des-midterms",
-   "date_info": "2026-11-06",
+   "date_info": "2026-11-07",
+   "faisabilite": 4,
+   "potentiel": 5,
    "vu_chez": [
     "La Tribune",
-    "L'Express",
     "Le Monde.fr",
-    "Boursorama"
-   ],
-   "faisabilite": 4,
-   "potentiel": 6
-  },
-  {
-   "titre": "Traders : l'inquiétude passe de l'inflation à la croissance",
-   "resume": "Boursorama et Zonebourse rapportent que les traders s'inquiètent désormais davantage de la croissance que de l'inflation, alors que la débâcle technologique s'aggrave.",
-   "chiffres_cles": "aucun chiffre vérifié",
-   "source_url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPR2Q2U1N",
-   "date_info": "2026-11-06",
-   "vu_chez": [
     "Boursorama",
-    "Zonebourse Suisse",
-    "Paperjam",
-    "TradingView"
+    "Investing.com France"
    ],
-   "faisabilite": 4,
-   "potentiel": 5
+   "statut": "retenu"
   }
  ]
 }

@@ -1,83 +1,80 @@
 {
- "date": "2026-11-06",
+ "date": "2026-11-07",
  "compte": "actu",
- "agent": "1",
- "mode": "économe : 5 sujets max, à partir de state/veille_brute.json (top_par_compte) ; faits limités aux titres et sources listés, chiffres seulement s'ils figurent dans un titre sourcé",
  "sujets": [
   {
-   "titre": "Manifestation du 7 novembre : le parcours du cortège parisien",
-   "resume": "Mobilisation sociale prévue le samedi 7 novembre à Paris ; le parcours de la manifestation, entre République et Nation, est publié le 6 novembre par franceinfo et repris par plusieurs médias.",
-   "chiffres_cles": "aucun chiffre retenu (pas de bilan vérifié)",
-   "source_url": "https://www.franceinfo.fr/societe/manifestations/direct-mobilisation-sociale-le-ministre-du-travail-juge-important-d-essayer-de-relever-le-smic-au-dela-de-la-barre-des-1-500-euros-net_8270366.html",
-   "date_info": "2026-11-06",
+   "titre": "Manifestations du 7 novembre : 46 000 personnes à Paris selon la préfecture de police",
+   "resume": "Mobilisation du 7 novembre à Paris, Lyon, Marseille et en province. Titres BFMTV : 46 000 personnes ont défilé à Paris selon la préfecture de police ; « un net recul » selon l'entourage du ministère de l'Intérieur.",
+   "chiffres_cles": [
+    "46 000 manifestants à Paris (préfecture de police, selon titre BFMTV)"
+   ],
+   "source_url": "https://www.bfmtv.com/societe/manifestations/direct-mobilisation-du-7-novembre-de-nouvelles-manifestations-prevues-sous-haute-securite-pour-l-acte-iv-de-la-contestation-70-000-forces-de-l-ordre-mobilisees_LN-202611070074.html",
+   "date_info": "2026-11-07",
+   "faisabilite": 4,
+   "potentiel": 8,
    "vu_chez": [
+    "BFM",
     "20 Minutes",
-    "Le Parisien",
-    "Le Monde.fr",
-    "Actu.fr"
-   ],
-   "faisabilite": 5,
-   "potentiel": 7
-  },
-  {
-   "titre": "Smic : vers la « barre des 1 500 € net » ?",
-   "resume": "Le ministre du Travail, Jean-Pierre Farandou, juge « important » d'essayer de franchir la « barre des 1 500 € net » pour le Smic, selon La Croix. C'est un objectif évoqué, pas une décision.",
-   "chiffres_cles": "1 500 € net (objectif évoqué, titre La Croix)",
-   "source_url": "https://www.la-croix.com/economie/smic-le-ministre-du-travail-juge-important-de-franchir-la-barre-des-1-500-net-20261106",
-   "date_info": "2026-11-06",
-   "vu_chez": [
+    "Actu.fr",
     "La Croix",
-    "Les Echos",
-    "Le Monde.fr",
-    "Anadolu"
+    "L'Humanité",
+    "Le Parisien"
    ],
-   "faisabilite": 5,
-   "potentiel": 8
+   "statut": "retenu"
   },
   {
-   "titre": "85 % des Français jugent que leur pouvoir d'achat s'est dégradé en dix ans",
-   "resume": "Selon le titre de Challenges, 85 % des Français ont le sentiment que leur pouvoir d'achat s'est dégradé en dix ans. Des médias (Actu.fr, Alternatives économiques) décrivent un décrochage de la France par rapport au reste de l'Europe.",
-   "chiffres_cles": "85 % (titre Challenges, à vérifier dans l'étude citée avant écriture)",
-   "source_url": "https://www.challenges.fr/economie/cest-clairement-devenu-la-priorite-numero-un-85-des-francais-ont-le-sentiment-que-leur-pouvoir-dachat-sest-degrade-en-dix-ans_646802",
-   "date_info": "2026-11-06",
+   "titre": "La France insoumise chiffre un « choc fiscal » de 106 milliards",
+   "resume": "Titre Challenges : le programme LFI lèverait 106 milliards sans, selon le titre, détériorer l'activité. Débat sur l'effet réel de ce chiffrage (titres repris par Le Figaro, La Tribune, France 24).",
+   "chiffres_cles": [
+    "106 milliards (titre Challenges, chiffre non revérifié sur la page)"
+   ],
+   "source_url": "https://www.challenges.fr/economie/un-choc-fiscal-dune-ampleur-sans-precedent-la-france-insoumise-fait-le-pari-risque-de-lever-106-milliards-sans-deteriorer-lactivite_646895",
+   "date_info": "2026-11-07",
+   "faisabilite": 4,
+   "potentiel": 7,
    "vu_chez": [
     "Challenges",
-    "Actu.fr",
-    "Alternatives économiques",
-    "BFM"
+    "BFM",
+    "Le Figaro",
+    "Le Monde.fr",
+    "La Tribune",
+    "France 24"
    ],
-   "faisabilite": 4,
-   "potentiel": 8
+   "statut": "retenu"
   },
   {
-   "titre": "Mouvement lycéen : « les responsables politiques n'ont pas tenu leurs promesses »",
-   "resume": "Dans une interview à RFI, une personne issue du mouvement lycéen dénonce des promesses politiques non tenues depuis trop longtemps. RFI publie aussi un volet sur les manifestations de jeunes en Europe.",
-   "chiffres_cles": "aucun chiffre retenu",
-   "source_url": "https://www.rfi.fr/fr/podcasts/invit%C3%A9-politique/20261106-mouvement-lyc%C3%A9en-en-france-les-responsables-politiques-n-ont-pas-tenu-leurs-promesses-depuis-trop-longtemps",
-   "date_info": "2026-11-06",
-   "vu_chez": [
-    "RFI",
-    "La Croix",
-    "Libération",
-    "Le Figaro"
-   ],
-   "faisabilite": 4,
-   "potentiel": 7
-  },
-  {
-   "titre": "Conférence sociale du 9 novembre : des hausses de salaires en négociation",
-   "resume": "Selon Basta, l'intersyndicale négociera une augmentation des salaires lors de la conférence sociale du lundi 9 novembre ; LCP précise les attentes sur le pouvoir d'achat.",
-   "chiffres_cles": "9 novembre (date de la conférence sociale)",
-   "source_url": "https://basta.media/manifestations-massives-l-intersyndicale-negociera-une-augmentation-des",
-   "date_info": "2026-11-06",
-   "vu_chez": [
-    "LCP",
-    "Basta",
-    "Actu.fr",
-    "Sud Ouest"
-   ],
+   "titre": "Colère sociale : forte baisse de la mobilisation en France",
+   "resume": "Direct de plusieurs médias : la mobilisation chute partout en France par rapport aux semaines précédentes.",
+   "chiffres_cles": [],
+   "source_url": "https://www.courrierinternational.com/article/vu-du-royaume-uni-sur-les-free-partys-la-france-aussi-a-choisi-la-repression_272206",
+   "date_info": "2026-11-07",
    "faisabilite": 5,
-   "potentiel": 8
+   "potentiel": 6,
+   "vu_chez": [
+    "Challenges",
+    "Le Figaro",
+    "Le Monde.fr",
+    "Ouest-France",
+    "Le HuffPost"
+   ],
+   "statut": "retenu"
+  },
+  {
+   "titre": "Présidentielle 2027 : Mélenchon présente son programme au Bourget",
+   "resume": "Meeting de La France insoumise au Bourget et discours de Jean-Luc Mélenchon ; programme « L'Avenir en commun » (titres BFMTV, Le Monde.fr, Mediapart).",
+   "chiffres_cles": [],
+   "source_url": "https://www.lexpress.fr/secret-defense/vingt-ans-dattente-pour-acquerir-des-rafale-lukraine-vitrine-de-lindustrie-de-defense-francaise-U76PT365FRBO3JZXGWUP76YP64/",
+   "date_info": "2026-11-07",
+   "faisabilite": 4,
+   "potentiel": 6,
+   "vu_chez": [
+    "BFM",
+    "Le Monde.fr",
+    "Mediapart",
+    "Libération",
+    "Les Echos"
+   ],
+   "statut": "retenu"
   }
  ]
 }
