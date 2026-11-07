@@ -1,6 +1,7 @@
 {
- "date": "2026-11-06",
+ "date": "2026-11-07",
  "compte": "qhse",
+ "compte_neuf": true,
  "classement": [
   {
    "titre": "Seveso : une usine près de chez toi peut être classée Seveso seuil haut",
@@ -23,22 +24,25 @@
    "enregistrements": 0
   }
  ],
- "ce_qui_marche": [],
+ "ce_qui_marche": [
+  "Le décryptage Seveso est la seule publication au-delà de 100 vues (131), avec 2 j'aime : indice, pas une conclusion (2 publications)."
+ ],
  "ce_qui_ne_marche_pas": [
-  "Aucune publication depuis le 27/10 (10 jours) : le rythme est nul, donc aucune tendance mesurable."
+  "Aucune publication depuis le 27/10 (11 jours) : confirmé par abonnes_qhse.json (2 publications du 27/10 au 07/11, sans changement).",
+  "Abonnés à 0 du 25/10 au 07/11, zéro commentaire, zéro partage, zéro enregistrement."
  ],
  "enseignements": [
-  "Aucune conclusion sur le format : 2 publications seulement, les deux le 27/10 (stats mises à jour le 06/11 à 14 h 56 UTC).",
-  "Abonnés figés à 0 du 25/10 au 06/11 : collecte probablement incomplète, à vérifier avant tout chiffre d'audience.",
-  "Le job qhse-20261026-1200 (ISO 9001, mythe vs preuves) n'apparaît pas dans les statistiques : publication à vérifier."
+  "Compte neuf : pas assez de données pour un enseignement sur le format.",
+  "Conseils de démarrage : 1) rétablir un rythme régulier et vérifier la publication automatique ; 2) finir chaque vidéo par une question pour susciter les premiers commentaires ; 3) reprendre le format décryptage Seveso, seul sujet ayant dépassé 100 vues.",
+  "La publication qhse-20261026-1200 (ISO 9001) n'apparaît pas dans les statistiques : à vérifier."
  ],
- "test": "Rétablir un rythme régulier, puis comparer sur 2 semaines le décryptage Seveso et le format mythe contre preuve (ISO) : vues et enregistrements par publication.",
+ "test": "Sur 2 semaines, comparer décryptage Seveso et format mythe contre preuve (ISO) : vues et enregistrements par publication, une fois le rythme rétabli.",
  "reperes_projection": {
   "vues_mediane": 74,
   "meilleure": 131,
   "n": 2,
   "note": "Calculé sur 2 publications seulement : ce n'est pas une projection, ne pas s'en servir pour prévoir."
  },
- "calendrier": "Sujets du 28/10 au 06/11 : aucune publication enregistrée. À vérifier par le Manager.",
- "note": "Données d'audience : 2 publications, 0 abonné signalé, 0 commentaire, 0 question ou critique. Pas de conclusion tirée. Source instrack non utilisée (suivi du compte decodeactu, pas qhse)."
+ "calendrier": "Aucune publication enregistrée depuis le 27/10. À vérifier par le Manager.",
+ "note": "Sources : state/stats_qhse.json (maj 07/11), state/abonnes_qhse.json, travail/rapport8_qhse.json. Source instrack non utilisée (suivi decodeactu, pas qhse)."
 }
