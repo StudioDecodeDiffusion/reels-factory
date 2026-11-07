@@ -1,6 +1,6 @@
 {
   "date": "2026-11-07",
-  "type": "résumé quotidien (samedi 07/11/2026 ; stratégie complète réservée au lundi). Compte actu mis à jour ; eco, qhse, science non relus aujourd'hui (valeurs du 06/11 conservées)",
+  "type": "résumé quotidien (samedi 07/11/2026 ; stratégie complète réservée au lundi). Comptes actu et science mis à jour ; eco, qhse non relus aujourd'hui (valeurs du 06/11 conservées)",
   "sources": "state/stats_actu.json (maj 07/11 14:42 UTC, 26 posts vérifiés), state/abonnes_actu.json (07/11), travail/rapport8_actu.json et state/feedback_cm_actu.json (agent 9, 07/11), state/rapport_3_actu.json et travail/rapport3_actu.md (agent 3, 07/11 15:25), state/test_ab_actu.json (test du 18/10, sans gagnant) ; autres comptes : sources du 06/11 conservées",
   "statistiques": {
     "actu": {
@@ -62,9 +62,10 @@
       "partages": 0,
       "derniere_publication": "04/11",
       "meilleur": "robot canard, 27/10, 120 vues, 115 de portée, 1 sauvegarde",
-      "reel_moteur_04_11": "30 vues à environ 50 h, non comparable aux autres à 72 h",
+      "reel_moteur_04_11": "30 vues à environ 75 h (inchangées depuis le relevé du 06/11), non comparable aux autres à 72 h",
       "gain_abonne": "aucun depuis le 25/10",
-      "revenus": "aucun revenu, aucun lien de monétisation, aucune conversion payante"
+      "revenus": "aucun revenu, aucun lien de monétisation, aucune conversion payante",
+      "maj": "2026-11-07"
     }
   },
   "revenus": "Aucun revenu, aucun lien de monétisation ni aucune conversion payante n'apparaissent dans les fichiers lus au 07/11 : aucun chiffre de revenu n'est calculé ni projeté.",
@@ -116,12 +117,12 @@
   },
   "date_par_compte": {
     "actu": "2026-11-07",
-    "science": "2026-11-06"
+    "science": "2026-11-07"
   },
   "actions_du_jour_science": [
     "Science : finir les 2 prochains reels par une question ouverte (test de l'agent 3) ; comparer sauvegardes et commentaires à 72 h avec la base actuelle (1 sauvegarde, 0 commentaire).",
-    "Science : ne tirer aucune conclusion du reel moteur sans essence (04/11) avant sa mesure à 72 h.",
-    "Science : garder l'angle « pourquoi ça tient / tombe » comme piste à suivre (3 reels sur 4), sans le traiter comme une preuve tant que l'échantillon est de 4 reels."
+    "Science : publier à rythme fixe (environ 3 reels par semaine) pour disposer de reels comparables.",
+    "Science : ne tirer aucune conclusion du reel moteur sans essence (04/11) avant sa mesure à 72 h ; garder l'angle « pourquoi ça tient / tombe » comme piste, sans preuve tant que l'échantillon est de 4 reels."
   ],
   "actions_du_jour_eco": [
     "Éco (06/11) : publier les 3 prochaines vidéos sur finances publiques nationales avec un chiffre choc en première seconde (médiane à battre : 131 vues).",
