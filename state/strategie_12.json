@@ -35,9 +35,9 @@
       "enregistrements": 2,
       "meilleur": "203 vues, 189 de portée, 27/10 (dette publique 2 882 milliards)",
       "pire": "94 vues, 91 de portée, 27/10 (salaire brut vs net)",
-      "derniere_publication": "03/11 (172 vues, niches fiscales)",
+      "derniere_publication": "03/11 (172 vues, niches fiscales) ; aucune publication depuis",
       "tendance": "dernière vidéo en hausse sur la précédente (115 vues le 30/10) ; échantillon de 5 seulement, rien de conclu",
-      "maj": "2026-11-06"
+      "maj": "2026-11-07"
     },
     "qhse": {
       "abonnes": 0,
@@ -117,7 +117,8 @@
   },
   "date_par_compte": {
     "actu": "2026-11-07",
-    "science": "2026-11-07"
+    "science": "2026-11-07",
+    "eco": "2026-11-07"
   },
   "actions_du_jour_science": [
     "Science : finir les 2 prochains reels par une question ouverte (test de l'agent 3) ; comparer sauvegardes et commentaires à 72 h avec la base actuelle (1 sauvegarde, 0 commentaire).",
@@ -125,8 +126,24 @@
     "Science : ne tirer aucune conclusion du reel moteur sans essence (04/11) avant sa mesure à 72 h ; garder l'angle « pourquoi ça tient / tombe » comme piste, sans preuve tant que l'échantillon est de 4 reels."
   ],
   "actions_du_jour_eco": [
-    "Éco (06/11) : publier les 3 prochaines vidéos sur finances publiques nationales avec un chiffre choc en première seconde (médiane à battre : 131 vues).",
-    "Éco (06/11) : ajouter une question explicite en fin de Reel ; viser au moins 1 commentaire (0 sur 5 à ce jour).",
-    "Éco (06/11) : vérifier la collecte des abonnés (0 depuis le 25/10) avant toute conclusion ; pas de conclusion avant 10 publications."
-  ]
+    "Éco (07/11) : proposer au Manager de trancher le rythme de reprise éco (aucune publication depuis le 03/11) ; rien publié par l'agent 10.",
+    "Éco (07/11) : vérifier la collecte des abonnés (0 depuis le 25/10) avant toute conclusion sur le test de la semaine.",
+    "Éco (07/11) : sur la prochaine vidéo, chiffre sourcé en accroche et question en fin de Reel ; mesure à 48 h contre médiane 131 vues et 0 commentaire."
+  ],
+  "eco_du_jour": {
+    "date": "2026-11-07",
+    "type": "résumé quotidien (samedi 07/11/2026 ; stratégie complète réservée au lundi)",
+    "sources": "state/stats_eco.json (maj 07/11 14:42 UTC), state/feedback_cm_eco.json (07/11), travail/rapport8_eco.json (agent 9), travail/rapport3_eco.md et state/rapport_3_eco.json (agent 3, 07/11)",
+    "ou_on_en_est": "5 publications (25/10 au 03/11), 715 vues cumulées, médiane 131, 8 interactions, 0 commentaire, 0 abonné. Aucune publication depuis 4 jours.",
+    "a_bouge": "Rien de nouveau depuis le 06/11. Dernière vidéo (03/11) à 172 vues, au-dessus de la précédente (115 vues). n = 5, pas de tendance établie.",
+    "actions_du_jour": [
+      "Éco (07/11) : proposer au Manager de trancher le rythme de reprise éco (aucune publication depuis le 03/11) ; rien publié par l'agent 10.",
+      "Éco (07/11) : vérifier la collecte des abonnés (0 depuis le 25/10) avant toute conclusion sur le test de la semaine.",
+      "Éco (07/11) : sur la prochaine vidéo, chiffre sourcé en accroche et question en fin de Reel ; mesure à 48 h contre médiane 131 vues et 0 commentaire."
+    ],
+    "a_trancher_par_le_manager": [
+      "Éco : reprise de la publication (aucune publication depuis le 03/11)."
+    ],
+    "rien_publie_rien_envoye": true
+  }
 }
