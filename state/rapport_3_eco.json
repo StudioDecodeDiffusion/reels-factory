@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "classement": [
     {"date": "2026-10-27", "lien": "https://www.instagram.com/reel/De_SaiPAaxn/", "sujet": "Dette publique : 2 882 milliards d'euros, qui détient la dette", "vues": 203, "portee": 189, "interactions": 2, "enregistrements": 0},
     {"date": "2026-11-03", "lien": "https://www.instagram.com/reel/DfRa00iDlml/", "sujet": "Niches fiscales : environ 88 milliards par an", "vues": 172, "portee": 157, "interactions": 2, "enregistrements": 1},
@@ -8,18 +8,23 @@
     {"date": "2026-10-27", "lien": "https://www.instagram.com/reel/De_SmGHICU2/", "sujet": "Salaire brut vs net", "vues": 94, "portee": 91, "interactions": 3, "enregistrements": 1}
   ],
   "ce_qui_marche": [
-    "Sujets économiques nationaux à chiffre fort en accroche : la vidéo dette (203 vues, 189 de portée) et la vidéo niches fiscales (172 vues, 1 enregistrement) sont les deux meilleures.",
+    "Sujets de finances publiques nationales avec un chiffre fort en accroche : dette (203 vues, 189 de portée) et niches fiscales (172 vues, 1 enregistrement).",
     "Dernière publication (03/11) : 172 vues, en hausse sur la précédente (115 vues le 30/10)."
   ],
   "ce_qui_ne_marche_pas": [
-    "Vidéo sur le salaire brut vs net : la plus faible (94 vues, 91 de portée), malgré 3 interactions.",
-    "Aucun commentaire ni partage sur les 5 publications ; abonnés à 0 à chaque relevé depuis le 25/10."
+    "Salaire brut vs net : le plus faible (94 vues, 91 de portée).",
+    "Aucun commentaire ni partage sur les 5 publications ; 0 abonné à chaque relevé depuis le 25/10 ; aucune publication depuis le 03/11."
   ],
   "enseignements": [
-    "Les sujets de finances publiques (dette, budget, niches fiscales) font entre 115 et 203 vues ; le sujet salaire fait 94. Échantillon de 5 vidéos : tendance à confirmer, pas une conclusion.",
-    "Les signaux d'engagement sont très faibles (8 interactions au total sur 5 vidéos, 2 enregistrements) : une question explicite en fin de Reel est à tester."
+    "Les sujets de finances publiques font entre 115 et 203 vues ; le sujet salaire fait 94. Échantillon de 5 vidéos : tendance à confirmer, pas une conclusion.",
+    "Engagement très faible : 8 interactions au total sur 5 vidéos, dont 2 enregistrements. Un appel explicite en fin de Reel (question ou choix A/B) est à tester."
   ],
-  "test": "Pendant les 3 prochaines vidéos : traiter des sujets de finances publiques nationales avec un chiffre choc en première seconde, et ajouter une question simple en fin de Reel. Comparer la médiane de vues à 131 (repère actuel) et le nombre de commentaires à 0.",
+  "test": "Pendant les 3 prochaines vidéos : sujets de finances publiques nationales avec un chiffre choc dès la première seconde, et une question simple en fin de Reel. Comparer la médiane de vues à 131 (repère actuel) et le nombre de commentaires à 0.",
+  "conseils": [
+    "Terminer chaque Reel par une question ou un choix A/B pour susciter commentaires et partages.",
+    "Garder un chiffre sourcé (source et date) en accroche, comme sur la vidéo dette.",
+    "Reprendre un rythme régulier : 5 publications, la dernière le 03/11. Vérifier aussi la collecte des abonnés (0 à chaque relevé) avant toute conclusion."
+  ],
   "reperes_projection": {
     "vues_mediane": 131,
     "meilleure": 203,
@@ -28,7 +33,7 @@
     "abonnes_variation": 0
   },
   "notes": {
-    "source": "state/stats_eco.json (maj 2026-11-06) et state/abonnes_eco.json ; feedback agent 9 du 26/10 cité pour la vidéo du 25/10 (129 vues dans le feedback, 131 dans les stats : les stats retenues)",
+    "source": "state/stats_eco.json (maj 2026-11-07 14:42 UTC) et state/abonnes_eco.json (0 abonné du 25/10 au 07/11) ; feedback agent 9 du 07/11. Vues 131 pour la vidéo du 25/10 (stats retenues, feedback à 129).",
     "avertissement": "5 publications seulement, pas de conclusion avant 10 publications. Abonnés à 0 sur toute la période : collecte à vérifier."
   }
 }
