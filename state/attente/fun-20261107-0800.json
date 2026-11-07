@@ -1,0 +1,75 @@
+{
+  "id": "fun-20261107-0800",
+  "profil": "fun",
+  "statut": "rendu_en_cours",
+  "titre": null,
+  "son_tendance": null,
+  "publication_le": "2026-11-07T08:00+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": "instagram",
+  "legende": "Le PSG entre dans l'histoire : une douzaine d'accomplissements, selon Guinness des Records.\n\nGuinness des Records met en avant le PSG et une série d'accomplissements. Le titre relayé par la presse parle d'une douzaine d'exploits.\n\nQuel exploit du PSG vous marque le plus ? 👇\n\nEnvoyez-la à un supporter qui a déjà sorti son téléphone ! 📤\n\nSources : Guinness des Records, presse (veille fun)\n\n#football #PSG #GuinnessWorldRecords #ParcDesPrinces #fun",
+  "sources": [],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "id": "fun-20261107-0800",
+    "agent": "7.5",
+    "compte": "fun",
+    "sujet": "Guinness des Records : le PSG entre dans l'histoire avec 12 accomplissements légendaires",
+    "decision": "publiable",
+    "motif": "Aucun défaut bloquant : pas de contenu interdit (aucune image de presse en fond, aucun visage réel, aucune citation inventée, aucune personne moquée) ; vidéo lisible (h264 1080x1920, 79,8 s, rendu de contrôle muet attendu) ; voix présentes dans 7_spec.json (voix_override.narrateur et mascotte, 14 scènes avec dialogues non vides) ; aucune mention d'IA dans la légende ni dans les textes à l'écran.",
+    "controles": {
+      "contenu_interdit": "rien de bloquant",
+      "video": "h264, 1080x1920, 79,8 s, lisible",
+      "duree_s": 79.8,
+      "scenes": 14,
+      "scenes_photo_requete": 6,
+      "scenes_photo_sans_image_en_controle": "2, 4, 6, 8, 11, 13 : fond vide dans le rendu de contrôle (PIXELS_HORS_LIGNE) ; photos attendues au rendu final via fond_photo_requete",
+      "voix": "narrateur chatterbox et mascotte piper définis dans 7_spec.json ; dialogues non vides",
+      "dialogue_mots": 168,
+      "legende": "accroche + chiffre, question 👇, partage 📤, « Sources : » présent, 5 hashtags, pas de #viral ni #fyp, pas de mention d'IA"
+    },
+    "defauts_non_bloquants": [
+      {
+        "type": "scene_incomplete",
+        "bloquant": false,
+        "where": "scène 14 (quiz « VOUS LE SAVIEZ ? ») à 77,5 s et sur les images de la scène",
+        "probleme": "Dans le rendu de contrôle, seul le titre et le sous-titre apparaissent ; la question et les quatre options ne s'affichent pas. Le quiz n'est donc pas lisible à l'écran.",
+        "suggestion": "Vérifier le rendu final (drop) ; si le quiz reste vide, corriger la scène 14 par l'agent 8."
+      },
+      {
+        "type": "scene_incomplete",
+        "bloquant": false,
+        "where": "scène 10 (« AMBIANCE : MAX », bigstat)",
+        "probleme": "La valeur « MAX » et le libellé « Ambiance » n'apparaissent pas dans l'image de la scène ; seul le titre est visible.",
+        "suggestion": "Vérifier le rendu final ; sinon corriger la mise en page du bigstat."
+      },
+      {
+        "type": "finition",
+        "bloquant": false,
+        "where": "scène 5 (pd_flux, « LA LISTE S'ALLONGE »)",
+        "probleme": "L'étiquette « EXPLOITS » déborde sur le bord supérieur du bandeau de sous-titres. Les formes (carrés, pièces) sont abstraites ; le ballon et le livre ne sont pas reconnaissables."
+      },
+      {
+        "type": "finition",
+        "bloquant": false,
+        "where": "scène 3 (pd_objet, « Un record = un titre ») et scène 12",
+        "probleme": "Le prompt « golden trophy » et « record book » donne un carré rose générique, pas un objet identifiable. Lisible, mais peu parlant."
+      },
+      {
+        "type": "fait_a_verifier",
+        "bloquant": false,
+        "where": "scène 7 (compteur « 12 records »), scène 14 (quiz), titre_miniature et légende",
+        "probleme": "Le chiffre 12 ne vient que du titre de la veille (« 12 accomplissements légendaires »). Les textes écrivent « 12 records » alors que la source parle d'accomplissements. La source affichée « Veille fun » est un libellé interne, pas une source publique.",
+        "suggestion": "Avant publication, aligner le terme sur la source Guinness ; retirer le compteur 12 et la question du quiz si le chiffre n'est pas confirmé. Remplacer « Veille fun » par « Guinness des Records » dans la source de la scène 7."
+      }
+    ],
+    "transmis_a": "Manager, pour passage à tool drop"
+  },
+  "community": {},
+  "da_message": "DA fun-20261107-0800 (PSG, Guinness) réalignée sur le scénario réel : 14 scènes, pixeldoc, palette pop, musique funk, 6 scènes photo (fond_photo_requete, src vide). Le chiffre 12 et le quiz viennent de la veille et du scénario : à vérifier avant publication.",
+  "cree": "2026-11-07T04:02:55+00:00"
+}
