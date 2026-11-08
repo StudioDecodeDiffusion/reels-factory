@@ -1,0 +1,23 @@
+{
+  "id": "qhse-20261108-0800",
+  "agent": "7.4",
+  "etape": "precritique",
+  "decision": "go",
+  "bloquants": [],
+  "controles": {
+    "contenu_interdit": "ok (aucune image de presse, deepfake, citation inventee ni mention d'IA)",
+    "voix": "ok (voix_override.narrateur et mascotte presents ; dialogues narrateur non vides, environ 168 mots)",
+    "duree": "ok (14 scenes x 4 s = 56 s)",
+    "accroche": "ok (titre_miniature 7 mots, mots_choc 'À JOUR')",
+    "variete_vs_derniere_video": "ok (accroche, fonctionnement, musique, voix et palette differents)",
+    "photos_reelles": "ok (6 scenes photo sur 14 avec fond_photo_requete)",
+    "references_articles": "ok (aucun numero d'article dans 5_scenario.json ni 6_da.json ; L4121-3-1 et R4121-1 a R4121-4 deja retires)"
+  },
+  "corrections": [
+    "Non bloquant : les types de scenes different entre 5_scenario.json (plans) et 6_da.json (scenes : photo, pd_objet, etc.). 6_da.json fait foi pour le visuel ; l'assemblage 7_spec doit s'appuyer sur 6_da.json et garder le dialogue de 5_scenario.json par numero de scene.",
+    "Non bloquant : la regle de mise a jour annuelle (au moins une fois par an dans certaines entreprises) n'est pas citee ; le texte dit seulement 'quand la situation de travail change', ce qui reste exact. A verifier au texte officiel si la mention est ajoutee plus tard."
+  ],
+  "finition": [
+    "Scene 7 : etapes en 3 items, coherent avec le dialogue (premiere, deuxieme, troisieme etape)."
+  ]
+}
