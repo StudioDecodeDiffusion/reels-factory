@@ -1,0 +1,56 @@
+{
+  "id": "qhse-20261108-0800",
+  "compte": "qhse",
+  "theme": {
+    "fond": "#0A1633",
+    "texte": "#EEF2FF",
+    "accent": "#FFB400",
+    "accent2": "#7AA2FF",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "bleu_nuit",
+    "palette": ["#0A1633", "#1B2F5E", "#FFB400", "#7AA2FF", "#EEF2FF", "#E4572E"],
+    "mise_en_page": "plein_ecran",
+    "tenues": {"narrateur": "qhse", "mascotte": "detective"}
+  },
+  "variete": {
+    "accroche": "affirmation_contre_intuitive",
+    "trend": "aucune (sujet de la file ; veille hors périmètre)",
+    "fonctionnement": "parcours_etapes",
+    "mise_en_page": "plein_ecran",
+    "musique": "pulsation",
+    "voix": "V2",
+    "palette": "bleu_nuit"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.5&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.7&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "musique": {
+    "genre": "pulsation",
+    "volume": 0.4,
+    "ambiance_globale": "curieux",
+    "ambiance_par_scene": {"1": "curieux", "2": "curieux", "3": "curieux", "4": "curieux", "5": "curieux", "6": "curieux", "7": "curieux", "8": "curieux", "9": "curieux", "10": "curieux", "11": "curieux", "12": "curieux", "13": "curieux", "14": "joyeux"}
+  },
+  "sfx": {"1": ["impact"], "2": ["pop"], "3": ["pop"], "4": ["pop"], "5": ["pop"], "6": ["pop"], "7": ["pop"], "8": ["pop"], "9": ["pop"], "10": ["pop"], "11": ["pop"], "12": ["pop"], "13": ["pop"], "14": ["ding"]},
+  "scenes": [
+    {"n": 1, "type": "hook", "duree_s": 4.0, "title": "Un DUERP se tient à jour", "titre": "Un DUERP se tient à jour", "mot_fort": "à jour", "energie": 3, "prompt": "a clipboard with a document and a checkmark, pixel art, side view, single object"},
+    {"n": 2, "type": "photo", "duree_s": 4.0, "titre": "Le DUERP est obligatoire", "mot_fort": "obligatoire", "energie": 2, "fond_photo_requete": "document unique d'évaluation des risques DUERP entreprise", "src": "document unique d'évaluation des risques DUERP entreprise"},
+    {"n": 3, "type": "pd_objet", "duree_s": 4.0, "titre": "Un document vivant", "mot_fort": "vivant", "energie": 2, "prompt": "a single thick binder labelled DUERP, pixel art, side view, single object", "etiquette": "DUERP"},
+    {"n": 4, "type": "photo", "duree_s": 4.0, "titre": "Les risques bougent", "mot_fort": "bougent", "energie": 3, "fond_photo_requete": "affiche prévention risques professionnels salarié atelier 2026", "src": "affiche prévention risques professionnels salarié atelier 2026"},
+    {"n": 5, "type": "pd_flux", "duree_s": 4.0, "titre": "Un changement entre", "mot_fort": "entre", "energie": 3, "de": {"label": "Changement", "prompt": "a gear changing position, pixel art, single object"}, "vers": {"label": "DUERP", "prompt": "a document with a pencil, pixel art, single object"}, "montant": "risque"},
+    {"n": 6, "type": "photo", "duree_s": 4.0, "titre": "Base de la prévention", "mot_fort": "prévention", "energie": 2, "fond_photo_requete": "inspection du travail contrôle entreprise France 2026", "src": "inspection du travail contrôle entreprise France 2026"},
+    {"n": 7, "type": "timeline", "duree_s": 4.0, "titre": "Mettre à jour, par étapes", "mot_fort": "étapes", "energie": 3, "etapes": ["Repérer le changement", "Réévaluer le risque", "Mettre à jour le DUERP"], "events": ["Repérer le changement", "Réévaluer le risque", "Mettre à jour le DUERP"]},
+    {"n": 8, "type": "photo", "duree_s": 4.0, "titre": "Le poste change", "mot_fort": "change", "energie": 2, "fond_photo_requete": "évaluation des risques professionnels grille tableau salarié", "src": "évaluation des risques professionnels grille tableau salarié"},
+    {"n": 9, "type": "pd_objet", "duree_s": 4.0, "titre": "Le niveau bouge", "mot_fort": "bouge", "energie": 2, "prompt": "a sliding needle gauge on a dashboard, pixel art, side view, single object", "etiquette": "Risque du poste"},
+    {"n": 10, "type": "photo", "duree_s": 4.0, "titre": "Les équipes sont concernées", "mot_fort": "équipes", "energie": 3, "fond_photo_requete": "salariés équipe sécurité chantier prévention France 2026", "src": "salariés équipe sécurité chantier prévention France 2026"},
+    {"n": 11, "type": "checklist", "duree_s": 4.0, "titre": "Ton DUERP, à jour ?", "mot_fort": "à jour", "energie": 2, "items": ["Postes revus", "Risques datés", "Mesures actualisées", "Version signée"]},
+    {"n": 12, "type": "photo", "duree_s": 4.0, "titre": "Vérifie le texte officiel", "mot_fort": "officiel", "energie": 2, "fond_photo_requete": "ministère du Travail Code du travail Légifrance 2026", "src": "ministère du Travail Code du travail Légifrance 2026"},
+    {"n": 13, "type": "pd_tampon", "duree_s": 4.0, "titre": "Pas juste signé", "mot_fort": "signé", "energie": 3, "tampon": "À JOUR", "prompt": "a rubber stamp pressed on a document, pixel art, side view, single object"},
+    {"n": 14, "type": "outro", "duree_s": 4.0, "titre": "Partage avec ton préventeur", "mot_fort": "préventeur", "energie": 2, "question": "Ton DUERP est-il à jour aujourd'hui ?", "text": "Le DUERP se tient à jour, il ne se signe pas une fois.", "cta": "Partage ce post avec ton préventeur 📤"}
+  ]
+}

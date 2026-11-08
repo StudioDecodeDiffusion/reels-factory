@@ -1,0 +1,190 @@
+{
+ "accroche": "affirmation_contre_intuitive",
+ "fonctionnement": "parcours_etapes",
+ "musique": "pulsation",
+ "voix": "V2",
+ "palette": "bleu_nuit",
+ "variete": "accroche, fonctionnement, musique, voix et palette différents de la dernière vidéo (question_choc, explication_mecanisme, tension, V1+V3, vert_terminal)",
+ "titre_miniature": "Le DUERP ne se signe pas une fois.",
+ "mots_choc": "À JOUR",
+ "surtitre": "Code du travail · document unique",
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "PAS UNE FOIS : À JOUR",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le DUERP ne se signe pas une fois. Il doit vivre avec l'entreprise.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "DOCUMENT UNIQUE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le document unique recense les risques de votre entreprise, poste par poste.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "ÉVALUER · CONSIGNER",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Il évalue chaque risque, puis consigne les résultats par écrit.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "timeline",
+   "duree_s": 4.0,
+   "texte_ecran": "ÉTAPE 1 · ÉTAPE 2",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Première étape : identifier les risques. Deuxième : les évaluer, un par un.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "ACTIONS DE PRÉVENTION",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Troisième étape : définir des actions de prévention, concrètes et attribuées.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "checklist",
+   "duree_s": 4.0,
+   "texte_ecran": "SUIVRE LES ACTIONS",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Puis suivre ces actions et vérifier qu'elles tiennent vraiment sur le terrain.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "CHANGEMENT → MISE À JOUR",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le document doit être mis à jour quand la situation de travail change.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "NOUVEAU POSTE ? MISE À JOUR",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Nouveau poste, nouvel équipement, nouveau procédé : tout compte, rien n'est figé.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 4.0,
+   "texte_ecran": "JAMAIS REVU = DÉPASSÉ",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un DUERP jamais revu ne reflète plus les risques réels de votre atelier.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_jauge",
+   "duree_s": 4.0,
+   "texte_ecran": "TRAVAIL RÉEL > PAPIER",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le DUERP doit suivre le travail réel, pas seulement le papier.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4.0,
+   "texte_ecran": "OBLIGATION : À JOUR",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Tenir ce document à jour n'est pas une option. C'est une obligation de l'employeur.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "PAS UN PAPIER SIGNÉ",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un papier signé il y a des années ne prouve rien aujourd'hui.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "checklist",
+   "duree_s": 4.0,
+   "texte_ecran": "VOTRE DUERP EST-IL À JOUR ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Question simple : votre DUERP reflète-t-il vraiment le travail d'aujourd'hui ?",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "duree_s": 4.0,
+   "texte_ecran": "SOURCES : LÉGIFRANCE · INRS",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Partagez-le avec votre responsable RH ou votre préventeur, dès aujourd'hui.",
+     "expression": "sourire"
+    }
+   ]
+  }
+ ],
+ "legende": "Le DUERP doit être mis à jour, pas seulement rédigé.\n\nTout employeur doit évaluer les risques de son entreprise et consigner le résultat dans un document unique. Ce document doit être tenu à jour, au-delà de la première rédaction.\n\nTon DUERP est-il à jour aujourd'hui ? 👇\n\n📤 À partager avec le responsable RH ou le préventeur de ton entreprise\n\nSources : Légifrance (Code du travail, document unique d'évaluation des risques), INRS",
+ "hashtags": [
+  "#DUERP",
+  "#Légifrance",
+  "#SantéSécuritéAuTravail",
+  "#Prévention",
+  "#DécodéQSE"
+ ],
+ "notes": "Références d'articles retirées : L4121-3-1 et R4121-1 à R4121-4 non confirmés par le texte. Une recherche Légifrance ne renvoie que les titres des pages (L4121-3-1 existe ; le chapitre Obligations de l'employeur couvre R4121-1 à R4121-5) sans contenu vérifié : aucun numéro cité, à vérifier au texte officiel avant rendu. Aucun délai ni sanction annoncé. Titre miniature du concept (10 mots) ramené à 7 mots (règle ≤ 8). Légende : pas de chiffre dans le concept, donc aucun chiffre ajouté à l'accroche."
+}

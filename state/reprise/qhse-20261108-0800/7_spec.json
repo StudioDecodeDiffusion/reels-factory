@@ -1,0 +1,353 @@
+{
+  "id": "qhse-20261108-0800",
+  "compte": "qhse",
+  "theme": {
+    "fond": "#0A1633",
+    "texte": "#EEF2FF",
+    "accent": "#FFB400",
+    "accent2": "#7AA2FF",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "bleu_nuit",
+    "palette": [
+      "#0A1633",
+      "#1B2F5E",
+      "#FFB400",
+      "#7AA2FF",
+      "#EEF2FF",
+      "#E4572E"
+    ],
+    "mise_en_page": "plein_ecran",
+    "tenues": {
+      "narrateur": "qhse",
+      "mascotte": "detective"
+    }
+  },
+  "variete": {
+    "accroche": "affirmation_contre_intuitive",
+    "trend": "aucune (sujet de la file ; veille hors périmètre)",
+    "fonctionnement": "parcours_etapes",
+    "mise_en_page": "plein_ecran",
+    "musique": "pulsation",
+    "voix": "V2",
+    "palette": "bleu_nuit"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.5&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.7&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "pop"
+    ],
+    "3": [
+      "pop"
+    ],
+    "4": [
+      "pop"
+    ],
+    "5": [
+      "pop"
+    ],
+    "6": [
+      "pop"
+    ],
+    "7": [
+      "pop"
+    ],
+    "8": [
+      "pop"
+    ],
+    "9": [
+      "pop"
+    ],
+    "10": [
+      "pop"
+    ],
+    "11": [
+      "pop"
+    ],
+    "12": [
+      "pop"
+    ],
+    "13": [
+      "pop"
+    ],
+    "14": [
+      "ding"
+    ]
+  },
+  "musique": {
+    "genre": "pulsation",
+    "volume": 0.4
+  },
+  "titre_miniature": "Le DUERP ne se signe pas une fois",
+  "mots_choc": "À JOUR",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "title": "Un DUERP se tient à jour",
+      "titre": "Un DUERP se tient à jour",
+      "mot_fort": "à jour",
+      "energie": 3,
+      "prompt": "a clipboard with a document and a checkmark, pixel art, side view, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le DUERP ne se signe pas une fois. Il doit vivre avec l'entreprise.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 2,
+      "type": "photo",
+      "titre": "Le DUERP est obligatoire",
+      "mot_fort": "obligatoire",
+      "energie": 2,
+      "fond_photo_requete": "document unique d'évaluation des risques DUERP entreprise",
+      "src": "document unique d'évaluation des risques DUERP entreprise",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le document unique recense les risques de votre entreprise, poste par poste.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 3,
+      "type": "pd_objet",
+      "titre": "Un document vivant",
+      "mot_fort": "vivant",
+      "energie": 2,
+      "prompt": "a single thick binder labelled DUERP, pixel art, side view, single object",
+      "etiquette": "DUERP",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il évalue chaque risque, puis consigne les résultats par écrit.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 4,
+      "type": "photo",
+      "titre": "Les risques bougent",
+      "mot_fort": "bougent",
+      "energie": 3,
+      "fond_photo_requete": "affiche prévention risques professionnels salarié atelier 2026",
+      "src": "affiche prévention risques professionnels salarié atelier 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Première étape : identifier les risques. Deuxième : les évaluer, un par un.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 5,
+      "type": "pd_flux",
+      "titre": "Un changement entre",
+      "mot_fort": "entre",
+      "energie": 3,
+      "de": {
+        "label": "Changement",
+        "prompt": "a gear changing position, pixel art, single object"
+      },
+      "vers": {
+        "label": "DUERP",
+        "prompt": "a document with a pencil, pixel art, single object"
+      },
+      "montant": "risque",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Troisième étape : définir des actions de prévention, concrètes et attribuées.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 6,
+      "type": "photo",
+      "titre": "Base de la prévention",
+      "mot_fort": "prévention",
+      "energie": 2,
+      "fond_photo_requete": "inspection du travail contrôle entreprise France 2026",
+      "src": "inspection du travail contrôle entreprise France 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Puis suivre ces actions et vérifier qu'elles tiennent vraiment sur le terrain.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 7,
+      "type": "timeline",
+      "titre": "Mettre à jour, par étapes",
+      "mot_fort": "étapes",
+      "energie": 3,
+      "etapes": [
+        "Repérer le changement",
+        "Réévaluer le risque",
+        "Mettre à jour le DUERP"
+      ],
+      "events": [
+        "Repérer le changement",
+        "Réévaluer le risque",
+        "Mettre à jour le DUERP"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le document doit être mis à jour quand la situation de travail change.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 8,
+      "type": "photo",
+      "titre": "Le poste change",
+      "mot_fort": "change",
+      "energie": 2,
+      "fond_photo_requete": "évaluation des risques professionnels grille tableau salarié",
+      "src": "évaluation des risques professionnels grille tableau salarié",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Nouveau poste, nouvel équipement, nouveau procédé : tout compte, rien n'est figé.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 9,
+      "type": "pd_objet",
+      "titre": "Le niveau bouge",
+      "mot_fort": "bouge",
+      "energie": 2,
+      "prompt": "a sliding needle gauge on a dashboard, pixel art, side view, single object",
+      "etiquette": "Risque du poste",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Un DUERP jamais revu ne reflète plus les risques réels de votre atelier.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 10,
+      "type": "photo",
+      "titre": "Les équipes sont concernées",
+      "mot_fort": "équipes",
+      "energie": 3,
+      "fond_photo_requete": "salariés équipe sécurité chantier prévention France 2026",
+      "src": "salariés équipe sécurité chantier prévention France 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le DUERP doit suivre le travail réel, pas seulement le papier.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 11,
+      "type": "checklist",
+      "titre": "Ton DUERP, à jour ?",
+      "mot_fort": "à jour",
+      "energie": 2,
+      "items": [
+        "Postes revus",
+        "Risques datés",
+        "Mesures actualisées",
+        "Version signée"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Tenir ce document à jour n'est pas une option. C'est une obligation de l'employeur.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 12,
+      "type": "photo",
+      "titre": "Vérifie le texte officiel",
+      "mot_fort": "officiel",
+      "energie": 2,
+      "fond_photo_requete": "ministère du Travail Code du travail Légifrance 2026",
+      "src": "ministère du Travail Code du travail Légifrance 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Un papier signé il y a des années ne prouve rien aujourd'hui.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 13,
+      "type": "pd_tampon",
+      "titre": "Pas juste signé",
+      "mot_fort": "signé",
+      "energie": 3,
+      "tampon": "À JOUR",
+      "prompt": "a rubber stamp pressed on a document, pixel art, side view, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Question simple : votre DUERP reflète-t-il vraiment le travail d'aujourd'hui ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 14,
+      "type": "outro",
+      "titre": "Partage avec ton préventeur",
+      "mot_fort": "préventeur",
+      "energie": 2,
+      "question": "Ton DUERP est-il à jour aujourd'hui ?",
+      "text": "Le DUERP se tient à jour, il ne se signe pas une fois.",
+      "cta": "Partage ce post avec ton préventeur 📤",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Partagez-le avec votre responsable RH ou votre préventeur, dès aujourd'hui.",
+          "expression": "content"
+        }
+      ],
+      "duration": 4.9
+    }
+  ]
+}
