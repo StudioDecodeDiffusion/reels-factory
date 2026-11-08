@@ -1,48 +1,49 @@
 {
- "date": "2026-11-07",
- "compte": "qhse",
- "compte_neuf": true,
- "classement": [
-  {
-   "titre": "Seveso : une usine près de chez toi peut être classée Seveso seuil haut",
-   "date": "2026-10-27",
-   "vues": 131,
-   "comptes_atteints": 129,
-   "j_aime": 2,
-   "commentaires": 0,
-   "partages": 0,
-   "enregistrements": 0
+  "date": "2026-11-08",
+  "compte": "qhse",
+  "compte_neuf": false,
+  "classement": [
+    {
+      "titre": "Seveso : une usine près de chez toi peut être classée Seveso seuil haut",
+      "date": "2026-10-27",
+      "vues": 131,
+      "comptes_atteints": 129,
+      "j_aime": 2,
+      "commentaires": 0,
+      "partages": 0,
+      "enregistrements": 0
+    },
+    {
+      "titre": "ISO 9001 : plus d'un million de certificats, l'auditeur ne compte pas vos classeurs",
+      "date": "2026-10-27",
+      "vues": 17,
+      "comptes_atteints": 15,
+      "j_aime": 0,
+      "commentaires": 0,
+      "partages": 0,
+      "enregistrements": 0
+    }
+  ],
+  "ce_qui_marche": [
+    "Le décryptage Seveso est la seule publication au-delà de 100 vues (131), avec 2 j'aime. Indice seulement : 2 publications."
+  ],
+  "ce_qui_ne_marche_pas": [
+    "Aucune nouvelle publication depuis le 27/10 (12 jours au 08/11), d'après state/stats_qhse.json et abonnes_qhse.json.",
+    "Abonnés à 0 sur toute la série du 25/10 au 08/11 : donnée à recouper avec l'API, probablement incomplète.",
+    "Zéro commentaire, zéro partage, zéro enregistrement."
+  ],
+  "enseignements": [
+    "Compte sans assez de données pour un enseignement sur le format (2 publications).",
+    "Conseils de démarrage : 1) rétablir un rythme régulier et vérifier la publication automatique ; 2) finir chaque vidéo par une question pour susciter les premiers commentaires ; 3) reprendre le format décryptage Seveso, seul sujet au-delà de 100 vues.",
+    "La publication qhse-20261026-1200 (ISO 9001) n'apparaît pas dans les statistiques : à vérifier."
+  ],
+  "test": "Sur 2 semaines, une fois le rythme rétabli, comparer décryptage Seveso et format mythe contre preuve (ISO) : vues et enregistrements par publication.",
+  "reperes_projection": {
+    "vues_mediane": 74,
+    "meilleure": 131,
+    "n": 2,
+    "note": "Calculé sur 2 publications seulement : ce n'est pas une projection, ne pas s'en servir pour prévoir."
   },
-  {
-   "titre": "ISO 9001 : plus d'un million de certificats, l'auditeur ne compte pas vos classeurs",
-   "date": "2026-10-27",
-   "vues": 17,
-   "comptes_atteints": 15,
-   "j_aime": 0,
-   "commentaires": 0,
-   "partages": 0,
-   "enregistrements": 0
-  }
- ],
- "ce_qui_marche": [
-  "Le décryptage Seveso est la seule publication au-delà de 100 vues (131), avec 2 j'aime : indice, pas une conclusion (2 publications)."
- ],
- "ce_qui_ne_marche_pas": [
-  "Aucune publication depuis le 27/10 (11 jours) : confirmé par abonnes_qhse.json (2 publications du 27/10 au 07/11, sans changement).",
-  "Abonnés à 0 du 25/10 au 07/11, zéro commentaire, zéro partage, zéro enregistrement."
- ],
- "enseignements": [
-  "Compte neuf : pas assez de données pour un enseignement sur le format.",
-  "Conseils de démarrage : 1) rétablir un rythme régulier et vérifier la publication automatique ; 2) finir chaque vidéo par une question pour susciter les premiers commentaires ; 3) reprendre le format décryptage Seveso, seul sujet ayant dépassé 100 vues.",
-  "La publication qhse-20261026-1200 (ISO 9001) n'apparaît pas dans les statistiques : à vérifier."
- ],
- "test": "Sur 2 semaines, comparer décryptage Seveso et format mythe contre preuve (ISO) : vues et enregistrements par publication, une fois le rythme rétabli.",
- "reperes_projection": {
-  "vues_mediane": 74,
-  "meilleure": 131,
-  "n": 2,
-  "note": "Calculé sur 2 publications seulement : ce n'est pas une projection, ne pas s'en servir pour prévoir."
- },
- "calendrier": "Aucune publication enregistrée depuis le 27/10. À vérifier par le Manager.",
- "note": "Sources : state/stats_qhse.json (maj 07/11), state/abonnes_qhse.json, travail/rapport8_qhse.json. Source instrack non utilisée (suivi decodeactu, pas qhse)."
+  "calendrier": "Aucune publication enregistrée depuis le 27/10. À vérifier par le Manager.",
+  "note": "Sources : state/stats_qhse.json (maj 08/11), state/abonnes_qhse.json, travail/rapport8_qhse.json. Le suivi state/suivi_qhse.json donne 120 vues pour Seveso (instantané antérieur) : on retient la valeur la plus récente, 131."
 }

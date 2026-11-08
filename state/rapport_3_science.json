@@ -1,83 +1,55 @@
 {
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "compte": "science",
-  "compte_neuf": true,
-  "source_donnees": "state/stats_science.json (maj 2026-11-07 14:42 UTC), state/abonnes_science.json (relevés 25/10 au 07/11), travail/rapport8_science.json (agent 9)",
   "classement": [
     {
-      "titre": "Microduck : la physique du robot canard à 399 $",
-      "date": "2026-10-27",
+      "sujet": "robot canard (27 oct.)",
       "vues": 120,
       "portee": 115,
-      "likes": 0,
-      "commentaires": 0,
-      "partages": 0,
-      "sauvegardes": 1
+      "interactions": 1
     },
     {
-      "titre": "Pourquoi un pont suspendu tient (et pourquoi Tacoma est tombé)",
-      "date": "2026-10-28",
-      "vues": 116,
-      "portee": 102,
-      "likes": 0,
-      "commentaires": 0,
-      "partages": 0,
-      "sauvegardes": 0
+      "sujet": "pont Tacoma Narrows (28 oct.)",
+      "vues": 119,
+      "portee": 104,
+      "interactions": 0
     },
     {
-      "titre": "Pourquoi un avion de 575 t ne tombe-t-il pas",
-      "date": "2026-10-27",
+      "sujet": "avion 575 t (27 oct.)",
       "vues": 101,
       "portee": 96,
-      "likes": 0,
-      "commentaires": 0,
-      "partages": 0,
-      "sauvegardes": 0
+      "interactions": 0
     },
     {
-      "titre": "Un moteur sans essence peut-il tourner ?",
-      "date": "2026-11-04",
+      "sujet": "moteur électrique (4 nov.)",
       "vues": 30,
       "portee": 25,
-      "likes": 0,
-      "commentaires": 0,
-      "partages": 0,
-      "sauvegardes": 0,
-      "note": "mesuré à environ 75 h de publication, 30 vues inchangées depuis le relevé du 06/11"
+      "interactions": 0
     }
   ],
   "ce_qui_marche": [
-    "Seule interaction du compte : 1 sauvegarde sur le robot canard (120 vues, 115 de portée, le meilleur des 4).",
-    "Angle « pourquoi ça tient / tombe » sur 3 reels sur 4 : pont 116 vues, avion 101, robot 120, dans la même fourchette."
+    "Trois vidéos sur 4 entre 101 et 120 vues : physique du quotidien (robot, pont, avion).",
+    "Seule interaction du compte : 1 enregistrement sur le robot canard."
   ],
   "ce_qui_ne_marche_pas": [
-    "0 like, 0 commentaire, 0 partage sur les 4 reels.",
-    "0 abonné gagné du 25/10 au 07/11 : la portée (338 cumulée) ne se convertit pas en abonnés.",
-    "Reel moteur sans essence (04/11) : 30 vues à environ 75 h, le plus faible des 4."
+    "Dernière vidéo (moteur électrique, 4 nov.) : 30 vues, 0 interaction.",
+    "0 like, 0 commentaire, 0 partage sur les 4 vidéos ; 0 abonné sur 15 relevés (25/10 au 08/11)."
   ],
   "enseignements": [
-    "Échantillon de 4 reels : aucune conclusion fiable sur le sujet, l'accroche ou la question de fin.",
-    "Le problème actuel est la conversion (vues sans interaction ni abonné), pas la portée.",
-    "Le fil « physique du quotidien » est à suivre, mais ce n'est pas encore une preuve."
+    "Échantillon trop petit (4 vidéos, 370 vues) pour conclure sur un format : juger sur 7 jours glissants.",
+    "Les sujets 'comment ça marche' tiennent mieux que le sujet moteur (30 vues), à confirmer sur les prochaines vidéos."
   ],
-  "conseils_demarrage": [
-    "Publier à rythme fixe (par exemple 3 reels par semaine) pour avoir assez de reels à comparer.",
-    "Finir chaque reel par une question ouverte pour déclencher les premiers commentaires.",
-    "Garder l'angle « pourquoi ça tient / tombe », le plus régulier en vues."
-  ],
-  "test": "Finir les 2 prochains reels par une question ouverte, puis comparer sauvegardes + commentaires à 72 h avec les 4 reels actuels (base : 1 sauvegarde, 0 commentaire au total). Aucun résultat avant 2 reels mesurés à 72 h.",
+  "test": "Inviter à commenter en fin de vidéo pour obtenir les premiers échanges (0 commentaire à ce jour).",
   "reperes_projection": {
-    "n_reels": 4,
-    "vues_mediane": 108.5,
-    "vues_moyenne": 91.75,
-    "vues_min": 30,
-    "vues_max": 120,
-    "projection_prudente": "100 à 120 vues pour un reel du même angle (3 reels seulement) ; 0 abonné attendu à court terme.",
-    "note": "Repère sur 4 reels seulement."
+    "vues_mediane": 110,
+    "meilleure": 120,
+    "vues_moyenne": 92.5,
+    "portee_moyenne": 85
   },
-  "ecarts_a_verifier": [
-    "abonnes_science.json compte 1 publication le 27/10, stats_science.json en compte 2 ce jour-là ; les deux s'accordent à 3 publications le 28/10 et à 4 le 04/11.",
-    "historique_science.json non relu aujourd'hui."
-  ],
-  "note": "Aucune note du propriétaire en attente pour l'agent 3 (tool notes : aucune, rien à marquer lu). Aucun commentaire à analyser. Suivi public instrack non consulté."
+  "sources": [
+    "state/stats_science.json (maj 08/11)",
+    "state/abonnes_science.json",
+    "state/feedback_cm_science.json",
+    "travail/rapport8_science.json"
+  ]
 }
