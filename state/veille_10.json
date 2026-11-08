@@ -1,6 +1,6 @@
 {
   "semaine": "2026-S45",
-  "date": "2026-11-04",
+  "date": "2026-11-08",
   "comptes": [
     {
       "nom": "AntifakenewsAI (Thomas Huchon)",
@@ -150,7 +150,7 @@
     "« Vrai ou faux JT ? » hebdomadaire : décrire (sans la diffuser) une fausse vidéo IA virale, montrer ses 3 indices de trucage, ce qui est établi, sources à l'écran — on retourne la mécanique « FLASH » des faux JT contre eux.",
     "Barre « loading » de l'info : une jauge 0→100 % en haut de l'écran qui avance à chaque fait sourcé, coupes calées sur le beat ; la jauge donne une raison de rester jusqu'à 100 %."
   ],
-  "position_decode": "Toujours quasi seuls sur l'actu française expliquée, faite par IA et transparente dans ce qui est publiquement indexé. Les trois comptes signalés par le propriétaire (laboscope, belltakesocial, phyzolof) restent introuvables sur le web public le 25/10 : impossible de les comparer sans liens directs. Le pair légitime reste AntifakenewsAI (avatar réaliste, débunk) ; le reste est de la désinformation ou du vol de contenu (faux JT, fausses manifestations, Tiffany Sloane) qui fait des millions de vues. Notre différence : personnages animés non réalistes (pixel art, pas de faux humain), dialogue Lou/Déco, sources visibles. Point de vigilance : la règle « Profil généré par IA » vise les personnes qui n'existent pas ; le statut de nos personnages animés reste à confirmer.",
+  "position_decode": "Toujours quasi seuls sur l'actu française expliquée par IA et transparents sur ce qui est indexé. Cette semaine, Instagram impose une étiquette « Profil généré par IA » aux comptes qui montrent une personne générée : Décodé doit vérifier que ses personnages animés (pixel art, non réalistes) n'entrent pas dans ce cadre, et l'afficher si besoin. Notre différence reste le format animé, le dialogue Lou/Déco et les sources visibles.",
   "a_reprendre_style": [
     "Personnages persistants : Lou et Déco restent à l'écran d'une scène à l'autre (pas de nouvelle entrée par le bas à chaque scène) ; seule l'expression change. Aujourd'hui le Duo est remonté dans chaque Sequence (dialogue.tsx, entree=2/6) → saut visible à chaque coupe.",
     "Transition par recouvrement de 6 à 10 images : la scène sortante continue (glisse/zoom de sortie) pendant que la suivante entre, au lieu d'une coupe sèche suivie de la dissolution pixel de l'ancienne couleur seule (TransitionPixel 12 images).",
@@ -176,18 +176,7 @@
     ],
     "etat": "04/11/2026 : recherches web du 04/11 (« laboscope instagram actu IA ») : aucun résultat pertinent. Toujours introuvables sur le web public. Pages Instagram non accessibles sans connexion (interdit). Il faut des liens directs du propriétaire (ou captures + légende)."
   },
-  "a_decortiquer": [
-    {
-      "lien": "https://www.instagram.com/tiffany.bbyx/",
-      "compte": "@tiffany.bbyx (Instagram, « Tiffany Sloane », personnage IA ; ≈ 375 000 abonnés au 5/10/2026 selon Gizmodo 06/10/2026)",
-      "pourquoi_ca_marche": "Fausse humanité : personnage IA présenté en humoriste, stand-up devant un faux public, forte viralité (Gizmodo 06/10/2026). Contre-modèle à décortiquer : sketchs repris à de vrais comédiens, bio sans mention d'IA, lien OnlyFans en story à la une. VIDÉO DIRECTE NON VÉRIFIÉE : le lien est la page du compte, à remplacer par le lien d'un post précis fourni par le propriétaire."
-    },
-    {
-      "lien": "https://www.slate.fr/tech-internet/amerique-maga-fantasme-influenceuse-pro-trump-militaire-fake-intelligence-artificielle-onlyfans-erotique-arnaque",
-      "compte": "Jessica Foster (Instagram, personnage IA ; environ 1 million d'abonnés selon Sky TG24 23/03/2026)",
-      "pourquoi_ca_marche": "Identité fictive de « militaire » au cadrage patriotique : l'attachement vient de l'identité avant le contenu (Slate, enquête). Lien = article d'enquête, pas une vidéo : à utiliser pour comprendre la mécanique, pas comme modèle de forme. VIDÉO DIRECTE NON VÉRIFIÉE : à obtenir du propriétaire ou par capture."
-    }
-  ],
+  "a_decortiquer": [],
   "historique_a_decortiquer": [
     {
       "date": "2026-10-18",
@@ -227,10 +216,38 @@
         "https://www.slate.fr/tech-internet/amerique-maga-fantasme-influenceuse-pro-trump-militaire-fake-intelligence-artificielle-onlyfans-erotique-arnaque"
       ],
       "note": "2 articles (pas de vidéo directe) ; laboscope, belltakesocial, phyzolof toujours introuvables (recherches du 01/11)"
+    },
+    {
+      "lien": "https://www.instagram.com/tiffany.bbyx/",
+      "compte": "@tiffany.bbyx (Instagram, « Tiffany Sloane », personnage IA ; ≈ 375 000 abonnés au 5/10/2026 selon Gizmodo 06/10/2026)",
+      "pourquoi_ca_marche": "Fausse humanité : personnage IA présenté en humoriste, stand-up devant un faux public, forte viralité (Gizmodo 06/10/2026). Contre-modèle à décortiquer : sketchs repris à de vrais comédiens, bio sans mention d'IA, lien OnlyFans en story à la une. VIDÉO DIRECTE NON VÉRIFIÉE : le lien est la page du compte, à remplacer par le lien d'un post précis fourni par le propriétaire.",
+      "retire": "2026-11-08 : aucune vidéo directe vérifiée, lien = page de compte ou article"
+    },
+    {
+      "lien": "https://www.slate.fr/tech-internet/amerique-maga-fantasme-influenceuse-pro-trump-militaire-fake-intelligence-artificielle-onlyfans-erotique-arnaque",
+      "compte": "Jessica Foster (Instagram, personnage IA ; environ 1 million d'abonnés selon Sky TG24 23/03/2026)",
+      "pourquoi_ca_marche": "Identité fictive de « militaire » au cadrage patriotique : l'attachement vient de l'identité avant le contenu (Slate, enquête). Lien = article d'enquête, pas une vidéo : à utiliser pour comprendre la mécanique, pas comme modèle de forme. VIDÉO DIRECTE NON VÉRIFIÉE : à obtenir du propriétaire ou par capture.",
+      "retire": "2026-11-08 : aucune vidéo directe vérifiée, lien = page de compte ou article"
     }
   ],
   "contexte_24_10": [
     "20/10/2026 : Instagram impose le label « Profil généré par IA » aux comptes qui mettent en scène un personnage entièrement IA ; les profils qui refusent de se signaler peuvent voir leur portée réduite (source : Les Actus du Net, 20/10/2026, https://www.lesactusdunet.com/2026/10/20/instagram-va-retrograder-les-faux-humains-qui-refusent-davouer-quils-sont-generes-par-ia/).",
     "23/10/2026 : comptes Instagram « générés par IA » qui volent des sketchs de comédiens pour devenir viraux ; aucun nom ni chiffre donné ; enquête en cours (source : BFM TV, reprise sur titrespresse.com, https://www.titrespresse.com/26225142603/ia-instagram-tendance)."
-  ]
+  ],
+  "a_decortiquer_note": "Aucune vidéo précise vérifiable cette semaine : laboscope, belltakesocial et phyzolof restent introuvables sur le web public (recherches du 08/11/2026). Il faut un lien de post fourni par le propriétaire pour alimenter l'agent 12.",
+  "nouvelles_sources": [
+    {
+      "nom": "Instagram : étiquette « Profil généré par IA »",
+      "lien": "https://next.ink/brief-article/les-profils-generes-par-ia-devront-se-signaler-sur-instagram/",
+      "date": "2026-09-01",
+      "resume": "Le label « Créateur IA » (facultatif, testé depuis mai) devient « Profil généré par IA », visible sur le profil et sous le nom du persona. Obligatoire selon Siècle Digital, « fermement invité » selon Next : sources divergentes, à vérifier. Les profils conformes gardent leur portée ; les non-déclarés risquent de sortir des recommandations (Siècle Digital). Ne concerne que les personnes générées, pas les contenus IA."
+    },
+    {
+      "nom": "Siècle Digital, faux influenceurs sur Instagram",
+      "lien": "https://siecledigital.fr/2026/09/01/les-faux-influenceurs-proliferent-sur-instagram-le-reseau-social-decide-de-sevir/",
+      "date": "2026-09-01",
+      "resume": "Aucun chiffre sur le nombre de faux comptes (plaintes « nombreuses », non quantifiées)."
+    }
+  ],
+  "comptes_mis_a_jour": "2026-11-08 : aucun nouveau chiffre d'abonnés indexé ; aucun compte en croissance ou perte vérifiable."
 }
