@@ -480,5 +480,37 @@
    "etape": "critique finale (7)",
    "resultat": "publiable"
   }
+ ],
+ "qhse-20261108-0800": [
+  {
+   "heure": "04:51",
+   "etape": "1 créneau",
+   "resultat": "OK : créneau dimanche 08 h 00, compte qhse"
+  },
+  {
+   "heure": "04:51",
+   "etape": "4 concept",
+   "resultat": "OK : sujet DUERP (duerp), instagram ; référence légale L4121-3-1 / R4121-1 à R4121-4 à confirmer par agent 5"
+  },
+  {
+   "heure": "04:52",
+   "etape": "5 scénario + 6 DA",
+   "resultat": "OK : 5_scenario.json (14 scènes, 56 s, 167 mots), 6_da.json (palette bleu_nuit, pulsation, V2)"
+  },
+  {
+   "heure": "04:53",
+   "etape": "valider",
+   "resultat": "OK : 7_spec.json assemblé, 14 scènes, 62 s estimées ; titre_miniature 8 mots"
+  },
+  {
+   "heure": "04:53",
+   "etape": "7 pré-critique",
+   "resultat": "GO : aucun bloquant, 14 scènes, 56 s"
+  },
+  {
+   "heure": "04:55",
+   "etape": "8 rendu",
+   "resultat": "ARRÊT : render Remotion en échec (2 essais) — video/node_modules absent, npx remotion introuvable ; pas de video.mp4, pas de dépôt"
+  }
  ]
 }
