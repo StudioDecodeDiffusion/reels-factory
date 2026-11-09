@@ -1,0 +1,41 @@
+{
+  "id": "actu-20261109-0800",
+  "profil": "actu",
+  "statut": "rendu_en_cours",
+  "titre": "Acte IV de la colère sociale : ce que le pouvoir prépare avant mardi",
+  "son_tendance": null,
+  "publication_le": "2026-11-09T08:00+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": "instagram",
+  "legende": "Pendant que le gouvernement prépare ses annonces, la rue attend encore une réponse.\n\nMardi 10 novembre, une grève et une manifestation sont prévues à Paris, avec l'école et la fonction publique en première ligne. Ce mouvement s'inscrit dans l'« acte IV de la colère sociale », avant les annonces attendues du gouvernement.\n\nEt le pouvoir, il écoute ? 👇\n\nEnvoie-la à quelqu'un qui sera dans la rue mardi ! 📤\n\nSources : RFI, La Croix\n\n#actu #fonctionpublique #Paris #grève10novembre #décodéactu\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [
+    "https://www.la-croix.com/acte-iv-de-la-colere-sociale-avant-les-annonces-attendues-du-gouvernement-20261106",
+    "https://www.rfi.fr/fr/podcasts/reportage-france/20261108-france-r%C3%A8gles-douloureuses-apr%C3%A8s-les-manifestations-les-gaz-lacrymog%C3%A8nes-en-question"
+  ],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "id": "actu-20261109-0800",
+    "agent": 7,
+    "role": "7.5 critique finale",
+    "decision": "publiable",
+    "bloquant": false,
+    "raison": "Aucun défaut bloquant : pas d'image de presse, pas de deepfake, pas de citation inventée, planche lisible et cohérente, durée 64 s (au moins 55 s).",
+    "corrections": [
+      "Image 7 (« GAZ LACRYMOGÈNES EN QUESTION ») : le fait n'est repris ni dans la légende ni dans les sources listées (RFI, La Croix). À sourcer ou à retirer. Non bloquant."
+    ],
+    "finitions": [
+      "Image 4 : le badge « COLÈRE » est partiellement recouvert par le bandeau de sous-titre. Non bloquant."
+    ],
+    "verifications": {
+      "date": "Mardi 10 novembre : cohérent avec le 9 novembre 2026 (lundi).",
+      "voix": "Non vérifiée sur apercu.png (planche muette) : à contrôler dans 7_spec.json (voix_override.narrateur et mascotte)."
+    }
+  },
+  "community": {},
+  "da_message": "DA actu : style pixeldoc, mise en page JT, musique funk, accroche question_choc, fonctionnement débat (Gouvernement / La rue). 14 scènes de 4 s (56 s). Photos réelles de RFI, La Croix et Basta sur 7 scènes ; alternance avec scènes pd_*.",
+  "cree": "2026-11-09T04:16:40+00:00"
+}
