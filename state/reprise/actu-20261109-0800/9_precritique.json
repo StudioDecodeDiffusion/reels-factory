@@ -1,0 +1,42 @@
+{
+  "id": "actu-20261109-0800",
+  "agent": 7,
+  "role": "7.4 pré-critique (scénario + DA)",
+  "decision": "go",
+  "bloquant": false,
+  "raison": "Aucun défaut bloquant : contenu conforme aux règles actives, faits sourcés (RFI, La Croix), aucun chiffre inventé, accroche question_choc cohérente avec la 1re scène, variété respectée par rapport à la dernière vidéo (accroche, fonctionnement, musique, palette, mise en page).",
+  "verifications": {
+    "contenu_interdit": "aucun : pas de fausse citation, pas d'accusation nominative, pas d'appel à la violence, pas de mention d'IA, images de presse du sujet autorisées (règle 27/10)",
+    "faits_sources": "grève et manifestation du mardi 10 novembre à Paris (RFI) ; « acte IV de la colère sociale » et annonces attendues du gouvernement (La Croix) ; mardi 10 novembre bien un mardi",
+    "chiffres": "aucun chiffre inventé ; pd_jauge « élevé » qualitatif",
+    "accroche_scenes": "titre_miniature (8 mots), mots_choc (2), surtitre au format OK ; hook scène 1 = question « Et le pouvoir, il écoute ? » cohérente avec l'accroche",
+    "variete_vs_derniere_video": "accroche compte_a_rebours -> question_choc ; fonctionnement chiffres_cles -> debat ; musique trap8bit -> funk ; palette nuit_neon -> papier_journal ; mise_en_page plein_ecran -> jt",
+    "photos": "6 scènes avec fond_photo dans 6_da.json et 6 scènes photo avec fond_photo_requete dans 5_scenario.json : seuil de 6 atteint",
+    "duree": "14 scènes x 4 s = 56 s, au-dessus du minimum de 55 s",
+    "legende": "accroche + chiffre sur la 1re ligne, sources RFI et La Croix, 👇 et 📤 présents, 5 hashtags, pas de #viral ni #fyp"
+  },
+  "corrections": [
+    {
+      "categorie": "coherence_scenes",
+      "gravite": "finition",
+      "description": "Les scènes de 5_scenario.json et de 6_da.json ne se correspondent pas index par index : la scène 7 du scénario est un débat « AVANT OU APRÈS ? » (texte sur le répondre avant mardi), la 7 de la DA est un hook « Gaz lacrymogènes en question ». Le débat du scénario (7) et le quiz (14) n'ont pas d'équivalent dans la DA, qui n'a aucune scène debat. La scène 3 du scénario est une photo « ÉCOLE · FONCTION PUBLIQUE », la 3 de la DA est un pd_versus « Qui parle, qui écoute ? ». À aligner avant la spec (agent 8)."
+    },
+    {
+      "categorie": "voix",
+      "gravite": "finition",
+      "description": "Voix incohérentes entre fichiers : 5_scenario.json indique V1+V4, 6_da.json indique V1+V3 (dossier : dernière vidéo V3+V2). Retenir une seule valeur."
+    },
+    {
+      "categorie": "longueur_dialogue",
+      "gravite": "finition",
+      "description": "Dialogue d'environ 180 mots, au-dessus de la fourchette 160-170 mots des règles actives. Ne bloque pas ; réduire 10 à 15 mots si possible."
+    },
+    {
+      "categorie": "fait_image_a_verifier",
+      "gravite": "fait",
+      "description": "L'image RFI (Colonne Louis XVI, gaz lacrymogènes) est légendée comme une manifestation pour le pouvoir d'achat, sans date dans l'URL : la vérifier avant usage sur les scènes 1 et 7 (DA). Si elle date d'un autre jour, la retirer et utiliser la requête seule. Image de La Croix Saint-Brieuc sur « Pas seulement à Paris » : cohérente avec la veille, à garder."
+    }
+  ],
+  "a_faire_par_agent_8": "Aligner les scènes sur le scénario (texte et type) avant la spec, retenir V1+V4 ou V1+V3, vérifier l'image RFI.",
+  "date": "2026-11-09"
+}
