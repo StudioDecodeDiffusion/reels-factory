@@ -1,0 +1,199 @@
+{
+ "accroche": "Pendant que le gouvernement prépare ses annonces, la rue attend encore une réponse.",
+ "voix": "V1+V4",
+ "variete": {
+  "accroche": "question_choc",
+  "fonctionnement": "debat",
+  "musique": "funk"
+ },
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "LA RUE REPART",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Mardi, la colère sociale retourne dans la rue. Et le pouvoir, il écoute ?",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "GRÈVE + MANIF : MARDI",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Une grève et une manifestation sont prévues mardi à Paris.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "duree_s": 4.0,
+   "texte_ecran": "ÉCOLE · FONCTION PUBLIQUE",
+   "fond_photo": "https://s.rfi.fr/media/display/9c578086-dbae-11f1-81a6-1beafce15fea/w:1280/p:16x9/Une-personne-passe-devant-la-Colonne-Louis-XVI-pour-%C3%A9chapper-aux-gaz-lacrymog%C3%A8nes-lors-d-une-manifestation-en-faveur-du-pouvoir-d-achat-de-la-protection-des-services-publics-et-de-la-justice-fiscale-et-sociale-%C3%A0-Nan.jpg",
+   "fond_photo_requete": "grève 10 novembre 2026 Paris manifestation",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "L'école et la fonction publique sont en première ligne. C'est ce que rapporte RFI.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "L'ACTE IV",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce mouvement s'inscrit dans l'acte IV de la colère sociale. La Croix le décrit ainsi.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "duree_s": 4.0,
+   "texte_ecran": "ANNONCES ATTENDUES",
+   "fond_photo": "",
+   "fond_photo_requete": "acte IV colère sociale manifestation France 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le gouvernement prépare ses annonces. La rue attend sa réponse. Elle ne veut pas attendre.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "duree_s": 4.0,
+   "texte_ecran": "QUI SERA ENTENDU ?",
+   "fond_photo": "https://i.la-croix.com/1400x933/5x5/2026/11/07/2583736-ici-a-saint-brieuc-a-l-occasion-du-nouvel-appel-a-.jpg",
+   "fond_photo_requete": "manifestation fonction publique Paris novembre 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Une seule question revient : qui sera entendu ?",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "debat",
+   "duree_s": 4.0,
+   "texte_ecran": "AVANT OU APRÈS ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le gouvernement doit-il répondre avant mardi, ou après la colère ?",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 4.0,
+   "texte_ecran": "LE POUVOIR / LA RUE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "D'un côté, le gouvernement annonce. De l'autre, la rue manifeste.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "duree_s": 4.0,
+   "texte_ecran": "ENTRE LES DEUX",
+   "fond_photo": "https://basta.media/local/cache-gd2/42/9b29e921a92d01e29e6efead021820.jpg",
+   "fond_photo_requete": "grève enseignants école Paris novembre 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Entre les deux, les salariés, les jeunes et les précaires encaissent.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_jauge",
+   "duree_s": 4.0,
+   "texte_ecran": "LA COLÈRE MONTE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Plus la colère monte, moins les annonces peuvent attendre.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "duree_s": 4.0,
+   "texte_ecran": "MARDI, ON REGARDE",
+   "fond_photo": "",
+   "fond_photo_requete": "manifestation Colonne Louis XVI gaz lacrymogènes 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Il faut donc regarder mardi : qui manifeste, et qui répond.",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4.0,
+   "texte_ecran": "PAS UN COMMUNIQUÉ",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La colère sociale ne se règle pas avec un communiqué. Il faut des réponses concrètes.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "duree_s": 4.0,
+   "texte_ecran": "SUR LE TERRAIN",
+   "fond_photo": "",
+   "fond_photo_requete": "grève 10 novembre 2026 Paris manifestation",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Mardi, on saura si la rue est entendue. Ce sera à Paris, sur le terrain.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "quiz",
+   "duree_s": 4.0,
+   "texte_ecran": "VOUS, MARDI ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Et vous, serez-vous dans la rue mardi ? Dites-le en commentaire.",
+     "expression": "sourire"
+    }
+   ]
+  }
+ ],
+ "legende": "Pendant que le gouvernement prépare ses annonces, la rue attend encore une réponse.\n\nMardi 10 novembre, une grève et une manifestation sont prévues à Paris, avec l'école et la fonction publique en première ligne. Ce mouvement s'inscrit dans l'« acte IV de la colère sociale », avant les annonces attendues du gouvernement.\n\nEt le pouvoir, il écoute ? 👇\n\nEnvoie-la à quelqu'un qui sera dans la rue mardi ! 📤\n\nSources : RFI, La Croix",
+ "hashtags": [
+  "#actu",
+  "#fonctionpublique",
+  "#Paris",
+  "#grève10novembre",
+  "#décodéactu"
+ ]
+}
