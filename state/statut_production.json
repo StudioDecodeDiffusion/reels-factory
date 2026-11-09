@@ -512,5 +512,37 @@
    "etape": "8 rendu",
    "resultat": "ARRÊT : render Remotion en échec (2 essais) — video/node_modules absent, npx remotion introuvable ; pas de video.mp4, pas de dépôt"
   }
+ ],
+ "actu-20261109-0800": [
+  {
+   "heure": "04:51",
+   "etape": "démarrage",
+   "resultat": "créneau actu lundi 08 h 00, dossier créé"
+  },
+  {
+   "heure": "04:52",
+   "etape": "agent 4 concept",
+   "resultat": "4_concept.json écrit (sujet manifestation 10 nov, hors file, sans chiffre vérifié)"
+  },
+  {
+   "heure": "04:53",
+   "etape": "agents 5 et 6",
+   "resultat": "5_scenario.json et 6_da.json écrits (14 scènes, 56 s)"
+  },
+  {
+   "heure": "04:54",
+   "etape": "valider (contrat de format)",
+   "resultat": "OK, 0 erreur après corrections agents 5/6"
+  },
+  {
+   "heure": "05:16",
+   "etape": "render",
+   "resultat": "video.mp4 rendu (64 s)"
+  },
+  {
+   "heure": "05:16",
+   "etape": "agent 8",
+   "resultat": "video.mp4, planche apercu.png, légende et story générés"
+  }
  ]
 }
