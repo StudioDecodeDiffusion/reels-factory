@@ -1,0 +1,377 @@
+{
+  "id": "actu-20261109-0800",
+  "compte": "actu",
+  "theme": {
+    "fond": "#F4EBD9",
+    "texte": "#111111",
+    "accent": "#D7261E",
+    "accent2": "#1B1B1B",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "FLASH",
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "papier_journal",
+    "palette": [
+      "#F4EBD9",
+      "#111111",
+      "#D7261E",
+      "#1B1B1B",
+      "#E8DCC2",
+      "#FFFFFF"
+    ],
+    "mise_en_page": "jt",
+    "transition": "bandes",
+    "camera": "secousse",
+    "titre": "Acte IV de la colère sociale · Grève du 10 novembre 2026",
+    "tenues": {
+      "narrateur": "manifestant",
+      "mascotte": "classique"
+    }
+  },
+  "variete": {
+    "accroche": "question_choc",
+    "trend": "Décryptage engagé",
+    "fonctionnement": "debat",
+    "mise_en_page": "jt",
+    "musique": "funk",
+    "voix": "V1+V3",
+    "palette": "papier_journal"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "whoosh"
+    ],
+    "3": [
+      "pop"
+    ],
+    "4": [
+      "whoosh"
+    ],
+    "5": [
+      "pop"
+    ],
+    "6": [
+      "whoosh"
+    ],
+    "7": [
+      "pop"
+    ],
+    "8": [
+      "whoosh"
+    ],
+    "9": [
+      "pop"
+    ],
+    "10": [
+      "whoosh"
+    ],
+    "11": [
+      "pop"
+    ],
+    "12": [
+      "whoosh"
+    ],
+    "13": [
+      "pop"
+    ],
+    "14": [
+      "ding"
+    ]
+  },
+  "musique": {
+    "genre": "funk",
+    "volume": 0.4
+  },
+  "titre_miniature": "Mardi, la colère sociale retourne dans la rue",
+  "mots_choc": [
+    "Colère",
+    "Mardi"
+  ],
+  "surtitre_miniature": "Gouvernement · 10 nov. 2026",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "titre": "Mardi, la rue reprend la parole",
+      "mot_fort": "rue",
+      "energie": 3,
+      "prompt": "a crowd silhouette holding banners at dusk, pixel art, side view, single object",
+      "fond_photo": "https://s.rfi.fr/media/display/9c578086-dbae-11f1-81a6-1beafce15fea/w:1280/p:16x9/Une-personne-passe-devant-la-Colonne-Louis-XVI-pour-%C3%A9chapper-aux-gaz-lacrymog%C3%A8nes-lors-d-une-manifestation-en-faveur-du-pouvoir-d-achat-de-la-protection-des-services-publics-et-de-la-justice-fiscale-et-sociale-%C3%A0-Nan.jpg",
+      "fond_photo_requete": "grève 10 novembre 2026 Paris manifestation",
+      "title": "Mardi, la rue reprend la parole",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Mardi, la colère sociale retourne dans la rue. Et le pouvoir, il écoute ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 2,
+      "type": "pd_objet",
+      "titre": "Acte IV de la colère",
+      "mot_fort": "Acte IV",
+      "energie": 2,
+      "prompt": "a raised clenched fist, pixel art, single object",
+      "etiquette": "Colère sociale",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une grève et une manifestation sont prévues mardi à Paris.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 3,
+      "type": "pd_versus",
+      "titre": "Qui parle, qui écoute ?",
+      "mot_fort": "écoute",
+      "energie": 3,
+      "de": {
+        "label": "Gouvernement",
+        "prompt": "a government building column, pixel art, single object"
+      },
+      "vers": {
+        "label": "La rue",
+        "prompt": "a row of protest banners, pixel art, single object"
+      },
+      "verdict": "Le dialogue attend",
+      "fond_photo": "https://i.la-croix.com/1400x933/5x5/2026/11/07/2583736-ici-a-saint-brieuc-a-l-occasion-du-nouvel-appel-a-.jpg",
+      "fond_photo_requete": "manifestation pouvoir d'achat Saint-Brieuc novembre 2026",
+      "gauche": "Gouvernement",
+      "droite": "La rue",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "L'école et la fonction publique sont en première ligne. C'est ce que rapporte RFI.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 4,
+      "type": "pd_flux",
+      "titre": "La colère circule",
+      "mot_fort": "circule",
+      "energie": 2,
+      "de": {
+        "label": "Écoles",
+        "prompt": "a school bell, pixel art, single object"
+      },
+      "vers": {
+        "label": "Fonction publique",
+        "prompt": "a city hall column, pixel art, single object"
+      },
+      "montant": "colère",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ce mouvement s'inscrit dans l'acte IV de la colère sociale. La Croix le décrit ainsi.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 5,
+      "type": "hook",
+      "titre": "Avant les annonces du gouvernement",
+      "mot_fort": "annonces",
+      "energie": 2,
+      "prompt": "a closed government door with a question mark, pixel art, single object",
+      "fond_photo": "https://basta.media/local/cache-gd2/42/9b29e921a92d01e29e6efead021820.jpg",
+      "fond_photo_requete": "acte IV colère sociale manifestation France 2026",
+      "title": "Avant les annonces du gouvernement",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le gouvernement prépare ses annonces. La rue attend sa réponse. Elle ne veut pas attendre.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 6,
+      "type": "pd_tampon",
+      "titre": "Pas encore de réponse",
+      "mot_fort": "réponse",
+      "energie": 3,
+      "tampon": "EN ATTENTE",
+      "prompt": "a closed government door, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une seule question revient : qui sera entendu ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 7,
+      "type": "hook",
+      "titre": "Gaz lacrymogènes en question",
+      "mot_fort": "lacrymogènes",
+      "energie": 3,
+      "prompt": "a tear gas canister on a street, pixel art, single object",
+      "fond_photo": "https://s.rfi.fr/media/display/9c578086-dbae-11f1-81a6-1beafce15fea/w:1280/p:16x9/Une-personne-passe-devant-la-Colonne-Louis-XVI-pour-%C3%A9chapper-aux-gaz-lacrymog%C3%A8nes-lors-d-une-manifestation-en-faveur-du-pouvoir-d-achat-de-la-protection-des-services-publics-et-de-la-justice-fiscale-et-sociale-%C3%A0-Nan.jpg",
+      "fond_photo_requete": "manifestation Colonne Louis XVI gaz lacrymogènes 2026",
+      "title": "Gaz lacrymogènes en question",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le gouvernement doit-il répondre avant mardi, ou après la colère ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 8,
+      "type": "pd_tampon",
+      "titre": "Un quatrième acte",
+      "mot_fort": "quatrième",
+      "energie": 2,
+      "tampon": "ACTE IV",
+      "legende": "Avant les annonces attendues du gouvernement",
+      "source": "La Croix",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "D'un côté, le gouvernement annonce. De l'autre, la rue manifeste.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 9,
+      "type": "hook",
+      "titre": "Écoles et fonction publique",
+      "mot_fort": "fonction publique",
+      "energie": 3,
+      "prompt": "a school blackboard with a chalk arrow, pixel art, single object",
+      "fond_photo": "https://i.la-croix.com/1400x933/5x5/2026/11/07/2583736-ici-a-saint-brieuc-a-l-occasion-du-nouvel-appel-a-.jpg",
+      "fond_photo_requete": "manifestation pouvoir d'achat Saint-Brieuc novembre 2026",
+      "title": "Écoles et fonction publique",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Entre les deux, les salariés, les jeunes et les précaires encaissent.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 10,
+      "type": "pd_objet",
+      "titre": "Mardi 10 novembre",
+      "mot_fort": "10 novembre",
+      "energie": 2,
+      "prompt": "a calendar page showing a date, pixel art, single object",
+      "etiquette": "Paris",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Plus la colère monte, moins les annonces peuvent attendre.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 11,
+      "type": "pd_objet",
+      "titre": "Pas seulement à Paris",
+      "mot_fort": "Paris",
+      "energie": 2,
+      "prompt": "a map pin on a small town, pixel art, single object",
+      "etiquette": "Hors Paris",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il faut donc regarder mardi : qui manifeste, et qui répond.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 12,
+      "type": "pd_tampon",
+      "titre": "Une question ouverte",
+      "mot_fort": "question",
+      "energie": 3,
+      "tampon": "À SUIVRE",
+      "prompt": "a question mark stamp, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La colère sociale ne se règle pas avec un communiqué. Il faut des réponses concrètes.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 13,
+      "type": "hook",
+      "titre": "Qui va répondre ?",
+      "mot_fort": "répondre",
+      "energie": 3,
+      "prompt": "a podium with an empty chair, pixel art, single object",
+      "fond_photo": "https://basta.media/local/cache-gd2/42/9b29e921a92d01e29e6efead021820.jpg",
+      "fond_photo_requete": "manifestation fonction publique Paris novembre 2026",
+      "title": "Qui va répondre ?",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Mardi, on saura si la rue est entendue. Ce sera à Paris, sur le terrain.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 14,
+      "type": "pd_flux",
+      "titre": "Avant les annonces",
+      "mot_fort": "annonces",
+      "energie": 2,
+      "de": {
+        "label": "Annonces attendues du gouvernement",
+        "prompt": "a closed government door, pixel art, single object"
+      },
+      "vers": {
+        "label": "Mardi 10 novembre, la rue à Paris",
+        "prompt": "a row of protest banners, pixel art, single object"
+      },
+      "source": "La Croix",
+      "prompt": "a speech bubble with a question mark, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et vous, serez-vous dans la rue mardi ? Dites-le en commentaire.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3
+    }
+  ]
+}
