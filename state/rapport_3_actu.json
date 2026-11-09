@@ -1,30 +1,35 @@
 {
-  "date": "2026-11-08",
+  "date": "2026-11-09",
+  "compte": "actu",
+  "source": "state/stats_actu.json (maj 2026-11-09 14:56 UTC), state/abonnes_actu.json, travail/rapport8_actu.json",
   "classement": [
-    "1. 18 oct. « Vendredi soir : Macron au concert… » : 1 156 vues, 20 interactions (record, non reproduit)",
-    "2. 17 oct. « Contenu effrayant… ou pas ? » : 348 vues, 4 interactions",
-    "3. 24 oct. « Oui, nous avons perdu le contrôle » : 244 vues, 5 interactions (meilleure des 10 dernières)",
-    "Dernière des 10 dernières : 22 oct. « Couper les réseaux sociaux pendant les émeutes » : 76 vues, 0 interaction"
+    "18 oct. « Vendredi soir : Macron au concert… » : 1 156 vues, portée 1 003, 17 j'aime, 2 commentaires (record, non reproduit)",
+    "17 oct. « Contenu effrayant… ou pas ? » : 348 vues, 4 interactions",
+    "24 oct. « Oui, nous avons perdu le contrôle » : 244 vues, portée 225, 5 interactions (meilleure des 10 dernières)",
+    "Moyenne des 10 dernières : 123 vues, portée 110, 8 interactions au total ; médiane des 27 posts : 117 vues",
+    "Plus faibles : 22 oct. « Couper les réseaux sociaux… » : 76 vues, 0 interaction ; 9 nov. : 21 vues (trop tôt pour juger)"
   ],
   "ce_qui_marche": [
-    "Bilan chiffré d'un événement fort : 18 oct., 1 156 vues, 20 des 54 interactions du compte (un seul post).",
-    "Citation d'autorité suivie d'une décision concrète : 24 oct., 244 vues, 5 interactions (un seul post, à confirmer).",
-    "Format « À toi de juger » (2 posts) : médiane 130,5 vues, 3 interactions au total."
+    "Citation d'autorité + décision concrète : 24 oct., 244 vues (un seul post, à confirmer).",
+    "Bilan chiffré d'un événement fort : 18 oct., 1 156 vues (un seul post)."
   ],
   "ce_qui_ne_marche_pas": [
-    "CTA « oui ou non ? » : 6 posts depuis le 21 oct., 5 interactions au total, 0 commentaire.",
-    "Sujet éloigné du quotidien (22 oct.) : 76 vues, 0 interaction, le plus faible.",
-    "Engagement faible : 54 interactions sur 26 publications (environ 2 par post) ; 8 sur les 10 dernières (0,8 par post).",
-    "Abonnés bloqués à 7 depuis le 26 oct. (12 jours sans gain, state/abonnes_actu.json)."
+    "Accroche « Oui ou non ? Réponds en commentaire » : peu de commentaires lisibles sur les posts récents.",
+    "Engagement faible : 8 interactions sur les 10 dernières publications.",
+    "Abonnés bloqués à 7 depuis le 26 oct. (state/abonnes_actu.json)."
   ],
   "enseignements": [
-    "Remplacer « oui ou non ? » par une question à réponse précise (un chiffre, une ville).",
-    "Reprendre l'angle citation vérifiée + conséquence concrète, sur des sujets du quotidien des 18-35 ans.",
-    "Faire des bilans chiffrés la base des prochaines vidéos fortes, à confirmer sur deux vidéos."
+    "Garder la formule « citation vérifiée + décision concrète » sur les créneaux lundi et jeudi 8 h.",
+    "Remplacer « Oui ou non ? » par une question à réponse précise (un chiffre, une ville).",
+    "Juger un format sur 4 publications minimum, pas sur une seule."
   ],
-  "test": "Cette semaine, 2 vidéos : accroche chiffrée (comme le bilan du 18 oct.) + consigne de commentaire précise (un chiffre ou une ville). Comparer à la médiane de 117,5 vues et à 0,8 interaction par vidéo, à 48 h de publication.",
+  "test": "Pendant 4 publications : accroche « question à réponse chiffrée » contre « oui ou non » ; comparer commentaires et vues médianes.",
   "reperes_projection": {
-    "vues_mediane": 117.5,
+    "vues_mediane": 117,
+    "moyenne_10_dernieres": 123,
+    "meilleure_des_10": 244,
     "meilleure": 1156
-  }
+  },
+  "alerte": "2 commentaires du 18 oct. présents dans stats_actu.json mais absents de commentaires_actu.json : à vérifier.",
+  "avertissement": "total_interactions ne correspond pas toujours à la somme des colonnes (18 oct. : 19 par colonnes, 20 dans le total) ; les chiffres cités sont ceux des colonnes ou du total, précisés."
 }

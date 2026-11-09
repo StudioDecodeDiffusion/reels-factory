@@ -1,55 +1,32 @@
 {
-  "date": "2026-11-08",
+  "date": "2026-11-09",
   "compte": "science",
+  "source": "state/stats_science.json (maj 2026-11-09 14:56 UTC), state/abonnes_science.json",
   "classement": [
-    {
-      "sujet": "robot canard (27 oct.)",
-      "vues": 120,
-      "portee": 115,
-      "interactions": 1
-    },
-    {
-      "sujet": "pont Tacoma Narrows (28 oct.)",
-      "vues": 119,
-      "portee": 104,
-      "interactions": 0
-    },
-    {
-      "sujet": "avion 575 t (27 oct.)",
-      "vues": 101,
-      "portee": 96,
-      "interactions": 0
-    },
-    {
-      "sujet": "moteur électrique (4 nov.)",
-      "vues": 30,
-      "portee": 25,
-      "interactions": 0
-    }
+    "27 oct. 07 h UTC « Comment ce robot canard tient sur 2 pattes » : 120 vues, portée 115, 1 interaction (enregistrement)",
+    "28 oct. « Pont Tacoma Narrows » : 119 vues, portée 104",
+    "27 oct. 19 h UTC « Pourquoi un avion de 575 t ne tombe-t-il pas ? » : 101 vues, portée 96",
+    "4 nov. « Moteur sans essence » (mercredi, créneau) : 30 vues, portée 25, le plus faible"
   ],
   "ce_qui_marche": [
-    "Trois vidéos sur 4 entre 101 et 120 vues : physique du quotidien (robot, pont, avion).",
-    "Seule interaction du compte : 1 enregistrement sur le robot canard."
+    "Phénomènes physiques expliqués par un objet concret (robot, pont, avion) : 101 à 120 vues sur 3 posts."
   ],
   "ce_qui_ne_marche_pas": [
-    "Dernière vidéo (moteur électrique, 4 nov.) : 30 vues, 0 interaction.",
-    "0 like, 0 commentaire, 0 partage sur les 4 vidéos ; 0 abonné sur 15 relevés (25/10 au 08/11)."
+    "0 abonné sur toute la période (state/abonnes_science.json).",
+    "1 interaction au total sur 4 posts.",
+    "Post du mercredi 4 nov. : 30 vues, moitié moins que les 3 autres."
   ],
   "enseignements": [
-    "Échantillon trop petit (4 vidéos, 370 vues) pour conclure sur un format : juger sur 7 jours glissants.",
-    "Les sujets 'comment ça marche' tiennent mieux que le sujet moteur (30 vues), à confirmer sur les prochaines vidéos."
+    "Ne rien conclure sur 4 posts ; le signal sera lisible après la publication du mercredi 11/11.",
+    "Vérifier si le 4 nov. a souffert du sujet (moteur électrique) ou de l'accroche.",
+    "Le signal « 5 jours sans publication » de l'agent 9 n'est pas une alerte : le créneau du 11/11 n'est pas encore passé."
   ],
-  "test": "Inviter à commenter en fin de vidéo pour obtenir les premiers échanges (0 commentaire à ce jour).",
+  "test": "Invitation à commenter en fin de vidéo, jugée sur 7 jours glissants après le 11/11.",
   "reperes_projection": {
     "vues_mediane": 110,
-    "meilleure": 120,
-    "vues_moyenne": 92.5,
-    "portee_moyenne": 85
+    "moyenne": 92.5,
+    "meilleure": 120
   },
-  "sources": [
-    "state/stats_science.json (maj 08/11)",
-    "state/abonnes_science.json",
-    "state/feedback_cm_science.json",
-    "travail/rapport8_science.json"
-  ]
+  "alerte": null,
+  "avertissement": "n = 4 posts : repères indicatifs seulement."
 }

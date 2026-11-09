@@ -1,38 +1,33 @@
 {
-  "date": "2026-11-08",
-  "source": "state/stats_eco.json (maj 2026-11-08 14:40 UTC), state/abonnes_eco.json, travail/rapport8_eco.json",
+  "date": "2026-11-09",
+  "compte": "eco",
+  "source": "state/stats_eco.json (maj 2026-11-09 14:56 UTC), state/abonnes_eco.json, travail/rapport8_eco.json",
   "classement": [
-    "27/10 07:10 dette publique : 203 vues, 189 comptes, 2 j'aime, 2 interactions",
-    "03/11 08:10 niches fiscales (88 Md EUR) : 172 vues, 157 comptes, 1 j'aime, 1 enregistrement, 2 interactions",
-    "25/10 14:17 Fonderie de Bretagne : 131 vues, 121 comptes, 1 j'aime, 1 interaction",
-    "30/10 07:54 déficit budget 2026 : 115 vues, 109 comptes, 0 interaction",
-    "27/10 07:11 salaire brut/net : 94 vues, 91 comptes, 1 j'aime, 1 enregistrement, 3 interactions (total stocké, voir alertes)"
+    "27 oct. 07 h 10 UTC « À qui la France doit-elle 2 882 milliards ? » : 203 vues, portée 189, 2 interactions (meilleure)",
+    "3 nov. « Niches fiscales (88 Md EUR) » : 172 vues, portée 157, 1 j'aime, 1 enregistrement",
+    "25 oct. « Fonderie de Bretagne » : 131 vues, portée 121",
+    "30 oct. « Budget 2026, déficit 135 Md » : 115 vues, 0 interaction",
+    "27 oct. 07 h 11 UTC « Ton salaire brut… » : 94 vues, 3 interactions"
   ],
   "ce_qui_marche": [
-    "Sujets de dette et de fiscalité : dette 203 vues, niches fiscales 172 vues (les deux meilleures)",
-    "Les vidéos sur les chiffres de l'État (dette, niches fiscales) sont les plus regardées sur 5 vidéos"
+    "Chiffres officiels et source dans le titre (dette, niches fiscales) : 203 et 172 vues, les deux meilleures (5 posts)."
   ],
   "ce_qui_ne_marche_pas": [
-    "Déficit du budget : 115 vues, 0 interaction, sous la médiane",
-    "Aucune vidéo au-dessus de 2 interactions : les enregistrements et partages restent très faibles",
-    "Abonnés : 0 sur toute la période, aucune variation sur 14 jours"
+    "Déficit du budget : 115 vues, 0 interaction, sous la dette et les niches.",
+    "0 abonné sur toute la période ; 8 interactions au total sur 5 posts.",
+    "Vendredi 6 nov. (créneau 8 h) absent des stats."
   ],
   "enseignements": [
-    "Privilégier les sujets dette et fiscalité (203 et 172 vues) plutôt que le déficit (115 vues) ; échantillon de 5 vidéos, à confirmer",
-    "Garder le format chiffre sourcé en tête de vidéo ; aucun rejet ni critique dans les commentaires (0 commentaire)",
-    "Publier à créneau régulier : mardi et vendredi 08:00, comme prévu au profil"
+    "Garder le format chiffré et sourcé ; le sujet dette et niches fiscales tire mieux (échantillon de 5, à confirmer).",
+    "Rétablir le créneau du vendredi 8 h.",
+    "Deux posts le 27 oct. à 1 minute d'écart (07 h 10 et 07 h 11 UTC) : vérifier doublon ou décalage."
   ],
-  "test": "Comparer deux vidéos sur la même semaine : une sur la dette ou les niches fiscales, une sur un sujet budget ou salaire, même créneau 08:00, même durée cible (50 s), et lire vues et enregistrements 48 h après.",
+  "test": "Sur le créneau du mardi 10/11 : sujet dette ou niches fiscales, comparé à la médiane de 131 vues.",
   "reperes_projection": {
     "vues_mediane": 131,
-    "vues_moyenne": 143,
-    "meilleure": 203,
-    "plus_faible": 94,
-    "interactions_moyenne": 1.6
+    "moyenne": 143,
+    "meilleure": 203
   },
-  "alertes": [
-    "Vendredi 06/11 absent des statistiques : aucune publication enregistrée ce jour-là (la dernière date du 03/11). Vérifier si la vidéo a bien été publiée.",
-    "salaire brut/net : total_interactions = 3 alors que j'aime + enregistrements = 2 ; donnée à vérifier avant de la comparer.",
-    "Échantillon de 5 vidéos : aucune conclusion statistique, seulement des tendances."
-  ]
+  "alerte": "Vendredi 6 nov. absent des stats : alerte chaîne de publication.",
+  "avertissement": "n = 5 posts : repères indicatifs seulement."
 }

@@ -1,49 +1,31 @@
 {
-  "date": "2026-11-08",
+  "date": "2026-11-09",
   "compte": "qhse",
-  "compte_neuf": false,
+  "compte_neuf": true,
+  "source": "state/stats_qhse.json (maj 2026-11-09 14:56 UTC), state/abonnes_qhse.json, state/historique_qhse.json",
   "classement": [
-    {
-      "titre": "Seveso : une usine près de chez toi peut être classée Seveso seuil haut",
-      "date": "2026-10-27",
-      "vues": 131,
-      "comptes_atteints": 129,
-      "j_aime": 2,
-      "commentaires": 0,
-      "partages": 0,
-      "enregistrements": 0
-    },
-    {
-      "titre": "ISO 9001 : plus d'un million de certificats, l'auditeur ne compte pas vos classeurs",
-      "date": "2026-10-27",
-      "vues": 17,
-      "comptes_atteints": 15,
-      "j_aime": 0,
-      "commentaires": 0,
-      "partages": 0,
-      "enregistrements": 0
-    }
+    "27 oct. 11 h 10 UTC « Une usine près de chez toi peut être classée Seveso » : 131 vues, portée 129, 2 j'aime",
+    "27 oct. 07 h 13 UTC « ISO 9001 : plus d'un million de certificats » : 17 vues, 0 interaction"
   ],
   "ce_qui_marche": [
-    "Le décryptage Seveso est la seule publication au-delà de 100 vues (131), avec 2 j'aime. Indice seulement : 2 publications."
+    "Sujet réglementaire concret (Seveso, « près de chez toi ») : 131 vues et les seuls j'aime du compte (un seul post)."
   ],
   "ce_qui_ne_marche_pas": [
-    "Aucune nouvelle publication depuis le 27/10 (12 jours au 08/11), d'après state/stats_qhse.json et abonnes_qhse.json.",
-    "Abonnés à 0 sur toute la série du 25/10 au 08/11 : donnée à recouper avec l'API, probablement incomplète.",
-    "Zéro commentaire, zéro partage, zéro enregistrement."
+    "Aucune publication sur le créneau du dimanche 8 h : pas de post les dimanches 1er et 8 nov. dans les stats.",
+    "Dernier post le 27 oct. : 13 jours sans publication.",
+    "0 abonné sur toute la période."
   ],
   "enseignements": [
-    "Compte sans assez de données pour un enseignement sur le format (2 publications).",
-    "Conseils de démarrage : 1) rétablir un rythme régulier et vérifier la publication automatique ; 2) finir chaque vidéo par une question pour susciter les premiers commentaires ; 3) reprendre le format décryptage Seveso, seul sujet au-delà de 100 vues.",
-    "La publication qhse-20261026-1200 (ISO 9001) n'apparaît pas dans les statistiques : à vérifier."
+    "Rétablir le créneau du dimanche 8 h avant toute analyse : c'est une alerte de chaîne, pas un signal d'audience.",
+    "Vérifier le job qhse-20261026-1200 (ISO 9001) : présent dans l'historique, absent des stats.",
+    "Le format réglementaire a fait mieux que l'ISO générale (131 contre 17 vues), mais sur 2 posts seulement."
   ],
-  "test": "Sur 2 semaines, une fois le rythme rétabli, comparer décryptage Seveso et format mythe contre preuve (ISO) : vues et enregistrements par publication.",
+  "test": "Aucun test utile avant 4 publications ; au prochain dimanche publié, rejouer le format veille réglementaire.",
   "reperes_projection": {
-    "vues_mediane": 74,
+    "vues_mediane": null,
     "meilleure": 131,
-    "n": 2,
-    "note": "Calculé sur 2 publications seulement : ce n'est pas une projection, ne pas s'en servir pour prévoir."
+    "avertissement": "médiane 74 sur 2 posts : non fiable, pas de projection"
   },
-  "calendrier": "Aucune publication enregistrée depuis le 27/10. À vérifier par le Manager.",
-  "note": "Sources : state/stats_qhse.json (maj 08/11), state/abonnes_qhse.json, travail/rapport8_qhse.json. Le suivi state/suivi_qhse.json donne 120 vues pour Seveso (instantané antérieur) : on retient la valeur la plus récente, 131."
+  "alerte": "Chaîne qhse interrompue : dimanches 1er et 8 nov. sans publication.",
+  "avertissement": "Compte quasi neuf : conseils de démarrage — 1) tenir le créneau du dimanche ; 2) garder la série ISO 45001 en 10 épisodes ; 3) un format réglementaire par semaine."
 }
