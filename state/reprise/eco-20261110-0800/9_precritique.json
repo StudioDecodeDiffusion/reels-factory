@@ -1,0 +1,10 @@
+{
+  "decision": "go",
+  "bloquants": [],
+  "non_bloquants": [
+    "Incohérence scénario/DA : la suite des types de scènes diverge (scénario : pd_objet en 2, compare en 9, outro en 14 ; DA : pd_flux en 2, kinetic en 3, quiz en 14). Les photos de fond ne tombent pas sur les mêmes scènes (scénario : 1, 4, 6, 8, 9, 11 ; DA : 1, 3, 5, 6, 8, 11). À harmoniser à l'assemblage de la spec (tool spec, agent 8).",
+    "Faits non sourcés dans le dossier : rôle de la commission mixte paritaire, possibilité de rejet du budget par les députés, amendements article par article. Ce sont des règles générales de procédure, pas des chiffres ; à sourcer ou à garder en connaissance de cause.",
+    "Durée à 56 s (14 plans de 4 s) : conforme au minimum de 55 s, sans marge. Voix narrateur présente (voix_override.narrateur, dialogues non vides) ; mascotte à null, sans réplique (cohérent).",
+    "Variété conforme à la dernière vidéo (eco-20261103-0800) : accroche contre_intuitif (vs question_choc), fonctionnement vrai_faux (vs explication_mecanisme), musique orchestral (vs lofi), voix V1+V4 (vs V2+V3), palette retro_tv (vs papier_journal)."
+  ]
+}
