@@ -1,7 +1,7 @@
 {
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "compte": "eco",
-  "source": "state/stats_eco.json (maj 2026-11-09 14:56 UTC), state/abonnes_eco.json, travail/rapport8_eco.json",
+  "source": "state/stats_eco.json (maj 2026-11-10 14:56 UTC), state/abonnes_eco.json, travail/rapport8_eco.json",
   "classement": [
     "27 oct. 07 h 10 UTC « À qui la France doit-elle 2 882 milliards ? » : 203 vues, portée 189, 2 interactions (meilleure)",
     "3 nov. « Niches fiscales (88 Md EUR) » : 172 vues, portée 157, 1 j'aime, 1 enregistrement",
@@ -15,19 +15,19 @@
   "ce_qui_ne_marche_pas": [
     "Déficit du budget : 115 vues, 0 interaction, sous la dette et les niches.",
     "0 abonné sur toute la période ; 8 interactions au total sur 5 posts.",
-    "Vendredi 6 nov. (créneau 8 h) absent des stats."
+    "Aucune publication depuis le 03/11 ; vendredi 6 nov. (créneau 8 h) absent des stats."
   ],
   "enseignements": [
     "Garder le format chiffré et sourcé ; le sujet dette et niches fiscales tire mieux (échantillon de 5, à confirmer).",
-    "Rétablir le créneau du vendredi 8 h.",
+    "Rétablir le créneau du vendredi 8 h et vérifier la chaîne de publication.",
     "Deux posts le 27 oct. à 1 minute d'écart (07 h 10 et 07 h 11 UTC) : vérifier doublon ou décalage."
   ],
-  "test": "Sur le créneau du mardi 10/11 : sujet dette ou niches fiscales, comparé à la médiane de 131 vues.",
+  "test": "Sur le créneau du mardi 10/11 : sujet dette ou niches fiscales, comparé à la médiane de 131 vues. Non visible à 14 h 56 UTC : à reporter tant que la publication n'apparaît pas.",
   "reperes_projection": {
     "vues_mediane": 131,
     "moyenne": 143,
     "meilleure": 203
   },
-  "alerte": "Vendredi 6 nov. absent des stats : alerte chaîne de publication.",
+  "alerte": "Aucune publication depuis le 03/11 ; vendredi 6 nov. absent des stats : alerte chaîne de publication.",
   "avertissement": "n = 5 posts : repères indicatifs seulement."
 }
