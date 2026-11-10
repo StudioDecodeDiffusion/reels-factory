@@ -1,15 +1,15 @@
 {
-  "date": "2026-11-09",
-  "bilan": "Compte actu au 09/11 : 7 abonnés, inchangés depuis le 26/10. 27 publications. Dernière (09/11, 8 h 46 UTC) : 21 vues, 0 interaction, trop tôt pour juger. Moyenne des 10 dernières : 123 vues, portée 110, 8 interactions au total. Aucun commentaire dans la file, mais 2 commentaires sont comptés sur le post du 18/10 : à vérifier.",
+  "date": "2026-11-10",
+  "bilan": "Compte actu au 10/11 (stats maj 14 h 56 UTC) : 7 abonnés, stables depuis le 26/10. 27 publications. Dernière (09/11, 8 h 46 UTC) : 24 vues, portée 18, 0 interaction, trop tôt pour juger (correction : 21 vues relevées hier, 24 aujourd'hui). Moyenne des 10 dernières : 123 vues, portée 110, 8 interactions au total. Les statistiques comptent 2 commentaires sur les posts, mais aucun texte n'est dans la file state/commentaires_actu.json : rien à qualifier ni à répondre.",
   "audience": {
     "questions": [],
     "demandes": [],
     "critiques": []
   },
   "recommandations": [
-    "Vérifier pourquoi les 2 commentaires du post du 18/10 (record du compte, 1 156 vues) n'apparaissent pas dans state/commentaires_actu.json.",
-    "Correction du bilan du 08/11 : moyenne des 10 dernières = 123 vues (et non 128,5) ; la pire vidéo citée (22/10) ne fait pas partie des 10 dernières.",
-    "Reprendre le format de la meilleure des 10 dernières (24/10 « Oui, nous avons perdu le contrôle » : 244 vues, 5 interactions) : citation d'autorité + décision concrète.",
-    "Tester une autre accroche que « Oui ou non ? Réponds en commentaire » : aucun commentaire lisible depuis plusieurs posts."
+    "Retrouver les 2 commentaires comptés dans state/stats_actu.json mais absents de state/commentaires_actu.json (collecte à vérifier côté GitHub).",
+    "Ne pas juger la publication du 09/11 avant 48 h (24 vues à ce stade).",
+    "Tester sur 4 publications l'accroche « question à réponse chiffrée » contre « oui ou non ? » (aucun commentaire lisible depuis plusieurs posts).",
+    "Garder le format « citation vérifiée + décision concrète » (24/10 : 244 vues, 5 interactions, meilleure des 10 dernières)."
   ]
 }
