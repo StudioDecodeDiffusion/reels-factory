@@ -1,0 +1,156 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.7,
+   "texte_ecran": "17,3 % au Smic",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Dix-sept virgule trois pour cent des salariés du privé sont au Smic : un niveau record.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.7,
+   "texte_ecran": "3,1 millions de salariés",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cela fait trois millions cent mille personnes, contre douze pour cent en deux mille vingt-un.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.7,
+   "texte_ecran": "1 801,80 € brut par mois",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Au premier novembre deux mille vingt-quatre, le Smic brut atteint mille huit cent un euros.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.7,
+   "texte_ecran": "1 426 € net mensuel",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce qui équivaut à mille quatre cent vingt-six euros net mensuels pour trente-cinq heures.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.7,
+   "texte_ecran": "+2 % d'inflation répercutée",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cette hausse de deux pour cent suit la règle d'indexation automatique sur l'inflation.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.7,
+   "texte_ecran": "Le tassement des salaires",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pourquoi un tel tassement des salaires s'est-il produit en seulement trois ans ?",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.7,
+   "texte_ecran": "Rôle des exonérations patronales",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "L'explication se trouve dans le mécanisme des allègements de cotisations patronales.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.7,
+   "texte_ecran": "Allègements dégressifs jusqu'à 2,5 Smic",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ces exonérations sont maximales au niveau du Smic et s'éteignent à deux virgule cinq Smic.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.7,
+   "texte_ecran": "Effet de seuil à l'augmentation",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Augmenter un salarié au-dessus du Smic engendre un surcoût important pour l'employeur.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.7,
+   "texte_ecran": "Surcoût pour l'entreprise",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pour accorder cent euros net, l'entreprise perd une partie précieuse de ses exonérations.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chute",
+   "duree_s": 4.7,
+   "texte_ecran": "Grilles de salaires écrasées",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Bilan : les bas salaires rattrapent les échelons supérieurs et bloquent l'évolution salariale.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.7,
+   "texte_ecran": "Faut-il réformer les réductions ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Faut-il réformer ces allègements patronaux pour débloquer les salaires ? Donnez votre avis.",
+     "expression": "clin"
+    }
+   ]
+  }
+ ],
+ "legende": "17,3 % des salariés sont désormais au Smic en France.\n\nLe salaire minimum atteint 1 801,80 € brut suite à la revalorisation de novembre 2024. Ce tassement des rémunérations s'explique en partie par le barème des exonérations patronales qui crée un effet de seuil sur les augmentations.\n\nFaut-il réformer les exonérations de charges sur les salaires ? 👇\nEnvoie cette analyse à un collègue 📤\nSources : Dares, Service-Public.fr, Vie-Publique.fr",
+ "hashtags": [
+  "#economie",
+  "#smic",
+  "#salaires",
+  "#emploi",
+  "#decodeleco"
+ ]
+}
