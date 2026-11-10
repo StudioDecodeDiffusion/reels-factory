@@ -549,5 +549,37 @@
    "etape": "dépôt",
    "resultat": "drop : vidéo commitée, push en échec (HEAD détaché) -> push fast-forward HEAD:main"
   }
+ ],
+ "eco-20261110-0800": [
+  {
+   "heure": "04:50",
+   "etape": "Début",
+   "resultat": "Créneau eco 08 h 00 trouvé, dossier créé"
+  },
+  {
+   "heure": "04:51",
+   "etape": "Concept (agent 4)",
+   "resultat": "OK : budget-2027-parlement, accroche contre_intuitif"
+  },
+  {
+   "heure": "04:52",
+   "etape": "Scénario + DA (agents 5 et 6)",
+   "resultat": "OK : 5_scenario.json et 6_da.json écrits"
+  },
+  {
+   "heure": "04:54",
+   "etape": "Validation contrat",
+   "resultat": "OK après 2 retours agents 5/6"
+  },
+  {
+   "heure": "04:54",
+   "etape": "Pré-critique (agent 7)",
+   "resultat": "go, aucun bloquant"
+  },
+  {
+   "heure": "04:55",
+   "etape": "Génération (agent 8) render",
+   "resultat": "KO après 2 essais : npx remotion introuvable (could not determine executable to run) ; check OK ; arrêt"
+  }
  ]
 }
