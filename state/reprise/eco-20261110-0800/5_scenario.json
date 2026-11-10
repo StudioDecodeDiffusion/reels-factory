@@ -1,0 +1,195 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "LE PARLEMENT VOTE LE BUDGET",
+   "fond_photo_requete": "Assemblée nationale hémicycle vote budget 2027 novembre 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le Parlement vote le budget, pas le gouvernement. La Constitution le prévoit.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "1. LE GOUVERNEMENT RÉDIGE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le gouvernement rédige le projet de loi de finances avant le vote.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "ORIENTATIONS 2027",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Il annonce ses grandes orientations pour 2027. Rien n'est encore voté.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "quiz",
+   "duree_s": 4.0,
+   "texte_ecran": "VRAI OU FAUX ?",
+   "fond_photo_requete": "ministère de l'Économie Bercy budget de l'État 2027 préparation",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Affirmation : le gouvernement vote seul le budget de l'État. Vrai ou faux ?",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 4.0,
+   "texte_ecran": "PROPOSER ≠ VOTER",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Faux. Le texte passe par les députés, puis par les sénateurs.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "duree_s": 4.0,
+   "texte_ecran": "ASSEMBLÉE : LE TEXTE",
+   "fond_photo_requete": "Palais Bourbon Assemblée nationale séance budget 2027",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Les députés examinent le texte à l'Assemblée, en commission puis en séance.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "AMENDEMENTS",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ils peuvent amender le texte, article par article, et voter contre.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "duree_s": 4.0,
+   "texte_ecran": "SÉNAT : LE TEXTE",
+   "fond_photo_requete": "Sénat Palais du Luxembourg examen budget 2027 novembre 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Puis les sénateurs l'examinent à leur tour, avec leurs propres amendements.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "compare",
+   "duree_s": 4.0,
+   "texte_ecran": "MÊME TEXTE, 2 CHAMBRES",
+   "fond_photo_requete": "sénateurs examen budget de l'État 2027 amendements",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Les deux assemblées doivent ensuite voter le même texte, mot pour mot.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4.0,
+   "texte_ecran": "COMMISSION MIXTE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "En cas de désaccord, une commission mixte paritaire tente un compromis.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "quiz",
+   "duree_s": 4.0,
+   "texte_ecran": "VRAI OU FAUX ?",
+   "fond_photo_requete": "loi de finances 2027 Parlement députés sénateurs",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le Parlement ne peut jamais rejeter le budget. Vrai ou faux ?",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "reaction",
+   "duree_s": 4.0,
+   "texte_ecran": "LE REJET EST POSSIBLE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Faux : les députés peuvent voter contre, et le texte peut être rejeté.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "pd_jauge",
+   "duree_s": 4.0,
+   "texte_ecran": "CE QUI RESTE OUVERT",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce qui reste ouvert : les impôts et les dépenses, débattus au Parlement.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "duree_s": 4.0,
+   "texte_ecran": "OUI OU NON ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le budget est-il voté par le Parlement ? Oui ou non ?",
+     "expression": "sourire"
+    }
+   ]
+  }
+ ],
+ "legende": "Budget 2027 : le Parlement vote le budget, pas le gouvernement.\n\nLe gouvernement prépare le projet et annonce ses grandes orientations pour 2027. Députés et sénateurs l'examinent, l'amendent et votent le texte.\n\nFaut-il que le Parlement vote le budget ? Oui ou non ? 👇\n\nEnvoie-la à quelqu'un qui suit le budget de l'État ! 📤\n\nSources : Challenges, Google Actualités",
+ "hashtags": [
+  "#économie",
+  "#AssembléeNationale",
+  "#Sénat",
+  "#budget2027",
+  "#décodelécosimplement"
+ ],
+ "variete": {
+  "accroche": "contre_intuitif",
+  "trend": "Mythe ou réalité : qui décide du budget de l'État",
+  "fonctionnement": "vrai_faux",
+  "mise_en_page": "jt",
+  "musique": "orchestral",
+  "voix": "V1+V4",
+  "palette": "retro_tv"
+ }
+}
