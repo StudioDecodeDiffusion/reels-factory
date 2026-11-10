@@ -1,0 +1,363 @@
+{
+  "id": "eco-20261110-0800",
+  "compte": "eco",
+  "theme": {
+    "fond": "#2B1D14",
+    "texte": "#F3E6C8",
+    "accent": "#E8862A",
+    "accent2": "#C9A56B",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "retro_tv",
+    "palette": [
+      "#2B1D14",
+      "#5A3B22",
+      "#E8862A",
+      "#C9A56B",
+      "#F3E6C8",
+      "#B5501E"
+    ],
+    "mise_en_page": "jt",
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "detective"
+    }
+  },
+  "variete": {
+    "accroche": "contre_intuitif",
+    "trend": "Mythe ou réalité : qui décide du budget de l'État",
+    "fonctionnement": "vrai_faux",
+    "mise_en_page": "jt",
+    "musique": "orchestral",
+    "voix": "V1+V4",
+    "palette": "retro_tv"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": null,
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "whoosh"
+    ],
+    "3": [
+      "whoosh"
+    ],
+    "4": [
+      "pop"
+    ],
+    "5": [
+      "whoosh"
+    ],
+    "6": [
+      "whoosh"
+    ],
+    "7": [
+      "pop"
+    ],
+    "8": [
+      "whoosh"
+    ],
+    "9": [
+      "whoosh"
+    ],
+    "10": [
+      "pop"
+    ],
+    "11": [
+      "whoosh"
+    ],
+    "12": [
+      "pop"
+    ],
+    "13": [
+      "whoosh"
+    ],
+    "14": [
+      "ding"
+    ]
+  },
+  "musique": {
+    "genre": "orchestral",
+    "volume": 0.4
+  },
+  "titre_miniature": "Budget 2027 : c'est le Parlement qui vote",
+  "mots_choc": "le Parlement",
+  "surtitre_miniature": "Parlement · novembre 2026",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "titre": "Qui vote le budget ?",
+      "title": "Qui vote le budget ?",
+      "mot_fort": "vote",
+      "prompt": "a parliament chamber seen from the back benches, pixel art, side view, single object",
+      "fond_photo_requete": "Assemblée nationale hémicycle vote budget 2027 novembre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le Parlement vote le budget, pas le gouvernement. La Constitution le prévoit.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 2,
+      "type": "pd_flux",
+      "titre": "Le texte part du gouvernement",
+      "mot_fort": "gouvernement",
+      "de": {
+        "label": "Gouvernement",
+        "prompt": "a small government building, pixel art, single object"
+      },
+      "vers": {
+        "label": "Projet de loi",
+        "prompt": "a stack of paper pages tied with a ribbon, pixel art, single object"
+      },
+      "montant": "texte",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le gouvernement rédige le projet de loi de finances avant le vote.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 3,
+      "type": "kinetic",
+      "titre": "Les députés examinent d'abord",
+      "mot_fort": "députés",
+      "lines": [
+        "Le texte arrive d'abord à l'Assemblée",
+        "Les amendements peuvent modifier le texte"
+      ],
+      "fond_photo_requete": "Palais Bourbon Assemblée nationale séance budget 2027",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il annonce ses grandes orientations pour 2027. Rien n'est encore voté.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 4,
+      "type": "pd_objet",
+      "titre": "Des amendements à chaque étape",
+      "mot_fort": "amendements",
+      "prompt": "a pile of paper amendment slips, pixel art, single object",
+      "etiquette": "Amendements",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Affirmation : le gouvernement vote seul le budget de l'État. Vrai ou faux ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 5,
+      "type": "timeline",
+      "titre": "Puis le Sénat",
+      "mot_fort": "Sénat",
+      "events": [
+        "Assemblée nationale",
+        "Sénat",
+        "Vote final"
+      ],
+      "fond_photo_requete": "loi de finances 2027 Parlement députés sénateurs",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Faux. Le texte passe par les députés, puis par les sénateurs.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 6,
+      "type": "photo",
+      "titre": "Le Sénat reprend le texte",
+      "mot_fort": "Sénat",
+      "src": null,
+      "fond_photo_requete": "Sénat Palais du Luxembourg examen budget 2027 novembre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les députés examinent le texte à l'Assemblée, en commission puis en séance.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 7,
+      "type": "pd_versus",
+      "titre": "Qui a le dernier mot ?",
+      "mot_fort": "dernier mot",
+      "de": {
+        "label": "Gouvernement",
+        "prompt": "a small government building, pixel art, single object"
+      },
+      "vers": {
+        "label": "Parlement",
+        "prompt": "a columned parliament building, pixel art, single object"
+      },
+      "verdict": "Le Parlement vote",
+      "gauche": "Gouvernement",
+      "droite": "Parlement",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ils peuvent amender le texte, article par article, et voter contre.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 8,
+      "type": "kinetic",
+      "titre": "Des amendements, des votes",
+      "mot_fort": "amendements",
+      "lines": [
+        "Chaque amendement est voté",
+        "Le texte peut changer en chemin"
+      ],
+      "fond_photo_requete": "sénateurs examen budget de l'État 2027 amendements",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Puis les sénateurs l'examinent à leur tour, avec leurs propres amendements.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 9,
+      "type": "pd_flux",
+      "titre": "Les deux chambres doivent s'accorder",
+      "mot_fort": "accorder",
+      "de": {
+        "label": "Assemblée",
+        "prompt": "a small parliament chamber, pixel art, single object"
+      },
+      "vers": {
+        "label": "Sénat",
+        "prompt": "a columned senate building, pixel art, single object"
+      },
+      "montant": "texte",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les deux assemblées doivent ensuite voter le même texte, mot pour mot.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 10,
+      "type": "pd_jauge",
+      "titre": "Ce qui reste ouvert",
+      "mot_fort": "ouvert",
+      "niveau": "élevé",
+      "valeur": "élevé",
+      "etiquette": "Débat",
+      "legende": "Les choix fiscaux restent discutés",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "En cas de désaccord, une commission mixte paritaire tente un compromis.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 11,
+      "type": "photo",
+      "titre": "Bercy prépare le budget",
+      "mot_fort": "prépare",
+      "src": null,
+      "fond_photo_requete": "ministère de l'Économie Bercy budget de l'État 2027 préparation",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le Parlement ne peut jamais rejeter le budget. Vrai ou faux ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 12,
+      "type": "pd_tampon",
+      "titre": "Le vote n'est pas acquis",
+      "mot_fort": "acquis",
+      "tampon": "EN DÉBAT",
+      "prompt": "a closed ballot box, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Faux : les députés peuvent voter contre, et le texte peut être rejeté.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 13,
+      "type": "pd_objet",
+      "titre": "Le vote final du Parlement",
+      "mot_fort": "vote",
+      "prompt": "a voting paper with a check mark, pixel art, single object",
+      "etiquette": "Vote final",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ce qui reste ouvert : les impôts et les dépenses, débattus au Parlement.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "titre": "Vous le saviez ?",
+      "mot_fort": "saviez",
+      "question": "Qui vote le budget de l'État ?",
+      "reponse": "Le Parlement",
+      "bonne": "Le Parlement",
+      "options": [
+        "Le Parlement",
+        "Le président seul",
+        "La Commission européenne"
+      ],
+      "prompt": "a ballot box with a question mark, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le budget est-il voté par le Parlement ? Oui ou non ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.7
+    }
+  ]
+}
