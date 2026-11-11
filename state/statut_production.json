@@ -581,5 +581,62 @@
    "etape": "Génération (agent 8) render",
    "resultat": "KO après 2 essais : npx remotion introuvable (could not determine executable to run) ; check OK ; arrêt"
   }
+ ],
+ "science-20261111-0800": [
+  {
+   "heure": "04:50",
+   "etape": "démarrage",
+   "resultat": "créneau science 08h00, dossier créé"
+  },
+  {
+   "heure": "04:51",
+   "etape": "concept (agent 4)",
+   "resultat": "OK : béton armé, 4_concept.json écrit"
+  },
+  {
+   "heure": "04:52",
+   "etape": "scénario+DA (agents 5 et 6)",
+   "resultat": "OK, écrits"
+  },
+  {
+   "heure": "04:54",
+   "etape": "pré-critique (agent 7)",
+   "resultat": "go ; DA réalignée, valider OK"
+  },
+  {
+   "heure": "05:02",
+   "etape": "rendu de contrôle (agent 8)",
+   "resultat": "video.mp4 rendu après npm ci dans video/"
+  },
+  {
+   "heure": "05:03",
+   "etape": "critique finale (agent 7)",
+   "resultat": "BLOQUANT : scène 1 vide (titre et visuel absents 0-6,9 s) ; régénération de la scène 1"
+  },
+  {
+   "heure": "05:10",
+   "etape": "rendu 2 (scène 1 régénérée)",
+   "resultat": "video.mp4 refait"
+  },
+  {
+   "heure": "05:11",
+   "etape": "critique finale 2 (agent 7)",
+   "resultat": "BLOQUANT : scènes 4, 8, 12 (fond photo absent, centre vide) et scène 15 (quiz sans options). Tentative 2 sur 3"
+  },
+  {
+   "heure": "05:18",
+   "etape": "rendu 3 (scènes 4, 8, 12, 15 régénérées)",
+   "resultat": "video.mp4 refait"
+  },
+  {
+   "heure": "05:18",
+   "etape": "critique finale 3 (agent 7)",
+   "resultat": "BLOQUANT : scène 15 (quiz) vide. Tentative 3 sur 3 (dernière)"
+  },
+  {
+   "heure": "05:25",
+   "etape": "rendu 4 (scène 15 régénérée)",
+   "resultat": "video.mp4 refait"
+  }
  ]
 }
