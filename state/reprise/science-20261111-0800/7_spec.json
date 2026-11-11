@@ -98,7 +98,7 @@
     {
       "n": 1,
       "type": "hook",
-      "title": "Le béton seul casse",
+      "title": "LE BÉTON SEUL CASSE",
       "mot_fort": "casse",
       "prompt": "a plain concrete slab cracking under its own weight, pixel art, side view, single object",
       "fond_photo_requete": "dalle béton fissurée armatures rouillées éclatement",
@@ -114,17 +114,17 @@
     {
       "n": 2,
       "type": "pd_versus",
-      "titre": "Compression oui, traction non",
-      "mot_fort": "traction",
+      "titre": "POUTRE QUI PLIE",
+      "mot_fort": "plie",
       "gauche": {
-        "label": "Compression",
-        "prompt": "a heavy stone block pressed down by a press, pixel art, single object"
+        "label": "Charge",
+        "prompt": "a heavy load pressing down on a beam, pixel art, single object"
       },
       "droite": {
-        "label": "Traction",
-        "prompt": "a concrete bar pulled apart at both ends, pixel art, single object"
+        "label": "Face basse",
+        "prompt": "a concrete beam bottom face stretching and cracking, pixel art, single object"
       },
-      "verdict": "Le béton lâche",
+      "verdict": "Elle s'étire",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -137,17 +137,17 @@
     {
       "n": 3,
       "type": "pd_flux",
-      "titre": "La poutre fléchit",
-      "mot_fort": "fléchit",
+      "titre": "TRACTION : FAIBLE",
+      "mot_fort": "faible",
       "de": {
-        "label": "Charge",
-        "prompt": "a heavy load pressing down on a beam, pixel art, single object"
+        "label": "Compression",
+        "prompt": "a heavy stone block pressed down by a press, pixel art, single object"
       },
       "vers": {
-        "label": "Face basse",
-        "prompt": "a concrete beam bottom face cracking, pixel art, single object"
+        "label": "Traction",
+        "prompt": "a concrete bar pulled apart at both ends, pixel art, single object"
       },
-      "montant": "traction",
+      "montant": "faible",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -160,11 +160,11 @@
     {
       "n": 4,
       "type": "kinetic",
-      "titre": "Le ferraillage prend le relais",
-      "mot_fort": "relais",
+      "titre": "COMPRESSION OK",
+      "mot_fort": "OK",
       "lines": [
-        "Le ferraillage",
-        "prend le relais"
+        "COMPRESSION",
+        "OK"
       ],
       "fond_photo_requete": "ferraillage barres acier béton armé chantier",
       "dialogue": [
@@ -179,8 +179,8 @@
     {
       "n": 5,
       "type": "pd_objet",
-      "titre": "Acier dans la zone tendue",
-      "mot_fort": "tendue",
+      "titre": "BARRES D'ACIER",
+      "mot_fort": "acier",
       "prompt": "a steel rebar placed at the bottom of a concrete beam, pixel art, single object",
       "etiquette": "Barres d'acier",
       "dialogue": [
@@ -195,17 +195,17 @@
     {
       "n": 6,
       "type": "pd_flux",
-      "titre": "L'acier reprend l'effort",
-      "mot_fort": "reprend",
+      "titre": "CHACUN SON EFFORT",
+      "mot_fort": "effort",
       "de": {
-        "label": "Effort",
+        "label": "Traction",
         "prompt": "a tension arrow pulling on a steel bar, pixel art, single object"
       },
       "vers": {
         "label": "Acier",
         "prompt": "a steel rebar holding a beam together, pixel art, single object"
       },
-      "montant": "effort",
+      "montant": "reprise",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -218,8 +218,8 @@
     {
       "n": 7,
       "type": "pd_objet",
-      "titre": "Dilatation voisine, pas de décollement",
-      "mot_fort": "décollement",
+      "titre": "DILATATION VOISINE",
+      "mot_fort": "voisine",
       "prompt": "two steel and concrete bars expanding together in the heat, pixel art, single object",
       "etiquette": "Dilatation voisine",
       "dialogue": [
@@ -234,11 +234,11 @@
     {
       "n": 8,
       "type": "kinetic",
-      "titre": "Un pH très alcalin",
-      "mot_fort": "alcalin",
+      "titre": "LE PROTECTEUR",
+      "mot_fort": "protecteur",
       "lines": [
-        "Un pH très alcalin",
-        "protège l'acier"
+        "LE",
+        "PROTECTEUR"
       ],
       "fond_photo_requete": "béton armé coupe transversale acier tendu compression",
       "dialogue": [
@@ -253,10 +253,10 @@
     {
       "n": 9,
       "type": "pd_objet",
-      "titre": "Une couche passivante",
+      "titre": "COUCHE PASSIVANTE",
       "mot_fort": "passivante",
       "prompt": "a thin protective film covering a steel rebar, pixel art, single object",
-      "etiquette": "Couche protectrice",
+      "etiquette": "Couche passivante",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -269,17 +269,17 @@
     {
       "n": 10,
       "type": "pd_flux",
-      "titre": "Le CO2 et le sel attaquent",
-      "mot_fort": "attaquent",
+      "titre": "CO2 DE L'AIR",
+      "mot_fort": "CO2",
       "de": {
-        "label": "CO2 et sel",
-        "prompt": "a cloud of carbon dioxide and salt crystals, pixel art, single object"
+        "label": "CO2 de l'air",
+        "prompt": "a cloud of carbon dioxide, pixel art, single object"
       },
       "vers": {
-        "label": "Acier nu",
+        "label": "pH bas",
         "prompt": "a bare steel rebar losing its protection, pixel art, single object"
       },
-      "montant": "corrosion",
+      "montant": "carbonation",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -292,10 +292,10 @@
     {
       "n": 11,
       "type": "pd_tampon",
-      "titre": "La rouille gonfle",
-      "mot_fort": "gonfle",
-      "tampon": "ROUILLE",
-      "prompt": "a rusty steel rebar swelling inside a concrete slab, pixel art, side view, single object",
+      "titre": "CHLORURES · SEL",
+      "mot_fort": "chlorures",
+      "tampon": "SEL",
+      "prompt": "salt crystals reaching a steel rebar inside a concrete slab, pixel art, side view, single object",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -308,11 +308,11 @@
     {
       "n": 12,
       "type": "kinetic",
-      "titre": "Le béton éclate",
-      "mot_fort": "éclate",
+      "titre": "L'ACIER ROUILLE",
+      "mot_fort": "rouille",
       "lines": [
-        "Le béton",
-        "éclate"
+        "L'ACIER",
+        "ROUILLE"
       ],
       "fond_photo_requete": "corrosion armatures béton rouille éclatement façade",
       "dialogue": [
@@ -327,9 +327,9 @@
     {
       "n": 13,
       "type": "pd_tampon",
-      "titre": "Rouille : plus de volume",
-      "mot_fort": "volume",
-      "tampon": "VOLUME",
+      "titre": "ÉCLATEMENT",
+      "mot_fort": "éclatement",
+      "tampon": "ÉCLATEMENT",
       "prompt": "a rusty steel rebar swelling and pushing against concrete, pixel art, side view, single object",
       "dialogue": [
         {
@@ -342,18 +342,19 @@
     },
     {
       "n": 14,
-      "type": "quiz",
-      "titre": "Vous le saviez ?",
-      "mot_fort": "saviez",
-      "question": "Pourquoi le béton armé tient-il ?",
-      "options": [
-        "Le béton est plus solide",
-        "L'acier reprend la traction",
-        "Le béton devient souple"
-      ],
-      "bonne": 1,
-      "prompt": "a reinforced concrete beam with a question mark, pixel art, single object",
-      "fond_photo_requete": "pont poutre béton armé cage d'armatures chantier 2026",
+      "type": "pd_flux",
+      "titre": "L'ACIER TRAHIT",
+      "mot_fort": "trahit",
+      "de": {
+        "label": "Acier",
+        "prompt": "a steel rebar corroding and swelling, pixel art, single object"
+      },
+      "vers": {
+        "label": "Béton",
+        "prompt": "a concrete slab cracking apart, pixel art, single object"
+      },
+      "montant": "éclatement",
+      "fond_photo_requete": "acier corrodé béton éclaté chantier",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -365,13 +366,18 @@
     },
     {
       "n": 15,
-      "type": "outro",
-      "titre": "Béton plus acier : le duo",
-      "mot_fort": "duo",
-      "text": "Béton plus acier : le duo qui tient",
-      "cta": "Suivez pour la suite",
-      "prompt": "a steel rebar and concrete beam side by side, pixel art, single object",
-      "fond_photo_requete": "chantier béton armé coffrage ferraillage France 2026",
+      "type": "quiz",
+      "titre": "VOUS LE SAVIEZ ?",
+      "mot_fort": "saviez",
+      "question": "Saviez-vous que la rouille fait éclater le béton ?",
+      "options": [
+        "Non, la rouille protège le béton",
+        "Oui, la rouille le fait éclater",
+        "Non, le béton ne se fissure jamais"
+      ],
+      "bonne": 1,
+      "prompt": "a reinforced concrete beam with a question mark, pixel art, single object",
+      "fond_photo_requete": "pont poutre béton armé cage d'armatures chantier 2026",
       "dialogue": [
         {
           "qui": "narrateur",

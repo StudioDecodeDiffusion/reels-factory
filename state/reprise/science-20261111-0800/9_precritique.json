@@ -1,0 +1,43 @@
+{
+  "id": "science-20261111-0800",
+  "agent": "7.4",
+  "compte": "science",
+  "sujet": "Pourquoi le béton armé tient… et ce qui le tue",
+  "decision": "go",
+  "motif": "Aucun défaut bloquant : pas de contenu interdit, pas d'image de presse, pas de chiffre non sourcé, pas de mention d'IA. Accroche (question), fonctionnement (pas_a_pas), musique (piano_minimal), voix (V1+V3) et palette (acier_ambre) sont tous différents de la dernière vidéo (science-20261104-0800 : contre_intuitif, vrai_faux, synthwave, V2+V4, cuivre_vert_nuit). Durée : 60 s dans le scénario (15 plans de 4 s), 57,2 s dans la DA : >= 55 s. Dialogue d'environ 165 mots, dans la fourchette 160-170. Fonds photo : 6 scènes sur 14 avec fond_photo_requete (minimum atteint, sans URL de presse).",
+  "faits": {
+    "verifies": [
+      "Béton fort en compression, faible en traction : principe du béton armé.",
+      "pH très élevé du béton qui passive l'acier ; carbonation et chlorures détruisent cette protection.",
+      "La rouille occupe plus de volume que le métal sain, d'où l'éclatement de l'enrobage.",
+      "Dilatation thermique voisine du béton et de l'acier : formulation sans chiffre, correcte."
+    ],
+    "faux_ou_non_sources": []
+  },
+  "corrections": [
+    {
+      "fichier": "6_da.json",
+      "champ": "scenes[1..14] titre (scènes 2, 3, 4, 11, 12, 13, 14, 15)",
+      "probleme": "Non bloquant mais visible : la DA ne suit pas le scénario. Les titres à l'écran diffèrent de texte_ecran du scénario sur la plupart des scènes (ex. scène 2 DA « Compression oui, traction non » contre plan 2 « POUTRE QUI PLIE » ; scène 14 DA « Vous le saviez ? » contre plan 14 « L'ACIER TRAHIT » ; scène 15 DA outro contre plan 15 quiz). Le quiz de la DA (« Pourquoi le béton armé tient-il ? ») n'est pas celui du scénario.",
+      "action": "Agent 6 : réaligner titre, type et prompt de chaque scène DA sur le plan du même index dans 5_scenario.json avant tool spec. A défaut, agent 8 vérifie que le texte à l'écran correspond à la narration."
+    },
+    {
+      "fichier": "5_scenario.json",
+      "champ": "plans[14] quiz",
+      "probleme": "Vérifier l'index de la bonne réponse (bonne: 1) : indexation 0 ou 1 à confirmer dans le rendu, sinon la réponse désignée est fausse.",
+      "action": "Agent 8 : contrôler la bonne réponse à l'écran (« L'acier reprend la traction »)."
+    },
+    {
+      "fichier": "legende (5_scenario.json)",
+      "champ": "legende",
+      "probleme": "Finition : la règle « 1re ligne accroche + chiffre » n'est pas respectée (aucun chiffre dans le concept). Wikipédia figure dans les sources de la légende ; sans effet sur les images mais à retirer si la règle est appliquée strictement.",
+      "action": "Facultatif, non bloquant."
+    },
+    {
+      "fichier": "6_da.json",
+      "champ": "theme.mise_en_page",
+      "probleme": "Finition : plein_ecran identique à la dernière vidéo. Ce champ n'est pas dans la liste des variétés obligatoires, donc non bloquant.",
+      "action": "Aucune."
+    }
+  ]
+}
