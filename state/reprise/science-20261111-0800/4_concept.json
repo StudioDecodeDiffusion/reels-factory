@@ -1,0 +1,45 @@
+{
+  "id": "beton_arme",
+  "compte": "science",
+  "creneau": "2026-11-11T08:00+01:00",
+  "plateforme": "instagram",
+  "sujet": "Pourquoi le béton armé tient… et ce qui le tue",
+  "file_source": "state/file_sujets_science.json (id beton_arme, fait:false, le plus proche du créneau)",
+  "accroche": "question",
+  "accroche_texte": "Pourquoi une dalle en béton sans acier se fissure-t-elle sous son propre poids ?",
+  "fonctionnement": "pas_a_pas",
+  "musique": "piano_minimal",
+  "titre_miniature": "Le béton seul casse, l'acier le sauve",
+  "mots_choc": "SANS ACIER",
+  "surtitre_miniature": "Décodé · 11/11/2026",
+  "idee_centrale": "Le béton résiste très bien à la compression mais très mal à la traction : une poutre qui fléchit tire sur sa face basse et se fissure. Les barres d'acier, placées dans la zone tendue, reprennent cet effort. Les deux matériaux se dilatent à peu près de la même façon avec la chaleur, ce qui évite qu'ils se décollent.",
+  "ce_qui_le_tue": "Le béton protège l'acier par sa forte alcalinité (pH très élevé), qui forme une couche passivante autour des barres. Quand le béton se carbonate (le CO2 de l'air baisse le pH) ou quand des chlorures (sel de mer, sels de déneigement) atteignent les armatures, l'acier rouille. La rouille prend plus de volume que l'acier, ce qui fissure le béton puis le fait éclater (écaillage).",
+  "faits_a_verifier": [
+    "Le béton résiste bien à la compression et mal à la traction (faible résistance en traction) : principe de base du béton armé.",
+    "Le béton a un pH très alcalin qui passive l'acier ; la carbonation et les chlorures détruisent cette protection.",
+    "La rouille occupe plus de volume que le métal sain, ce qui crée des contraintes d'éclatement dans l'enrobage.",
+    "Les coefficients de dilatation thermique du béton et de l'acier sont voisins (chiffre exact à ne pas citer sans vérification)."
+  ],
+  "sources": [
+    "https://www.hqe.guidenr.fr/cible-2-hqe/mecanismes-corrosion-armatures-aciers-beton.php",
+    "https://cahier-interactif-auscultation-ouvrages-art.univ-gustave-eiffel.fr/fileadmin/contributeurs/Auscultation_ouvrages_art/FicheD1-1-cahier_interactif_auscultation_ouvrages_art.pdf",
+    "https://fr.wikipedia.org/wiki/Carbonatation_du_b%C3%A9ton"
+  ],
+  "chiffres": [],
+  "variete": {
+    "precedente": {"accroche": "contre_intuitif", "fonctionnement": "vrai_faux", "musique": "synthwave"},
+    "accroche": "question (différente de contre_intuitif)",
+    "fonctionnement": "pas_a_pas (différent de vrai_faux)",
+    "musique": "piano_minimal (différente de synthwave)"
+  },
+  "images": [],
+  "requetes_images": [
+    "pont poutre béton armé cage d'armatures chantier 2026",
+    "ferraillage barres acier béton armé chantier",
+    "dalle béton fissurée armatures rouillées éclatement",
+    "corrosion armatures béton rouille éclatement façade",
+    "béton armé coupe transversale acier tendu compression",
+    "chantier béton armé coffrage ferraillage France 2026"
+  ],
+  "consignes": "Pas de mention d'IA. Pas de chiffre sans source vérifiée : aucun chiffre n'est retenu dans ce concept. Pas d'image de presse retenue (aucune URL de la veille ne concerne ce sujet)."
+}
