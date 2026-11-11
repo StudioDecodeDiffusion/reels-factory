@@ -1,16 +1,19 @@
 {
   "id": "science-20261111-0800",
-  "role": "7.5 critique finale",
+  "role": "7.5 critique finale (2e passage)",
   "decision": "bloquant",
-  "motif": "Scène 1 (hook, 0 à 6,9 s) vide : ni titre « LE BÉTON SEUL CASSE », ni visuel ni photo ; seuls les sous-titres s'affichent. Vérifié sur video_scene0.png, apercu.png et les 7 premières secondes de video.mp4 (images 1 à 8). L'accroche « thèse à l'écran dès la 1re seconde » n'est donc pas tenue.",
-  "scene": 1,
+  "motif": "Scène 15 (quiz, « VOUS LE SAVIEZ ? ») vide : la question « Saviez-vous que la rouille fait éclater le béton ? » et les trois options n'apparaissent pas, ni dans video_scene14.png ni dans la frame extraite à 3 s de la fin de video.mp4 ; seul le titre et le sous-titre sont visibles. Le quiz n'a donc plus de contenu à l'écran.",
+  "scene": 15,
   "corrections": [
-    "Scène 1 : faire apparaître le titre et le visuel (fond_photo_requete ou prompt pd) dès le début ; vérifier que le titre n'est pas écrasé par le sous-titre.",
-    "Scène 15 (quiz) : les options de réponse ne sont pas visibles sur les images contrôlées (titre et sous-titre seulement) ; à vérifier au rendu.",
-    "Légende : « Sources : HQE, Université Gustave Eiffel, Wikipédia » cite Wikipédia en source texte ; non bloquant, mais à remplacer par une source primaire si possible.",
-    "Dialogue : 158 mots, sous la fourchette 160-170 de la règle ; non bloquant."
+    "Scène 15 (bloquant) : faire apparaître la question et les options de réponse à l'écran, et vérifier la bonne réponse (option 2) au rendu.",
+    "Scènes 4, 8 et 12 (kinetic) : sur video_scene3.png (scène 4) et l'aperçu (scènes 8 et 12), seul le titre en haut et le sous-titre sont visibles ; le centre est vide, et le fond photo (fond_photo_requete) n'apparaît pas. Même cause probable que la scène 15 : à corriger dans la même passe. Si le fond photo est volontairement absent (pas d'image de presse), le texte central doit au moins s'afficher.",
+    "Scène 1 : corrigée depuis le premier rendu. Le titre « LE BÉTON SEUL CASSE », le visuel dalle et l'étiquette s'affichent sur video_scene0.png et sur l'aperçu.",
+    "Scènes 3 et 6 : les étiquettes « FAIBLE » et « REPRISE » chevauchent le bord de la boîte de sous-titre ; défaut de finition, non bloquant.",
+    "Scène 2 : les tirets décoratifs jaunes traversent le visuel et le sous-titre ; défaut de style, non bloquant.",
+    "Légende : « Sources : HQE, Université Gustave Eiffel, Wikipédia » cite Wikipédia en source texte ; non bloquant, à remplacer par une source primaire si possible.",
+    "Scènes 9 à 14 non revues dans ce passage (seules 1 à 8 sur l'aperçu, 4, 15 et la fin de la vidéo ont été contrôlées)."
   ],
-  "faits": "Tous les faits du dialogue sont corrects ou plausibles (béton tendu/comprimé, passivation à pH élevé, dilatation voisine, carbonation, chlorures, rouille qui gonfle). Aucun chiffre inventé détecté. Pas de fait à retirer.",
-  "voix": "voix_override présentes pour narrateur et mascotte ; dialogues non vides (rendu de contrôle muet, voix ajoutée au rendu final).",
+  "faits": "Faits du dialogue contrôlés : béton résistant à la compression et faible en traction, acier dans la zone tendue, dilatation voisine, passivation à pH élevé, carbonation par le CO2 qui abaisse le pH, chlorures, rouille qui gonfle et fait éclater l'enrobage. Aucun chiffre ni citation inventé détecté. Aucun fait à retirer.",
+  "voix": "voix_override présentes pour narrateur (chatterbox) et mascotte (piper) dans 7_spec.json ; dialogues non vides. Rendu de contrôle muet (PIXELS_HORS_LIGNE), voix ajoutée au rendu final : non bloquant.",
   "contenu_interdit": false
 }
