@@ -1,0 +1,141 @@
+{
+  "accroche": "question",
+  "fonctionnement": "pas_a_pas",
+  "musique": "piano_minimal",
+  "variete": {
+    "precedente": {"accroche": "contre_intuitif", "fonctionnement": "vrai_faux", "musique": "synthwave"},
+    "accroche": "question (différente de contre_intuitif)",
+    "fonctionnement": "pas_a_pas (différent de vrai_faux)",
+    "musique": "piano_minimal (différente de synthwave)"
+  },
+  "plans": [
+    {
+      "type": "hook",
+      "duree_s": 4.0,
+      "texte_ecran": "LE BÉTON SEUL CASSE",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Le béton seul casse, l'acier le sauve. Pourquoi une dalle sans acier se fissure-t-elle ?", "expression": "neutre"}
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "texte_ecran": "POUTRE QUI PLIE",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Une poutre plie légèrement sous son poids. Sa face basse s'étire.", "expression": "neutre"}
+      ]
+    },
+    {
+      "type": "pd_jauge",
+      "duree_s": 4.0,
+      "texte_ecran": "TRACTION : FAIBLE",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Le béton résiste très bien à la compression, mal à la traction.", "expression": "neutre"}
+      ]
+    },
+    {
+      "type": "pd_versus",
+      "duree_s": 4.0,
+      "texte_ecran": "COMPRESSION OK",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Il supporte l'écrasement, mais il se fend dès qu'il s'étire.", "expression": "sourire"}
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "texte_ecran": "BARRES D'ACIER",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "On place des barres d'acier dans cette zone tendue.", "expression": "neutre"}
+      ]
+    },
+    {
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "texte_ecran": "CHACUN SON EFFORT",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "L'acier reprend la traction, le béton reprend la compression.", "expression": "neutre"}
+      ]
+    },
+    {
+      "type": "pd_tampon",
+      "duree_s": 4.0,
+      "texte_ecran": "DILATATION VOISINE",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Béton et acier se dilatent à peu près pareil avec la chaleur.", "expression": "neutre"}
+      ]
+    },
+    {
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "texte_ecran": "LE PROTECTEUR",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Le béton protège l'acier : son pH très élevé le passive.", "expression": "sourire"}
+      ]
+    },
+    {
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "texte_ecran": "COUCHE PASSIVANTE",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Une couche passivante entoure chaque barre d'acier.", "expression": "neutre"}
+      ]
+    },
+    {
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "texte_ecran": "CO2 DE L'AIR",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Le CO2 de l'air fait baisser ce pH : c'est la carbonation.", "expression": "neutre"}
+      ]
+    },
+    {
+      "type": "pd_versus",
+      "duree_s": 4.0,
+      "texte_ecran": "CHLORURES · SEL",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Les chlorures, du sel de mer ou de déneigement, atteignent les armatures.", "expression": "neutre"}
+      ]
+    },
+    {
+      "type": "pd_tampon",
+      "duree_s": 4.0,
+      "texte_ecran": "L'ACIER ROUILLE",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "L'acier rouille. La rouille prend plus de place que le métal sain.", "expression": "choc"}
+      ]
+    },
+    {
+      "type": "pd_jauge",
+      "duree_s": 4.0,
+      "texte_ecran": "ÉCLATEMENT",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Ce gonflement fissure l'enrobage, puis le fait éclater.", "expression": "choc"}
+      ]
+    },
+    {
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "texte_ecran": "L'ACIER TRAHIT",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "L'acier qui sauve le béton est aussi ce qui le détruit.", "expression": "choc"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "duree_s": 4.0,
+      "texte_ecran": "VOUS LE SAVIEZ ?",
+      "dialogue": [
+        {"qui": "narrateur", "texte": "Et vous, saviez-vous que la rouille fait éclater le béton ?", "expression": "sourire"}
+      ]
+    }
+  ],
+  "legende": "Pourquoi une dalle sans acier se fissure-t-elle sous son propre poids ?\n\nLe béton résiste bien à l'écrasement, mal à la traction. L'acier placé dans la zone tendue reprend l'effort, mais il rouille si le béton ne le protège plus.\n\nEt vous, savez-vous pourquoi l'acier finit par faire éclater le béton ? 👇\n\nEnvoie-la à quelqu'un qui marche sur une dalle tous les jours ! 📤\n\nSources : HQE, Université Gustave Eiffel, Wikipédia",
+  "hashtags": [
+    "#science",
+    "#bétonarmé",
+    "#acier",
+    "#chantier",
+    "#décodelasciensesimplement"
+  ]
+}

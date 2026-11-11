@@ -1,0 +1,385 @@
+{
+  "id": "science-20261111-0800",
+  "compte": "science",
+  "theme": {
+    "fond": "#0B1F2A",
+    "texte": "#F4F1E8",
+    "accent": "#FFB400",
+    "accent2": "#4FD1C5",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "acier_ambre",
+    "palette": [
+      "#0B1F2A",
+      "#16384A",
+      "#FFB400",
+      "#4FD1C5",
+      "#F4F1E8",
+      "#E4572E"
+    ],
+    "mise_en_page": "plein_ecran",
+    "tenues": {
+      "narrateur": "science",
+      "mascotte": "detective"
+    }
+  },
+  "variete": {
+    "accroche": "question",
+    "trend": "aucune",
+    "fonctionnement": "pas_a_pas",
+    "mise_en_page": "plein_ecran",
+    "musique": "piano_minimal",
+    "voix": "V1+V3",
+    "palette": "acier_ambre"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "pop"
+    ],
+    "3": [
+      "whoosh"
+    ],
+    "4": [
+      "pop"
+    ],
+    "5": [
+      "whoosh"
+    ],
+    "6": [
+      "pop"
+    ],
+    "7": [
+      "whoosh"
+    ],
+    "8": [
+      "pop"
+    ],
+    "9": [
+      "whoosh"
+    ],
+    "10": [
+      "pop"
+    ],
+    "11": [
+      "whoosh"
+    ],
+    "12": [
+      "pop"
+    ],
+    "13": [
+      "whoosh"
+    ],
+    "14": [
+      "pop"
+    ],
+    "15": [
+      "whoosh"
+    ]
+  },
+  "musique": {
+    "genre": "piano_minimal",
+    "volume": 0.4
+  },
+  "titre_miniature": "Le béton seul casse, l'acier le sauve",
+  "mots_choc": "SANS ACIER",
+  "surtitre_miniature": "Décodé · 11/11/2026",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "title": "Le béton seul casse",
+      "mot_fort": "casse",
+      "prompt": "a plain concrete slab cracking under its own weight, pixel art, side view, single object",
+      "fond_photo_requete": "dalle béton fissurée armatures rouillées éclatement",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le béton seul casse, l'acier le sauve. Pourquoi une dalle sans acier se fissure-t-elle ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 2,
+      "type": "pd_versus",
+      "titre": "Compression oui, traction non",
+      "mot_fort": "traction",
+      "gauche": {
+        "label": "Compression",
+        "prompt": "a heavy stone block pressed down by a press, pixel art, single object"
+      },
+      "droite": {
+        "label": "Traction",
+        "prompt": "a concrete bar pulled apart at both ends, pixel art, single object"
+      },
+      "verdict": "Le béton lâche",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une poutre plie légèrement sous son poids. Sa face basse s'étire.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 3,
+      "type": "pd_flux",
+      "titre": "La poutre fléchit",
+      "mot_fort": "fléchit",
+      "de": {
+        "label": "Charge",
+        "prompt": "a heavy load pressing down on a beam, pixel art, single object"
+      },
+      "vers": {
+        "label": "Face basse",
+        "prompt": "a concrete beam bottom face cracking, pixel art, single object"
+      },
+      "montant": "traction",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le béton résiste très bien à la compression, mal à la traction.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 4,
+      "type": "kinetic",
+      "titre": "Le ferraillage prend le relais",
+      "mot_fort": "relais",
+      "lines": [
+        "Le ferraillage",
+        "prend le relais"
+      ],
+      "fond_photo_requete": "ferraillage barres acier béton armé chantier",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Il supporte l'écrasement, mais il se fend dès qu'il s'étire.",
+          "expression": "content"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 5,
+      "type": "pd_objet",
+      "titre": "Acier dans la zone tendue",
+      "mot_fort": "tendue",
+      "prompt": "a steel rebar placed at the bottom of a concrete beam, pixel art, single object",
+      "etiquette": "Barres d'acier",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "On place des barres d'acier dans cette zone tendue.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 6,
+      "type": "pd_flux",
+      "titre": "L'acier reprend l'effort",
+      "mot_fort": "reprend",
+      "de": {
+        "label": "Effort",
+        "prompt": "a tension arrow pulling on a steel bar, pixel art, single object"
+      },
+      "vers": {
+        "label": "Acier",
+        "prompt": "a steel rebar holding a beam together, pixel art, single object"
+      },
+      "montant": "effort",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "L'acier reprend la traction, le béton reprend la compression.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 7,
+      "type": "pd_objet",
+      "titre": "Dilatation voisine, pas de décollement",
+      "mot_fort": "décollement",
+      "prompt": "two steel and concrete bars expanding together in the heat, pixel art, single object",
+      "etiquette": "Dilatation voisine",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Béton et acier se dilatent à peu près pareil avec la chaleur.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 8,
+      "type": "kinetic",
+      "titre": "Un pH très alcalin",
+      "mot_fort": "alcalin",
+      "lines": [
+        "Un pH très alcalin",
+        "protège l'acier"
+      ],
+      "fond_photo_requete": "béton armé coupe transversale acier tendu compression",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le béton protège l'acier : son pH très élevé le passive.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 9,
+      "type": "pd_objet",
+      "titre": "Une couche passivante",
+      "mot_fort": "passivante",
+      "prompt": "a thin protective film covering a steel rebar, pixel art, single object",
+      "etiquette": "Couche protectrice",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une couche passivante entoure chaque barre d'acier.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 3.8
+    },
+    {
+      "n": 10,
+      "type": "pd_flux",
+      "titre": "Le CO2 et le sel attaquent",
+      "mot_fort": "attaquent",
+      "de": {
+        "label": "CO2 et sel",
+        "prompt": "a cloud of carbon dioxide and salt crystals, pixel art, single object"
+      },
+      "vers": {
+        "label": "Acier nu",
+        "prompt": "a bare steel rebar losing its protection, pixel art, single object"
+      },
+      "montant": "corrosion",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le CO2 de l'air fait baisser ce pH : c'est la carbonation.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 11,
+      "type": "pd_tampon",
+      "titre": "La rouille gonfle",
+      "mot_fort": "gonfle",
+      "tampon": "ROUILLE",
+      "prompt": "a rusty steel rebar swelling inside a concrete slab, pixel art, side view, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les chlorures, du sel de mer ou de déneigement, atteignent les armatures.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 12,
+      "type": "kinetic",
+      "titre": "Le béton éclate",
+      "mot_fort": "éclate",
+      "lines": [
+        "Le béton",
+        "éclate"
+      ],
+      "fond_photo_requete": "corrosion armatures béton rouille éclatement façade",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "L'acier rouille. La rouille prend plus de place que le métal sain.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 13,
+      "type": "pd_tampon",
+      "titre": "Rouille : plus de volume",
+      "mot_fort": "volume",
+      "tampon": "VOLUME",
+      "prompt": "a rusty steel rebar swelling and pushing against concrete, pixel art, side view, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ce gonflement fissure l'enrobage, puis le fait éclater.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 4.1
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "titre": "Vous le saviez ?",
+      "mot_fort": "saviez",
+      "question": "Pourquoi le béton armé tient-il ?",
+      "options": [
+        "Le béton est plus solide",
+        "L'acier reprend la traction",
+        "Le béton devient souple"
+      ],
+      "bonne": 1,
+      "prompt": "a reinforced concrete beam with a question mark, pixel art, single object",
+      "fond_photo_requete": "pont poutre béton armé cage d'armatures chantier 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "L'acier qui sauve le béton est aussi ce qui le détruit.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 15,
+      "type": "outro",
+      "titre": "Béton plus acier : le duo",
+      "mot_fort": "duo",
+      "text": "Béton plus acier : le duo qui tient",
+      "cta": "Suivez pour la suite",
+      "prompt": "a steel rebar and concrete beam side by side, pixel art, single object",
+      "fond_photo_requete": "chantier béton armé coffrage ferraillage France 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et vous, saviez-vous que la rouille fait éclater le béton ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3
+    }
+  ]
+}
