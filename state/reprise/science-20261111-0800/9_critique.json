@@ -1,19 +1,19 @@
 {
   "id": "science-20261111-0800",
-  "role": "7.5 critique finale (2e passage)",
+  "role": "7.5 critique finale (3e passage)",
   "decision": "bloquant",
-  "motif": "Scène 15 (quiz, « VOUS LE SAVIEZ ? ») vide : la question « Saviez-vous que la rouille fait éclater le béton ? » et les trois options n'apparaissent pas, ni dans video_scene14.png ni dans la frame extraite à 3 s de la fin de video.mp4 ; seul le titre et le sous-titre sont visibles. Le quiz n'a donc plus de contenu à l'écran.",
+  "motif": "Scène 15 (quiz « VOUS LE SAVIEZ ? ») toujours vide : seuls le titre et le sous-titre s'affichent sur video_scene14.png. La question « La rouille fait éclater le béton ? » et les trois items (faux / vrai / faux) de 7_spec.json (type checklist) n'apparaissent pas. Le contenu visuel de la scène est absent.",
   "scene": 15,
   "corrections": [
-    "Scène 15 (bloquant) : faire apparaître la question et les options de réponse à l'écran, et vérifier la bonne réponse (option 2) au rendu.",
-    "Scènes 4, 8 et 12 (kinetic) : sur video_scene3.png (scène 4) et l'aperçu (scènes 8 et 12), seul le titre en haut et le sous-titre sont visibles ; le centre est vide, et le fond photo (fond_photo_requete) n'apparaît pas. Même cause probable que la scène 15 : à corriger dans la même passe. Si le fond photo est volontairement absent (pas d'image de presse), le texte central doit au moins s'afficher.",
-    "Scène 1 : corrigée depuis le premier rendu. Le titre « LE BÉTON SEUL CASSE », le visuel dalle et l'étiquette s'affichent sur video_scene0.png et sur l'aperçu.",
+    "Scène 15 (bloquant) : afficher la question et les trois items de la checklist (« Non, la rouille protège le béton » / « Oui, la rouille le fait éclater » / « Non, le béton ne se fissure jamais ») à l'écran, puis contrôler la scène au rendu. Le fond photo (fond_photo_requete) est à vérifier en même temps.",
+    "Scènes 4, 8 et 12 : corrigées. video_scene3.png (scène 4 « COMPRESSION OK »), video_scene7.png (scène 8 « LE PROTECTEUR ») et video_scene11.png (scène 12 « L'ACIER ROUILLE ») montrent désormais le visuel central (carré jaune) et l'étiquette (« Béton comprimé », « Le béton protège », « Acier rouillé »). Le texte central n'est plus vide.",
+    "Scènes 1 à 8 : vérifiées sur la planche apercu.png, sans défaut bloquant. Le titre, le visuel et l'étiquette sont présents sur chaque scène.",
     "Scènes 3 et 6 : les étiquettes « FAIBLE » et « REPRISE » chevauchent le bord de la boîte de sous-titre ; défaut de finition, non bloquant.",
     "Scène 2 : les tirets décoratifs jaunes traversent le visuel et le sous-titre ; défaut de style, non bloquant.",
-    "Légende : « Sources : HQE, Université Gustave Eiffel, Wikipédia » cite Wikipédia en source texte ; non bloquant, à remplacer par une source primaire si possible.",
-    "Scènes 9 à 14 non revues dans ce passage (seules 1 à 8 sur l'aperçu, 4, 15 et la fin de la vidéo ont été contrôlées)."
+    "Scènes 9 à 14 : non revues dans ce passage (la planche ne montre que 1 à 8) ; à contrôler après correction de la scène 15.",
+    "Légende : « Sources : HQE, Université Gustave Eiffel, Wikipédia » cite Wikipédia en source texte ; non bloquant, à remplacer par une source primaire si possible."
   ],
-  "faits": "Faits du dialogue contrôlés : béton résistant à la compression et faible en traction, acier dans la zone tendue, dilatation voisine, passivation à pH élevé, carbonation par le CO2 qui abaisse le pH, chlorures, rouille qui gonfle et fait éclater l'enrobage. Aucun chiffre ni citation inventé détecté. Aucun fait à retirer.",
+  "faits": "Faits du dialogue contrôlés : béton résistant à la compression et faible en traction, acier dans la zone tendue, dilatation voisine, passivation à pH élevé, rouille qui gonfle et fait éclater l'enrobage. Aucun chiffre ni citation inventé détecté. Aucun fait à retirer.",
   "voix": "voix_override présentes pour narrateur (chatterbox) et mascotte (piper) dans 7_spec.json ; dialogues non vides. Rendu de contrôle muet (PIXELS_HORS_LIGNE), voix ajoutée au rendu final : non bloquant.",
   "contenu_interdit": false
 }

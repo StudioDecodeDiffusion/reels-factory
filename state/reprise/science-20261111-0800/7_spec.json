@@ -160,14 +160,11 @@
     },
     {
       "n": 4,
-      "type": "kinetic",
+      "type": "pd_objet",
       "titre": "COMPRESSION OK",
       "mot_fort": "OK",
-      "lines": [
-        "COMPRESSION",
-        "OK"
-      ],
-      "fond_photo_requete": "ferraillage barres acier béton armé chantier",
+      "prompt": "a concrete column under heavy vertical load standing firm, pixel art, side view, single object",
+      "etiquette": "Béton comprimé",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -234,14 +231,11 @@
     },
     {
       "n": 8,
-      "type": "kinetic",
+      "type": "pd_objet",
       "titre": "LE PROTECTEUR",
       "mot_fort": "protecteur",
-      "lines": [
-        "LE",
-        "PROTECTEUR"
-      ],
-      "fond_photo_requete": "béton armé coupe transversale acier tendu compression",
+      "prompt": "a steel rebar wrapped inside a thick concrete cover, pixel art, cross section, single object",
+      "etiquette": "Le béton protège",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -308,14 +302,11 @@
     },
     {
       "n": 12,
-      "type": "kinetic",
+      "type": "pd_objet",
       "titre": "L'ACIER ROUILLE",
       "mot_fort": "rouille",
-      "lines": [
-        "L'ACIER",
-        "ROUILLE"
-      ],
-      "fond_photo_requete": "corrosion armatures béton rouille éclatement façade",
+      "prompt": "a steel rebar covered with rust flakes, pixel art, single object",
+      "etiquette": "Acier rouillé",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -367,17 +358,24 @@
     },
     {
       "n": 15,
-      "type": "quiz",
+      "type": "checklist",
       "titre": "VOUS LE SAVIEZ ?",
       "mot_fort": "saviez",
-      "question": "Saviez-vous que la rouille fait éclater le béton ?",
-      "options": [
-        "Non, la rouille protège le béton",
-        "Oui, la rouille le fait éclater",
-        "Non, le béton ne se fissure jamais"
+      "title": "La rouille fait éclater le béton ?",
+      "items": [
+        {
+          "texte": "Non, la rouille protège le béton",
+          "etat": "faux"
+        },
+        {
+          "texte": "Oui, la rouille le fait éclater",
+          "etat": "vrai"
+        },
+        {
+          "texte": "Non, le béton ne se fissure jamais",
+          "etat": "faux"
+        }
       ],
-      "bonne": 1,
-      "prompt": "a reinforced concrete beam with a question mark, pixel art, single object",
       "fond_photo_requete": "pont poutre béton armé cage d'armatures chantier 2026",
       "dialogue": [
         {
