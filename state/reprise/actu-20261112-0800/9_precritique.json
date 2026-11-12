@@ -1,0 +1,68 @@
+{
+  "id": "actu-20261112-0800",
+  "compte": "actu",
+  "agent": "7.4 pre-critique (scenario + DA)",
+  "fichiers_lus": ["0_dossier.md", "4_concept.json", "5_scenario.json", "6_da.json"],
+  "decision": "go",
+  "defauts_bloquants": [],
+  "controles": {
+    "contenu_interdit": "aucun (pas de fausse citation, pas d'accusation nominative, pas d'appel a la violence, pas d'image hors sujet ni Wikipedia)",
+    "faits_inventes": "aucun : chaque fait provient du titre ou de l'URL de la veille (grève nationale espagnole le 11/11, droite et extreme droite en position de force a trois semaines des legislatives)",
+    "chiffres": "120 000 manifestants et 'des millions' bien retires (concept.chiffres_retires) ; aucun chiffre n'apparait dans les dialogues ni les titres",
+    "variete_vs_derniere_video": "accroche statement_avec_relance (dernier : question_choc), fonctionnement timeline (dernier : debat), musique curieux (dernier : funk), voix V2 (dernier : V1+V3) : tout different",
+    "voix": "voix_override.narrateur = V2 present dans 6_da.json ; 14 dialogues non vides dans 5_scenario.json (168 mots environ)",
+    "duree": "14 plans x 4 s = 56 s (minimum 55 s)",
+    "photos": "fond_photo sur 7 scenes sur 14 (1, 3, 5, 7, 9, 11, 13) ; fond_photo_requete present sur ces 7 scenes ; URL de la veille uniquement, pas de Wikipedia",
+    "legende": "accroche + chiffre en premiere ligne ; question 👇 ; partage 📤 ; 'Sources : BFM TV, L'Express' ; 5 hashtags dont #Actu (large), #Espagne et #CriseduLogement (entites), #Grève (actu), #Décodéactu (compte) ; aucune mention d'IA"
+  },
+  "faits_douteux_non_bloquants": [
+    {
+      "passage": "Grève nationale en Espagne le 11 novembre 2026 (scene 2, scene 12, legende)",
+      "constat": "source = titre et URL BFM de la veille ; page non consultee (acces refuse). Date deduite de l'URL (202611110808).",
+      "action_suggeree": "confirmer avant rendu, ou garder formulation sans precision supplementaire"
+    },
+    {
+      "passage": "Madrid, Barcelone dans la rue (scene 5, titre) et 'Barcelone grève générale' (requete scene 3)",
+      "constat": "Barcelone n'apparait dans aucun texte de la veille ; seule trace = nom de fichier d'une photo courrierinternational (spain-strike-barcelona). Affirmation non sourcee.",
+      "action_suggeree": "retirer Barcelone du titre de la scene 5 ou le sourcer ; ne pas l'utiliser dans les dialogues"
+    },
+    {
+      "passage": "niveau 'fort' de la jauge (scene 6, pd_jauge) et 'Une grève nationale'",
+      "constat": "qualificatif de niveau non chiffre, non source ; presente comme une mesure",
+      "action_suggeree": "remplacer par un libelle sans niveau ou retirer la jauge"
+    },
+    {
+      "passage": "Images : BFM (nom de fichier '120-000-manifestants'), L'Express, Courrier international (photos du sujet)",
+      "constat": "contenu des photos non verifie ; le chiffre n'est pas dans le texte, donc pas de risque de fait, mais l'image peut afficher un autre evenement",
+      "action_suggeree": "verifier visuellement l'apercu (7_spec / video.mp4) avant publication"
+    }
+  ],
+  "corrections_non_bloquantes": [
+    {
+      "sujet": "Incoherence scenario / DA (structure des scenes)",
+      "constat": "les types des 14 scenes ne correspondent pas : scenario = hook, timeline, photo, pd_objet, pd_flux, timeline, pd_chiffre, pd_versus, pd_flux, photo, pd_tampon, checklist, photo, outro ; DA = hook, pd_objet, pd_flux, pd_versus, hook, pd_jauge, quiz, pd_flux, hook, pd_tampon, hook, pd_objet, hook, quiz. Le scenario n'a ni quiz ni pd_jauge ; la DA n'a ni checklist ni outro. Les dialogues ne sont que dans le scenario, donc l'assemblage par index mettrait par exemple le CTA 'Dites-le en commentaire' sur un quiz.",
+      "action_suggeree": "a reconcilier avant tool spec : aligner les types par numero de scene (le CTA outro doit finir sur la scene 14)"
+    },
+    {
+      "sujet": "Quiz scenes 7 et 14",
+      "constat": "options placeholders identiques ('Le vote décidera' / 'Personne ne peut le dire'), bonne = 0 donc la bonne reponse est 'Le vote décidera', formule tautologique et non factuelle ; options dupliquees entre les deux scenes",
+      "action_suggeree": "remplacer par des options neutres et distinctes, ou passer la scene 7 en pd_flux ; ne pas afficher de 'bonne reponse' sur une question d'opinion"
+    },
+    {
+      "sujet": "Texte d'ecran du hook (scene 1)",
+      "constat": "'ESPAGNE : LA RUE CONTRE LE LOGEMENT' se lit comme une opposition au logement ; la formule juste est 'contre la crise du logement' (titre_miniature)",
+      "action_suggeree": "aligner texte_ecran sur titre_miniature"
+    },
+    {
+      "sujet": "Palette pixel_nuit",
+      "constat": "fond #0E1116, texte #F4F1EA, accent #FF5A36, accent2 #3FA7FF : nouvelle palette, differente de papier_journal ; conforme a la regle de variete. Charte du compte non verifiee dans mes fichiers.",
+      "action_suggeree": "validation de la charte par le proprietaire ou l'agent 6"
+    }
+  ],
+  "points_a_valider": [
+    "Palette = charte du compte, a valider",
+    "Quiz scenes 7 et 14 : placeholders neutres a remplacer ou a confirmer",
+    "7_spec.json est deja present dans le dossier alors que le pipeline place 7_spec apres 9_precritique : verifier qu'il est reconstruit apres cette decision (ne pas relire ici)"
+  ],
+  "rapport": "go : aucun defaut bloquant ; faits sources mais non verifies (page BFM inaccessible) ; a corriger avant rendu : Barcelone non sourcee (scene 5), incoherence de types scenario/DA, quiz placeholders."
+}
