@@ -1,0 +1,282 @@
+{
+  "id": "actu-20261112-0800",
+  "compte": "actu",
+  "plateforme": "instagram",
+  "theme": {
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "pixel_nuit",
+    "mise_en_page": "plein_ecran",
+    "tenues": {
+      "narrateur": "classique"
+    },
+    "fond": "#0E1116",
+    "texte": "#F4F1EA",
+    "accent": "#FF5A36",
+    "accent2": "#3FA7FF"
+  },
+  "variete": {
+    "accroche": "statement_avec_relance (différente de question_choc)",
+    "fonctionnement": "timeline (différent de debat)",
+    "musique": "curieux",
+    "voix": "V2 (différent de V1+V3)",
+    "palette": "pixel_nuit (différente de papier_journal)",
+    "mise_en_page": "plein_ecran (différente de jt)",
+    "trend": "Austérité vs colère sociale / contraste pouvoir vs gens"
+  },
+  "voix_override": {
+    "narrateur": "V2",
+    "mascotte_effet": "aucun"
+  },
+  "musique": {
+    "genre": "curieux",
+    "volume": 0.4,
+    "ambiance_globale": "curieux",
+    "ambiance_par_scene": {
+      "1": "tension",
+      "2": "curieux",
+      "3": "curieux",
+      "4": "tension",
+      "5": "tension",
+      "6": "tension",
+      "7": "curieux",
+      "8": "curieux",
+      "9": "tension",
+      "10": "tension",
+      "11": "curieux",
+      "12": "curieux",
+      "13": "tension",
+      "14": "curieux"
+    }
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "whoosh"
+    ],
+    "3": [
+      "whoosh"
+    ],
+    "4": [
+      "whoosh"
+    ],
+    "5": [
+      "whoosh"
+    ],
+    "6": [
+      "whoosh"
+    ],
+    "7": [
+      "whoosh"
+    ],
+    "8": [
+      "whoosh"
+    ],
+    "9": [
+      "whoosh"
+    ],
+    "10": [
+      "whoosh"
+    ],
+    "11": [
+      "whoosh"
+    ],
+    "12": [
+      "whoosh"
+    ],
+    "13": [
+      "whoosh"
+    ],
+    "14": [
+      "whoosh"
+    ]
+  },
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "duree_s": 4.0,
+      "titre": "L'Espagne se met en grève",
+      "mot_fort": "grève",
+      "prompt": "a pixel art protest crowd with banners at night, single object",
+      "fond_photo": "https://io-fsly-bfmtv.cdn.nextradiotv.com/6SKEhGjf2ESgByTGsVT2As4Vzk0=/0x0:1280x720/1280x0/images/Greve-nationale-en-Espagne-120-000-manifestants-a-Madrid-pour-le-logement-et-le-pouvoir-d-achat-2382434.jpg",
+      "fond_photo_requete": "grève nationale Espagne 11 novembre 2026 manifestation Madrid logement",
+      "title": "L'Espagne se met en grève"
+    },
+    {
+      "n": 2,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Pour se loger",
+      "mot_fort": "loger",
+      "prompt": "a pixel art house with a door key, single object",
+      "etiquette": "Logement"
+    },
+    {
+      "n": 3,
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "titre": "Logement et pouvoir d'achat",
+      "mot_fort": "pouvoir d'achat",
+      "de": {
+        "label": "Logement",
+        "prompt": "a pixel art house, single object"
+      },
+      "vers": {
+        "label": "Pouvoir d'achat",
+        "prompt": "a pixel art coin stack, single object"
+      },
+      "montant": "revendications",
+      "fond_photo": "https://focus.courrierinternational.com/2026/11/11/0/0/5500/3666/1200/630/60/0/4865e98_ftp-1-8tzcqyjaq6cv-2026-11-11t130006z-104036358-rc2oloaa8nm6-rtrmadp-3-spain-strike-barcelona.JPG",
+      "fond_photo_requete": "Espagne grève générale logement pouvoir d'achat 2026 manifestants"
+    },
+    {
+      "n": 4,
+      "type": "pd_versus",
+      "duree_s": 4.0,
+      "titre": "La rue face au pouvoir",
+      "mot_fort": "pouvoir",
+      "de": {
+        "label": "La rue",
+        "prompt": "a pixel art crowd with banners, single object"
+      },
+      "vers": {
+        "label": "Le pouvoir",
+        "prompt": "a pixel art government building, single object"
+      },
+      "verdict": "Qui écoute ?",
+      "gauche": {
+        "label": "La rue",
+        "prompt": "a pixel art crowd with banners, single object"
+      },
+      "droite": {
+        "label": "Le pouvoir",
+        "prompt": "a pixel art government building, single object"
+      }
+    },
+    {
+      "n": 5,
+      "type": "hook",
+      "duree_s": 4.0,
+      "titre": "Madrid, Barcelone dans la rue",
+      "mot_fort": "Barcelone",
+      "prompt": "a pixel art city street with marching silhouettes, single object",
+      "fond_photo": "https://io-fsly-bfmtv.cdn.nextradiotv.com/6SKEhGjf2ESgByTGsVT2As4Vzk0=/0x0:1280x720/1280x0/images/Greve-nationale-en-Espagne-120-000-manifestants-a-Madrid-pour-le-logement-et-le-pouvoir-d-achat-2382434.jpg",
+      "fond_photo_requete": "Madrid manifestation logement novembre 2026",
+      "title": "Madrid, Barcelone dans la rue"
+    },
+    {
+      "n": 6,
+      "type": "pd_jauge",
+      "duree_s": 4.0,
+      "titre": "Une grève nationale",
+      "mot_fort": "nationale",
+      "niveau": "fort",
+      "etiquette": "11 novembre",
+      "legende": "Contre la crise du logement",
+      "valeur": "fort"
+    },
+    {
+      "n": 7,
+      "type": "quiz",
+      "duree_s": 4.0,
+      "titre": "Et après ?",
+      "mot_fort": "après",
+      "question": "Qui gouvernera après les législatives ?",
+      "prompt": "a pixel art ballot box with a question mark, single object",
+      "fond_photo": "https://www.lexpress.fr/resizer/v2/546R7F53HRGMPPGYQO3WKXGPQI.JPG?auth=9e900e40bddc18b69a0df2ad07763e4419f4cbe683df0e87a3444c82e247e49a&width=1200&height=630&quality=85&smart=true",
+      "fond_photo_requete": "Espagne élections législatives 2026 droite extrême droite",
+      "options": [
+        "Le vote décidera",
+        "Personne ne peut le dire"
+      ],
+      "bonne": 0
+    },
+    {
+      "n": 8,
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "titre": "Trois semaines avant le vote",
+      "mot_fort": "trois semaines",
+      "de": {
+        "label": "Élections",
+        "prompt": "a pixel art ballot box, single object"
+      },
+      "vers": {
+        "label": "Droite et extrême droite",
+        "prompt": "a pixel art podium, single object"
+      },
+      "montant": "force"
+    },
+    {
+      "n": 9,
+      "type": "hook",
+      "duree_s": 4.0,
+      "titre": "Le logement, enjeu central",
+      "mot_fort": "logement",
+      "prompt": "a pixel art apartment block at night, single object",
+      "fond_photo": "https://focus.courrierinternational.com/2026/11/11/0/0/5500/3666/1200/630/60/0/4865e98_ftp-1-8tzcqyjaq6cv-2026-11-11t130006z-104036358-rc2oloaa8nm6-rtrmadp-3-spain-strike-barcelona.JPG",
+      "fond_photo_requete": "Barcelone grève générale Espagne 11 novembre 2026",
+      "title": "Le logement, enjeu central"
+    },
+    {
+      "n": 10,
+      "type": "pd_tampon",
+      "duree_s": 4.0,
+      "titre": "Une contestation sociale",
+      "mot_fort": "contestation",
+      "tampon": "CONTESTATION",
+      "prompt": "a pixel art protest sign, single object"
+    },
+    {
+      "n": 11,
+      "type": "hook",
+      "duree_s": 4.0,
+      "titre": "La crise du logement",
+      "mot_fort": "logement",
+      "prompt": "a pixel art rental key on a table, single object",
+      "fond_photo": "https://io-fsly-bfmtv.cdn.nextradiotv.com/6SKEhGjf2ESgByTGsVT2As4Vzk0=/0x0:1280x720/1280x0/images/Greve-nationale-en-Espagne-120-000-manifestants-a-Madrid-pour-le-logement-et-le-pouvoir-d-achat-2382434.jpg",
+      "fond_photo_requete": "Espagne crise du logement loyers manifestation jeunes 2026",
+      "title": "La crise du logement"
+    },
+    {
+      "n": 12,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Le toit avant tout",
+      "mot_fort": "toit",
+      "prompt": "a pixel art roof above a small bed, single object",
+      "etiquette": "Toit"
+    },
+    {
+      "n": 13,
+      "type": "hook",
+      "duree_s": 4.0,
+      "titre": "Et en France ?",
+      "mot_fort": "France",
+      "prompt": "a pixel art map outline of France at night, single object",
+      "fond_photo": "https://www.lexpress.fr/resizer/v2/546R7F53HRGMPPGYQO3WKXGPQI.JPG?auth=9e900e40bddc18b69a0df2ad07763e4419f4cbe683df0e87a3444c82e247e49a&width=1200&height=630&quality=85&smart=true",
+      "fond_photo_requete": "grève nationale Espagne 11 novembre 2026 manifestation Madrid logement",
+      "title": "Et en France ?"
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "duree_s": 4.0,
+      "titre": "Et nous, on attend quoi ?",
+      "mot_fort": "attend",
+      "question": "Et nous, on attend quoi ?",
+      "prompt": "a pixel art street with a question mark, single object",
+      "options": [
+        "Le vote décidera",
+        "Personne ne peut le dire"
+      ],
+      "bonne": 0
+    }
+  ]
+}
