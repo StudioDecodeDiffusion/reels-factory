@@ -675,5 +675,52 @@
    "etape": "rendu (agent 8)",
    "resultat": "ARRÊT : render échoue deux fois (npx remotion, exit 1). Spec OK. Aucune vidéo déposée."
   }
+ ],
+ "eco-20261113-0800": [
+  {
+   "heure": "04:50",
+   "etape": "Manager",
+   "resultat": "Créneau eco 08 h 00 trouvé ; dossier en cours"
+  },
+  {
+   "heure": "04:51",
+   "etape": "Agent 4 (1er essai)",
+   "resultat": "faits_cles vides : latribune.fr refusé (403), aucun chiffre vérifié ; relance avec un autre sujet de la veille"
+  },
+  {
+   "heure": "04:57",
+   "etape": "Agent 4 (2e essai)",
+   "resultat": "OK : sujet Budget 2027, 4 chiffres sourcés (Touteleurope, Euronews) ; 4_concept.json écrit"
+  },
+  {
+   "heure": "04:59",
+   "etape": "Agents 5 et 6",
+   "resultat": "5_scenario OK (165 mots, 14 scènes) ; 6_da incohérent avec le concept (synthwave/retro_tv/jt au lieu de piano_sobre/bleu_bureau/bandeau_bas) ; valider : 10 erreurs de scène et tenue, relance agent 6"
+  },
+  {
+   "heure": "05:00",
+   "etape": "Valider + correction",
+   "resultat": "OK après correction des champs de scène ; mise_en_page bandeau_bas remplacé par duo (valeur du contrat), mascotte classique"
+  },
+  {
+   "heure": "05:01",
+   "etape": "Agent 7 pré-critique",
+   "resultat": "retour : scénario et DA non alignés scène par scène ; relance agent 6 (1 essai sur 3)"
+  },
+  {
+   "heure": "05:02",
+   "etape": "Agent 6 réalignement",
+   "resultat": "scènes alignées sur le scénario, 4 chiffres présents, 9 Md€ retiré ; valider OK ; relance pré-critique"
+  },
+  {
+   "heure": "05:02",
+   "etape": "Agent 7 pré-critique (relance)",
+   "resultat": "go : aucun défaut bloquant ; non bloquants notés (quiz d'avis, image unique, variete bandeau_bas vs duo)"
+  },
+  {
+   "heure": "05:04",
+   "etape": "Agent 8 render",
+   "resultat": "ARRÊT : render KO après 2 essais ; 'npx remotion' introuvable (could not determine executable) et domaines duckduckgo/bing/theconversation refusés par le proxy (connect_rejected) ; video.mp4, apercu.png, légende, story non produits"
+  }
  ]
 }
