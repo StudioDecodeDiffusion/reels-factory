@@ -1,32 +1,33 @@
 {
-  "date": "2026-11-10",
+  "date": "2026-11-13",
   "compte": "science",
-  "source": "state/stats_science.json (maj 2026-11-10 14:56 UTC), state/abonnes_science.json, state/feedback_cm_science.json",
+  "source": "state/stats_science.json (maj 2026-11-13 14:54 UTC), state/abonnes_science.json (suivi 25/10 au 13/11), state/feedback_cm_science.json, travail/rapport8_science.json",
   "classement": [
-    "27 oct. 07 h UTC « Comment ce robot canard tient sur 2 pattes » : 120 vues, portée 115, 1 interaction (enregistrement)",
-    "28 oct. « Pont Tacoma Narrows » : 119 vues, portée 104",
-    "27 oct. 19 h UTC « Pourquoi un avion de 575 t ne tombe-t-il pas ? » : 101 vues, portée 96",
-    "4 nov. « Moteur sans essence » (mercredi, créneau) : 30 vues, portée 25, le plus faible"
+    "27 oct. 07 h UTC « Comment ce robot canard tient sur 2 pattes » : 120 vues, portée 115, 1 sauvegarde",
+    "28 oct. « Pont Tacoma Narrows » : 119 vues, portée 104, 0 interaction",
+    "11 nov. « Dalle en béton sans acier » : 108 vues, portée 106, 0 interaction",
+    "27 oct. 19 h UTC « Pourquoi un avion de 575 t ne tombe-t-il pas ? » : 101 vues, portée 96, 0 interaction",
+    "4 nov. « Moteur sans essence » : 30 vues, portée 25, 0 interaction (le plus faible)"
   ],
   "ce_qui_marche": [
-    "Phénomènes physiques expliqués par un objet concret (robot, pont, avion) : 101 à 120 vues sur 3 posts."
+    "Sujets à objet concret (robot, pont, avion, dalle) : 101 à 120 vues sur 4 posts sur 5."
   ],
   "ce_qui_ne_marche_pas": [
-    "0 abonné sur toute la période (state/abonnes_science.json).",
-    "1 interaction au total sur 4 posts.",
-    "Post du mercredi 4 nov. : 30 vues, moitié moins que les 3 autres."
+    "0 abonné sur toute la période du suivi (state/abonnes_science.json).",
+    "Sur 5 posts : 1 sauvegarde, 0 like, 0 commentaire, 0 partage.",
+    "Post du 4 nov. (moteur électrique) : 30 vues, environ un quart des autres posts."
   ],
   "enseignements": [
-    "Ne rien conclure sur 4 posts ; le signal sera lisible après la publication du mercredi 11/11.",
-    "Vérifier si le 4 nov. a souffert du sujet (moteur électrique) ou de l'accroche.",
-    "Pas de publication depuis le 04/11 : le créneau du 11/11 n'est pas encore passé, ce n'est pas une alerte."
+    "Garder les accroches à objet concret, qui tiennent entre 101 et 120 vues.",
+    "Ne pas juger le format sur une vidéo isolée : n = 5, 0 interaction sociale hors une sauvegarde.",
+    "Revoir l'accroche ou le sujet du moteur électrique avant de le reproduire."
   ],
-  "test": "Invitation à commenter en fin de vidéo, jugée sur 7 jours glissants après le 11/11.",
+  "test": "Invitation à commenter en fin de vidéo, jugée sur 7 jours glissants après le 11/11 (aucun commentaire à ce jour).",
   "reperes_projection": {
-    "vues_mediane": 110,
-    "moyenne": 92.5,
+    "vues_mediane": 108,
+    "moyenne": 95.6,
     "meilleure": 120
   },
   "alerte": null,
-  "avertissement": "n = 4 posts : repères indicatifs seulement."
+  "avertissement": "n = 5 posts, compte très jeune : repères indicatifs seulement."
 }
