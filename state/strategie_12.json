@@ -219,6 +219,20 @@
         ],
         "rien_publie_rien_envoye": true
       }
+    },
+    {
+      "date": "2026-11-13",
+      "type": "résumé quotidien (vendredi 13/11/2026 ; stratégie complète réservée au lundi). Compte actu seul relu aujourd'hui ; eco, qhse, science non relus",
+      "sources": "state/feedback_cm_actu.json (agent 9, 13/11), travail/rapport8_actu.json (agent 9, 13/11), state/rapport_3_actu.json et travail/rapport3_actu.md (agent 3, 13/11)",
+      "ou_on_en_est": "Actu : 7 abonnés (stables depuis le 26/10), 27 publications, médiane 117 vues. 10 dernières : 124 vues en moyenne, portée 110, 9 interactions (≈ 0,8 %).",
+      "a_bouge": "2 publications depuis le 5/11 ; dernière (9/11) à 25 vues (21 vues au relevé du 09/11), 0 interaction, 0 commentaire lisible.",
+      "actions_du_jour": [
+        "Actu : vérifier pourquoi les 2 commentaires comptés le 18/10 (state/stats_actu.json) n'entrent pas dans state/commentaires_actu.json (agent 9).",
+        "Actu : prochaine vidéo avec accroche sur l'actu du jour si forte, et question fermée précise en fin de vidéo ; test sur 4 publications, compter commentaires et interactions.",
+        "Actu : garder le format « citation vérifiée + décision concrète » (24/10 : 244 vues) ; ne pas reprendre « oui ou non »."
+      ],
+      "revenus": "Aucune donnée de revenu, aucun lien de monétisation ni conversion payante dans les fichiers lus au 13/11 : aucun chiffre de revenu calculé ni projeté.",
+      "rien_publie_rien_envoye": true
     }
   ]
 }
