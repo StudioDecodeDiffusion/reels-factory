@@ -1,30 +1,12 @@
 {
-  "date": "2026-11-10",
-  "compte": "qhse",
-  "compte_neuf": true,
-  "source": "state/stats_qhse.json (maj 2026-11-10), state/abonnes_qhse.json, state/feedback_cm_qhse.json",
+  "date": "2026-11-13",
   "classement": [
-    "27 oct. 11 h 10 UTC « Une usine près de chez toi peut être classée Seveso » : 131 vues, portée 129, 2 j'aime",
-    "27 oct. 07 h 13 UTC « ISO 9001 : plus d'un million de certificats » : 17 vues, 0 interaction"
+    {"titre": "Seveso seuil haut (27/10)", "vues": 131, "portee": 129, "j_aime": 2, "partages": 0, "enregistrements": 0},
+    {"titre": "ISO 9001 (27/10)", "vues": 17, "portee": 15, "j_aime": 0, "partages": 0, "enregistrements": 0}
   ],
-  "ce_qui_marche": [
-    "Sujet réglementaire concret (Seveso, « près de chez toi ») : 131 vues, seuls j'aime du compte."
-  ],
-  "ce_qui_ne_marche_pas": [
-    "Aucune publication depuis le 27/10 (14 jours au 10/11).",
-    "Créneau du dimanche 8 h vide les 1er et 8 novembre.",
-    "0 abonné et 0 commentaire sur toute la période."
-  ],
-  "enseignements": [
-    "Rétablir la chaîne de publication avant toute analyse : c'est une alerte technique, pas un signal d'audience.",
-    "Vérifier le job qhse-20261026-1200 (ISO 9001), présent dans l'historique et absent des statistiques.",
-    "Le format réglementaire fait mieux que l'ISO générale (131 contre 17 vues), mais sur 2 posts seulement."
-  ],
-  "test": "Aucun test utile avant 4 publications ; au prochain dimanche publié, rejouer le format veille réglementaire.",
-  "reperes_projection": {
-    "vues_mediane": null,
-    "meilleure": 131,
-    "avertissement": "2 posts seulement : médiane non fiable, pas de projection"
-  },
-  "alerte": "Chaîne de publication qhse interrompue depuis le 27/10"
+  "ce_qui_marche": ["Sujet Seveso (réglementation des sites industriels) : 131 vues, seul signal d'interaction (2 j'aime)"],
+  "ce_qui_ne_marche_pas": ["Aucune publication depuis le 27/10 (17 jours) : compte à l'arrêt", "0 abonné, 0 commentaire, 0 partage, 0 enregistrement"],
+  "enseignements": ["Donnée insuffisante : 2 publications seulement, aucune tendance fiable", "Rétablir la chaîne de publication avant toute analyse d'audience", "Vérifier le job qhse-20261026-1200 (ISO 9001), présent dans l'historique et absent des statistiques"],
+  "test": "Aucun test A/B possible tant qu'il n'y a pas de nouvelle publication. Premier test suggéré : reprendre un sujet Seveso et comparer l'accroche question contre l'accroche chiffre.",
+  "reperes_projection": {"vues_mediane": null, "meilleure": 131, "fiabilite": "insuffisante (2 posts)"}
 }
