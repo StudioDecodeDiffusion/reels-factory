@@ -247,9 +247,24 @@
       ],
       "revenus": "Aucune donnée de revenu, aucun lien de monétisation ni conversion payante dans les fichiers lus au 13/11 : aucun chiffre de revenu calculé ni projeté.",
       "rien_publie_rien_envoye": true
+    },
+    {
+      "date": "2026-11-13",
+      "type": "résumé quotidien (vendredi 13/11/2026 ; stratégie complète réservée au lundi). Compte qhse seul relu aujourd'hui ; actu, eco, science non modifiés",
+      "sources": "state/feedback_cm_qhse.json (agent 9, 13/11), travail/rapport8_qhse.json (agent 9, 13/11), state/rapport_3_qhse.json et travail/rapport3_qhse.md (agent 3, 13/11)",
+      "ou_on_en_est": "2 publications (27/10 : Seveso 131 vues ; ISO 9001 17 vues), 148 vues cumulées, 0 abonné, 0 commentaire, 2 j'aime. Aucune publication depuis le 27/10 (17 jours).",
+      "a_bouge": "Rien depuis le bilan du 10/11. Date de l'ISO 9001 divergente (26/10 dans le job, 27/10 dans les rapports 9 et 3) ; job qhse-20261026-1200 absent des stats.",
+      "actions_du_jour": [
+        "Vérifier le job qhse-20261026-1200 (ISO 9001) : publié ou non, et absence dans state/stats_qhse.json (Manager, agent 3).",
+        "Rétablir la chaîne de publication qhse : aucune entrée depuis le 27/10, créneau du dimanche 8 h manqué les 01/11 et 08/11 (Manager, agent 9).",
+        "Test une fois le rythme rétabli : Seveso, accroche question contre accroche chiffre. Pas de projection (n = 2)."
+      ],
+      "revenus": "Aucune donnée de revenu, aucun lien de monétisation ni conversion payante dans les fichiers lus au 13/11 : aucun chiffre de revenu calculé ni projeté.",
+      "rien_publie_rien_envoye": true
     }
   ],
   "date_par_compte": {
-    "science": "2026-11-13"
+    "science": "2026-11-13",
+    "qhse": "2026-11-13"
   }
 }
