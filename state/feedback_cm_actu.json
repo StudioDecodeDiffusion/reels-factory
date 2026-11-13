@@ -1,15 +1,14 @@
 {
-  "date": "2026-11-10",
-  "bilan": "Compte actu au 10/11 (stats maj 14 h 56 UTC) : 7 abonnés, stables depuis le 26/10. 27 publications. Dernière (09/11, 8 h 46 UTC) : 24 vues, portée 18, 0 interaction, trop tôt pour juger (correction : 21 vues relevées hier, 24 aujourd'hui). Moyenne des 10 dernières : 123 vues, portée 110, 8 interactions au total. Les statistiques comptent 2 commentaires sur les posts, mais aucun texte n'est dans la file state/commentaires_actu.json : rien à qualifier ni à répondre.",
+  "date": "2026-11-13",
+  "bilan": "Compte actu au 13/11 (stats maj 14 h 53 UTC) : 7 abonnés, stables depuis le 26/10. 27 publications, dont 2 depuis le 5/11. Dernière (09/11) : 25 vues, portée 18, 0 interaction. Moyenne des 10 dernières : 124 vues, portée 110, 9 interactions (engagement ≈ 0,8 % = interactions / portée). Meilleure des 10 : 24/10 « Oui, nous avons perdu le contrôle » (244 vues, 5 interactions). Aucun commentaire dans state/commentaires_actu.json : rien à qualifier ni à répondre. Les 2 commentaires comptés sur le post du 18/10 restent absents de la file.",
   "audience": {
     "questions": [],
     "demandes": [],
     "critiques": []
   },
   "recommandations": [
-    "Retrouver les 2 commentaires comptés dans state/stats_actu.json mais absents de state/commentaires_actu.json (collecte à vérifier côté GitHub).",
-    "Ne pas juger la publication du 09/11 avant 48 h (24 vues à ce stade).",
-    "Tester sur 4 publications l'accroche « question à réponse chiffrée » contre « oui ou non ? » (aucun commentaire lisible depuis plusieurs posts).",
-    "Garder le format « citation vérifiée + décision concrète » (24/10 : 244 vues, 5 interactions, meilleure des 10 dernières)."
+    "Vérifier côté GitHub pourquoi les 2 commentaires comptés le 18/10 (state/stats_actu.json) n'entrent pas dans state/commentaires_actu.json.",
+    "Tester sur 4 publications une question fermée en fin de vidéo et compter les commentaires ; le volume actuel est trop faible pour conclure.",
+    "Garder le format « citation vérifiée + décision concrète » (24/10 : meilleure des 10 dernières)."
   ]
 }
