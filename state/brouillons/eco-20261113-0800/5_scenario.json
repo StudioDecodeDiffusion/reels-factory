@@ -1,0 +1,168 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.5,
+   "texte_ecran": "55 % des foyers exonérés",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cinquante-cinq pour cent des foyers français ne paient aucun impôt sur le revenu.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Chiffres officiels DGFiP",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Voici ce que révèlent les chiffres officiels de la Direction générale des Finances publiques.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "18,2M de payeurs sur 40,7M",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Sur quarante millions de foyers fiscaux, dix-huit millions seulement règlent cet impôt.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.0,
+   "texte_ecran": "44,7 % de foyers contributeurs",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Seulement quarante-quatre pour cent des ménages contribuent donc à cette recette.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Une répartition très inégale",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Mais le montant collecté est très fortement concentré.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 5.0,
+   "texte_ecran": "Top 10 % = 70 % de l'impôt",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Les dix pour cent de foyers les plus aisés financent plus de soixante-dix pour cent du total.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Concentration au sommet",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La concentration s'accentue encore tout en haut de l'échelle.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 5.0,
+   "texte_ecran": "Top 1 % = 28 % des recettes",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le un pour cent le plus riche produit à lui seul vingt-huit pour cent de la recette.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "55,3 % de foyers non imposables",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "À l'opposé, cinquante-cinq pour cent des ménages sont exonérés grâce au barème progressif.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "L'IR = 25 % des recettes fiscales",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Attention, l'impôt sur le revenu ne représente qu'un quart des recettes de l'État.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.5,
+   "texte_ecran": "TVA et CSG : tous payeurs",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La T V A et la C S G sont payées par l'ensemble des consommateurs.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chute",
+   "duree_s": 4.5,
+   "texte_ecran": "Un outil de redistribution",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cet impôt reste néanmoins le principal outil de redistribution fiscale en France.",
+     "expression": "content"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.5,
+   "texte_ecran": "Le savais-tu ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Savais-tu que plus de la moitié des ménages ne payaient pas cet impôt ?",
+     "expression": "clin"
+    }
+   ]
+  }
+ ],
+ "legende": "55 % des foyers français ne paient pas d'impôt sur le revenu. 📊\n\nSelon les chiffres officiels de la DGFiP, seuls 18,2 millions de foyers sur 40,7 millions s'acquittent de l'impôt sur le revenu. En parallèle, les 10 % les plus aisés financent à eux seuls 70 % des recettes totales de cet impôt.\n\nQue penses-tu de cette répartition de l'impôt en France ? 👇\nEnvoie cette vidéo à quelqu'un qui pense que tout le monde paie l'impôt sur le revenu ! 📤\n\nSources : DGFiP, INSEE",
+ "hashtags": [
+  "#impots",
+  "#economie",
+  "#fiscalite",
+  "#bercy",
+  "#decode_leco"
+ ]
+}
