@@ -1,32 +1,34 @@
 {
-  "date": "2026-11-13",
-  "en_une_phrase": "Compte éco : 5 vidéos (27/10 au 03/11), 715 vues, 0 abonné, et aucune publication depuis 10 jours. Les sujets de finances publiques chiffrés sont les plus vus, mais l'échantillon est trop petit pour conclure.",
+  "date": "2026-11-15",
+  "source": "state/stats_eco.json (maj 2026-11-15 14 h 45 UTC), state/abonnes_eco.json, travail/rapport8_eco.json, state/feedback_cm_eco.json",
   "classement": [
-    "27/10 07 h 10 UTC · dette publique · 203 vues · 2 interactions",
-    "03/11 08 h 10 UTC · niches fiscales · 172 vues · 2 interactions",
-    "25/10 14 h 17 UTC · Fonderie de Bretagne · 131 vues · 1 interaction",
-    "30/10 07 h 54 UTC · déficit budget 2026 · 115 vues · 0 interaction",
-    "27/10 07 h 11 UTC · salaire brut/net · 94 vues · 3 interactions déclarées (2 si on additionne les champs)"
+    {"sujet": "Dette publique (2 882 Md€, détenteurs)", "date": "2026-10-27", "vues": 203, "interactions": 2},
+    {"sujet": "Niches fiscales (88 Md€/an)", "date": "2026-11-03", "vues": 172, "interactions": 2},
+    {"sujet": "Fonderie de Bretagne (liquidation, aides publiques)", "date": "2026-10-25", "vues": 131, "interactions": 1},
+    {"sujet": "Budget 2026 (déficit 135 Md€)", "date": "2026-10-30", "vues": 115, "interactions": 0},
+    {"sujet": "Salaire brut / net", "date": "2026-10-27", "vues": 94, "interactions": 3}
   ],
   "ce_qui_marche": [
-    "Finances publiques chiffrées et sourcées : dette publique (203 vues) et niches fiscales (172 vues) sont les deux meilleures vidéos."
+    "Finances publiques chiffrées et sourcées : les 2 meilleures vidéos (203 et 172 vues) et 3 vidéos sur 5 au-dessus de 115 vues.",
+    "Accroche par un chiffre précis dans la première phrase (ex. 2 882 Md€, 88 Md€/an)."
   ],
   "ce_qui_ne_marche_pas": [
-    "Aucune publication enregistrée depuis le 03/11 (10 jours).",
-    "0 abonné sur toute la période (25/10 au 13/11).",
-    "Interactions quasi nulles : 0 commentaire, 0 partage, 2 enregistrements pour 5 vidéos.",
-    "Le sujet salaire brut/net est le plus faible (94 vues) malgré 3 interactions déclarées."
+    "Aucun abonné gagné sur toute la période (0 au 25/10 et au 15/11).",
+    "Aucun commentaire, aucun partage, peu d'enregistrements (2 au total).",
+    "Aucune publication depuis le 03/11 (12 jours) : confirmé par state/stats_eco.json et state/abonnes_eco.json (publications figées à 5)."
   ],
   "enseignements": [
-    "Garder l'angle finances publiques chiffrées avec source citée : c'est ce qui a fait les plus gros scores.",
-    "Demander explicitement l'enregistrement ou le partage en fin de vidéo : les interactions sont trop faibles pour servir de signal.",
-    "Reprendre le rythme de publication avant tout autre test : sans nouvelle vidéo, aucun créneau ne peut être mesuré."
+    "Garder le format finances publiques chiffrées et sourcées : c'est le seul sujet qui dépasse 150 vues deux fois.",
+    "Le format salaire brut / net, le moins vu (94 vues), a le meilleur taux d'interactions (3 sur 94) : à tester à nouveau sur un autre angle, sans en faire un axe principal.",
+    "Reprendre la cadence de publication avant de tirer des conclusions sur les créneaux : sans nouvelles vidéos, aucun test d'heure n'est évaluable."
   ],
-  "test": "Dès la reprise, publier 3 sujets de finances publiques sur le créneau du matin (07 h-08 h UTC) et comparer leurs vues à la médiane de 131. Un seul post ne prouve rien.",
+  "test": "Reprendre la publication et publier 3 reels finances publiques chiffrées et sourcées sur 2 semaines ; comparer leurs vues médianes à 131.",
   "reperes_projection": {
     "vues_mediane": 131,
-    "meilleure": 203
-  },
-  "fiabilite": "5 publications seulement (27/10 au 03/11) : indicatif. Le total d'interactions du post 27/10 salaire (3) ne correspond pas à la somme de ses champs (2) ; le chiffre déclaré est gardé mais à vérifier.",
-  "source": "state/stats_eco.json (maj 13/11 14 h 54 UTC), state/abonnes_eco.json, travail/rapport8_eco.json"
+    "meilleure": 203,
+    "moyenne": 143,
+    "abonnes": 0,
+    "echantillon": 5,
+    "note": "Échantillon de 5 vidéos (27/10 au 03/11) : indicatif seulement."
+  }
 }
