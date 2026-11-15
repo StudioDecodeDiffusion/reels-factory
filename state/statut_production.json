@@ -727,5 +727,37 @@
    "etape": "Manager",
    "resultat": "ARRÊT : render KO (remotion introuvable, proxy bloque), aucune vidéo déposée, alerte ❌ envoyée"
   }
+ ],
+ "qhse-20261115-0800": [
+  {
+   "heure": "04:51",
+   "etape": "Créneau",
+   "resultat": "OK — QSE, dimanche 15/11 08 h 00 ; dossier 0_dossier.md créé ; économie non active (relevé du 21/10 périmé)"
+  },
+  {
+   "heure": "04:57",
+   "etape": "Agent 4",
+   "resultat": "OK — concept remplacé : ISO 27001 hors QSE → DUERP (file, 01/11). Sources R4121-1/2 à confirmer (proxy bloqué)"
+  },
+  {
+   "heure": "04:57",
+   "etape": "Agent 4 — sources",
+   "resultat": "Non vérifiées en ligne : à confirmer avant publication (code.travail.gouv.fr)"
+  },
+  {
+   "heure": "04:58",
+   "etape": "Agents 5 et 6",
+   "resultat": "OK — scénario DUERP réécrit, DA écrite, valider OK"
+  },
+  {
+   "heure": "04:59",
+   "etape": "Agent 7 pré-critique",
+   "resultat": "GO — non bloquant : jauge valeur 70 à retirer, types scène DA/scénario à aligner"
+  },
+  {
+   "heure": "05:01",
+   "etape": "Agent 8 — rendu",
+   "resultat": "ÉCHEC : rendu Remotion impossible (npx « could not determine executable to run ») deux fois ; pas de video.mp4, planche ni story"
+  }
  ]
 }
