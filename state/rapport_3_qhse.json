@@ -1,12 +1,25 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-15",
+  "compte": "qhse",
+  "fiabilite": "Tres faible : 2 publications seulement (27/10), aucune depuis. Aucun repere de projection n'est fiable.",
   "classement": [
-    {"titre": "Seveso seuil haut (27/10)", "vues": 131, "portee": 129, "j_aime": 2, "partages": 0, "enregistrements": 0},
-    {"titre": "ISO 9001 (27/10)", "vues": 17, "portee": 15, "j_aime": 0, "partages": 0, "enregistrements": 0}
+    {"date": "2026-10-27", "sujet": "Seveso seuil haut (legende : Une usine pres de chez toi peut etre classee Seveso seuil haut)", "views": 131, "reach": 129, "likes": 2, "comments": 0, "shares": 0, "saved": 0},
+    {"date": "2026-10-27", "sujet": "ISO 9001 (legende : plus d'un million de certificats dans le monde)", "views": 17, "reach": 15, "likes": 0, "comments": 0, "shares": 0, "saved": 0}
   ],
-  "ce_qui_marche": ["Sujet Seveso (réglementation des sites industriels) : 131 vues, seul signal d'interaction (2 j'aime)"],
-  "ce_qui_ne_marche_pas": ["Aucune publication depuis le 27/10 (17 jours) : compte à l'arrêt", "0 abonné, 0 commentaire, 0 partage, 0 enregistrement"],
-  "enseignements": ["Donnée insuffisante : 2 publications seulement, aucune tendance fiable", "Rétablir la chaîne de publication avant toute analyse d'audience", "Vérifier le job qhse-20261026-1200 (ISO 9001), présent dans l'historique et absent des statistiques"],
-  "test": "Aucun test A/B possible tant qu'il n'y a pas de nouvelle publication. Premier test suggéré : reprendre un sujet Seveso et comparer l'accroche question contre l'accroche chiffre.",
-  "reperes_projection": {"vues_mediane": null, "meilleure": 131, "fiabilite": "insuffisante (2 posts)"}
+  "ce_qui_marche": [
+    "Reel Seveso du 27/10 : 131 vues, 129 de portee, 2 j'aime (seul post avec une interaction)."
+  ],
+  "ce_qui_ne_marche_pas": [
+    "Reel ISO 9001 du 27/10 : 17 vues, 0 interaction.",
+    "Aucune publication depuis le 27/10 : 19 jours sans entree dans state/stats_qhse.json.",
+    "Abonnes : 0 depuis le 25/10 (state/abonnes_qhse.json)."
+  ],
+  "enseignements": [
+    "Rétablir la chaine de publication QHSE avant toute analyse : planning vide depuis le 27/10.",
+    "Verifier le job qhse-20261026-1200 (ISO 9001), present dans state/historique_qhse.json mais absent de state/stats_qhse.json.",
+    "Ne tirer aucune conclusion sur le sujet, le format ou l'heure avant au moins 5 publications."
+  ],
+  "test": "Aucun test A/B valide a ce stade : republier regulierement et attendre au moins 5 publications avant de comparer.",
+  "reperes_projection": {"vues_mediane": 74, "meilleure": 131},
+  "alerte": "Chaine de publication QHSE arretee depuis le 27/10 (confirme par les fichiers stats, abonnes et historique)."
 }
