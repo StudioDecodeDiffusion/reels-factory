@@ -1,20 +1,20 @@
 {
   "date": "2026-11-15",
-  "compte": "qhse",
+  "compte": "eco",
   "type": "resume_quotidien",
-  "source": "state/rapport_3_qhse.json, state/feedback_cm_qhse.json, travail/rapport8_qhse.json",
-  "ou_on_en_est": "0 abonné (inchangé depuis le 25/10). 2 reels publiés, les 27/10 : 148 vues au total, 2 j'aimes. Aucune publication depuis le 27/10 (19 jours). Chaîne de publication arrêtée.",
+  "source": "state/stats_eco.json (maj 2026-11-15 14 h 45 UTC), state/abonnes_eco.json, state/commentaires_eco.json, state/rapport_3_eco.json, state/feedback_cm_eco.json, travail/rapport8_eco.json, travail/rapport3_eco.md",
+  "ou_on_en_est": "0 abonné (inchangé depuis le 25/10). 5 reels publiés entre le 27/10 et le 03/11 : 715 vues au total, médiane 131, moyenne 143, 8 interactions. Aucune publication depuis le 03/11 (12 jours). Chaîne de publication à l'arrêt.",
   "ce_qui_a_bouge": [
-    "Aucune nouvelle publication ni nouvelle donnée depuis le bilan du 13/11.",
-    "Le reel Seveso (131 vues, 2 j'aimes) est le seul post avec une interaction ; le reel ISO 9001 est resté à 17 vues sans interaction.",
-    "Aucun commentaire, question ni demande de la communauté."
+    "Rien de nouveau depuis le bilan du 13/11 : aucune publication ajoutée, 0 abonné, 0 commentaire (stats mises à jour le 15/11 à 14 h 45 UTC).",
+    "Meilleur reel : dette publique (203 vues, 27/10). Le reel niches fiscales (172 vues, 03/11) est le dernier publié.",
+    "Le salaire brut / net (94 vues) a le meilleur taux d'interactions (3 sur 94) : à retester sur un autre angle, sans en faire un axe principal."
   ],
   "actions_du_jour": [
-    "Signaler au propriétaire que la chaîne de publication QHSE est arrêtée depuis le 27/10 et demander la reprise du planning.",
-    "Vérifier le job qhse-20261026-1200 (ISO 9001), présent dans l'historique et absent des statistiques.",
-    "Ne tirer aucune conclusion sur le sujet, le format ou l'heure avant au moins 5 publications ; pas de test A/B pour l'instant."
+    "Signaler au propriétaire qu'aucune vidéo éco n'est publiée depuis le 03/11 (12 jours) et demander la reprise de la cadence ; la cause n'est pas identifiable à partir des fichiers.",
+    "Garder le format finances publiques chiffrées et sourcées (les 2 meilleurs reels) pour la prochaine vidéo.",
+    "Ne tirer aucune conclusion sur les heures de publication tant qu'aucune nouvelle vidéo n'apparaît dans les statistiques ; le test de 3 reels finances publiques sur 2 semaines (médiane à comparer à 131 vues) attend la reprise."
   ],
-  "avertissement": "n = 2 posts, compte très jeune : aucun repère de revenus ni de projection n'est fiable. Pas de stratégie complète aujourd'hui (lundi seulement).",
+  "avertissement": "n = 5 posts, compte très jeune : les repères de vues sont indicatifs, aucun repère de revenus ni de projection n'est fiable. Pas de stratégie complète aujourd'hui (lundi seulement).",
   "questions_agents": [],
   "notes_lues": []
 }
