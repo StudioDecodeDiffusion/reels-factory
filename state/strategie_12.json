@@ -275,10 +275,35 @@
       ],
       "revenus": "Aucune donnée de revenu, aucun lien de monétisation ni conversion payante dans les fichiers lus au 13/11 : aucun chiffre de revenu calculé ni projeté.",
       "rien_publie_rien_envoye": true
+    },
+    {
+      "date": "2026-11-15",
+      "type": "résumé quotidien (dimanche 15/11/2026 ; stratégie complète réservée au lundi). Compte actu seul relu aujourd'hui ; eco, qhse, science non relus",
+      "sources": "state/feedback_cm_actu.json et travail/rapport8_actu.json (agent 9, 15/11, stats maj 14 h 45 UTC), state/rapport_3_actu.json et travail/rapport3_actu.md (agent 3, 15/11). instrack.app non consulté (non demandé)",
+      "ou_on_en_est": "7 abonnés (stables depuis le 26/10), 27 publications, médiane 118 vues (agent 3, 27 posts). 10 dernières : 124 vues en moyenne, portée 110, 9 interactions (engagement ≈ 0,8 %). Meilleure des 10 : 24/10 (244 vues, 5 interactions). Record : 18/10 (1 156 vues, 2 commentaires comptés).",
+      "a_bouge": "Dernière publication (09/11) relevée à 25 vues (21 au relevé du 09/11), portée 18, 0 interaction. Aucune publication actu depuis le 09/11. Aucun commentaire lisible dans la file : rien à qualifier. Anomalie toujours ouverte : 2 commentaires du 18/10 comptés dans les stats mais absents de state/commentaires_actu.json. Écart à recouper : 05/11 à 120 vues dans le rapport 3, à 117 dans le relevé du 07/11.",
+      "actions_du_jour": [
+        "Actu : prochaine vidéo sur l'actu du jour si elle est forte, avec une question fermée précise en fin de vidéo (un chiffre ou une ville) ; test sur 4 publications, comptage des commentaires et interactions (base : 0 commentaire lisible sur 27 posts).",
+        "Agent 9 et Manager : vérifier la collecte des 2 commentaires du 18/10 (vidéo 18497163037096977) absents de state/commentaires_actu.json ; sans cela, l'engagement n'est pas fiable.",
+        "Actu : garder le format « citation vérifiée + décision concrète » (24/10 : 244 vues) ; ne pas reprendre « oui ou non » par défaut (114 vues contre 133 pour les autres, indicatif)."
+      ],
+      "revenus": "Aucune donnée de revenu, aucun lien de monétisation ni conversion payante dans les fichiers lus au 15/11 : aucun chiffre de revenu calculé ni projeté.",
+      "questions_agents": [
+        {
+          "agent": 9,
+          "question": "Pourquoi les 2 commentaires comptés le 18/10 (vidéo 18497163037096977) n'entrent-ils pas dans state/commentaires_actu.json ?"
+        },
+        {
+          "agent": 3,
+          "question": "Recouper le 05/11 : 120 vues dans ton rapport du 15/11, 117 dans le relevé du 07/11."
+        }
+      ],
+      "rien_publie_rien_envoye": true
     }
   ],
   "date_par_compte": {
     "science": "2026-11-13",
-    "qhse": "2026-11-13"
+    "qhse": "2026-11-13",
+    "actu": "2026-11-15"
   }
 }
