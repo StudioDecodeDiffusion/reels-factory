@@ -1,0 +1,168 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 3.8,
+   "texte_ecran": "ISO 27001 : zéro piratage ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Penser qu'une certification ISO vingt-sept mille un garantit zéro piratage informatique est une erreur classique.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 3.5,
+   "texte_ecran": "Faux : pas de risque zéro",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "C'est totalement faux. La norme ne promet aucun risque informatique zéro.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Exigence d'un SMSI structuré",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Elle exige plutôt la mise en place d'un Système de Management de la Sécurité de l'Information.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 3.8,
+   "texte_ecran": "Norme ISO 27001 version 2022",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Dans sa révision ISO deux mille vingt-deux, le cadre normatif a été clarifié.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 3.8,
+   "texte_ecran": "93 mesures de sécurité",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "L'Annexe A regroupe désormais un total de quatre-vingt-treize mesures de sécurité ciblées.",
+     "expression": "content"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 3.8,
+   "texte_ecran": "Répartition en 4 thèmes",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ces quatre-vingt-treize mesures sont aujourd'hui réparties en quatre grands thèmes distincts.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 3.8,
+   "texte_ecran": "Volets organisationnel et humain",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le premier thème concerne l'organisationnel, tandis que le second traite directement du facteur humain.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 3.8,
+   "texte_ecran": "Volets physique et technique",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Les deux derniers thèmes encadrent la sécurité physique et l'ensemble des contrôles techniques.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Maîtrise continue des risques",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "L'entreprise prouve ainsi qu'elle maîtrise méthodiquement l'ensemble de ses risques d'information.",
+     "expression": "clin"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 3.8,
+   "texte_ecran": "Certificat valide 3 ans",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Une fois délivré, le certificat officiel reste valide pour un cycle complet de trois ans.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 3.8,
+   "texte_ecran": "Audits de surveillance annuels",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Des audits de surveillance annuels restent obligatoires pour maintenir cette certification active.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Organisme tiers accrédité",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ces contrôles sont obligatoirement réalisés par un organisme tiers indépendant et accrédité.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.0,
+   "texte_ecran": "Ton SMSI est-il à jour ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ton organisation a-t-elle déjà adapté son SMSI à ces nouvelles exigences normatives ?",
+     "expression": "pense"
+    }
+   ]
+  }
+ ],
+ "legende": "ISO 27001 : 93 mesures de sécurité ne signifient pas risque zéro !\n\nLa certification ISO/IEC 27001:2022 encadre la gouvernance de votre SMSI à travers 4 thèmes majeurs. Elle impose un suivi rigoureux sur un cycle de 3 ans avec des audits de surveillance annuels par un organisme accrédité.\n\nTon entreprise a-t-elle déjà migré vers la version 2022 ? 👇\nEnvoie-la à quelqu'un qui confond sécurité technique et certification ISO ! 📤\nSources : ISO, AFNOR Certification",
+ "hashtags": [
+  "#normeiso",
+  "#iso27001",
+  "#afnor",
+  "#cybersecurite",
+  "#decodeqse"
+ ]
+}
