@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-15",
   "classement": [
     "18/10 « 👑 Vendredi soir : Macron au concert de Céline Dion… » : 1 156 vues, portée 1 003, 20 interactions (record du compte, non reproduit depuis)",
     "17/10 « ⚠️ Contenu effrayant… ou pas ? » : 348 vues, portée 305, 4 interactions",
     "24/10 « Oui, nous avons perdu le contrôle. » : 244 vues, portée 225, 5 interactions, 1 sauvegarde",
-    "Derniers : 9/11 (J+4) 25 vues, portée 18, 0 interaction ; 5/11 120 vues, 1 like"
+    "Derniers : 9/11 25 vues, portée 18, 0 interaction ; 5/11 120 vues, 1 like"
   ],
   "ce_qui_marche": [
     "Sujets d'actu chauds (manifestations du 17-18/10) : les 2 plus fortes vues du compte (1 156 et 348)",
@@ -13,19 +13,19 @@
   ],
   "ce_qui_ne_marche_pas": [
     "Audience faible : 7 abonnés, stables depuis le 26/10 (4 le 18/10)",
-    "Médiane 118 vues sur 27 publications ; 10 dernières : 124 vues en moyenne, portée 110, 9 interactions (engagement ≈ 0,8 % = interactions / portée)",
-    "0 commentaire lisible, 0 partage sur les 27 publications",
-    "Format « À toi de juger / oui ou non » (5 posts) : 111 vues en moyenne, contre ≈ 133 pour les autres hors record (échantillon faible, indicatif)",
+    "10 dernières publications : 124 vues en moyenne, portée 110, 9 interactions (engagement ≈ 0,8 % = interactions / portée)",
+    "0 commentaire lisible dans la file, 0 partage sur les 27 publications ; 2 commentaires seulement, tous deux sur le post du 18/10",
+    "Format « oui ou non » (6 posts) : 114 vues en moyenne, contre 133 pour les 20 autres hors record (échantillon faible, indicatif)",
     "Dernière publication (9/11) : 25 vues, plafond bas"
   ],
   "enseignements": [
     "Miser sur l'actualité du jour quand elle est forte : c'est là que sont les pics de vues",
     "Garder le format « citation vérifiée + décision concrète » (24/10)",
-    "Ne pas faire de la question « oui ou non » la règle : 111 vues en moyenne contre ≈ 133, et aucun commentaire lisible"
+    "Ne pas faire de la question « oui ou non » la règle : 114 vues en moyenne contre 133, et aucun commentaire lisible"
   ],
   "test": "Sur 4 publications, poser une question fermée en fin de vidéo et compter commentaires et interactions (base actuelle : 0 commentaire lisible sur 27 posts)",
   "anomalies": [
-    "2 commentaires comptés le 18/10 dans state/stats_actu.json sont absents de state/commentaires_actu.json : collecte à vérifier",
+    "2 commentaires comptés le 18/10 dans state/stats_actu.json sont absents de state/commentaires_actu.json : collecte à vérifier côté GitHub",
     "Source instrack.app non consultée aujourd'hui : chiffres issus des seules stats de l'API"
   ],
   "reperes_projection": {
