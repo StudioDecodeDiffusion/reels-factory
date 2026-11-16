@@ -1,0 +1,76 @@
+{
+  "id": "actu-20261116-0800",
+  "profil": "actu",
+  "statut": "rendu_en_cours",
+  "titre": "La « priorité nationale » pourrait aggraver le logement",
+  "son_tendance": null,
+  "publication_le": "2026-11-16T08:00+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": "instagram",
+  "legende": "Devine : la « priorité nationale » fait-elle baisser les loyers ?\n\nEn Espagne, la « priorité nationale » est présentée comme une réponse à la crise du logement. Une analyse de The Conversation avertit qu'elle pourrait l'aggraver.\n\nCette priorité fera-t-elle baisser les loyers, selon vous ? 👇\n\nEnvoie-la à quelqu'un qui cherche un logement en ce moment ! 📤\n\nSources : The Conversation\n\n#logement #Espagne #PrioritéNationale #crisedulogement #décodéactu\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "id": "actu-20261116-0800",
+    "agent": 7,
+    "role": "7.5 critique finale",
+    "compte": "actu",
+    "passe": 2,
+    "decision": "publiable",
+    "raison": "Débordement corrigé : le libellé de la jauge scène 5 (pd_jauge) est désormais « QUESTION OUVERTE » (6_da.json et 7_spec.json), entièrement dans le cadre sur video_scene5.png et apercu.png. Aucun défaut bloquant restant.",
+    "defauts_bloquants": [],
+    "debordement_precedent": {
+      "scene": 5,
+      "statut": "corrige",
+      "verification": "Libellé « QUESTION OUVERTE » visible en entier sur video_scene5.png et apercu.png ; 7_spec.json contient « Question ouverte »."
+    },
+    "faits": {
+      "statut": "ok",
+      "remarques": [
+        "Scène 4 (photo, « UNE ANALYSE ALERTE ») : la phrase « Une analyse de The Conversation avertit : elle pourrait aggraver la crise » reprend le titre de la veille (« ... une réponse à la crise du logement qui pourrait l'aggraver »). Sourcé.",
+        "Scène 1 (hook) et légende : la question « fait-elle baisser les loyers ? » suppose un effet sur les loyers que la source citée ne chiffre pas (elle parle de la crise du logement en général). Ce n'est pas une affirmation chiffrée ; à reformuler si le propriétaire veut rester strictement dans la source.",
+        "Aucun chiffre, aucune citation, aucune accusation nominative dans le dialogue de 5_scenario.json."
+      ]
+    },
+    "contenu_interdit": false,
+    "video": {
+      "fichier": "video.mp4",
+      "format": "h264 1080x1920, rendu de contrôle muet (PIXELS_HORS_LIGNE=1)",
+      "lisible": true,
+      "note": "Durée 81,8 s (passe 1) : au-dessus du minimum de 55 s, sous le plafond de 110 s. Voix ajoutée au rendu final par reels-media."
+    },
+    "voix": {
+      "verifiee_dans": "7_spec.json",
+      "narrateur": "chatterbox:fr",
+      "mascotte": "piper:fr_FR-upmc-medium",
+      "statut": "presente"
+    },
+    "corrections": [
+      {
+        "fichier": "video.mp4",
+        "scene": 1,
+        "type": "hook",
+        "probleme": "Sur la planche (frame 1), le titre d'écran « DEVINE ! » n'apparaît pas ; seul le bandeau de sous-titre est visible. Reste présent depuis la passe 1.",
+        "action": "Finition non bloquante : vérifier l'apparition du titre sur le rendu final."
+      },
+      {
+        "fichier": "video.mp4",
+        "scene": [
+          2,
+          5,
+          7
+        ],
+        "type": "photo",
+        "probleme": "Scènes photo à fond uni sur la planche (frames 2, 5 et 7 vus) : les photos réelles ne s'affichent pas, fond brun sombre seul. Le dialogue reste lisible. Passe 1 signalait aussi les autres scènes photo.",
+        "action": "Finition non bloquante : vérifier que fond_photo et fond_photo_requete sont résolus au rendu final."
+      }
+    ]
+  },
+  "community": {},
+  "da_message": "DA actu-20261116-0800 (Espagne, priorité nationale) réalignée sur les 15 plans de 5_scenario.json : même ordre et même type, 60 s. Une seule image réelle du dossier (771637, The Conversation), répétée sur 9 scènes avec une requête précise chacune. Pas de chiffre affiché. Le dialogue ne reprend que le titre de la source.",
+  "cree": "2026-11-16T04:29:51+00:00"
+}
