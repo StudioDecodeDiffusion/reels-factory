@@ -1,7 +1,7 @@
 {
   "id": "actu-20261116-0800",
   "profil": "actu",
-  "statut": "rendu_en_cours",
+  "statut": "a_valider",
   "titre": "La « priorité nationale » pourrait aggraver le logement",
   "son_tendance": null,
   "publication_le": "2026-11-16T08:00+01:00",
@@ -72,5 +72,18 @@
   },
   "community": {},
   "da_message": "DA actu-20261116-0800 (Espagne, priorité nationale) réalignée sur les 15 plans de 5_scenario.json : même ordre et même type, 60 s. Une seule image réelle du dossier (771637, The Conversation), répétée sur 9 scènes avec une requête précise chacune. Pas de chiffre affiché. Le dialogue ne reprend que le titre de la source.",
-  "cree": "2026-11-16T04:29:51+00:00"
+  "cree": "2026-11-16T04:29:51+00:00",
+  "duree_s": 53.4,
+  "voix": "chatterbox:fr?exag=0.6&cfg=0.4",
+  "media": {
+    "repo": "StudioDecodeDiffusion/reels-media",
+    "release_id": 446619345,
+    "tag": "reel-actu-20261116-0800",
+    "urls": {
+      "video.mp4": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261116-0800/video.mp4",
+      "apercu.png": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261116-0800/apercu.png",
+      "couverture.png": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261116-0800/couverture.png"
+    }
+  },
+  "envoyee": "2026-11-16T04:51:42+00:00"
 }
