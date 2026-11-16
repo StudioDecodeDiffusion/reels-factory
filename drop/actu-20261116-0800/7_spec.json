@@ -1,0 +1,379 @@
+{
+  "id": "actu-20261116-0800",
+  "compte": "actu",
+  "theme": {
+    "fond": "#120A0B",
+    "texte": "#F5F3EE",
+    "accent": "#E63329",
+    "accent2": "#FF8A7A",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "rouge_alerte",
+    "palette": [
+      "#120A0B",
+      "#2A1213",
+      "#F5F3EE",
+      "#E63329",
+      "#FF8A7A",
+      "#8A7F80"
+    ],
+    "mise_en_page": "plein_ecran"
+  },
+  "variete": {
+    "accroche": "devinette",
+    "trend": "« vrai ou faux » / enquête",
+    "fonctionnement": "enquete",
+    "mise_en_page": "plein_ecran",
+    "musique": "suspense",
+    "voix": "V2+V3",
+    "palette": "rouge_alerte"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "whoosh"
+    ],
+    "3": [
+      "pop"
+    ],
+    "4": [
+      "whoosh"
+    ],
+    "5": [
+      "pop"
+    ],
+    "6": [
+      "whoosh"
+    ],
+    "7": [
+      "pop"
+    ],
+    "8": [
+      "whoosh"
+    ],
+    "9": [
+      "pop"
+    ],
+    "10": [
+      "whoosh"
+    ],
+    "11": [
+      "pop"
+    ],
+    "12": [
+      "whoosh"
+    ],
+    "13": [
+      "pop"
+    ],
+    "14": [
+      "whoosh"
+    ],
+    "15": [
+      "pop"
+    ]
+  },
+  "musique": {
+    "genre": "suspense",
+    "volume": 0.4
+  },
+  "titre_miniature": "La « priorité nationale » pourrait aggraver le logement",
+  "mots_choc": "pourrait aggraver",
+  "surtitre_miniature": "Espagne · novembre 2026",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "mot_fort": "baisser",
+      "prompt": "a closed apartment door with a red question mark, pixel art, side view, single object",
+      "fond_photo": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Espagne priorité nationale logement 2026",
+      "title": "Ça fait baisser les loyers ?",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Devine : la « priorité nationale » fait-elle baisser les loyers ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 2,
+      "type": "photo",
+      "titre": "Priorité nationale",
+      "mot_fort": "nationale",
+      "etiquette": "Priorité",
+      "fond_photo": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Espagne priorité nationale logement 2026",
+      "prompt": "a wooden door with a brass padlock, pixel art, single object",
+      "src": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "En Espagne, la « priorité nationale » est présentée comme une réponse.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 3,
+      "type": "pd_objet",
+      "titre": "La crise du logement",
+      "mot_fort": "logement",
+      "prompt": "a small apartment block with a crack in the wall, pixel art, single object",
+      "etiquette": "Logement",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le sujet, c'est la crise du logement.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.0
+    },
+    {
+      "n": 4,
+      "type": "pd_flux",
+      "titre": "La réponse annoncée",
+      "mot_fort": "réponse",
+      "de": {
+        "label": "Pouvoir",
+        "prompt": "a government building with a flag, pixel art, single object"
+      },
+      "vers": {
+        "label": "Annonce",
+        "prompt": "a newspaper headline card, pixel art, single object"
+      },
+      "montant": "promesse",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Sur le papier, c'est la réponse annoncée à cette crise.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 5,
+      "type": "photo",
+      "titre": "Une analyse alerte",
+      "mot_fort": "alerte",
+      "etiquette": "Analyse",
+      "fond_photo": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Espagne crise du logement loyers 2026",
+      "prompt": "a stamped report with a red seal, pixel art, single object",
+      "src": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une analyse de The Conversation avertit : elle pourrait aggraver la crise.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 6,
+      "type": "pd_jauge",
+      "titre": "Qui paiera ?",
+      "mot_fort": "paiera",
+      "niveau": "à préciser",
+      "etiquette": "Question",
+      "legende": "Question ouverte",
+      "valeur": 50,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Alors, qui paiera si la crise s'aggrave ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 4.1
+    },
+    {
+      "n": 7,
+      "type": "photo",
+      "titre": "Ceux qui cherchent un toit",
+      "mot_fort": "toit",
+      "etiquette": "Locataires",
+      "fond_photo": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Espagne logement manifestation locataires 2026",
+      "prompt": "a small paper house with a for-rent sign, pixel art, single object",
+      "src": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ceux qui cherchent un toit sont directement concernés par la question.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 8,
+      "type": "pd_tampon",
+      "titre": "Une réponse ?",
+      "mot_fort": "réponse",
+      "tampon": "ANNONCE",
+      "prompt": "a stamped policy paper, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La mesure se présente comme une réponse, et il faut regarder ce qu'elle produit.",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 9,
+      "type": "photo",
+      "titre": "Se mesure au logement",
+      "mot_fort": "logement",
+      "etiquette": "Bilan",
+      "fond_photo": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Espagne Madrid logement immeuble habitants novembre 2026",
+      "prompt": "a magnifying glass over a small house, pixel art, single object",
+      "src": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Or une réponse se mesure au logement, pas aux annonces seules.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 10,
+      "type": "pd_objet",
+      "titre": "Une annonce ne suffit pas",
+      "mot_fort": "annonce",
+      "prompt": "a newspaper headline card, pixel art, single object",
+      "etiquette": "Annonce",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une annonce ne construit pas un toit à elle seule.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 11,
+      "type": "photo",
+      "titre": "Qui en profite ?",
+      "mot_fort": "profite",
+      "etiquette": "Débat",
+      "fond_photo": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Espagne débat politique logement immigration 2026 parlement",
+      "prompt": "a golden key on a cushion, pixel art, single object",
+      "src": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et la question reste simple : qui en profite, et qui attend encore ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 12,
+      "type": "pd_versus",
+      "titre": "Pouvoir ou locataires ?",
+      "mot_fort": "locataires",
+      "verdict": "Question ouverte",
+      "fond_photo": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Espagne débat politique logement immigration 2026 parlement",
+      "gauche": {
+        "label": "Pouvoir",
+        "prompt": "a government building with a flag, pixel art, single object"
+      },
+      "droite": {
+        "label": "Locataires",
+        "prompt": "a tenant holding a small wallet, pixel art, single object"
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La priorité nationale met la nation en avant. Et les locataires, eux, qu'obtiennent-ils ?",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 13,
+      "type": "photo",
+      "titre": "Plaire sans rien régler",
+      "mot_fort": "régler",
+      "etiquette": "Mesure",
+      "fond_photo": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Espagne crise du logement Barcelone 2026 locataires expulsions",
+      "prompt": "a stamped policy paper, pixel art, single object",
+      "src": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une mesure peut plaire sans rien régler sur le fond des choses.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 14,
+      "type": "pd_tampon",
+      "titre": "La suite dépend des faits",
+      "mot_fort": "faits",
+      "tampon": "À VÉRIFIER",
+      "prompt": "a magnifying glass over a report, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La suite dépendra des faits, pas des discours sur la nation.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 15,
+      "type": "quiz",
+      "titre": "À votre avis",
+      "mot_fort": "avis",
+      "question": "Cette priorité fera-t-elle baisser les loyers ?",
+      "prompt": "a closed door with a question mark, pixel art, single object",
+      "fond_photo": "https://images.theconversation.com/files/771637/original/file-20261103-64-838cih.jpg?ixlib=rb-4.1.1&rect=0%2C1029%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Espagne crise du logement Barcelone 2026 locataires expulsions",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "bonne": -1,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et vous, cette priorité fera-t-elle baisser les loyers, oui ou non ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.7
+    }
+  ]
+}
