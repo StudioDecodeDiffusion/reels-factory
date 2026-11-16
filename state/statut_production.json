@@ -759,5 +759,47 @@
    "etape": "Agent 8 — rendu",
    "resultat": "ÉCHEC : rendu Remotion impossible (npx « could not determine executable to run ») deux fois ; pas de video.mp4, planche ni story"
   }
+ ],
+ "actu-20261116-0800": [
+  {
+   "heure": "04:51",
+   "etape": "démarrage",
+   "resultat": "créneau actu lundi 08 h 00, dossier créé"
+  },
+  {
+   "heure": "04:51",
+   "etape": "agent 4 concept",
+   "resultat": "OK : sujet Espagne priorité nationale (à vérifier : source = titre+URL seulement)"
+  },
+  {
+   "heure": "04:53",
+   "etape": "agents 5 et 6",
+   "resultat": "scénario et DA écrits ; validation en cours"
+  },
+  {
+   "heure": "04:54",
+   "etape": "valider",
+   "resultat": "0 erreur après correction de 6_da.json (quiz « bonne » et jauge 75 = choix éditorial, à surveiller)"
+  },
+  {
+   "heure": "04:56",
+   "etape": "retour pré-critique 1",
+   "resultat": "scénario corrigé (faits), DA réalignée sur 15 plans ; relance pré-critique"
+  },
+  {
+   "heure": "04:58",
+   "etape": "retour pré-critique 2",
+   "resultat": "palette/musique alignées sur concept, jauge sans chiffre, attribution neutralisée ; relance pré-critique 3/3"
+  },
+  {
+   "heure": "04:59",
+   "etape": "pré-critique 3",
+   "resultat": "go"
+  },
+  {
+   "heure": "05:12",
+   "etape": "agent 8 rendu",
+   "resultat": "video.mp4 + apercu.png + légende + story produits ; photos réelles refusées par le proxy (fond uni sur certaines scènes)"
+  }
  ]
 }
