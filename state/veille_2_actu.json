@@ -1,21 +1,22 @@
 {
- "date": "2026-11-07",
+ "date": "2026-11-16",
  "formats": [
-  "Bilan chiffré d'un événement du jour : 18/10, 1 156 vues, record du compte, non reproduit (source : state/rapport_3_actu.json, 07/11/2026)",
-  "Citation d'autorité suivie d'une décision concrète : 24/10, 244 vues, 5 interactions (source : state/rapport_3_actu.json, 07/11/2026)"
+  "Bilan chiffré d'un fait du jour, avec décision concrète à la fin : le meilleur post récent (24/10 : 244 vues, 5 interactions) est une citation vérifiée suivie d'une décision (source : state/rapport_3_actu.json, 15/11/2026)",
+  "Record du compte non reproduit : 18/10, 1 156 vues, sur un sujet d'actu chaud (source : state/rapport_3_actu.json, 15/11/2026)"
  ],
  "accroches_types": [
-  "Chiffre officiel en ouverture, puis le point de vue des gens concernés (ligne éditoriale du profil)"
+  "Fait officiel vérifié en ouverture, puis la conséquence pour les gens concernés (ligne du profil)"
  ],
  "sujets_qui_buzzent": [
-  "Manifestations du 7 novembre : 46 000 personnes à Paris selon la préfecture de police (BFMTV, 07/11/2026 : https://www.bfmtv.com/societe/manifestations/video-manifestations-46-000-personnes-ont-defile-a-paris-selon-la-prefecture-de-police_VN-202611070376.html)",
-  "Colère sociale : mobilisation en forte baisse selon Le Figaro (direct, 07/11/2026 : https://www.lefigaro.fr/actualite-france/en-direct-acte-iv-des-gilets-jaunes-syndicats-mouvement-social-contre-la-vie-chere-casseurs-blacks-blocs-crs-manifestation-paris-place-de-la-concorde-20261107)",
-  "Choc fiscal : la France insoumise veut lever 106 milliards (Challenges, veille du 07/11/2026 : https://www.challenges.fr/economie/un-choc-fiscal-dune-ampleur-sans-precedent-la-france-insoumise-fait-le-pari-risque-de-lever-106-milliards-sans-deteriorer-lactivite_646895)"
+  "Manifestations du 14 novembre à Paris et Lyon : 28 articles regroupés (20 Minutes, BFM, LVSL, La Croix) — veille brute du 16/11/2026 (state/veille_brute.json, maj 06 h 28 UTC)",
+  "Rassemblements interdits autour de lycées et universités parisiens : BFMTV, 15/11/2026 (https://www.bfmtv.com/societe/manifestations/colere-sociale-les-rassemblements-interdits-a-paris-autour-de-certains-lycees-et-universites_AD-202611150393.html)",
+  "Présidentielle : Édouard Philippe accepte de discuter avec la droite et le centre, RFI, 16/11/2026 (https://www.rfi.fr/fr/france/20261116-pr%C3%A9sidentielle-en-france-%C3%A9douard-philippe-accepte-de-discuter-avec-la-droite-et-le-centre-mais-refuse-toujours-une-primaire)"
  ],
- "communaute": "7 abonnés au 07/11, 0 commentaire reçu, moyenne des 10 dernières publications 128,5 vues (state/feedback_cm_actu.json, 07/11/2026). Aucun retour écrit de l'audience.",
+ "communaute": "7 abonnés, stables depuis le 26/10 ; 0 question, 0 demande, 0 critique ; moyenne des 10 dernières publications : 124 vues (state/feedback_cm_actu.json, 15/11/2026).",
  "a_eviter": [
-  "Violences et émeutes : 22/10, 76 vues et 0 interaction (state/feedback_cm_actu.json)",
-  "Chiffre de mobilisation sans citer sa source (préfecture, syndicat, média)",
-  "Aucun son tendance vérifié aujourd'hui : rien à recommander à l'agent 6"
- ]
+  "Estimations de manifestants reprises sans source officielle citée",
+  "Titres de presse repris sans vérifier l'angle (state/veille_13_actu.json, 07/11/2026)"
+ ],
+ "sons_tendance": [],
+ "note_sons": "Aucun son Instagram vérifié aujourd'hui : pas d'accès à l'onglet Tendances ni de recherche web dans cette session. Dernier relevé TikTok connu : tokchart.com/trending/FR du 07/11/2026 (state/veille_13_actu.json) : « Ramalama (Bang Bang) » en baisse (845 K vidéos, -2 900 sur la journée), à éviter pour les nouveaux Reels ; deux « Son original » en hausse, nom à relever dans l'app avant usage."
 }
