@@ -1,41 +1,42 @@
 {
-  "date": "2026-11-15",
+  "date": "2026-11-17",
+  "source": "state/stats_actu.json (maj 17/11 08 h 23 UTC, 28 publications), state/abonnes_actu.json, state/feedback_cm_actu.json",
   "classement": [
     "18/10 « 👑 Vendredi soir : Macron au concert de Céline Dion… » : 1 156 vues, portée 1 003, 20 interactions (record du compte, non reproduit depuis)",
     "17/10 « ⚠️ Contenu effrayant… ou pas ? » : 348 vues, portée 305, 4 interactions",
     "24/10 « Oui, nous avons perdu le contrôle. » : 244 vues, portée 225, 5 interactions, 1 sauvegarde",
-    "Derniers : 9/11 25 vues, portée 18, 0 interaction ; 5/11 120 vues, 1 like"
+    "Dernières : 16/11 113 vues, portée 104, 0 interaction ; 9/11 26 vues, portée 18, 0 interaction"
   ],
   "ce_qui_marche": [
     "Sujets d'actu chauds (manifestations du 17-18/10) : les 2 plus fortes vues du compte (1 156 et 348)",
-    "Citation vérifiée d'une déclaration officielle, suivie d'une décision concrète (24/10 : 244 vues, 1re des 10 dernières)",
-    "Seuls signaux de conservation : 2 sauvegardes (20/10 et 24/10)"
+    "Citation vérifiée d'une déclaration officielle suivie d'une décision concrète (24/10 : 244 vues, meilleure des 10 dernières)",
+    "Les 2 sauvegardes du compte (20/10 et 24/10) : seuls signaux de conservation"
   ],
   "ce_qui_ne_marche_pas": [
-    "Audience faible : 7 abonnés, stables depuis le 26/10 (4 le 18/10)",
-    "10 dernières publications : 124 vues en moyenne, portée 110, 9 interactions (engagement ≈ 0,8 % = interactions / portée)",
-    "0 commentaire lisible dans la file, 0 partage sur les 27 publications ; 2 commentaires seulement, tous deux sur le post du 18/10",
-    "Format « oui ou non » (6 posts) : 114 vues en moyenne, contre 133 pour les 20 autres hors record (échantillon faible, indicatif)",
-    "Dernière publication (9/11) : 25 vues, plafond bas"
+    "Audience faible : 7 abonnés, stables depuis le 26/10 (4 du 18 au 24/10)",
+    "10 dernières publications : 122 vues en moyenne, portée 109, 7 interactions (≈ 0,6 % de la portée)",
+    "Publications récentes sans interaction : 0 interaction sur 16/11, 9/11 et 5/11 hors 1 like",
+    "Aucun commentaire dans state/commentaires_actu.json : aucune question de l'audience à exploiter"
   ],
   "enseignements": [
-    "Miser sur l'actualité du jour quand elle est forte : c'est là que sont les pics de vues",
-    "Garder le format « citation vérifiée + décision concrète » (24/10)",
-    "Ne pas faire de la question « oui ou non » la règle : 114 vues en moyenne contre 133, et aucun commentaire lisible"
+    "Miser sur l'actualité du jour quand elle est forte : c'est là que sont les pics de vues (1 156 et 348 vues)",
+    "Garder le format « citation vérifiée + décision concrète » (24/10, meilleure des 10 dernières)",
+    "Tester la question fermée en fin de vidéo avant de conclure : aujourd'hui le volume de commentaires est trop faible pour juger"
   ],
-  "test": "Sur 4 publications, poser une question fermée en fin de vidéo et compter commentaires et interactions (base actuelle : 0 commentaire lisible sur 27 posts)",
+  "test": "Sur 4 publications, poser une question fermée en fin de vidéo et compter commentaires et interactions (base actuelle : 0 commentaire dans la file). Le test A/B du 18/10 reste sans gagnant (state/test_ab_actu.json).",
   "anomalies": [
-    "2 commentaires comptés le 18/10 dans state/stats_actu.json sont absents de state/commentaires_actu.json : collecte à vérifier côté GitHub",
+    "state/stats_actu.json indique 2 commentaires sur le post du 18/10 (1 156 vues) mais state/commentaires_actu.json est vide : collecte à vérifier côté GitHub",
     "Source instrack.app non consultée aujourd'hui : chiffres issus des seules stats de l'API"
   ],
   "reperes_projection": {
-    "vues_mediane": 119,
-    "vues_mediane_27": 118,
+    "vues_mediane": 116,
+    "vues_moyenne_10": 122,
     "meilleure": 1156,
     "meilleure_recente": 244,
-    "pire": 25,
-    "portee_moyenne_10": 110,
-    "engagement_10": 0.008,
+    "pire": 26,
+    "portee_moyenne_10": 109,
+    "interactions_10": 7,
+    "engagement_10": 0.0064,
     "lecture": "Projeter ≈ 120 vues pour une vidéo standard ; un pic (≥ 240) reste possible seulement sur un sujet d'actu très fort"
   }
 }
