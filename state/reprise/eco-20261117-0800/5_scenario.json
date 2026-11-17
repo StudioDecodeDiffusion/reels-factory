@@ -1,168 +1,197 @@
 {
+ "variete": {
+  "accroche": "chiffre_geant",
+  "fonctionnement": "chiffres_cles",
+  "musique": "synthwave"
+ },
  "plans": [
   {
    "type": "hook",
    "duree_s": 3.5,
-   "texte_ecran": "50 MILLIARDS D'ÉCONOMIES",
+   "texte_ecran": "5,1 % DU PIB",
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/16/french-minister-for-economy-finance-and-industrial-energy-and-digital-sovereignty-roland-lescure-fre-1794819586_93214ee288fa6c7214ee288fa9b214v_.jpg",
+   "fond_photo_requete": "budget de l'État déficit public 2025 Assemblée nationale novembre 2026",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Cinquante milliards d'euros. C'est le montant d'économies à trouver pour éviter l'impasse.",
+     "texte": "Le déficit public atteint 5,1 % du PIB. C'est la mesure de 2025, publiée par l'Insee.",
      "expression": "choc"
     }
    ]
   },
   {
-   "type": "fait",
+   "type": "pd_flux",
    "duree_s": 4.0,
-   "texte_ecran": "UN DÉFICIT DE 5,5 %",
+   "texte_ecran": "DÉPENSES > RECETTES",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "En deux mille vingt-trois, le déficit public a atteint cinq virgule cinq pour cent du PIB.",
+     "texte": "Le déficit, c'est l'écart entre dépenses et recettes publiques, année après année.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "chiffre",
+   "type": "bigstat",
    "duree_s": 4.0,
-   "texte_ecran": "154 MILLIARDS DE TROU",
+   "texte_ecran": "UNE DONNÉE VÉRIFIABLE",
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/16/french-minister-for-economy-finance-and-industrial-energy-and-digital-sovereignty-roland-lescure-fre-1794819586_93214ee288fa6c7214ee288fa9b214v_.jpg",
+   "fond_photo_requete": "Insee statistiques finances publiques France 2025",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Soit cent cinquante-quatre milliards de trou, contre quatre virgule neuf pour cent anticipés.",
+     "texte": "Ce chiffre n'est pas une opinion : c'est une donnée vérifiable.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "fait",
-   "duree_s": 3.5,
-   "texte_ecran": "UNE DETTE HISTORIQUE",
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "CHAQUE ANNÉE",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Selon l'Insee, la dette publique totale a atteint un niveau record.",
+     "texte": "Concrètement, la France emprunte encore pour combler cet écart chaque année.",
      "expression": "pense"
     }
    ]
   },
   {
-   "type": "chiffre",
-   "duree_s": 5.0,
-   "texte_ecran": "3 101 MILLIARDS D'EUROS",
+   "type": "counter",
+   "duree_s": 4.0,
+   "texte_ecran": "DETTE : 115,6 %",
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/16/french-minister-for-economy-finance-and-industrial-energy-and-digital-sovereignty-roland-lescure-fre-1794819586_93214ee288fa6c7214ee288fa9b214v_.jpg",
+   "fond_photo_requete": "dette publique France 2025 Insee finances publiques",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Elle s'établit à trois mille cent un virgule deux milliards d'euros, soit cent dix virgule six pour cent du PIB.",
+     "texte": "La dette publique atteint 115,6 % du PIB en 2025.",
      "expression": "choc"
     }
    ]
   },
   {
-   "type": "versus",
+   "type": "pd_jauge",
    "duree_s": 4.0,
-   "texte_ecran": "OBJECTIF 3 % EN 2027",
+   "texte_ecran": "115,6 %",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "La cible officielle : repasser sous les trois pour cent en deux mille vingt-sept.",
+     "texte": "Autrement dit, la dette dépasse une année entière de richesse produite.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "fait",
+   "type": "compare",
    "duree_s": 4.0,
-   "texte_ecran": "UN CALENDRIER IRREALISTE",
+   "texte_ecran": "DÉFICIT 5,1 % · DETTE 115,6 %",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Mais le Haut Conseil et la Cour des comptes jugent ce plan irréaliste.",
+     "texte": "Deux chiffres à garder en tête : le déficit et la dette.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "chiffre",
+   "type": "pd_flux",
    "duree_s": 4.0,
-   "texte_ecran": "50 MILLIARDS NON FINANCÉS",
+   "texte_ecran": "DÉPENSER MOINS / GAGNER PLUS",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Sans cinquante milliards d'euros d'économies documentées, l'équation demeure intenable.",
+     "texte": "Pour réduire le déficit, l'État doit dépenser moins ou gagner plus.",
      "expression": "pense"
     }
    ]
   },
   {
-   "type": "fait",
+   "type": "timeline",
    "duree_s": 4.0,
-   "texte_ecran": "LES TAUX QUI GRIMPENT",
+   "texte_ecran": "LA CIBLE DE L'AN PROCHAIN",
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/16/french-minister-for-economy-finance-and-industrial-energy-and-digital-sovereignty-roland-lescure-fre-1794819586_93214ee288fa6c7214ee288fa9b214v_.jpg",
+   "fond_photo_requete": "budget de l'État cible de déficit Assemblée nationale 2026",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Surtout, les intérêts de la dette s'envolent avec la hausse des taux.",
+     "texte": "Le projet de budget fixe une cible de déficit pour l'an prochain.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "chiffre",
+   "type": "pd_versus",
    "duree_s": 4.0,
-   "texte_ecran": "52 MILLIARDS D'INTÉRÊTS",
+   "texte_ecran": "CIBLE OU RÉALITÉ ?",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Elle a atteint près de cinquante-deux milliards d'euros sur la seule année passée.",
-     "expression": "choc"
+     "texte": "Tenir cette cible suppose des économies, davantage de recettes, ou bien les deux.",
+     "expression": "pense"
     }
    ]
   },
   {
-   "type": "versus",
+   "type": "bars",
+   "duree_s": 4.0,
+   "texte_ecran": "5,1 % EN 2025",
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/16/french-minister-for-economy-finance-and-industrial-energy-and-digital-sovereignty-roland-lescure-fre-1794819586_93214ee288fa6c7214ee288fa9b214v_.jpg",
+   "fond_photo_requete": "déficit public 2025 comptes de l'État France",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le point de départ, c'est le déficit mesuré en 2025.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4.0,
+   "texte_ecran": "FLUX VS STOCK",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le déficit est un flux annuel. La dette, elle, est un stock accumulé au fil des ans.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "checklist",
+   "duree_s": 4.0,
+   "texte_ecran": "À RETENIR",
+   "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/16/french-minister-for-economy-finance-and-industrial-energy-and-digital-sovereignty-roland-lescure-fre-1794819586_93214ee288fa6c7214ee288fa9b214v_.jpg",
+   "fond_photo_requete": "finances publiques France budget Assemblée nationale 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Retenez : déficit 5,1 % du PIB, dette 115,6 %, source Insee.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "quiz",
    "duree_s": 4.5,
-   "texte_ecran": "70 MILLIARDS EN 2027",
+   "texte_ecran": "ET VOUS ?",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Elle pourrait dépasser soixante-dix milliards d'ici deux mille vingt-sept selon le Trésor.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "chute",
-   "duree_s": 4.0,
-   "texte_ecran": "MOINS DE BUDGET UTILE",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Ce remboursement d'intérêts grignote l'ensemble des marges budgétaires de l'État.",
-     "expression": "pense"
-    }
-   ]
-  },
-  {
-   "type": "question",
-   "duree_s": 4.5,
-   "texte_ecran": "OÙ COUPER D'ABORD ?",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Où faudrait-il trouver cinquante milliards d'économies en priorité selon vous ?",
+     "texte": "Réduire les dépenses ou augmenter les recettes : que choisiriez-vous ?",
      "expression": "neutre"
     }
    ]
   }
  ],
- "legende": "50 milliards d'euros : le montant minimal d'économies à trouver d'ici 2027.\n\nAvec un déficit public à 5,5 % du PIB et une dette à 3 101 milliards d'euros, la trajectoire budgétaire française fait face à une contrainte historique. L'envolée des intérêts de la dette réduit mécaniquement les marges d'action de l'État sans coupes documentées.\n\nSur quel poste de dépenses l'État devrait-il agir en priorité ? 👇\nEnvoie-la à quelqu'un qui suit l'actualité économique 📤\nSources : Insee, Cour des comptes, Direction générale du Trésor",
+ "legende": "5,1 % du PIB : le déficit public de la France en 2025.\n\nLa dette publique atteint 115,6 % du PIB, soit plus d'une année de richesse produite. Le déficit s'ajoute chaque année à cette dette, et la cible de l'an prochain pose une question : comment la tenir ?\n\nDépenses ou recettes : que feriez-vous en premier ? 👇\nEnvoie-la à quelqu'un qui suit les comptes publics 📤\nSources : Insee",
  "hashtags": [
-  "#financespubliques",
+  "#economie",
   "#insee",
-  "#courdescomptes",
-  "#budget2024",
+  "#financespubliques",
+  "#budget2027",
   "#decodeleco"
  ]
 }

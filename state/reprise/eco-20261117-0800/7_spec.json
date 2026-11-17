@@ -1,0 +1,409 @@
+{
+  "id": "eco-20261117-0800",
+  "compte": "eco",
+  "theme": {
+    "fond": "#120B2E",
+    "texte": "#F5F0FF",
+    "accent": "#FF3EA5",
+    "accent2": "#00E5FF",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "nuit_neon",
+    "palette": [
+      "#120B2E",
+      "#2A1657",
+      "#FF3EA5",
+      "#00E5FF",
+      "#F5F0FF",
+      "#FFB300"
+    ],
+    "mise_en_page": "jt",
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "classique"
+    }
+  },
+  "variete": {
+    "accroche": "chiffre_geant",
+    "trend": "Infographie de flux financiers et comparateur de données officielles",
+    "fonctionnement": "chiffres_cles",
+    "mise_en_page": "jt",
+    "musique": "synthwave",
+    "voix": "V1+V3",
+    "palette": "nuit_neon"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "whoosh"
+    ],
+    "3": [
+      "pop"
+    ],
+    "4": [
+      "whoosh"
+    ],
+    "5": [
+      "pop"
+    ],
+    "6": [
+      "whoosh"
+    ],
+    "7": [
+      "pop"
+    ],
+    "8": [
+      "whoosh"
+    ],
+    "9": [
+      "pop"
+    ],
+    "10": [
+      "whoosh"
+    ],
+    "11": [
+      "pop"
+    ],
+    "12": [
+      "whoosh"
+    ],
+    "13": [
+      "pop"
+    ],
+    "14": [
+      "whoosh"
+    ]
+  },
+  "musique": {
+    "genre": "synthwave",
+    "volume": 0.4
+  },
+  "titre_miniature": "Déficit 2025 : 5,1 % du PIB",
+  "mots_choc": [
+    "5,1 % DU PIB",
+    "DETTE 115,6 %"
+  ],
+  "surtitre_miniature": "Insee · 2025",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "energie": 3,
+      "titre": "Déficit 2025 : 5,1 %",
+      "title": "Déficit 2025 : 5,1 %",
+      "mot_fort": "5,1 %",
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/16/french-minister-for-economy-finance-and-industrial-energy-and-digital-sovereignty-roland-lescure-fre-1794819586_93214ee288fa6c7214ee288fa9b214v_.jpg",
+      "fond_photo_requete": "budget de l'État déficit public 2025 Assemblée nationale novembre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le déficit public atteint 5,1 % du PIB. C'est la mesure de 2025, publiée par l'Insee.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 7.3
+    },
+    {
+      "n": 2,
+      "type": "pd_flux",
+      "energie": 2,
+      "titre": "Dépenses contre recettes",
+      "mot_fort": "recettes",
+      "de": {
+        "label": "Dépenses",
+        "prompt": "a stack of gold coins leaving a wooden chest, pixel art, single object"
+      },
+      "vers": {
+        "label": "Recettes",
+        "prompt": "a stack of gold coins entering a wooden chest, pixel art, single object"
+      },
+      "montant": "argent",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le déficit, c'est l'écart entre dépenses et recettes publiques, année après année.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 3,
+      "type": "bigstat",
+      "energie": 2,
+      "titre": "Une donnée vérifiable",
+      "mot_fort": "vérifiable",
+      "value": "5,1 % du PIB",
+      "label": "Déficit public 2025 · Insee",
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/16/french-minister-for-economy-finance-and-industrial-energy-and-digital-sovereignty-roland-lescure-fre-1794819586_93214ee288fa6c7214ee288fa9b214v_.jpg",
+      "fond_photo_requete": "Insee statistiques finances publiques France 2025",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ce chiffre n'est pas une opinion : c'est une donnée vérifiable.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 4,
+      "type": "pd_chiffre",
+      "energie": 3,
+      "titre": "Chaque année, on emprunte",
+      "mot_fort": "emprunte",
+      "valeur": null,
+      "legende": "Le déficit s'ajoute à la dette",
+      "source": "Insee",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Concrètement, la France emprunte encore pour combler cet écart chaque année.",
+          "expression": "pense"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 5,
+      "type": "counter",
+      "energie": 3,
+      "titre": "Dette : 115,6 %",
+      "mot_fort": "115,6 %",
+      "to": 115.6,
+      "suffixe": " %",
+      "label": "Dette publique 2025 · Insee",
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/16/french-minister-for-economy-finance-and-industrial-energy-and-digital-sovereignty-roland-lescure-fre-1794819586_93214ee288fa6c7214ee288fa9b214v_.jpg",
+      "fond_photo_requete": "dette publique France 2025 Insee finances publiques",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La dette publique atteint 115,6 % du PIB en 2025.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 6,
+      "type": "pd_jauge",
+      "energie": 2,
+      "titre": "Plus d'un PIB",
+      "mot_fort": "plus d'un PIB",
+      "valeur": 100,
+      "legende": "Dette : 115,6 % du PIB",
+      "niveau": "élevé",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Autrement dit, la dette dépasse une année entière de richesse produite.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 7,
+      "type": "compare",
+      "energie": 2,
+      "titre": "Deux chiffres à garder",
+      "mot_fort": "garder",
+      "left": {
+        "label": "Déficit 2025",
+        "value": "5,1 %"
+      },
+      "right": {
+        "label": "Dette 2025",
+        "value": "115,6 %"
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Deux chiffres à garder en tête : le déficit et la dette.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 8,
+      "type": "pd_flux",
+      "energie": 3,
+      "titre": "Moins de dépenses, plus de recettes",
+      "mot_fort": "moins",
+      "de": {
+        "label": "Moins de dépenses",
+        "prompt": "a shopping basket with fewer items, pixel art, single object"
+      },
+      "vers": {
+        "label": "Plus de recettes",
+        "prompt": "a stack of coins filling a piggy bank, pixel art, single object"
+      },
+      "montant": "argent",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Pour réduire le déficit, l'État doit dépenser moins ou gagner plus.",
+          "expression": "pense"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 9,
+      "type": "timeline",
+      "energie": 2,
+      "titre": "La cible de l'an prochain",
+      "mot_fort": "cible",
+      "events": [
+        {
+          "date": "2025",
+          "label": "Déficit mesuré : 5,1 %"
+        },
+        {
+          "date": "2027",
+          "label": "Cible du projet de budget"
+        }
+      ],
+      "fond_photo": "https://pictures.latribune.fr/cdn-cgi/image/format=auto,fit=cover,width=1200,height=675/media/melody/2026/11/16/french-minister-for-economy-finance-and-industrial-energy-and-digital-sovereignty-roland-lescure-fre-1794819586_93214ee288fa6c7214ee288fa9b214v_.jpg",
+      "fond_photo_requete": "budget de l'État cible de déficit Assemblée nationale 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le projet de budget fixe une cible de déficit pour l'an prochain.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 10,
+      "type": "pd_versus",
+      "energie": 2,
+      "titre": "Cible ou réalité ?",
+      "mot_fort": "réalité",
+      "gauche": {
+        "label": "Économies",
+        "prompt": "a pair of scissors cutting a stack of coins, pixel art, single object"
+      },
+      "droite": {
+        "label": "Recettes",
+        "prompt": "a stack of coins growing taller, pixel art, single object"
+      },
+      "verdict": "Les deux ?",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Tenir cette cible suppose des économies, davantage de recettes, ou bien les deux.",
+          "expression": "pense"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 11,
+      "type": "bars",
+      "energie": 3,
+      "titre": "Le point de départ",
+      "mot_fort": "2025",
+      "title": "Déficit public 2025",
+      "items": [
+        {
+          "label": "Déficit 2025",
+          "value": 5.1,
+          "suffixe": " % du PIB"
+        }
+      ],
+      "fond_photo": "https://www.lexpress.fr/resizer/v2/SITRAENTAJAQFICLQFALAI4M6Y.JPG?auth=e586feca0cd16e9101d1fc4680aa0d4d7dd75a2d6b2b9b8af80e9e3f66494324&width=1200&height=630&quality=85&focal=2212%2C942",
+      "fond_photo_requete": "déficit public 2025 comptes de l'État France",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le point de départ, c'est le déficit mesuré en 2025.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 12,
+      "type": "pd_tampon",
+      "energie": 2,
+      "titre": "Flux contre stock",
+      "mot_fort": "stock",
+      "tampon": "FLUX / STOCK",
+      "prompt": "a river of coins flowing into a large stone vault, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le déficit est un flux annuel. La dette, elle, est un stock accumulé au fil des ans.",
+          "expression": "pense"
+        }
+      ],
+      "duration": 7.7
+    },
+    {
+      "n": 13,
+      "type": "checklist",
+      "energie": 2,
+      "titre": "À retenir",
+      "mot_fort": "retenir",
+      "items": [
+        {
+          "texte": "Déficit 2025 : 5,1 % du PIB",
+          "etat": "vrai"
+        },
+        {
+          "texte": "Dette 2025 : 115,6 % du PIB",
+          "etat": "vrai"
+        },
+        {
+          "texte": "Source : Insee",
+          "etat": "vrai"
+        }
+      ],
+      "fond_photo": "https://img.20mn.fr/0HqXONreQLCwAv5Srpc_MCk/1444x920_le-premier-ministre-francais-sebastien-lecornu-assiste-a-la-session-hebdomadaire-des-questions-au-gouvernement-a-l-assemblee-nationale-francaise-a-paris-le-10-novembre-2026-accorsini-jeanne-qag-0015-credit-jeanne-accorsini-sipa-2611102145",
+      "fond_photo_requete": "finances publiques France budget Assemblée nationale 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Retenez : déficit 5,1 % du PIB, dette 115,6 %, source Insee.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "energie": 2,
+      "titre": "Et vous ?",
+      "mot_fort": "vous",
+      "question": "Réduire les dépenses ou augmenter les recettes ?",
+      "options": [
+        "Dépenser moins",
+        "Gagner plus"
+      ],
+      "bonne": null,
+      "revelation": "Dites-le en commentaire",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Réduire les dépenses ou augmenter les recettes : que choisiriez-vous ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    }
+  ]
+}
