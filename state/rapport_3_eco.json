@@ -1,34 +1,28 @@
 {
-  "date": "2026-11-15",
-  "source": "state/stats_eco.json (maj 2026-11-15 14 h 45 UTC), state/abonnes_eco.json, travail/rapport8_eco.json, state/feedback_cm_eco.json",
+  "date": "2026-11-17",
   "classement": [
-    {"sujet": "Dette publique (2 882 Md€, détenteurs)", "date": "2026-10-27", "vues": 203, "interactions": 2},
-    {"sujet": "Niches fiscales (88 Md€/an)", "date": "2026-11-03", "vues": 172, "interactions": 2},
-    {"sujet": "Fonderie de Bretagne (liquidation, aides publiques)", "date": "2026-10-25", "vues": 131, "interactions": 1},
-    {"sujet": "Budget 2026 (déficit 135 Md€)", "date": "2026-10-30", "vues": 115, "interactions": 0},
-    {"sujet": "Salaire brut / net", "date": "2026-10-27", "vues": 94, "interactions": 3}
+    "27/10 « À qui la France doit-elle 2 882 milliards d'euros ? » : 203 vues, portée 189, 2 j'aime",
+    "03/11 « Niches fiscales (environ 88 milliards par an) » : 172 vues, portée 157, 1 j'aime, 1 enregistrement",
+    "25/10 « Fonderie de Bretagne » : 131 vues, portée 121, 1 j'aime",
+    "30/10 « Budget 2026 : environ 135 milliards de déficit » : 115 vues, portée 109, 0 interaction",
+    "27/10 « Salaire brut et net » : 94 vues, portée 91, 1 j'aime, 1 enregistrement"
   ],
   "ce_qui_marche": [
-    "Finances publiques chiffrées et sourcées : les 2 meilleures vidéos (203 et 172 vues) et 3 vidéos sur 5 au-dessus de 115 vues.",
-    "Accroche par un chiffre précis dans la première phrase (ex. 2 882 Md€, 88 Md€/an)."
+    "Finances publiques chiffrées et sourcées : les 2 vidéos les plus vues (203 et 172 vues). Échantillon de 5 vidéos, indicatif seulement."
   ],
   "ce_qui_ne_marche_pas": [
-    "Aucun abonné gagné sur toute la période (0 au 25/10 et au 15/11).",
-    "Aucun commentaire, aucun partage, peu d'enregistrements (2 au total).",
-    "Aucune publication depuis le 03/11 (12 jours) : confirmé par state/stats_eco.json et state/abonnes_eco.json (publications figées à 5)."
+    "Aucune publication depuis le 03/11 (14 jours) alors que le planning prévoit mardi et vendredi à 08 h.",
+    "0 abonné sur la période, 0 partage, 0 commentaire."
   ],
   "enseignements": [
-    "Garder le format finances publiques chiffrées et sourcées : c'est le seul sujet qui dépasse 150 vues deux fois.",
-    "Le format salaire brut / net, le moins vu (94 vues), a le meilleur taux d'interactions (3 sur 94) : à tester à nouveau sur un autre angle, sans en faire un axe principal.",
-    "Reprendre la cadence de publication avant de tirer des conclusions sur les créneaux : sans nouvelles vidéos, aucun test d'heure n'est évaluable."
+    "Reprendre la cadence prévue (mardi et vendredi) avant de tirer des conclusions sur les créneaux ou les formats.",
+    "Garder en priorité le format finances publiques chiffrées et sourcées.",
+    "Vérifier la file de publication pour expliquer l'arrêt depuis le 03/11 avant de relancer."
   ],
-  "test": "Reprendre la publication et publier 3 reels finances publiques chiffrées et sourcées sur 2 semaines ; comparer leurs vues médianes à 131.",
+  "test": "Deux vidéos finances publiques de même longueur, à 08 h : accroche chiffrée contre accroche question.",
   "reperes_projection": {
     "vues_mediane": 131,
-    "meilleure": 203,
-    "moyenne": 143,
-    "abonnes": 0,
-    "echantillon": 5,
-    "note": "Échantillon de 5 vidéos (27/10 au 03/11) : indicatif seulement."
-  }
+    "meilleure": 203
+  },
+  "source": "state/stats_eco.json (maj 17/11/2026 08 h 23 UTC), state/abonnes_eco.json, retour agent 9 (state/feedback_cm_eco.json)"
 }

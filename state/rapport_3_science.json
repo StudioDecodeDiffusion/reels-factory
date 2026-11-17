@@ -1,7 +1,7 @@
 {
-  "date": "2026-11-15",
+  "date": "2026-11-17",
   "compte": "science",
-  "source": "state/stats_science.json (maj 2026-11-15 14:45 UTC), state/abonnes_science.json (suivi 25/10 au 15/11), state/feedback_cm_science.json, travail/rapport8_science.json",
+  "source": "state/stats_science.json (maj 2026-11-17 08:24 UTC), state/abonnes_science.json (suivi 25/10 au 17/11), state/feedback_cm_science.json, travail/rapport8_science.json",
   "classement": [
     "27 oct. 07 h UTC « Comment ce robot canard tient sur 2 pattes » : 120 vues, portée 115, 1 sauvegarde",
     "28 oct. « Pont Tacoma Narrows » : 119 vues, portée 104, 0 interaction",
@@ -13,20 +13,15 @@
     "Sujets à objet concret (robot, pont, avion, dalle) : 101 à 120 vues sur 4 posts sur 5."
   ],
   "ce_qui_ne_marche_pas": [
-    "0 abonné sur toute la période du suivi (25/10 au 15/11).",
-    "Aucune publication depuis le 11/11 (compteur à 5 posts du 11/11 au 15/11).",
-    "Sur 5 posts : 1 sauvegarde, 0 like, 0 commentaire, 0 partage.",
+    "0 abonné sur toute la période du suivi (25/10 au 17/11).",
+    "Aucune publication depuis le 11/11 (compteur à 5 posts du 11/11 au 17/11, soit 6 jours).",
+    "Sur 5 posts : 1 sauvegarde, 0 like, 0 commentaire, 0 partage (478 vues au total).",
     "Post du 4 nov. (moteur électrique) : 30 vues, environ un quart des autres posts."
   ],
   "enseignements": [
     "Garder les accroches à objet concret, qui tiennent entre 101 et 120 vues.",
-    "Relancer la production : le compte n'a plus rien publié depuis 4 jours.",
-    "Ne pas juger le format sur une vidéo isolée : n = 5, 0 interaction sociale hors une sauvegarde."
-  ],
-  "conseils_demarrage": [
-    "Publier à un rythme régulier (par exemple un reel par semaine minimum) pour que l'algorithme ait des données.",
-    "Reprendre les sujets qui ont tenu (robot, pont, avion) plutôt qu'un sujet abstrait.",
-    "Poser une question claire en fin de vidéo pour obtenir les premiers commentaires."
+    "Relancer la production : aucune publication depuis 6 jours (alerte à vérifier avant de juger les formats).",
+    "Ne pas juger le format sur une vidéo isolée : n = 5, 1 interaction sociale au total (une sauvegarde)."
   ],
   "test": "Invitation à commenter en fin de vidéo, jugée sur 7 jours glissants après le 11/11 (aucun commentaire à ce jour).",
   "reperes_projection": {
@@ -34,6 +29,6 @@
     "moyenne": 95.6,
     "meilleure": 120
   },
-  "alerte": "Aucune publication depuis le 11/11 (4 jours).",
+  "alerte": "Aucune publication depuis le 11/11 (6 jours).",
   "avertissement": "n = 5 posts, compte très jeune : repères indicatifs seulement."
 }
