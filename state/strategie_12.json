@@ -1,20 +1,43 @@
 {
-  "date": "2026-11-15",
-  "compte": "eco",
-  "type": "resume_quotidien",
-  "source": "state/stats_eco.json (maj 2026-11-15 14 h 45 UTC), state/abonnes_eco.json, state/commentaires_eco.json, state/rapport_3_eco.json, state/feedback_cm_eco.json, travail/rapport8_eco.json, travail/rapport3_eco.md",
-  "ou_on_en_est": "0 abonné (inchangé depuis le 25/10). 5 reels publiés entre le 27/10 et le 03/11 : 715 vues au total, médiane 131, moyenne 143, 8 interactions. Aucune publication depuis le 03/11 (12 jours). Chaîne de publication à l'arrêt.",
-  "ce_qui_a_bouge": [
-    "Rien de nouveau depuis le bilan du 13/11 : aucune publication ajoutée, 0 abonné, 0 commentaire (stats mises à jour le 15/11 à 14 h 45 UTC).",
-    "Meilleur reel : dette publique (203 vues, 27/10). Le reel niches fiscales (172 vues, 03/11) est le dernier publié.",
-    "Le salaire brut / net (94 vues) a le meilleur taux d'interactions (3 sur 94) : à retester sur un autre angle, sans en faire un axe principal."
-  ],
+  "date": "2026-11-17",
+  "type": "resume_du_jour",
+  "comptes": {
+    "actu": {
+      "abonnes": 7,
+      "publications": 28,
+      "derniere": "2026-11-16",
+      "vues_moy_10": 122,
+      "alerte": null
+    },
+    "eco": {
+      "abonnes": 0,
+      "publications": 5,
+      "derniere": "2026-11-03",
+      "vues_meilleure": 203,
+      "alerte": "cadence mardi/vendredi non tenue"
+    },
+    "qhse": {
+      "abonnes": 0,
+      "publications": 2,
+      "derniere": "2026-10-27",
+      "alerte": "chaine de publication a retablir"
+    },
+    "science": {
+      "abonnes": 0,
+      "publications": 5,
+      "derniere": "2026-11-11",
+      "vues_moy": 95.6,
+      "alerte": "rythme a l'arret"
+    }
+  },
   "actions_du_jour": [
-    "Signaler au propriétaire qu'aucune vidéo éco n'est publiée depuis le 03/11 (12 jours) et demander la reprise de la cadence ; la cause n'est pas identifiable à partir des fichiers.",
-    "Garder le format finances publiques chiffrées et sourcées (les 2 meilleurs reels) pour la prochaine vidéo.",
-    "Ne tirer aucune conclusion sur les heures de publication tant qu'aucune nouvelle vidéo n'apparaît dans les statistiques ; le test de 3 reels finances publiques sur 2 semaines (médiane à comparer à 131 vues) attend la reprise."
+    "eco : retablir la cadence mardi/vendredi, expliquer l'arret du 03/11",
+    "qhse : retablir la chaine de publication, reconcilier le job qhse-20261026-1200",
+    "science : une video a objet concret cette semaine ; actu : test question fermee sur 4 publications"
   ],
-  "avertissement": "n = 5 posts, compte très jeune : les repères de vues sont indicatifs, aucun repère de revenus ni de projection n'est fiable. Pas de stratégie complète aujourd'hui (lundi seulement).",
-  "questions_agents": [],
-  "notes_lues": []
+  "anomalies": [
+    "actu : 2 commentaires du 18/10 dans les stats, absents de commentaires_actu.json",
+    "qhse : job qhse-20261026-1200 absent des statistiques",
+    "eco : Instrack non consulte (acces refuse)"
+  ]
 }
