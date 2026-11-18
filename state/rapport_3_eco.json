@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "classement": [
     "27/10 « À qui la France doit-elle 2 882 milliards d'euros ? » : 203 vues, portée 189, 2 j'aime",
     "03/11 « Niches fiscales (environ 88 milliards par an) » : 172 vues, portée 157, 1 j'aime, 1 enregistrement",
@@ -8,21 +8,25 @@
     "27/10 « Salaire brut et net » : 94 vues, portée 91, 1 j'aime, 1 enregistrement"
   ],
   "ce_qui_marche": [
-    "Finances publiques chiffrées et sourcées : les 2 vidéos les plus vues (203 et 172 vues). Échantillon de 5 vidéos, indicatif seulement."
+    "Finances publiques chiffrées (dette, niches fiscales) : les 2 vidéos les plus vues (203 et 172 vues).",
+    "Le 27/10, dette (203 vues) et salaire brut/net (94 vues) publiées à moins de 2 min d'écart : le sujet et l'accroche font l'écart, pas l'heure."
   ],
   "ce_qui_ne_marche_pas": [
-    "Aucune publication depuis le 03/11 (14 jours) alors que le planning prévoit mardi et vendredi à 08 h.",
-    "0 abonné sur la période, 0 partage, 0 commentaire."
+    "Aucune publication enregistrée depuis le 03/11 : 4 créneaux prévus (ven. 6, mar. 10, ven. 13, mar. 17 nov., 08 h) sans trace dans state/stats_eco.json.",
+    "0 commentaire, 0 partage ; 2 enregistrements au total sur 5 vidéos.",
+    "Abonnés à 0 chaque jour du 25/10 au 17/11 (state/abonnes_eco.json) : valeur probablement non alimentée, à vérifier."
   ],
   "enseignements": [
-    "Reprendre la cadence prévue (mardi et vendredi) avant de tirer des conclusions sur les créneaux ou les formats.",
-    "Garder en priorité le format finances publiques chiffrées et sourcées.",
-    "Vérifier la file de publication pour expliquer l'arrêt depuis le 03/11 avant de relancer."
+    "Reprendre la cadence mardi et vendredi à 08 h et vérifier la file de publication : sans nouvelle vidéo, aucun chiffre récent ne peut être comparé.",
+    "Garder le format finances publiques chiffrées et sourcées : les 2 meilleures vidéos (203 et 172 vues) en relèvent.",
+    "Corriger la collecte des abonnés avant toute conclusion sur la croissance."
   ],
-  "test": "Deux vidéos finances publiques de même longueur, à 08 h : accroche chiffrée contre accroche question.",
+  "test": "Deux vidéos finances publiques, même jour et même heure (08 h) : accroche chiffrée contre accroche question ; comparer les vues.",
   "reperes_projection": {
     "vues_mediane": 131,
-    "meilleure": 203
+    "vues_moyenne": 143,
+    "meilleure": 203,
+    "pire": 94
   },
-  "source": "state/stats_eco.json (maj 17/11/2026 08 h 23 UTC), state/abonnes_eco.json, retour agent 9 (state/feedback_cm_eco.json)"
+  "source": "state/stats_eco.json (maj 17/11/2026 22 h 12 UTC), state/abonnes_eco.json, state/feedback_cm_eco.json, travail/rapport8_eco.json. Instrack non consulté (accès refusé selon l'agent 9)."
 }
