@@ -1,42 +1,28 @@
 {
-  "date": "2026-11-17",
-  "source": "state/stats_actu.json (maj 17/11 08 h 23 UTC, 28 publications), state/abonnes_actu.json, state/feedback_cm_actu.json",
+  "date": "2026-11-18",
   "classement": [
-    "18/10 « 👑 Vendredi soir : Macron au concert de Céline Dion… » : 1 156 vues, portée 1 003, 20 interactions (record du compte, non reproduit depuis)",
-    "17/10 « ⚠️ Contenu effrayant… ou pas ? » : 348 vues, portée 305, 4 interactions",
-    "24/10 « Oui, nous avons perdu le contrôle. » : 244 vues, portée 225, 5 interactions, 1 sauvegarde",
-    "Dernières : 16/11 113 vues, portée 104, 0 interaction ; 9/11 26 vues, portée 18, 0 interaction"
+    "18 oct. : 1 156 vues, 20 interactions (« Vendredi soir : Macron au concert… Samedi : 550 000 à 800 000 personnes »)",
+    "17 oct. : 348 vues, 4 interactions (« Contenu effrayant… ou pas ? »)",
+    "24 oct. : 244 vues, 5 interactions (« Oui, nous avons perdu le contrôle »)",
+    "Pire : 9 nov. : 26 vues, 0 interaction"
   ],
   "ce_qui_marche": [
-    "Sujets d'actu chauds (manifestations du 17-18/10) : les 2 plus fortes vues du compte (1 156 et 348)",
-    "Citation vérifiée d'une déclaration officielle suivie d'une décision concrète (24/10 : 244 vues, meilleure des 10 dernières)",
-    "Les 2 sauvegardes du compte (20/10 et 24/10) : seuls signaux de conservation"
+    "Ouverture sur un fait chiffré précis : le post du 18 oct. (1 156 vues) est le seul qui sort nettement du lot",
+    "Légendes sans question « oui ou non » en fin de texte : 2,27 interactions en moyenne (22 posts)"
   ],
   "ce_qui_ne_marche_pas": [
-    "Audience faible : 7 abonnés, stables depuis le 26/10 (4 du 18 au 24/10)",
-    "10 dernières publications : 122 vues en moyenne, portée 109, 7 interactions (≈ 0,6 % de la portée)",
-    "Publications récentes sans interaction : 0 interaction sur 16/11, 9/11 et 5/11 hors 1 like",
-    "Aucun commentaire dans state/commentaires_actu.json : aucune question de l'audience à exploiter"
+    "Format « oui ou non ? » en fin de légende : 0,83 interaction en moyenne (6 posts)",
+    "Engagement faible : 55 interactions pour 28 posts (1,96 en moyenne), 0 partage, 2 commentaires, 3 enregistrements",
+    "Audience figée : 7 abonnés depuis le 26 oct. ; dernière vidéo (16 nov.) : 113 vues, 0 interaction"
   ],
   "enseignements": [
-    "Miser sur l'actualité du jour quand elle est forte : c'est là que sont les pics de vues (1 156 et 348 vues)",
-    "Garder le format « citation vérifiée + décision concrète » (24/10, meilleure des 10 dernières)",
-    "Tester la question fermée en fin de vidéo avant de conclure : aujourd'hui le volume de commentaires est trop faible pour juger"
+    "Retirer le « oui ou non ? » final des légendes (0,83 contre 2,27 interactions ; échantillon de 6 posts, à confirmer)",
+    "Ouvrir sur un chiffre sourcé et précis, sur le modèle du post du 18 oct. ; un seul cas, sans cause isolée",
+    "Relier chaque job du test A/B aux identifiants des posts Instagram : sans cela, le test du 18 oct. reste sans gagnant"
   ],
-  "test": "Sur 4 publications, poser une question fermée en fin de vidéo et compter commentaires et interactions (base actuelle : 0 commentaire dans la file). Le test A/B du 18/10 reste sans gagnant (state/test_ab_actu.json).",
-  "anomalies": [
-    "state/stats_actu.json indique 2 commentaires sur le post du 18/10 (1 156 vues) mais state/commentaires_actu.json est vide : collecte à vérifier côté GitHub",
-    "Source instrack.app non consultée aujourd'hui : chiffres issus des seules stats de l'API"
-  ],
+  "test": "Sur les 6 prochaines vidéos : accroche chiffrée sourcée en première phrase, sans « oui ou non » en fin de légende ; comparer interactions et vues à la médiane actuelle (116 vues).",
   "reperes_projection": {
     "vues_mediane": 116,
-    "vues_moyenne_10": 122,
-    "meilleure": 1156,
-    "meilleure_recente": 244,
-    "pire": 26,
-    "portee_moyenne_10": 109,
-    "interactions_10": 7,
-    "engagement_10": 0.0064,
-    "lecture": "Projeter ≈ 120 vues pour une vidéo standard ; un pic (≥ 240) reste possible seulement sur un sujet d'actu très fort"
+    "meilleure": 1156
   }
 }

@@ -1,34 +1,30 @@
 {
-  "date": "2026-11-17",
-  "compte": "science",
-  "source": "state/stats_science.json (maj 2026-11-17 08:24 UTC), state/abonnes_science.json (suivi 25/10 au 17/11), state/feedback_cm_science.json, travail/rapport8_science.json",
+  "date": "2026-11-18",
   "classement": [
-    "27 oct. 07 h UTC « Comment ce robot canard tient sur 2 pattes » : 120 vues, portée 115, 1 sauvegarde",
-    "28 oct. « Pont Tacoma Narrows » : 119 vues, portée 104, 0 interaction",
-    "11 nov. « Dalle en béton sans acier » : 108 vues, portée 106, 0 interaction",
-    "27 oct. 19 h UTC « Pourquoi un avion de 575 t ne tombe-t-il pas ? » : 101 vues, portée 96, 0 interaction",
-    "4 nov. « Moteur sans essence » : 30 vues, portée 25, 0 interaction (le plus faible)"
+    "Robot canard à 2 pattes (27/10) : 120 vues, portée 115, 1 enregistrement",
+    "Pont de Tacoma (28/10) : 119 vues, portée 104, 0 enregistrement",
+    "Dalle en béton (11/11) : 108 vues, portée 106, 0 enregistrement",
+    "Avion de 575 t (27/10, 19 h 19 UTC) : 101 vues, portée 96, 0 enregistrement",
+    "Moteur électrique (04/11, actu salon de l'auto) : 30 vues, portée 25, 0 enregistrement"
   ],
   "ce_qui_marche": [
-    "Sujets à objet concret (robot, pont, avion, dalle) : 101 à 120 vues sur 4 posts sur 5."
+    "Les 3 publications postées à 07 h UTC (créneau 08 h Paris) font en moyenne 116 vues (108, 119, 120)",
+    "Les sujets 'comment ça marche' font 101 à 120 vues sur 4 posts sur 5",
+    "Seule interaction du compte : 1 enregistrement, sur le robot canard"
   ],
   "ce_qui_ne_marche_pas": [
-    "0 abonné sur toute la période du suivi (25/10 au 17/11).",
-    "Aucune publication depuis le 11/11 (compteur à 5 posts du 11/11 au 17/11, soit 6 jours).",
-    "Sur 5 posts : 1 sauvegarde, 0 like, 0 commentaire, 0 partage (478 vues au total).",
-    "Post du 4 nov. (moteur électrique) : 30 vues, environ un quart des autres posts."
+    "0 like, 0 commentaire, 0 partage sur les 5 publications",
+    "0 abonné du 25/10 au 17/11 (données disponibles jusqu'au 17/11)",
+    "Le seul post d'actualité (moteur électrique) est le plus faible : 30 vues"
   ],
   "enseignements": [
-    "Garder les accroches à objet concret, qui tiennent entre 101 et 120 vues.",
-    "Relancer la production : aucune publication depuis 6 jours (alerte à vérifier avant de juger les formats).",
-    "Ne pas juger le format sur une vidéo isolée : n = 5, 1 interaction sociale au total (une sauvegarde)."
+    "Garder le format 'comment ça marche' : 4 posts sur 5 entre 101 et 120 vues contre 30 pour l'actu (n=1, à confirmer)",
+    "Publier à 08 h Paris : 116 vues en moyenne contre 65 pour les 2 posts hors de ce créneau (n=3 contre n=2, à surveiller)",
+    "Le signal fort est l'enregistrement : un seul sur 478 vues ; ce qui pousse à enregistrer reste à identifier"
   ],
-  "test": "Invitation à commenter en fin de vidéo, jugée sur 7 jours glissants après le 11/11 (aucun commentaire à ce jour).",
+  "test": "Sur les 10 prochaines publications, comparer une accroche avec un chiffre concret dans la première phrase (ex. 575 t, 64 km/h, 399 $) à une accroche question seule, et suivre vues et enregistrements. 4 légendes sur 5 commencent déjà par une question : le test de question proposé par l'agent 9 n'est donc pas nouveau.",
   "reperes_projection": {
     "vues_mediane": 108,
-    "moyenne": 95.6,
     "meilleure": 120
-  },
-  "alerte": "Aucune publication depuis le 11/11 (6 jours).",
-  "avertissement": "n = 5 posts, compte très jeune : repères indicatifs seulement."
+  }
 }
