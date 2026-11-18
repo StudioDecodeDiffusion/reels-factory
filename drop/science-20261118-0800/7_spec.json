@@ -1,0 +1,369 @@
+{
+  "id": "science-20261118-0800",
+  "compte": "science",
+  "theme": {
+    "fond": "#14110F",
+    "texte": "#F4F1E8",
+    "accent": "#E8923A",
+    "accent2": "#4FD1C5",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "cuivre_nuit",
+    "palette": [
+      "#14110F",
+      "#2A1F1A",
+      "#E8923A",
+      "#4FD1C5",
+      "#F4F1E8",
+      "#B5472B"
+    ],
+    "mise_en_page": "plein_ecran",
+    "tenues": {
+      "narrateur": "science",
+      "mascotte": "detective"
+    }
+  },
+  "variete": {
+    "accroche": "contraste",
+    "trend": "aucune (sujet de la file)",
+    "fonctionnement": "match",
+    "mise_en_page": "plein_ecran",
+    "musique": "funk",
+    "voix": "V2+V4",
+    "palette": "cuivre_nuit"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?ref=pierre&exag=0.6&cfg=0.3",
+    "mascotte": "chatterbox:fr?ref=jessica&exag=0.7&cfg=0.35",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "whoosh"
+    ],
+    "3": [
+      "pop"
+    ],
+    "4": [
+      "pop"
+    ],
+    "5": [
+      "whoosh"
+    ],
+    "6": [
+      "pop"
+    ],
+    "7": [
+      "whoosh"
+    ],
+    "8": [
+      "pop"
+    ],
+    "9": [
+      "whoosh"
+    ],
+    "10": [
+      "impact"
+    ],
+    "11": [
+      "pop"
+    ],
+    "12": [
+      "whoosh"
+    ],
+    "13": [
+      "impact"
+    ],
+    "14": [
+      "ding"
+    ]
+  },
+  "musique": {
+    "genre": "funk",
+    "volume": 0.4
+  },
+  "titre_miniature": "Piston, centrifuge, engrenages : qui gagne ?",
+  "mots_choc": "Match de pompes",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "titre": "Piston, centrifuge ou engrenages ?",
+      "mot_fort": "engrenages",
+      "prompt": "three different pumps side by side on a workshop bench, pixel art, front view",
+      "fond_photo_requete": "trois types de pompes piston centrifuge engrenages comparaison atelier",
+      "title": "Piston, centrifuge ou engrenages ?",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Aucune pompe ne gagne partout. Cinq rounds pour trancher.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 2,
+      "type": "pd_objet",
+      "titre": "Le piston : va-et-vient",
+      "mot_fort": "va-et-vient",
+      "prompt": "a piston moving inside a cylinder with two valves, pixel art, side view, single object",
+      "etiquette": "Piston",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Centrifuge : une roue à aubes projette le liquide vers l'extérieur.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 3,
+      "type": "pd_objet",
+      "titre": "La centrifuge : roue à aubes",
+      "mot_fort": "roue",
+      "prompt": "a spinning impeller with curved blades, pixel art, top view, single object",
+      "etiquette": "Centrifuge",
+      "fond_photo_requete": "pompe centrifuge roue à aubes intérieur corps de pompe",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Piston : il aspire puis refoule le liquide, grâce à des clapets.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 4,
+      "type": "pd_objet",
+      "titre": "Les engrenages : deux pignons",
+      "mot_fort": "pignons",
+      "prompt": "two meshing gears trapping liquid between teeth, pixel art, top view, single object",
+      "etiquette": "Engrenages",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Engrenages : deux pignons emprisonnent le liquide entre leurs dents.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 5,
+      "type": "pd_jauge",
+      "titre": "Round 1 : le débit",
+      "mot_fort": "débit",
+      "niveau": "élevé",
+      "etiquette": "Centrifuge",
+      "legende": "Gros volume, très vite",
+      "fond_photo_requete": "pompe centrifuge circulateur chauffage maison 2026",
+      "valeur": 85,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Round 1, le débit. Victoire de la centrifuge : un débit élevé et régulier.",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 6,
+      "type": "pd_versus",
+      "titre": "Round 2 : la pression",
+      "mot_fort": "pression",
+      "verdict": "Le piston pousse plus fort",
+      "gauche": {
+        "label": "Piston",
+        "prompt": "a piston pushing hard in a cylinder, pixel art, single object",
+        "valeur": "Très haute"
+      },
+      "droite": {
+        "label": "Centrifuge",
+        "prompt": "a spinning impeller, pixel art, single object",
+        "valeur": "Modérée"
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Round 2, la pression. Le piston l'emporte : pression très élevée, et bien étanche.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 7,
+      "type": "pd_flux",
+      "titre": "Round 3 : l'huile épaisse",
+      "mot_fort": "épaisse",
+      "de": {
+        "label": "Huile",
+        "prompt": "a drop of thick golden oil, pixel art, single object"
+      },
+      "vers": {
+        "label": "Engrenages",
+        "prompt": "two meshing gears, pixel art, single object"
+      },
+      "montant": "huile",
+      "fond_photo_requete": "pompe à huile moteur voiture engrenages 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Round 3, l'huile épaisse. Les engrenages gagnent : ils aiment les liquides visqueux.",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 8,
+      "type": "pd_flux",
+      "titre": "Round 4 : le flux pulsé",
+      "mot_fort": "pulsé",
+      "de": {
+        "label": "Piston",
+        "prompt": "a piston in a cylinder, pixel art, single object"
+      },
+      "vers": {
+        "label": "Sortie",
+        "prompt": "a pipe outlet with liquid in bursts, pixel art, single object"
+      },
+      "montant": "à-coups",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Round 4, la régularité. Centrifuge et engrenages : flux continu.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 9,
+      "type": "pd_versus",
+      "titre": "Flux régulier",
+      "mot_fort": "régulier",
+      "verdict": "Engrenages : plus régulier",
+      "fond_photo_requete": "pompe à engrenages démontée deux pignons carter",
+      "gauche": {
+        "label": "Engrenages",
+        "prompt": "two meshing gears, pixel art, single object",
+        "valeur": "Régulier"
+      },
+      "droite": {
+        "label": "Piston",
+        "prompt": "a piston in a cylinder, pixel art, single object",
+        "valeur": "Pulsé"
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le piston, lui, pulse : le liquide avance par à-coups.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 10,
+      "type": "pd_tampon",
+      "titre": "Round 5 : l'amorçage",
+      "mot_fort": "amorçage",
+      "tampon": "AIR = PANNE",
+      "prompt": "a centrifuge pump with an air bubble inside, pixel art, side view, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Round 5, l'amorçage. La centrifuge ne sait pas pomper de l'air : il faut l'amorcer.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 11,
+      "type": "pd_objet",
+      "titre": "Il faut l'amorcer",
+      "mot_fort": "amorcer",
+      "prompt": "a pump body filled with liquid before starting, pixel art, side view, single object",
+      "etiquette": "Amorçage",
+      "fond_photo_requete": "amorçage pompe centrifuge remplir le corps de pompe",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les pièces s'usent aussi. Le piston, ses clapets. Les engrenages, le jeu entre leurs dents.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 12,
+      "type": "pd_jauge",
+      "titre": "Pas de champion absolu",
+      "mot_fort": "absolu",
+      "niveau": "moyen",
+      "etiquette": "Chaque pompe",
+      "legende": "Forte sur un round, faible sur un autre",
+      "valeur": 50,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Verdict : pas de champion absolu. Tout dépend du cahier des charges.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 13,
+      "type": "pd_tampon",
+      "titre": "Verdict : ça dépend",
+      "mot_fort": "dépend",
+      "tampon": "CAHIER DES CHARGES",
+      "prompt": "three pumps in a row with a checklist, pixel art, front view, single object",
+      "fond_photo_requete": "nettoyeur haute pression pompe à piston pièces internes",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Circuit de chauffage : centrifuge. Nettoyeur haute pression : piston.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "titre": "Vous en êtes où ?",
+      "mot_fort": "où",
+      "question": "Quelle pompe choisir pour de l'huile épaisse ?",
+      "prompt": "a gear pump with a question mark, pixel art, single object",
+      "options": [
+        "Piston",
+        "Centrifuge",
+        "Engrenages"
+      ],
+      "bonne": 2,
+      "revelation": 3,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Dans votre moteur, la pompe à huile est à engrenages. Votre choix ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.1
+    }
+  ]
+}
