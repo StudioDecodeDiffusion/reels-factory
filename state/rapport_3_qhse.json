@@ -1,29 +1,25 @@
 {
-  "date": "2026-11-17",
-  "compte": "qhse",
-  "donnees": "2 publications seulement (27/10/2026), 0 abonné, 0 commentaire ; aucune publication depuis le 27/10 (21 jours). Source : state/stats_qhse.json (maj 2026-11-17), state/abonnes_qhse.json.",
+  "date": "2026-11-18",
   "classement": [
-    {"lien": "https://www.instagram.com/reel/De_t5RiAcBq/", "date": "2026-10-27", "sujet": "Seveso seuil haut", "vues": 131, "j_aime": 2, "partages": 0, "enregistrements": 0},
-    {"lien": "https://www.instagram.com/reel/De_SvXwDOC2/", "date": "2026-10-27", "sujet": "ISO 9001", "vues": 17, "j_aime": 0, "partages": 0, "enregistrements": 0}
+    {"rang": 1, "lien": "https://www.instagram.com/reel/De_t5RiAcBq/", "date": "2026-10-27", "sujet": "Seveso seuil haut", "views": 131, "reach": 129, "likes": 2, "comments": 0, "shares": 0, "saved": 0},
+    {"rang": 2, "lien": "https://www.instagram.com/reel/De_SvXwDOC2/", "date": "2026-10-27", "sujet": "ISO 9001 : certificats et audit", "views": 17, "reach": 15, "likes": 0, "comments": 0, "shares": 0, "saved": 0}
   ],
   "ce_qui_marche": [
-    "Vidéo Seveso : 131 vues et 2 j'aime (seule interaction du compte)."
+    "Seveso (27/10) : 131 vues, 2 j'aime, seule vidéo avec une interaction (source : state/stats_qhse.json, maj 17/11)."
   ],
   "ce_qui_ne_marche_pas": [
-    "Aucune publication depuis le 27/10 : la chaîne de publication est à rétablir avant toute analyse.",
-    "Vidéo ISO 9001 : 17 vues, 0 interaction.",
-    "Abonnés stables à 0 depuis le 25/10."
+    "Aucune publication depuis le 27/10 : 22 jours sans entrée dans state/stats_qhse.json (source : travail/rapport8_qhse.json).",
+    "Abonnés à 0 chaque jour du 25/10 au 17/11 (state/abonnes_qhse.json) : donnée à vérifier avant toute interprétation.",
+    "ISO 9001 (27/10) : 17 vues, 0 interaction ; job qhse-20261026-1200 présent dans l'historique et absent des statistiques (travail/rapport8_qhse.json)."
   ],
   "enseignements": [
-    "Pas de conclusion fiable : 2 publications ne permettent pas d'isoler sujet, format ou accroche. Hypothèse à vérifier : le sujet Seveso (question directe « Tu le savais ? ») a été vu davantage que la fiche ISO 9001 ; rien ne le prouve encore.",
-    "Une seule publication à la fois ne suffit pas : publier au moins 4 vidéos avant de comparer les formats (veille, cours, actu).",
-    "Vérifier le job qhse-20261026-1200 (ISO 9001) : présent dans state/historique_qhse.json, absent de state/stats_qhse.json. Le lien entre les deux n'est pas établi."
+    "Pas d'enseignement fiable : 2 vidéos seulement, dont 1 avec 2 interactions.",
+    "Priorité technique : rétablir la publication et contrôler la remontée des abonnés avant d'analyser l'audience.",
+    "Le seul signal exploitable à ce stade : le sujet Seveso (réglementation, portée large) a retenu davantage l'attention que la vidéo ISO 9001, sans valeur statistique."
   ],
-  "test": "Une fois la chaîne rétablie : alterner veille et cours sur 4 publications, avec une question d'ouverture dans l'accroche, puis comparer les vues et interactions par format.",
-  "reperes_projection": {
-    "vues_mediane": 74,
-    "meilleure": 131,
-    "avertissement": "Calculé sur 2 publications seulement : repère indicatif, faible confiance."
-  },
-  "tes_notes": "Aucune note en attente pour l'agent 3 (tool notes --agent 3 --profile qhse)."
+  "test": "Aucun test A/B lançable : rétablir la chaîne de publication, puis comparer deux formats (veille vs cours) sur au moins 4 publications.",
+  "reperes_projection": {"vues_mediane": 74, "meilleure": 131, "base": "2 vidéos, à ne pas généraliser"},
+  "audience": {"commentaires": 0, "questions": [], "demandes": [], "critiques": []},
+  "sources": ["state/stats_qhse.json (maj 2026-11-17)", "state/abonnes_qhse.json (25/10 au 17/11)", "travail/rapport8_qhse.json", "state/feedback_cm_qhse.json"],
+  "notes_agent_3": "Aucune note en attente. Source instrack.app non consultée : accès refusé selon l'agent 9, chiffres non recoupés."
 }
