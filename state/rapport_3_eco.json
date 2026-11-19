@@ -1,32 +1,60 @@
 {
-  "date": "2026-11-18",
+  "date": "2026-11-19",
+  "compte": "eco",
+  "alerte": "Aucune publication depuis le 3 novembre 2026 (16 jours). Chiffres anciens, pas de conclusion statistique.",
   "classement": [
-    "27/10 « À qui la France doit-elle 2 882 milliards d'euros ? » : 203 vues, portée 189, 2 j'aime",
-    "03/11 « Niches fiscales (environ 88 milliards par an) » : 172 vues, portée 157, 1 j'aime, 1 enregistrement",
-    "25/10 « Fonderie de Bretagne » : 131 vues, portée 121, 1 j'aime",
-    "30/10 « Budget 2026 : environ 135 milliards de déficit » : 115 vues, portée 109, 0 interaction",
-    "27/10 « Salaire brut et net » : 94 vues, portée 91, 1 j'aime, 1 enregistrement"
+    {
+      "date": "2026-10-27",
+      "sujet": "Dette publique (2 882 Md€)",
+      "views": 203,
+      "likes": 2,
+      "saved": 0
+    },
+    {
+      "date": "2026-11-03",
+      "sujet": "Niches fiscales (88 Md€)",
+      "views": 172,
+      "likes": 1,
+      "saved": 1
+    },
+    {
+      "date": "2026-10-25",
+      "sujet": "Fonderie de Bretagne / Europlasma",
+      "views": 131,
+      "likes": 1,
+      "saved": 0
+    },
+    {
+      "date": "2026-10-30",
+      "sujet": "Déficit budget 2026 (135 Md€)",
+      "views": 115,
+      "likes": 0,
+      "saved": 0
+    },
+    {
+      "date": "2026-10-27",
+      "sujet": "Salaire brut / net",
+      "views": 94,
+      "likes": 1,
+      "saved": 1
+    }
   ],
   "ce_qui_marche": [
-    "Finances publiques chiffrées (dette, niches fiscales) : les 2 vidéos les plus vues (203 et 172 vues).",
-    "Le 27/10, dette (203 vues) et salaire brut/net (94 vues) publiées à moins de 2 min d'écart : le sujet et l'accroche font l'écart, pas l'heure."
+    "Sujet dette publique : meilleure vue (203), à titre indicatif sur 5 vidéos seulement"
   ],
   "ce_qui_ne_marche_pas": [
-    "Aucune publication enregistrée depuis le 03/11 : 4 créneaux prévus (ven. 6, mar. 10, ven. 13, mar. 17 nov., 08 h) sans trace dans state/stats_eco.json.",
-    "0 commentaire, 0 partage ; 2 enregistrements au total sur 5 vidéos.",
-    "Abonnés à 0 chaque jour du 25/10 au 17/11 (state/abonnes_eco.json) : valeur probablement non alimentée, à vérifier."
+    "Engagement quasi nul : 5 likes, 2 enregistrements, 0 commentaire, 0 partage sur 5 vidéos"
   ],
   "enseignements": [
-    "Reprendre la cadence mardi et vendredi à 08 h et vérifier la file de publication : sans nouvelle vidéo, aucun chiffre récent ne peut être comparé.",
-    "Garder le format finances publiques chiffrées et sourcées : les 2 meilleures vidéos (203 et 172 vues) en relèvent.",
-    "Corriger la collecte des abonnés avant toute conclusion sur la croissance."
+    "Relancer la publication : aucune vidéo depuis le 3 nov, la reprise de la cadence passe avant toute analyse.",
+    "Vérifier le compte et la connexion de publication (cause possible de l'arrêt), avant de planifier.",
+    "Ne pas tirer de conclusion sur les sujets : 5 vidéos sont trop peu. Recalculer après 10 publications."
   ],
-  "test": "Deux vidéos finances publiques, même jour et même heure (08 h) : accroche chiffrée contre accroche question ; comparer les vues.",
+  "test": "Reprendre 3 publications sur le sujet dette publique et le sujet niches fiscales, puis comparer les vues à 7 jours.",
   "reperes_projection": {
     "vues_mediane": 131,
-    "vues_moyenne": 143,
     "meilleure": 203,
-    "pire": 94
+    "source": "5 vidéos, 27 oct - 3 nov 2026"
   },
-  "source": "state/stats_eco.json (maj 17/11/2026 22 h 12 UTC), state/abonnes_eco.json, state/feedback_cm_eco.json, travail/rapport8_eco.json. Instrack non consulté (accès refusé selon l'agent 9)."
+  "abonnes": "non fiable (0 sur toute la période dans les données) : ne pas utiliser"
 }
