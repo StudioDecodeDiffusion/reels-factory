@@ -1,0 +1,353 @@
+{
+  "id": "actu-20261119-0800",
+  "compte": "actu",
+  "theme": {
+    "fond": "#101828",
+    "texte": "#F2F4F7",
+    "accent": "#C6F432",
+    "accent2": "#7A5CFA",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": "#1D2939",
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "nuit_citron",
+    "palette": [
+      "#101828",
+      "#1D2939",
+      "#C6F432",
+      "#7A5CFA",
+      "#F2F4F7",
+      "#F04438"
+    ],
+    "mise_en_page": "plein_ecran",
+    "tenues": {
+      "narrateur": "manifestant",
+      "mascotte": "classique"
+    }
+  },
+  "variete": {
+    "accroche": "question_choc",
+    "trend": "Présidentielle 2027 : la course à droite",
+    "fonctionnement": "debat",
+    "mise_en_page": "plein_ecran",
+    "musique": "orchestral",
+    "voix": "V1+V3",
+    "palette": "nuit_citron"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "whoosh"
+    ],
+    "3": [
+      "pop"
+    ],
+    "4": [
+      "whoosh"
+    ],
+    "5": [
+      "pop"
+    ],
+    "6": [
+      "whoosh"
+    ],
+    "7": [
+      "pop"
+    ],
+    "8": [
+      "whoosh"
+    ],
+    "9": [
+      "pop"
+    ],
+    "10": [
+      "whoosh"
+    ],
+    "11": [
+      "pop"
+    ],
+    "12": [
+      "whoosh"
+    ],
+    "13": [
+      "pop"
+    ],
+    "14": [
+      "whoosh"
+    ]
+  },
+  "musique": {
+    "genre": "orchestral",
+    "volume": 0.4
+  },
+  "titre_miniature": "Philippe promet des réformes « radicales »",
+  "mots_choc": [
+    "« Radicales »",
+    "2027",
+    "Pour qui ?"
+  ],
+  "surtitre_miniature": "France · 18 nov. 2026",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "photo",
+      "titre": "Il promet des réformes « radicales »",
+      "mot_fort": "radicales",
+      "fond_photo": "https://s.rfi.fr/media/display/8de40872-e369-11f1-8c26-c5c0357b2a0c/w:1280/p:16x9/FRANCE-POLITIQUE-PRESIDENTIELLE-EDOUARD-PHILIPPE.jpg",
+      "fond_photo_requete": "Édouard Philippe candidat présidentielle 2027 meeting",
+      "src": "https://s.rfi.fr/media/display/8de40872-e369-11f1-8c26-c5c0357b2a0c/w:1280/p:16x9/FRANCE-POLITIQUE-PRESIDENTIELLE-EDOUARD-PHILIPPE.jpg",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Philippe promet des réformes radicales. Mais pour qui ?",
+          "expression": "choc"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 2,
+      "type": "pd_objet",
+      "titre": "Mais pour qui ?",
+      "mot_fort": "qui ?",
+      "prompt": "an empty leather wallet with open pockets, pixel art, side view, single object",
+      "etiquette": "Qui paie ?",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Malgré les sondages et une primaire, il tient son cap, sans bouger.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 3,
+      "type": "photo",
+      "titre": "Le candidat de droite",
+      "mot_fort": "droite",
+      "fond_photo": "https://i.la-croix.com/1400x933/545x463/2026/11/18/2592683-le-candidat-de-droite-edouard-philippe-presente-so.jpg",
+      "fond_photo_requete": "Édouard Philippe présentation réformes novembre 2026",
+      "src": "https://i.la-croix.com/1400x933/545x463/2026/11/18/2592683-le-candidat-de-droite-edouard-philippe-presente-so.jpg",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La Croix présente Édouard Philippe comme le candidat de droite pour 2027.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 4,
+      "type": "pd_flux",
+      "titre": "Qui paiera la facture ?",
+      "mot_fort": "paiera",
+      "de": {
+        "label": "Réformes",
+        "prompt": "a stack of paper reform documents, pixel art, single object"
+      },
+      "vers": {
+        "label": "Salariés",
+        "prompt": "a worn coin purse, pixel art, single object"
+      },
+      "montant": "coût",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Selon RFI, il mise sur des réformes radicales pour 2027.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 5,
+      "type": "photo",
+      "titre": "Sous la pression",
+      "mot_fort": "pression",
+      "fond_photo": "https://www.lexpress.fr/resizer/v2/M7RW5SLKCJDLNNI4PJZMQKE7RM.JPG?auth=2ecf88ade72b28321470a8c880593b22270bb8d05d52d5f6c3b177a9611240f7&width=1200&height=630&quality=85&focal=1213%2C806",
+      "fond_photo_requete": "primaire droite 2027 sondages Édouard Philippe",
+      "src": "https://www.lexpress.fr/resizer/v2/M7RW5SLKCJDLNNI4PJZMQKE7RM.JPG?auth=2ecf88ade72b28321470a8c880593b22270bb8d05d52d5f6c3b177a9611240f7&width=1200&height=630&quality=85&focal=1213%2C806",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Sous la pression des sondages et d'une primaire, la ligne reste.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 6,
+      "type": "pd_versus",
+      "titre": "Il tient son cap",
+      "mot_fort": "cap",
+      "de": {
+        "label": "Sondages",
+        "prompt": "a rising bar chart, pixel art, single object"
+      },
+      "vers": {
+        "label": "Primaire",
+        "prompt": "a ballot box, pixel art, single object"
+      },
+      "verdict": "Il tient son cap",
+      "gauche": "Sondages",
+      "droite": "Primaire",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "D'un côté, des réformes radicales. De l'autre, la question : qui paiera ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 7,
+      "type": "photo",
+      "titre": "Présidentielle 2027",
+      "mot_fort": "2027",
+      "fond_photo": "https://s.rfi.fr/media/display/8de40872-e369-11f1-8c26-c5c0357b2a0c/w:1280/p:16x9/FRANCE-POLITIQUE-PRESIDENTIELLE-EDOUARD-PHILIPPE.jpg",
+      "fond_photo_requete": "présidentielle 2027 France candidats sondage",
+      "src": "https://s.rfi.fr/media/display/8de40872-e369-11f1-8c26-c5c0357b2a0c/w:1280/p:16x9/FRANCE-POLITIQUE-PRESIDENTIELLE-EDOUARD-PHILIPPE.jpg",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le débat est lancé, bien avant le scrutin de la présidentielle.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 8,
+      "type": "pd_jauge",
+      "titre": "Le débat monte",
+      "mot_fort": "monte",
+      "niveau": "élevé",
+      "etiquette": "Vie chère",
+      "legende": "Le sujet domine le débat",
+      "valeur": 0.8,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "« Radicales », écrit RFI. Radicales pour qui, au juste, et à quel prix ?",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 9,
+      "type": "photo",
+      "titre": "Une course à droite",
+      "mot_fort": "droite",
+      "fond_photo": "https://i.la-croix.com/1400x933/545x463/2026/11/18/2592683-le-candidat-de-droite-edouard-philippe-presente-so.jpg",
+      "fond_photo_requete": "Édouard Philippe Paris novembre 2026 politique",
+      "src": "https://i.la-croix.com/1400x933/545x463/2026/11/18/2592683-le-candidat-de-droite-edouard-philippe-presente-so.jpg",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une promesse part d'un discours. Elle arrive où, ensuite, et chez qui ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 10,
+      "type": "pd_tampon",
+      "titre": "Ce qui est sourcé",
+      "mot_fort": "sourcé",
+      "tampon": "SOURCÉ",
+      "prompt": "a rubber stamp pressed on a paper page, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les faits ici viennent de La Croix et de RFI, rien d'autre.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 11,
+      "type": "photo",
+      "titre": "Salariés, jeunes, précaires",
+      "mot_fort": "précaires",
+      "fond_photo": "https://www.lexpress.fr/resizer/v2/M7RW5SLKCJDLNNI4PJZMQKE7RM.JPG?auth=2ecf88ade72b28321470a8c880593b22270bb8d05d52d5f6c3b177a9611240f7&width=1200&height=630&quality=85&focal=1213%2C806",
+      "fond_photo_requete": "Édouard Philippe réformes radicales 2026",
+      "src": "https://www.lexpress.fr/resizer/v2/M7RW5SLKCJDLNNI4PJZMQKE7RM.JPG?auth=2ecf88ade72b28321470a8c880593b22270bb8d05d52d5f6c3b177a9611240f7&width=1200&height=630&quality=85&focal=1213%2C806",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Salariés, jeunes, précaires : la question reste de savoir qui paiera la note.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 12,
+      "type": "pd_objet",
+      "titre": "Une facture à payer",
+      "mot_fort": "payer",
+      "prompt": "a folded paper bill with a question mark, pixel art, single object",
+      "etiquette": "Facture",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une promesse de candidat se juge à ce qu'elle change, vraiment.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 13,
+      "type": "pd_objet",
+      "titre": "Campagne en cours",
+      "mot_fort": "campagne",
+      "prompt": "a small podium with a microphone, pixel art, single object",
+      "etiquette": "Campagne",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Et il reste sur ce cap, sans infléchir sa ligne d'un millimètre.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "titre": "Qui le présente ainsi ?",
+      "mot_fort": "droite",
+      "question": "La Croix ou RFI ?",
+      "prompt": "a bold question mark on a dark blue background, pixel art, single object",
+      "options": [
+        "La Croix",
+        "RFI"
+      ],
+      "bonne": 0,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Qui présente Édouard Philippe comme candidat de droite : La Croix ou RFI ? Répondez en commentaire.",
+          "expression": "content"
+        }
+      ],
+      "duration": 7.7
+    }
+  ]
+}
