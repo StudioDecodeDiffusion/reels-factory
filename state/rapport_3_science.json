@@ -1,30 +1,65 @@
 {
-  "date": "2026-11-18",
+  "date": "2026-11-19",
+  "compte": "science",
+  "volume": "faible : 6 reels sur la période, 587 vues cumulées",
   "classement": [
-    "Robot canard à 2 pattes (27/10) : 120 vues, portée 115, 1 enregistrement",
-    "Pont de Tacoma (28/10) : 119 vues, portée 104, 0 enregistrement",
-    "Dalle en béton (11/11) : 108 vues, portée 106, 0 enregistrement",
-    "Avion de 575 t (27/10, 19 h 19 UTC) : 101 vues, portée 96, 0 enregistrement",
-    "Moteur électrique (04/11, actu salon de l'auto) : 30 vues, portée 25, 0 enregistrement"
+    {
+      "lien": "https://www.instagram.com/reel/De_S6G7DZxP/",
+      "sujet": "robot canard 2 pattes (équilibre, centre de gravité)",
+      "vues": 120,
+      "saved": 1
+    },
+    {
+      "lien": "https://www.instagram.com/reel/DfB8ESDjxmM/",
+      "sujet": "pont de Tacoma Narrows (1940)",
+      "vues": 119,
+      "saved": 0
+    },
+    {
+      "lien": "https://www.instagram.com/reel/Df4pA-vv7Cg/",
+      "sujet": "trois pompes, cinq rounds",
+      "vues": 109,
+      "saved": 0
+    },
+    {
+      "lien": "https://www.instagram.com/reel/Dfl5UqvI_tW/",
+      "sujet": "dalle sans acier (béton)",
+      "vues": 108,
+      "saved": 0
+    },
+    {
+      "lien": "https://www.instagram.com/reel/DfAl3CfF6dl/",
+      "sujet": "avion de 575 t (portance)",
+      "vues": 101,
+      "saved": 0
+    },
+    {
+      "lien": "https://www.instagram.com/reel/DfUZLYjlZmw/",
+      "sujet": "moteur électrique (Mondial de l'auto)",
+      "vues": 30,
+      "saved": 0
+    }
   ],
   "ce_qui_marche": [
-    "Les 3 publications postées à 07 h UTC (créneau 08 h Paris) font en moyenne 116 vues (108, 119, 120)",
-    "Les sujets 'comment ça marche' font 101 à 120 vues sur 4 posts sur 5",
-    "Seule interaction du compte : 1 enregistrement, sur le robot canard"
+    "Sujets mécaniques et ingénierie : 5 reels sur 6 entre 101 et 120 vues.",
+    "Le meilleur reel (120 vues, 1 enregistrement) traite d'un objet concret et d'une question simple."
   ],
   "ce_qui_ne_marche_pas": [
-    "0 like, 0 commentaire, 0 partage sur les 5 publications",
-    "0 abonné du 25/10 au 17/11 (données disponibles jusqu'au 17/11)",
-    "Le seul post d'actualité (moteur électrique) est le plus faible : 30 vues"
+    "Le reel sur le moteur électrique (30 vues) est nettement sous les autres : un seul point, cause non identifiable avec ce volume.",
+    "Likes, commentaires et partages restent à 0 sur les 6 reels : collecte probablement incomplète, à vérifier avant toute conclusion sur l'engagement."
   ],
   "enseignements": [
-    "Garder le format 'comment ça marche' : 4 posts sur 5 entre 101 et 120 vues contre 30 pour l'actu (n=1, à confirmer)",
-    "Publier à 08 h Paris : 116 vues en moyenne contre 65 pour les 2 posts hors de ce créneau (n=3 contre n=2, à surveiller)",
-    "Le signal fort est l'enregistrement : un seul sur 478 vues ; ce qui pousse à enregistrer reste à identifier"
+    "Continuer sur l'ingénierie du quotidien, format court, une question simple en accroche.",
+    "Vérifier la collecte des interactions (likes, commentaires, partages) avant de décider d'un format sur l'engagement.",
+    "Publier à une heure fixe pendant deux semaines : les 6 posts sont sortis à des heures très variées (07 h à 19 h UTC)."
   ],
-  "test": "Sur les 10 prochaines publications, comparer une accroche avec un chiffre concret dans la première phrase (ex. 575 t, 64 km/h, 399 $) à une accroche question seule, et suivre vues et enregistrements. 4 légendes sur 5 commencent déjà par une question : le test de question proposé par l'agent 9 n'est donc pas nouveau.",
+  "test": "Prochain reel ingénierie avec une question explicite en fin de légende, pour voir si l'audience répond (commentaires, enregistrements).",
   "reperes_projection": {
-    "vues_mediane": 108,
-    "meilleure": 120
-  }
+    "vues_mediane": 108.5,
+    "meilleure": 120,
+    "moyenne": 98,
+    "avertissement": "Échantillon de 6 reels : repères indicatifs, pas une tendance statistique."
+  },
+  "source": "state/stats_science.json (maj 2026-11-18), state/feedback_cm_science.json (2026-11-19)",
+  "notes_agent_3": "Aucune note en attente."
 }
