@@ -1,43 +1,37 @@
 {
-  "date": "2026-11-18",
+  "date": "2026-11-19",
   "type": "resume_du_jour",
   "comptes": {
     "actu": {
       "abonnes": 7,
+      "abonnes_source": "state/abonnes_actu.json, au 2026-11-18 (7 depuis le 2026-10-26, 4 le 2026-10-18)",
       "publications": 28,
       "derniere": "2026-11-16",
+      "vues_mediane": 116,
+      "vues_meilleure": 1156,
       "vues_moy_10": 122,
-      "alerte": null
-    },
-    "eco": {
-      "abonnes": 0,
-      "publications": 5,
-      "derniere": "2026-11-03",
-      "vues_meilleure": 203,
-      "alerte": "cadence mardi/vendredi non tenue"
-    },
-    "qhse": {
-      "abonnes": 0,
-      "publications": 2,
-      "derniere": "2026-10-27",
-      "alerte": "chaine de publication a retablir"
-    },
-    "science": {
-      "abonnes": 0,
-      "publications": 5,
-      "derniere": "2026-11-11",
-      "vues_moy": 95.6,
-      "alerte": "rythme a l'arret"
+      "interactions_moy": 1.96,
+      "taux_interactions_10": "0,6 % (7 interactions pour 1 219 vues, 10 dernieres)",
+      "source_stats": "state/stats_actu.json, maj 2026-11-18",
+      "cadence": "4 videos depuis le 2026-10-29 (1 par semaine)",
+      "alerte": "cadence sous le minimum de 2 par semaine ; engagement sous 1 %"
     }
   },
+  "revenus": {
+    "sources_actives": [],
+    "seuils_programmes": "non verifies le 2026-11-19 (aucune source web citee) : a traiter dans la strategie complete du lundi 2026-11-23"
+  },
+  "test_en_cours": {
+    "source": "state/rapport_3_actu.json, 2026-11-19",
+    "regle": "accroche chiffree sourcee en premiere phrase, sans « oui ou non » en fin de legende, sur 6 videos",
+    "repere": "legende avec « oui ou non » : 0,83 interaction (6 posts) ; sans : 2,27 (22 posts) ; petit echantillon"
+  },
   "actions_du_jour": [
-    "eco : controler la file de publication, reprendre le creneau mardi/vendredi 08 h, verifier la collecte des abonnes",
-    "qhse : retablir la chaine de publication, controler le job qhse-20261026-1200 (absent des stats)",
-    "actu : retirer le 'Oui ou non ?' final des legendes (0,83 contre 2,27 interactions, 6 posts, a confirmer) et ouvrir sur un chiffre source"
+    "agents 4 et 5 : les 2 prochaines videos actu ouvrent sur un chiffre source et finissent sans « oui ou non »",
+    "manager : replanifier 2 videos actu cette semaine (cadence actuelle : 1 par semaine)",
+    "agent 3 : recouper les 2 commentaires du 2026-10-18 (stats) avec state/commentaires_actu.json"
   ],
   "anomalies": [
-    "actu : 2 commentaires du 18/10 dans les stats, absents de commentaires_actu.json",
-    "qhse : job qhse-20261026-1200 absent des statistiques",
-    "eco : Instrack non consulte (acces refuse)"
+    "actu : 2 commentaires sur le post du 2026-10-18 dans state/stats_actu.json, a recouper avec state/commentaires_actu.json"
   ]
 }
