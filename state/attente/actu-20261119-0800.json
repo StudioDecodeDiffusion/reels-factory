@@ -1,7 +1,7 @@
 {
   "id": "actu-20261119-0800",
   "profil": "actu",
-  "statut": "rendu_en_cours",
+  "statut": "a_valider",
   "titre": "Présidentielle 2027 : la droite promet des réformes radicales",
   "son_tendance": null,
   "publication_le": "2026-11-19T08:00+01:00",
@@ -32,5 +32,18 @@
   },
   "community": {},
   "da_message": "DA actu-20261119-0800 (réformes de la droite 2027) : style pixeldoc, palette nuit_citron (fond bleu nuit, accent citron, violet), voix V1+V3, musique orchestral. 14 scènes de 4 s, photos réelles de presse sur 7 scènes (6 avec URL du dossier, 1 par requête). Aucun chiffre affiché : les chiffres sont absents du sujet sourcé.",
-  "cree": "2026-11-19T04:08:50+00:00"
+  "cree": "2026-11-19T04:08:50+00:00",
+  "duree_s": 58.7,
+  "voix": "chatterbox:fr?exag=0.6&cfg=0.4",
+  "media": {
+    "repo": "StudioDecodeDiffusion/reels-media",
+    "release_id": 450888467,
+    "tag": "reel-actu-20261119-0800",
+    "urls": {
+      "video.mp4": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261119-0800/video.mp4",
+      "apercu.png": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261119-0800/apercu.png",
+      "couverture.png": "https://github.com/StudioDecodeDiffusion/reels-media/releases/download/reel-actu-20261119-0800/couverture.png"
+    }
+  },
+  "envoyee": "2026-11-19T04:42:27+00:00"
 }
