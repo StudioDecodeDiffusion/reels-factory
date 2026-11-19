@@ -1,40 +1,50 @@
 {
-  "date": "2026-11-16",
-  "maj": "2026-11-16",
-  "source": "state/veille_brute.json (maj 2026-11-16) + tokchart.com/fr/sons-tiktok (mise à jour 16/11/2026)",
-  "formats": [
-    "explication 30-45 s sur un sujet du jour (non mesuré TikTok, à confirmer)"
-  ],
-  "accroches_types": [],
-  "hashtags": [],
-  "hashtags_note": "aucun hashtag TikTok FR vérifié aujourd'hui : rien inventé",
+  "date": "2026-11-19",
+  "agent": 13,
+  "compte_depot": "actu",
+  "statut": "partielle",
+  "verifie_aujourdhui": false,
+  "source_collecte": "state/veille_brute.json (maj 2026-11-19 14:38) : tiktok_hashtags vide, tiktok_sons vide ; tokchart FR hashtags non lisible (page mondiale seule)",
   "sons": [
     {
       "nom": "Ma Voie, Ma Foi",
       "auteur": "Bord de Mer",
       "videos": "100 K",
-      "evolution_jour": "+6100",
-      "statut": "en hausse",
-      "droits": "à recommander à l'agent 6, pas d'intégration"
+      "source": "https://tokchart.com/fr/sons-tiktok",
+      "date_source": "2026-11-16",
+      "statut": "en hausse (donnee du 16/11, a reconfirmer)",
+      "droits": "a recommander a l'agent 6, pas d'integration"
     },
     {
       "nom": "Agitations tropicales",
-      "auteur": "L'Impératrice",
+      "auteur": "L'Imperatrice",
       "videos": "34 K",
-      "evolution_jour": "+1800",
-      "statut": "en hausse",
-      "droits": "à recommander à l'agent 6, pas d'intégration"
+      "source": "https://tokchart.com/fr/sons-tiktok",
+      "date_source": "2026-11-16",
+      "statut": "en hausse (donnee du 16/11, a reconfirmer)",
+      "droits": "a recommander a l'agent 6, pas d'integration"
     }
   ],
-  "sujets_qui_buzzent": [
-    "pouvoir d'achat / épargne salariale (score 15,54)",
+  "formats": [
+    {
+      "nom": "explication 30-45 s sur un sujet du jour",
+      "source": "state/tiktok.json (16/11)",
+      "statut": "non mesure sur TikTok, a confirmer"
+    }
+  ],
+  "hashtags": [],
+  "hashtags_note": "aucun hashtag TikTok FR verifie le 19/11 : rien invente",
+  "sujets_qui_buzzent_actu": [
+    "pouvoir d'achat / epargne salariale (score 15,54)",
     "manifestations du 14 novembre (score 14,07)",
     "hausse du Smic (score 13,72)"
   ],
-  "communaute": "pas de retour TikTok de l'agent 9 aujourd'hui",
   "a_eviter": [
-    "sons nommés sans droits",
-    "hashtags non vérifiés",
-    "Google Trends sans lien TikTok FR"
-  ]
+    "sons nommes sans droits",
+    "hashtags non verifies",
+    "Google Trends sans lien TikTok FR",
+    "classement tokchart mondial (non FR)"
+  ],
+  "communaute": "pas de retour TikTok de l'agent 9 aujourd'hui",
+  "notes_owner_lues": 0
 }

@@ -1,22 +1,36 @@
 {
- "date": "2026-11-16",
- "formats": [
-  "Bilan chiffré d'un fait du jour, avec décision concrète à la fin : le meilleur post récent (24/10 : 244 vues, 5 interactions) est une citation vérifiée suivie d'une décision (source : state/rapport_3_actu.json, 15/11/2026)",
-  "Record du compte non reproduit : 18/10, 1 156 vues, sur un sujet d'actu chaud (source : state/rapport_3_actu.json, 15/11/2026)"
- ],
- "accroches_types": [
-  "Fait officiel vérifié en ouverture, puis la conséquence pour les gens concernés (ligne du profil)"
- ],
- "sujets_qui_buzzent": [
-  "Manifestations du 14 novembre à Paris et Lyon : 28 articles regroupés (20 Minutes, BFM, LVSL, La Croix) — veille brute du 16/11/2026 (state/veille_brute.json, maj 06 h 28 UTC)",
-  "Rassemblements interdits autour de lycées et universités parisiens : BFMTV, 15/11/2026 (https://www.bfmtv.com/societe/manifestations/colere-sociale-les-rassemblements-interdits-a-paris-autour-de-certains-lycees-et-universites_AD-202611150393.html)",
-  "Présidentielle : Édouard Philippe accepte de discuter avec la droite et le centre, RFI, 16/11/2026 (https://www.rfi.fr/fr/france/20261116-pr%C3%A9sidentielle-en-france-%C3%A9douard-philippe-accepte-de-discuter-avec-la-droite-et-le-centre-mais-refuse-toujours-une-primaire)"
- ],
- "communaute": "7 abonnés, stables depuis le 26/10 ; 0 question, 0 demande, 0 critique ; moyenne des 10 dernières publications : 124 vues (state/feedback_cm_actu.json, 15/11/2026).",
- "a_eviter": [
-  "Estimations de manifestants reprises sans source officielle citée",
-  "Titres de presse repris sans vérifier l'angle (state/veille_13_actu.json, 07/11/2026)"
- ],
- "sons_tendance": [],
- "note_sons": "Aucun son Instagram vérifié aujourd'hui : pas d'accès à l'onglet Tendances ni de recherche web dans cette session. Dernier relevé TikTok connu : tokchart.com/trending/FR du 07/11/2026 (state/veille_13_actu.json) : « Ramalama (Bang Bang) » en baisse (845 K vidéos, -2 900 sur la journée), à éviter pour les nouveaux Reels ; deux « Son original » en hausse, nom à relever dans l'app avant usage."
+  "date": "2026-11-19",
+  "formats": [
+    "Explication d'une info du jour en 45-60 s avec un chiffre sourcé en première phrase (sur le modèle du post du 18 oct., seul pic du compte)",
+    "Sans question « oui ou non » en fin de légende (test sur 6 vidéos, voir feedback agent 9)"
+  ],
+  "accroches_types": [
+    "Chiffre précis + conséquence concrète pour le quotidien (prix, impôts, salaires)",
+    "Fait du jour cité avec sa source (AFP, Les Echos, Le Monde, service-public.fr)"
+  ],
+  "sujets_qui_buzzent": [
+    {
+      "sujet": "Présidentielle 2027 : campagne « course à l'échalote » face aux colères",
+      "source": "https://www.lemonde.fr/politique/article/2026/11/19/presidentielle-2027-une-campagne-course-a-l-echalote-pour-tenter-de-repondre-aux-coleres-francaises_6813302_823448.html",
+      "date": "2026-11-19"
+    },
+    {
+      "sujet": "Carburants : qui sont les Français piégés par l'envolée des prix ?",
+      "source": "https://www.alternatives-economiques.fr/carburants-qui-sont-les-francais-pieges-par-l-envolee-des-prix_18-11-2026",
+      "date": "2026-11-18"
+    },
+    {
+      "sujet": "Impôts 2026 : jusqu'au 30 novembre pour corriger sa déclaration de revenus",
+      "source": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPVEwyNE95NDBjdjdWSDZyTWNWcHdoVVUwM2o0NlRuWkVVVU9kYzNNZUdnLVZ3WGZTaUV",
+      "date": "2026-11-19"
+    }
+  ],
+  "communaute": "Retour agent 9 (19 nov.) : 7 abonnés, 0 question, 0 demande, 0 critique ; engagement très faible (0,6 % sur 10 dernières vidéos). Cadence à 1 vidéo par semaine : à remonter à 2 minimum.",
+  "sons_tendance": [],
+  "a_eviter": [
+    "« Oui ou non ? » seul en fin de légende (0,83 interaction en moyenne contre 2,27)",
+    "Faits divers violents et sujets de la liste d'exclusions du profil",
+    "Chiffres d'accroche sans source vérifiée (vues mesurées : 26 à 1 156)"
+  ],
+  "notes_limites": "Recherche web du jour : résultats = titres et liens, sans contenu vérifié. Aucun son Instagram ou TikTok nommé faute de source fiable ; le champ sons_tendance reste vide. Pas de connexion Instagram."
 }
