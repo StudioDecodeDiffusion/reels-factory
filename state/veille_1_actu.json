@@ -1,52 +1,68 @@
 {
-  "date": "2026-11-16",
   "compte": "actu",
+  "agent": 1,
+  "date": "2026-11-19",
+  "methode": "classement state/veille_brute.json (top_par_compte.actu), faits repris des titres et sources listés ; pages source non lues (WebFetch bloqué, permission non accordée). Aucun chiffre hors titre.",
+  "statut_verification": "titres seuls, à recouper avant script",
   "sujets": [
     {
-      "titre": "Les rassemblements autour de certains lycées et universités interdits à Paris",
-      "resume": "Interdiction des rassemblements non déclarés autour de certains lycées et universités à Paris, dans le contexte de la colère sociale.",
-      "chiffres_cles": "",
-      "source_url": "https://www.france24.com/fr/france/20261115-les-rassemblements-autour-de-certains-lyc%C3%A9es-et-universit%C3%A9s-interdits-%C3%A0-paris",
-      "date_info": "15/11/2026 (URL France 24)",
-      "faisabilite": 4,
-      "potentiel": 9
+      "rang": 1,
+      "sujet": "Patrons des grandes entreprises cotées : 5 millions d'euros de rémunération moyenne",
+      "angle": "Ce que touche le haut du panier pendant que les salaires du quotidien stagnent",
+      "fait_chiffre": "Titre Challenges : rémunération moyenne de 5 millions d'euros pour les patrons des grandes entreprises cotées françaises, présentée comme un record",
+      "source": "https://www.challenges.fr/entreprise/avec-une-remuneration-moyenne-de-5-millions-deuros-les-patrons-des-grandes-entreprises-cotees-francaises-battent-des-records_647029",
+      "date": "2026-11-19",
+      "potentiel": "fort",
+      "recoupement": "a faire : source de l'étude et périmètre non lus"
     },
     {
-      "titre": "Présidentielle en France: Édouard Philippe accepte de discuter avec la droite et le centre mais refuse toujours une primaire",
-      "resume": "Édouard Philippe accepte de discuter avec la droite et le centre mais refuse toujours une primaire.",
-      "chiffres_cles": "",
-      "source_url": "https://www.rfi.fr/fr/france/20261116-pr%C3%A9sidentielle-en-france-%C3%A9douard-philippe-accepte-de-discuter-avec-la-droite-et-le-centre-mais-refuse-toujours-une-primaire",
-      "date_info": "16/11/2026 (URL RFI)",
-      "faisabilite": 4,
-      "potentiel": 8
+      "rang": 2,
+      "sujet": "Passoires thermiques : Édouard Philippe veut geler l'interdiction pendant 5 ans",
+      "angle": "Logement : des locataires et petits propriétaires concernés, un report qui profite à qui ?",
+      "fait_chiffre": "Titre Le Figaro : proposition de geler pendant 5 ans l'interdiction des passoires thermiques",
+      "source": "https://immobilier.lefigaro.fr/article/edouard-philippe-veut-geler-l-interdiction-des-passoires-thermiques-pendant-5-ans-20261119",
+      "date": "2026-11-19",
+      "potentiel": "moyen-fort",
+      "recoupement": "a faire : durée et calendrier non lus"
     },
     {
-      "titre": "Moins de viande et de poissons: les Français adaptent leur alimentation face à la hausse des prix",
-      "resume": "Les Français adaptent leur alimentation face à la hausse des prix.",
-      "chiffres_cles": "",
-      "source_url": "https://www.bfmtv.com/economie/consommation/video-moins-de-viande-et-de-poissons-les-francais-adaptent-leur-alimentation-face-a-la-hausse-des-prix_VN-202611160122.html",
-      "date_info": "16/11/2026 (collecte automatique ; date de publication non lue)",
-      "faisabilite": 5,
-      "potentiel": 6
+      "rang": 3,
+      "sujet": "Carburants : qui sont les Français piégés par l'envolée des prix ?",
+      "angle": "Qui paie le plein : travailleurs et habitants des zones rurales. Attention, sujet déjà traité le 27 oct. (taxes) : angle différent à assumer",
+      "fait_chiffre": "Titre Alternatives économiques : envolée des prix des carburants, Français piégés (aucun chiffre repris)",
+      "source": "https://www.alternatives-economiques.fr/carburants-qui-sont-les-francais-pieges-par-l-envolee-des-prix_18-11-2026",
+      "date": "2026-11-18",
+      "potentiel": "moyen",
+      "recoupement": "a faire : pourcentage de hausse et période non lus"
     },
     {
-      "titre": "Au salon du Made in France, l'industrie française de l'habillement joue sa survie",
-      "resume": "Au salon du Made in France, l'industrie française de l'habillement joue sa survie.",
-      "chiffres_cles": "",
-      "source_url": "https://www.rfi.fr/fr/podcasts/reportage-france/20261115-au-salon-du-made-in-france-l-industrie-fran%C3%A7aise-de-l-habillement-joue-sa-survie",
-      "date_info": "15/11/2026 (URL RFI)",
-      "faisabilite": 4,
-      "potentiel": 6
+      "rang": 4,
+      "sujet": "Violences du 17 octobre : 207 millions d'euros de dommages selon France Assureurs",
+      "angle": "Qui paie la facture des dégâts : assureurs, collectivités, contribuables. Ne pas traiter les auteurs ; sujet sensible (exclusion faits divers violents), à valider par le Manager",
+      "fait_chiffre": "Titre La Croix : France Assureurs estime le coût des dommages à 207 millions d'euros ; titre BFM : certaines estimations évoquaient 1,2 milliard",
+      "source": "https://www.la-croix.com/societe/violences-urbaines-du-17-octobre-france-assureurs-estime-les-couts-a-207-millions-d-euros-20261119",
+      "date": "2026-11-19",
+      "potentiel": "moyen",
+      "recoupement": "a faire : périmètre et date de l'estimation non lus",
+      "alerte": "exclusion profil : faits violents, a valider"
     },
     {
-      "titre": "« On se sent abandonnés » : trois mois après le mégafeu en Gironde, la colère des sinistrés ne s'éteint pas",
-      "resume": "Trois mois après le mégafeu en Gironde, la colère des sinistrés ne s'éteint pas.",
-      "chiffres_cles": "",
-      "source_url": "https://reporterre.net/On-se-sent-abandonnes-trois-mois-apres-le-megafeu-en-Gironde-la-colere-des-sinistres-ne-s-eteint-pas",
-      "date_info": "16/11/2026 (collecte automatique ; date de publication non lue)",
-      "faisabilite": 4,
-      "potentiel": 5
+      "rang": 5,
+      "sujet": "Impôts 2026 : jusqu'au 30 novembre pour corriger sa déclaration de revenus",
+      "angle": "Utile et concret : date limite à retenir, ce qu'il faut corriger",
+      "fait_chiffre": "Titre Ouest-France / franceinfo : date limite de correction fixée au 30 novembre 2026",
+      "source": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPVEwyNE95NDBjdjdWSDZyTWNWcHdoVVUwM2o0NlRuWkVVVU9kYzNNZUdnLVZ3WGZTaUV3RDVKSEh3am5tMjk2QnpvZFVuRmVza3FocV9yLVd",
+      "date": "2026-11-19",
+      "potentiel": "moyen",
+      "recoupement": "a faire : confirmer la date sur service-public.fr"
     }
   ],
-  "notes_agent": "Aucune note propriétaire en attente. Sujets issus de state/veille_brute.json, sans recherche approfondie. Faits limités aux titres et liens collectés."
+  "ecarte": [
+    "Présidentielle 2027 (EBRA) : campagne de communication, pas un fait d'actu",
+    "Autres sujets du classement : hors ligne ou sans fait vérifiable au titre"
+  ],
+  "blocages": [
+    "WebFetch refusé (permission non répondue) pour les pages Challenges, Alternatives économiques et BFM : chiffres non recoupés",
+    "Flux ESA (404) et L'Usine Nouvelle (403) en erreur dans la veille brute"
+  ]
 }
