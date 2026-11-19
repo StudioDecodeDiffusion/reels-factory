@@ -1,0 +1,36 @@
+{
+  "id": "actu-20261119-0800",
+  "profil": "actu",
+  "statut": "rendu_en_cours",
+  "titre": "Présidentielle 2027 : la droite promet des réformes radicales",
+  "son_tendance": null,
+  "publication_le": "2026-11-19T08:00+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": null,
+  "legende": "Il promet des réformes radicales. Mais pour qui ? 18 novembre 2026.\n\nÉdouard Philippe maintient sa ligne pour la présidentielle de 2027, malgré les sondages et une primaire. Selon RFI, il mise sur des réformes radicales.\n\nÀ qui profiteront-elles, et qui les paiera ? 👇\n\nEnvoie-la à quelqu'un qui se demande où va son salaire ! 📤\n\nSources : La Croix, RFI\n\n#politique #ÉdouardPhilippe #Présidentielle2027 #actu #DécodéActu\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [
+    "https://www.la-croix.com/politique/presidentielle-2027-edouard-philippe-tient-son-cap-sous-la-pression-des-sondages-et-d-une-primaire-20261118",
+    "https://www.rfi.fr/fr/france/20261118-pr%C3%A9sidentielle-2027-en-france-%C3%A9douard-philippe-mise-sur-des-r%C3%A9formes-radicales"
+  ],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "decision": "publiable",
+    "bloquants": [],
+    "non_bloquants": [
+      "Scène 8 (pd_jauge « Le débat monte ») : l'étiquette « Vie chère » vient d'une autre veille (BFM), pas de la présidentielle ; la légende « Le sujet domine le débat » n'est sourcée par aucun élément du dossier. Remplacer l'étiquette par « Présidentielle » ou « Campagne » et retirer la légende ou la reformuler en opinion.",
+      "Scène 14 (quiz « La Croix ou RFI ? », bonne réponse La Croix) : la réponse repose sur la formule « candidat de droite » attribuée à La Croix, non vérifiée dans le texte de l'article. Si RFI emploie la même formule, le quiz a deux bonnes réponses. Vérifier ou remplacer par une question dont la réponse est sourcée.",
+      "Scène 4 (pd_flux « Qui paiera la facture ? ») : la flèche vers « Salariés » affirme implicitement que les salariés paieront, ce que le dossier ne dit pas. Formulation en question préférable.",
+      "Photos de presse : 6 scènes ont un fond_photo mais aucune photo réelle ne s'affiche (sites bloqués, fond sombre par défaut). Sur la planche, 4 des 8 panneaux visibles sont un fond sombre avec texte seul (scènes 1, 3, 5, 7). Le texte reste lisible et aucun visuel ne prétend être une photo : acceptable, non trompeur. Le fond vide est à noter comme faiblesse visuelle.",
+      "Même visuel La Croix utilisé en scène 3 et en scène 9 (fond_photo identique) : répétition d'image à éviter si une photo réelle est disponible au rendu suivant.",
+      "Finition : l'étiquette « coût » de la scène 4 chevauche le bord supérieur de la boîte de sous-titre. La planche ne montre que les scènes 1 à 8 sur 14 ; les scènes 9 à 14 ont été vérifiées par les frames video_scene.",
+      "Voix : voix_override présent (narrateur chatterbox, mascotte piper), 14 scènes avec répliques non vides. Vidéo de contrôle muette (PIXELS_HORS_LIGNE=1) : la voix est ajoutée au rendu final, ce n'est pas une voix absente."
+    ]
+  },
+  "community": {},
+  "da_message": "DA actu-20261119-0800 (réformes de la droite 2027) : style pixeldoc, palette nuit_citron (fond bleu nuit, accent citron, violet), voix V1+V3, musique orchestral. 14 scènes de 4 s, photos réelles de presse sur 7 scènes (6 avec URL du dossier, 1 par requête). Aucun chiffre affiché : les chiffres sont absents du sujet sourcé.",
+  "cree": "2026-11-19T04:08:50+00:00"
+}
