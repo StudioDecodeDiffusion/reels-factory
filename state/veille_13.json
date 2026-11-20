@@ -1,50 +1,40 @@
 {
-  "date": "2026-11-19",
-  "agent": 13,
-  "compte_depot": "actu",
-  "statut": "partielle",
-  "verifie_aujourdhui": false,
-  "source_collecte": "state/veille_brute.json (maj 2026-11-19 14:38) : tiktok_hashtags vide, tiktok_sons vide ; tokchart FR hashtags non lisible (page mondiale seule)",
-  "sons": [
+  "date": "2026-11-20",
+  "source": "state/veille_brute.json (maj 2026-11-20 14:12 UTC) + WebFetch tokchart.com (20/11/2026)",
+  "formats": [],
+  "sons": [],
+  "hashtags_fr": [],
+  "tendances": [
     {
-      "nom": "Ma Voie, Ma Foi",
-      "auteur": "Bord de Mer",
-      "videos": "100 K",
-      "source": "https://tokchart.com/fr/sons-tiktok",
-      "date_source": "2026-11-16",
-      "statut": "en hausse (donnee du 16/11, a reconfirmer)",
-      "droits": "a recommander a l'agent 6, pas d'integration"
+      "sujet": "Présidentielle 2027 : Dominique de Villepin candidat ?",
+      "date": "2026-11-20",
+      "sources": [
+        "https://www.bfmtv.com/politique/direct-presidentielle-2027-vives-tensions-chez-les-ecologistes-apres-la-main-tendue-de-marine-tondelier-a-lfi-dominique-de-villepin-en-route-vers-une-candidature_LN-202611200201.html"
+      ],
+      "angle": "explication courte pour comptes actu : qui est candidat, ce que ça change"
     },
     {
-      "nom": "Agitations tropicales",
-      "auteur": "L'Imperatrice",
-      "videos": "34 K",
-      "source": "https://tokchart.com/fr/sons-tiktok",
-      "date_source": "2026-11-16",
-      "statut": "en hausse (donnee du 16/11, a reconfirmer)",
-      "droits": "a recommander a l'agent 6, pas d'integration"
-    }
-  ],
-  "formats": [
+      "sujet": "Manifestation du 21 novembre à Paris : parcours déclaré",
+      "date": "2026-11-20",
+      "sources": [
+        "https://www.liberation.fr/economie/social/mouvement-social-quelles-sont-les-manifestations-prevues-ce-samedi-21-novembre-20261120_XZ5KDQQYXJG3HEERFX5OP6WSHI/"
+      ],
+      "angle": "format info pratique (où, quand, pourquoi) en 30 à 45 s"
+    },
     {
-      "nom": "explication 30-45 s sur un sujet du jour",
-      "source": "state/tiktok.json (16/11)",
-      "statut": "non mesure sur TikTok, a confirmer"
+      "sujet": "Les patrons français s'enfoncent dans la déprime",
+      "date": "2026-11-20",
+      "sources": [
+        "https://www.lexpress.fr/economie/politique-economique/il-faut-simplifier-lacces-aux-professions-reglementees-les-pistes-de-leconomiste-giuseppe-nicoletti-23UHKDP2TVB5REFBAIY4YCGHBM/"
+      ],
+      "angle": "sujet éco expliqué en chiffres sourcés"
     }
-  ],
-  "hashtags": [],
-  "hashtags_note": "aucun hashtag TikTok FR verifie le 19/11 : rien invente",
-  "sujets_qui_buzzent_actu": [
-    "pouvoir d'achat / epargne salariale (score 15,54)",
-    "manifestations du 14 novembre (score 14,07)",
-    "hausse du Smic (score 13,72)"
   ],
   "a_eviter": [
-    "sons nommes sans droits",
-    "hashtags non verifies",
-    "Google Trends sans lien TikTok FR",
-    "classement tokchart mondial (non FR)"
+    "Classement mondial TikTok (tokchart) : non France, hors sujet, pas utilisé"
   ],
-  "communaute": "pas de retour TikTok de l'agent 9 aujourd'hui",
-  "notes_owner_lues": 0
+  "lacunes": [
+    "Aucun son ni hashtag TikTok France sourcé et daté trouvé (tokchart FR exige un abonnement ; sites tiers non fiables)"
+  ],
+  "notes_proprietaire_traitees": []
 }
