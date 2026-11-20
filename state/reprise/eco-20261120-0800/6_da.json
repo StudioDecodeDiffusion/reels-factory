@@ -1,0 +1,59 @@
+{
+  "id": "eco-20261120-0800",
+  "compte": "eco",
+  "theme": {
+    "fond": "#0D0221",
+    "texte": "#F4EFFF",
+    "accent": "#FF2E88",
+    "accent2": "#2DE2E6",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "nuit_neon",
+    "palette": ["#0D0221", "#24104A", "#FF2E88", "#2DE2E6", "#F4EFFF", "#FFD23F"],
+    "mise_en_page": "plein_ecran",
+    "tenues": {"narrateur": "economie", "mascotte": "classique"}
+  },
+  "variete": {
+    "accroche": "chiffre_geant",
+    "trend": "Décryptage chiffré / infographie explicative",
+    "fonctionnement": "chiffres_cles",
+    "mise_en_page": "plein_ecran",
+    "musique": "synthwave",
+    "voix": "V1+V3",
+    "palette": "nuit_neon"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "musique": {
+    "genre": "synthwave",
+    "volume": 0.4,
+    "ambiance_globale": "curieux",
+    "ambiance_par_scene": {"1": "tension", "2": "curieux", "3": "curieux", "4": "curieux", "5": "curieux", "6": "tension", "7": "curieux", "8": "curieux", "9": "curieux", "10": "tension", "11": "tension", "12": "curieux", "13": "tension"}
+  },
+  "sfx": {"1": ["impact"], "2": ["pop"], "3": ["whoosh"], "4": ["pop"], "5": ["whoosh"], "6": ["pop"], "7": ["whoosh"], "8": ["pop"], "9": ["whoosh"], "10": ["pop"], "11": ["whoosh"], "12": ["pop"], "13": ["ding"]},
+  "scenes": [
+    {"n": 1, "type": "hook", "duree_s": 4.0, "energie": 3, "title": "Cible de déficit : 5 %", "titre": "Cible de déficit : 5 %", "mot_fort": "5 %", "prompt": "a large glowing number 5 over a government building at night, pixel art, side view, single object", "fond_photo_requete": "budget 2027 déficit 5 % PIB gouvernement novembre 2026"},
+    {"n": 2, "type": "pd_chiffre", "duree_s": 4.0, "energie": 3, "titre": "Une cible à 5 %", "mot_fort": "5 %", "valeur": 5, "suffixe": " %", "legende": "Cible de déficit du budget 2027", "source": "La Tribune"},
+    {"n": 3, "type": "pd_objet", "duree_s": 4.0, "energie": 2, "titre": "Le budget 2027 en débat", "mot_fort": "débat", "prompt": "a government budget folder on a desk, pixel art, single object", "etiquette": "Budget 2027", "fond_photo_requete": "Assemblée nationale budget 2027 débat déficit"},
+    {"n": 4, "type": "pd_flux", "duree_s": 4.5, "energie": 3, "titre": "Ce qui manque, on emprunte", "mot_fort": "emprunte", "de": {"label": "Écart", "prompt": "a gap between two stacks of coins, pixel art, single object"}, "vers": {"label": "Emprunt", "prompt": "a bank loan document, pixel art, single object"}, "montant": "argent"},
+    {"n": 5, "type": "pd_objet", "duree_s": 4.0, "energie": 2, "titre": "Dépenses plus fortes que recettes", "mot_fort": "recettes", "prompt": "a seesaw with the heavier side loaded with coins, pixel art, single object", "etiquette": "Déficit"},
+    {"n": 6, "type": "photo", "duree_s": 4.5, "energie": 2, "titre": "Des retraités dans la rue", "mot_fort": "rue", "src": "https://www.humanite.fr/wp-content/uploads/2026/11/P10-MANIF-RETRAITES_VEN.jpg", "fond_photo": "https://www.humanite.fr/wp-content/uploads/2026/11/P10-MANIF-RETRAITES_VEN.jpg", "fond_photo_requete": "manifestation retraités Paris budget 2027 novembre 2026"},
+    {"n": 7, "type": "pd_versus", "duree_s": 4.5, "energie": 3, "titre": "Sociales ou fiscales ?", "mot_fort": "fiscales", "gauche": {"label": "Mesures sociales", "prompt": "a shopping basket, pixel art, single object"}, "droite": {"label": "Mesures fiscales", "prompt": "a tax form, pixel art, single object"}, "verdict": "Les deux visent les retraités"},
+    {"n": 8, "type": "pd_flux", "duree_s": 4.0, "energie": 3, "titre": "Ce qui peut changer", "mot_fort": "changer", "de": {"label": "Budget 2027", "prompt": "a government budget document, pixel art, single object"}, "vers": {"label": "Contribuable", "prompt": "a small wallet with coins, pixel art, single object"}, "montant": "effet", "fond_photo_requete": "Bercy ministère des Finances budget 2027 novembre 2026"},
+    {"n": 9, "type": "pd_objet", "duree_s": 4.0, "energie": 2, "titre": "L'arbitrage budgétaire", "mot_fort": "arbitrage", "prompt": "a balance scale with coins and a bar chart, pixel art, single object", "etiquette": "Arbitrage"},
+    {"n": 10, "type": "pd_jauge", "duree_s": 4.5, "energie": 3, "titre": "Un poids qui grossit", "mot_fort": "grossit", "valeur": "élevé", "niveau": "élevé", "etiquette": "Dette publique", "legende": "Chaque écart s'ajoute à la dette", "fond_photo_requete": "dette publique France déficit PIB graphique 2026"},
+    {"n": 11, "type": "pd_objet", "duree_s": 4.5, "energie": 2, "titre": "Qui paie, au final ?", "mot_fort": "paie", "prompt": "a taxpayer's wallet with a coin falling out, pixel art, side view, single object", "etiquette": "Contribuable"},
+    {"n": 12, "type": "pd_objet", "duree_s": 4.5, "energie": 2, "titre": "Suivre les chiffres officiels", "mot_fort": "chiffres", "prompt": "a magnifying glass over a bar chart, pixel art, single object", "etiquette": "Chiffres officiels", "fond_photo_requete": "manifestation retraités France 2026 mesures budgétaires"},
+    {"n": 13, "type": "pd_tampon", "duree_s": 4.5, "energie": 3, "titre": "Cible de 5 % : tenable ?", "mot_fort": "tenable", "tampon": "TENABLE ?", "prompt": "a large question mark over a government building, pixel art, single object"}
+  ],
+  "consignes_animation": "Rythme : 13 plans de 4 à 4,5 s (environ 57 s), un changement d'image toutes les 4 s. Titres 3 à 5 mots, mot_fort en accent rose #FF2E88 ; étiquettes courtes ; rien ne doit déborder. Fond violet nuit : texte #F4EFFF partout. Scènes 1, 3, 6, 8, 10 et 12 : photo réelle du sujet assombrie en fond, scène pd_* au premier plan. Scène 4 et 8 : flux animé (pièces qui circulent entre les deux étiquettes). Scène 7 : versus avec verdict. Scène 5 et 10 : jauge et définition, sans chiffre nouveau. Aucune personne identifiable, aucun visage généré, aucune mention d'IA.",
+  "evolution_charte": "aucune (palette nuit_neon pour cette vidéo seulement)",
+  "messages_traites": [],
+  "message_au_proprietaire": "DA eco-20261120-0800 (budget 2027, cible de déficit 5 %) : 13 scènes, synthwave, palette nuit_neon, voix V1+V3, style pixeldoc. Photos réelles sur 6 scènes sur 13 (une seule URL pertinente dans la veille : retraités à Paris, scène 6 ; les autres en requête). Le scénario 5_scenario.json contient des faits absents du concept vérifié (5,4 %, Sénat, loi de fin de gestion, sources Public Sénat et Les Échos) : ils ne sont pas repris dans la DA et doivent être corrigés par l'agent 5."
+}

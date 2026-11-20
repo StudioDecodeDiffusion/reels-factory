@@ -1,0 +1,352 @@
+{
+  "id": "eco-20261120-0800",
+  "compte": "eco",
+  "theme": {
+    "fond": "#0D0221",
+    "texte": "#F4EFFF",
+    "accent": "#FF2E88",
+    "accent2": "#2DE2E6",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "nuit_neon",
+    "palette": [
+      "#0D0221",
+      "#24104A",
+      "#FF2E88",
+      "#2DE2E6",
+      "#F4EFFF",
+      "#FFD23F"
+    ],
+    "mise_en_page": "plein_ecran",
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "classique"
+    }
+  },
+  "variete": {
+    "accroche": "chiffre_geant",
+    "trend": "Décryptage chiffré / infographie explicative",
+    "fonctionnement": "chiffres_cles",
+    "mise_en_page": "plein_ecran",
+    "musique": "synthwave",
+    "voix": "V1+V3",
+    "palette": "nuit_neon"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "pop"
+    ],
+    "3": [
+      "whoosh"
+    ],
+    "4": [
+      "pop"
+    ],
+    "5": [
+      "whoosh"
+    ],
+    "6": [
+      "pop"
+    ],
+    "7": [
+      "whoosh"
+    ],
+    "8": [
+      "pop"
+    ],
+    "9": [
+      "whoosh"
+    ],
+    "10": [
+      "pop"
+    ],
+    "11": [
+      "whoosh"
+    ],
+    "12": [
+      "pop"
+    ],
+    "13": [
+      "ding"
+    ]
+  },
+  "musique": {
+    "genre": "synthwave",
+    "volume": 0.4
+  },
+  "titre_miniature": "CIBLE DE DÉFICIT À 5 % : INTENABLE ?",
+  "mots_choc": [
+    "DÉFICIT 5 %"
+  ],
+  "surtitre_miniature": "LA TRIBUNE · BUDGET 2027",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "energie": 3,
+      "title": "Cible de déficit : 5 %",
+      "titre": "Cible de déficit : 5 %",
+      "mot_fort": "5 %",
+      "prompt": "a large glowing number 5 over a government building at night, pixel art, side view, single object",
+      "fond_photo_requete": "budget 2027 déficit 5 % PIB gouvernement novembre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La cible de déficit à 5 % est contestée. La Tribune s'interroge sur sa faisabilité.",
+          "expression": "choc"
+        },
+        {
+          "qui": "narrateur",
+          "texte": "Il s'agit de 5 % du produit intérieur brut, le PIB.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 11.6
+    },
+    {
+      "n": 2,
+      "type": "pd_chiffre",
+      "energie": 3,
+      "titre": "Une cible à 5 %",
+      "mot_fort": "5 %",
+      "valeur": 5,
+      "suffixe": " %",
+      "legende": "Cible de déficit du budget 2027",
+      "source": "La Tribune",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le déficit, c'est l'écart entre dépenses et recettes publiques.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 3,
+      "type": "pd_objet",
+      "energie": 2,
+      "titre": "Le budget 2027 en débat",
+      "mot_fort": "débat",
+      "prompt": "a government budget folder on a desk, pixel art, single object",
+      "etiquette": "Budget 2027",
+      "fond_photo_requete": "Assemblée nationale budget 2027 débat déficit",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le gouvernement doit donc tenir cette cible dans son budget 2027.",
+          "expression": "pense"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 4,
+      "type": "pd_flux",
+      "energie": 3,
+      "titre": "Ce qui manque, on emprunte",
+      "mot_fort": "emprunte",
+      "de": {
+        "label": "Écart",
+        "prompt": "a gap between two stacks of coins, pixel art, single object"
+      },
+      "vers": {
+        "label": "Emprunt",
+        "prompt": "a bank loan document, pixel art, single object"
+      },
+      "montant": "argent",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Des retraités ont manifesté à Paris contre les mesures qui les visent.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 5,
+      "type": "pd_objet",
+      "energie": 2,
+      "titre": "Dépenses plus fortes que recettes",
+      "mot_fort": "recettes",
+      "prompt": "a seesaw with the heavier side loaded with coins, pixel art, single object",
+      "etiquette": "Déficit",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Cette cible de déficit reste-t-elle tenable, et à quel prix ?",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 6,
+      "type": "photo",
+      "energie": 2,
+      "titre": "Des retraités dans la rue",
+      "mot_fort": "rue",
+      "src": "https://www.humanite.fr/wp-content/uploads/2026/11/P10-MANIF-RETRAITES_VEN.jpg",
+      "fond_photo": "https://www.humanite.fr/wp-content/uploads/2026/11/P10-MANIF-RETRAITES_VEN.jpg",
+      "fond_photo_requete": "manifestation retraités Paris budget 2027 novembre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Tenir 5 %, c'est réduire l'écart entre dépenses et recettes de l'État.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 7,
+      "type": "pd_versus",
+      "energie": 3,
+      "titre": "Sociales ou fiscales ?",
+      "mot_fort": "fiscales",
+      "gauche": {
+        "label": "Mesures sociales",
+        "prompt": "a shopping basket, pixel art, single object"
+      },
+      "droite": {
+        "label": "Mesures fiscales",
+        "prompt": "a tax form, pixel art, single object"
+      },
+      "verdict": "Les deux visent les retraités",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ces ajustements budgétaires peuvent toucher directement le portefeuille de chaque contribuable. Tout dépend de l'ampleur.",
+          "expression": "pense"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 8,
+      "type": "pd_flux",
+      "energie": 3,
+      "titre": "Ce qui peut changer",
+      "mot_fort": "changer",
+      "de": {
+        "label": "Budget 2027",
+        "prompt": "a government budget document, pixel art, single object"
+      },
+      "vers": {
+        "label": "Contribuable",
+        "prompt": "a small wallet with coins, pixel art, single object"
+      },
+      "montant": "effet",
+      "fond_photo_requete": "Bercy ministère des Finances budget 2027 novembre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Mesures fiscales et sociales : chaque ajustement pèse directement sur le revenu disponible.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 9,
+      "type": "pd_objet",
+      "energie": 2,
+      "titre": "L'arbitrage budgétaire",
+      "mot_fort": "arbitrage",
+      "prompt": "a balance scale with coins and a bar chart, pixel art, single object",
+      "etiquette": "Arbitrage",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le débat porte sur la façon d'atteindre cette cible. Le choix des mesures compte.",
+          "expression": "pense"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 10,
+      "type": "pd_jauge",
+      "energie": 3,
+      "titre": "Un poids qui grossit",
+      "mot_fort": "grossit",
+      "valeur": "élevé",
+      "niveau": "élevé",
+      "etiquette": "Dette publique",
+      "legende": "Chaque écart s'ajoute à la dette",
+      "fond_photo_requete": "dette publique France déficit PIB graphique 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Chaque déficit s'ajoute à la dette publique, d'une année sur l'autre.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 11,
+      "type": "pd_objet",
+      "energie": 2,
+      "titre": "Qui paie, au final ?",
+      "mot_fort": "paie",
+      "prompt": "a taxpayer's wallet with a coin falling out, pixel art, side view, single object",
+      "etiquette": "Contribuable",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Tant que le budget n'est pas voté, la cible reste contestée.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 12,
+      "type": "pd_objet",
+      "energie": 2,
+      "titre": "Suivre les chiffres officiels",
+      "mot_fort": "chiffres",
+      "prompt": "a magnifying glass over a bar chart, pixel art, single object",
+      "etiquette": "Chiffres officiels",
+      "fond_photo_requete": "manifestation retraités France 2026 mesures budgétaires",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Suivez les chiffres officiels à chaque étape du budget, sans parti pris.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 13,
+      "type": "pd_tampon",
+      "energie": 3,
+      "titre": "Cible de 5 % : tenable ?",
+      "mot_fort": "tenable",
+      "tampon": "TENABLE ?",
+      "prompt": "a large question mark over a government building, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Selon vous, la cible de 5 % est-elle tenable aujourd'hui ?",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    }
+  ]
+}

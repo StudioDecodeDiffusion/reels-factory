@@ -3,166 +3,183 @@
   {
    "type": "hook",
    "duree_s": 4.0,
-   "texte_ecran": "5,4 % DU PIB",
+   "texte_ecran": "CIBLE : 5 % DU PIB",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Cinq virgule quatre pour cent du produit intérieur brut.",
+     "texte": "La cible de déficit à 5 % est contestée. La Tribune s'interroge sur sa faisabilité.",
      "expression": "choc"
     }
    ]
   },
   {
-   "type": "chiffre",
+   "type": "pd_chiffre",
    "duree_s": 4.0,
-   "texte_ecran": "DÉFICIT ACTÉ AU SÉNAT",
+   "texte_ecran": "5 % DU PIB",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "C'est le niveau officiel du déficit public acté par le Sénat.",
+     "texte": "Il s'agit de 5 % du produit intérieur brut, le PIB.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "fait",
-   "duree_s": 4.5,
-   "texte_ecran": "LOI DE FIN DE GESTION",
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "LE DÉFICIT",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Les parlementaires ont voté le projet de loi de fin de gestion budgétaire.",
+     "texte": "Le déficit, c'est l'écart entre dépenses et recettes publiques.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "fait",
-   "duree_s": 4.5,
-   "texte_ecran": "AJUSTEMENT DES COMPTES PUBLICS",
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "BUDGET 2027",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Ce texte réajuste les dépenses réelles et les recettes de l'État.",
+     "texte": "Le gouvernement doit donc tenir cette cible dans son budget 2027.",
      "expression": "pense"
     }
    ]
   },
   {
-   "type": "chiffre",
+   "type": "photo",
    "duree_s": 4.0,
-   "texte_ecran": "CRÉDITS EN HAUSSE",
+   "texte_ecran": "MANIF DES RETRAITÉS · PARIS",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Certaines enveloppes imprévues ont augmenté pour boucler l'exercice annuel.",
+     "texte": "Des retraités ont manifesté à Paris contre les mesures qui les visent.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "fait",
-   "duree_s": 4.5,
-   "texte_ecran": "ARMÉES : PRIORITÉ BUDGÉTAIRE",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Des crédits d'urgence sont alloués en priorité au ministère des armées.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "fait",
-   "duree_s": 4.5,
-   "texte_ecran": "AIDES FACE À L'ÉNERGIE",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "L'État finance aussi de nouveaux soutiens face à la crise énergétique.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "versus",
+   "type": "pd_jauge",
    "duree_s": 4.0,
-   "texte_ecran": "DÉPENSES VERSUS RECETTES",
+   "texte_ecran": "CIBLE CONTESTÉE",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Ces charges supplémentaires creusent l'écart avec les rentrées fiscales.",
-     "expression": "pense"
-    }
-   ]
-  },
-  {
-   "type": "fait",
-   "duree_s": 4.0,
-   "texte_ecran": "QUI FINANCE L'ÉCART ?",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Pour financer ce déséquilibre, la puissance publique doit emprunter.",
-     "expression": "neutre"
-    }
-   ]
-  },
-  {
-   "type": "chiffre",
-   "duree_s": 4.5,
-   "texte_ecran": "ACCROISSEMENT DE LA DETTE",
-   "dialogue": [
-    {
-     "qui": "narrateur",
-     "texte": "Chaque euro manquant vient grossir la dette souveraine du pays.",
+     "texte": "Cette cible de déficit reste-t-elle tenable, et à quel prix ?",
      "expression": "choc"
     }
    ]
   },
   {
-   "type": "chute",
-   "duree_s": 4.5,
-   "texte_ecran": "IMPACT SUR LES CONTRIBUABLES",
+   "type": "pd_versus",
+   "duree_s": 4.0,
+   "texte_ecran": "RECETTES VS DÉPENSES",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "À terme, ce sont les contribuables qui remboursent les intérêts accumulés.",
+     "texte": "Tenir 5 %, c'est réduire l'écart entre dépenses et recettes de l'État.",
      "expression": "neutre"
     }
    ]
   },
   {
-   "type": "fait",
-   "duree_s": 4.5,
-   "texte_ecran": "LE CHOIX DES PRIORITÉS",
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "AJUSTEMENTS",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "La gestion de fin d'année montre l'arbitrage difficile entre urgences et rigueur.",
+     "texte": "Ces ajustements budgétaires peuvent toucher directement le portefeuille de chaque contribuable. Tout dépend de l'ampleur.",
      "expression": "pense"
     }
    ]
   },
   {
-   "type": "question",
-   "duree_s": 4.5,
-   "texte_ecran": "FAUT-IL RÉDUIRE LE DÉFICIT ?",
+   "type": "pd_tampon",
+   "duree_s": 4.0,
+   "texte_ecran": "REVENU DISPONIBLE",
    "dialogue": [
     {
      "qui": "narrateur",
-     "texte": "Faut-il couper dans ces dépenses d'urgence pour réduire le déficit ?",
+     "texte": "Mesures fiscales et sociales : chaque ajustement pèse directement sur le revenu disponible.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "LE CHOIX DES MESURES",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le débat porte sur la façon d'atteindre cette cible. Le choix des mesures compte.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "pd_chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "DETTE PUBLIQUE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Chaque déficit s'ajoute à la dette publique, d'une année sur l'autre.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "bigstat",
+   "duree_s": 4.0,
+   "texte_ecran": "EN ATTENDANT LE VOTE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Tant que le budget n'est pas voté, la cible reste contestée.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "duree_s": 4.0,
+   "texte_ecran": "CHIFFRES OFFICIELS",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Suivez les chiffres officiels à chaque étape du budget, sans parti pris.",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "quiz",
+   "duree_s": 4.0,
+   "texte_ecran": "5 % EST-ELLE TENABLE ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Selon vous, la cible de 5 % est-elle tenable aujourd'hui ?",
      "expression": "neutre"
     }
    ]
   }
  ],
- "legende": "5,4 % du PIB : le déficit public revu en fin d'année budgétaire.\n\nLe Sénat a adopté la loi de fin de gestion intégrant des crédits d'urgence pour l'armée et l'énergie. Cet écart accru entre recettes et dépenses viendra alimenter la dette publique.\n\nFaut-il limiter ces dépenses exceptionnelles pour stabiliser les comptes ? 👇\nEnvoie-la à quelqu'un qui suit l'actualité budgétaire 📤\nSources : Public Sénat, Les Échos",
+ "variete": {
+  "accroche": "chiffre_geant",
+  "fonctionnement": "chiffres_cles",
+  "musique": "synthwave"
+ },
+ "legende": "Cible de déficit à 5 % du PIB : tenable ou pas ?\n\nLa Tribune s'interroge sur le casse-tête du gouvernement pour le budget 2027. Des retraités ont manifesté à Paris contre les mesures qui les visent.\n\nCette cible vous paraît-elle tenable ? 👇\nEnvoie-la à quelqu'un qui suit le budget 📤\nSources : La Tribune, Libération",
  "hashtags": [
   "#budget",
-  "#senat",
-  "#lesechos",
-  "#financespubliques",
+  "#LaTribune",
+  "#Libération",
+  "#budget2027",
   "#decode"
  ]
 }
