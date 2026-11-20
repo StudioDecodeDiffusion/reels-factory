@@ -932,5 +932,32 @@
    "etape": "Dépôt",
    "resultat": "OK — drop, état commité ; push en cours"
   }
+ ],
+ "eco-20261120-0800": [
+  {
+   "heure": "04:50",
+   "etape": "démarrage",
+   "resultat": "créneau eco vendredi 08h00 trouvé ; dossier créé"
+  },
+  {
+   "heure": "04:51",
+   "etape": "agent 4 (vérification concept)",
+   "resultat": "OK : 5,4 % retiré (non vérifié), sources précises, variété conservée"
+  },
+  {
+   "heure": "04:53",
+   "etape": "agents 5+6 + valider",
+   "resultat": "scénario corrigé (5,4 % retiré), DA écrite, valider OK"
+  },
+  {
+   "heure": "04:53",
+   "etape": "agent 7 pré-critique",
+   "resultat": "GO (notes : 14 plans vs 13 scènes à réaligner)"
+  },
+  {
+   "heure": "05:01",
+   "etape": "agent 8 render",
+   "resultat": "KO : remotion render échoue (CalledProcessError après npm ci, 2 essais)"
+  }
  ]
 }
