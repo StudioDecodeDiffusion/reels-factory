@@ -1,37 +1,14 @@
 {
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "type": "resume_du_jour",
-  "comptes": {
-    "actu": {
-      "abonnes": 7,
-      "abonnes_source": "state/abonnes_actu.json, au 2026-11-18 (7 depuis le 2026-10-26, 4 le 2026-10-18)",
-      "publications": 28,
-      "derniere": "2026-11-16",
-      "vues_mediane": 116,
-      "vues_meilleure": 1156,
-      "vues_moy_10": 122,
-      "interactions_moy": 1.96,
-      "taux_interactions_10": "0,6 % (7 interactions pour 1 219 vues, 10 dernieres)",
-      "source_stats": "state/stats_actu.json, maj 2026-11-18",
-      "cadence": "4 videos depuis le 2026-10-29 (1 par semaine)",
-      "alerte": "cadence sous le minimum de 2 par semaine ; engagement sous 1 %"
-    }
-  },
-  "revenus": {
-    "sources_actives": [],
-    "seuils_programmes": "non verifies le 2026-11-19 (aucune source web citee) : a traiter dans la strategie complete du lundi 2026-11-23"
-  },
-  "test_en_cours": {
-    "source": "state/rapport_3_actu.json, 2026-11-19",
-    "regle": "accroche chiffree sourcee en premiere phrase, sans « oui ou non » en fin de legende, sur 6 videos",
-    "repere": "legende avec « oui ou non » : 0,83 interaction (6 posts) ; sans : 2,27 (22 posts) ; petit echantillon"
-  },
+  "compte": "science",
+  "ou_on_en_est": "6 reels publies (27 oct. au 18 nov.), 588 vues cumulees, moyenne 98 vues par reel. Abonnes figes a 0 du 25 oct. au 19 nov. : donnee de collecte a verifier, aucun chiffre d'abonnes retenu.",
+  "ce_qui_a_bouge": "Sujets mecaniques et d'ingenierie (ponts, avion, robot, pompes, dalle) entre 101 et 120 vues. Reel moteurs electriques (4 nov.) le plus faible : 30 vues. Interactions a 0 sur les 6 reels, a verifier.",
   "actions_du_jour": [
-    "agents 4 et 5 : les 2 prochaines videos actu ouvrent sur un chiffre source et finissent sans « oui ou non »",
-    "manager : replanifier 2 videos actu cette semaine (cadence actuelle : 1 par semaine)",
-    "agent 3 : recouper les 2 commentaires du 2026-10-18 (stats) avec state/commentaires_actu.json"
+    "Verifier la collecte des abonnes et des interactions (workflow stats) avant toute decision sur la communaute.",
+    "Preparer 2 reels sur des sujets deja performants (pont Tacoma Narrows, avion de 575 t) avec deux accroches differentes (question vs fait chiffre).",
+    "Ne pas reprendre le sujet moteurs electriques sans test."
   ],
-  "anomalies": [
-    "actu : 2 commentaires sur le post du 2026-10-18 dans state/stats_actu.json, a recouper avec state/commentaires_actu.json"
-  ]
+  "sources_monetisation": "Aucune recherche web faite aujourd'hui : pas de chiffre de revenu ni de seuil de monetisation avance.",
+  "statut": "resume quotidien ; strategie complete prevue le lundi"
 }
