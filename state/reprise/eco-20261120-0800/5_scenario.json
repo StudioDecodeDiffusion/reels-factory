@@ -1,0 +1,168 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "5,4 % DU PIB",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cinq virgule quatre pour cent du produit intérieur brut.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "DÉFICIT ACTÉ AU SÉNAT",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "C'est le niveau officiel du déficit public acté par le Sénat.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "LOI DE FIN DE GESTION",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Les parlementaires ont voté le projet de loi de fin de gestion budgétaire.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "AJUSTEMENT DES COMPTES PUBLICS",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ce texte réajuste les dépenses réelles et les recettes de l'État.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "CRÉDITS EN HAUSSE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Certaines enveloppes imprévues ont augmenté pour boucler l'exercice annuel.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "ARMÉES : PRIORITÉ BUDGÉTAIRE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Des crédits d'urgence sont alloués en priorité au ministère des armées.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "AIDES FACE À L'ÉNERGIE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "L'État finance aussi de nouveaux soutiens face à la crise énergétique.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.0,
+   "texte_ecran": "DÉPENSES VERSUS RECETTES",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ces charges supplémentaires creusent l'écart avec les rentrées fiscales.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "QUI FINANCE L'ÉCART ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pour financer ce déséquilibre, la puissance publique doit emprunter.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "ACCROISSEMENT DE LA DETTE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Chaque euro manquant vient grossir la dette souveraine du pays.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "chute",
+   "duree_s": 4.5,
+   "texte_ecran": "IMPACT SUR LES CONTRIBUABLES",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "À terme, ce sont les contribuables qui remboursent les intérêts accumulés.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "LE CHOIX DES PRIORITÉS",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La gestion de fin d'année montre l'arbitrage difficile entre urgences et rigueur.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.5,
+   "texte_ecran": "FAUT-IL RÉDUIRE LE DÉFICIT ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Faut-il couper dans ces dépenses d'urgence pour réduire le déficit ?",
+     "expression": "neutre"
+    }
+   ]
+  }
+ ],
+ "legende": "5,4 % du PIB : le déficit public revu en fin d'année budgétaire.\n\nLe Sénat a adopté la loi de fin de gestion intégrant des crédits d'urgence pour l'armée et l'énergie. Cet écart accru entre recettes et dépenses viendra alimenter la dette publique.\n\nFaut-il limiter ces dépenses exceptionnelles pour stabiliser les comptes ? 👇\nEnvoie-la à quelqu'un qui suit l'actualité budgétaire 📤\nSources : Public Sénat, Les Échos",
+ "hashtags": [
+  "#budget",
+  "#senat",
+  "#lesechos",
+  "#financespubliques",
+  "#decode"
+ ]
+}
