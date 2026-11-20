@@ -1,36 +1,37 @@
 {
-  "date": "2026-11-19",
-  "formats": [
-    "Explication d'une info du jour en 45-60 s avec un chiffre sourcé en première phrase (sur le modèle du post du 18 oct., seul pic du compte)",
-    "Sans question « oui ou non » en fin de légende (test sur 6 vidéos, voir feedback agent 9)"
-  ],
-  "accroches_types": [
-    "Chiffre précis + conséquence concrète pour le quotidien (prix, impôts, salaires)",
-    "Fait du jour cité avec sa source (AFP, Les Echos, Le Monde, service-public.fr)"
-  ],
-  "sujets_qui_buzzent": [
-    {
-      "sujet": "Présidentielle 2027 : campagne « course à l'échalote » face aux colères",
-      "source": "https://www.lemonde.fr/politique/article/2026/11/19/presidentielle-2027-une-campagne-course-a-l-echalote-pour-tenter-de-repondre-aux-coleres-francaises_6813302_823448.html",
-      "date": "2026-11-19"
-    },
-    {
-      "sujet": "Carburants : qui sont les Français piégés par l'envolée des prix ?",
-      "source": "https://www.alternatives-economiques.fr/carburants-qui-sont-les-francais-pieges-par-l-envolee-des-prix_18-11-2026",
-      "date": "2026-11-18"
-    },
-    {
-      "sujet": "Impôts 2026 : jusqu'au 30 novembre pour corriger sa déclaration de revenus",
-      "source": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPVEwyNE95NDBjdjdWSDZyTWNWcHdoVVUwM2o0NlRuWkVVVU9kYzNNZUdnLVZ3WGZTaUV",
-      "date": "2026-11-19"
-    }
-  ],
-  "communaute": "Retour agent 9 (19 nov.) : 7 abonnés, 0 question, 0 demande, 0 critique ; engagement très faible (0,6 % sur 10 dernières vidéos). Cadence à 1 vidéo par semaine : à remonter à 2 minimum.",
-  "sons_tendance": [],
-  "a_eviter": [
-    "« Oui ou non ? » seul en fin de légende (0,83 interaction en moyenne contre 2,27)",
-    "Faits divers violents et sujets de la liste d'exclusions du profil",
-    "Chiffres d'accroche sans source vérifiée (vues mesurées : 26 à 1 156)"
-  ],
-  "notes_limites": "Recherche web du jour : résultats = titres et liens, sans contenu vérifié. Aucun son Instagram ou TikTok nommé faute de source fiable ; le champ sons_tendance reste vide. Pas de connexion Instagram."
+ "date": "2026-11-20",
+ "formats": [
+  "Explication d'une info du jour en 45-60 s, chiffre géant en ouverture, schéma animé"
+ ],
+ "accroches_types": [
+  "Chiffre marquant en première phrase (seul pic du compte : vidéo du 18/10, 1 156 vues, source state/feedback_cm_actu.json)",
+  "Question ouverte liée à un chiffre de la vidéo plutôt que oui ou non"
+ ],
+ "sujets_qui_buzzent": [
+  "Présidentielle 2027",
+  "Emploi et patrons",
+  "Manifestation du 21/11"
+ ],
+ "communaute": "Peu de retours : 7 abonnés, 999 vues sur 10 vidéos (moyenne 100), 0,2 % d'interactions (state/feedback_cm_actu.json, 20/11). Aucun commentaire en file.",
+ "a_eviter": [
+  "Accusations non prouvées contre une personne (Villepin)",
+  "Citations non vérifiées",
+  "Angle choc sans chiffre sourcé"
+ ],
+ "sons_tendance": [],
+ "tendances": [
+  {
+   "sujet": "Présidentielle 2027 : Dominique de Villepin, candidat à transformer sa popularité en voix",
+   "faits": "24 articles, 15 médias, veille du 20/11 (veille brute du 20/11/2026 (14 h 12 UTC)). Premier lien : https://www.bfmtv.com/politique/direct-presidentielle-2027-vives-tensions-chez-les-ecologistes-apres-la-main-tendue-de-marine-tondelier-a-lfi-dominique-de-ville"
+  },
+  {
+   "sujet": "Les patrons français s'enfoncent dans la déprime",
+   "faits": "29 articles, 12 médias (L'Express, Les Echos, Challenges, BFM...), veille du 20/11 (veille brute du 20/11/2026 (14 h 12 UTC)). Premier lien : https://www.lexpress.fr/economie/politique-economique/il-faut-simplifier-lacces-aux-professions-reglementees-les-pistes-de-leconomiste-giuseppe-nicoletti-23UHKDP2TVB5REFBAIY4YCGHBM/ (lien du groupe, pas forcément l'article titré)"
+  },
+  {
+   "sujet": "Manifestation du 21 novembre à Paris : le parcours déclaré",
+   "faits": "15 articles, veille du 20/11 (veille brute du 20/11/2026 (14 h 12 UTC)). Lien : https://www.liberation.fr/economie/social/mouvement-social-quelles-sont-les-manifestations-prevues-ce-samedi-21-novembre-20261120_XZ5KDQQYXJG3HEERFX5OP6WSHI/"
+  }
+ ],
+ "sons_note": "Aucun son tendance vérifié le 20/11 : les recherches web ne donnent que des listes datées de mai 2026. Rien inventé."
 }
