@@ -1,68 +1,35 @@
 {
-  "compte": "actu",
-  "agent": 1,
-  "date": "2026-11-19",
-  "methode": "classement state/veille_brute.json (top_par_compte.actu), faits repris des titres et sources listés ; pages source non lues (WebFetch bloqué, permission non accordée). Aucun chiffre hors titre.",
-  "statut_verification": "titres seuls, à recouper avant script",
-  "sujets": [
-    {
-      "rang": 1,
-      "sujet": "Patrons des grandes entreprises cotées : 5 millions d'euros de rémunération moyenne",
-      "angle": "Ce que touche le haut du panier pendant que les salaires du quotidien stagnent",
-      "fait_chiffre": "Titre Challenges : rémunération moyenne de 5 millions d'euros pour les patrons des grandes entreprises cotées françaises, présentée comme un record",
-      "source": "https://www.challenges.fr/entreprise/avec-une-remuneration-moyenne-de-5-millions-deuros-les-patrons-des-grandes-entreprises-cotees-francaises-battent-des-records_647029",
-      "date": "2026-11-19",
-      "potentiel": "fort",
-      "recoupement": "a faire : source de l'étude et périmètre non lus"
-    },
-    {
-      "rang": 2,
-      "sujet": "Passoires thermiques : Édouard Philippe veut geler l'interdiction pendant 5 ans",
-      "angle": "Logement : des locataires et petits propriétaires concernés, un report qui profite à qui ?",
-      "fait_chiffre": "Titre Le Figaro : proposition de geler pendant 5 ans l'interdiction des passoires thermiques",
-      "source": "https://immobilier.lefigaro.fr/article/edouard-philippe-veut-geler-l-interdiction-des-passoires-thermiques-pendant-5-ans-20261119",
-      "date": "2026-11-19",
-      "potentiel": "moyen-fort",
-      "recoupement": "a faire : durée et calendrier non lus"
-    },
-    {
-      "rang": 3,
-      "sujet": "Carburants : qui sont les Français piégés par l'envolée des prix ?",
-      "angle": "Qui paie le plein : travailleurs et habitants des zones rurales. Attention, sujet déjà traité le 27 oct. (taxes) : angle différent à assumer",
-      "fait_chiffre": "Titre Alternatives économiques : envolée des prix des carburants, Français piégés (aucun chiffre repris)",
-      "source": "https://www.alternatives-economiques.fr/carburants-qui-sont-les-francais-pieges-par-l-envolee-des-prix_18-11-2026",
-      "date": "2026-11-18",
-      "potentiel": "moyen",
-      "recoupement": "a faire : pourcentage de hausse et période non lus"
-    },
-    {
-      "rang": 4,
-      "sujet": "Violences du 17 octobre : 207 millions d'euros de dommages selon France Assureurs",
-      "angle": "Qui paie la facture des dégâts : assureurs, collectivités, contribuables. Ne pas traiter les auteurs ; sujet sensible (exclusion faits divers violents), à valider par le Manager",
-      "fait_chiffre": "Titre La Croix : France Assureurs estime le coût des dommages à 207 millions d'euros ; titre BFM : certaines estimations évoquaient 1,2 milliard",
-      "source": "https://www.la-croix.com/societe/violences-urbaines-du-17-octobre-france-assureurs-estime-les-couts-a-207-millions-d-euros-20261119",
-      "date": "2026-11-19",
-      "potentiel": "moyen",
-      "recoupement": "a faire : périmètre et date de l'estimation non lus",
-      "alerte": "exclusion profil : faits violents, a valider"
-    },
-    {
-      "rang": 5,
-      "sujet": "Impôts 2026 : jusqu'au 30 novembre pour corriger sa déclaration de revenus",
-      "angle": "Utile et concret : date limite à retenir, ce qu'il faut corriger",
-      "fait_chiffre": "Titre Ouest-France / franceinfo : date limite de correction fixée au 30 novembre 2026",
-      "source": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPVEwyNE95NDBjdjdWSDZyTWNWcHdoVVUwM2o0NlRuWkVVVU9kYzNNZUdnLVZ3WGZTaUV3RDVKSEh3am5tMjk2QnpvZFVuRmVza3FocV9yLVd",
-      "date": "2026-11-19",
-      "potentiel": "moyen",
-      "recoupement": "a faire : confirmer la date sur service-public.fr"
-    }
-  ],
-  "ecarte": [
-    "Présidentielle 2027 (EBRA) : campagne de communication, pas un fait d'actu",
-    "Autres sujets du classement : hors ligne ou sans fait vérifiable au titre"
-  ],
-  "blocages": [
-    "WebFetch refusé (permission non répondue) pour les pages Challenges, Alternatives économiques et BFM : chiffres non recoupés",
-    "Flux ESA (404) et L'Usine Nouvelle (403) en erreur dans la veille brute"
-  ]
+ "date": "2026-11-20",
+ "compte": "actu",
+ "sujets": [
+  {
+   "titre": "Manifestation du samedi 21 novembre à Paris : acte VI du mouvement contre la vie chère",
+   "resume": "Nouvelle journée de mobilisation contre la hausse du coût de la vie samedi 21 novembre à Paris. Parcours République-Nation selon Actu.fr et Le Parisien (titre repris, non recoupé sur le parcours).",
+   "chiffres_cles": [],
+   "source_url": "https://www.liberation.fr/economie/social/mouvement-social-quelles-sont-les-manifestations-prevues-ce-samedi-21-novembre-20261120_XZ5KDQQYXJG3HEERFX5OP6WSHI/",
+   "date_info": "2026-11-20",
+   "vu_chez": [
+    "Actu.fr",
+    "BFM",
+    "France 3 Régions",
+    "Le Parisien",
+    "Libération"
+   ],
+   "faisabilite": 4,
+   "potentiel": 7
+  },
+  {
+   "titre": "Fuites d'informations du ministère de l'Intérieur : perquisitions au RN (soupçons, enquête en cours)",
+   "resume": "Des perquisitions ont visé le RN dans une enquête sur des soupçons de fuites d'informations venant de la police, au profit du parti. Ce sont des soupçons : aucune mise en cause personnelle à retenir sans décision de justice.",
+   "chiffres_cles": [],
+   "source_url": "https://www.la-croix.com/politique/perquisitions-prefet-convoque-ce-que-l-on-sait-de-laffaire-des-fuites-au-benefice-du-rn-20261120",
+   "date_info": "2026-11-19 / 2026-11-20",
+   "vu_chez": [
+    "La Croix"
+   ],
+   "faisabilite": 3,
+   "potentiel": 6
+  }
+ ],
+ "notes_retrait": "Retirés faute de date ou de source recoupée : dette française (The Conversation), sondages présidentielle 2027, manifeste Zucman/Piketty/Cagé."
 }
