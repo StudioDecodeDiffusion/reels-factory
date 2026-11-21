@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "type": "resume_du_jour",
-  "compte": "science",
-  "ou_on_en_est": "6 reels publies (27 oct. au 18 nov.), 588 vues cumulees, moyenne 98 vues par reel. Abonnes figes a 0 du 25 oct. au 19 nov. : donnee de collecte a verifier, aucun chiffre d'abonnes retenu.",
-  "ce_qui_a_bouge": "Sujets mecaniques et d'ingenierie (ponts, avion, robot, pompes, dalle) entre 101 et 120 vues. Reel moteurs electriques (4 nov.) le plus faible : 30 vues. Interactions a 0 sur les 6 reels, a verifier.",
+  "compte": "actu",
+  "ou_on_en_est": "7 abonnes, stables depuis le 26 oct. (4 le 18 oct.). 29 videos, 4 664 vues cumulees, 55 interactions. Sur les 10 dernieres videos : 1 030 vues (moyenne 103, mediane 113,5), 2 interactions, soit 0,2 %. Source : state/stats_actu.json (maj 21/11, 15 h 16), recalcule par l'agent 10.",
+  "ce_qui_a_bouge": "Derniere video (19/11) : 55 vues, 0 interaction ; 16/11 : 113 vues. Novembre : 4 videos, mediane 84 vues contre 118 en octobre (25 videos). Les titres 'oui ou non' (6 posts) : 0,83 interaction en moyenne, 0 commentaire, contre 2,17 pour les 23 autres (indicatif, legendes tronquees).",
   "actions_du_jour": [
-    "Verifier la collecte des abonnes et des interactions (workflow stats) avant toute decision sur la communaute.",
-    "Preparer 2 reels sur des sujets deja performants (pont Tacoma Narrows, avion de 575 t) avec deux accroches differentes (question vs fait chiffre).",
-    "Ne pas reprendre le sujet moteurs electriques sans test."
+    "Preparer les prochaines videos avec accroche chiffree sourcee en premiere phrase et question ouverte liee a un chiffre, sans 'oui ou non' final (test de l'agent 3, mesure a J+7 contre mediane 114 vues et 0,2 %).",
+    "Maintenir 2 videos par semaine pour comparer les formats.",
+    "Verifier le retour agent 9 du 20/11 : il annonce 999 vues et 24 vues pour le 19/11, le fichier donne 1 030 et 55. Utiliser les chiffres du fichier."
   ],
-  "sources_monetisation": "Aucune recherche web faite aujourd'hui : pas de chiffre de revenu ni de seuil de monetisation avance.",
+  "sources_monetisation": "Aucune recherche web faite aujourd'hui : pas de chiffre de revenu ni de seuil de monetisation avance. Strategie complete prevue le lundi.",
   "statut": "resume quotidien ; strategie complete prevue le lundi"
 }
