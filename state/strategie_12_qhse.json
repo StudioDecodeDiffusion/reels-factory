@@ -1,26 +1,14 @@
 {
-  "date": "2026-11-19",
-  "type": "resume_quotidien",
+  "date": "2026-11-21",
+  "type": "resume_du_jour",
   "compte": "qhse",
-  "ou_on_en_est": {
-    "reels": 2,
-    "vues_cumulees": 148,
-    "mediane_vues": 74,
-    "meilleure_vues": 131,
-    "abonnes": "0 remonte sur les 25 relevés (à vérifier)",
-    "interactions": "2 j'aime au total (reel Seveso), 0 commentaire, 0 partage, 0 enregistrement",
-    "derniere_publication": "2026-10-27 (23 jours sans publication)",
-    "sources": ["state/stats_qhse.json (maj 2026-11-18 21:50 UTC)", "state/rapport_3_qhse.json (2026-11-19)", "state/feedback_cm_qhse.json (2026-11-19)"]
-  },
-  "ce_qui_a_bouge": "Rien de nouveau depuis hier : aucune publication, aucune donnée nouvelle, aucune question ni critique de l'audience.",
-  "revenus": {
-    "seuils_programmes": "non vérifiés dans ce résumé (pas de recherche web) : à traiter dans la stratégie complète du lundi 23/11",
-    "sources_possibles": "non évaluées aujourd'hui, le volume ne permet pas encore de chiffrer une source"
-  },
+  "ou_on_en_est": "2 reels publies, tous deux le 27/10 (Seveso seuil haut : 131 vues, 2 j'aime ; ISO 9001 : 17 vues, 0 interaction). Aucune publication depuis 25 jours. Abonnes figes a 0 sur 28 releves : donnee non fiable, aucun chiffre d'abonnes retenu. Source : state/stats_qhse.json (maj 21/11, 15 h 16 UTC), verifie par l'agent 10.",
+  "ce_qui_a_bouge": "Rien depuis le 27/10 : la chaine de publication est arretee (job qhse-20261027-1200 a verifier). Aucun commentaire, question ni critique.",
   "actions_du_jour": [
-    "Relancer la publication : vérifier le job qhse-20261026-1200 (ISO 9001), présent dans l'historique et absent des statistiques, et rétablir la chaîne de publication.",
-    "Vérifier la remontée des abonnés (0 constant sur 25 relevés) avant toute interprétation de l'audience.",
-    "Reprendre un rythme régulier avec le même format pour pouvoir comparer 3 à 5 reels entre eux."
+    "Verifier le job qhse-20261027-1200 et retablir la chaine de publication (action technique, hors de l'agent 10).",
+    "Ne tirer aucune conclusion d'audience : 2 reels seulement, abonnes non fiables.",
+    "Preparer le test 'risque industriel local' contre 'norme' (3 reels par sujet minimum) pour la reprise des publications."
   ],
-  "risques": "Aucun risque nouveau signalé. Pas de conclusion sur l'audience : 2 vidéos seulement, dont une sans aucune interaction."
+  "sources_monetisation": "Aucune recherche web faite aujourd'hui : pas de chiffre de revenu ni de seuil de monetisation avance. Strategie complete prevue le lundi.",
+  "statut": "resume quotidien ; strategie complete prevue le lundi"
 }
