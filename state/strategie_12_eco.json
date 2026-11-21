@@ -1,43 +1,14 @@
 {
-  "date": "2026-11-19",
+  "date": "2026-11-21",
+  "type": "resume_du_jour",
   "compte": "eco",
-  "type": "resume_quotidien",
-  "ou_on_en_est": {
-    "videos_publiees": 5,
-    "periode": "27 oct - 3 nov 2026",
-    "vues_min": 94,
-    "vues_max": 203,
-    "vues_mediane": 131,
-    "likes_total": 5,
-    "enregistrements_total": 2,
-    "commentaires_total": 0,
-    "partages_total": 0,
-    "source": "state/rapport_3_eco.json (agent 3, 19/11/2026) ; state/stats_eco.json (maj 18/11/2026)"
-  },
-  "alertes": [
-    "Aucune publication depuis le 3 nov 2026 (16 jours).",
-    "Abonnes a 0 sur toute la periode : chiffre non fiable, ne pas utiliser.",
-    "5 videos seulement : aucune conclusion statistique sur les sujets."
-  ],
-  "revenus": {
-    "montant_constate": null,
-    "projection": null,
-    "seuils_programmes": "non verifies le 19/11/2026 (pas de recherche web dans ce resume)"
-  },
-  "bouge_depuis_hier": "Pas de donnee nouvelle : aucune publication et aucun commentaire recu (state/feedback_cm_eco.json, 19/11/2026).",
+  "ou_on_en_est": "5 videos mesurees (25 oct. au 3 nov.), 715 vues, moyenne 143, mediane 131. Likes 5, enregistrements 2, 0 commentaire, 0 partage. Total_interactions du fichier = 8, composantes = 7 : ecart a corriger dans stats_eco.json (post du 27/10 'salaire'). Abonnes figes a 0 : non fiable, non utilise. Source : state/stats_eco.json (maj 21/11, 15 h 16 UTC), verifie par l'agent 10.",
+  "ce_qui_a_bouge": "Aucune publication dans stats_eco.json depuis le 3 nov. (18 jours). Meilleure video : dette publique (203 vues, 27/10) ; niches fiscales (172 vues, 3/11) ; plus faible : salaire brut/net (94 vues). Alerte non tranchee : state/attente/ contient des fichiers eco du 20/11.",
   "actions_du_jour": [
-    {
-      "qui": "proprietaire",
-      "action": "Relancer la publication : planifier une video, en commencant par le sujet dette publique (sujet le plus vu, 203 vues le 27/10/2026)."
-    },
-    {
-      "qui": "proprietaire",
-      "action": "Verifier le compte et la connexion de publication avant de planifier (cause possible de l'arret depuis le 3 nov)."
-    },
-    {
-      "qui": "agents 3 et 9",
-      "action": "Lancer le test : 3 publications dette publique et niches fiscales, comparer les vues a 7 jours."
-    }
+    "Verifier si la publication eco est a l'arret ou seulement absente des stats (fichiers state/attente/ du 20/11) : action du propriétaire ou de l'agent 9.",
+    "Ne tirer aucune conclusion sur les sujets : 5 videos seulement, recalcul apres 10 publications.",
+    "Preparer 3 publications test sur dette publique et niches fiscales, comparaison des vues a 7 jours."
   ],
-  "prochaine_strategie_complete": "2026-11-23 (lundi)"
+  "sources_monetisation": "Aucune recherche web faite aujourd'hui : pas de chiffre de revenu ni de seuil de monetisation avance. Strategie complete prevue le lundi.",
+  "statut": "resume quotidien ; strategie complete prevue le lundi"
 }
