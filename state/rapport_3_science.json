@@ -1,37 +1,29 @@
 {
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "classement": [
-    "1. Robot canard 2 pattes (399 $) : 120 vues, portée 115, 1 enregistrement (27 oct.)",
-    "2. Pont Tacoma Narrows : 119 vues, portée 104 (28 oct.)",
-    "3. Trois pompes, cinq rounds : 110 vues, portée 100 (18 nov.)",
-    "4. Dalle sans acier : 108 vues, portée 106 (11 nov.)",
-    "5. Avion de 575 t : 101 vues, portée 96 (27 oct.)",
-    "6. Moteur électrique (Mondial de l'auto) : 30 vues, portée 25 (4 nov.)"
+    {"lien": "https://www.instagram.com/reel/De_S6G7DZxP/", "sujet": "Robot canard à 2 pattes", "vues": 120, "portee": 115, "date": "2026-10-27"},
+    {"lien": "https://www.instagram.com/reel/DfB8ESDjxmM/", "sujet": "Tacoma Narrows (pont)", "vues": 119, "portee": 104, "date": "2026-10-28"},
+    {"lien": "https://www.instagram.com/reel/Df4pA-vv7Cg/", "sujet": "Pompes (centrifuge, piston, engrenages)", "vues": 110, "portee": 100, "date": "2026-11-18"},
+    {"lien": "https://www.instagram.com/reel/Dfl5UqvI_tW/", "sujet": "Dalle en béton sans acier", "vues": 108, "portee": 106, "date": "2026-11-11"},
+    {"lien": "https://www.instagram.com/reel/DfAl3CfF6dl/", "sujet": "Avion de 575 t", "vues": 101, "portee": 96, "date": "2026-10-27"},
+    {"lien": "https://www.instagram.com/reel/DfUZLYjlZmw/", "sujet": "Moteurs électriques", "vues": 30, "portee": 25, "date": "2026-11-04"}
   ],
   "ce_qui_marche": [
-    "Sujets mécaniques et d'ingénierie concrets : 5 reels sur 6 entre 101 et 120 vues (pont, avion, robot, pompes, dalle)",
-    "Le dernier reel (18 nov.) fait 110 vues, dans le haut du classement"
+    "Sujets mécaniques et d'ingénierie concrets (ponts, robots, avions, béton, pompes) : 101 à 120 vues sur 5 reels sur 6.",
+    "Un seul enregistrement sur 6 reels (robot canard, 1 enregistrement) ; le seul signal d'engagement non nul de la période."
   ],
   "ce_qui_ne_marche_pas": [
-    "Moteurs électriques (4 nov.) : 30 vues, portée 25, seul reel hors du groupe",
-    "Engagement quasi nul : 1 enregistrement pour 588 vues cumulées, 0 like, 0 commentaire, 0 partage (chiffres à vérifier)"
-  ],
-  "alertes": [
-    "Abonnés figés à 0 du 25 oct. au 19 nov. : donnée de collecte probablement fausse, aucun chiffre d'abonnés retenu",
-    "Likes, commentaires et partages à 0 sur les 6 reels : à vérifier avant toute conclusion sur la communauté",
-    "Échantillon de 6 reels : tendances à confirmer sur davantage de publications",
-    "Source complémentaire instrack (decodeactu) non utilisée : son identifiant ne correspond pas au compte science"
+    "Moteurs électriques (energie) : 30 vues, 25 de portée, le plus faible de la série (4 nov.).",
+    "Aucun like, commentaire ni partage sur les 6 reels : pas de signal communautaire exploitable.",
+    "Abonnés figés à 0 du 25 oct. au 21 nov. : chiffre non fiable (collecte à vérifier), à ne pas utiliser pour décider."
   ],
   "enseignements": [
-    "Les sujets mécaniques du quotidien (ponts, avions, robots, pompes, béton) tiennent une portée stable autour de 100 à 120 vues",
-    "Un seul reel sur les moteurs, à 30 vues : pas assez pour conclure sur le thème, mais à ne pas répéter sans test",
-    "Les interactions ne peuvent pas servir de critère tant que la collecte n'est pas vérifiée"
+    "Garder les sujets mécaniques concrets, avec un phénomène visible et une question d'accroche (ex. « pourquoi… ? »).",
+    "Éviter pour l'instant les sujets moteurs et énergie : seul sujet sous 100 vues sur 6 reels.",
+    "Échantillon de 6 reels sur 3 semaines : tendance à confirmer, pas une règle."
   ],
-  "test": "Sur une semaine : 2 reels sur des sujets mécaniques déjà performants (pont, avion), avec deux accroches différentes (question vs fait chiffré) ; comparer les vues à 48 h",
-  "reperes_projection": {
-    "vues_mediane": 109,
-    "meilleure": 120,
-    "vues_moyenne": 98,
-    "plus_faible": 30
-  }
+  "test": "Publier 2 reels mécaniques sur le modèle « pourquoi… ? » et comparer leurs vues à la médiane de 109, avant de reprendre un sujet énergie.",
+  "reperes_projection": {"vues_mediane": 109, "vues_moyenne": 98, "portee_moyenne": 91, "meilleure": 120, "plus_faible": 30},
+  "source": "state/stats_science.json (maj 2026-11-21 15 h 17 UTC), state/feedback_cm_science.json, state/abonnes_science.json",
+  "fiabilite": "faible : 6 reels, abonnés non fiables, aucune interaction communautaire"
 }

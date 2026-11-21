@@ -1,51 +1,26 @@
 {
-  "date": "2026-11-20",
-  "compte": "qhse",
-  "source": "state/stats_qhse.json (maj 2026-11-19 22:07 UTC) ; state/feedback_cm_qhse.json (agent 9, 2026-11-20) ; state/abonnes_qhse.json (25 relevés)",
-  "volume": "tres faible : 2 publications dans les statistiques, toutes deux du 27/10/2026, 0 publication depuis 24 jours",
+  "date": "2026-11-21",
   "classement": [
-    {
-      "date": "2026-10-27",
-      "lien": "https://www.instagram.com/reel/De_t5RiAcBq/",
-      "sujet": "Seveso seuil haut",
-      "views": 131,
-      "reach": 129,
-      "likes": 2,
-      "comments": 0,
-      "shares": 0,
-      "saved": 0
-    },
-    {
-      "date": "2026-10-27",
-      "lien": "https://www.instagram.com/reel/De_SvXwDOC2/",
-      "sujet": "ISO 9001",
-      "views": 17,
-      "reach": 15,
-      "likes": 0,
-      "comments": 0,
-      "shares": 0,
-      "saved": 0
-    }
+    {"rang": 1, "date": "2026-10-27", "sujet": "Usine Seveso seuil haut", "vues": 131, "portee": 129, "likes": 2, "commentaires": 0, "partages": 0, "enregistrements": 0},
+    {"rang": 2, "date": "2026-10-27", "sujet": "ISO 9001 : certificats dans le monde", "vues": 17, "portee": 15, "likes": 0, "commentaires": 0, "partages": 0, "enregistrements": 0}
   ],
   "ce_qui_marche": [
-    "Sujet concret et local (usine Seveso, « ta commune ») : 131 vues, 129 de portée, 2 j'aime, seul signal d'interaction du compte"
+    "Aucun signal fiable : la vidéo Seveso (131 vues, 2 j'aimé) est la seule à dépasser 17 vues, sur un échantillon de 2 vidéos."
   ],
   "ce_qui_ne_marche_pas": [
-    "Norme générique (ISO 9001) : 17 vues, 0 interaction",
-    "Aucune publication depuis le 27/10 (24 jours)",
-    "0 abonné remonté sur 25 relevés (25/10 au 19/11) : remontée à vérifier",
-    "0 commentaire"
+    "Aucune publication depuis le 27/10 (25 jours) : la chaîne de publication est à rétablir avant toute analyse.",
+    "Abonnés à 0 sur les 28 relevés (du 25/10 au 21/11) : valeur à vérifier côté relevé, non interprétable en l'état.",
+    "ISO 9001 : 17 vues, 0 interaction."
   ],
-  "cause_possible_arret": "job qhse-20261027-1200 marqué publiee dans state/attente/ mais sans titre, format ni épisode dans state/historique_qhse.json ; non modifié",
   "enseignements": [
-    "Le risque concret pour le riverain (Seveso) a fait mieux qu'une norme générique : à confirmer sur plus de vidéos",
-    "Aucune conclusion d'audience possible : 0 commentaire, 0 abonné",
-    "Pas de tendance fiable avant la reprise des publications"
+    "Pas d'enseignement actionnable : 2 vidéos, toutes deux du 27/10, insuffisant pour conclure sur le sujet, le format ou l'heure.",
+    "Le seul écart visible (131 contre 17 vues) porte sur deux sujets différents, le même jour : il ne permet pas de dire ce qui le cause."
   ],
-  "test": "Une fois la publication rétablie : une vidéo « risque industriel local » contre une vidéo « norme », comparées sur 7 jours (vues, portée, interactions)",
+  "test": "Une fois la publication rétablie, publier deux sujets distincts (risque industriel local contre norme) et comparer sur au moins 3 vidéos par sujet avant de conclure.",
   "reperes_projection": {
     "vues_mediane": 74,
-    "meilleure": 131,
-    "note": "base de 2 vidéos seulement, ne pas extrapoler"
-  }
+    "meilleure": 131
+  },
+  "source": "state/stats_qhse.json (maj 2026-11-21), state/abonnes_qhse.json (28 relevés), travail/rapport8_qhse.json, state/feedback_cm_qhse.json (bilan du 20/11)",
+  "notes_agent_3": "Aucune note en attente pour le compte qhse (tool notes --agent 3 --profile qhse)."
 }
