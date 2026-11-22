@@ -959,5 +959,77 @@
    "etape": "agent 8 render",
    "resultat": "KO : remotion render échoue (CalledProcessError après npm ci, 2 essais)"
   }
+ ],
+ "qhse-20261122-0800": [
+  {
+   "heure": "04:50",
+   "etape": "creneau",
+   "resultat": "OK : qhse 08 h 00, dossier créé"
+  },
+  {
+   "heure": "04:51",
+   "etape": "agent 4 concept",
+   "resultat": "OK : EN 9100 vs ISO 9001 (réserve : références §8.1.2 et §8.1.4 à confirmer)"
+  },
+  {
+   "heure": "04:52",
+   "etape": "agents 5 et 6",
+   "resultat": "OK : scénario 162 mots, DA 14 scènes"
+  },
+  {
+   "heure": "04:53",
+   "etape": "valider",
+   "resultat": "OK : 0 erreur après corrections agent 6"
+  },
+  {
+   "heure": "04:54",
+   "etape": "pré-critique agent 7",
+   "resultat": "GO (non bloquant : requêtes Airbus sous 'Pièces contrefaites' à rendre génériques)"
+  },
+  {
+   "heure": "04:55",
+   "etape": "check",
+   "resultat": "OK"
+  },
+  {
+   "heure": "04:55",
+   "etape": "render",
+   "resultat": "npm error could not determine executable to run (npx remotion render, exit 1)"
+  },
+  {
+   "heure": "04:56",
+   "etape": "render",
+   "resultat": "npm error could not determine executable to run (npx remotion render, exit 1) - 2e tentative identique"
+  },
+  {
+   "heure": "04:56",
+   "etape": "installation deps video (npm ci)",
+   "resultat": "OK : node_modules installé, relance du rendu"
+  },
+  {
+   "heure": "05:04",
+   "etape": "render",
+   "resultat": "OK : video.mp4 rendu"
+  },
+  {
+   "heure": "05:04",
+   "etape": "frames",
+   "resultat": "OK"
+  },
+  {
+   "heure": "05:04",
+   "etape": "caption",
+   "resultat": "OK"
+  },
+  {
+   "heure": "05:04",
+   "etape": "story",
+   "resultat": "OK"
+  },
+  {
+   "heure": "05:05",
+   "etape": "critique finale",
+   "resultat": "publiable"
+  }
  ]
 }
