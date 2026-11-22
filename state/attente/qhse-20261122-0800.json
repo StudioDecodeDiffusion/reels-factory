@@ -1,0 +1,64 @@
+{
+  "id": "qhse-20261122-0800",
+  "profil": "qhse",
+  "statut": "rendu_en_cours",
+  "titre": null,
+  "son_tendance": null,
+  "publication_le": "2026-11-22T08:00+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": null,
+  "legende": "Tout le monde dit : « L'EN 9100, c'est l'ISO 9001 en plus. » Pas seulement : voyez la clause 8.1.4.\n\nL'EN 9100:2018 reprend les exigences de l'ISO 9001:2015 et y ajoute des exigences propres à l'aéronautique, au spatial et à la défense. Elle traite notamment la sécurité des produits (§8.1.2) et la prévention des pièces contrefaites (§8.1.4).\n\nDans votre entreprise, qui vérifie l'origine des pièces ? 👇\n\nEnvoie-la à un responsable qualité qui prépare un audit fournisseur ! 📤\n\nSources : EN 9100:2018, ISO 9001:2015\n\n#QSE #EN9100 #ISO9001 #aéronautique #décodelqsesimplement\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "id": "qhse-20261122-0800",
+    "compte": "qhse",
+    "agent": "7.5",
+    "decision": "publiable",
+    "defauts_bloquants": [],
+    "defauts": [
+      {
+        "scene": "1/14 (hook)",
+        "type": "scene_vide",
+        "detail": "Sur la planche, le fond est vide : aucune photo ni visuel au centre. Le fond_photo_requete doit être rempli au rendu GitHub. Non bloquant.",
+        "bloquant": false
+      },
+      {
+        "scene": "13/14 et 14/14 (quiz)",
+        "type": "scene_vide",
+        "detail": "Les deux scènes de quiz n'ont aucun visuel au centre (pas d'options de réponse affichées). Le titre et le sous-titre portent seuls la question. Finition à améliorer, non bloquant.",
+        "bloquant": false
+      },
+      {
+        "scene": "toutes les scènes à fond photo",
+        "type": "photos_absentes_controle",
+        "detail": "Le rendu de contrôle (PIXELS_HORS_LIGNE=1) montre des carrés rouges de remplacement, pas de photos. Attendu : les photos sont trouvées au rendu final GitHub. À vérifier sur la vidéo finale. Non bloquant.",
+        "bloquant": false
+      },
+      {
+        "scene": "4/14 et 10/14",
+        "type": "chevauchement_label",
+        "detail": "L'étiquette rouge (SPATIAL / TRAÇABILITÉ) déborde sur le bord supérieur du bandeau de sous-titres. Finition, non bloquant.",
+        "bloquant": false
+      }
+    ],
+    "corrections": [],
+    "verifications": {
+      "contenu_interdit": "aucun (pas de photo de presse identifiable, pas de visage, pas de citation attribuée)",
+      "airbus": "Airbus n'apparaît pas sous « Pièces contrefaites » : il figure seulement comme requête photo de la scène 4 (AÉRO · SPATIAL · DÉFENSE). Rien à signaler.",
+      "faits_clauses": "§8.1.2 sécurité des produits et §8.1.4 pièces contrefaites (EN 9100:2018), base ISO 9001:2015, OASIS (IAQG) : cohérents avec le texte. Aucune correction.",
+      "photos_requetes": "6 scènes sur 14 avec fond_photo_requete (seuil 6 atteint)",
+      "video": "h264 1080x1920, 77,4 s, lisible (rendu de contrôle muet, normal)",
+      "voix": "7_spec : voix_override.narrateur (chatterbox:fr) et mascotte (piper:fr_FR-upmc) présents, dialogues non vides",
+      "legende": "accroche chiffrée (clause 8.1.4), 2 phrases de contexte, question 👇, partage 📤, « Sources : EN 9100:2018, ISO 9001:2015 », 5 hashtags (#QSE #EN9100 #ISO9001 #aéronautique #décodelqsesimplement), pas de #viral ni #fyp, crédit de voix en fin",
+      "mention_ia": "aucune dans la vidéo ni la légende"
+    }
+  },
+  "community": {},
+  "da_message": "DA qhse-20261122-0800 (EN 9100 vs ISO 9001) : style pixeldoc, palette papier_journal, mise en page jt, musique lofi. 14 scènes ~56 s, scènes pd_* animées (flux en 4 et 10, versus en 6, tampons en 5 et 12) avec fond photo réel recherché sur les scènes 1, 3, 5, 7, 9, 11 (aucune image fournie par la veille). Chiffres affichés : seulement les années des normes (2015, 2018). Clauses §8.1.2 et §8.1.4 à vérifier dans le texte de la norme avant publication.",
+  "cree": "2026-11-22T04:05:13+00:00"
+}
