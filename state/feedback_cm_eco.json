@@ -1,14 +1,15 @@
 {
-  "date": "2026-11-20",
-  "bilan": "Aucun commentaire reçu. Cinq vidéos connues (25 oct au 3 nov), dernière le 3 nov : 172 vues, 1 like, 1 enregistrement. Aucune publication enregistrée depuis le 3 nov. Abonnés à 0 sur toute la période : chiffre non fiable. Stats datées du 19/11.",
+  "date": "2026-11-23",
+  "bilan": "Aucun commentaire ni question reçu. Cinq vidéos connues dans stats_eco.json (25 oct au 3 nov) : 715 vues au total, 5 likes, 2 enregistrements, 0 commentaire, 0 partage. Aucune publication enregistrée dans les statistiques depuis le 3 nov, alors que state/attente/ contient des fichiers eco jusqu'au 20/11. Abonnés à 0 sur toute la période : chiffre non fiable.",
   "audience": {
     "questions": [],
     "demandes": [],
     "critiques": []
   },
   "recommandations": [
+    "Vérifier si la publication eco est à l'arrêt ou seulement absente des statistiques (state/attente/ contient des fichiers du 20/11 sans trace de publication).",
     "Finance publique (dette 203 vues, niches fiscales 172 vues) a mieux tenu que le salaire brut/net (94 vues) : cinq vidéos sont trop peu pour conclure.",
-    "Engagement quasi nul : 7 interactions pour 715 vues, 0 commentaire, 0 partage : à suivre.",
-    "Vérifier la publication : aucune vidéo enregistrée depuis le 3 nov."
+    "Engagement quasi nul (7 interactions pour 715 vues) : à suivre sur les prochaines publications.",
+    "Corriger total_interactions du post du 27/10 « salaire brut/net » (affiché 3, composantes 2)."
   ]
 }
