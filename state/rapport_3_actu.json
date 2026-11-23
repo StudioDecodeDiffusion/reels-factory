@@ -1,29 +1,33 @@
 {
-  "date": "2026-11-21",
+  "date": "2026-11-23",
+  "compte": "actu",
+  "en_une_phrase": "Peu de vues et presque pas d'interactions : 2 interactions pour 1 030 vues sur les 10 dernières vidéos ; un seul pic (1 156 vues le 18/10) et des abonnés figés à 7.",
   "classement": [
-    "18 oct. : 1 156 vues, 20 interactions, 2 commentaires (stats ; commentaires_actu.json vide, non recoupé) « Vendredi soir : Macron au concert… »",
-    "17 oct. : 348 vues, 4 interactions « Contenu effrayant… ou pas ? »",
-    "24 oct. : 244 vues, 5 interactions « Oui, nous avons perdu le contrôle »",
+    "18 oct. : 1 156 vues, 20 interactions (pic du compte)",
+    "17 oct. : 348 vues, 4 interactions",
+    "24 oct. : 244 vues, 5 interactions",
     "Plus faible : 9 nov. : 26 vues, 0 interaction ; 19 nov. : 55 vues, 0 interaction (dernière vidéo)"
   ],
   "ce_qui_marche": [
-    "Post du 18 oct. (1 156 vues, 20 interactions) : seul pic du compte, première phrase chiffrée (550 000 à 800 000 personnes)",
-    "Post du 24 oct. (244 vues, 5 interactions, 1 enregistrement) : citation forte en accroche, sans « oui ou non »"
+    "Post du 18 oct. : chiffre marquant en première phrase, source citée (1 156 vues, 20 interactions)",
+    "Post du 24 oct. : citation forte en accroche, sans « oui ou non » (244 vues, 5 interactions)"
   ],
   "ce_qui_ne_marche_pas": [
-    "Titres « oui ou non » : 6 posts, 0,83 interaction en moyenne, 0 commentaire (contre 2,17 pour les 23 autres ; 1,36 sans le post du 18 oct.)",
-    "Engagement : 2 interactions pour 1 030 vues sur les 10 dernières vidéos (0,2 %) ; 0 partage sur le compte",
-    "Abonnés figés à 7 depuis le 26 oct. (4 le 18 oct.)",
-    "Novembre : 4 vidéos, médiane 84 vues contre 118 en octobre (25 vidéos) ; échantillon faible"
+    "Titres « oui ou non » : 6 posts, 0,83 interaction en moyenne, 0 commentaire, contre 2,17 pour les 23 autres (vérifié dans state/stats_actu.json)",
+    "Engagement faible : 2 interactions pour 1 030 vues sur les 10 dernières vidéos (0,2 %), 0 partage",
+    "Abonnés figés à 7 depuis le 26/10 (4 le 18/10) ; compteur du 22/11, jugé fiable (non à 0)",
+    "Novembre : 4 vidéos, médiane 84 vues contre 118 en octobre ; échantillon faible"
   ],
   "enseignements": [
-    "Remplacer le « oui ou non » final par une question ouverte liée à un chiffre de la vidéo : les 6 posts concernés engagent moins, sans commentaire. Écart à confirmer (petit échantillon, un seul post fort hors groupe)",
-    "Ouvrir sur un chiffre sourcé en première phrase, sur le modèle du post du 18 oct. Un seul cas : à vérifier avec le test",
-    "Garder 2 vidéos par semaine pour pouvoir comparer les formats ; à ce rythme, aucun format n'est encore comparable"
+    "Ouvrir sur un chiffre sourcé en première phrase (schéma du 18/10)",
+    "Remplacer le « oui ou non » final par une question ouverte liée à un chiffre de la vidéo ; écart à confirmer (petit échantillon, le 18/10 pèse dans la moyenne)",
+    "Sourcer chaque chiffre de l'accroche : médiane 114 vues sur 29 vidéos (de 26 à 1 156)"
   ],
-  "test": "Sur les 6 prochaines vidéos : accroche chiffrée sourcée en première phrase, question ouverte liée à un chiffre de la vidéo (ex. « 54 milliards d'économies : quelle mesure te touche le plus ? »), sans « oui ou non » final. Mesure à J+7 : vues contre la médiane 114, interactions pour 100 vues contre 0,2 % actuel. Corrige la baseline du 19/11 (médiane 116 et 2,27 interactions) : les chiffres vérifiés sont 114 et 2,17.",
+  "test": "Sur 2 ou 3 vidéos : question de fin ouverte liée à un chiffre au lieu de « oui ou non », même durée et même format ; comparer les interactions. Le comparatif du 20/11 n'a pas pu être recontrôlé (légendes tronquées dans le relevé).",
   "reperes_projection": {
     "vues_mediane": 114,
-    "meilleure": 1156
-  }
+    "meilleure": 1156,
+    "vues_mediane_novembre": 84
+  },
+  "notes_traitees": []
 }
