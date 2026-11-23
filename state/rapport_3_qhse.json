@@ -1,26 +1,32 @@
 {
-  "date": "2026-11-21",
+  "date": "2026-11-23",
+  "compte": "qhse",
+  "en_une_phrase": "Seulement 3 publications dans les statistiques, dont une seule depuis la reprise du 22/11 (108 vues) ; échantillon trop petit pour conclure, compteur d'abonnés à 0 non fiable.",
   "classement": [
-    {"rang": 1, "date": "2026-10-27", "sujet": "Usine Seveso seuil haut", "vues": 131, "portee": 129, "likes": 2, "commentaires": 0, "partages": 0, "enregistrements": 0},
-    {"rang": 2, "date": "2026-10-27", "sujet": "ISO 9001 : certificats dans le monde", "vues": 17, "portee": 15, "likes": 0, "commentaires": 0, "partages": 0, "enregistrements": 0}
+    "27 oct. : usine Seveso seuil haut, 131 vues, portée 129, 2 j'aime (meilleur)",
+    "22 nov. : EN 9100 (clause 8.1.4), 108 vues, portée 95, 2 interactions, 1 enregistrement",
+    "27 oct. : ISO 9001 en chiffres, 17 vues, portée 15, 0 interaction (plus faible)"
   ],
   "ce_qui_marche": [
-    "Aucun signal fiable : la vidéo Seveso (131 vues, 2 j'aimé) est la seule à dépasser 17 vues, sur un échantillon de 2 vidéos."
+    "Usine Seveso (131 vues, 2 j'aime) : seule vidéo nettement au-dessus des autres",
+    "Reprise du 22/11 : EN 9100 à 108 vues, avec un enregistrement (1 sur 3 du compte)"
   ],
   "ce_qui_ne_marche_pas": [
-    "Aucune publication depuis le 27/10 (25 jours) : la chaîne de publication est à rétablir avant toute analyse.",
-    "Abonnés à 0 sur les 28 relevés (du 25/10 au 21/11) : valeur à vérifier côté relevé, non interprétable en l'état.",
-    "ISO 9001 : 17 vues, 0 interaction."
+    "Vidéo ISO 9001 : 17 vues, 0 interaction",
+    "Aucune publication entre le 27/10 et le 22/11 (25 jours) : rythme à rétablir",
+    "Abonnés à 0 sur les 29 relevés (25/10 au 22/11), valeur figée : non interprétable",
+    "0 commentaire, 0 partage sur la période"
   ],
   "enseignements": [
-    "Pas d'enseignement actionnable : 2 vidéos, toutes deux du 27/10, insuffisant pour conclure sur le sujet, le format ou l'heure.",
-    "Le seul écart visible (131 contre 17 vues) porte sur deux sujets différents, le même jour : il ne permet pas de dire ce qui le cause."
+    "Pas d'enseignement ferme : 3 vidéos, dont une seule depuis la reprise",
+    "Les sujets concrets pour des salariés (usine près de chez soi, norme citée avec une clause précise) sont les seuls à tenir 100 vues ou plus ; à confirmer",
+    "Revoir le relevé des abonnés avant toute interprétation"
   ],
-  "test": "Une fois la publication rétablie, publier deux sujets distincts (risque industriel local contre norme) et comparer sur au moins 3 vidéos par sujet avant de conclure.",
+  "test": "Reprendre un rythme régulier et comparer, sur 3 à 4 vidéos, un sujet concret (usine, clause de norme) à un sujet général (norme seule) ; la collecte des abonnés est à vérifier en parallèle.",
   "reperes_projection": {
-    "vues_mediane": 74,
-    "meilleure": 131
+    "vues_mediane": 108,
+    "meilleure": 131,
+    "vues_plus_faible": 17
   },
-  "source": "state/stats_qhse.json (maj 2026-11-21), state/abonnes_qhse.json (28 relevés), travail/rapport8_qhse.json, state/feedback_cm_qhse.json (bilan du 20/11)",
-  "notes_agent_3": "Aucune note en attente pour le compte qhse (tool notes --agent 3 --profile qhse)."
+  "notes_traitees": []
 }
