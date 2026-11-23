@@ -1,29 +1,35 @@
 {
-  "date": "2026-11-21",
+  "date": "2026-11-23",
+  "compte": "science",
+  "en_une_phrase": "6 reels, 588 vues cumulées, médiane 109 vues ; mécanique et ingénierie en tête, une seule interaction sur 6 reels ; compteur d'abonnés à 0 non fiable.",
   "classement": [
-    {"lien": "https://www.instagram.com/reel/De_S6G7DZxP/", "sujet": "Robot canard à 2 pattes", "vues": 120, "portee": 115, "date": "2026-10-27"},
-    {"lien": "https://www.instagram.com/reel/DfB8ESDjxmM/", "sujet": "Tacoma Narrows (pont)", "vues": 119, "portee": 104, "date": "2026-10-28"},
-    {"lien": "https://www.instagram.com/reel/Df4pA-vv7Cg/", "sujet": "Pompes (centrifuge, piston, engrenages)", "vues": 110, "portee": 100, "date": "2026-11-18"},
-    {"lien": "https://www.instagram.com/reel/Dfl5UqvI_tW/", "sujet": "Dalle en béton sans acier", "vues": 108, "portee": 106, "date": "2026-11-11"},
-    {"lien": "https://www.instagram.com/reel/DfAl3CfF6dl/", "sujet": "Avion de 575 t", "vues": 101, "portee": 96, "date": "2026-10-27"},
-    {"lien": "https://www.instagram.com/reel/DfUZLYjlZmw/", "sujet": "Moteurs électriques", "vues": 30, "portee": 25, "date": "2026-11-04"}
+    "27 oct. : robot canard, 120 vues, portée 115, 1 enregistrement (meilleur)",
+    "28 oct. : pont Tacoma Narrows, 119 vues, portée 104",
+    "11 nov. : dalle sans acier, 108 vues, portée 106",
+    "18 nov. : pompes centrifuge/piston/engrenages, 110 vues, portée 100 (dernier reel)",
+    "27 oct. : avion de 575 t, 101 vues, portée 96",
+    "Plus faible : 4 nov. : moteur sans essence, 30 vues, portée 25"
   ],
   "ce_qui_marche": [
-    "Sujets mécaniques et d'ingénierie concrets (ponts, robots, avions, béton, pompes) : 101 à 120 vues sur 5 reels sur 6.",
-    "Un seul enregistrement sur 6 reels (robot canard, 1 enregistrement) ; le seul signal d'engagement non nul de la période."
+    "Sujets mécaniques et d'ingénierie (ponts, avions, robots) : 100 à 120 vues, les 5 meilleurs reels hors moteurs",
+    "Robot canard : seule interaction du compte (1 enregistrement)"
   ],
   "ce_qui_ne_marche_pas": [
-    "Moteurs électriques (energie) : 30 vues, 25 de portée, le plus faible de la série (4 nov.).",
-    "Aucun like, commentaire ni partage sur les 6 reels : pas de signal communautaire exploitable.",
-    "Abonnés figés à 0 du 25 oct. au 21 nov. : chiffre non fiable (collecte à vérifier), à ne pas utiliser pour décider."
+    "Une seule interaction sur 6 reels, 0 commentaire, 0 partage",
+    "Moteurs et énergie : 30 vues (portée 25) le 4 nov., à confirmer (un seul reel)",
+    "Aucun reel du 19 au 22 nov. ; dernier reel du 18 nov. (110 vues)",
+    "Compteur d'abonnés à 0 du 25/10 au 22/11 (29 relevés sur 29) : donnée de collecte non fiable, aucun résultat à en tirer"
   ],
   "enseignements": [
-    "Garder les sujets mécaniques concrets, avec un phénomène visible et une question d'accroche (ex. « pourquoi… ? »).",
-    "Éviter pour l'instant les sujets moteurs et énergie : seul sujet sous 100 vues sur 6 reels.",
-    "Échantillon de 6 reels sur 3 semaines : tendance à confirmer, pas une règle."
+    "Continuer les sujets mécaniques et d'ingénierie, les plus regardés (100 à 120 vues), sans conclusion ferme sur 6 reels",
+    "Ne pas écarter les moteurs sur un seul reel (30 vues) ; vérifier d'abord que la portée est bien collectée",
+    "Vérifier la collecte des abonnés et des interactions avant de décider (mise à jour du 22/11, 20 h 41 UTC)"
   ],
-  "test": "Publier 2 reels mécaniques sur le modèle « pourquoi… ? » et comparer leurs vues à la médiane de 109, avant de reprendre un sujet énergie.",
-  "reperes_projection": {"vues_mediane": 109, "vues_moyenne": 98, "portee_moyenne": 91, "meilleure": 120, "plus_faible": 30},
-  "source": "state/stats_science.json (maj 2026-11-21 15 h 17 UTC), state/feedback_cm_science.json, state/abonnes_science.json",
-  "fiabilite": "faible : 6 reels, abonnés non fiables, aucune interaction communautaire"
+  "test": "Un reel mécanique avec un chiffre marquant en première phrase, puis comparer ses vues et interactions aux 6 reels actuels ; la collecte des abonnés est à vérifier en parallèle, car les relevés sont à 0.",
+  "reperes_projection": {
+    "vues_mediane": 109,
+    "meilleure": 120,
+    "vues_plus_faible": 30
+  },
+  "notes_traitees": []
 }
