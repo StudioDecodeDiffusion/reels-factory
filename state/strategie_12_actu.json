@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-23",
+  "type": "strategie_complete",
+  "compte": "actu",
+  "sources": "state/stats_actu.json (maj 22/11 20 h 41 UTC), state/abonnes_actu.json, travail/rapport3_actu.md, state/feedback_cm_actu.json",
+  "statut": "strategie complete ; donnees exploitables (29 videos, abonnes releves) ; aucun revenu constate",
+  "ou_on_en_est": "7 abonnes au 22/11, stables depuis le 26/10 (4 le 18/10). 29 videos du 17/10 au 19/11 : 4 664 vues cumulees, moyenne 161 (tiree par le pic du 18/10 a 1 156 vues), mediane 114. 55 interactions au total, soit 1,2 % des vues ; 2 interactions sur les 10 dernieres videos (1 030 vues, 0,19 %).",
+  "statistiques_generales": {
+    "videos": 29,
+    "vues_cumulees": 4664,
+    "vues_moyenne": 161,
+    "vues_mediane": 114,
+    "vues_min_max": "26 a 1 156",
+    "vues_mediane_octobre": "118 (25 videos)",
+    "vues_mediane_novembre": "84 (4 videos, echantillon faible)",
+    "interactions_total": 55,
+    "taux_interactions": "1,2 % (55 / 4 664, calcul agent 10)",
+    "titres_oui_ou_non": "6 videos : 0,83 interaction en moyenne, contre 2,17 pour les 23 autres (legendes tronquees, indicatif)",
+    "revenus": "aucun revenu constate dans les fichiers",
+    "seuils_programmes": "non verifies dans cette session : aucune recherche web faite, aucun chiffre repris ici"
+  },
+  "plan_action": [
+    "23/11 au 30/11 (agents 4 a 8) : 2 videos avec accroche chiffree sourcee en premiere phrase et question ouverte liee a un chiffre, sans « oui ou non » final ; mesure a J+7 contre mediane 114 vues et 0,2 % d'interactions.",
+    "Des la prochaine video (agents 4 a 6) : garder le schema du 18/10 (chiffre marquant en premiere phrase, source citee), seul pic du compte.",
+    "Avant le 30/11 (proprietaire, dans l'app Instagram) : relever abonnes, sources d'audience et temps de visionnage ; noter la date du releve. Pas de connexion par l'agent.",
+    "Avant le 30/11 (proprietaire, centre d'aide Instagram) : verifier les conditions actuelles de monetisation (seuils, eligibilite en France, regles sur le contenu fait par IA et sur l'actualite politique). Aucun seuil n'est repris ici tant que ce n'est pas verifie.",
+    "Jusqu'au 14/12 (agents 4 a 8) : 2 videos par semaine, pour disposer d'environ 10 posts par format avant toute decision.",
+    "Jusqu'au 14/12 (agent 9) : verifier chaque chiffre des retours contre le fichier avant envoi (ecart du 20/11 : 999 vues et 24 vues annonces, 1 030 et 55 dans le fichier).",
+    "Jusqu'au 14/12 (agent 9 et proprietaire) : completer les legendes dans stats_actu.json, pour recontroler le comparatif « oui ou non » (legendes tronquees).",
+    "Objectif interne propose (pas un seuil officiel) : mediane d'au moins 200 vues sur 10 videos et 1 % d'interactions d'ici le 14/12. Aucune nouvelle source de revenu (partenariat, affiliation, dons) avant d'atteindre les paliers verifies."
+  ],
+  "risques": [
+    "Audience trop faible pour une source de revenu a court terme : 7 abonnes, mediane 114 vues.",
+    "Actualite politique et manifestations : regles de la plateforme sur l'actualite et la neutralite a verifier avant toute source de revenu (non sourcees ici).",
+    "Contenu fait par IA : regles sur le contenu genere et sur son etiquetage a verifier ; decision sur la mention IA a prendre par le proprietaire.",
+    "Droits d'auteur : citations, extraits de medias et images d'archives a verifier pour tout programme ou partenariat.",
+    "Ton des accroches (« Contenu effrayant… », « FLASH SPECIAL », emojis d'alerte) : risque pour l'image de marque et la confiance ; a evaluer avec l'agent 3.",
+    "Donnees : abonnes figes depuis le 26/10 ; retour de l'agent 9 du 20/11 corrige ; petit echantillon (6 titres « oui ou non », 4 videos de novembre) : aucune conclusion ferme."
+  ],
+  "questions_agents": {
+    "agent_3": "Peut-on extraire la legende complete de chaque video ? Sans elle, le comparatif « oui ou non » reste indicatif.",
+    "agent_9": "Confirmer la regle de calcul des « 10 dernieres videos » utilisee dans le retour du 20/11 (999 et 24 contre 1 030 et 55 dans le fichier)."
+  }
+}

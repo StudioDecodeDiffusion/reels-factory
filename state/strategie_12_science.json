@@ -1,14 +1,32 @@
 {
-  "date": "2026-11-21",
-  "type": "resume_du_jour",
+  "date": "2026-11-23",
+  "type": "strategie_complete",
   "compte": "science",
-  "ou_on_en_est": "6 reels publies (27 oct. au 18 nov.), 588 vues cumulees, moyenne 98, mediane 109. Portee moyenne 91. 1 interaction au total (1 enregistrement), 0 like, 0 commentaire, 0 partage. Abonnes figes a 0 du 25 oct. au 21 nov. : donnee de collecte non fiable, aucun chiffre d'abonnes retenu. Source : state/stats_science.json (maj 21/11, 15 h 17 UTC), verifie par l'agent 10.",
-  "ce_qui_a_bouge": "Sujets mecaniques et d'ingenierie (ponts, avion, robot, pompes, dalle) entre 101 et 120 vues sur 5 reels sur 6. Reel moteurs electriques (4 nov.) le plus faible : 30 vues, seul reel sous 100 vues.",
-  "actions_du_jour": [
-    "Verifier la collecte des abonnes et des interactions (workflow stats) avant toute decision sur la communaute.",
-    "Preparer 2 reels mecaniques sur le modele 'pourquoi... ?' (test agent 3), a comparer a la mediane de 109 vues ; pistes deja performantes : pont Tacoma Narrows (119 vues), avion de 575 t (101 vues).",
-    "Ne pas reprendre le sujet moteurs electriques sans test."
+  "sources": "state/stats_science.json (maj 22/11 20 h 41 UTC), state/abonnes_science.json, travail/rapport3_science.md, state/feedback_cm_science.json",
+  "statut": "non exploitable pour une strategie de revenus : conseils de demarrage ci-dessous",
+  "ou_on_en_est": "6 reels (27/10 au 18/11), 588 vues cumulees, moyenne 98, mediane 109. 1 interaction au total (1 enregistrement). Abonnes a 0 du 25/10 au 22/11 : collecte a verifier, non fiable.",
+  "statistiques_generales": {
+    "reels": 6,
+    "vues_cumulees": 588,
+    "vues_moyenne": 98,
+    "vues_mediane": 109,
+    "vues_min_max": "30 a 120",
+    "interactions_total": 1,
+    "abonnes": "0 du 25/10 au 22/11 : non fiable",
+    "revenus": "aucun revenu constate",
+    "seuils_programmes": "non verifies ; aucune recherche web faite"
+  },
+  "plan_action": [
+    "Agent 9 (avant le 30/11) : verifier la collecte des abonnes et de la portee avant toute decision.",
+    "Agents 4 a 6 (avant le 14/12) : 2 reels mecaniques au format « pourquoi… ? » ; repere : pont Tacoma Narrows 119 vues, robot canard 120.",
+    "Ne pas ecarter les moteurs sur un seul reel (30 vues) : retester une fois avant de conclure."
   ],
-  "sources_monetisation": "Aucune recherche web faite aujourd'hui : pas de chiffre de revenu ni de seuil de monetisation avance. Strategie complete prevue le lundi.",
-  "statut": "resume quotidien ; strategie complete prevue le lundi"
+  "risques": [
+    "Exactitude des faits : chaque affirmation scientifique a sourcer.",
+    "Droits sur images et videos de ponts, robots et machines.",
+    "Aucun abonne mesure : pas de base pour un programme de revenu."
+  ],
+  "questions_agents": {
+    "agent_9": "Pourquoi les abonnes sont-ils a 0 depuis le 25/10 ? La portee est-elle bien collectee ?"
+  }
 }

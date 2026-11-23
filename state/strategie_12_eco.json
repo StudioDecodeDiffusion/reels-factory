@@ -1,14 +1,33 @@
 {
-  "date": "2026-11-21",
-  "type": "resume_du_jour",
+  "date": "2026-11-23",
+  "type": "strategie_complete",
   "compte": "eco",
-  "ou_on_en_est": "5 videos mesurees (25 oct. au 3 nov.), 715 vues, moyenne 143, mediane 131. Likes 5, enregistrements 2, 0 commentaire, 0 partage. Total_interactions du fichier = 8, composantes = 7 : ecart a corriger dans stats_eco.json (post du 27/10 'salaire'). Abonnes figes a 0 : non fiable, non utilise. Source : state/stats_eco.json (maj 21/11, 15 h 16 UTC), verifie par l'agent 10.",
-  "ce_qui_a_bouge": "Aucune publication dans stats_eco.json depuis le 3 nov. (18 jours). Meilleure video : dette publique (203 vues, 27/10) ; niches fiscales (172 vues, 3/11) ; plus faible : salaire brut/net (94 vues). Alerte non tranchee : state/attente/ contient des fichiers eco du 20/11.",
-  "actions_du_jour": [
-    "Verifier si la publication eco est a l'arret ou seulement absente des stats (fichiers state/attente/ du 20/11) : action du propriétaire ou de l'agent 9.",
-    "Ne tirer aucune conclusion sur les sujets : 5 videos seulement, recalcul apres 10 publications.",
-    "Preparer 3 publications test sur dette publique et niches fiscales, comparaison des vues a 7 jours."
+  "sources": "state/stats_eco.json (maj 22/11 20 h 41 UTC), state/abonnes_eco.json, travail/rapport3_eco.md, state/feedback_cm_eco.json",
+  "statut": "non exploitable pour une strategie de revenus : conseils de demarrage ci-dessous",
+  "ou_on_en_est": "5 videos (25/10 au 3/11), 715 vues cumulees, moyenne 143, mediane 131. 8 interactions au total du fichier (7 en composantes : ecart sur le post du 27/10 « salaire brut/net »). Abonnes a 0 sur toute la periode : non fiable. Aucune publication dans les stats depuis le 3/11, alors que state/attente/ contient des fichiers eco du 20/11.",
+  "statistiques_generales": {
+    "videos": 5,
+    "vues_cumulees": 715,
+    "vues_moyenne": 143,
+    "vues_mediane": 131,
+    "vues_min_max": "94 a 203",
+    "interactions_total": 8,
+    "abonnes": "0 sur 29 releves : non fiable",
+    "revenus": "aucun revenu constate",
+    "seuils_programmes": "non verifies ; aucune recherche web faite"
+  },
+  "plan_action": [
+    "Proprietaire ou agent 9 (avant le 30/11) : verifier si la publication eco est a l'arret ou seulement absente des statistiques.",
+    "Agent 3 (avant le 30/11) : corriger le total d'interactions du post du 27/10 (3 affiche, 2 en composantes).",
+    "Agents 4 a 6 (avant le 14/12) : 3 videos sur les finances publiques avec un chiffre sourcé en accroche (dette 203 vues, niches fiscales 172 vues).",
+    "Ne tirer aucune conclusion sur les sujets : 5 videos seulement ; recalcul apres 10 publications."
   ],
-  "sources_monetisation": "Aucune recherche web faite aujourd'hui : pas de chiffre de revenu ni de seuil de monetisation avance. Strategie complete prevue le lundi.",
-  "statut": "resume quotidien ; strategie complete prevue le lundi"
+  "risques": [
+    "Sujets budgetaires et politiques : sensibilite et neutralite a tenir ; chaque chiffre a sourcer et dater.",
+    "Droits sur les images et extraits utilises.",
+    "Donnees d'abonnes non fiables : aucune base pour une decision de revenu."
+  ],
+  "questions_agents": {
+    "agent_9": "La publication eco est-elle arretee ? Des fichiers du 20/11 sont dans state/attente/ sans trace dans les stats."
+  }
 }

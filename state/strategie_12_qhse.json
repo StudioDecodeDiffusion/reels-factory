@@ -1,14 +1,31 @@
 {
-  "date": "2026-11-21",
-  "type": "resume_du_jour",
+  "date": "2026-11-23",
+  "type": "strategie_complete",
   "compte": "qhse",
-  "ou_on_en_est": "2 reels publies, tous deux le 27/10 (Seveso seuil haut : 131 vues, 2 j'aime ; ISO 9001 : 17 vues, 0 interaction). Aucune publication depuis 25 jours. Abonnes figes a 0 sur 28 releves : donnee non fiable, aucun chiffre d'abonnes retenu. Source : state/stats_qhse.json (maj 21/11, 15 h 16 UTC), verifie par l'agent 10.",
-  "ce_qui_a_bouge": "Rien depuis le 27/10 : la chaine de publication est arretee (job qhse-20261027-1200 a verifier). Aucun commentaire, question ni critique.",
-  "actions_du_jour": [
-    "Verifier le job qhse-20261027-1200 et retablir la chaine de publication (action technique, hors de l'agent 10).",
-    "Ne tirer aucune conclusion d'audience : 2 reels seulement, abonnes non fiables.",
-    "Preparer le test 'risque industriel local' contre 'norme' (3 reels par sujet minimum) pour la reprise des publications."
+  "sources": "state/stats_qhse.json (maj 22/11 20 h 41 UTC), state/abonnes_qhse.json, travail/rapport3_qhse.md, state/feedback_cm_qhse.json",
+  "statut": "non exploitable pour une strategie de revenus : conseils de demarrage ci-dessous",
+  "ou_on_en_est": "3 publications (2 le 27/10, 1 le 22/11, reprise), 256 vues cumulees, mediane 108. 4 interactions au total. Aucune publication entre le 27/10 et le 22/11. Abonnes a 0 sur les 29 releves : non fiable.",
+  "statistiques_generales": {
+    "publications": 3,
+    "vues_cumulees": 256,
+    "vues_mediane": 108,
+    "vues_min_max": "17 a 131",
+    "interactions_total": 4,
+    "abonnes": "0 sur 29 releves : non fiable",
+    "revenus": "aucun revenu constate",
+    "seuils_programmes": "non verifies ; aucune recherche web faite"
+  },
+  "plan_action": [
+    "Proprietaire ou technique (avant le 30/11) : verifier et retablir la chaine de publication (job qhse-20261027-1200). Action hors agent 10.",
+    "Agents 4 a 6 (avant le 14/12) : rythme regulier, puis comparer sur 3 a 4 videos un sujet concret (usine Seveso, 131 vues) a un sujet de norme seule (ISO 9001, 17 vues).",
+    "Agent 9 (avant le 14/12) : relever les abonnes (0 sur 29 releves) avant toute interpretation."
   ],
-  "sources_monetisation": "Aucune recherche web faite aujourd'hui : pas de chiffre de revenu ni de seuil de monetisation avance. Strategie complete prevue le lundi.",
-  "statut": "resume quotidien ; strategie complete prevue le lundi"
+  "risques": [
+    "3 publications seulement : aucune conclusion d'audience.",
+    "Droits sur les normes (ISO, EN) : citer sans reproduire le texte, a verifier.",
+    "Ne pas nommer une entreprise reelle sans source."
+  ],
+  "questions_agents": {
+    "agent_9": "Quel est l'etat du job qhse-20261027-1200 et de la chaine de publication depuis le 27/10 ?"
+  }
 }
