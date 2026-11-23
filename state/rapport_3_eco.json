@@ -1,34 +1,35 @@
 {
-  "date": "2026-11-21",
+  "date": "2026-11-23",
   "compte": "eco",
-  "alerte": "Aucune publication eco dans stats_eco.json depuis le 3 novembre 2026 (18 jours), alors que state/attente/ contient des fichiers eco du 20/11 (eco-rapport10-20261120-1626, eco-etapeManager-20261120-050136). Non tranché : à vérifier par le propriétaire ou l'agent 9.",
+  "en_une_phrase": "5 vidéos, 715 vues cumulées, médiane 131 ; finances publiques en tête, engagement quasi nul (7 interactions) ; aucune publication dans les stats depuis le 3/11 et compteur d'abonnés à 0 non fiable.",
   "classement": [
-    {"date": "2026-10-27", "sujet": "Dette publique (2 882 Md€)", "views": 203, "likes": 2, "saved": 0},
-    {"date": "2026-11-03", "sujet": "Niches fiscales (88 Md€)", "views": 172, "likes": 1, "saved": 1},
-    {"date": "2026-10-25", "sujet": "Fonderie de Bretagne / Europlasma", "views": 131, "likes": 1, "saved": 0},
-    {"date": "2026-10-30", "sujet": "Déficit budget 2026 (135 Md€)", "views": 115, "likes": 0, "saved": 0},
-    {"date": "2026-10-27", "sujet": "Salaire brut / net", "views": 94, "likes": 1, "saved": 1}
+    "27 oct. : dette publique (2 882 Md€), 203 vues, portée 189, 2 j'aime (meilleur)",
+    "3 nov. : post sur ~88 Md€ par an, 172 vues, portée 157, 2 interactions",
+    "30 oct. : budget 2026 de l'État (~135 Md€), 115 vues, portée 109, 0 interaction",
+    "25 oct. : fonderie de Bretagne (244 salariés), 131 vues, portée 121, 1 j'aime",
+    "Plus faible : 27 oct. : salaire brut/net, 94 vues, portée 91, 2 interactions (1 j'aime, 1 enregistrement)"
   ],
   "ce_qui_marche": [
-    "Dette publique : meilleure vue (203), sur 5 vidéos seulement, donc indicatif.",
-    "Niches fiscales : 172 vues et 1 enregistrement, à suivre."
+    "Finances publiques (dette, coûts annuels de dispositifs) : 172 à 203 vues, les deux meilleurs scores",
+    "Chiffres sourcés en accroche (2 882 Md€, 88 Md€ par an)"
   ],
   "ce_qui_ne_marche_pas": [
-    "Engagement quasi nul : 5 likes, 2 enregistrements, 0 commentaire, 0 partage pour 715 vues sur 5 vidéos.",
-    "Aucune vidéo eco publiée depuis le 3 novembre : la cadence est le point à régler avant toute analyse."
+    "Engagement quasi nul : 7 interactions (5 j'aimé, 2 enregistrements) pour 715 vues, 0 commentaire, 0 partage",
+    "Explicatif personnel (salaire brut/net) : 94 vues, le plus faible",
+    "Aucune publication dans les statistiques depuis le 3/11 (20 jours) : à vérifier, la publication est peut-être à l'arrêt",
+    "Abonnés à 0 sur les 29 relevés : valeur figée, non interprétable",
+    "Donnée corrigée : le post du 27/10 « salaire brut/net » affiche 3 interactions dans le relevé, alors que ses composantes font 2 (1 j'aime, 1 enregistrement)"
   ],
   "enseignements": [
-    "Vérifier si la publication eco est à l'arrêt ou seulement absente des stats (state/attente/ a des fichiers du 20/11).",
-    "Ne tirer aucune conclusion sur les sujets : 5 vidéos sont trop peu. Recalculer après 10 publications.",
-    "Incohérence à corriger dans stats_eco.json : total_interactions somme à 8, les composantes à 7 (le post du 27/10 « salaire » affiche 3 pour 2)."
+    "Garder les sujets de finances publiques, les plus regardés (172 à 203 vues) ; cinq vidéos sont trop peu pour conclure",
+    "Ouvrir sur un chiffre sourcé et marquant, comme les posts les plus vus",
+    "Vérifier d'abord que la publication eco est active avant d'interpréter la baisse de vues"
   ],
-  "test": "Reprendre 3 publications sur dette publique et niches fiscales, puis comparer les vues à 7 jours.",
+  "test": "Trois vidéos de finances publiques avec un chiffre en accroche, puis comparer leurs interactions aux 7 actuelles ; en parallèle, vérifier la publication et la collecte des abonnés.",
   "reperes_projection": {
     "vues_mediane": 131,
-    "moyenne": 143,
     "meilleure": 203,
-    "source": "5 vidéos, 25 oct - 3 nov 2026 (stats_eco.json, maj 21/11)"
+    "vues_plus_faible": 94
   },
-  "abonnes": "non fiable : 0 sur toute la période (state/abonnes_eco.json). Ne pas utiliser.",
-  "commentaires_audience": "Aucun commentaire ni question reçu (feedback agent 9 du 20/11)."
+  "notes_traitees": []
 }
