@@ -1,30 +1,37 @@
 {
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "compte": "qhse",
-  "en_une_phrase": "Seulement 3 publications dans les statistiques, dont une seule depuis la reprise du 22/11 (108 vues) ; échantillon trop petit pour conclure, compteur d'abonnés à 0 non fiable.",
+  "en_une_phrase": "Toujours 3 publications dans les statistiques, aucune nouvelle depuis le 22/11 ; échantillon trop petit pour conclure, et compteur d'abonnés à 0 non fiable.",
   "classement": [
-    "27 oct. : usine Seveso seuil haut, 131 vues, portée 129, 2 j'aime (meilleur)",
-    "22 nov. : EN 9100 (clause 8.1.4), 108 vues, portée 95, 2 interactions, 1 enregistrement",
+    "27 oct. : usine Seveso seuil haut, 131 vues, portée 129, 2 j'aime (meilleure)",
+    "22 nov. : EN 9100 clause 8.1.4, 108 vues, portée 95, 1 j'aime, 1 enregistrement",
     "27 oct. : ISO 9001 en chiffres, 17 vues, portée 15, 0 interaction (plus faible)"
   ],
   "ce_qui_marche": [
-    "Usine Seveso (131 vues, 2 j'aime) : seule vidéo nettement au-dessus des autres",
-    "Reprise du 22/11 : EN 9100 à 108 vues, avec un enregistrement (1 sur 3 du compte)"
+    "Usine Seveso : 131 vues et 2 j'aime, la meilleure du compte",
+    "EN 9100 : 108 vues et le seul enregistrement du compte",
+    "Les deux meilleures vidéos citent un texte précis (Seveso III, clause 8.1.4)"
   ],
   "ce_qui_ne_marche_pas": [
-    "Vidéo ISO 9001 : 17 vues, 0 interaction",
-    "Aucune publication entre le 27/10 et le 22/11 (25 jours) : rythme à rétablir",
-    "Abonnés à 0 sur les 29 relevés (25/10 au 22/11), valeur figée : non interprétable",
-    "0 commentaire, 0 partage sur la période"
+    "ISO 9001 en chiffres : 17 vues, 0 interaction",
+    "Aucune publication entre le 27/10 et le 22/11 (26 jours) : rythme à rétablir",
+    "Abonnés à 0 sur tout le suivi depuis le 25/10 : valeur probablement non fiable, à ne pas interpréter",
+    "0 commentaire, 0 partage : aucune question ni critique d'audience à relever"
   ],
   "enseignements": [
-    "Pas d'enseignement ferme : 3 vidéos, dont une seule depuis la reprise",
-    "Les sujets concrets pour des salariés (usine près de chez soi, norme citée avec une clause précise) sont les seuls à tenir 100 vues ou plus ; à confirmer",
-    "Revoir le relevé des abonnés avant toute interprétation"
+    "Pas d'enseignement ferme : 3 vidéos seulement, dont une seule depuis la reprise",
+    "Les deux sujets les plus vus portent sur un cas concret (usine près de chez soi, clause précise d'une norme) : à confirmer sur les prochaines vidéos",
+    "Garder la référence exacte du texte (article, clause) dans chaque vidéo"
   ],
-  "test": "Reprendre un rythme régulier et comparer, sur 3 à 4 vidéos, un sujet concret (usine, clause de norme) à un sujet général (norme seule) ; la collecte des abonnés est à vérifier en parallèle.",
+  "test": "Sur 3 à 4 vidéos publiées au rythme régulier, comparer un sujet concret (cas d'usine, clause de norme) à un sujet général (norme seule), dans la même rotation veille / cours / actu ; vérifier en parallèle la remontée du compteur d'abonnés.",
+  "conseils_demarrage": [
+    "Publier au créneau prévu par le profil (dimanche 08:00) sans trou de plus de deux semaines",
+    "Donner la référence exacte du texte dans le titre ou la première phrase",
+    "Suivre portée et enregistrements plutôt que le nombre d'abonnés tant que le compteur est à 0"
+  ],
   "reperes_projection": {
     "vues_mediane": 108,
+    "moyenne": 85,
     "meilleure": 131,
     "vues_plus_faible": 17
   },
