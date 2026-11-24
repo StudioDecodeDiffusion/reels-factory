@@ -1,0 +1,55 @@
+{
+  "id": "eco-20261124-0800",
+  "agent": "7.4",
+  "role": "pre-critique (scenario + DA)",
+  "decision": "go",
+  "raisons": [
+    "Aucun defaut bloquant : pas de contenu interdit (photos de presse sans credit, aucune citation inventee, aucun visage genere), pas de mention d'IA, aucun chiffre affiche a l'ecran (pas de pd_chiffre).",
+    "Voix presente : voix_override.narrateur et voix_override.mascotte renseignes, dialogues non vides sur les 14 scenes (la piste audio sera ajoutee au rendu final par GitHub).",
+    "Duree : 14 scenes x 4,0 s = 56 s, au-dessus du seuil de 55 s.",
+    "Dialogue : environ 168 mots (repere 160-170).",
+    "Variete respectee par rapport a la Derniere video (papier_journal, V2+V3, lofi, explication_mecanisme, question_choc) : accroche devinette, fonctionnement debat, musique orchestral, voix V1+V4, palette retro_tv, mise en page jt.",
+    "Photos : 6 scenes sur 14 (1, 3, 5, 9, 11, 13) avec fond_photo et fond_photo_requete, seuil de 6 atteint. Pas de Wikipedia."
+  ],
+  "corrections": [
+    {
+      "portee": "fait a verifier (non bloquant)",
+      "scenes": [3, 4, 9, 11],
+      "constat": "La definition de la regle d'or (emprunt limite aux depenses d'investissement ; depenses courantes couvertes par les seules recettes) n'a pas ete lue dans la source. La page La Croix n'a pas pu etre consultee (acces refuse).",
+      "action": "A verifier contre l'article avant publication, ou retirer la formulation."
+    },
+    {
+      "portee": "fait a verifier (non bloquant)",
+      "scenes": [6],
+      "constat": "« Pas encore en vigueur » et « bientot inscrite dans la Constitution » : le second repose sur le seul titre de la veille, le premier n'est pas sourcé.",
+      "action": "Verifier le statut dans l'article."
+    },
+    {
+      "portee": "fait a verifier (non bloquant)",
+      "scenes": [7, 8, 9],
+      "constat": "Les arguments attribues aux partisans (« discipline budgetaire »), aux critiques (« frontiere floue ») et aux inquiets (« marge de manoeuvre en crise ») ne figurent pas dans les extraits lus. Les camps sont sourcés par le titre seulement.",
+      "action": "Verifier que chaque argument est dans l'article, sinon le retirer ou le presenter comme question."
+    },
+    {
+      "portee": "finition (non bloquant)",
+      "scenes": [],
+      "constat": "Legende : la 1re ligne n'a pas de chiffre (aucun chiffre sourcé n'est disponible, ce qui est acceptable). « 2027 » apparait dans #Budget2027 et les requetes d'images : annee de la veille, a confirmer.",
+      "action": "Optionnel."
+    }
+  ],
+  "verifications": {
+    "defaut_bloquant": false,
+    "voix_presente": true,
+    "duree_s_total": 56.0,
+    "duree_ok_55s": true,
+    "mots_dialogue_approx": 168,
+    "accroche_differente": true,
+    "fonctionnement_different": true,
+    "musique_differente": true,
+    "voix_differente": true,
+    "aucune_mention_ia": true,
+    "aucun_chiffre_hors_source": true,
+    "scenes_photo_reelle": 6,
+    "page_la_croix_lue": false
+  }
+}
