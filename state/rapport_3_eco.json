@@ -1,35 +1,39 @@
 {
-  "date": "2026-11-23",
-  "compte": "eco",
-  "en_une_phrase": "5 vidéos, 715 vues cumulées, médiane 131 ; finances publiques en tête, engagement quasi nul (7 interactions) ; aucune publication dans les stats depuis le 3/11 et compteur d'abonnés à 0 non fiable.",
+  "date": "2026-11-24",
   "classement": [
-    "27 oct. : dette publique (2 882 Md€), 203 vues, portée 189, 2 j'aime (meilleur)",
-    "3 nov. : post sur ~88 Md€ par an, 172 vues, portée 157, 2 interactions",
-    "30 oct. : budget 2026 de l'État (~135 Md€), 115 vues, portée 109, 0 interaction",
-    "25 oct. : fonderie de Bretagne (244 salariés), 131 vues, portée 121, 1 j'aime",
-    "Plus faible : 27 oct. : salaire brut/net, 94 vues, portée 91, 2 interactions (1 j'aime, 1 enregistrement)"
+    "Dette publique (27/10) : 203 vues, 2 j'aimé",
+    "Niches fiscales (03/11) : 172 vues, 1 j'aimé, 1 enregistrement",
+    "Fonderie de Bretagne (25/10, dimanche) : 131 vues, 1 j'aimé",
+    "Déficit du budget 2026 (30/10) : 115 vues, 0 interaction",
+    "Salaire brut/net (27/10) : 94 vues, 1 j'aimé, 1 enregistrement"
   ],
   "ce_qui_marche": [
-    "Finances publiques (dette, coûts annuels de dispositifs) : 172 à 203 vues, les deux meilleurs scores",
-    "Chiffres sourcés en accroche (2 882 Md€, 88 Md€ par an)"
+    "Finances publiques (dette, niches fiscales, déficit) : 163 vues en moyenne sur 3 vidéos, contre 113 pour les 2 autres (échantillon très petit)",
+    "Un chiffre officiel dans la première phrase : c'est le cas des 2 meilleures vidéos (2 882 milliards ; 88 milliards)"
   ],
   "ce_qui_ne_marche_pas": [
-    "Engagement quasi nul : 7 interactions (5 j'aimé, 2 enregistrements) pour 715 vues, 0 commentaire, 0 partage",
-    "Explicatif personnel (salaire brut/net) : 94 vues, le plus faible",
-    "Aucune publication dans les statistiques depuis le 3/11 (20 jours) : à vérifier, la publication est peut-être à l'arrêt",
-    "Abonnés à 0 sur les 29 relevés : valeur figée, non interprétable",
-    "Donnée corrigée : le post du 27/10 « salaire brut/net » affiche 3 interactions dans le relevé, alors que ses composantes font 2 (1 j'aime, 1 enregistrement)"
+    "Aucun commentaire ni partage sur 5 vidéos ; 7 interactions réelles pour 715 vues (environ 1 %)",
+    "Le CTA du profil (« Abonne-toi ») ne demande aucune réaction ; aucune question de fin n'est prévue"
   ],
   "enseignements": [
-    "Garder les sujets de finances publiques, les plus regardés (172 à 203 vues) ; cinq vidéos sont trop peu pour conclure",
-    "Ouvrir sur un chiffre sourcé et marquant, comme les posts les plus vus",
-    "Vérifier d'abord que la publication eco est active avant d'interpréter la baisse de vues"
+    "Garder le fil finances publiques, avec un chiffre officiel dès la première phrase",
+    "Ajouter une question ouverte en fin de vidéo : aucune réaction écrite à ce jour",
+    "Garder le rythme mardi/vendredi : les publications des 27/10, 30/10 et 03/11 tombent sur ces jours"
   ],
-  "test": "Trois vidéos de finances publiques avec un chiffre en accroche, puis comparer leurs interactions aux 7 actuelles ; en parallèle, vérifier la publication et la collecte des abonnés.",
+  "test": "Pendant les 2 prochaines publications eco : fin de vidéo avec une question ouverte au lieu du seul « Abonne-toi ». Mesure : nombre de commentaires (0 actuellement) et vues, à comparer à la médiane de 131.",
   "reperes_projection": {
     "vues_mediane": 131,
+    "vues_moyenne": 143,
     "meilleure": 203,
-    "vues_plus_faible": 94
+    "plancher": 94,
+    "confiance": "faible : 5 vidéos, publiées entre le 25/10 et le 03/11"
   },
+  "points_attention": [
+    "Abonnés à 0 sur toute la période : donnée probablement non fiable, non corrigée",
+    "Aucune publication eco dans state/stats_eco.json depuis le 03/11 ; les brouillons des 10, 13, 17 et 20/11 n'y figurent pas ; le vendredi 06/11 n'est pas documenté",
+    "Post du 27/10 (salaire brut/net) : total_interactions affiché 3, composantes 2 (non corrigé)",
+    "Deux posts eco le 27/10 à 07:10 et 07:11 UTC : à vérifier (double publication ou non)",
+    "Source complémentaire instrack.app non consultée (hors procédure)"
+  ],
   "notes_traitees": []
 }
