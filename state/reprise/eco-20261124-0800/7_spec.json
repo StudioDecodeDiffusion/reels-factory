@@ -200,14 +200,12 @@
     },
     {
       "n": 6,
-      "type": "pd_jauge",
+      "type": "pd_tampon",
       "titre": "Un débat ouvert",
       "mot_fort": "débat",
       "energie": 2,
-      "niveau": "moyen",
-      "etiquette": "Désaccord",
-      "legende": "Deux camps, la même question",
-      "valeur": "moyen",
+      "tampon": "DÉBAT OUVERT",
+      "prompt": "a two-sided debate podium, pixel art, side view, single object",
       "dialogue": [
         {
           "qui": "narrateur",
@@ -288,14 +286,12 @@
     },
     {
       "n": 10,
-      "type": "pd_jauge",
+      "type": "pd_objet",
       "titre": "Lire les comptes",
       "mot_fort": "comptes",
       "energie": 2,
-      "niveau": "moyen",
-      "etiquette": "Chiffres",
-      "legende": "À vérifier dans les comptes publics",
-      "valeur": "moyen",
+      "prompt": "a magnifying glass over a ledger, pixel art, single object",
+      "etiquette": "Comptes publics",
       "dialogue": [
         {
           "qui": "narrateur",
