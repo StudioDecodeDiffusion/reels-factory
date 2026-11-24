@@ -1,35 +1,33 @@
 {
-  "date": "2026-11-23",
-  "compte": "science",
-  "en_une_phrase": "6 reels, 588 vues cumulées, médiane 109 vues ; mécanique et ingénierie en tête, une seule interaction sur 6 reels ; compteur d'abonnés à 0 non fiable.",
+  "date": "2026-11-24",
   "classement": [
-    "27 oct. : robot canard, 120 vues, portée 115, 1 enregistrement (meilleur)",
-    "28 oct. : pont Tacoma Narrows, 119 vues, portée 104",
-    "11 nov. : dalle sans acier, 108 vues, portée 106",
-    "18 nov. : pompes centrifuge/piston/engrenages, 110 vues, portée 100 (dernier reel)",
-    "27 oct. : avion de 575 t, 101 vues, portée 96",
-    "Plus faible : 4 nov. : moteur sans essence, 30 vues, portée 25"
+    {"rang": 1, "titre": "Robot canard à 399 $ (27 oct.)", "vues": 120, "portee": 115, "enregistrements": 1},
+    {"rang": 2, "titre": "Pont Tacoma Narrows (28 oct.)", "vues": 119, "portee": 104, "enregistrements": 0},
+    {"rang": 3, "titre": "Pompes : match à 5 rounds (18 nov.)", "vues": 110, "portee": 100, "enregistrements": 0},
+    {"rang": 4, "titre": "Dalle en béton sans acier (11 nov.)", "vues": 108, "portee": 106, "enregistrements": 0},
+    {"rang": 5, "titre": "Avion de 575 t (27 oct.)", "vues": 101, "portee": 96, "enregistrements": 0},
+    {"rang": 6, "titre": "Moteur sans essence (4 nov.)", "vues": 30, "portee": 25, "enregistrements": 0}
   ],
   "ce_qui_marche": [
-    "Sujets mécaniques et d'ingénierie (ponts, avions, robots) : 100 à 120 vues, les 5 meilleurs reels hors moteurs",
-    "Robot canard : seule interaction du compte (1 enregistrement)"
+    "Sujets de mécanique et d'ingénierie (ponts, avions, robots, béton) : 101 à 120 vues, moyenne 111,6 sur 5 reels (source : state/stats_science.json).",
+    "Le seul enregistrement de la période est sur le robot canard (120 vues, 115 de portée)."
   ],
   "ce_qui_ne_marche_pas": [
-    "Une seule interaction sur 6 reels, 0 commentaire, 0 partage",
-    "Moteurs et énergie : 30 vues (portée 25) le 4 nov., à confirmer (un seul reel)",
-    "Aucun reel du 19 au 22 nov. ; dernier reel du 18 nov. (110 vues)",
-    "Compteur d'abonnés à 0 du 25/10 au 22/11 (29 relevés sur 29) : donnée de collecte non fiable, aucun résultat à en tirer"
+    "Moteur sans essence : 30 vues, 25 de portée, le plus faible (un seul reel, à ne pas trancher seul).",
+    "Interactions quasi nulles : 1 enregistrement sur 6 reels, 0 like, 0 commentaire, 0 partage.",
+    "Cadence : aucun reel du 19 au 22 nov. ; compteur d'abonnés à 0 du 25 oct. au 24 nov. (donnée de collecte à vérifier, pas un résultat)."
   ],
   "enseignements": [
-    "Continuer les sujets mécaniques et d'ingénierie, les plus regardés (100 à 120 vues), sans conclusion ferme sur 6 reels",
-    "Ne pas écarter les moteurs sur un seul reel (30 vues) ; vérifier d'abord que la portée est bien collectée",
-    "Vérifier la collecte des abonnés et des interactions avant de décider (mise à jour du 22/11, 20 h 41 UTC)"
+    "Garder les sujets d'ingénierie du quotidien (ponts, avions, béton, robots) comme base : ce sont les 5 reels au-dessus de 100 vues. Échantillon de 6 reels, pas de conclusion ferme.",
+    "Finir chaque reel par une question simple pour susciter un commentaire : 0 commentaire reçu sur 6 reels.",
+    "Vérifier la collecte des abonnés et la régularité de publication avant d'en tirer des conclusions sur la croissance."
   ],
-  "test": "Un reel mécanique avec un chiffre marquant en première phrase, puis comparer ses vues et interactions aux 6 reels actuels ; la collecte des abonnés est à vérifier en parallèle, car les relevés sont à 0.",
+  "test": "Pendant 2 reels, terminer par une question ouverte en lien avec le sujet (ex. « Et toi, tu aurais parié sur quelle pompe ? ») et mesurer enregistrements et commentaires à 48 h.",
   "reperes_projection": {
     "vues_mediane": 109,
+    "vues_moyenne": 98,
     "meilleure": 120,
-    "vues_plus_faible": 30
-  },
-  "notes_traitees": []
+    "plus_faible": 30,
+    "base": "6 reels publiés du 27 oct. au 18 nov. 2026"
+  }
 }

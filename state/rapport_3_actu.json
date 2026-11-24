@@ -1,29 +1,30 @@
 {
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "compte": "actu",
-  "en_une_phrase": "Peu de vues et presque pas d'interactions : 2 interactions pour 1 030 vues sur les 10 dernières vidéos ; un seul pic (1 156 vues le 18/10) et des abonnés figés à 7.",
+  "en_une_phrase": "Compte figé : 7 abonnés depuis le 26/10 et 2 interactions pour 1 030 vues sur les 10 dernières vidéos (0,2 %) ; seul pic réel, le 18/10 (1 156 vues, 20 interactions).",
   "classement": [
-    "18 oct. : 1 156 vues, 20 interactions (pic du compte)",
+    "18 oct. : 1 156 vues, 20 interactions (meilleure vidéo, accroche chiffrée « 550 000 »)",
     "17 oct. : 348 vues, 4 interactions",
-    "24 oct. : 244 vues, 5 interactions",
-    "Plus faible : 9 nov. : 26 vues, 0 interaction ; 19 nov. : 55 vues, 0 interaction (dernière vidéo)"
+    "24 oct. : 244 vues, 5 interactions (citation forte en accroche)",
+    "Plus faibles récentes : 9 nov. : 26 vues, 0 interaction ; 16 nov. : 113 vues, 0 interaction",
+    "Dernière vidéo (19 nov.) : 55 vues, 0 interaction, aucune publication depuis"
   ],
   "ce_qui_marche": [
-    "Post du 18 oct. : chiffre marquant en première phrase, source citée (1 156 vues, 20 interactions)",
-    "Post du 24 oct. : citation forte en accroche, sans « oui ou non » (244 vues, 5 interactions)"
+    "Accroche qui commence par un chiffre sourcé (18/10 : 1 156 vues, 20 interactions ; 24/10 : citation forte, 244 vues)",
+    "Vidéos hors titres « oui ou non » : 23 posts, 2,17 interactions en moyenne, contre 0,83 pour les 6 titres « oui ou non » (0 commentaire)"
   ],
   "ce_qui_ne_marche_pas": [
-    "Titres « oui ou non » : 6 posts, 0,83 interaction en moyenne, 0 commentaire, contre 2,17 pour les 23 autres (vérifié dans state/stats_actu.json)",
-    "Engagement faible : 2 interactions pour 1 030 vues sur les 10 dernières vidéos (0,2 %), 0 partage",
-    "Abonnés figés à 7 depuis le 26/10 (4 le 18/10) ; compteur du 22/11, jugé fiable (non à 0)",
-    "Novembre : 4 vidéos, médiane 84 vues contre 118 en octobre ; échantillon faible"
+    "Engagement quasi nul : 55 interactions au total sur 29 vidéos, 0 partage sur toute la période",
+    "Abonnés figés à 7 depuis le 26/10 (4 le 18/10)",
+    "Novembre : 4 vidéos, médiane 84 vues contre 118 en octobre (échantillon faible)",
+    "Aucune publication depuis le 19/11 : la régularité est tombée à 0 cette semaine"
   ],
   "enseignements": [
-    "Ouvrir sur un chiffre sourcé en première phrase (schéma du 18/10)",
-    "Remplacer le « oui ou non » final par une question ouverte liée à un chiffre de la vidéo ; écart à confirmer (petit échantillon, le 18/10 pèse dans la moyenne)",
+    "Garder l'ouverture sur un chiffre sourcé en première phrase (schéma du 18/10)",
+    "Remplacer le « oui ou non » final par une question ouverte liée à un chiffre de la vidéo ; écart à confirmer (petit échantillon, le pic du 18/10 pèse dans la moyenne)",
     "Sourcer chaque chiffre de l'accroche : médiane 114 vues sur 29 vidéos (de 26 à 1 156)"
   ],
-  "test": "Sur 2 ou 3 vidéos : question de fin ouverte liée à un chiffre au lieu de « oui ou non », même durée et même format ; comparer les interactions. Le comparatif du 20/11 n'a pas pu être recontrôlé (légendes tronquées dans le relevé).",
+  "test": "Sur 2 ou 3 vidéos : question de fin ouverte liée à un chiffre au lieu de « oui ou non », même durée et même format ; comparer les interactions. Le comparatif n'a pas pu être recontrôlé (légendes tronquées dans le relevé).",
   "reperes_projection": {
     "vues_mediane": 114,
     "meilleure": 1156,
