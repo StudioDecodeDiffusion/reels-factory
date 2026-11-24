@@ -1,0 +1,156 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 3.5,
+   "texte_ecran": "Robotique : la grande illusion",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "On imagine souvent les robots d'usine hyper modernes, mais la réalité cachait un blocage historique.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Quarante ans de langages fermés",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pendant quarante ans, chaque marque imposait son propre langage informatique ultra verrouillé.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.0,
+   "texte_ecran": "KRL vs RAPID vs Karel",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un code KRL chez Kuka ne fonctionnait ni sur un bras ABB, ni sur un Fanuc.",
+     "expression": "sarcasme"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Chaque millimètre codé à la main",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pour déplacer une simple pince sur une ligne, des techniciens devaient programmer chaque millimètre à la main.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "Trois semaines de réglages",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Mettre en service une seule trajectoire complexe pouvait prendre plus de trois semaines entières.",
+     "expression": "triste"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "Le secret : la cinématique inverse",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pourtant, sous le capot, tout repose sur un calcul matriciel de cinématique inverse en temps réel.",
+     "expression": "content"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Six axes de liberté",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Un bras standard possède six degrés de liberté pour calculer précisément la position de son outil.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "L'arrivée des API universelles",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Aujourd'hui, la rupture est totale grâce à l'arrivée des architectures par API universelles.",
+     "expression": "clin"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Des requêtes standardisées",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Au lieu de coder des lignes propriétaires, quelques requêtes logicielles standardisées suffisent.",
+     "expression": "content"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "De semaines à quelques minutes",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le temps de déploiement passe de plusieurs semaines à seulement quelques minutes d'exécution.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "chute",
+   "duree_s": 4.5,
+   "texte_ecran": "Le robot devenant un simple agent",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Fait fascinant : le robot devient un simple agent logiciel pilotable directement par réseau.",
+     "expression": "content"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.5,
+   "texte_ecran": "Quel secteur sera le suivant ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "À ton avis, quel autre secteur industriel va voir ses standards complètement balayés ?",
+     "expression": "pense"
+    }
+   ]
+  }
+ ],
+ "legende": "Des semaines à quelques minutes : la révolution des robots 🤖\n\nPendant quarante ans, programmer un bras robotisé six axes exigeait de maîtriser des langages propriétaires fermés comme KRL ou RAPID. L'arrivée des API universelles permet désormais de piloter les trajectoires par de simples requêtes logicielles standardisées.\n\nPenses-tu que tous les équipements industriels devraient adopter des normes logicielles ouvertes ? 👇\n\nPartage cette vidéo à un passionné de mécanique ou d'ingénierie ! 📤\n\nSources : L'Usine Nouvelle",
+ "hashtags": [
+  "#robotique",
+  "#ingenierie",
+  "#kuka",
+  "#industrie",
+  "#decodescience"
+ ]
+}
