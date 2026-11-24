@@ -1,0 +1,203 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "120 MILLIARDS €",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cent vingt milliards d'euros. C'est le poids colossal des maladies chroniques sur notre budget santé.",
+     "expression": "choc"
+    }
+   ],
+   "style": "pd_chiffre"
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "ALD : 100% REMBOURSÉ",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Les ALD, ou Affections de Longue Durée, permettent une prise en charge à cent pour cent par la Sécurité sociale.",
+     "expression": "neutre"
+    }
+   ],
+   "fond_photo_requete": "docteur consultation hôpital france"
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "13,3 MILLIONS DE FRANÇAIS",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Aujourd'hui, treize millions trois cent mille Français sont concernés par ce dispositif de protection.",
+     "expression": "neutre"
+    }
+   ],
+   "style": "pd_flux"
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "20% DE LA POPULATION",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Cela représente désormais vingt pour cent de la population assurée dans notre pays.",
+     "expression": "pense"
+    }
+   ],
+   "style": "pd_jauge"
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.5,
+   "texte_ecran": "60% DES DÉPENSES SANTÉ",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Mais le chiffre clé, c'est celui-ci : soixante pour cent des remboursements totaux de l'Assurance Maladie.",
+     "expression": "choc"
+    }
+   ],
+   "style": "pd_versus"
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "FINANCEMENT SOLIDAIRE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Plus de la moitié des dépenses de santé sert donc à financer exclusivement ces soins de longue durée.",
+     "expression": "neutre"
+    }
+   ],
+   "fond_photo_requete": "façade caisse assurance maladie cpam"
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "+5% CHAQUE ANNÉE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Ces dépenses grimpent mécaniquement de cinq pour cent chaque année, selon la Cour des comptes.",
+     "expression": "neutre"
+    }
+   ],
+   "style": "pd_flux"
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "+300 000 NOUVEAUX CAS / AN",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "On compte trois cent mille nouveaux bénéficiaires tous les ans au sein du système.",
+     "expression": "neutre"
+    }
+   ],
+   "fond_photo_requete": "foule personnes âgées rue france"
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "VIEILLISSEMENT DE LA POPULATION",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "En cause ? Le vieillissement de la population et l'augmentation des maladies chroniques.",
+     "expression": "pense"
+    }
+   ],
+   "fond_photo_requete": "senior examen médical stéthoscope"
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.5,
+   "texte_ecran": "PATHOLOGIES ONÉREUSES",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Diabète ou cancers : ces pathologies exigent des traitements longs, complexes et particulièrement onéreux.",
+     "expression": "neutre"
+    }
+   ],
+   "style": "pd_objet"
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.5,
+   "texte_ecran": "QUEL AVENIR POUR LA SÉCU ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Comment garantir demain la pérennité de ce modèle de solidarité face à l'explosion des coûts ?",
+     "expression": "pense"
+    }
+   ],
+   "fond_photo_requete": "ministère santé paris france"
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "DÉRIVE DES COÛTS",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le système repose sur les cotisations, mais la dérive des dépenses inquiète aujourd'hui les décideurs.",
+     "expression": "neutre"
+    }
+   ],
+   "style": "pd_tampon"
+  },
+  {
+   "type": "chute",
+   "duree_s": 4.5,
+   "texte_ecran": "13 MILLIONS DE PROTÉGÉS",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Treize millions de protégés, mais une facture qui pèse lourdement sur le budget de la Nation.",
+     "expression": "neutre"
+    }
+   ],
+   "fond_photo_requete": "carte vitale française main"
+  },
+  {
+   "type": "question",
+   "duree_s": 4.0,
+   "texte_ecran": "FAUT-IL RÉFORMER LES ALD ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Faut-il réformer les ALD pour sauver notre système de santé ? Ton avis m'intéresse.",
+     "expression": "neutre"
+    }
+   ],
+   "style": "pd_versus"
+  }
+ ],
+ "variete": {
+  "accroche": "chiffre_geant",
+  "trend": "Pédagogie budgétaire",
+  "fonctionnement": "chiffres_cles",
+  "mise_en_page": "plein_ecran",
+  "musique": "synthwave",
+  "voix": "V2",
+  "palette": "eco_bleu"
+ },
+ "legende": "120 milliards d'euros : le coût des ALD 🏥\n\nLe dispositif des Affections de Longue Durée protège 13,3 millions de Français mais représente désormais 60 % des dépenses de l'Assurance Maladie. Avec 300 000 nouveaux bénéficiaires par an, l'équilibre financier du système est un défi majeur.\n\nFaut-il réformer les ALD pour garantir la survie de notre modèle de santé ? 👇\n\nEnvoie-la à quelqu'un qui veut comprendre où va l'argent de la Sécu 📤\n\nSources : CNAM, Cour des comptes, DREES",
+ "hashtags": [
+  "#santé",
+  "#assurance_maladie",
+  "#budget",
+  "#ald",
+  "#décodéléco"
+ ]
+}
