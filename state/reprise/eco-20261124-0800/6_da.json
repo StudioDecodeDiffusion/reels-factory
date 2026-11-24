@@ -1,0 +1,306 @@
+{
+  "id": "eco-20261124-0800",
+  "theme": {
+    "fond": "#1A1410",
+    "texte": "#F3E9D2",
+    "accent": "#FF7A1A",
+    "accent2": "#7BD389",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": true,
+    "style": "pixeldoc",
+    "palette_nom": "retro_tv",
+    "palette": [
+      "#1A1410",
+      "#2E241C",
+      "#FF7A1A",
+      "#7BD389",
+      "#F3E9D2",
+      "#D9462B"
+    ],
+    "mise_en_page": "jt",
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "economie"
+    }
+  },
+  "variete": {
+    "accroche": "devinette",
+    "trend": "Débat sourcé : deux camps, arguments cités",
+    "fonctionnement": "debat",
+    "mise_en_page": "jt",
+    "musique": "orchestral",
+    "voix": "V1+V4",
+    "palette": "retro_tv"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.4&cfg=0.4",
+    "mascotte": "chatterbox:fr?ref=jessica&exag=0.7&cfg=0.35",
+    "mascotte_effet": "aucun"
+  },
+  "musique": {
+    "genre": "orchestral",
+    "volume": 0.4,
+    "ambiance_globale": "curieux",
+    "ambiance_par_scene": {
+      "1": "tension",
+      "2": "curieux",
+      "3": "curieux",
+      "4": "curieux",
+      "5": "curieux",
+      "6": "curieux",
+      "7": "tension",
+      "8": "curieux",
+      "9": "curieux",
+      "10": "curieux",
+      "11": "curieux",
+      "12": "curieux",
+      "13": "curieux",
+      "14": "curieux"
+    }
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "whoosh"
+    ],
+    "3": [
+      "pop"
+    ],
+    "4": [
+      "whoosh"
+    ],
+    "5": [
+      "pop"
+    ],
+    "6": [
+      "whoosh"
+    ],
+    "7": [
+      "pop"
+    ],
+    "8": [
+      "whoosh"
+    ],
+    "9": [
+      "pop"
+    ],
+    "10": [
+      "whoosh"
+    ],
+    "11": [
+      "pop"
+    ],
+    "12": [
+      "whoosh"
+    ],
+    "13": [
+      "pop"
+    ],
+    "14": [
+      "whoosh"
+    ]
+  },
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "duree_s": 4.0,
+      "titre": "Et l'écart, il fait quoi ?",
+      "mot_fort": "écart",
+      "energie": 3,
+      "prompt": "a french state treasury building at dusk, pixel art, side view, single object",
+      "fond_photo": "https://i.la-croix.com/1400x933/479x424/2026/11/23/2596782-les-ministres-de-la-sante-de-l-economie-et-des-fin.jpg",
+      "fond_photo_requete": "règle d'or budgétaire Constitution France 2026",
+      "title": "Et l'écart, il fait quoi ?"
+    },
+    {
+      "n": 2,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Une règle d'or",
+      "mot_fort": "règle d'or",
+      "energie": 2,
+      "prompt": "a golden ingot inside a glass vault, pixel art, single object",
+      "etiquette": "Constitution"
+    },
+    {
+      "n": 3,
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "titre": "Emprunter pour investir",
+      "mot_fort": "investir",
+      "energie": 2,
+      "de": {
+        "label": "Emprunt",
+        "prompt": "a stack of paper loan contracts, pixel art, single object"
+      },
+      "vers": {
+        "label": "Investir",
+        "prompt": "a construction crane over a bridge, pixel art, single object"
+      },
+      "montant": "argent",
+      "fond_photo": "https://images.theconversation.com/files/770047/original/file-20261104-64-qssu9n.jpg?ixlib=rb-4.1.1&rect=0%2C290%2C5000%2C2500&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Assemblée nationale débat budget déficit novembre 2026"
+    },
+    {
+      "n": 4,
+      "type": "pd_versus",
+      "duree_s": 4.0,
+      "titre": "Dépenses et investissements",
+      "mot_fort": "investissements",
+      "energie": 2,
+      "de": {
+        "label": "Fonctionner",
+        "prompt": "a cash register receipt, pixel art, single object"
+      },
+      "vers": {
+        "label": "Investir",
+        "prompt": "a construction crane over a bridge, pixel art, single object"
+      },
+      "verdict": "Emprunter : investir",
+      "gauche": "Fonctionner",
+      "droite": "Investir"
+    },
+    {
+      "n": 5,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Le déficit, c'est quoi ?",
+      "mot_fort": "déficit",
+      "energie": 2,
+      "prompt": "a red downward arrow on a budget chart, pixel art, single object",
+      "etiquette": "Déficit",
+      "fond_photo": "https://i.la-croix.com/1400x933/479x424/2026/11/23/2596782-les-ministres-de-la-sante-de-l-economie-et-des-fin.jpg",
+      "fond_photo_requete": "ministre économie finances conférence de presse budget 2027"
+    },
+    {
+      "n": 6,
+      "type": "pd_jauge",
+      "duree_s": 4.0,
+      "titre": "Un débat ouvert",
+      "mot_fort": "débat",
+      "energie": 2,
+      "niveau": "moyen",
+      "etiquette": "Désaccord",
+      "legende": "Deux camps, la même question",
+      "valeur": "moyen"
+    },
+    {
+      "n": 7,
+      "type": "pd_versus",
+      "duree_s": 4.0,
+      "titre": "Deux camps",
+      "mot_fort": "camps",
+      "energie": 3,
+      "de": {
+        "label": "Pour",
+        "prompt": "a green check mark on a ballot, pixel art, single object"
+      },
+      "vers": {
+        "label": "Contre",
+        "prompt": "a red cross on a ballot, pixel art, single object"
+      },
+      "verdict": "Encore ouvert",
+      "gauche": "Pour",
+      "droite": "Contre"
+    },
+    {
+      "n": 8,
+      "type": "pd_tampon",
+      "duree_s": 4.0,
+      "titre": "Bientôt dans la Constitution",
+      "mot_fort": "Constitution",
+      "energie": 2,
+      "tampon": "EN PROJET",
+      "prompt": "a parchment constitution with a wax seal, pixel art, side view, single object"
+    },
+    {
+      "n": 9,
+      "type": "pd_flux",
+      "duree_s": 4.0,
+      "titre": "Ce qu'elle change",
+      "mot_fort": "change",
+      "energie": 2,
+      "de": {
+        "label": "Règle d'or",
+        "prompt": "a golden padlock, pixel art, single object"
+      },
+      "vers": {
+        "label": "Déficit",
+        "prompt": "a red downward arrow on a budget chart, pixel art, single object"
+      },
+      "montant": "contrainte",
+      "fond_photo": "https://images.theconversation.com/files/770047/original/file-20261104-64-qssu9n.jpg?ixlib=rb-4.1.1&rect=0%2C290%2C5000%2C2500&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "déficit public France dette Cour des comptes 2026"
+    },
+    {
+      "n": 10,
+      "type": "pd_jauge",
+      "duree_s": 4.0,
+      "titre": "Lire les comptes",
+      "mot_fort": "comptes",
+      "energie": 2,
+      "niveau": "moyen",
+      "etiquette": "Chiffres",
+      "legende": "À vérifier dans les comptes publics",
+      "valeur": "moyen"
+    },
+    {
+      "n": 11,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Le Parlement tranchera",
+      "mot_fort": "tranchera",
+      "energie": 3,
+      "prompt": "a small parliament dome model, pixel art, single object",
+      "etiquette": "Parlement",
+      "fond_photo": "https://i.la-croix.com/1400x933/479x424/2026/11/23/2596782-les-ministres-de-la-sante-de-l-economie-et-des-fin.jpg",
+      "fond_photo_requete": "Parlement vote budget de l'État Paris novembre 2026"
+    },
+    {
+      "n": 12,
+      "type": "pd_tampon",
+      "duree_s": 4.0,
+      "titre": "Le vote à suivre",
+      "mot_fort": "vote",
+      "energie": 2,
+      "tampon": "À SUIVRE",
+      "prompt": "a ballot box, pixel art, side view, single object"
+    },
+    {
+      "n": 13,
+      "type": "pd_objet",
+      "duree_s": 4.0,
+      "titre": "Le budget chez Bercy",
+      "mot_fort": "Bercy",
+      "energie": 2,
+      "prompt": "a ledger book with a bar chart, pixel art, single object",
+      "etiquette": "Bercy",
+      "fond_photo": "https://images.theconversation.com/files/770047/original/file-20261104-64-qssu9n.jpg?ixlib=rb-4.1.1&rect=0%2C290%2C5000%2C2500&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Bercy ministère des Finances budget 2027 réunion"
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "duree_s": 4.0,
+      "titre": "Vous, vous êtes pour ?",
+      "mot_fort": "pour",
+      "energie": 2,
+      "question": "Emprunter pour investir : pour ou contre ?",
+      "prompt": "a question mark on a ballot paper, pixel art, single object",
+      "options": [
+        "Investir",
+        "Payer les dépenses courantes"
+      ],
+      "bonne": "Investir"
+    }
+  ],
+  "consignes_animation": "Rythme : un plan toutes les 4 s, 14 scènes, durée 56 s, un plan par plan du scénario dans le même ordre. Style pixeldoc, palette retro_tv, mise en page jt. Titres 3 à 5 mots, mot_fort en accent orange #FF7A1A ; étiquettes courtes. Photos réelles de presse en fond assombri sur les scènes 1, 3, 5, 9, 11, 13 (alternance avec les scènes pd_* animées au premier plan). Aucun chiffre affiché à l'écran : pas de pd_chiffre. Pas de personne réelle identifiable dans les dessins.",
+  "evolution_charte": "aucune (palette retro_tv pour cette vidéo seulement)",
+  "messages_traites": [],
+  "message_au_proprietaire": "DA eco-20261124-0800 (règle d'or budgétaire) : 14 scènes pixeldoc, palette retro_tv, mise en page jt, musique orchestral, voix V1+V4. Six scènes avec photo de presse en fond (1, 3, 5, 9, 11, 13) avec fond_photo_requete ; seules deux photos du dossier sont sur le sujet (la photo de la directrice de La Croix a été écartée, hors sujet), donc les URL se répètent. Aucun chiffre à l'écran ; le sujet n'a pas de chiffre validé dans la veille."
+}

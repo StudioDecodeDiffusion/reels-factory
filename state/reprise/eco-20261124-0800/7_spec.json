@@ -1,0 +1,386 @@
+{
+  "id": "eco-20261124-0800",
+  "theme": {
+    "fond": "#1A1410",
+    "texte": "#F3E9D2",
+    "accent": "#FF7A1A",
+    "accent2": "#7BD389",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": true,
+    "style": "pixeldoc",
+    "palette_nom": "retro_tv",
+    "palette": [
+      "#1A1410",
+      "#2E241C",
+      "#FF7A1A",
+      "#7BD389",
+      "#F3E9D2",
+      "#D9462B"
+    ],
+    "mise_en_page": "jt",
+    "tenues": {
+      "narrateur": "economie",
+      "mascotte": "economie"
+    }
+  },
+  "variete": {
+    "accroche": "devinette",
+    "trend": "Débat sourcé : deux camps, arguments cités",
+    "fonctionnement": "debat",
+    "mise_en_page": "jt",
+    "musique": "orchestral",
+    "voix": "V1+V4",
+    "palette": "retro_tv"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.4&cfg=0.4",
+    "mascotte": "chatterbox:fr?ref=jessica&exag=0.7&cfg=0.35",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "whoosh"
+    ],
+    "3": [
+      "pop"
+    ],
+    "4": [
+      "whoosh"
+    ],
+    "5": [
+      "pop"
+    ],
+    "6": [
+      "whoosh"
+    ],
+    "7": [
+      "pop"
+    ],
+    "8": [
+      "whoosh"
+    ],
+    "9": [
+      "pop"
+    ],
+    "10": [
+      "whoosh"
+    ],
+    "11": [
+      "pop"
+    ],
+    "12": [
+      "whoosh"
+    ],
+    "13": [
+      "pop"
+    ],
+    "14": [
+      "whoosh"
+    ]
+  },
+  "musique": {
+    "genre": "orchestral",
+    "volume": 0.4
+  },
+  "titre_miniature": "Règle d'or : l'État peut-il vraiment s'endetter ?",
+  "mots_choc": "Emprunter, investir",
+  "surtitre_miniature": "Budget de l'État · novembre 2026",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "titre": "Et l'écart, il fait quoi ?",
+      "mot_fort": "écart",
+      "energie": 3,
+      "prompt": "a french state treasury building at dusk, pixel art, side view, single object",
+      "fond_photo": "https://i.la-croix.com/1400x933/479x424/2026/11/23/2596782-les-ministres-de-la-sante-de-l-economie-et-des-fin.jpg",
+      "fond_photo_requete": "règle d'or budgétaire Constitution France 2026",
+      "title": "Et l'écart, il fait quoi ?",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une règle d'or veut limiter l'emprunt public. Elle divise pourtant le débat.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 2,
+      "type": "pd_objet",
+      "titre": "Une règle d'or",
+      "mot_fort": "règle d'or",
+      "energie": 2,
+      "prompt": "a golden ingot inside a glass vault, pixel art, single object",
+      "etiquette": "Constitution",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Devinez. L'État dépense plus qu'il ne gagne. Que fait-il de l'écart ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 3,
+      "type": "pd_flux",
+      "titre": "Emprunter pour investir",
+      "mot_fort": "investir",
+      "energie": 2,
+      "de": {
+        "label": "Emprunt",
+        "prompt": "a stack of paper loan contracts, pixel art, single object"
+      },
+      "vers": {
+        "label": "Investir",
+        "prompt": "a construction crane over a bridge, pixel art, single object"
+      },
+      "montant": "argent",
+      "fond_photo": "https://images.theconversation.com/files/770047/original/file-20261104-64-qssu9n.jpg?ixlib=rb-4.1.1&rect=0%2C290%2C5000%2C2500&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Assemblée nationale débat budget déficit novembre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Réponse, il emprunte. Cet écart s'ajoute alors à la dette publique.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 4,
+      "type": "pd_versus",
+      "titre": "Dépenses et investissements",
+      "mot_fort": "investissements",
+      "energie": 2,
+      "de": {
+        "label": "Fonctionner",
+        "prompt": "a cash register receipt, pixel art, single object"
+      },
+      "vers": {
+        "label": "Investir",
+        "prompt": "a construction crane over a bridge, pixel art, single object"
+      },
+      "verdict": "Emprunter : investir",
+      "gauche": "Fonctionner",
+      "droite": "Investir",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La règle d'or change cette logique. Elle limite l'emprunt aux dépenses d'investissement.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 5,
+      "type": "pd_objet",
+      "titre": "Le déficit, c'est quoi ?",
+      "mot_fort": "déficit",
+      "energie": 2,
+      "prompt": "a red downward arrow on a budget chart, pixel art, single object",
+      "etiquette": "Déficit",
+      "fond_photo": "https://i.la-croix.com/1400x933/479x424/2026/11/23/2596782-les-ministres-de-la-sante-de-l-economie-et-des-fin.jpg",
+      "fond_photo_requete": "ministre économie finances conférence de presse budget 2027",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les dépenses courantes devraient alors être couvertes par les seules recettes.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 6,
+      "type": "pd_jauge",
+      "titre": "Un débat ouvert",
+      "mot_fort": "débat",
+      "energie": 2,
+      "niveau": "moyen",
+      "etiquette": "Désaccord",
+      "legende": "Deux camps, la même question",
+      "valeur": "moyen",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Elle serait bientôt inscrite dans la Constitution. Pas encore en vigueur.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 7,
+      "type": "pd_versus",
+      "titre": "Deux camps",
+      "mot_fort": "camps",
+      "energie": 3,
+      "de": {
+        "label": "Pour",
+        "prompt": "a green check mark on a ballot, pixel art, single object"
+      },
+      "vers": {
+        "label": "Contre",
+        "prompt": "a red cross on a ballot, pixel art, single object"
+      },
+      "verdict": "Encore ouvert",
+      "gauche": "Pour",
+      "droite": "Contre",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Pour ses partisans, elle impose une vraie discipline budgétaire aux gouvernements.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 8,
+      "type": "pd_tampon",
+      "titre": "Bientôt dans la Constitution",
+      "mot_fort": "Constitution",
+      "energie": 2,
+      "tampon": "EN PROJET",
+      "prompt": "a parchment constitution with a wax seal, pixel art, side view, single object",
+      "dialogue": [
+        {
+          "qui": "mascotte",
+          "texte": "Pour ses critiques, la frontière entre investir et dépenser reste très floue.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 9,
+      "type": "pd_flux",
+      "titre": "Ce qu'elle change",
+      "mot_fort": "change",
+      "energie": 2,
+      "de": {
+        "label": "Règle d'or",
+        "prompt": "a golden padlock, pixel art, single object"
+      },
+      "vers": {
+        "label": "Déficit",
+        "prompt": "a red downward arrow on a budget chart, pixel art, single object"
+      },
+      "montant": "contrainte",
+      "fond_photo": "https://images.theconversation.com/files/770047/original/file-20261104-64-qssu9n.jpg?ixlib=rb-4.1.1&rect=0%2C290%2C5000%2C2500&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "déficit public France dette Cour des comptes 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Certains redoutent qu'elle limite la marge de manœuvre en période de crise.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 10,
+      "type": "pd_jauge",
+      "titre": "Lire les comptes",
+      "mot_fort": "comptes",
+      "energie": 2,
+      "niveau": "moyen",
+      "etiquette": "Chiffres",
+      "legende": "À vérifier dans les comptes publics",
+      "valeur": "moyen",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une route est-elle un investissement ? Et un salaire, lui, est-il une dépense ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 11,
+      "type": "pd_objet",
+      "titre": "Le Parlement tranchera",
+      "mot_fort": "tranchera",
+      "energie": 3,
+      "prompt": "a small parliament dome model, pixel art, single object",
+      "etiquette": "Parlement",
+      "fond_photo": "https://i.la-croix.com/1400x933/479x424/2026/11/23/2596782-les-ministres-de-la-sante-de-l-economie-et-des-fin.jpg",
+      "fond_photo_requete": "Parlement vote budget de l'État Paris novembre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le débat porte donc surtout sur la définition même de l'investissement public.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 12,
+      "type": "pd_tampon",
+      "titre": "Le vote à suivre",
+      "mot_fort": "vote",
+      "energie": 2,
+      "tampon": "À SUIVRE",
+      "prompt": "a ballot box, pixel art, side view, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le déficit est un flux annuel, la dette est un stock accumulé.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 13,
+      "type": "pd_objet",
+      "titre": "Le budget chez Bercy",
+      "mot_fort": "Bercy",
+      "energie": 2,
+      "prompt": "a ledger book with a bar chart, pixel art, single object",
+      "etiquette": "Bercy",
+      "fond_photo": "https://images.theconversation.com/files/770047/original/file-20261104-64-qssu9n.jpg?ixlib=rb-4.1.1&rect=0%2C290%2C5000%2C2500&q=45&auto=format&w=1356&h=668&fit=crop",
+      "fond_photo_requete": "Bercy ministère des Finances budget 2027 réunion",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Elle obligerait à mieux séparer les dépenses d'investissement et de fonctionnement.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "titre": "Vous, vous êtes pour ?",
+      "mot_fort": "pour",
+      "energie": 2,
+      "question": "Emprunter pour investir : pour ou contre ?",
+      "prompt": "a question mark on a ballot paper, pixel art, single object",
+      "options": [
+        "Investir",
+        "Payer les dépenses courantes"
+      ],
+      "bonne": "Investir",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Emprunter pour investir, est-ce une bonne règle, selon vous ? Dites-le en commentaire.",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.1
+    }
+  ]
+}

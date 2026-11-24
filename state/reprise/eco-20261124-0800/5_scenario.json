@@ -1,0 +1,190 @@
+{
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "QUE FAIT L'ÉTAT DE SON ÉCART ?",
+   "fond_photo": "https://i.la-croix.com/1400x933/479x424/2026/11/23/2596782-les-ministres-de-la-sante-de-l-economie-et-des-fin.jpg",
+   "fond_photo_requete": "ministres économie finances budget 2027 conférence de presse",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Une règle d'or veut limiter l'emprunt public. Elle divise pourtant le débat.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "DÉPENSES > RECETTES",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Devinez. L'État dépense plus qu'il ne gagne. Que fait-il de l'écart ?",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "L'ÉCART VA À LA DETTE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Réponse, il emprunte. Cet écart s'ajoute alors à la dette publique.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_tampon",
+   "duree_s": 4.0,
+   "texte_ecran": "EMPRUNTER POUR INVESTIR",
+   "fond_photo": "https://images.theconversation.com/files/770047/original/file-20261104-64-qssu9n.jpg?ixlib=rb-4.1.1&rect=0%2C290%2C5000%2C2500&q=45&auto=format&w=1356&h=668&fit=crop",
+   "fond_photo_requete": "déficit public France dette Cour des comptes 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "La règle d'or change cette logique. Elle limite l'emprunt aux dépenses d'investissement.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "DÉPENSES COURANTES : RECETTES",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Les dépenses courantes devraient alors être couvertes par les seules recettes.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "INSCRITE DANS LA CONSTITUTION",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Elle serait bientôt inscrite dans la Constitution. Pas encore en vigueur.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "debat",
+   "duree_s": 4.0,
+   "texte_ecran": "POUR : LA DISCIPLINE",
+   "fond_photo_requete": "Assemblée nationale débat budget déficit novembre 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Pour ses partisans, elle impose une vraie discipline budgétaire aux gouvernements.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "debat",
+   "duree_s": 4.0,
+   "texte_ecran": "CONTRE : LA FRONTIÈRE",
+   "dialogue": [
+    {
+     "qui": "mascotte",
+     "texte": "Pour ses critiques, la frontière entre investir et dépenser reste très floue.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "debat",
+   "duree_s": 4.0,
+   "texte_ecran": "RISQUE : LA CRISE",
+   "fond_photo": "https://i.la-croix.com/1400x933/479x424/2026/11/23/2596782-les-ministres-de-la-sante-de-l-economie-et-des-fin.jpg",
+   "fond_photo_requete": "Parlement vote budget de l'État Paris novembre 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Certains redoutent qu'elle limite la marge de manœuvre en période de crise.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_versus",
+   "duree_s": 4.0,
+   "texte_ecran": "INVESTIR OU DÉPENSER ?",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Une route est-elle un investissement ? Et un salaire, lui, est-il une dépense ?",
+     "expression": "sourire"
+    }
+   ]
+  },
+  {
+   "type": "pd_jauge",
+   "duree_s": 4.0,
+   "texte_ecran": "LA DÉFINITION EN DÉBAT",
+   "fond_photo": "https://images.theconversation.com/files/770047/original/file-20261104-64-qssu9n.jpg?ixlib=rb-4.1.1&rect=0%2C290%2C5000%2C2500&q=45&auto=format&w=1356&h=668&fit=crop",
+   "fond_photo_requete": "règle d'or budgétaire Constitution France 2026",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le débat porte donc surtout sur la définition même de l'investissement public.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_objet",
+   "duree_s": 4.0,
+   "texte_ecran": "FLUX ANNUEL · STOCK ACCUMULÉ",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Le déficit est un flux annuel, la dette est un stock accumulé.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "pd_flux",
+   "duree_s": 4.0,
+   "texte_ecran": "CE QUE CHANGERAIT LA RÈGLE",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Elle obligerait à mieux séparer les dépenses d'investissement et de fonctionnement.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "quiz",
+   "duree_s": 4.0,
+   "texte_ecran": "VOUS, QU'EN PENSEZ-VOUS ?",
+   "fond_photo_requete": "Bercy ministère des Finances budget 2027 réunion",
+   "dialogue": [
+    {
+     "qui": "narrateur",
+     "texte": "Emprunter pour investir, est-ce une bonne règle, selon vous ? Dites-le en commentaire.",
+     "expression": "sourire"
+    }
+   ]
+  }
+ ],
+ "legende": "Devinez : que fait l'État quand il dépense plus qu'il ne gagne ?\n\nLa règle d'or veut n'emprunter que pour investir. Elle serait bientôt inscrite dans la Constitution, et les avis divergent.\n\nEt vous, emprunter pour investir, est-ce une bonne règle ? 👇\n\nEnvoyez-la à quelqu'un qui suit le budget de l'État ! 📤\n\nSources : La Croix",
+ "hashtags": [
+  "#économie",
+  "#RègleDOr",
+  "#BudgetDeLÉtat",
+  "#Budget2027",
+  "#décodéleco"
+ ]
+}
