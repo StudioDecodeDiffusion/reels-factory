@@ -1,38 +1,25 @@
 {
-  "date": "2026-11-22",
+  "date": "2026-11-25",
   "compte": "actu",
-  "sources": "state/veille_brute.json (maj 2026-11-22 13:30 UTC, top_par_compte.actu) ; state/rapport_3_actu.json (21/11) ; state/feedback_cm_actu.json (20/11) ; state/veille_10.json (19/11). Aucune recherche web complémentaire.",
+  "sources": ["state/veille_brute.json (maj 2026-11-25 15:45 UTC, top_par_compte.actu)", "state/feedback_cm_actu.json (25/11)", "state/rapport_3_actu.json (stats 24/11 23 h 28)"],
   "formats": [
-    "Reel d'explication 45-60 s : chiffre sourcé en première phrase, puis décryptage (schéma animé), puis question ouverte liée à un chiffre de la vidéo. Repris du post du 18/10 (1 156 vues, seul pic du compte) ; à tester sur 6 vidéos (rapport 3)."
+    "Accroche par un chiffre sourcé en première phrase (18/10 : 1 156 vues, 20 interactions ; 24/10 : 244 vues)",
+    "Titre sans « oui ou non » (23 vidéos à 2,17 interactions en moyenne contre 0,83 pour 6 titres « oui ou non » : petit échantillon)"
   ],
   "accroches_types": [
-    "Chiffre sourcé en première phrase : « 54 milliards d'économies : quelle mesure te touche le plus ? » (exemple du propriétaire, à reprendre avec un chiffre déjà publié ou sourcé du jour)",
-    "Citation forte en accroche, sans « oui ou non » final (post du 24/10, 5 interactions)"
+    "« Croissance, déficit : la France, cancre de la zone euro » : chiffre officiel en tête, sujet porté par 28 articles",
+    "« Maintien de l'ordre : pourquoi la France ne pratique pas la désescalade » : explication d'un mécanisme, 12 articles",
+    "Question de fin de légende liée à un chiffre de la vidéo (à tester sur 2 ou 3 vidéos)"
   ],
   "sujets_qui_buzzent": [
-    {
-      "sujet": "Budget de l'État, règle d'or et dette publique",
-      "signal": "Macron réfléchirait à convoquer le Congrès pour une règle d'or (AFP via RFI, 22/11/2026) ; « Dette publique : voici comment les Français veulent résoudre le problème » (France 24, 22/11/2026) ; vitesse 0,65 et 0,45 sur 8 h, 17 et 22 articles",
-      "lien": "https://www.rfi.fr/fr/france/20261122-france-emmanuel-macron-pense-%C3%A0-une-r%C3%A8gle-d"
-    },
-    {
-      "sujet": "Budget européen : la France insatisfaite du nouveau projet",
-      "signal": "« Le compte n'y est pas » (Challenges ; La Croix, 20/11/2026 pour le projet), 21 articles, sources multiples (La Croix, BFM, Les Echos)",
-      "lien": "https://www.challenges.fr/politique/le-compte-ny-est-pas-la-france-insatisfaite-de-la-nouvelle-proposition-pour-le-budget-de-lunion-europeenne_647104"
-    },
-    {
-      "sujet": "Mobilisation du 21 novembre contre la vie chère",
-      "signal": "Acte VI de la mobilisation (France 24, 21/11/2026) ; 47 articles, vitesse 0,32 sur 8 h",
-      "lien": "https://www.france24.com/fr/france/20261121-en-direct-acte-vi-de-la-mobilisation-pour-la-j"
-    }
+    "Croissance et déficit de la France (score 15,19, 28 articles, 12 sources, veille du 25/11)",
+    "Maintien de l'ordre et désescalade en manifestation (score 13,9, 12 articles, 25/11)"
   ],
-  "sons_tendance": [],
-  "communaute": "7 abonnés (stable depuis le 26/10). Aucune question, demande ni critique en file (state/feedback_cm_actu.json, 20/11). Les 10 dernières vidéos font 100 vues en moyenne et 0,2 % d'interactions. Les titres « oui ou non » engagent moins (0,8 interaction en moyenne contre 2,2 pour les autres, échantillon faible).",
+  "communaute": "7 abonnés depuis le 26/10, 0,19 % d'engagement sur les 10 dernières vidéos, 0 commentaire (feedback agent 9 du 25/11). Demande : sourcer chaque chiffre de l'accroche.",
   "a_eviter": [
-    "Titres « oui ou non » seuls en fin de vidéo (6 posts, 0 commentaire)",
-    "Accroche sans chiffre sourcé",
-    "Faits divers violents et décès de personnes privées (exclusions du profil) : l'arrestation de 10 personnes à Marseille (21/11) n'est pas retenue comme sujet",
-    "Sons : aucun son TikTok ou Instagram vérifié ce jour (tiktok_sons et tiktok_hashtags vides dans la veille brute) : n'en recommander aucun"
-  ],
-  "notes_proprietaire": "Aucune note en attente pour l'agent 2 (python3 -m pipeline.tool notes --agent 2 --profile actu)."
+    "Sujet « présidentielle 2027 » : déjà traité le 19/11 (historique_actu)",
+    "Sujet « priorité nationale » et « Acte IV de la colère sociale » : déjà traités (historique_actu)",
+    "Titres « oui ou non » : engagement plus faible sur l'échantillon disponible",
+    "Aucun son ni format TikTok/Instagram vérifié dans cette session : rien n'est recommandé sur ce point"
+  ]
 }

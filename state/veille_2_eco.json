@@ -1,35 +1,25 @@
 {
- "date": "2026-11-20",
- "formats": [
-  "Pédagogie chiffrée 45-60 s : qui paie, qui gagne, ce que ça change pour l'épargnant"
- ],
- "accroches_types": [
-  "Chiffre officiel en première phrase, puis \"qui paie ?\""
- ],
- "sujets_qui_buzzent": [
-  "Budget 2027",
-  "Retraites",
-  "Dette et finances publiques (meilleure tenue sur les 5 vidéos connues, state/feedback_cm_eco.json)"
- ],
- "communaute": "Aucun commentaire, 7 interactions pour 715 vues. Aucune publication enregistrée depuis le 3/11 : chaîne de publication à vérifier avant toute conclusion.",
- "a_eviter": [
-  "Chiffres non sourcés",
-  "Sujets salaire brut/net seuls (94 vues, le plus faible)"
- ],
- "sons_tendance": [],
- "tendances": [
-  {
-   "sujet": "Retraites : suppression de l'abattement fiscal de 10 % envisagée",
-   "faits": "12 articles, 11 médias, veille du 20/11 (veille brute du 20/11/2026 (14 h 12 UTC)). Lien : https://www.lexpress.fr/economie/politique-economique/lenduit-fiscal-ne-suffit-pas-il-faut-reconstruire-les-murs-porteurs-de-letat-providence-par-nicolas-HL3ULSBIDFG27DI6GM27HWBV2M/ (lien du groupe)"
-  },
-  {
-   "sujet": "Budget 2027 : engagements de l'État envers les Outre-mer au Sénat, économies à trouver",
-   "faits": "13 articles, veille du 20/11 (veille brute du 20/11/2026 (14 h 12 UTC)). Lien : https://www.latribune.fr/article/economie/33803303392615/budget-2027-pourquoi-le-senat-doit-encore-trouver-12-milliards-d-euros-deconomies-supplementaires"
-  },
-  {
-   "sujet": "Manifestation intersyndicale de retraités contre les mesures budgétaires",
-   "faits": "8 articles, veille du 20/11 (veille brute du 20/11/2026 (14 h 12 UTC)). Lien Google News agrégé, à vérifier avant usage."
-  }
- ],
- "sons_note": "Aucun son tendance vérifié le 20/11 : les recherches web ne donnent que des listes datées de mai 2026. Rien inventé."
+  "date": "2026-11-25",
+  "compte": "eco",
+  "sources": ["state/veille_brute.json (maj 2026-11-25 15:45 UTC, top_par_compte.eco)", "state/feedback_cm_eco.json (25/11, données du 24/11)", "state/rapport_3_eco.json (25/11)"],
+  "formats": [
+    "Un chiffre officiel dans la première phrase : c'est le cas des 2 meilleures vidéos (2 882 milliards ; 88 milliards)",
+    "Question ouverte en fin de vidéo, à ajouter (aucun commentaire ni partage sur 6 vidéos)"
+  ],
+  "accroches_types": [
+    "« Les États-Unis : l'inflation grimpe à 3,8 % en octobre, au plus haut depuis 3 ans » : chiffre en tête, 11 articles",
+    "« Budget 2027 : le Sénat renonce à supprimer l'abattement des retraités, mais le rabote » : décision et impact concret, 15 articles",
+    "« Réduction d'impôt 2026 : les plafonds de 10 000 et 18 000 euros » : utilité pratique, chiffre dans le titre, 8 articles"
+  ],
+  "sujets_qui_buzzent": [
+    "Inflation américaine (3,8 % en octobre) et marchés (score 13,23, 25/11)",
+    "Budget 2027 et abattement fiscal des retraités (score 12,8, 25/11)",
+    "Réduction d'impôt 2026 (score 9,91, 25/11) : pouvoir d'achat, format utile"
+  ],
+  "communaute": "6 vidéos (25/10 au 24/11) : 738 vues, 7 interactions (0,95 %), 0 commentaire, 0 partage. Finances publiques en tête (163 vues en moyenne sur 3 vidéos, petit échantillon). Abonnés non fiables (0 sur toute la période).",
+  "a_eviter": [
+    "« Règle d'or budgétaire » et « Budget de l'État » : déjà traités les 24/11 et plus tôt (historique_eco)",
+    "Nouveaux brouillons avant de vérifier le trou de publication du 03/11 au 24/11 (rapport 3)",
+    "Aucun son ni format TikTok/Instagram vérifié dans cette session : rien n'est recommandé sur ce point"
+  ]
 }
