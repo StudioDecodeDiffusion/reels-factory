@@ -1,59 +1,27 @@
 {
-  "date": "2026-11-07",
-  "source": "veille automatique (state/veille_brute.json) + tokchart.com/trending/FR (7 nov. 2026)",
-  "formats": [],
-  "accroches_types": [],
-  "hashtags": [],
-  "hashtags_note": "aucun hashtag TikTok vérifié aujourd'hui : page tokchart sans liste, rien inventé",
-  "sons": [
-    {
-      "nom": "Ramalama (Bang Bang)",
-      "auteur": "roisinmurphyofficial",
-      "videos": "845 K",
-      "evolution_jour": "-2900",
-      "statut": "en baisse, à éviter pour les nouveaux Reels",
-      "source": "https://tokchart.com/trending/FR",
-      "date": "2026-11-07"
-    },
-    {
-      "nom": "Son original",
-      "auteur": "Avel Nkendo",
-      "videos": "77 K",
-      "evolution_jour": "+17733",
-      "statut": "en hausse, nom du son à relever dans l'app avant usage",
-      "source": "https://tokchart.com/trending/FR",
-      "date": "2026-11-07"
-    },
-    {
-      "nom": "Son original",
-      "auteur": "Trendformusic",
-      "videos": "108 K",
-      "evolution_jour": "+9500",
-      "statut": "en hausse, nom du son à relever dans l'app avant usage",
-      "source": "https://tokchart.com/trending/FR",
-      "date": "2026-11-07"
-    }
-  ],
-  "communaute": "Aucun retour agent 9 pour TikTok dans cette veille.",
-  "formats_note": "aucun format TikTok chiffré trouvé aujourd'hui : rien à copier sans preuve",
-  "sujets_qui_buzzent": [
-    {
-      "sujet": "Temps de travail : les infractions aux heures supplémentaires dominent",
-      "lien": "",
-      "source": "state/veille_brute.json (maj 2026-11-07 16 h 02 UTC)",
-      "date": "2026-11-07",
-      "note": "lien Google News, à vérifier"
-    },
-    {
-      "sujet": "Risque grave au travail : le CSE peut demander une expertise malgré les mesures de l'employeur",
-      "lien": "",
-      "source": "state/veille_brute.json (maj 2026-11-07 16 h 02 UTC)",
-      "date": "2026-11-07",
-      "note": "lien Google News, à vérifier"
-    }
-  ],
-  "a_eviter": [
-    "formats TikTok QSE non vérifiés : aucun exemple de compte chiffré dans cette veille"
-  ],
-  "compte": "qhse"
+ "date": "2026-11-25",
+ "compte": "qhse",
+ "statut": "aucune tendance TikTok verifiee sur la collecte du jour (tiktok_sons et tiktok_hashtags vides dans veille_brute.json, recherche web sans contenu exploitable)",
+ "formats": [],
+ "sons": [],
+ "hashtags": [],
+ "accroches_types": [],
+ "sujets_qui_buzzent": [
+  {
+   "sujet": "Inspection santé sécurité : offres d’emploi - novembre 2026",
+   "source": "veille_brute.json (maj 2026-11-25 15:45 UTC)",
+   "date": "2026-11-25",
+   "nb_articles": 2
+  },
+  {
+   "sujet": "Accidents du travail : le passeport prévention désormais ouvert à l’ensemble des actifs, mais pas obligatoire",
+   "source": "veille_brute.json (maj 2026-11-25 15:45 UTC)",
+   "date": "2026-11-25",
+   "nb_articles": 3
+  }
+ ],
+ "communaute": "non evaluee par l'agent 13 aujourd'hui (voir state/feedback_cm_qhse.json)",
+ "a_eviter": [
+  "copier un son ou hashtag sans verification de date et de source"
+ ]
 }

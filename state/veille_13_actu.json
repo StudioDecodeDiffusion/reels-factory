@@ -1,87 +1,27 @@
 {
-  "date": "2026-11-22",
-  "compte": "actu",
-  "source": "state/veille_brute.json (veille automatique, maj 2026-11-22 13:30 UTC) ; tokchart.com/trending/FR non consultable aujourd'hui (accès refusé pendant la session)",
-  "formats": [],
-  "formats_note": "aucun format TikTok chiffré vérifié aujourd'hui : rien à copier sans preuve",
-  "accroches_types": [
-    {
-      "accroche": "Chiffre choc du budget de l'État, en une phrase",
-      "base": "sujet « Le compte n’y est pas » (21 articles, 12 sources)"
-    },
-    {
-      "accroche": "Question directe au spectateur sur la dette",
-      "base": "sujet « Dette publique » (22 articles)"
-    }
-  ],
-  "hashtags": [],
-  "hashtags_note": "aucun hashtag TikTok vérifié aujourd'hui : rien inventé",
-  "sons": [],
-  "sons_note": "aucun son TikTok vérifié aujourd'hui. Les sons du 07/11 (ancien state/veille_13_actu.json) sont retirés : données trop anciennes pour être recommandées",
-  "sujets_qui_buzzent": [
-    {
-      "sujet": "« Le compte n’y est pas » : la France insatisfaite de la nouvelle proposition pour le budget de l’Union européenne",
-      "nb_articles": 21,
-      "sources": [
-        "Actu.fr",
-        "BFM",
-        "Challenges",
-        "DNA.fr",
-        "Europe 1",
-        "FranceTransactions.com"
-      ],
-      "lien": "https://www.la-croix.com/budget-europeen-une-taxe-sur-les-geants-du-numerique-pour-debloquer-les-discussions-20261120",
-      "date": "2026-11-22"
-    },
-    {
-      "sujet": "Mobilisation du 21 novembre : 10 interpellations en marge de la manifestation contre la vie chère à Marseille",
-      "nb_articles": 47,
-      "sources": [
-        "20 Minutes",
-        "Actu.fr",
-        "BFM",
-        "France 24",
-        "L'Est Républicain",
-        "L'Humanité"
-      ],
-      "lien": "https://www.france24.com/fr/france/20261121-en-direct-acte-vi-de-la-mobilisation-pour-la-jeunesse-et-contre-la-vie-ch%C3%A8re",
-      "date": "2026-11-22"
-    },
-    {
-      "sujet": "Budget : Emmanuel Macron réfléchirait à convoquer le Congrès pour instaurer une règle d'or",
-      "nb_articles": 17,
-      "sources": [
-        "AFP - STEPHANIE LECOCQ",
-        "Actu.fr",
-        "CNews",
-        "Economie Matin",
-        "Econostrum.info",
-        "L'Express"
-      ],
-      "lien": "https://www.rfi.fr/fr/france/20261122-france-emmanuel-macron-pense-%C3%A0-une-r%C3%A8gle-d-or-budg%C3%A9taire-la-droite-et-le-rn-lui-emboitent-le-pas",
-      "date": "2026-11-22"
-    },
-    {
-      "sujet": "Dette publique : comment les Français veulent résoudre le problème",
-      "nb_articles": 22,
-      "sources": [
-        "20 Minutes",
-        "Alternatives économiques",
-        "Basta",
-        "Courrier international",
-        "France 24",
-        "France 3 Régions"
-      ],
-      "lien": null,
-      "date": "2026-11-22",
-      "lien_note": "lien de la veille brute faux (vidéo France 24 sur Malraux) : à retrouver avant usage"
-    }
-  ],
-  "communaute": "Aucun retour TikTok de l'agent 9 dans les fichiers lus aujourd'hui.",
-  "a_eviter": [
-    "Lien « Dette publique » de la veille brute : mauvais article, ne pas l'utiliser sans vérification",
-    "Sujet « Fréquentations néonazies … Némésis » non retenu : enquête de presse, à traiter seulement avec sources vérifiées et sans accusation personnelle",
-    "Aucun son ni hashtag TikTok sans vérification du jour"
-  ],
-  "notes_proprietaire": "aucune note en attente pour l'agent 13"
+ "date": "2026-11-25",
+ "compte": "actu",
+ "statut": "aucune tendance TikTok verifiee sur la collecte du jour (tiktok_sons et tiktok_hashtags vides dans veille_brute.json, recherche web sans contenu exploitable)",
+ "formats": [],
+ "sons": [],
+ "hashtags": [],
+ "accroches_types": [],
+ "sujets_qui_buzzent": [
+  {
+   "sujet": "Croissance, déficit : La France, cancre de la zone euro",
+   "source": "veille_brute.json (maj 2026-11-25 15:45 UTC)",
+   "date": "2026-11-25",
+   "nb_articles": 28
+  },
+  {
+   "sujet": "En campagne pour l’Elysée, David Lisnard réélu à la tête des maires de France",
+   "source": "veille_brute.json (maj 2026-11-25 15:45 UTC)",
+   "date": "2026-11-25",
+   "nb_articles": 16
+  }
+ ],
+ "communaute": "non evaluee par l'agent 13 aujourd'hui (voir state/feedback_cm_actu.json)",
+ "a_eviter": [
+  "copier un son ou hashtag sans verification de date et de source"
+ ]
 }
