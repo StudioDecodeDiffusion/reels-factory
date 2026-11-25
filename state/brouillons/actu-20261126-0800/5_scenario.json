@@ -1,0 +1,177 @@
+{
+ "variete": {
+  "accroche": "pov",
+  "trend": "la_verite_sur_les_caisses",
+  "fonctionnement": "simulateur",
+  "mise_en_page": "jt",
+  "musique": "trap8bit",
+  "voix": "V2+V3",
+  "palette": "nuit_neon"
+ },
+ "plans": [
+  {
+   "type": "hook",
+   "duree_s": 4.0,
+   "texte_ecran": "POV : On te demande de te serrer la ceinture",
+   "dialogue": [
+    {
+     "qui": "Lou",
+     "texte": "POV : On te demande encore une fois de te serrer la ceinture pour sauver le pays.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Les caisses sont vides ?",
+   "dialogue": [
+    {
+     "qui": "Déco",
+     "texte": "C'est le refrain habituel des puissants : les caisses seraient vides et la dette nous étoufferait tous.",
+     "expression": "sarcasme"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.0,
+   "texte_ecran": "L'austérité vs les records",
+   "dialogue": [
+    {
+     "qui": "Lou",
+     "texte": "Sauf que pendant qu'on te parle d'austérité, certains font sauter les bouchons de champagne en toute impunité.",
+     "expression": "colere"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "70 MILLIARDS de dividendes",
+   "dialogue": [
+    {
+     "qui": "Déco",
+     "texte": "Le CAC quarante vient de verser soixante-dix milliards d'euros de dividendes à ses actionnaires cette année.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Hausse de 30% en 3 ans",
+   "dialogue": [
+    {
+     "qui": "Lou",
+     "texte": "C'est un record absolu. Une hausse indécente de trente pour cent en seulement trois petites années.",
+     "expression": "colere"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Le gouvernement cherche 60 milliards",
+   "dialogue": [
+    {
+     "qui": "Déco",
+     "texte": "Au même moment, le gouvernement cherche soixante milliards d'économies brutales sur ton dos et tes services.",
+     "expression": "triste"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Coupes dans la santé et l'école",
+   "dialogue": [
+    {
+     "qui": "Lou",
+     "texte": "On parle de couper dans les bourses étudiantes et de moins bien rembourser tes médicaments essentiels.",
+     "expression": "degout"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "Salaires des fonctionnaires gelés",
+   "dialogue": [
+    {
+     "qui": "Déco",
+     "texte": "On gèle aussi le point d'indice des fonctionnaires qui tiennent pourtant le pays à bout de bras.",
+     "expression": "colere"
+    }
+   ]
+  },
+  {
+   "type": "chiffre",
+   "duree_s": 4.0,
+   "texte_ecran": "100 milliards d'évasion fiscale",
+   "dialogue": [
+    {
+     "qui": "Lou",
+     "texte": "Pourtant, l'évasion fiscale coûte chaque année près de cent milliards d'euros à la France.",
+     "expression": "pense"
+    }
+   ]
+  },
+  {
+   "type": "versus",
+   "duree_s": 4.0,
+   "texte_ecran": "5 milliardaires = 27 millions de gens",
+   "dialogue": [
+    {
+     "qui": "Déco",
+     "texte": "Et les cinq plus grandes fortunes françaises possèdent autant que vingt-sept millions de citoyens réunis.",
+     "expression": "choc"
+    }
+   ]
+  },
+  {
+   "type": "fait",
+   "duree_s": 4.0,
+   "texte_ecran": "L'argent change juste de poche",
+   "dialogue": [
+    {
+     "qui": "Lou",
+     "texte": "L'argent ne manque pas, il change juste de poche, des services publics vers les coffres-forts privés.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "chute",
+   "duree_s": 4.0,
+   "texte_ecran": "L'austérité est un choix",
+   "dialogue": [
+    {
+     "qui": "Déco",
+     "texte": "L'austérité n'est pas une loi de la nature, c'est un choix politique très précis contre les précaires.",
+     "expression": "neutre"
+    }
+   ]
+  },
+  {
+   "type": "question",
+   "duree_s": 4.5,
+   "texte_ecran": "Tu taxerais qui en priorité ?",
+   "dialogue": [
+    {
+     "qui": "Lou",
+     "texte": "Et toi, tu penses qu'on devrait taxer les super-profits ou continuer de couper dans l'école ?",
+     "expression": "clin"
+    }
+   ]
+  }
+ ],
+ "legende": "70 000 000 000 € de dividendes. 📈\n\nPendant que le gouvernement impose une austérité record aux services publics, les actionnaires du CAC 40 n'ont jamais autant empoché. L'argent existe, mais il est capté par une minorité au détriment de la santé et de l'éducation.\n\nEt toi, tu taxerais qui en priorité ? 👇\nEnvoie-la à quelqu'un qui croit que les caisses sont vides. 📤\nSources : INSEE, Observatoire des Multinationales",
+ "hashtags": [
+  "#justicesociale",
+  "#CAC40",
+  "#budget2025",
+  "#austérité",
+  "#décodéactu"
+ ]
+}
