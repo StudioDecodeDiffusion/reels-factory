@@ -1,39 +1,40 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "classement": [
-    "Dette publique (27/10) : 203 vues, 2 j'aimé",
-    "Niches fiscales (03/11) : 172 vues, 1 j'aimé, 1 enregistrement",
-    "Fonderie de Bretagne (25/10, dimanche) : 131 vues, 1 j'aimé",
+    "Dette publique (27/10) : 203 vues, 2 interactions (1,0 %)",
+    "Niches fiscales (03/11) : 172 vues, 2 interactions (1,2 %)",
+    "Fonderie de Bretagne (25/10) : 131 vues, 1 interaction (0,8 %)",
     "Déficit du budget 2026 (30/10) : 115 vues, 0 interaction",
-    "Salaire brut/net (27/10) : 94 vues, 1 j'aimé, 1 enregistrement"
+    "Salaire brut/net (27/10) : 94 vues, 2 interactions (2,1 %)",
+    "Budget de l'État, dépenses (24/11) : 23 vues, 0 interaction (moins de 24 h, non conclusif)"
   ],
   "ce_qui_marche": [
     "Finances publiques (dette, niches fiscales, déficit) : 163 vues en moyenne sur 3 vidéos, contre 113 pour les 2 autres (échantillon très petit)",
     "Un chiffre officiel dans la première phrase : c'est le cas des 2 meilleures vidéos (2 882 milliards ; 88 milliards)"
   ],
   "ce_qui_ne_marche_pas": [
-    "Aucun commentaire ni partage sur 5 vidéos ; 7 interactions réelles pour 715 vues (environ 1 %)",
-    "Le CTA du profil (« Abonne-toi ») ne demande aucune réaction ; aucune question de fin n'est prévue"
+    "Aucun commentaire ni partage sur 6 vidéos ; 7 interactions pour 738 vues (0,95 %)",
+    "Aucune publication enregistrée entre le 03/11 et le 24/11 (brouillons des 10, 13, 17 et 20/11 absents des stats)"
   ],
   "enseignements": [
     "Garder le fil finances publiques, avec un chiffre officiel dès la première phrase",
     "Ajouter une question ouverte en fin de vidéo : aucune réaction écrite à ce jour",
-    "Garder le rythme mardi/vendredi : les publications des 27/10, 30/10 et 03/11 tombent sur ces jours"
+    "Vérifier le rythme mar./ven. 08:00 avant de produire de nouveaux brouillons"
   ],
-  "test": "Pendant les 2 prochaines publications eco : fin de vidéo avec une question ouverte au lieu du seul « Abonne-toi ». Mesure : nombre de commentaires (0 actuellement) et vues, à comparer à la médiane de 131.",
+  "test": "Sur les 2 prochaines publications eco : fin de vidéo avec une question ouverte au lieu du seul « Abonne-toi ». Mesure : nombre de commentaires (0 actuellement) et vues, à comparer à la médiane de 123.",
   "reperes_projection": {
-    "vues_mediane": 131,
-    "vues_moyenne": 143,
+    "vues_mediane": 123,
+    "vues_moyenne": 123,
     "meilleure": 203,
     "plancher": 94,
-    "confiance": "faible : 5 vidéos, publiées entre le 25/10 et le 03/11"
+    "confiance": "faible : 5 vidéos stables (25/10 au 03/11) ; la vidéo du 24/11 (23 vues) est trop récente pour compter dans le plancher"
   },
   "points_attention": [
-    "Abonnés à 0 sur toute la période : donnée probablement non fiable, non corrigée",
-    "Aucune publication eco dans state/stats_eco.json depuis le 03/11 ; les brouillons des 10, 13, 17 et 20/11 n'y figurent pas ; le vendredi 06/11 n'est pas documenté",
-    "Post du 27/10 (salaire brut/net) : total_interactions affiché 3, composantes 2 (non corrigé)",
+    "Abonnés à 0 sur toute la période (state/abonnes_eco.json et stats) : donnée non fiable, non corrigée",
+    "Source complémentaire instrack.app/instagram/decodeactu non utilisable : ce lien suit le compte actu, pas @decode.eco ; l'accès a aussi été refusé à la consultation",
+    "Post du 27/10 (salaire brut/net) : state/stats_eco.json affiche total_interactions 3, composantes 2 (rapport 8 : 2 retenu)",
     "Deux posts eco le 27/10 à 07:10 et 07:11 UTC : à vérifier (double publication ou non)",
-    "Source complémentaire instrack.app non consultée (hors procédure)"
+    "Aucune note du propriétaire en attente pour l'agent 3"
   ],
   "notes_traitees": []
 }
