@@ -1,29 +1,30 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "compte": "qhse",
-  "en_une_phrase": "Toujours 3 publications dans les statistiques, aucune nouvelle depuis le 22/11 ; échantillon trop petit pour conclure, et compteur d'abonnés à 0 non fiable.",
+  "source": "state/stats_qhse.json (maj 24/11/2026 23 h 28), state/suivi_qhse.json, travail/rapport8_qhse.json",
+  "en_une_phrase": "3 publications dans les statistiques, aucune depuis le 22/11 ; échantillon trop petit pour conclure, et compteur d'abonnés à 0 non fiable.",
   "classement": [
-    "27 oct. : usine Seveso seuil haut, 131 vues, portée 129, 2 j'aime (meilleure)",
-    "22 nov. : EN 9100 clause 8.1.4, 108 vues, portée 95, 1 j'aime, 1 enregistrement",
-    "27 oct. : ISO 9001 en chiffres, 17 vues, portée 15, 0 interaction (plus faible)"
+    "27/10 : usine Seveso seuil haut, 131 vues, portée 129, 2 j'aime (meilleure)",
+    "22/11 : EN 9100 clause 8.1.4, 108 vues, portée 95, 1 j'aime, 1 enregistrement",
+    "27/10 : ISO 9001 en chiffres, 17 vues, portée 15, 0 interaction (plus faible)"
   ],
   "ce_qui_marche": [
     "Usine Seveso : 131 vues et 2 j'aime, la meilleure du compte",
     "EN 9100 : 108 vues et le seul enregistrement du compte",
-    "Les deux meilleures vidéos citent un texte précis (Seveso III, clause 8.1.4)"
+    "Les deux vidéos les plus vues citent un texte précis (Seveso III, clause 8.1.4)"
   ],
   "ce_qui_ne_marche_pas": [
     "ISO 9001 en chiffres : 17 vues, 0 interaction",
     "Aucune publication entre le 27/10 et le 22/11 (26 jours) : rythme à rétablir",
-    "Abonnés à 0 sur tout le suivi depuis le 25/10 : valeur probablement non fiable, à ne pas interpréter",
+    "Abonnés à 0 sur tout le suivi : valeur non fiable, à ne pas interpréter",
     "0 commentaire, 0 partage : aucune question ni critique d'audience à relever"
   ],
   "enseignements": [
     "Pas d'enseignement ferme : 3 vidéos seulement, dont une seule depuis la reprise",
-    "Les deux sujets les plus vus portent sur un cas concret (usine près de chez soi, clause précise d'une norme) : à confirmer sur les prochaines vidéos",
+    "Les deux sujets les plus vus portent sur un cas concret (usine, clause précise) : à confirmer sur les prochaines vidéos",
     "Garder la référence exacte du texte (article, clause) dans chaque vidéo"
   ],
-  "test": "Sur 3 à 4 vidéos publiées au rythme régulier, comparer un sujet concret (cas d'usine, clause de norme) à un sujet général (norme seule), dans la même rotation veille / cours / actu ; vérifier en parallèle la remontée du compteur d'abonnés.",
+  "test": "Sur 3 à 4 vidéos publiées au rythme régulier, comparer un sujet concret (cas d'usine, clause de norme) à un sujet général (norme seule), dans la même rotation veille / cours / actu ; suivre en parallèle le compteur d'abonnés.",
   "conseils_demarrage": [
     "Publier au créneau prévu par le profil (dimanche 08:00) sans trou de plus de deux semaines",
     "Donner la référence exacte du texte dans le titre ou la première phrase",
@@ -33,7 +34,10 @@
     "vues_mediane": 108,
     "moyenne": 85,
     "meilleure": 131,
-    "vues_plus_faible": 17
+    "vues_plus_faible": 17,
+    "total_vues": 256,
+    "total_interactions": 4,
+    "taux_interaction_pct": 1.6
   },
   "notes_traitees": []
 }
