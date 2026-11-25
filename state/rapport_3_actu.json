@@ -1,34 +1,41 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "compte": "actu",
-  "en_une_phrase": "Compte figé : 7 abonnés depuis le 26/10 et 2 interactions pour 1 030 vues sur les 10 dernières vidéos (0,2 %) ; seul pic réel, le 18/10 (1 156 vues, 20 interactions).",
+  "source": "state/stats_actu.json (maj 24/11/2026 23 h 28), state/suivi_actu.json, state/test_ab_actu.json",
+  "en_une_phrase": "Compte figé : 7 abonnés depuis le 26/10 ; 2 interactions pour 1 030 vues sur les 10 dernières vidéos (0,2 %). Seul pic réel : le 18/10 (1 156 vues, 20 interactions). Aucune vidéo depuis le 19/11.",
   "classement": [
-    "18 oct. : 1 156 vues, 20 interactions (meilleure vidéo, accroche chiffrée « 550 000 »)",
-    "17 oct. : 348 vues, 4 interactions",
-    "24 oct. : 244 vues, 5 interactions (citation forte en accroche)",
-    "Plus faibles récentes : 9 nov. : 26 vues, 0 interaction ; 16 nov. : 113 vues, 0 interaction",
-    "Dernière vidéo (19 nov.) : 55 vues, 0 interaction, aucune publication depuis"
+    "18/10 : 1 156 vues, 20 interactions (accroche chiffrée « 550 000 »)",
+    "17/10 : 348 vues, 4 interactions",
+    "24/10 : 244 vues, 5 interactions (citation forte en accroche)",
+    "Plus faibles récentes : 09/11 : 26 vues, 0 interaction ; 16/11 : 113 vues, 0 interaction",
+    "Dernière vidéo (19/11) : 55 vues, 0 interaction"
   ],
   "ce_qui_marche": [
-    "Accroche qui commence par un chiffre sourcé (18/10 : 1 156 vues, 20 interactions ; 24/10 : citation forte, 244 vues)",
-    "Vidéos hors titres « oui ou non » : 23 posts, 2,17 interactions en moyenne, contre 0,83 pour les 6 titres « oui ou non » (0 commentaire)"
+    "Accroche par un chiffre sourcé en première phrase (18/10 : 1 156 vues ; 24/10 : 244 vues)",
+    "Titres sans « oui ou non » : 23 vidéos, 2,17 interactions en moyenne, contre 0,83 pour les 6 titres « oui ou non »"
   ],
   "ce_qui_ne_marche_pas": [
-    "Engagement quasi nul : 55 interactions au total sur 29 vidéos, 0 partage sur toute la période",
+    "Engagement quasi nul : 55 interactions sur 29 vidéos, 0 partage sur toute la période, 3 enregistrements",
     "Abonnés figés à 7 depuis le 26/10 (4 le 18/10)",
     "Novembre : 4 vidéos, médiane 84 vues contre 118 en octobre (échantillon faible)",
-    "Aucune vidéo depuis le 19/11 : le créneau prévu du lundi 23/11 n'apparaît pas dans le relevé du 24/11 (1 h 37)"
+    "Aucune vidéo du lundi 23/11 dans state/historique_actu.json ni dans state/attente : publication non confirmée"
   ],
   "enseignements": [
-    "Garder l'ouverture sur un chiffre sourcé en première phrase (schéma du 18/10)",
-    "Remplacer le « oui ou non » final par une question ouverte liée à un chiffre de la vidéo ; écart à confirmer (petit échantillon, le pic du 18/10 pèse dans la moyenne)",
+    "Garder l'ouverture sur un chiffre sourcé (schéma du 18/10)",
+    "Tester une question de fin ouverte liée à un chiffre à la place du « oui ou non » ; écart à confirmer (petit échantillon, le pic du 18/10 pèse sur les moyennes)",
     "Sourcer chaque chiffre de l'accroche : médiane 114 vues sur 29 vidéos (de 26 à 1 156)"
   ],
-  "test": "Sur 2 ou 3 vidéos : question de fin ouverte liée à un chiffre au lieu de « oui ou non », même durée et même format ; comparer les interactions. Le comparatif n'a pas pu être recontrôlé (légendes tronquées dans le relevé).",
+  "test_ab": {
+    "statut": "non concluant",
+    "detail": "Test A/B du 18/10 (jobs actu-20261018-1046 et -1047) : aucun gagnant. Les jobs ne sont pas reliés aux identifiants Instagram, impossible de rattacher A et B aux vues. Aucun gagnant n'est annoncé."
+  },
+  "test": "Sur 2 ou 3 vidéos : question de fin ouverte liée à un chiffre au lieu de « oui ou non », même durée et même format ; comparer les interactions. Mesure à faire sur les relevés suivants.",
   "reperes_projection": {
     "vues_mediane": 114,
+    "vues_moyenne_10_dernieres": 103,
     "meilleure": 1156,
-    "vues_mediane_novembre": 84
+    "vues_mediane_novembre": 84,
+    "projection_prudente": "80 à 120 vues et 0 à 2 interactions par vidéo au rythme actuel ; peu de gain d'abonnés à court terme"
   },
   "notes_traitees": []
 }
