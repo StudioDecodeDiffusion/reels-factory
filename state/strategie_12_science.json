@@ -1,32 +1,27 @@
 {
-  "date": "2026-11-23",
-  "type": "strategie_complete",
+  "date": "2026-11-25",
+  "type": "resume_du_jour",
   "compte": "science",
-  "sources": "state/stats_science.json (maj 22/11 20 h 41 UTC), state/abonnes_science.json, travail/rapport3_science.md, state/feedback_cm_science.json",
-  "statut": "non exploitable pour une strategie de revenus : conseils de demarrage ci-dessous",
-  "ou_on_en_est": "6 reels (27/10 au 18/11), 588 vues cumulees, moyenne 98, mediane 109. 1 interaction au total (1 enregistrement). Abonnes a 0 du 25/10 au 22/11 : collecte a verifier, non fiable.",
-  "statistiques_generales": {
-    "reels": 6,
-    "vues_cumulees": 588,
-    "vues_moyenne": 98,
-    "vues_mediane": 109,
-    "vues_min_max": "30 a 120",
-    "interactions_total": 1,
-    "abonnes": "0 du 25/10 au 22/11 : non fiable",
-    "revenus": "aucun revenu constate",
-    "seuils_programmes": "non verifies ; aucune recherche web faite"
-  },
-  "plan_action": [
-    "Agent 9 (avant le 30/11) : verifier la collecte des abonnes et de la portee avant toute decision.",
-    "Agents 4 a 6 (avant le 14/12) : 2 reels mecaniques au format « pourquoi… ? » ; repere : pont Tacoma Narrows 119 vues, robot canard 120.",
-    "Ne pas ecarter les moteurs sur un seul reel (30 vues) : retester une fois avant de conclure."
+  "sources": "travail/rapport8_science.json (agent 9, 25/11), state/feedback_cm_science.json (25/11), state/rapport_3_science.json (agent 3, 25/11, base state/stats_science.json maj 24/11 selon agent 3)",
+  "statut": "non exploitable pour une strategie de revenus : pas de revenu, pas de seuil programme verifie, pas de recherche web faite",
+  "ou_on_en_est": "6 reels (27/10 au 18/11), 588 vues cumulees, moyenne 98, mediane 109 (calcul sur les 6 valeurs de rapport_3). 1 enregistrement d'interaction sur 6 reels, 0 commentaire. Abonnes a 0 du 25/10 au 24/11 : collecte a verifier, non fiable.",
+  "ce_qui_a_bouge": "Aucun reel publie depuis le 18/11. Reel du 25/11 bloque en production (agent 4, sourcing non fait).",
+  "signaux": [
+    "Robot canard : 120 vues, 115 de portee, 1 enregistrement (27/10). Meilleur reel.",
+    "Moteur sans essence : 30 vues (4/11). Plus faible, un seul reel, pas de conclusion.",
+    "Ponts, avions, robot, beton : 101 a 120 vues (4 reels, moyenne 112 arrondie)."
   ],
+  "actions_du_jour": [
+    "Agent 9 : verifier la collecte des abonnes et de la portee (compteur fige a 0).",
+    "Agent 4 : debloquer le reel du 25/11 avec faits sources et dates avant publication.",
+    "Agents 4 a 6 : tester sur 2 reels une question de fin ouverte, mesurer commentaires et enregistrements a 48 h."
+  ],
+  "questions_agents": {
+    "agent_9": "Les abonnes sont-ils bien collectes depuis le 25/10 ? La portee est-elle fiable ?"
+  },
   "risques": [
     "Exactitude des faits : chaque affirmation scientifique a sourcer.",
     "Droits sur images et videos de ponts, robots et machines.",
-    "Aucun abonne mesure : pas de base pour un programme de revenu."
-  ],
-  "questions_agents": {
-    "agent_9": "Pourquoi les abonnes sont-ils a 0 depuis le 25/10 ? La portee est-elle bien collectee ?"
-  }
+    "Aucun abonne mesure fiable : pas de base pour un programme de revenu."
+  ]
 }
