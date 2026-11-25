@@ -1,66 +1,32 @@
 {
-  "date": "2026-11-22",
-  "compte": "actu",
-  "methode": "Reprise du classement top_par_compte.actu de state/veille_brute.json (flux RSS et Google News). Titres et liens repris tels quels ; aucun chiffre ajouté hors titres. Pas de recherche approfondie (VEILLE_17H40.md). Signaux Instagram non vérifiés (pas de connexion) : vu_chez vide.",
-  "sujets": [
-    {
-      "titre": "Mobilisation du 21 novembre contre la vie chère : entre 82 500 et 150 000 personnes dans la rue",
-      "resume": "Sixième samedi de mobilisation (syndicats, jeunesse, gilets jaunes) contre la vie chère. Le ministère de l'Intérieur (Beauvau) compte 82 500 manifestants, la CGT 150 000. À Marseille, 10 interpellations en marge du défilé.",
-      "chiffres_cles": ["82 500 manifestants selon Beauvau", "150 000 selon la CGT", "10 interpellations à Marseille"],
-      "source_url": "https://www.france24.com/fr/france/20261121-en-direct-acte-vi-de-la-mobilisation-pour-la-jeunesse-et-contre-la-vie-ch%C3%A8re",
-      "sources_complementaires": ["https://www.la-croix.com/syndicats-jeunesse-et-gilets-jaunes-dans-la-rue-pour-le-sixieme-samedi-consecutif-20261121", "https://www.liberation.fr/societe/on-nous-chie-dessus-on-ne-nous-ecoute-pas-a-lyon-plusieurs-milliers-de-personnes-ont-defile-20261121_MJTNCCB6TJDPZC6UCJ6IYDGDDE/"],
-      "date_info": "2026-11-21",
-      "faisabilite": 5,
-      "potentiel": 9,
-      "vu_chez": []
-    },
-    {
-      "titre": "Budget : Macron réfléchirait à convoquer le Congrès pour une règle d'or",
-      "resume": "Selon des informations reprises par plusieurs médias, le président réfléchirait à convoquer le Congrès pour instaurer une règle d'or budgétaire. La droite et le RN sont présentés comme prêts à la soutenir.",
-      "chiffres_cles": [],
-      "source_url": "https://www.lefigaro.fr/politique/budget-emmanuel-macron-reflechirait-a-convoquer-le-congres-pour-instaurer-une-regle-d-or-20261122",
-      "sources_complementaires": ["https://www.rfi.fr/fr/france/20261122-france-emmanuel-macron-pense-%C3%A0-une-r%C3%A8gle-d-or-budg%C3%A9taire-la-droite-et-le-rn-lui-emboitent-le-pas", "https://www.lefigaro.fr/politique/un-bouclier-qui-protege-les-francais-la-droite-et-le-rn-sont-prets-a-soutenir-un-projet-de-regle-d-or-budgetaire-20261122"],
-      "date_info": "2026-11-22",
-      "faisabilite": 4,
-      "potentiel": 8,
-      "vu_chez": []
-    },
-    {
-      "titre": "Budget européen : « Le compte n'y est pas », la France insatisfaite de la nouvelle proposition",
-      "resume": "La nouvelle proposition de budget de l'Union européenne, revue à la baisse, est jugée insuffisante par Paris, tandis que les pays dits « frugaux » la critiquent aussi. Une taxe sur les géants du numérique est évoquée pour débloquer les discussions.",
-      "chiffres_cles": [],
-      "source_url": "https://www.challenges.fr/politique/le-compte-ny-est-pas-la-france-insatisfaite-de-la-nouvelle-proposition-pour-le-budget-de-lunion-europeenne_647104",
-      "sources_complementaires": ["https://www.la-croix.com/budget-europeen-une-taxe-sur-les-geants-du-numerique-pour-debloquer-les-discussions-20261120"],
-      "date_info": "2026-11-20",
-      "faisabilite": 4,
-      "potentiel": 6,
-      "vu_chez": []
-    },
-    {
-      "titre": "Dette publique : comment les Français veulent résoudre le problème",
-      "resume": "Alternatives économiques publie un article sur les solutions que les Français privilégient face à la dette publique. Les chiffres détaillés n'ont pas pu être extraits des titres : à vérifier dans l'article avant tout usage.",
-      "chiffres_cles": [],
-      "source_url": "https://www.alternatives-economiques.fr/dette-publique-voici-comment-les-francais-veulent-resoudre-le-probleme_20-11-2026",
-      "sources_complementaires": [],
-      "date_info": "2026-11-20",
-      "faisabilite": 3,
-      "potentiel": 6,
-      "vu_chez": []
-    },
-    {
-      "titre": "Némésis, passerelle entre les extrêmes droites au Parlement européen",
-      "resume": "Enquête de Basta sur les liens de l'association Némésis avec des milieux néonazis et ses activités de lobbying au Parlement européen. Angle factuel à tenir strictement : aucune accusation nominative non sourcée.",
-      "chiffres_cles": [],
-      "source_url": "https://basta.media/Nemesis-passerelle-entre-extremes-droites-neonazis-RN-Reconquete-AfD-Parlement-europeen-Alice-Cordier",
-      "sources_complementaires": ["https://www.humanite.fr/monde/europe/week-end-de-mobilisation-en-europe-les-manifestants-rejettent-lausterite-et-la-militarisation-du-continent"],
-      "date_info": "2026-11-22",
-      "faisabilite": 3,
-      "potentiel": 6,
-      "vu_chez": []
-    }
-  ],
-  "exclus": [
-    "France-Israël (dialogue avec le futur gouvernement israélien) : aucun lien source dans la veille brute, non retenu.",
-    "Dette française et défiance des marchés (The Conversation, Challenges) : doublon thématique avec le sujet dette, non retenu."
-  ]
+ "date": "2026-11-25",
+ "sujets": [
+  {
+   "titre": "Élection de David Lisnard à la tête de l'Association des maires de France",
+   "resume": "David Lisnard a été réélu président de l'AMF, une élection marquée par une forte participation. Il est aussi candidat à la présidentielle, ce qui pose la question de l'indépendance de l'AMF.",
+   "chiffres_cles": "« Record de participation depuis 1989 » (titre France 24, 25/11/2026) ; le chiffre exact de voix n'est pas vérifié.",
+   "source_url": "https://www.france24.com/fr/vid%C3%A9o/20261125-david-lisnard-%C3%A0-la-t%C3%AAte-des-maires-de-france-un-record-de-participation-depuis-1989",
+   "date_info": "2026-11-25",
+   "faisabilite": 4,
+   "potentiel": 7
+  },
+  {
+   "titre": "Choose France 2026 : 93 milliards d'euros d'investissements annoncés",
+   "resume": "Le sommet Choose France édition 2026 a affiché un nouveau record d'investissements, avec des annonces réparties dans l'industrie, l'innovation et les territoires.",
+   "chiffres_cles": "93 milliards d'euros d'investissements annoncés ; 71 annonces d'investissements (page officielle entreprises.gouv.fr, publiée le 04/06/2026). Les 231 annonces et 87 Md€ cités sur la page concernent le cumul depuis 2018, pas 2026 seul.",
+   "source_url": "https://www.entreprises.gouv.fr/la-dge/actualites/choose-france-2026-un-nouveau-record-dinvestissements-en-faveur-de-lindustrie-de",
+   "date_info": "2026-06-04",
+   "faisabilite": 3,
+   "potentiel": 5
+  },
+  {
+   "titre": "Croissance et déficit : la France, « cancre » de la zone euro ?",
+   "resume": "Un sujet qui revient : la crise de la dette française et les craintes de Bruxelles sur le budget 2027 alimentent le débat sur la situation économique du pays.",
+   "chiffres_cles": "Aucun chiffre vérifié à ce stade (les titres repris par la veille ne donnent pas de montant). À compléter avant écriture.",
+   "source_url": "https://www.bfmtv.com/economie/video-le-billet-de-5-euros-se-fait-de-plus-en-plus-rare-dans-les-portefeuilles-des-francais_VN-202611250687.html",
+   "date_info": "2026-11-25",
+   "faisabilite": 4,
+   "potentiel": 6
+  }
+ ]
 }
