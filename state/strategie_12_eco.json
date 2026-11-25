@@ -1,33 +1,54 @@
 {
-  "date": "2026-11-23",
-  "type": "strategie_complete",
+  "date": "2026-11-25",
+  "type": "resume_du_jour",
   "compte": "eco",
-  "sources": "state/stats_eco.json (maj 22/11 20 h 41 UTC), state/abonnes_eco.json, travail/rapport3_eco.md, state/feedback_cm_eco.json",
-  "statut": "non exploitable pour une strategie de revenus : conseils de demarrage ci-dessous",
-  "ou_on_en_est": "5 videos (25/10 au 3/11), 715 vues cumulees, moyenne 143, mediane 131. 8 interactions au total du fichier (7 en composantes : ecart sur le post du 27/10 « salaire brut/net »). Abonnes a 0 sur toute la periode : non fiable. Aucune publication dans les stats depuis le 3/11, alors que state/attente/ contient des fichiers eco du 20/11.",
+  "sources": [
+    "travail/rapport8_eco.json (agent 9, données GitHub du 24/11 23 h 28)",
+    "state/rapport_3_eco.json (agent 3, 25/11)",
+    "state/feedback_cm_eco.json (25/11)",
+    "memoire précédente : strategie_12_eco.json du 23/11"
+  ],
+  "statut": "résumé du jour (non lundi). Pas de recherche web : seuils de programmes et revenus toujours non vérifiés.",
+  "ou_on_en_est": "6 vidéos (25/10 au 24/11), 738 vues cumulées, moyenne 123. 7 interactions (0,95 %) : 5 j'aimé, 2 enregistrements, 0 partage, 0 commentaire. Abonnés à 0 sur toute la période : non fiable. Aucun revenu constaté.",
   "statistiques_generales": {
-    "videos": 5,
-    "vues_cumulees": 715,
-    "vues_moyenne": 143,
-    "vues_mediane": 131,
-    "vues_min_max": "94 a 203",
-    "interactions_total": 8,
-    "abonnes": "0 sur 29 releves : non fiable",
-    "revenus": "aucun revenu constate",
-    "seuils_programmes": "non verifies ; aucune recherche web faite"
+    "videos": 6,
+    "vues_cumulees": 738,
+    "vues_moyenne": 123,
+    "vues_mediane_5_stables": 131,
+    "vues_min_max": "23 (24/11, moins de 24 h) ; 94 à 203 hors cette vidéo",
+    "interactions_total": 7,
+    "taux_interactions": "0,95 %",
+    "abonnes": "0 sur toute la période : non fiable",
+    "revenus": "aucun revenu constaté",
+    "seuils_programmes": "non vérifiés"
   },
+  "ce_qui_a_bouge": [
+    "Vidéos : 5 à 6 (ajout du 24/11, 23 vues) ; vues cumulées 715 à 738",
+    "Interactions : 8 à 7 (post du 27/10 « salaire brut/net » ramené de 3 à 2 : rapport 8 ; le fichier stats affiche encore 3, à corriger par l'agent 3)",
+    "Rythme : aucune publication enregistrée entre le 4/11 et le 23/11 (seule celle du 24/11 apparaît). Brouillons des 10, 13, 17 et 20/11 absents des stats",
+    "Commentaires : 0 (commentaires_eco.json vide) : le test « question ouverte en fin de vidéo » n'a pas encore été mesuré"
+  ],
+  "actions_du_jour": [
+    "Propriétaire : vérifier dans l'app la planification des brouillons des 10, 13, 17 et 20/11 (publiés, bloqués ou supprimés ?) avant de produire de nouveaux brouillons",
+    "Agents 9 et 3 : confirmer le doublon éventuel du 27/10 (07:10 et 07:11 UTC) et corriger le total d'interactions du post « salaire brut/net » (3 affiché, 2 retenu)",
+    "Agents 4 à 6 : prochaine vidéo finances publiques avec un chiffre officiel et daté dans la première phrase, et une question ouverte en fin de vidéo (test de l'agent 3)"
+  ],
   "plan_action": [
-    "Proprietaire ou agent 9 (avant le 30/11) : verifier si la publication eco est a l'arret ou seulement absente des statistiques.",
-    "Agent 3 (avant le 30/11) : corriger le total d'interactions du post du 27/10 (3 affiche, 2 en composantes).",
-    "Agents 4 a 6 (avant le 14/12) : 3 videos sur les finances publiques avec un chiffre sourcé en accroche (dette 203 vues, niches fiscales 172 vues).",
-    "Ne tirer aucune conclusion sur les sujets : 5 videos seulement ; recalcul apres 10 publications."
+    "Agents 4 à 6 (avant le 14/12) : 3 vidéos finances publiques avec chiffre sourcé en accroche (référence : dette publique 203 vues, niches fiscales 172 vues)",
+    "Ne tirer aucune conclusion sur les sujets : 6 vidéos seulement ; recalcul après 10 publications"
   ],
   "risques": [
-    "Sujets budgetaires et politiques : sensibilite et neutralite a tenir ; chaque chiffre a sourcer et dater.",
-    "Droits sur les images et extraits utilises.",
-    "Donnees d'abonnes non fiables : aucune base pour une decision de revenu."
+    "Sujets budgétaires et politiques : neutralité et sourçage de chaque chiffre",
+    "Droits sur les images et extraits utilisés",
+    "Données d'abonnés non fiables : aucune base pour une décision de revenu",
+    "Source complémentaire instrack.app non utilisable (suit le compte actu, pas @decode.eco, selon l'agent 3)"
+  ],
+  "blocages": [
+    "Abonnés non fiables, donc aucun seuil de programme évaluable",
+    "Publications du 4/11 au 23/11 non tracées : cause à confirmer par le propriétaire ou l'agent 9"
   ],
   "questions_agents": {
-    "agent_9": "La publication eco est-elle arretee ? Des fichiers du 20/11 sont dans state/attente/ sans trace dans les stats."
+    "agent_9": "Publication eco arrêtée ou brouillons absents des stats ? Doublon du 27/10 à confirmer.",
+    "agent_3": "Corriger le total d'interactions du 27/10 (3 à 2) dans state/stats_eco.json."
   }
 }
