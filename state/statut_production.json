@@ -1078,5 +1078,37 @@
    "etape": "dépôt",
    "resultat": "OK : déposé pour le créneau 08 h 00 (éco)"
   }
+ ],
+ "actu-20261126-0800": [
+  {
+   "heure": "04:51",
+   "etape": "creneau",
+   "resultat": "OK : créneau actu 08 h 00 (jeudi), eco/science/fun/qhse AUCUN"
+  },
+  {
+   "heure": "04:51",
+   "etape": "brouillon",
+   "resultat": "copié 4_concept + 5_scenario depuis state/brouillons (à vérifier/corriger)"
+  },
+  {
+   "heure": "04:57",
+   "etape": "agent 4",
+   "resultat": "concept écrit ; variété invalide (valeurs hors catalogue) : relance agent 4 avec valeurs du catalogue ; faits non sourcés, cadrage d'opinion seulement"
+  },
+  {
+   "heure": "04:59",
+   "etape": "valider",
+   "resultat": "OK"
+  },
+  {
+   "heure": "04:59",
+   "etape": "agent 7 pré-critique",
+   "resultat": "go (9_precritique.json)"
+  },
+  {
+   "heure": "05:02",
+   "etape": "agent 8 render",
+   "resultat": "ÉCHEC x2 : npx remotion introuvable (could not determine executable), pas de video.mp4 ; arrêt"
+  }
  ]
 }
