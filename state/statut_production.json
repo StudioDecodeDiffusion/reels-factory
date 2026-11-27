@@ -1110,5 +1110,27 @@
    "etape": "agent 8 render",
    "resultat": "ÉCHEC x2 : npx remotion introuvable (could not determine executable), pas de video.mp4 ; arrêt"
   }
+ ],
+ "eco-20261127-0800": [
+  {
+   "heure": "04:51",
+   "etape": "créneau",
+   "resultat": "OK : eco, vendredi 08 h 00"
+  },
+  {
+   "heure": "04:52",
+   "etape": "concept (agent 4)",
+   "resultat": "OK : inflation, 4_concept.json écrit (images vides, 6 requêtes fournies)"
+  },
+  {
+   "heure": "04:53",
+   "etape": "scénario + DA (agents 5, 6)",
+   "resultat": "OK : 5_scenario.json et 6_da.json écrits"
+  },
+  {
+   "heure": "04:54",
+   "etape": "validation contrat (valider)",
+   "resultat": "OK : 0 erreur après correction de l'agent 6 (photos remplacées par pd_objet, faute d'image réelle)"
+  }
  ]
 }
