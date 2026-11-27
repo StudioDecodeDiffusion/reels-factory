@@ -1,0 +1,401 @@
+{
+  "id": "eco-20261127-0800",
+  "compte": "eco",
+  "theme": {
+    "fond": "#F4EFE3",
+    "texte": "#1A1A1A",
+    "accent": "#C0392B",
+    "accent2": "#1D3557",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "papier_journal",
+    "palette": [
+      "#F4EFE3",
+      "#E6DCC6",
+      "#1A1A1A",
+      "#C0392B",
+      "#1D3557",
+      "#6B6B6B"
+    ],
+    "mise_en_page": "plein_ecran"
+  },
+  "variete": {
+    "accroche": "chiffre_geant",
+    "trend": "aucune (sujet de la file, pas de veille retenue)",
+    "fonctionnement": "explication_mecanisme",
+    "mise_en_page": "plein_ecran",
+    "musique": "lofi",
+    "voix": "V3",
+    "palette": "papier_journal"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "pop"
+    ],
+    "3": [
+      "whoosh"
+    ],
+    "4": [
+      "pop"
+    ],
+    "5": [
+      "whoosh"
+    ],
+    "6": [
+      "pop"
+    ],
+    "7": [
+      "whoosh"
+    ],
+    "8": [
+      "pop"
+    ],
+    "9": [
+      "whoosh"
+    ],
+    "10": [
+      "pop"
+    ],
+    "11": [
+      "whoosh"
+    ],
+    "12": [
+      "pop"
+    ],
+    "13": [
+      "whoosh"
+    ],
+    "14": [
+      "pop"
+    ],
+    "15": [
+      "ding"
+    ]
+  },
+  "musique": {
+    "genre": "lofi",
+    "volume": 0.4
+  },
+  "titre_miniature": "Inflation 3,4 % : les prix ne baissent pas",
+  "mots_choc": "3,4 %",
+  "surtitre_miniature": "INSEE · octobre 2026",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "bigstat",
+      "titre": "INFLATION 3,4 %",
+      "mot_fort": "3,4 %",
+      "surtitre": "INSEE · octobre 2026",
+      "energie": 3,
+      "value": "3,4 %",
+      "label": "Inflation sur un an, octobre 2026",
+      "fond_photo_requete": "inflation France octobre 2026 prix carburant station essence",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les prix ne baissent pas : l'inflation ralentit seulement.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 2,
+      "type": "pd_chiffre",
+      "titre": "OCTOBRE 2026 · SUR UN AN",
+      "mot_fort": "SUR UN AN",
+      "energie": 3,
+      "valeur": 3.4,
+      "suffixe": " %",
+      "legende": "Inflation sur un an, octobre 2026",
+      "source": "INSEE, Informations rapides, octobre 2026",
+      "fond_photo_requete": "INSEE inflation octobre 2026 hausse prix alimentation énergie",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "En octobre 2026, l'INSEE confirme 3,4 % d'inflation sur un an.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 3,
+      "type": "pd_objet",
+      "titre": "PRIX : ENCORE EN HAUSSE",
+      "mot_fort": "EN HAUSSE",
+      "energie": 2,
+      "prompt": "a price tag with an upward arrow, pixel art, single object",
+      "etiquette": "Prix",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ce chiffre dit une chose : les prix montent encore, mais moins vite.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 4,
+      "type": "pd_flux",
+      "titre": "ÉNERGIE → TRANSPORT → PRIX",
+      "mot_fort": "ÉNERGIE",
+      "energie": 3,
+      "de": {
+        "label": "Énergie",
+        "prompt": "an oil barrel with an upward arrow, pixel art, single object"
+      },
+      "vers": {
+        "label": "Prix final",
+        "prompt": "a shopping cart with a price tag, pixel art, single object"
+      },
+      "montant": "hausse",
+      "fond_photo_requete": "facture énergie France 2026 hausse prix gaz électricité",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Tout part de l'énergie : carburant, gaz, électricité, fioul et chauffage.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 5,
+      "type": "pd_flux",
+      "titre": "LE TRANSPORT SUIT",
+      "mot_fort": "SUIT",
+      "energie": 2,
+      "de": {
+        "label": "Transport",
+        "prompt": "a delivery truck, pixel art, single object"
+      },
+      "vers": {
+        "label": "Livraisons plus chères",
+        "prompt": "a cardboard box with a price tag, pixel art, single object"
+      },
+      "montant": "hausse",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le transport revient plus cher, donc chaque livraison coûte davantage aux commerçants.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 6,
+      "type": "pd_flux",
+      "titre": "LES USINES SUIVENT",
+      "mot_fort": "USINES",
+      "energie": 2,
+      "de": {
+        "label": "Énergie des usines",
+        "prompt": "an electricity bolt and a factory chimney, pixel art, single object"
+      },
+      "vers": {
+        "label": "Prix d'usine",
+        "prompt": "a price tag on a factory, pixel art, single object"
+      },
+      "montant": "hausse",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Les usines paient plus cher leur énergie et ajustent leurs prix.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 7,
+      "type": "pd_chiffre",
+      "titre": "GAZOLE : +46,7 %",
+      "mot_fort": "+46,7 %",
+      "energie": 3,
+      "valeur": 46.7,
+      "suffixe": " %",
+      "legende": "Sur un an, octobre 2026",
+      "source": "Mediaterranee, octobre 2026",
+      "fond_photo_requete": "prix gazole pompe France novembre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Sur un an, le gazole grimpe de 46,7 %, en octobre 2026.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 8,
+      "type": "pd_chiffre",
+      "titre": "FIOUL : +69,9 %",
+      "mot_fort": "+69,9 %",
+      "energie": 3,
+      "valeur": 69.9,
+      "suffixe": " %",
+      "legende": "Sur un an, octobre 2026",
+      "source": "Mediaterranee, octobre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le fioul, lui, bondit de 69,9 % sur la même période.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 9,
+      "type": "pd_jauge",
+      "titre": "ÉNERGIE : 7,6 % DU PANIER",
+      "mot_fort": "7,6 %",
+      "energie": 3,
+      "valeur": 7.6,
+      "max": 100,
+      "suffixe": " %",
+      "legende": "Poids de l'énergie dans le panier",
+      "source": "JeChange, octobre 2026",
+      "fond_photo_requete": "pouvoir d'achat France 2026 courses supermarché prix",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "L'énergie pèse 7,6 % du panier qui sert à mesurer les prix.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 10,
+      "type": "pd_versus",
+      "titre": "RALENTIR ≠ BAISSER",
+      "mot_fort": "BAISSER",
+      "verdict": "Les prix restent hauts",
+      "energie": 3,
+      "gauche": {
+        "label": "Inflation qui ralentit",
+        "prompt": "a speedometer needle slowing down, pixel art, single object"
+      },
+      "droite": {
+        "label": "Prix qui baissent",
+        "prompt": "a price tag with a downward arrow, pixel art, single object"
+      },
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Une inflation qui ralentit ne fait pas baisser les prix du tout.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 11,
+      "type": "pd_tampon",
+      "titre": "PRIX PLUS HAUTS",
+      "mot_fort": "HAUTS",
+      "energie": 2,
+      "tampon": "PRIX PLUS HAUTS",
+      "prompt": "a shopping receipt with a stamp over it, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Elle les fait seulement monter moins vite, ils restent plus hauts.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 12,
+      "type": "pd_objet",
+      "titre": "VITESSE ≠ NIVEAU",
+      "mot_fort": "NIVEAU",
+      "energie": 2,
+      "prompt": "a speedometer next to a high price level gauge, pixel art, single object",
+      "etiquette": "Niveau",
+      "fond_photo_requete": "Banque de France inflation 2026 pression sur les prix",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "L'INSEE mesure la vitesse de la hausse, pas le niveau des prix.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 13,
+      "type": "pd_chiffre",
+      "titre": "BAISSE : INFLATION NÉGATIVE",
+      "mot_fort": "NÉGATIVE",
+      "energie": 3,
+      "valeur": 0,
+      "suffixe": " %",
+      "legende": "Seuil : il faudrait une inflation négative pour une baisse des prix",
+      "source": "INSEE, Informations rapides, octobre 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Pour que les prix baissent, il faudrait une inflation négative.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.9
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "titre": "VOTRE BUDGET ?",
+      "mot_fort": "BUDGET",
+      "energie": 3,
+      "question": "Votre budget carburant a-t-il baissé en un an ?",
+      "prompt": "a fuel pump with a question mark, pixel art, single object",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "bonne": 1,
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Votre budget carburant a-t-il baissé en un an ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 15,
+      "type": "outro",
+      "titre": "INSEE · OCT. 2026",
+      "mot_fort": "INSEE",
+      "energie": 2,
+      "text": "Sources des chiffres : INSEE, Informations rapides, octobre 2026.",
+      "cta": "Suivez pour le prochain chiffre",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Sources des chiffres : INSEE, Informations rapides, octobre 2026.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 4.5
+    }
+  ]
+}

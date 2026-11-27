@@ -1,0 +1,69 @@
+{
+  "id": "eco-20261127-0800",
+  "profil": "eco",
+  "statut": "a_valider",
+  "titre": null,
+  "son_tendance": null,
+  "publication_le": "2026-11-27T08:00+01:00",
+  "format_qhse": null,
+  "episode": null,
+  "plateforme": "instagram",
+  "legende": "Inflation à 3,4 % : les prix ne baissent pas.\n\nEn octobre 2026, l'inflation reste à 3,4 % sur un an, tirée par l'énergie : gazole +46,7 %, fioul +69,9 %. Une inflation qui ralentit fait seulement monter les prix moins vite.\n\nVotre budget carburant a-t-il baissé en un an ? 👇\n\nEnvoie-le à quelqu'un qui fait le plein chaque semaine ! 📤\n\nSources : INSEE, Mediaterranee, JeChange\n\n#économie #INSEE #inflation #prixcarburant #décodélécosimplement\n\nVoix : UPMC Pierre/Jessica, CC BY-SA 4.0.",
+  "sources": [],
+  "validation": {
+    "notes": {}
+  },
+  "tours_validation": 1,
+  "critique": {
+    "id": "eco-20261127-0800",
+    "compte": "eco",
+    "agent": 7,
+    "role": "critique finale",
+    "decision": "publiable",
+    "defaut_bloquant": null,
+    "controles": {
+      "video": "1080x1920, 79,5 s, lisible sur les 15 scenes (frames extraites)",
+      "texte_visible": true,
+      "contenu_interdit": false,
+      "voix": "voix_override present (narrateur chatterbox, mascotte piper), dialogues non vides ; video = rendu de controle muet, voix ajoutee par reels-media",
+      "photos": "6 scenes avec fond_photo_requete (1, 2, 4, 7, 9, 12), aucune URL de presse ni Wikipedia"
+    },
+    "corrections": [
+      {
+        "scene": 2,
+        "type": "affichage",
+        "constat": "le chiffre gros affiche '3 %' alors que le titre et la voix disent 3,4 %",
+        "action": "afficher 3,4 % (valeur 3.4 arrondie a 3)"
+      },
+      {
+        "scene": 1,
+        "type": "finition",
+        "constat": "la valeur 3,4 % n'apparait pas au centre de la scene bigstat ; le sous-titre commence par ': l'inflation'"
+      },
+      {
+        "scene": 14,
+        "type": "finition",
+        "constat": "la scene quiz montre le titre sans question ni options sur la frame extraite"
+      },
+      {
+        "scene": 13,
+        "type": "finition",
+        "constat": "la source se superpose a la legende de la scene 'Baisse : inflation negative'"
+      },
+      {
+        "scene": "1,2,7,8",
+        "type": "fait_non_recoupe",
+        "constat": "3,4 % (INSEE, octobre 2026), gazole +46,7 %, fioul +69,9 % (Mediaterranee) et energie 7,6 % du panier (JeChange) ne figurent pas dans la veille du dossier ; a recouper avant publication"
+      },
+      {
+        "scene": "7,8",
+        "type": "affichage",
+        "constat": "gros chiffres arrondis (47 %, 70 %) differents des libelles (+46,7 %, +69,9 %)"
+      }
+    ],
+    "note": "Defauts de finition et fait non recoupe : non bloquants (decision proprietaire 26/10)."
+  },
+  "community": {},
+  "da_message": "DA eco-20261127-0800 (inflation) réalignée sur le scénario scène par scène : 15 scènes de 4,0 s (60 s), titres et types identiques. Six scènes photo sur requêtes de recherche.",
+  "cree": "2026-11-27T04:08:19+00:00"
+}
