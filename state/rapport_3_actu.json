@@ -1,41 +1,31 @@
 {
-  "date": "2026-11-25",
-  "compte": "actu",
-  "source": "state/stats_actu.json (maj 24/11/2026 23 h 28), state/suivi_actu.json, state/test_ab_actu.json",
-  "en_une_phrase": "Compte figé : 7 abonnés depuis le 26/10 ; 2 interactions pour 1 030 vues sur les 10 dernières vidéos (0,2 %). Seul pic réel : le 18/10 (1 156 vues, 20 interactions). Aucune vidéo depuis le 19/11.",
+  "date": "2026-11-28",
   "classement": [
-    "18/10 : 1 156 vues, 20 interactions (accroche chiffrée « 550 000 »)",
+    "18/10 : 1 156 vues, 20 interactions (pic du compte)",
     "17/10 : 348 vues, 4 interactions",
-    "24/10 : 244 vues, 5 interactions (citation forte en accroche)",
-    "Plus faibles récentes : 09/11 : 26 vues, 0 interaction ; 16/11 : 113 vues, 0 interaction",
-    "Dernière vidéo (19/11) : 55 vues, 0 interaction"
+    "24/10 : 244 vues, 5 interactions",
+    "18/10 : 191 vues, 5 interactions",
+    "20/10 : 158 vues, 5 interactions",
+    "Dernière vidéo, 19/11 : 55 vues, 0 interaction"
   ],
   "ce_qui_marche": [
-    "Accroche par un chiffre sourcé en première phrase (18/10 : 1 156 vues ; 24/10 : 244 vues)",
-    "Titres sans « oui ou non » : 23 vidéos, 2,17 interactions en moyenne, contre 0,83 pour les 6 titres « oui ou non »"
+    "Le pic du 18/10 ouvre sur deux chiffres dans la première ligne (550 000 à 800 000 personnes) : 1 156 vues, soit environ 7 fois la médiane",
+    "Depuis le 18/10, les vidéos plafonnent autour de 100 à 130 vues : moyenne 103 sur les 10 dernières",
+    "Sur 29 vidéos, 17 ont au moins une interaction ; 55 interactions au total"
   ],
   "ce_qui_ne_marche_pas": [
-    "Engagement quasi nul : 55 interactions sur 29 vidéos, 0 partage sur toute la période, 3 enregistrements",
-    "Abonnés figés à 7 depuis le 26/10 (4 le 18/10)",
-    "Novembre : 4 vidéos, médiane 84 vues contre 118 en octobre (échantillon faible)",
-    "Aucune vidéo du lundi 23/11 dans state/historique_actu.json ni dans state/attente : publication non confirmée"
+    "Aucune publication depuis le 19/11 (9 jours) et aucune fiche dans state/attente après le 19/11",
+    "Interactions faibles : 2 sur les 10 dernières vidéos (0,19 %), 0 commentaire sur 29 vidéos",
+    "Abonnés bloqués à 7 depuis le 26/10"
   ],
   "enseignements": [
-    "Garder l'ouverture sur un chiffre sourcé (schéma du 18/10)",
-    "Tester une question de fin ouverte liée à un chiffre à la place du « oui ou non » ; écart à confirmer (petit échantillon, le pic du 18/10 pèse sur les moyennes)",
-    "Sourcer chaque chiffre de l'accroche : médiane 114 vues sur 29 vidéos (de 26 à 1 156)"
+    "Reprendre l'accroche du 18/10 : chiffre dans la première ligne, source citée",
+    "Ajouter une question ouverte en fin de légende : aucune réaction écrite à ce jour",
+    "Reprendre la production avant d'optimiser : le compte ne publie plus depuis le 19/11"
   ],
-  "test_ab": {
-    "statut": "non concluant",
-    "detail": "Test A/B du 18/10 (jobs actu-20261018-1046 et -1047) : aucun gagnant. Les jobs ne sont pas reliés aux identifiants Instagram, impossible de rattacher A et B aux vues. Aucun gagnant n'est annoncé."
-  },
-  "test": "Sur 2 ou 3 vidéos : question de fin ouverte liée à un chiffre au lieu de « oui ou non », même durée et même format ; comparer les interactions. Mesure à faire sur les relevés suivants.",
+  "test": "Sur les 2 prochaines publications actu : accroche avec un chiffre sourcé dans la première ligne et question ouverte en fin de légende. Mesure : commentaires et vues, comparées à la médiane (114).",
   "reperes_projection": {
     "vues_mediane": 114,
-    "vues_moyenne_10_dernieres": 103,
-    "meilleure": 1156,
-    "vues_mediane_novembre": 84,
-    "projection_prudente": "80 à 120 vues et 0 à 2 interactions par vidéo au rythme actuel ; peu de gain d'abonnés à court terme"
-  },
-  "notes_traitees": []
+    "meilleure": 1156
+  }
 }
