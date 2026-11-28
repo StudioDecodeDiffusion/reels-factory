@@ -1043,5 +1043,37 @@
    "etape": "dépôt (drop)",
    "resultat": "OK : vidéo déposée pour le créneau 08 h 00 (publication par GitHub) ; push origin main 67c470d"
   }
+ ],
+ "fun-20261128-0800": [
+  {
+   "heure": "04:50",
+   "etape": "Démarrage",
+   "resultat": "créneau fun 08 h 00 ; dossier créé"
+  },
+  {
+   "heure": "04:50",
+   "etape": "Brouillon Gemini",
+   "resultat": "5_scenario copié ; 4_concept vide, à créer"
+  },
+  {
+   "heure": "04:53",
+   "etape": "Valider",
+   "resultat": "OK : concept Malinin, scénario 15 plans, DA, spec 15 scènes"
+  },
+  {
+   "heure": "04:54",
+   "etape": "Pré-critique (7.4)",
+   "resultat": "go, aucun bloquant"
+  },
+  {
+   "heure": "05:01",
+   "etape": "Générateur (8) — relance",
+   "resultat": "scène 10 corrigée (pd_tampon) ; relance check/render/frames/caption/story"
+  },
+  {
+   "heure": "05:10",
+   "etape": "Rendu + planche + légende + story",
+   "resultat": "OK : render 2625 frames, apercu.png, legende.txt, story"
+  }
  ]
 }
