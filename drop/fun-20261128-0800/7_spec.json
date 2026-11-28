@@ -1,0 +1,392 @@
+{
+  "id": "fun-20261128-0800",
+  "compte": "fun",
+  "theme": {
+    "fond": "#0D0221",
+    "texte": "#F4EFFF",
+    "accent": "#FF2E88",
+    "accent2": "#2DE2E6",
+    "police_titre": "Rubik",
+    "police_texte": "Rubik",
+    "bandeau": null,
+    "grille": false,
+    "style": "pixeldoc",
+    "palette_nom": "nuit_neon",
+    "palette": [
+      "#0D0221",
+      "#24104A",
+      "#FF2E88",
+      "#2DE2E6",
+      "#F4EFFF",
+      "#FFD23F"
+    ],
+    "mise_en_page": "chat",
+    "tenues": {
+      "narrateur": "classique",
+      "mascotte": "classique"
+    }
+  },
+  "variete": {
+    "accroche": "question_choc",
+    "trend": "aucune (sujet de la veille fun ; pas de trend Instagram)",
+    "fonctionnement": "recit_chrono",
+    "mise_en_page": "chat",
+    "musique": "house",
+    "voix": "V2+V4",
+    "palette": "nuit_neon"
+  },
+  "voix_override": {
+    "narrateur": "chatterbox:fr?exag=0.6&cfg=0.4",
+    "mascotte": "piper:fr_FR-upmc-medium?spk=0&vitesse=1.05&expr=0.85&rythme=1.0",
+    "mascotte_effet": "aucun"
+  },
+  "sfx": {
+    "1": [
+      "impact"
+    ],
+    "2": [
+      "pop"
+    ],
+    "3": [
+      "whoosh"
+    ],
+    "4": [
+      "pop"
+    ],
+    "5": [
+      "whoosh"
+    ],
+    "6": [
+      "pop"
+    ],
+    "7": [
+      "whoosh"
+    ],
+    "8": [
+      "pop"
+    ],
+    "9": [
+      "whoosh"
+    ],
+    "10": [
+      "pop"
+    ],
+    "11": [
+      "whoosh"
+    ],
+    "12": [
+      "pop"
+    ],
+    "13": [
+      "whoosh"
+    ],
+    "14": [
+      "pop"
+    ],
+    "15": [
+      "ding"
+    ]
+  },
+  "requetes_images": [
+    "Ilia Malinin patinage artistique Trophée NHK 2026",
+    "Ilia Malinin programme court record du monde 2026",
+    "Ilia Malinin quadruple axel patinage 2026",
+    "Trophée NHK patinage artistique novembre 2026",
+    "Ilia Malinin patinage glace compétition public 2026",
+    "patinage artistique record du monde programme court 2026"
+  ],
+  "musique": {
+    "genre": "house",
+    "volume": 0.4
+  },
+  "titre_miniature": "Ilia Malinin bat le record du monde",
+  "mots_choc": [
+    "record du monde"
+  ],
+  "surtitre_miniature": "Trophée NHK · novembre 2026",
+  "scenes": [
+    {
+      "n": 1,
+      "type": "hook",
+      "energie": 3,
+      "titre": "Malinin bat un record",
+      "mot_fort": "record du monde",
+      "prompt": "a figure skater silhouette under a spotlight on ice, pixel art, side view, single object",
+      "fond_photo_requete": "Ilia Malinin patinage artistique Trophée NHK 2026",
+      "title": "Malinin bat un record",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Qui peut battre un record du monde ? Réponse : Ilia Malinin, au Trophée NHK.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 2,
+      "type": "sms",
+      "energie": 3,
+      "titre": "Le groupe s'emballe",
+      "mot_fort": "s'emballe",
+      "qui": "Public",
+      "texte": "Attendez, il vient de faire quoi ?",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Décor : le Trophée NHK, une compétition de patinage artistique, à l'automne.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 3,
+      "type": "pd_objet",
+      "energie": 2,
+      "titre": "Tout se joue en quelques minutes",
+      "mot_fort": "quelques minutes",
+      "prompt": "a single figure skate blade on ice, pixel art, single object",
+      "etiquette": "Programme court",
+      "fond_photo_requete": "Ilia Malinin programme court record du monde 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le programme court, c'est quelques minutes sur la glace. Pas de seconde chance.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 4,
+      "type": "reaction",
+      "energie": 3,
+      "titre": "Le public, sidéré",
+      "mot_fort": "sidéré",
+      "texte": "Oh là là !",
+      "personnage": "Public",
+      "paliers": [
+        "Oh là là !"
+      ],
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Ilia Malinin s'élance sur la glace. Chaque mouvement est observé. Rien ne passe inaperçu.",
+          "expression": "content"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 5,
+      "type": "pd_objet",
+      "energie": 2,
+      "titre": "Sur la glace, en direct",
+      "mot_fort": "en direct",
+      "prompt": "a figure skater in mid-air over ice, pixel art, side view, single object",
+      "etiquette": "Patinage",
+      "fond_photo_requete": "Ilia Malinin quadruple axel patinage 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Chaque élément enchaîne le suivant, sans répit. Le rythme ne retombe pas.",
+          "expression": "neutre"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 6,
+      "type": "pd_flux",
+      "energie": 3,
+      "titre": "Les sauts s'enchaînent",
+      "mot_fort": "enchaînent",
+      "de": {
+        "label": "Élan",
+        "prompt": "a skater leaning into a turn, pixel art, single object"
+      },
+      "vers": {
+        "label": "Saut",
+        "prompt": "a skater jumping in the air, pixel art, single object"
+      },
+      "montant": "énergie",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Dans les tribunes, plus personne ne cligne des yeux. Silence total.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 7,
+      "type": "pd_versus",
+      "energie": 3,
+      "titre": "Record ou échauffement ?",
+      "mot_fort": "échauffement",
+      "gauche": {
+        "label": "Échauffement",
+        "prompt": "a pair of skates on a bench, pixel art, single object"
+      },
+      "droite": {
+        "label": "Record",
+        "prompt": "a golden trophy, pixel art, single object"
+      },
+      "verdict": "Le public avait raison",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La jauge monte. Chaque élément peut tout faire basculer. Tout se joue ici.",
+          "expression": "pense"
+        }
+      ],
+      "duration": 6.1
+    },
+    {
+      "n": 8,
+      "type": "debat",
+      "energie": 2,
+      "titre": "Qui peut le battre ?",
+      "mot_fort": "battre",
+      "pour": "Lui-même",
+      "contre": "Personne",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le verdict tombe : un nouveau record du monde. Le public explose.",
+          "expression": "choc"
+        }
+      ],
+      "fond_photo_requete": "Trophée NHK patinage artistique novembre 2026",
+      "duration": 5.7
+    },
+    {
+      "n": 9,
+      "type": "pd_objet",
+      "energie": 3,
+      "titre": "Une salle qui retient son souffle",
+      "mot_fort": "souffle",
+      "prompt": "a silent crowd silhouette in a stadium, pixel art, single object",
+      "etiquette": "Public",
+      "fond_photo_requete": "Ilia Malinin patinage glace compétition public 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le mot clé est posé : record du monde sur programme court.",
+          "expression": "choc"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 10,
+      "type": "pd_tampon",
+      "energie": 3,
+      "titre": "Tension maximale",
+      "mot_fort": "Tension",
+      "tampon": "SUSPENSE",
+      "prompt": "a pixel heartbeat line on a dark screen, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "La presse sportive en parle partout, sans exception. Les titres se multiplient.",
+          "expression": "content"
+        }
+      ],
+      "duration": 5.7
+    },
+    {
+      "n": 11,
+      "type": "pd_tampon",
+      "energie": 2,
+      "titre": "Le record, vraiment ?",
+      "mot_fort": "vraiment",
+      "tampon": "RECORD ?",
+      "prompt": "a golden trophy on a glowing podium, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Le public joue le commentateur sidéré : chacun a son avis.",
+          "expression": "rire"
+        }
+      ],
+      "duration": 5.3
+    },
+    {
+      "n": 12,
+      "type": "pd_objet",
+      "energie": 2,
+      "titre": "Une musique qui fait tout",
+      "mot_fort": "musique",
+      "prompt": "a music note floating over an ice rink, pixel art, single object",
+      "etiquette": "Musique",
+      "fond_photo_requete": "patinage artistique record du monde programme court 2026",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Un seul nom revient dans la presse : Ilia Malinin. Le débat est lancé.",
+          "expression": "clin"
+        }
+      ],
+      "duration": 6.5
+    },
+    {
+      "n": 13,
+      "type": "sms",
+      "energie": 2,
+      "titre": "Le chat s'enflamme",
+      "mot_fort": "enflamme",
+      "qui": "Fan",
+      "texte": "Il a battu le record !",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Pour l'instant, le record tient. Le suspense, lui, continue.",
+          "expression": "content"
+        }
+      ],
+      "duration": 4.5
+    },
+    {
+      "n": 14,
+      "type": "quiz",
+      "energie": 2,
+      "titre": "Vous l'auriez parié ?",
+      "mot_fort": "parié",
+      "question": "Vous auriez parié sur ce record ?",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "bonne": "Oui",
+      "prompt": "a glowing question mark over an ice rink, pixel art, single object",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Vous auriez parié sur ce record ? Oui ou non ? Répondez dans les commentaires.",
+          "expression": "clin"
+        }
+      ],
+      "duration": 6.9
+    },
+    {
+      "n": 15,
+      "type": "outro",
+      "energie": 2,
+      "titre": "À vous les commentaires",
+      "mot_fort": "commentaires",
+      "text": "Qui peut battre ce record ?",
+      "cta": "Dites-le-nous en commentaire",
+      "dialogue": [
+        {
+          "qui": "narrateur",
+          "texte": "Dites-le-nous en commentaire : qui peut battre ce record ?",
+          "expression": "content"
+        }
+      ],
+      "duration": 4.9
+    }
+  ]
+}
