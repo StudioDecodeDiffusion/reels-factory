@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-25",
+  "date": "2026-11-28",
   "classement": [
     {"rang": 1, "titre": "Robot canard à 399 $ (27 oct.)", "vues": 120, "portee": 115, "enregistrements": 1},
     {"rang": 2, "titre": "Pont Tacoma Narrows (28 oct.)", "vues": 119, "portee": 104, "enregistrements": 0},
@@ -9,25 +9,25 @@
     {"rang": 6, "titre": "Moteur sans essence (4 nov.)", "vues": 30, "portee": 25, "enregistrements": 0}
   ],
   "ce_qui_marche": [
-    "Sujets de mécanique et d'ingénierie (ponts, avions, robots, béton) : 101 à 120 vues, moyenne 111,6 sur 5 reels (source : state/stats_science.json, maj 24 nov. 2026).",
+    "Sujets de mécanique et d'ingénierie (ponts, avions, robots, béton) : 101 à 120 vues, moyenne 111,6 sur 5 reels (source : state/stats_science.json, maj 27 nov. 2026).",
     "Le seul enregistrement de la période est sur le robot canard (120 vues, 115 de portée)."
   ],
   "ce_qui_ne_marche_pas": [
     "Moteur sans essence : 30 vues, 25 de portée, le plus faible (un seul reel, à ne pas trancher seul).",
     "Interactions quasi nulles : 1 enregistrement sur 6 reels, 0 like, 0 commentaire, 0 partage.",
-    "Cadence : aucun reel publié depuis le 18 nov. ; le reel du 25 nov. est bloqué en production (signalé par l'agent 9)."
+    "Cadence : aucun reel publié depuis le 18 nov. (10 jours). Le reel du 25 nov. signalé bloqué n'apparaît pas dans les données du 27 nov."
   ],
   "enseignements": [
     "Garder les sujets d'ingénierie du quotidien (ponts, avions, béton, robots) comme base : ce sont les 5 reels au-dessus de 100 vues. Échantillon de 6 reels, pas de conclusion ferme.",
     "Finir chaque reel par une question simple pour susciter un commentaire : 0 commentaire reçu sur 6 reels.",
-    "Vérifier la collecte des abonnés (compteur figé à 0 du 25 oct. au 24 nov.) avant d'en tirer des conclusions sur la croissance."
+    "Vérifier la collecte des abonnés (compteur figé à 0 du 25 oct. au 27 nov.) avant d'en tirer des conclusions sur la croissance."
   ],
-  "test": "Pendant 2 reels, terminer par une question ouverte en lien avec le sujet (ex. « Et toi, tu aurais parié sur quelle pompe ? ») et mesurer enregistrements et commentaires à 48 h.",
+  "test": "Pendant 2 reels, terminer par une question ouverte en lien avec le sujet (ex. « Et toi, tu aurais parié sur quelle pompe ? ») et mesurer enregistrements et commentaires à 48 h. Pas encore lancé : aucun reel publié depuis le 18 nov.",
   "reperes_projection": {
     "vues_mediane": 109,
     "vues_moyenne": 98,
     "meilleure": 120,
     "plus_faible": 30,
-    "base": "6 reels publiés du 27 oct. au 18 nov. 2026 (state/stats_science.json, maj 24 nov. 2026)"
+    "base": "6 reels publiés du 27 oct. au 18 nov. 2026 (state/stats_science.json, maj 27 nov. 2026)"
   }
 }
